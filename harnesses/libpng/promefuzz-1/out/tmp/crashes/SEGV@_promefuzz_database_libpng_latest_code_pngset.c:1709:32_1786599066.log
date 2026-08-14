@@ -1,0 +1,29 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2874685822
+INFO: Loaded 1 modules   (6017 inline 8-bit counters): 6017 [0x6042d21b5a40, 0x6042d21b71c1), 
+INFO: Loaded 1 PC tables (6017 PCs): 6017 [0x6042d21b71c8,0x6042d21ce9d8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2116507==ERROR: AddressSanitizer: SEGV on unknown address 0x00000000025c (pc 0x6042d212bcfb bp 0x7ffc5f3f3ef0 sp 0x7ffc5f3f3ec0 T0)
+==2116507==The signal is caused by a WRITE memory access.
+==2116507==Hint: address points to the zero page.
+    #0 0x6042d212bcfb in png_set_check_for_invalid_index /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:1709:32
+    #1 0x6042d2087909 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066.cpp:140:3
+    #2 0x6042d1f92d94 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066+0x79d94) (BuildId: 68e880b54e605c41db5bc49e12a8d02c9fad68f6)
+    #3 0x6042d1f93fc1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066+0x7afc1) (BuildId: 68e880b54e605c41db5bc49e12a8d02c9fad68f6)
+    #4 0x6042d1f945b7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066+0x7b5b7) (BuildId: 68e880b54e605c41db5bc49e12a8d02c9fad68f6)
+    #5 0x6042d1f81aaf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066+0x68aaf) (BuildId: 68e880b54e605c41db5bc49e12a8d02c9fad68f6)
+    #6 0x6042d1fac136 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066+0x93136) (BuildId: 68e880b54e605c41db5bc49e12a8d02c9fad68f6)
+    #7 0x7b1e6598b1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7b1e6598b28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x6042d1f76a94 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786599066+0x5da94) (BuildId: 68e880b54e605c41db5bc49e12a8d02c9fad68f6)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:1709:32 in png_set_check_for_invalid_index
+==2116507==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

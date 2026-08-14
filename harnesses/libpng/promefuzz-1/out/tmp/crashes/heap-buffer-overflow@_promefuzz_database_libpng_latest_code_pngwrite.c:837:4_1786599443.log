@@ -1,0 +1,782 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 417486746
+INFO: Loaded 1 modules   (5923 inline 8-bit counters): 5923 [0x5a1c3fa67550, 0x5a1c3fa68c73), 
+INFO: Loaded 1 PC tables (5923 PCs): 5923 [0x5a1c3fa68c78,0x5a1c3fa7fea8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 303 ft: 304 corp: 1/1b exec/s: 0 rss: 32Mb
+#4	NEW    cov: 305 ft: 306 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 2 ChangeBit-CopyPart-
+#7	NEW    cov: 307 ft: 308 corp: 3/6b lim: 4 exec/s: 0 rss: 33Mb L: 3/3 MS: 3 ChangeBinInt-ShuffleBytes-CopyPart-
+#15	NEW    cov: 309 ft: 310 corp: 4/10b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 3 ChangeBit-ShuffleBytes-InsertByte-
+	NEW_FUNC[1/5]: 0x5a1c3f95e890 in png_calloc /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:51
+	NEW_FUNC[2/5]: 0x5a1c3fa03950 in png_setup_sub_row /promefuzz/database/libpng/latest/build_asan/../code/pngwutil.c:2281
+#224	NEW    cov: 382 ft: 394 corp: 5/15b lim: 6 exec/s: 0 rss: 62Mb L: 5/5 MS: 4 EraseBytes-ChangeBit-CrossOver-InsertRepeatedBytes-
+#243	NEW    cov: 387 ft: 410 corp: 6/20b lim: 6 exec/s: 0 rss: 65Mb L: 5/5 MS: 4 CrossOver-ShuffleBytes-EraseBytes-CrossOver-
+#248	NEW    cov: 389 ft: 412 corp: 7/26b lim: 6 exec/s: 0 rss: 65Mb L: 6/6 MS: 5 ShuffleBytes-ShuffleBytes-CrossOver-ShuffleBytes-InsertRepeatedBytes-
+#249	NEW    cov: 391 ft: 425 corp: 8/31b lim: 6 exec/s: 0 rss: 65Mb L: 5/6 MS: 1 CopyPart-
+#255	NEW    cov: 391 ft: 444 corp: 9/36b lim: 6 exec/s: 0 rss: 66Mb L: 5/6 MS: 1 ChangeByte-
+#262	NEW    cov: 391 ft: 448 corp: 10/41b lim: 6 exec/s: 0 rss: 67Mb L: 5/6 MS: 2 ChangeASCIIInt-ChangeBinInt-
+#263	NEW    cov: 399 ft: 473 corp: 11/46b lim: 6 exec/s: 0 rss: 67Mb L: 5/6 MS: 1 ChangeBit-
+#265	NEW    cov: 400 ft: 480 corp: 12/52b lim: 6 exec/s: 0 rss: 68Mb L: 6/6 MS: 2 CopyPart-CopyPart-
+#268	NEW    cov: 400 ft: 483 corp: 13/57b lim: 6 exec/s: 0 rss: 68Mb L: 5/6 MS: 3 ChangeASCIIInt-EraseBytes-CrossOver-
+#270	NEW    cov: 401 ft: 486 corp: 14/63b lim: 6 exec/s: 0 rss: 68Mb L: 6/6 MS: 2 ChangeBit-CopyPart-
+#279	NEW    cov: 401 ft: 489 corp: 15/68b lim: 6 exec/s: 0 rss: 69Mb L: 5/6 MS: 4 ChangeBinInt-ChangeBinInt-ChangeBinInt-ChangeByte-
+#285	NEW    cov: 402 ft: 494 corp: 16/74b lim: 6 exec/s: 0 rss: 70Mb L: 6/6 MS: 1 CopyPart-
+#294	NEW    cov: 402 ft: 499 corp: 17/79b lim: 6 exec/s: 0 rss: 71Mb L: 5/6 MS: 4 EraseBytes-ShuffleBytes-ChangeByte-InsertByte-
+	NEW_FUNC[1/3]: 0x5a1c3f9cea00 in png_set_PLTE /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:574
+	NEW_FUNC[2/3]: 0x5a1c3f9d9d00 in png_do_check_palette_indexes /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:700
+#300	NEW    cov: 447 ft: 570 corp: 18/84b lim: 6 exec/s: 0 rss: 72Mb L: 5/6 MS: 1 ChangeByte-
+#302	NEW    cov: 453 ft: 585 corp: 19/90b lim: 6 exec/s: 0 rss: 73Mb L: 6/6 MS: 2 ShuffleBytes-ChangeBinInt-
+#303	NEW    cov: 453 ft: 588 corp: 20/95b lim: 6 exec/s: 0 rss: 73Mb L: 5/6 MS: 1 ChangeByte-
+#305	NEW    cov: 453 ft: 596 corp: 21/101b lim: 6 exec/s: 0 rss: 73Mb L: 6/6 MS: 2 ChangeBit-ChangeBinInt-
+#309	NEW    cov: 455 ft: 628 corp: 22/107b lim: 6 exec/s: 0 rss: 74Mb L: 6/6 MS: 4 CrossOver-ChangeBit-CrossOver-InsertRepeatedBytes-
+#322	NEW    cov: 455 ft: 631 corp: 23/113b lim: 6 exec/s: 0 rss: 75Mb L: 6/6 MS: 3 ChangeBit-ChangeBinInt-InsertByte-
+#328	NEW    cov: 455 ft: 632 corp: 24/119b lim: 6 exec/s: 0 rss: 76Mb L: 6/6 MS: 1 ChangeBinInt-
+#329	NEW    cov: 455 ft: 638 corp: 25/125b lim: 6 exec/s: 0 rss: 76Mb L: 6/6 MS: 1 ShuffleBytes-
+#332	NEW    cov: 455 ft: 639 corp: 26/131b lim: 6 exec/s: 0 rss: 77Mb L: 6/6 MS: 3 InsertByte-ChangeByte-CopyPart-
+#342	NEW    cov: 457 ft: 641 corp: 27/137b lim: 6 exec/s: 0 rss: 78Mb L: 6/6 MS: 5 CopyPart-ChangeByte-ChangeBit-ShuffleBytes-ChangeASCIIInt-
+#346	NEW    cov: 458 ft: 650 corp: 28/143b lim: 6 exec/s: 0 rss: 78Mb L: 6/6 MS: 4 ShuffleBytes-ChangeByte-ChangeBit-CopyPart-
+#351	NEW    cov: 459 ft: 653 corp: 29/149b lim: 6 exec/s: 0 rss: 79Mb L: 6/6 MS: 5 EraseBytes-ShuffleBytes-ChangeByte-CopyPart-CrossOver-
+#369	NEW    cov: 459 ft: 654 corp: 30/155b lim: 6 exec/s: 0 rss: 81Mb L: 6/6 MS: 3 ChangeBit-ShuffleBytes-CopyPart-
+#375	NEW    cov: 460 ft: 663 corp: 31/161b lim: 6 exec/s: 0 rss: 82Mb L: 6/6 MS: 1 ChangeASCIIInt-
+#396	NEW    cov: 460 ft: 664 corp: 32/167b lim: 6 exec/s: 0 rss: 85Mb L: 6/6 MS: 1 ChangeBit-
+#407	NEW    cov: 460 ft: 665 corp: 33/173b lim: 6 exec/s: 0 rss: 86Mb L: 6/6 MS: 1 CrossOver-
+#419	NEW    cov: 460 ft: 666 corp: 34/179b lim: 6 exec/s: 0 rss: 88Mb L: 6/6 MS: 2 ChangeByte-CrossOver-
+#423	NEW    cov: 461 ft: 667 corp: 35/184b lim: 6 exec/s: 0 rss: 88Mb L: 5/6 MS: 4 ChangeBit-CopyPart-CopyPart-EraseBytes-
+#432	NEW    cov: 462 ft: 668 corp: 36/190b lim: 6 exec/s: 0 rss: 89Mb L: 6/6 MS: 4 CrossOver-ShuffleBytes-ShuffleBytes-ChangeBinInt-
+#443	NEW    cov: 462 ft: 669 corp: 37/196b lim: 6 exec/s: 0 rss: 91Mb L: 6/6 MS: 1 CopyPart-
+#458	NEW    cov: 462 ft: 670 corp: 38/201b lim: 6 exec/s: 0 rss: 93Mb L: 5/6 MS: 5 ChangeBinInt-ChangeByte-ChangeBit-ChangeByte-EraseBytes-
+#479	NEW    cov: 463 ft: 689 corp: 39/207b lim: 6 exec/s: 0 rss: 95Mb L: 6/6 MS: 1 CrossOver-
+#687	NEW    cov: 465 ft: 768 corp: 40/214b lim: 8 exec/s: 0 rss: 122Mb L: 7/7 MS: 3 CrossOver-ChangeByte-InsertByte-
+#695	NEW    cov: 465 ft: 770 corp: 41/219b lim: 8 exec/s: 0 rss: 123Mb L: 5/7 MS: 3 ShuffleBytes-ChangeASCIIInt-ShuffleBytes-
+#699	NEW    cov: 465 ft: 828 corp: 42/226b lim: 8 exec/s: 0 rss: 123Mb L: 7/7 MS: 4 CrossOver-ChangeByte-EraseBytes-CopyPart-
+#703	NEW    cov: 466 ft: 845 corp: 43/234b lim: 8 exec/s: 0 rss: 124Mb L: 8/8 MS: 4 ShuffleBytes-CrossOver-CopyPart-CrossOver-
+#705	NEW    cov: 466 ft: 880 corp: 44/241b lim: 8 exec/s: 0 rss: 124Mb L: 7/8 MS: 2 EraseBytes-CrossOver-
+#707	NEW    cov: 466 ft: 890 corp: 45/249b lim: 8 exec/s: 0 rss: 124Mb L: 8/8 MS: 2 ChangeBit-InsertByte-
+#708	NEW    cov: 467 ft: 896 corp: 46/257b lim: 8 exec/s: 0 rss: 125Mb L: 8/8 MS: 1 ChangeByte-
+#714	NEW    cov: 467 ft: 937 corp: 47/264b lim: 8 exec/s: 0 rss: 125Mb L: 7/8 MS: 1 InsertByte-
+#728	NEW    cov: 468 ft: 969 corp: 48/271b lim: 8 exec/s: 0 rss: 127Mb L: 7/8 MS: 4 ChangeBit-CrossOver-CopyPart-InsertRepeatedBytes-
+#734	NEW    cov: 468 ft: 992 corp: 49/279b lim: 8 exec/s: 0 rss: 128Mb L: 8/8 MS: 1 CopyPart-
+#740	NEW    cov: 468 ft: 1002 corp: 50/287b lim: 8 exec/s: 0 rss: 129Mb L: 8/8 MS: 1 CopyPart-
+#747	NEW    cov: 468 ft: 1003 corp: 51/293b lim: 8 exec/s: 0 rss: 130Mb L: 6/8 MS: 2 CrossOver-ShuffleBytes-
+#748	NEW    cov: 473 ft: 1014 corp: 52/301b lim: 8 exec/s: 0 rss: 130Mb L: 8/8 MS: 1 CrossOver-
+#754	NEW    cov: 473 ft: 1017 corp: 53/309b lim: 8 exec/s: 0 rss: 130Mb L: 8/8 MS: 1 CMP- DE: "\225\007\002\000 P\000\000"-
+#762	NEW    cov: 473 ft: 1025 corp: 54/316b lim: 8 exec/s: 0 rss: 132Mb L: 7/8 MS: 3 CopyPart-ChangeBit-ChangeByte-
+#764	NEW    cov: 473 ft: 1026 corp: 55/324b lim: 8 exec/s: 0 rss: 132Mb L: 8/8 MS: 2 ChangeBinInt-CopyPart-
+#765	NEW    cov: 474 ft: 1027 corp: 56/331b lim: 8 exec/s: 0 rss: 132Mb L: 7/8 MS: 1 ShuffleBytes-
+#775	NEW    cov: 474 ft: 1037 corp: 57/338b lim: 8 exec/s: 0 rss: 133Mb L: 7/8 MS: 5 ShuffleBytes-InsertByte-CopyPart-ChangeBinInt-ShuffleBytes-
+#781	NEW    cov: 474 ft: 1038 corp: 58/345b lim: 8 exec/s: 0 rss: 134Mb L: 7/8 MS: 1 ChangeBinInt-
+#805	NEW    cov: 474 ft: 1039 corp: 59/352b lim: 8 exec/s: 0 rss: 137Mb L: 7/8 MS: 4 ShuffleBytes-EraseBytes-EraseBytes-CrossOver-
+#816	NEW    cov: 474 ft: 1046 corp: 60/359b lim: 8 exec/s: 0 rss: 139Mb L: 7/8 MS: 1 InsertByte-
+#837	NEW    cov: 474 ft: 1048 corp: 61/366b lim: 8 exec/s: 0 rss: 141Mb L: 7/8 MS: 1 CrossOver-
+#838	NEW    cov: 474 ft: 1056 corp: 62/374b lim: 8 exec/s: 0 rss: 141Mb L: 8/8 MS: 1 CrossOver-
+#862	NEW    cov: 474 ft: 1059 corp: 63/382b lim: 8 exec/s: 0 rss: 144Mb L: 8/8 MS: 4 ChangeBit-ChangeBit-CopyPart-ShuffleBytes-
+#878	REDUCE cov: 474 ft: 1059 corp: 63/381b lim: 8 exec/s: 0 rss: 147Mb L: 7/8 MS: 1 EraseBytes-
+#880	NEW    cov: 475 ft: 1062 corp: 64/389b lim: 8 exec/s: 0 rss: 147Mb L: 8/8 MS: 2 ChangeBinInt-CrossOver-
+#884	NEW    cov: 475 ft: 1066 corp: 65/397b lim: 8 exec/s: 0 rss: 147Mb L: 8/8 MS: 4 EraseBytes-ShuffleBytes-EraseBytes-InsertRepeatedBytes-
+#900	NEW    cov: 476 ft: 1067 corp: 66/404b lim: 8 exec/s: 0 rss: 149Mb L: 7/8 MS: 1 ChangeByte-
+#909	NEW    cov: 476 ft: 1068 corp: 67/412b lim: 8 exec/s: 0 rss: 151Mb L: 8/8 MS: 4 EraseBytes-ShuffleBytes-ChangeBit-InsertRepeatedBytes-
+#918	NEW    cov: 476 ft: 1069 corp: 68/420b lim: 8 exec/s: 0 rss: 152Mb L: 8/8 MS: 4 InsertByte-ShuffleBytes-PersAutoDict-CrossOver- DE: "\225\007\002\000 P\000\000"-
+#919	NEW    cov: 476 ft: 1070 corp: 69/427b lim: 8 exec/s: 0 rss: 152Mb L: 7/8 MS: 1 CopyPart-
+#924	NEW    cov: 476 ft: 1074 corp: 70/435b lim: 8 exec/s: 0 rss: 153Mb L: 8/8 MS: 5 CopyPart-CopyPart-InsertByte-ChangeBinInt-CopyPart-
+#926	NEW    cov: 476 ft: 1078 corp: 71/442b lim: 8 exec/s: 0 rss: 153Mb L: 7/8 MS: 2 ChangeBit-ChangeByte-
+#930	NEW    cov: 476 ft: 1079 corp: 72/449b lim: 8 exec/s: 0 rss: 153Mb L: 7/8 MS: 4 InsertByte-ChangeBit-ChangeBinInt-ChangeBit-
+#936	NEW    cov: 476 ft: 1082 corp: 73/456b lim: 8 exec/s: 0 rss: 154Mb L: 7/8 MS: 1 ChangeByte-
+#938	NEW    cov: 476 ft: 1089 corp: 74/464b lim: 8 exec/s: 0 rss: 155Mb L: 8/8 MS: 2 ShuffleBytes-ChangeBit-
+#954	NEW    cov: 476 ft: 1091 corp: 75/471b lim: 8 exec/s: 0 rss: 157Mb L: 7/8 MS: 1 ChangeByte-
+#973	NEW    cov: 476 ft: 1104 corp: 76/479b lim: 8 exec/s: 0 rss: 159Mb L: 8/8 MS: 4 CrossOver-CopyPart-ChangeBit-CMP- DE: "\377\377\377\377\377\377\377\001"-
+#977	NEW    cov: 476 ft: 1111 corp: 77/487b lim: 8 exec/s: 0 rss: 160Mb L: 8/8 MS: 4 CopyPart-PersAutoDict-ChangeBinInt-CopyPart- DE: "\377\377\377\377\377\377\377\001"-
+#1013	NEW    cov: 476 ft: 1116 corp: 78/494b lim: 8 exec/s: 0 rss: 164Mb L: 7/8 MS: 1 InsertByte-
+#1020	NEW    cov: 476 ft: 1118 corp: 79/502b lim: 8 exec/s: 0 rss: 165Mb L: 8/8 MS: 2 ChangeByte-CrossOver-
+#1022	NEW    cov: 476 ft: 1119 corp: 80/510b lim: 8 exec/s: 0 rss: 166Mb L: 8/8 MS: 2 ChangeByte-CrossOver-
+#1038	NEW    cov: 476 ft: 1120 corp: 81/518b lim: 8 exec/s: 0 rss: 168Mb L: 8/8 MS: 1 CrossOver-
+#1059	NEW    cov: 476 ft: 1123 corp: 82/526b lim: 8 exec/s: 0 rss: 171Mb L: 8/8 MS: 1 ShuffleBytes-
+#1108	NEW    cov: 476 ft: 1151 corp: 83/534b lim: 8 exec/s: 0 rss: 177Mb L: 8/8 MS: 4 ChangeBit-PersAutoDict-CopyPart-ShuffleBytes- DE: "\225\007\002\000 P\000\000"-
+#1120	NEW    cov: 476 ft: 1159 corp: 84/542b lim: 8 exec/s: 0 rss: 178Mb L: 8/8 MS: 2 ChangeByte-CrossOver-
+#1123	NEW    cov: 476 ft: 1160 corp: 85/550b lim: 8 exec/s: 0 rss: 179Mb L: 8/8 MS: 3 ChangeBinInt-ChangeBit-ShuffleBytes-
+#1187	NEW    cov: 476 ft: 1161 corp: 86/558b lim: 8 exec/s: 0 rss: 187Mb L: 8/8 MS: 4 ChangeBinInt-InsertByte-InsertByte-CrossOver-
+#1210	NEW    cov: 476 ft: 1164 corp: 87/566b lim: 8 exec/s: 0 rss: 190Mb L: 8/8 MS: 3 CopyPart-PersAutoDict-ChangeBinInt- DE: "\225\007\002\000 P\000\000"-
+#1241	NEW    cov: 476 ft: 1167 corp: 88/574b lim: 8 exec/s: 0 rss: 194Mb L: 8/8 MS: 1 CopyPart-
+#1243	NEW    cov: 476 ft: 1170 corp: 89/582b lim: 8 exec/s: 0 rss: 194Mb L: 8/8 MS: 2 ChangeByte-InsertByte-
+#1252	NEW    cov: 476 ft: 1174 corp: 90/589b lim: 8 exec/s: 0 rss: 195Mb L: 7/8 MS: 4 EraseBytes-InsertByte-ShuffleBytes-CopyPart-
+#1313	NEW    cov: 476 ft: 1176 corp: 91/597b lim: 8 exec/s: 0 rss: 203Mb L: 8/8 MS: 1 ChangeByte-
+#1324	NEW    cov: 476 ft: 1178 corp: 92/605b lim: 8 exec/s: 0 rss: 205Mb L: 8/8 MS: 1 CopyPart-
+#1346	NEW    cov: 476 ft: 1179 corp: 93/612b lim: 8 exec/s: 0 rss: 208Mb L: 7/8 MS: 2 CrossOver-CrossOver-
+#1360	NEW    cov: 476 ft: 1180 corp: 94/620b lim: 8 exec/s: 0 rss: 209Mb L: 8/8 MS: 4 InsertByte-ShuffleBytes-CopyPart-CopyPart-
+#1415	NEW    cov: 476 ft: 1181 corp: 95/628b lim: 8 exec/s: 0 rss: 216Mb L: 8/8 MS: 5 ChangeBinInt-EraseBytes-ChangeBit-CMP-CopyPart- DE: "\377\377\377\377"-
+#1419	NEW    cov: 476 ft: 1182 corp: 96/636b lim: 8 exec/s: 0 rss: 217Mb L: 8/8 MS: 4 ChangeByte-ChangeBinInt-CopyPart-ChangeBit-
+#1425	NEW    cov: 476 ft: 1183 corp: 97/643b lim: 8 exec/s: 0 rss: 218Mb L: 7/8 MS: 1 EraseBytes-
+#1433	NEW    cov: 476 ft: 1184 corp: 98/651b lim: 8 exec/s: 0 rss: 219Mb L: 8/8 MS: 3 PersAutoDict-ChangeBit-CopyPart- DE: "\377\377\377\377"-
+#1445	NEW    cov: 476 ft: 1185 corp: 99/659b lim: 8 exec/s: 0 rss: 220Mb L: 8/8 MS: 2 ChangeByte-ShuffleBytes-
+#1451	NEW    cov: 476 ft: 1186 corp: 100/667b lim: 8 exec/s: 0 rss: 221Mb L: 8/8 MS: 1 ShuffleBytes-
+#1508	NEW    cov: 476 ft: 1189 corp: 101/674b lim: 8 exec/s: 0 rss: 228Mb L: 7/8 MS: 2 InsertByte-ChangeBit-
+#1581	NEW    cov: 476 ft: 1190 corp: 102/680b lim: 8 exec/s: 0 rss: 238Mb L: 6/8 MS: 3 ChangeBit-ShuffleBytes-PersAutoDict- DE: "\377\377\377\377"-
+#1627	NEW    cov: 476 ft: 1191 corp: 103/687b lim: 8 exec/s: 0 rss: 243Mb L: 7/8 MS: 1 ChangeByte-
+#1636	NEW    cov: 476 ft: 1193 corp: 104/694b lim: 8 exec/s: 0 rss: 245Mb L: 7/8 MS: 4 CrossOver-ChangeBinInt-ChangeBit-CrossOver-
+#1647	NEW    cov: 476 ft: 1194 corp: 105/702b lim: 8 exec/s: 0 rss: 246Mb L: 8/8 MS: 1 CMP- DE: "\377\377O \000\003\326\325"-
+#1788	NEW    cov: 476 ft: 1195 corp: 106/710b lim: 8 exec/s: 0 rss: 259Mb L: 8/8 MS: 1 CrossOver-
+#1839	NEW    cov: 476 ft: 1197 corp: 107/718b lim: 8 exec/s: 0 rss: 263Mb L: 8/8 MS: 1 CopyPart-
+#1998	NEW    cov: 476 ft: 1198 corp: 108/726b lim: 8 exec/s: 0 rss: 273Mb L: 8/8 MS: 4 PersAutoDict-ChangeByte-ChangeByte-CopyPart- DE: "\377\377\377\377\377\377\377\001"-
+#2184	NEW    cov: 476 ft: 1200 corp: 109/733b lim: 8 exec/s: 0 rss: 284Mb L: 7/8 MS: 1 CrossOver-
+libpng error: bad parameters to zlib
+	NEW_FUNC[1/4]: 0x5a1c3f945e50 in png_zstream_error /promefuzz/database/libpng/latest/build_asan/../code/png.c:999
+	NEW_FUNC[2/4]: 0x5a1c3f959890 in png_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:41
+libpng error: bad parameters to zlib
+#2501	NEW    cov: 491 ft: 1254 corp: 110/744b lim: 11 exec/s: 0 rss: 299Mb L: 11/11 MS: 1 CrossOver-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2561	NEW    cov: 492 ft: 1255 corp: 111/752b lim: 11 exec/s: 0 rss: 299Mb L: 8/11 MS: 1 ChangeByte-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2577	NEW    cov: 492 ft: 1262 corp: 112/763b lim: 11 exec/s: 0 rss: 299Mb L: 11/11 MS: 3 ShuffleBytes-InsertRepeatedBytes-InsertByte-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2602	NEW    cov: 492 ft: 1264 corp: 113/774b lim: 11 exec/s: 0 rss: 299Mb L: 11/11 MS: 2 InsertByte-InsertRepeatedBytes-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2657	NEW    cov: 492 ft: 1267 corp: 114/783b lim: 11 exec/s: 0 rss: 300Mb L: 9/11 MS: 4 EraseBytes-InsertRepeatedBytes-ChangeBinInt-ShuffleBytes-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2811	NEW    cov: 492 ft: 1268 corp: 115/791b lim: 11 exec/s: 0 rss: 300Mb L: 8/11 MS: 3 EraseBytes-CMP-CrossOver- DE: "\000\000"-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2845	NEW    cov: 492 ft: 1270 corp: 116/800b lim: 11 exec/s: 0 rss: 300Mb L: 9/11 MS: 2 ShuffleBytes-InsertByte-
+#2867	NEW    cov: 492 ft: 1271 corp: 117/807b lim: 11 exec/s: 0 rss: 300Mb L: 7/11 MS: 2 ShuffleBytes-EraseBytes-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#2885	NEW    cov: 492 ft: 1272 corp: 118/818b lim: 11 exec/s: 0 rss: 300Mb L: 11/11 MS: 3 ChangeBit-InsertRepeatedBytes-CrossOver-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3135	NEW    cov: 492 ft: 1273 corp: 119/828b lim: 11 exec/s: 0 rss: 301Mb L: 10/11 MS: 3 ChangeBinInt-ChangeASCIIInt-CrossOver-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3164	NEW    cov: 492 ft: 1274 corp: 120/838b lim: 11 exec/s: 0 rss: 301Mb L: 10/11 MS: 2 ChangeBit-CrossOver-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3428	NEW    cov: 492 ft: 1275 corp: 121/849b lim: 11 exec/s: 0 rss: 303Mb L: 11/11 MS: 1 InsertRepeatedBytes-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3466	REDUCE cov: 492 ft: 1275 corp: 121/848b lim: 11 exec/s: 0 rss: 303Mb L: 7/11 MS: 5 ChangeByte-ShuffleBytes-EraseBytes-ShuffleBytes-CopyPart-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3566	NEW    cov: 492 ft: 1276 corp: 122/859b lim: 11 exec/s: 0 rss: 303Mb L: 11/11 MS: 2 CrossOver-CopyPart-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3691	NEW    cov: 492 ft: 1280 corp: 123/870b lim: 11 exec/s: 0 rss: 304Mb L: 11/11 MS: 2 ChangeBinInt-ChangeByte-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#3934	NEW    cov: 492 ft: 1281 corp: 124/877b lim: 11 exec/s: 0 rss: 305Mb L: 7/11 MS: 1 ChangeByte-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#4242	NEW    cov: 494 ft: 1283 corp: 125/889b lim: 14 exec/s: 0 rss: 306Mb L: 12/12 MS: 3 ChangeBinInt-EraseBytes-CrossOver-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#4251	NEW    cov: 497 ft: 1286 corp: 126/902b lim: 14 exec/s: 0 rss: 306Mb L: 13/13 MS: 3 CopyPart-EraseBytes-PersAutoDict- DE: "\377\377\377\377\377\377\377\001"-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#4275	NEW    cov: 500 ft: 1289 corp: 127/916b lim: 14 exec/s: 0 rss: 306Mb L: 14/14 MS: 4 ChangeByte-ChangeBit-InsertRepeatedBytes-CMP- DE: "\034\000"-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+#4293	NEW    cov: 501 ft: 1290 corp: 128/929b lim: 14 exec/s: 0 rss: 306Mb L: 13/14 MS: 3 EraseBytes-InsertRepeatedBytes-ChangeByte-
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+libpng error: bad parameters to zlib
+=================================================================
+==2116773==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50c000001f80 at pc 0x5a1c3f8f7d56 bp 0x7ffe4f101ff0 sp 0x7ffe4f1017b0
+READ of size 30 at 0x50c000001f80 thread T0
+    #0 0x5a1c3f8f7d55 in __asan_memcpy (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x12ad55) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #1 0x5a1c3f9e1baf in png_write_row /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:837:4
+    #2 0x5a1c3f9e2652 in png_write_image /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:621:10
+    #3 0x5a1c3f9e58e3 in png_write_png /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:1450:4
+    #4 0x5a1c3f93fe45 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441.cpp:200:3
+    #5 0x5a1c3f845d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x78d74) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #6 0x5a1c3f845469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x78469) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #7 0x5a1c3f846c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x79c55) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #8 0x5a1c3f8477b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x7a7b5) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #9 0x5a1c3f834a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x67a8f) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #10 0x5a1c3f85f116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x92116) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #11 0x7b9f18ec31c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x7b9f18ec328a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x5a1c3f829a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x5ca74) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+
+0x50c000001f80 is located 0 bytes after 128-byte region [0x50c000001f00,0x50c000001f80)
+allocated by thread T0 here:
+    #0 0x5a1c3f8f9ea3 in malloc (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x12cea3) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #1 0x5a1c3f93ce6c in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441.cpp:132:39
+    #2 0x5a1c3f845d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x78d74) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #3 0x5a1c3f845469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x78469) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #4 0x5a1c3f846c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x79c55) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #5 0x5a1c3f8477b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x7a7b5) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #6 0x5a1c3f834a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x67a8f) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #7 0x5a1c3f85f116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x92116) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+    #8 0x7b9f18ec31c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7b9f18ec328a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5a1c3f829a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x5ca74) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_68/fuzz_driver_68_sanitizing_1786599441+0x12ad55) (BuildId: c4540bf5706609ca6c6206c46f3358126968706a) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x50c000001d00: fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa
+  0x50c000001d80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x50c000001e00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50c000001e80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50c000001f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x50c000001f80:[fa]fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x50c000002000: fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa
+  0x50c000002080: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x50c000002100: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x50c000002180: fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa fa
+  0x50c000002200: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2116773==ABORTING
+MS: 1 CrossOver-; base unit: 347eaa96f44f9b7fb8b03ffe17ed179adcd127a1
+0x23,0x7d,0xff,0xff,0x4f,0x20,0x0,0x3,0xd6,0x0,0x44,0xd5,0x7,0x2,0x0,0x20,
+#}\377\377O \000\003\326\000D\325\007\002\000 
+artifact_prefix='./'; Test unit written to ./crash-648ada66d8c9478b69a60b29c1dc15956b8ebb2f
+Base64: I33//08gAAPWAETVBwIAIA==

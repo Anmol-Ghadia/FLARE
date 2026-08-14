@@ -1,0 +1,64 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2838694599
+INFO: Loaded 1 modules   (5794 inline 8-bit counters): 5794 [0x611860dc3eb8, 0x611860dc555a), 
+INFO: Loaded 1 PC tables (5794 PCs): 5794 [0x611860dc5560,0x611860ddbf80), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 92 ft: 93 corp: 1/1b exec/s: 0 rss: 33Mb
+#6	NEW    cov: 95 ft: 96 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 4 CopyPart-CopyPart-CrossOver-CrossOver-
+	NEW_FUNC[1/3]: 0x611860c9abe8 in NoOpError(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048.cpp:10
+	NEW_FUNC[2/3]: 0x611860c9c130 in png_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:41
+#7	NEW    cov: 105 ft: 112 corp: 3/5b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 1 InsertByte-
+#9	NEW    cov: 111 ft: 118 corp: 4/9b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 2 ShuffleBytes-CrossOver-
+#10	NEW    cov: 112 ft: 119 corp: 5/10b lim: 4 exec/s: 0 rss: 33Mb L: 1/4 MS: 1 ChangeBit-
+#43	NEW    cov: 114 ft: 125 corp: 6/12b lim: 4 exec/s: 0 rss: 33Mb L: 2/4 MS: 3 CrossOver-ShuffleBytes-ChangeByte-
+#71	REDUCE cov: 114 ft: 125 corp: 6/11b lim: 4 exec/s: 0 rss: 33Mb L: 1/4 MS: 3 CopyPart-CopyPart-EraseBytes-
+#82	REDUCE cov: 114 ft: 125 corp: 6/10b lim: 4 exec/s: 0 rss: 34Mb L: 1/4 MS: 1 EraseBytes-
+#293	NEW    cov: 121 ft: 139 corp: 7/15b lim: 6 exec/s: 0 rss: 35Mb L: 5/5 MS: 1 InsertRepeatedBytes-
+#298	NEW    cov: 125 ft: 153 corp: 8/20b lim: 6 exec/s: 0 rss: 35Mb L: 5/5 MS: 5 ChangeBinInt-ChangeBit-ChangeByte-ChangeBinInt-InsertByte-
+#302	NEW    cov: 125 ft: 157 corp: 9/26b lim: 6 exec/s: 0 rss: 35Mb L: 6/6 MS: 4 InsertByte-ChangeBit-ShuffleBytes-CopyPart-
+#336	NEW    cov: 125 ft: 158 corp: 10/32b lim: 6 exec/s: 0 rss: 35Mb L: 6/6 MS: 4 InsertRepeatedBytes-CopyPart-CopyPart-CopyPart-
+#341	NEW    cov: 125 ft: 169 corp: 11/38b lim: 6 exec/s: 0 rss: 35Mb L: 6/6 MS: 5 CrossOver-ChangeByte-ChangeBit-CopyPart-CopyPart-
+#395	NEW    cov: 125 ft: 170 corp: 12/44b lim: 6 exec/s: 0 rss: 36Mb L: 6/6 MS: 4 CrossOver-ShuffleBytes-ShuffleBytes-InsertByte-
+#411	NEW    cov: 127 ft: 172 corp: 13/50b lim: 6 exec/s: 0 rss: 36Mb L: 6/6 MS: 1 ChangeByte-
+#417	REDUCE cov: 127 ft: 172 corp: 13/49b lim: 6 exec/s: 0 rss: 36Mb L: 5/6 MS: 1 EraseBytes-
+#624	NEW    cov: 127 ft: 176 corp: 14/54b lim: 8 exec/s: 0 rss: 37Mb L: 5/6 MS: 2 EraseBytes-InsertRepeatedBytes-
+#630	NEW    cov: 127 ft: 180 corp: 15/61b lim: 8 exec/s: 0 rss: 37Mb L: 7/7 MS: 1 CrossOver-
+#652	NEW    cov: 127 ft: 184 corp: 16/69b lim: 8 exec/s: 0 rss: 37Mb L: 8/8 MS: 2 InsertByte-InsertRepeatedBytes-
+#822	NEW    cov: 127 ft: 185 corp: 17/77b lim: 8 exec/s: 0 rss: 38Mb L: 8/8 MS: 5 ShuffleBytes-ChangeBit-ShuffleBytes-ChangeBinInt-CrossOver-
+#829	NEW    cov: 127 ft: 187 corp: 18/85b lim: 8 exec/s: 0 rss: 38Mb L: 8/8 MS: 2 CopyPart-InsertRepeatedBytes-
+#883	NEW    cov: 127 ft: 188 corp: 19/90b lim: 8 exec/s: 0 rss: 38Mb L: 5/8 MS: 4 EraseBytes-InsertRepeatedBytes-EraseBytes-ShuffleBytes-
+#1286	NEW    cov: 127 ft: 189 corp: 20/101b lim: 11 exec/s: 0 rss: 39Mb L: 11/11 MS: 3 InsertByte-ShuffleBytes-InsertRepeatedBytes-
+#1324	NEW    cov: 127 ft: 191 corp: 21/112b lim: 11 exec/s: 0 rss: 39Mb L: 11/11 MS: 3 EraseBytes-InsertByte-InsertRepeatedBytes-
+#1638	NEW    cov: 127 ft: 196 corp: 22/125b lim: 14 exec/s: 0 rss: 40Mb L: 13/13 MS: 4 ChangeBit-ChangeByte-InsertByte-CMP- DE: "\001\000P \000\000\352:"-
+#1639	NEW    cov: 127 ft: 197 corp: 23/138b lim: 14 exec/s: 0 rss: 40Mb L: 13/13 MS: 1 InsertRepeatedBytes-
+#1971	NEW    cov: 127 ft: 198 corp: 24/154b lim: 17 exec/s: 0 rss: 41Mb L: 16/16 MS: 2 EraseBytes-InsertRepeatedBytes-
+#2377	REDUCE cov: 127 ft: 198 corp: 24/153b lim: 21 exec/s: 0 rss: 42Mb L: 7/16 MS: 1 EraseBytes-
+#2398	NEW    cov: 127 ft: 199 corp: 25/159b lim: 21 exec/s: 0 rss: 42Mb L: 6/16 MS: 1 ChangeByte-
+
+=================================================================
+==2115365==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 31 byte(s) in 1 object(s) allocated from:
+    #0 0x611860c97591 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x16a591) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #1 0x73be462fcdab in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>::reserve(unsigned long) (/lib/x86_64-linux-gnu/libstdc++.so.6+0x168dab) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #2 0x611860c9b20a in MakeMessage[abi:cxx11](unsigned char const*, unsigned long, unsigned long, unsigned long) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048.cpp:26:9
+    #3 0x611860c9a525 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048.cpp:62:24
+    #4 0x611860ba4e64 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x77e64) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #5 0x611860ba4559 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x77559) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #6 0x611860ba5d45 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x78d45) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #7 0x611860ba68a5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x798a5) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #8 0x611860b93b7f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x66b7f) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #9 0x611860bbe206 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x91206) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+    #10 0x73be45e641c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x73be45e6428a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x611860b88b64 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_17/fuzz_driver_17_sanitizing_1786598048+0x5bb64) (BuildId: 36cc547452d53154f701c8d969525981a4b2bbd3)
+
+SUMMARY: AddressSanitizer: 31 byte(s) leaked in 1 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 5 CrossOver-ShuffleBytes-CopyPart-ChangeBit-InsertByte-; base unit: 5a93dd1021ab78c1689360f36cee060e457fae3f
+0x0,0x0,0xaa,0x0,0x0,0xaa,0xa,0x0,0xa,0x1,0x32,0xa,0x4a,0xa,0x0,0xa,0x1,0xa,0xa,
+\000\000\252\000\000\252\012\000\012\0012\012J\012\000\012\001\012\012
+artifact_prefix='./'; Test unit written to ./leak-ef2d286c5a5f272dbee241135feaafdb46fc1815
+Base64: AACqAACqCgAKATIKSgoACgEKCg==

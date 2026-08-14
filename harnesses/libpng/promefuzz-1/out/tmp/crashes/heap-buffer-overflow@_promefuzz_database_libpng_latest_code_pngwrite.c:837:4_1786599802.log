@@ -1,0 +1,96 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 19991982
+INFO: Loaded 1 modules   (5827 inline 8-bit counters): 5827 [0x590c15d570e0, 0x590c15d587a3), 
+INFO: Loaded 1 PC tables (5827 PCs): 5827 [0x590c15d587a8,0x590c15d6f3d8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 102 ft: 103 corp: 1/1b exec/s: 0 rss: 32Mb
+#32	NEW    cov: 114 ft: 115 corp: 2/5b lim: 4 exec/s: 0 rss: 32Mb L: 4/4 MS: 5 ChangeByte-InsertByte-CrossOver-ChangeByte-CopyPart-
+#463	NEW    cov: 114 ft: 126 corp: 3/13b lim: 8 exec/s: 0 rss: 36Mb L: 8/8 MS: 1 CrossOver-
+#539	NEW    cov: 115 ft: 127 corp: 4/21b lim: 8 exec/s: 0 rss: 37Mb L: 8/8 MS: 1 InsertRepeatedBytes-
+#1162	NEW    cov: 115 ft: 139 corp: 5/34b lim: 14 exec/s: 0 rss: 40Mb L: 13/13 MS: 3 CopyPart-ShuffleBytes-InsertRepeatedBytes-
+#1472	NEW    cov: 117 ft: 153 corp: 6/51b lim: 17 exec/s: 0 rss: 41Mb L: 17/17 MS: 5 ShuffleBytes-CrossOver-CrossOver-ChangeBinInt-InsertRepeatedBytes-
+	NEW_FUNC[1/49]: 0x590c15c30088 in PngWarningFn(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802.cpp:12
+	NEW_FUNC[2/49]: 0x590c15c300b8 in SafeMul(unsigned long, unsigned long) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802.cpp:46
+#1962	NEW    cov: 340 ft: 398 corp: 7/72b lim: 21 exec/s: 0 rss: 44Mb L: 21/21 MS: 5 InsertByte-ChangeByte-CrossOver-ShuffleBytes-InsertRepeatedBytes-
+#1999	NEW    cov: 342 ft: 400 corp: 8/93b lim: 21 exec/s: 0 rss: 44Mb L: 21/21 MS: 2 CrossOver-CopyPart-
+	NEW_FUNC[1/4]: 0x590c15ccf410 in png_set_packswap /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:71
+	NEW_FUNC[2/4]: 0x590c15ccfe70 in png_set_invert_mono /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:251
+#2071	NEW    cov: 358 ft: 418 corp: 9/114b lim: 21 exec/s: 0 rss: 45Mb L: 21/21 MS: 2 CMP-InsertRepeatedBytes- DE: "\376\377<\260"-
+#2089	NEW    cov: 372 ft: 440 corp: 10/134b lim: 21 exec/s: 0 rss: 46Mb L: 20/21 MS: 3 ChangeByte-CopyPart-PersAutoDict- DE: "\376\377<\260"-
+#2091	NEW    cov: 378 ft: 446 corp: 11/155b lim: 21 exec/s: 0 rss: 46Mb L: 21/21 MS: 2 ChangeBit-ChangeBinInt-
+#2199	NEW    cov: 379 ft: 447 corp: 12/175b lim: 21 exec/s: 0 rss: 48Mb L: 20/21 MS: 3 CMP-ShuffleBytes-ShuffleBytes- DE: "\000\000\000."-
+#2248	NEW    cov: 380 ft: 448 corp: 13/196b lim: 21 exec/s: 0 rss: 50Mb L: 21/21 MS: 4 InsertRepeatedBytes-CMP-ChangeByte-InsertRepeatedBytes- DE: "\000\000"-
+#2272	NEW    cov: 380 ft: 449 corp: 14/217b lim: 21 exec/s: 0 rss: 50Mb L: 21/21 MS: 4 ChangeBinInt-InsertByte-InsertByte-InsertRepeatedBytes-
+#2335	NEW    cov: 380 ft: 450 corp: 15/237b lim: 21 exec/s: 0 rss: 52Mb L: 20/21 MS: 3 InsertRepeatedBytes-InsertByte-ChangeByte-
+#2592	NEW    cov: 380 ft: 453 corp: 16/258b lim: 21 exec/s: 0 rss: 59Mb L: 21/21 MS: 2 ChangeBit-InsertRepeatedBytes-
+=================================================================
+==2116928==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000019b52 at pc 0x590c15be9d56 bp 0x7ffcfeebfe70 sp 0x7ffcfeebf630
+READ of size 11 at 0x502000019b52 thread T0
+    #0 0x590c15be9d55 in __asan_memcpy (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x129d55) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #1 0x590c15cda65f in png_write_row /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:837:4
+    #2 0x590c15cdb102 in png_write_image /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:621:10
+    #3 0x590c15cde393 in png_write_png /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:1450:4
+    #4 0x590c15c2f319 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802.cpp:165:3
+    #5 0x590c15b37d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x77d74) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #6 0x590c15b37469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x77469) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #7 0x590c15b38c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x78c55) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #8 0x590c15b397b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x797b5) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #9 0x590c15b26a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x66a8f) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #10 0x590c15b51116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x91116) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #11 0x796dd7dca1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x796dd7dca28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x590c15b1ba74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x5ba74) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+
+0x502000019b52 is located 0 bytes after 2-byte region [0x502000019b50,0x502000019b52)
+allocated by thread T0 here:
+    #0 0x590c15bebea3 in malloc (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x12bea3) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #1 0x590c15c2e3bd in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802.cpp:145:34
+    #2 0x590c15b37d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x77d74) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #3 0x590c15b37469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x77469) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #4 0x590c15b38c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x78c55) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #5 0x590c15b397b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x797b5) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #6 0x590c15b26a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x66a8f) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #7 0x590c15b51116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x91116) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+    #8 0x796dd7dca1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x796dd7dca28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x590c15b1ba74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x5ba74) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_74/fuzz_driver_74_sanitizing_1786599802+0x129d55) (BuildId: 9e811277c4aa1988ca5131412e2cc34e63066d71) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x502000019880: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000019900: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x502000019980: fa fa fd fa fa fa fd fd fa fa fd fa fa fa fd fd
+  0x502000019a00: fa fa fd fa fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000019a80: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+=>0x502000019b00: fa fa fd fa fa fa fd fd fa fa[02]fa fa fa 00 fa
+  0x502000019b80: fa fa 00 04 fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000019c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000019c80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000019d00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000019d80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2116928==ABORTING
+MS: 3 CrossOver-InsertRepeatedBytes-ChangeBit-; base unit: 2fe547b54d532d7a5cbff682622771d444ff35fa
+0x7e,0x2f,0xa,0x2f,0x7e,0xc6,0xc6,0xc6,0xc6,0xc6,0xc6,0xc6,0xc6,0xc6,0xc6,0x46,0xc6,0xc6,0xc6,0x2f,0xa,0x2f,0xff,0xff,
+~/\012/~\306\306\306\306\306\306\306\306\306\306F\306\306\306/\012/\377\377
+artifact_prefix='./'; Test unit written to ./crash-1923453927e10d7ef52ddc6b3f7d0489d5d22295
+Base64: fi8KL37GxsbGxsbGxsbGRsbGxi8KL///

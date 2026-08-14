@@ -1,0 +1,55 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2816137967
+INFO: Loaded 1 modules   (5821 inline 8-bit counters): 5821 [0x6411ba181090, 0x6411ba18274d), 
+INFO: Loaded 1 PC tables (5821 PCs): 5821 [0x6411ba182750,0x6411ba199320), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 126 ft: 127 corp: 1/1b exec/s: 0 rss: 32Mb
+	NEW_FUNC[1/1]: 0x6411ba059198 in ReadU32(unsigned char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993.cpp:19
+#31	NEW    cov: 138 ft: 139 corp: 2/5b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 4 InsertByte-InsertByte-CopyPart-CopyPart-
+#468	NEW    cov: 140 ft: 152 corp: 3/13b lim: 8 exec/s: 0 rss: 35Mb L: 8/8 MS: 2 CopyPart-InsertRepeatedBytes-
+#1084	NEW    cov: 142 ft: 165 corp: 4/27b lim: 14 exec/s: 0 rss: 37Mb L: 14/14 MS: 1 InsertRepeatedBytes-
+#1085	REDUCE cov: 142 ft: 165 corp: 4/26b lim: 14 exec/s: 0 rss: 37Mb L: 13/13 MS: 1 EraseBytes-
+#1154	REDUCE cov: 142 ft: 165 corp: 4/25b lim: 14 exec/s: 0 rss: 37Mb L: 12/12 MS: 4 ChangeBit-CopyPart-ShuffleBytes-EraseBytes-
+#1513	REDUCE cov: 146 ft: 180 corp: 5/41b lim: 17 exec/s: 0 rss: 39Mb L: 16/16 MS: 4 InsertByte-CrossOver-InsertByte-CopyPart-
+#1666	NEW    cov: 148 ft: 182 corp: 6/57b lim: 17 exec/s: 0 rss: 39Mb L: 16/16 MS: 3 ChangeBit-InsertRepeatedBytes-CrossOver-
+#1724	NEW    cov: 150 ft: 184 corp: 7/73b lim: 17 exec/s: 0 rss: 39Mb L: 16/16 MS: 3 InsertRepeatedBytes-InsertRepeatedBytes-InsertByte-
+#2138	NEW    cov: 154 ft: 188 corp: 8/93b lim: 21 exec/s: 0 rss: 40Mb L: 20/20 MS: 4 CrossOver-ChangeByte-CopyPart-CopyPart-
+#2225	NEW    cov: 154 ft: 190 corp: 9/113b lim: 21 exec/s: 0 rss: 41Mb L: 20/20 MS: 2 ChangeBinInt-CMP- DE: "\377\377\377\377"-
+#2312	NEW    cov: 154 ft: 205 corp: 10/129b lim: 21 exec/s: 0 rss: 41Mb L: 16/20 MS: 2 EraseBytes-InsertRepeatedBytes-
+#2353	NEW    cov: 156 ft: 207 corp: 11/145b lim: 21 exec/s: 0 rss: 41Mb L: 16/20 MS: 1 CMP- DE: "\001\000\000\000\000\000\000\034"-
+#2766	NEW    cov: 159 ft: 210 corp: 12/170b lim: 25 exec/s: 0 rss: 42Mb L: 25/25 MS: 3 ChangeBinInt-InsertByte-PersAutoDict- DE: "\001\000\000\000\000\000\000\034"-
+#2904	NEW    cov: 159 ft: 214 corp: 13/194b lim: 25 exec/s: 0 rss: 42Mb L: 24/25 MS: 3 CMP-ChangeBit-PersAutoDict- DE: "-\000"-"\001\000\000\000\000\000\000\034"-
+#3333	NEW    cov: 161 ft: 216 corp: 14/222b lim: 29 exec/s: 0 rss: 43Mb L: 28/28 MS: 4 ChangeByte-ShuffleBytes-ShuffleBytes-InsertRepeatedBytes-
+#3740	NEW    cov: 163 ft: 229 corp: 15/254b lim: 33 exec/s: 0 rss: 44Mb L: 32/32 MS: 2 CMP-PersAutoDict- DE: "\015\000\000\000"-"\377\377\377\377"-
+#4071	REDUCE cov: 163 ft: 229 corp: 15/253b lim: 33 exec/s: 0 rss: 45Mb L: 24/32 MS: 1 EraseBytes-
+#4581	NEW    cov: 165 ft: 231 corp: 16/289b lim: 38 exec/s: 0 rss: 46Mb L: 36/36 MS: 5 CMP-CopyPart-CrossOver-ChangeByte-InsertRepeatedBytes- DE: "\001\000\000\000"-
+#5132	NEW    cov: 166 ft: 233 corp: 17/329b lim: 43 exec/s: 0 rss: 48Mb L: 40/40 MS: 1 InsertRepeatedBytes-
+	NEW_FUNC[1/1]: 0x6411ba0597b8 in ReadU16(unsigned char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993.cpp:26
+#5704	NEW    cov: 176 ft: 243 corp: 18/375b lim: 48 exec/s: 0 rss: 49Mb L: 46/46 MS: 2 ChangeBinInt-InsertRepeatedBytes-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2116464==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000014 (pc 0x6411ba102486 bp 0x7fffbc026c50 sp 0x7fffbc026b70 T0)
+==2116464==The signal is caused by a READ memory access.
+==2116464==Hint: address points to the zero page.
+    #0 0x6411ba102486 in png_convert_from_struct_tm /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:471:46
+    #1 0x6411ba102947 in png_convert_from_time_t /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:487:4
+    #2 0x6411ba057fa9 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993.cpp:65:3
+    #3 0x6411b9f61d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x77d74) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+    #4 0x6411b9f61469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x77469) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+    #5 0x6411b9f62c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x78c55) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+    #6 0x6411b9f637b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x797b5) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+    #7 0x6411b9f50a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x66a8f) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+    #8 0x6411b9f7b116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x91116) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+    #9 0x794f7a5dc1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x794f7a5dc28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x6411b9f45a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_51/fuzz_driver_51_sanitizing_1786598993+0x5ba74) (BuildId: 958fd844640ebe61df5a9d601abc4f5624904452)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:471:46 in png_convert_from_struct_tm
+==2116464==ABORTING
+MS: 4 InsertRepeatedBytes-PersAutoDict-ChangeBinInt-InsertRepeatedBytes- DE: "-\000"-; base unit: 1d7d43556b6de6691ce47828f5a8d890e0e20a8a
+0xd5,0x0,0x24,0x0,0x0,0xbb,0xbb,0xbb,0xe8,0xe8,0xe8,0xe8,0xe8,0xe8,0xe8,0x19,0x17,0xe8,0xe8,0x1a,0x1a,0x1a,0x1a,0x1a,0x1a,0x1a,0x1a,0x1a,0x1a,0x1a,0xe8,0xe8,0x2d,0x0,0xe8,0xe8,0xe8,0xbb,0xbb,0xbb,0x0,0x0,0x41,0xd5,0xa,
+\325\000$\000\000\273\273\273\350\350\350\350\350\350\350\031\027\350\350\032\032\032\032\032\032\032\032\032\032\032\350\350-\000\350\350\350\273\273\273\000\000A\325\012
+artifact_prefix='./'; Test unit written to ./crash-25f1487cda8694b7290dee305cc359e2fd1a3082
+Base64: 1QAkAAC7u7vo6Ojo6OjoGRfo6BoaGhoaGhoaGhoa6OgtAOjo6Lu7uwAAQdUK

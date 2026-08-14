@@ -1,0 +1,99 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <cstdint>
+#include <cstddef>
+#include <png.h>
+#include <cstdint>
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+
+static void PngReadCallback(png_structp png_ptr, png_bytep outBytes, png_size_t byteCountToRead) {
+  png_bytep* io_ptr = reinterpret_cast<png_bytep*>(png_get_io_ptr(png_ptr));
+  if (io_ptr == nullptr || *io_ptr == nullptr) {
+    png_error(png_ptr, "invalid io_ptr");
+    return;
+  }
+  memcpy(outBytes, *io_ptr, byteCountToRead);
+  *io_ptr += byteCountToRead;
+}
+
+extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+  FILE* fp = fopen("./dummy_file", "wb");
+  if (fp != nullptr) {
+    if (Size > 0) {
+      fwrite(Data, 1, Size, fp);
+    }
+    fclose(fp);
+  }
+
+  png_structp png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
+  if (png_ptr == nullptr) {
+    return 0;
+  }
+
+  png_infop info_ptr = png_create_info_struct(png_ptr);
+  if (info_ptr == nullptr) {
+    png_destroy_read_struct(&png_ptr, nullptr, nullptr);
+    return 0;
+  }
+
+  png_infop end_info = png_create_info_struct(png_ptr);
+  if (end_info == nullptr) {
+    png_destroy_read_struct(&png_ptr, &info_ptr, nullptr);
+    return 0;
+  }
+
+  if (setjmp(png_jmpbuf(png_ptr))) {
+    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+    return 0;
+  }
+
+  png_bytep io_data = const_cast<png_bytep>(reinterpret_cast<const png_bytep>(Data));
+  png_set_read_fn(png_ptr, &io_data, PngReadCallback);
+
+  png_read_info(png_ptr, info_ptr);
+
+  png_uint_32 width = 0, height = 0;
+  int bit_depth = 0, color_type = 0, interlace_method = 0;
+  int compression_method = 0, filter_method = 0;
+  (void)png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth, &color_type,
+                     &interlace_method, &compression_method, &filter_method);
+
+  (void)png_get_IHDR(png_ptr, info_ptr, nullptr, &height, nullptr, &color_type,
+                     nullptr, &compression_method, nullptr);
+  (void)png_get_IHDR(nullptr, info_ptr, &width, &height, &bit_depth, &color_type,
+                     &interlace_method, &compression_method, &filter_method);
+  (void)png_get_IHDR(png_ptr, nullptr, &width, &height, &bit_depth, &color_type,
+                     &interlace_method, &compression_method, &filter_method);
+
+  png_bytep trans_alpha = nullptr;
+  int num_trans = 0;
+  png_color_16p trans_color = nullptr;
+  (void)png_get_tRNS(png_ptr, info_ptr, &trans_alpha, &num_trans, &trans_color);
+  (void)png_get_tRNS(png_ptr, info_ptr, nullptr, &num_trans, nullptr);
+
+  png_color_16p background = nullptr;
+  (void)png_get_bKGD(png_ptr, info_ptr, &background);
+  (void)png_get_bKGD(png_ptr, info_ptr, nullptr);
+
+  png_color_8p sig_bit = nullptr;
+  (void)png_get_sBIT(png_ptr, info_ptr, &sig_bit);
+  (void)png_get_sBIT(png_ptr, info_ptr, nullptr);
+
+  (void)png_get_valid(png_ptr, info_ptr, PNG_INFO_tRNS);
+  (void)png_get_valid(png_ptr, info_ptr, PNG_INFO_bKGD);
+  (void)png_get_valid(png_ptr, info_ptr, PNG_INFO_sBIT);
+  (void)png_get_valid(png_ptr, info_ptr, PNG_INFO_PLTE);
+  (void)png_get_valid(nullptr, info_ptr, PNG_INFO_tRNS);
+  (void)png_get_valid(png_ptr, nullptr, PNG_INFO_tRNS);
+
+  png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+  return 0;
+}

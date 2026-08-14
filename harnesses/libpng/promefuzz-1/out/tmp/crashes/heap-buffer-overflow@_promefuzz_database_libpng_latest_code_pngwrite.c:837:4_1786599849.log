@@ -1,0 +1,531 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3505096656
+INFO: Loaded 1 modules   (5935 inline 8-bit counters): 5935 [0x5f56ab79f450, 0x5f56ab7a0b7f), 
+INFO: Loaded 1 PC tables (5935 PCs): 5935 [0x5f56ab7a0b80,0x5f56ab7b7e70), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 295 ft: 296 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 302 ft: 360 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 1 InsertByte-
+	NEW_FUNC[1/1]: 0x5f56ab73ba30 in png_setup_sub_row /promefuzz/database/libpng/latest/build_asan/../code/pngwutil.c:2281
+#10	NEW    cov: 332 ft: 398 corp: 3/7b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 2 ChangeBit-CMP- DE: "\000\000"-
+	NEW_FUNC[1/4]: 0x5f56ab696970 in png_calloc /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:51
+	NEW_FUNC[2/4]: 0x5f56ab73c230 in png_setup_up_row /promefuzz/database/libpng/latest/build_asan/../code/pngwutil.c:2341
+#11	NEW    cov: 371 ft: 456 corp: 4/11b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 1 ChangeByte-
+#12	NEW    cov: 371 ft: 468 corp: 5/15b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 1 CMP- DE: "\377\304"-
+#14	NEW    cov: 372 ft: 469 corp: 6/17b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 2 ShuffleBytes-PersAutoDict- DE: "\000\000"-
+#15	NEW    cov: 372 ft: 518 corp: 7/19b lim: 4 exec/s: 0 rss: 36Mb L: 2/4 MS: 1 InsertByte-
+#16	NEW    cov: 372 ft: 520 corp: 8/21b lim: 4 exec/s: 0 rss: 36Mb L: 2/4 MS: 1 ShuffleBytes-
+#18	NEW    cov: 386 ft: 556 corp: 9/25b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 2 ShuffleBytes-CMP- DE: "\001\000"-
+#19	NEW    cov: 388 ft: 558 corp: 10/29b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 1 ChangeBinInt-
+#25	NEW    cov: 398 ft: 588 corp: 11/33b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 1 ChangeBit-
+#28	NEW    cov: 398 ft: 599 corp: 12/37b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 3 CopyPart-ChangeBinInt-ChangeBit-
+#31	NEW    cov: 398 ft: 645 corp: 13/41b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 3 ShuffleBytes-CrossOver-ChangeByte-
+#33	NEW    cov: 398 ft: 646 corp: 14/45b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 2 ChangeByte-ChangeBinInt-
+#34	NEW    cov: 406 ft: 675 corp: 15/49b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 1 ChangeByte-
+#40	NEW    cov: 406 ft: 693 corp: 16/53b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 1 ShuffleBytes-
+#41	NEW    cov: 408 ft: 699 corp: 17/57b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 1 CrossOver-
+#42	NEW    cov: 411 ft: 710 corp: 18/61b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 1 ChangeBit-
+#43	NEW    cov: 411 ft: 764 corp: 19/63b lim: 4 exec/s: 0 rss: 39Mb L: 2/4 MS: 1 EraseBytes-
+#49	NEW    cov: 412 ft: 766 corp: 20/67b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 1 ShuffleBytes-
+#50	NEW    cov: 413 ft: 769 corp: 21/71b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 1 ChangeBit-
+#52	NEW    cov: 416 ft: 778 corp: 22/74b lim: 4 exec/s: 0 rss: 41Mb L: 3/4 MS: 2 ChangeBit-CrossOver-
+#54	NEW    cov: 416 ft: 779 corp: 23/78b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 2 ShuffleBytes-ShuffleBytes-
+	NEW_FUNC[1/3]: 0x5f56ab706ae0 in png_set_PLTE /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:574
+	NEW_FUNC[2/3]: 0x5f56ab711de0 in png_do_check_palette_indexes /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:700
+#58	NEW    cov: 446 ft: 827 corp: 24/82b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 4 ChangeBinInt-ChangeByte-ChangeBinInt-CopyPart-
+#59	NEW    cov: 446 ft: 828 corp: 25/86b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 1 ChangeBinInt-
+#60	NEW    cov: 465 ft: 856 corp: 26/89b lim: 4 exec/s: 0 rss: 42Mb L: 3/4 MS: 1 CrossOver-
+#63	NEW    cov: 467 ft: 858 corp: 27/93b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 3 CrossOver-ChangeBit-ChangeBit-
+#72	NEW    cov: 467 ft: 860 corp: 28/96b lim: 4 exec/s: 0 rss: 44Mb L: 3/4 MS: 4 ShuffleBytes-PersAutoDict-EraseBytes-ChangeBit- DE: "\000\000"-
+#74	NEW    cov: 467 ft: 865 corp: 29/100b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 2 ChangeBit-CopyPart-
+#76	NEW    cov: 467 ft: 868 corp: 30/104b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 2 InsertByte-ChangeBit-
+#78	NEW    cov: 467 ft: 870 corp: 31/108b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 2 CopyPart-PersAutoDict- DE: "\001\000"-
+#80	NEW    cov: 468 ft: 903 corp: 32/112b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 2 ChangeBit-ShuffleBytes-
+#86	NEW    cov: 468 ft: 904 corp: 33/116b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 1 ChangeBinInt-
+#89	NEW    cov: 468 ft: 908 corp: 34/120b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 3 ChangeBit-ChangeBit-CopyPart-
+#91	NEW    cov: 468 ft: 912 corp: 35/124b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 2 ChangeBit-ShuffleBytes-
+#93	NEW    cov: 468 ft: 915 corp: 36/128b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 2 InsertByte-ShuffleBytes-
+#98	NEW    cov: 468 ft: 919 corp: 37/131b lim: 4 exec/s: 0 rss: 47Mb L: 3/4 MS: 5 CrossOver-ChangeBit-ChangeByte-CrossOver-EraseBytes-
+#99	NEW    cov: 468 ft: 921 corp: 38/135b lim: 4 exec/s: 0 rss: 47Mb L: 4/4 MS: 1 ChangeBinInt-
+#101	NEW    cov: 468 ft: 923 corp: 39/139b lim: 4 exec/s: 0 rss: 48Mb L: 4/4 MS: 2 CopyPart-ShuffleBytes-
+#102	NEW    cov: 468 ft: 925 corp: 40/143b lim: 4 exec/s: 0 rss: 48Mb L: 4/4 MS: 1 CopyPart-
+#103	NEW    cov: 468 ft: 928 corp: 41/147b lim: 4 exec/s: 0 rss: 48Mb L: 4/4 MS: 1 CopyPart-
+#106	NEW    cov: 468 ft: 929 corp: 42/150b lim: 4 exec/s: 0 rss: 48Mb L: 3/4 MS: 3 ChangeBinInt-EraseBytes-CopyPart-
+#112	NEW    cov: 468 ft: 930 corp: 43/154b lim: 4 exec/s: 0 rss: 49Mb L: 4/4 MS: 1 ChangeByte-
+#115	REDUCE cov: 468 ft: 930 corp: 43/153b lim: 4 exec/s: 0 rss: 50Mb L: 3/4 MS: 3 ChangeByte-CrossOver-EraseBytes-
+#117	REDUCE cov: 468 ft: 930 corp: 43/152b lim: 4 exec/s: 0 rss: 50Mb L: 3/4 MS: 2 CrossOver-EraseBytes-
+#132	NEW    cov: 468 ft: 931 corp: 44/156b lim: 4 exec/s: 0 rss: 52Mb L: 4/4 MS: 5 PersAutoDict-EraseBytes-PersAutoDict-ChangeByte-CrossOver- DE: "\001\000"-"\377\304"-
+#140	NEW    cov: 468 ft: 934 corp: 45/160b lim: 4 exec/s: 0 rss: 53Mb L: 4/4 MS: 3 ChangeBinInt-ChangeBit-ChangeByte-
+#146	REDUCE cov: 468 ft: 934 corp: 45/159b lim: 4 exec/s: 0 rss: 54Mb L: 3/4 MS: 1 EraseBytes-
+#157	NEW    cov: 468 ft: 936 corp: 46/163b lim: 4 exec/s: 0 rss: 55Mb L: 4/4 MS: 1 ChangeByte-
+#164	NEW    cov: 468 ft: 938 corp: 47/167b lim: 4 exec/s: 0 rss: 56Mb L: 4/4 MS: 2 CMP-ChangeBit- DE: "\000\000"-
+#166	NEW    cov: 468 ft: 940 corp: 48/171b lim: 4 exec/s: 0 rss: 56Mb L: 4/4 MS: 2 ChangeBinInt-ChangeByte-
+#169	NEW    cov: 470 ft: 957 corp: 49/175b lim: 4 exec/s: 0 rss: 57Mb L: 4/4 MS: 3 CrossOver-ShuffleBytes-CrossOver-
+#175	NEW    cov: 470 ft: 958 corp: 50/179b lim: 4 exec/s: 0 rss: 58Mb L: 4/4 MS: 1 ChangeBinInt-
+#184	NEW    cov: 470 ft: 960 corp: 51/183b lim: 4 exec/s: 0 rss: 59Mb L: 4/4 MS: 4 EraseBytes-CrossOver-CopyPart-ChangeBit-
+#197	NEW    cov: 470 ft: 961 corp: 52/187b lim: 4 exec/s: 0 rss: 61Mb L: 4/4 MS: 3 ChangeBit-ChangeByte-ChangeByte-
+#199	NEW    cov: 470 ft: 963 corp: 53/190b lim: 4 exec/s: 0 rss: 61Mb L: 3/4 MS: 2 CrossOver-ChangeBit-
+#200	REDUCE cov: 470 ft: 963 corp: 53/188b lim: 4 exec/s: 0 rss: 61Mb L: 2/4 MS: 1 EraseBytes-
+#208	NEW    cov: 470 ft: 964 corp: 54/191b lim: 4 exec/s: 0 rss: 62Mb L: 3/4 MS: 3 CrossOver-PersAutoDict-ChangeByte- DE: "\377\304"-
+#219	REDUCE cov: 470 ft: 968 corp: 55/195b lim: 4 exec/s: 0 rss: 64Mb L: 4/4 MS: 1 CopyPart-
+#220	NEW    cov: 475 ft: 974 corp: 56/198b lim: 4 exec/s: 0 rss: 64Mb L: 3/4 MS: 1 CrossOver-
+#231	NEW    cov: 475 ft: 975 corp: 57/202b lim: 4 exec/s: 0 rss: 66Mb L: 4/4 MS: 1 ChangeBinInt-
+#240	REDUCE cov: 476 ft: 1003 corp: 58/206b lim: 4 exec/s: 0 rss: 67Mb L: 4/4 MS: 4 EraseBytes-InsertByte-CopyPart-InsertByte-
+#244	NEW    cov: 476 ft: 1006 corp: 59/209b lim: 4 exec/s: 0 rss: 67Mb L: 3/4 MS: 4 EraseBytes-ChangeBit-PersAutoDict-InsertByte- DE: "\001\000"-
+#248	NEW    cov: 476 ft: 1008 corp: 60/213b lim: 4 exec/s: 0 rss: 68Mb L: 4/4 MS: 4 ChangeByte-ChangeByte-CopyPart-ShuffleBytes-
+#257	NEW    cov: 477 ft: 1016 corp: 61/217b lim: 4 exec/s: 0 rss: 69Mb L: 4/4 MS: 4 InsertByte-ChangeByte-ChangeBit-ShuffleBytes-
+#265	NEW    cov: 477 ft: 1017 corp: 62/220b lim: 4 exec/s: 0 rss: 70Mb L: 3/4 MS: 3 PersAutoDict-ChangeByte-ChangeBit- DE: "\001\000"-
+#269	NEW    cov: 477 ft: 1018 corp: 63/223b lim: 4 exec/s: 0 rss: 71Mb L: 3/4 MS: 4 EraseBytes-EraseBytes-ChangeByte-CrossOver-
+#280	NEW    cov: 477 ft: 1021 corp: 64/227b lim: 4 exec/s: 0 rss: 72Mb L: 4/4 MS: 1 ChangeBit-
+#286	NEW    cov: 477 ft: 1029 corp: 65/231b lim: 4 exec/s: 0 rss: 73Mb L: 4/4 MS: 1 CopyPart-
+#302	NEW    cov: 477 ft: 1030 corp: 66/235b lim: 4 exec/s: 0 rss: 75Mb L: 4/4 MS: 1 ShuffleBytes-
+#313	NEW    cov: 477 ft: 1031 corp: 67/239b lim: 4 exec/s: 0 rss: 76Mb L: 4/4 MS: 1 ChangeBit-
+#321	NEW    cov: 477 ft: 1033 corp: 68/243b lim: 4 exec/s: 0 rss: 78Mb L: 4/4 MS: 3 ChangeBinInt-InsertByte-ShuffleBytes-
+#336	NEW    cov: 477 ft: 1035 corp: 69/247b lim: 4 exec/s: 0 rss: 80Mb L: 4/4 MS: 5 PersAutoDict-InsertByte-CrossOver-ChangeBinInt-ChangeBit- DE: "\000\000"-
+#349	NEW    cov: 477 ft: 1036 corp: 70/250b lim: 4 exec/s: 0 rss: 81Mb L: 3/4 MS: 3 ChangeByte-EraseBytes-CrossOver-
+#350	NEW    cov: 477 ft: 1037 corp: 71/254b lim: 4 exec/s: 0 rss: 81Mb L: 4/4 MS: 1 ChangeBit-
+#384	NEW    cov: 477 ft: 1038 corp: 72/257b lim: 4 exec/s: 0 rss: 86Mb L: 3/4 MS: 4 ShuffleBytes-ChangeASCIIInt-ShuffleBytes-ChangeASCIIInt-
+#407	NEW    cov: 477 ft: 1039 corp: 73/261b lim: 4 exec/s: 0 rss: 89Mb L: 4/4 MS: 3 CopyPart-ShuffleBytes-ChangeBit-
+#451	NEW    cov: 477 ft: 1040 corp: 74/265b lim: 4 exec/s: 0 rss: 95Mb L: 4/4 MS: 4 ChangeByte-ChangeBit-ChangeByte-ChangeBit-
+#458	REDUCE cov: 477 ft: 1041 corp: 75/268b lim: 4 exec/s: 0 rss: 96Mb L: 3/4 MS: 2 CrossOver-ChangeBit-
+#490	NEW    cov: 477 ft: 1043 corp: 76/272b lim: 4 exec/s: 0 rss: 100Mb L: 4/4 MS: 2 ChangeByte-PersAutoDict- DE: "\001\000"-
+#511	NEW    cov: 477 ft: 1045 corp: 77/276b lim: 4 exec/s: 0 rss: 103Mb L: 4/4 MS: 1 ChangeByte-
+#521	NEW    cov: 479 ft: 1051 corp: 78/280b lim: 4 exec/s: 0 rss: 104Mb L: 4/4 MS: 5 CrossOver-CopyPart-ShuffleBytes-ChangeByte-ChangeBinInt-
+#533	REDUCE cov: 479 ft: 1051 corp: 78/279b lim: 4 exec/s: 0 rss: 106Mb L: 3/4 MS: 2 EraseBytes-ChangeBit-
+#544	NEW    cov: 480 ft: 1060 corp: 79/283b lim: 4 exec/s: 0 rss: 107Mb L: 4/4 MS: 1 ChangeBinInt-
+#545	NEW    cov: 480 ft: 1062 corp: 80/287b lim: 4 exec/s: 0 rss: 107Mb L: 4/4 MS: 1 ShuffleBytes-
+#551	NEW    cov: 480 ft: 1069 corp: 81/291b lim: 4 exec/s: 0 rss: 108Mb L: 4/4 MS: 1 CopyPart-
+#592	REDUCE cov: 480 ft: 1070 corp: 82/294b lim: 4 exec/s: 0 rss: 114Mb L: 3/4 MS: 1 CopyPart-
+#596	REDUCE cov: 480 ft: 1072 corp: 83/297b lim: 4 exec/s: 0 rss: 114Mb L: 3/4 MS: 4 ChangeByte-ChangeBinInt-ShuffleBytes-ChangeBit-
+#610	NEW    cov: 480 ft: 1084 corp: 84/301b lim: 4 exec/s: 0 rss: 116Mb L: 4/4 MS: 4 CrossOver-PersAutoDict-ChangeByte-ChangeByte- DE: "\001\000"-
+#612	NEW    cov: 480 ft: 1085 corp: 85/305b lim: 4 exec/s: 0 rss: 116Mb L: 4/4 MS: 2 ChangeByte-ChangeByte-
+#614	NEW    cov: 480 ft: 1086 corp: 86/309b lim: 4 exec/s: 0 rss: 116Mb L: 4/4 MS: 2 ChangeBinInt-ChangeBinInt-
+#676	NEW    cov: 480 ft: 1087 corp: 87/313b lim: 4 exec/s: 0 rss: 125Mb L: 4/4 MS: 2 CrossOver-ChangeByte-
+#715	REDUCE cov: 480 ft: 1087 corp: 87/312b lim: 4 exec/s: 0 rss: 130Mb L: 3/4 MS: 4 CopyPart-CopyPart-ShuffleBytes-EraseBytes-
+#751	NEW    cov: 480 ft: 1089 corp: 88/316b lim: 4 exec/s: 0 rss: 134Mb L: 4/4 MS: 1 ChangeBit-
+#762	NEW    cov: 480 ft: 1090 corp: 89/320b lim: 4 exec/s: 0 rss: 136Mb L: 4/4 MS: 1 ShuffleBytes-
+#858	NEW    cov: 480 ft: 1091 corp: 90/324b lim: 4 exec/s: 0 rss: 149Mb L: 4/4 MS: 1 ChangeBinInt-
+#969	NEW    cov: 480 ft: 1092 corp: 91/328b lim: 4 exec/s: 0 rss: 163Mb L: 4/4 MS: 1 CopyPart-
+#975	REDUCE cov: 480 ft: 1092 corp: 91/327b lim: 4 exec/s: 0 rss: 164Mb L: 3/4 MS: 1 EraseBytes-
+#1003	REDUCE cov: 480 ft: 1094 corp: 92/331b lim: 4 exec/s: 0 rss: 167Mb L: 4/4 MS: 3 PersAutoDict-CrossOver-ShuffleBytes- DE: "\377\304"-
+#1004	NEW    cov: 480 ft: 1096 corp: 93/335b lim: 4 exec/s: 0 rss: 167Mb L: 4/4 MS: 1 CopyPart-
+#1017	NEW    cov: 480 ft: 1097 corp: 94/339b lim: 4 exec/s: 0 rss: 169Mb L: 4/4 MS: 3 CopyPart-ChangeByte-CrossOver-
+#1208	NEW    cov: 480 ft: 1099 corp: 95/343b lim: 4 exec/s: 0 rss: 194Mb L: 4/4 MS: 1 CopyPart-
+#1247	NEW    cov: 480 ft: 1101 corp: 96/347b lim: 4 exec/s: 0 rss: 199Mb L: 4/4 MS: 4 ShuffleBytes-ChangeByte-ChangeBit-PersAutoDict- DE: "\001\000"-
+#1284	NEW    cov: 480 ft: 1102 corp: 97/351b lim: 4 exec/s: 0 rss: 204Mb L: 4/4 MS: 2 ShuffleBytes-ChangeByte-
+#1398	NEW    cov: 480 ft: 1104 corp: 98/355b lim: 4 exec/s: 0 rss: 219Mb L: 4/4 MS: 4 ShuffleBytes-ChangeBit-ChangeBit-CrossOver-
+#1406	REDUCE cov: 480 ft: 1104 corp: 98/354b lim: 4 exec/s: 0 rss: 219Mb L: 1/4 MS: 3 ChangeBit-InsertByte-CrossOver-
+#1421	NEW    cov: 480 ft: 1105 corp: 99/358b lim: 4 exec/s: 0 rss: 221Mb L: 4/4 MS: 5 ChangeBinInt-CrossOver-CrossOver-CrossOver-ChangeBinInt-
+#1439	NEW    cov: 480 ft: 1107 corp: 100/362b lim: 4 exec/s: 0 rss: 224Mb L: 4/4 MS: 3 ChangeBinInt-ShuffleBytes-ShuffleBytes-
+#1465	NEW    cov: 480 ft: 1108 corp: 101/366b lim: 4 exec/s: 0 rss: 227Mb L: 4/4 MS: 1 ChangeByte-
+#1500	NEW    cov: 480 ft: 1112 corp: 102/369b lim: 4 exec/s: 0 rss: 232Mb L: 3/4 MS: 5 EraseBytes-ChangeBinInt-InsertByte-CopyPart-ShuffleBytes-
+#1551	NEW    cov: 480 ft: 1113 corp: 103/373b lim: 4 exec/s: 0 rss: 238Mb L: 4/4 MS: 1 ChangeByte-
+#1759	NEW    cov: 482 ft: 1115 corp: 104/378b lim: 6 exec/s: 0 rss: 261Mb L: 5/5 MS: 3 CopyPart-CopyPart-InsertByte-
+#1763	NEW    cov: 486 ft: 1119 corp: 105/384b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 4 ChangeBinInt-InsertByte-ChangeBit-CrossOver-
+#1764	NEW    cov: 487 ft: 1120 corp: 106/390b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 1 CrossOver-
+#1769	NEW    cov: 487 ft: 1121 corp: 107/396b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 5 CrossOver-CrossOver-CopyPart-InsertRepeatedBytes-CrossOver-
+#1770	NEW    cov: 487 ft: 1122 corp: 108/402b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 1 PersAutoDict- DE: "\000\000"-
+#1773	NEW    cov: 490 ft: 1126 corp: 109/407b lim: 6 exec/s: 0 rss: 261Mb L: 5/6 MS: 3 ChangeByte-ShuffleBytes-InsertByte-
+#1776	NEW    cov: 490 ft: 1127 corp: 110/413b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 3 PersAutoDict-CrossOver-ShuffleBytes- DE: "\001\000"-
+#1783	NEW    cov: 490 ft: 1128 corp: 111/419b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 2 PersAutoDict-PersAutoDict- DE: "\377\304"-"\000\000"-
+#1824	NEW    cov: 490 ft: 1132 corp: 112/425b lim: 6 exec/s: 0 rss: 261Mb L: 6/6 MS: 1 PersAutoDict- DE: "\377\304"-
+#1942	NEW    cov: 490 ft: 1133 corp: 113/430b lim: 6 exec/s: 0 rss: 263Mb L: 5/6 MS: 3 CopyPart-CopyPart-InsertByte-
+	NEW_FUNC[1/3]: 0x5f56ab6781c8 in PngFlushCallback(png_struct_def*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848.cpp:26
+	NEW_FUNC[2/3]: 0x5f56ab713610 in png_flush /promefuzz/database/libpng/latest/build_asan/../code/pngwio.c:72
+#1988	NEW    cov: 498 ft: 1141 corp: 114/436b lim: 6 exec/s: 0 rss: 263Mb L: 6/6 MS: 1 PersAutoDict- DE: "\001\000"-
+#2016	REDUCE cov: 498 ft: 1146 corp: 115/442b lim: 6 exec/s: 0 rss: 263Mb L: 6/6 MS: 3 InsertByte-ShuffleBytes-CopyPart-
+#2041	NEW    cov: 498 ft: 1147 corp: 116/447b lim: 6 exec/s: 0 rss: 263Mb L: 5/6 MS: 5 ChangeBit-ShuffleBytes-CopyPart-EraseBytes-CMP- DE: "\011\000"-
+#2178	NEW    cov: 498 ft: 1154 corp: 117/453b lim: 6 exec/s: 0 rss: 263Mb L: 6/6 MS: 2 CopyPart-CopyPart-
+#2208	NEW    cov: 498 ft: 1156 corp: 118/459b lim: 6 exec/s: 0 rss: 263Mb L: 6/6 MS: 5 ChangeBit-ChangeBit-CopyPart-CopyPart-CrossOver-
+#2216	REDUCE cov: 498 ft: 1163 corp: 119/465b lim: 6 exec/s: 0 rss: 263Mb L: 6/6 MS: 3 InsertByte-CrossOver-CopyPart-
+#2427	NEW    cov: 498 ft: 1166 corp: 120/473b lim: 8 exec/s: 0 rss: 263Mb L: 8/8 MS: 1 InsertRepeatedBytes-
+#2433	NEW    cov: 498 ft: 1167 corp: 121/477b lim: 8 exec/s: 0 rss: 263Mb L: 4/8 MS: 1 ChangeByte-
+#2512	NEW    cov: 498 ft: 1174 corp: 122/485b lim: 8 exec/s: 0 rss: 263Mb L: 8/8 MS: 4 ChangeBit-PersAutoDict-CopyPart-PersAutoDict- DE: "\000\000"-"\001\000"-
+#2538	NEW    cov: 498 ft: 1175 corp: 123/493b lim: 8 exec/s: 0 rss: 263Mb L: 8/8 MS: 1 InsertRepeatedBytes-
+#2587	NEW    cov: 498 ft: 1178 corp: 124/500b lim: 8 exec/s: 0 rss: 263Mb L: 7/8 MS: 4 EraseBytes-CrossOver-PersAutoDict-CrossOver- DE: "\001\000"-
+#2762	NEW    cov: 498 ft: 1179 corp: 125/508b lim: 8 exec/s: 0 rss: 263Mb L: 8/8 MS: 5 InsertRepeatedBytes-CopyPart-ChangeBit-InsertByte-ChangeASCIIInt-
+#2805	NEW    cov: 498 ft: 1182 corp: 126/516b lim: 8 exec/s: 0 rss: 263Mb L: 8/8 MS: 3 CopyPart-ChangeBinInt-ChangeByte-
+#2852	NEW    cov: 499 ft: 1183 corp: 127/520b lim: 8 exec/s: 0 rss: 263Mb L: 4/8 MS: 2 ShuffleBytes-CopyPart-
+#2960	REDUCE cov: 499 ft: 1183 corp: 127/519b lim: 8 exec/s: 0 rss: 263Mb L: 3/8 MS: 3 InsertByte-CopyPart-EraseBytes-
+libpng error: invalid screen gamma in png_set_gamma
+	NEW_FUNC[1/3]: 0x5f56ab691970 in png_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:41
+	NEW_FUNC[2/3]: 0x5f56ab691ac0 in png_default_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:713
+libpng error: invalid screen gamma in png_set_gamma
+#3302	NEW    cov: 520 ft: 1214 corp: 128/530b lim: 11 exec/s: 0 rss: 264Mb L: 11/11 MS: 1 CopyPart-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+#3398	NEW    cov: 520 ft: 1221 corp: 129/541b lim: 11 exec/s: 0 rss: 264Mb L: 11/11 MS: 5 InsertRepeatedBytes-ChangeBinInt-CrossOver-ShuffleBytes-InsertRepeatedBytes-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+#3706	NEW    cov: 522 ft: 1224 corp: 130/552b lim: 14 exec/s: 0 rss: 264Mb L: 11/11 MS: 4 InsertRepeatedBytes-CrossOver-InsertRepeatedBytes-CopyPart-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+#3762	NEW    cov: 522 ft: 1227 corp: 131/564b lim: 14 exec/s: 0 rss: 264Mb L: 12/12 MS: 3 EraseBytes-CopyPart-CopyPart-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+#3816	NEW    cov: 533 ft: 1238 corp: 132/578b lim: 14 exec/s: 0 rss: 264Mb L: 14/14 MS: 4 ChangeBit-InsertByte-ShuffleBytes-CrossOver-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+#3831	NEW    cov: 534 ft: 1239 corp: 133/592b lim: 14 exec/s: 0 rss: 264Mb L: 14/14 MS: 5 InsertByte-CopyPart-ChangeBit-InsertRepeatedBytes-CrossOver-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+#4083	REDUCE cov: 534 ft: 1239 corp: 133/589b lim: 14 exec/s: 0 rss: 264Mb L: 5/14 MS: 1 EraseBytes-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: PNG_TRANSFORM_STRIP_FILLER: BEFORE+AFTER not supported
+	NEW_FUNC[1/3]: 0x5f56ab694190 in png_app_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:406
+	NEW_FUNC[2/3]: 0x5f56ab70eba0 in png_set_swap_alpha /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:224
+libpng error: PNG_TRANSFORM_STRIP_FILLER: BEFORE+AFTER not supported
+#4394	NEW    cov: 572 ft: 1301 corp: 134/605b lim: 17 exec/s: 0 rss: 265Mb L: 16/16 MS: 2 CMP-InsertRepeatedBytes- DE: "\002\000"-
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+	NEW_FUNC[1/1]: 0x5f56ab70ed80 in png_do_invert /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:263
+#4433	REDUCE cov: 583 ft: 1316 corp: 135/620b lim: 17 exec/s: 0 rss: 265Mb L: 15/16 MS: 3 CopyPart-ShuffleBytes-InsertRepeatedBytes-
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid screen gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: invalid file gamma in png_set_gamma
+libpng error: PNG_TRANSFORM_STRIP_FILLER: BEFORE+AFTER not supported
+libpng error: PNG_TRANSFORM_STRIP_FILLER: BEFORE+AFTER not supported
+libpng warning: PNG_TRANSFORM_STRIP_FILLER: BEFORE+AFTER not supported
+libpng warning: png_set_filler is invalid for low bit depth gray output
+=================================================================
+==2116943==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000018e18 at pc 0x5f56ab62fd56 bp 0x7ffebcd80430 sp 0x7ffebcd7fbf0
+READ of size 8 at 0x502000018e18 thread T0
+    #0 0x5f56ab62fd55 in __asan_memcpy (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x12ad55) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #1 0x5f56ab719c8f in png_write_row /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:837:4
+    #2 0x5f56ab71a732 in png_write_image /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:621:10
+    #3 0x5f56ab71d9c3 in png_write_png /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:1450:4
+    #4 0x5f56ab677f4f in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848.cpp:176:3
+    #5 0x5f56ab57dd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x78d74) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #6 0x5f56ab57d469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x78469) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #7 0x5f56ab57ec55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x79c55) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #8 0x5f56ab57f7b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x7a7b5) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #9 0x5f56ab56ca8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x67a8f) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #10 0x5f56ab597116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x92116) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #11 0x7e78958091c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x7e789580928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x5f56ab561a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x5ca74) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+
+0x502000018e18 is located 0 bytes after 8-byte region [0x502000018e10,0x502000018e18)
+allocated by thread T0 here:
+    #0 0x5f56ab631ea3 in malloc (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x12cea3) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #1 0x5f56ab676401 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848.cpp:143:32
+    #2 0x5f56ab57dd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x78d74) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #3 0x5f56ab57d469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x78469) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #4 0x5f56ab57ec55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x79c55) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #5 0x5f56ab57f7b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x7a7b5) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #6 0x5f56ab56ca8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x67a8f) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #7 0x5f56ab597116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x92116) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+    #8 0x7e78958091c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7e789580928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5f56ab561a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x5ca74) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_75/fuzz_driver_75_sanitizing_1786599848+0x12ad55) (BuildId: 64b06e0c3946e47719d15fc66cca6e9d73043069) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x502000018b80: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x502000018c00: fa fa fd fa fa fa fd fa fa fa fd fd fa fa fd fd
+  0x502000018c80: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fa
+  0x502000018d00: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fa
+  0x502000018d80: fa fa fd fd fa fa fd fa fa fa fd fd fa fa fd fd
+=>0x502000018e00: fa fa 00[fa]fa fa fd fd fa fa 00 01 fa fa fa fa
+  0x502000018e80: fa fa fd fa fa fa fa fa fa fa fa fa fa fa fd fa
+  0x502000018f00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000018f80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000019000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000019080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2116943==ABORTING
+MS: 2 EraseBytes-InsertRepeatedBytes-; base unit: 6fce14d8d33303ddb3961059e4ef4a002021a2b1
+0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0x1,0x20,
+\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\001 
+artifact_prefix='./'; Test unit written to ./crash-66294130dfbe672af4a75796e17dcf7c7549e745
+Base64: ////////////////////ASA=

@@ -1,0 +1,39 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1628483712
+INFO: Loaded 1 modules   (6752 inline 8-bit counters): 6752 [0x5b62b9cb70c0, 0x5b62b9cb8b20), 
+INFO: Loaded 1 PC tables (6752 PCs): 6752 [0x5b62b9cb8b20,0x5b62b9cd3120), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+==2115271== ERROR: libFuzzer: deadly signal
+    #0 0x5b62b9b41c45 in __sanitizer_print_stack_trace (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x140c45) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #1 0x5b62b9a9b75c in fuzzer::PrintStackTrace() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x9a75c) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #2 0x5b62b9a817e7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x807e7) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #3 0x7f347717e32f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7f34771d7b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x7f34771d7b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x7f34771d7b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x7f347717e27d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x7f34771618fe in abort stdlib/abort.c:79:7
+    #9 0x5b62b9b7aa69 in PngErrorFn(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913.cpp:20:3
+    #10 0x5b62b9ba3622 in png_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:83:7
+    #11 0x5b62b9b7b103 in ReadDataFn(png_struct_def*, unsigned char*, unsigned long) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913.cpp:46:5
+    #12 0x5b62b9bca72b in png_read_data /promefuzz/database/libpng/latest/build_asan/../code/pngrio.c:37:7
+    #13 0x5b62b9bfe480 in png_read_sig /promefuzz/database/libpng/latest/build_asan/../code/pngrutil.c:137:4
+    #14 0x5b62b9bb271a in png_read_info /promefuzz/database/libpng/latest/build_asan/../code/pngread.c:104:4
+    #15 0x5b62b9b79aba in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913.cpp:134:3
+    #16 0x5b62b9a82db4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x81db4) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #17 0x5b62b9a83fe1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x82fe1) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #18 0x5b62b9a845d7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x835d7) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #19 0x5b62b9a71acf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x70acf) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #20 0x5b62b9a9c156 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x9b156) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+    #21 0x7f34771631c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #22 0x7f347716328a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #23 0x5b62b9a66ab4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_12/fuzz_driver_12_sanitizing_1786597913+0x65ab4) (BuildId: 31c90a2d0ef392c3b237e3cba900cfc4ce15bc67)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

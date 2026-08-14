@@ -1,0 +1,480 @@
+2026-08-12T19:26:21.047061+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260812192621_._PromeFuzz.py_-F_database_libpng_latest_lib.toml_preprocess.log
+2026-08-12T19:26:21.051481+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 30 source files.
+2026-08-12T19:26:21.120912+0000 | ThreadPoolExecutor-2_16 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/pngtest.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.121833+0000 | ThreadPoolExecutor-2_14 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/libtests/pngunknown.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.140969+0000 | ThreadPoolExecutor-2_4 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/libtests/pngimage.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.157916+0000 | ThreadPoolExecutor-2_7 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/tools/pngfix.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.211890+0000 | ThreadPoolExecutor-2_1 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/libtests/timepng.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.266587+0000 | ThreadPoolExecutor-2_7 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/tools/pngcp.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.269065+0000 | ThreadPoolExecutor-2_16 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/libtests/pngstest.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.280704+0000 | ThreadPoolExecutor-2_6 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libpng/latest/code/contrib/libtests/pngvalid.c: 
+Warning: Record png_struct_def has no definition
+Warning: Record png_info_def has no definition
+Warning: Record png_control has no definition
+
+2026-08-12T19:26:21.421042+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 30 source files.
+2026-08-12T19:26:21.457047+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-12T19:26:21.561310+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 0 functions
+2026-08-12T19:26:21.563193+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 246 API functions extracted, dumped to /promefuzz/database/libpng/latest/out/preprocessor/api.pkl
+2026-08-12T19:26:21.563495+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/libpng/latest/out/preprocessor/sources.json
+2026-08-12T19:26:21.563648+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-12T19:26:21.605780+0000 | ThreadPoolExecutor-3_9 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/contrib/tools/png-fix-itxt.c.
+2026-08-12T19:26:21.654993+0000 | ThreadPoolExecutor-3_8 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/mips/mips_init.c.
+2026-08-12T19:26:21.655261+0000 | ThreadPoolExecutor-3_11 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/intel/filter_sse2_intrinsics.c.
+2026-08-12T19:26:21.658380+0000 | ThreadPoolExecutor-3_12 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/powerpc/powerpc_init.c.
+2026-08-12T19:26:21.669886+0000 | ThreadPoolExecutor-3_0 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/mips/filter_msa_intrinsics.c.
+2026-08-12T19:26:21.673705+0000 | ThreadPoolExecutor-3_19 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/powerpc/filter_vsx_intrinsics.c.
+2026-08-12T19:26:21.713858+0000 | ThreadPoolExecutor-3_9 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libpng/latest/code/intel/intel_init.c.
+2026-08-12T19:26:21.937949+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/libpng/latest/out/preprocessor/incidentals.pkl
+2026-08-12T19:26:21.938205+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-12T19:26:22.105525+0000 | ThreadPoolExecutor-4_0 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/libpng/latest/code/contrib/oss-fuzz/libpng_read_fuzzer.cc:
+/promefuzz/database/libpng/latest/code/contrib/oss-fuzz/libpng_read_fuzzer.cc:90:10: error: use of undeclared identifier 'malloc'
+   90 |   return malloc(size);
+      |          ^
+/promefuzz/database/libpng/latest/code/contrib/oss-fuzz/libpng_read_fuzzer.cc:94:10: error: use of undeclared identifier 'free'
+   94 |   return free(ptr);
+      |          ^
+
+2026-08-12T19:26:22.111977+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/libpng/latest/out/preprocessor/call_order.pkl
+2026-08-12T19:26:22.112180+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-12T19:26:22.145529+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.146545+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.169729+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.171582+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.174510+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.175769+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.177055+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.178697+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.179977+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.181513+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.182774+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.184030+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.185589+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.186837+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.188087+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.189318+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.190734+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.190919+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.191654+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.192907+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.193093+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.193852+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.195413+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.196419+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.198026+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.198214+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type _IO_FILE is not found in the meta data.
+2026-08-12T19:26:22.199781+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.201345+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.201540+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.203173+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.203961+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.208584+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type tm is not found in the meta data.
+2026-08-12T19:26:22.210115+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.212058+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.212806+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.235877+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type __jmp_buf_tag[1] is not found in the meta data.
+2026-08-12T19:26:22.236090+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type __jmp_buf_tag[1] is not found in the meta data.
+2026-08-12T19:26:22.236915+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type z_stream_s is not found in the meta data.
+2026-08-12T19:26:22.237087+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_compression_buffer is not found in the meta data.
+2026-08-12T19:26:22.237887+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_compression_buffer is not found in the meta data.
+2026-08-12T19:26:22.238630+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.239323+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.250006+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type (struct png_row_info_struct *, unsigned char *, const unsigned char *) is not found in the meta data.
+2026-08-12T19:26:22.257362+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.258860+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.261053+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.262608+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.264525+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.264709+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.266198+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.267685+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.269150+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.269826+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.270000+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.270661+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.285036+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.285822+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_text_struct is not found in the meta data.
+2026-08-12T19:26:22.286547+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_text_struct is not found in the meta data.
+2026-08-12T19:26:22.290883+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_unknown_chunk_t is not found in the meta data.
+2026-08-12T19:26:22.291597+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_unknown_chunk_t is not found in the meta data.
+2026-08-12T19:26:22.291780+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_struct is not found in the meta data.
+2026-08-12T19:26:22.292519+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_struct is not found in the meta data.
+2026-08-12T19:26:22.296143+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_entry_struct is not found in the meta data.
+2026-08-12T19:26:22.296859+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_entry_struct is not found in the meta data.
+2026-08-12T19:26:22.300314+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.308241+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.308982+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.310609+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.312195+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.313793+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.315356+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.316962+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.318363+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.318542+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type __jmp_buf_tag[1] is not found in the meta data.
+2026-08-12T19:26:22.319933+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.321172+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.322697+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.334920+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.335108+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.336477+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.336654+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.336832+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_struct is not found in the meta data.
+2026-08-12T19:26:22.337527+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_struct is not found in the meta data.
+2026-08-12T19:26:22.338860+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.339030+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.340482+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.340665+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.340859+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_unknown_chunk_t is not found in the meta data.
+2026-08-12T19:26:22.341633+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_unknown_chunk_t is not found in the meta data.
+2026-08-12T19:26:22.343023+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.343211+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.344641+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.346035+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.347360+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.347548+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.349087+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.349282+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.350910+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.352550+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.352739+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.354024+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.355797+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.355991+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.357389+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.359144+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.360946+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.362288+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.363730+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.365059+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.365254+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.366611+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.366811+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.368159+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.368352+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.370214+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.370407+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.371746+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.371939+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.372154+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.372889+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.374249+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.374433+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.375806+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.375998+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.377383+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.377566+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.378979+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.379158+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.380562+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.380743+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.382243+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.382443+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.383834+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.384025+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.385514+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.385717+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.385898+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.386652+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.388025+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.388209+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.388380+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_8_struct is not found in the meta data.
+2026-08-12T19:26:22.389178+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_8_struct is not found in the meta data.
+2026-08-12T19:26:22.390561+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.390747+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.392156+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.392340+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.393734+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.393909+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.395290+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.395481+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.396878+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.397060+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.397225+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_text_struct is not found in the meta data.
+2026-08-12T19:26:22.398000+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_text_struct is not found in the meta data.
+2026-08-12T19:26:22.399391+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.399568+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.399766+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.400538+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.401926+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.402117+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.402297+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.439174+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.440503+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.441770+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.441953+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.443465+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.443656+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.445375+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.447057+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.448293+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.449466+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.450966+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.452172+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.453784+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.453973+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.455268+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.456790+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.458212+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.459399+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.460581+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.461760+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.463167+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.464587+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.465782+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.474130+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.475731+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.477297+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.478841+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.479009+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.480561+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.482102+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.490623+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.490808+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.490987+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.492338+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.492498+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.492655+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_8_struct is not found in the meta data.
+2026-08-12T19:26:22.493429+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_8_struct is not found in the meta data.
+2026-08-12T19:26:22.495157+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.495341+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.495537+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_text_struct is not found in the meta data.
+2026-08-12T19:26:22.497202+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.497385+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.498766+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.498945+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.499140+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.500497+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.500681+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.500890+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.501747+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.503117+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.503292+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.503465+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_unknown_chunk_t is not found in the meta data.
+2026-08-12T19:26:22.504178+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_unknown_chunk_t is not found in the meta data.
+2026-08-12T19:26:22.505390+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.506662+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.506838+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.508102+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.509278+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.510629+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.511994+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.513350+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.514692+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.516075+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.517422+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.518832+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.519505+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.519679+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.520424+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.521720+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.521892+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.523499+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.523657+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.525291+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.525445+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.526735+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.526910+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.528772+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.528937+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.530269+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.530434+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.531732+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.531905+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.533681+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.533864+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.535192+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.535367+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.536955+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.537112+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.538462+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.538634+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.539995+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.540167+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.541493+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.541656+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.543327+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.543480+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.545127+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.545298+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.546639+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.546815+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.548390+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.548553+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.549940+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.550092+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.551459+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.551609+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.553209+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.553377+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.554983+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.555158+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.556428+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.556596+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.556849+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_16_struct is not found in the meta data.
+2026-08-12T19:26:22.558241+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.558423+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.560058+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.560234+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.561523+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.561686+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.563050+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.563222+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.564845+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.565009+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.566360+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.566539+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.567883+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.568054+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.569361+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.569523+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.571303+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.571478+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.572801+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.572969+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.574278+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.574429+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.575756+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.575928+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.576093+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_struct is not found in the meta data.
+2026-08-12T19:26:22.576787+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_sPLT_struct is not found in the meta data.
+2026-08-12T19:26:22.578089+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.578254+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.579547+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.579721+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.581307+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.581464+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.582801+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.582956+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.584263+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.584435+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.585765+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.585934+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.587544+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.587705+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.589056+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.589217+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.590958+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.591115+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.592483+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.592634+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.594002+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.594161+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.595485+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.595656+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.597289+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.597464+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.615876+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.617334+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.618747+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.620127+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.623976+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.657767+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.694735+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.694923+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.695654+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.697177+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.697346+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.698761+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.700027+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.701582+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.701754+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.703309+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.704862+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.705037+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.706439+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.707979+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.709520+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.709698+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type _IO_FILE is not found in the meta data.
+2026-08-12T19:26:22.710416+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type _IO_FILE is not found in the meta data.
+2026-08-12T19:26:22.712778+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.715348+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.715529+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_time_struct is not found in the meta data.
+2026-08-12T19:26:22.716905+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.718644+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.720027+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.721411+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.722633+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.724340+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.725741+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.733754+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.735272+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.736704+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.737927+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.739131+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.740606+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.742055+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.743513+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.744969+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.746230+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.747766+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.749314+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.750777+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.750947+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_8_struct is not found in the meta data.
+2026-08-12T19:26:22.752223+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.753653+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.756403+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.759626+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.760944+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.762511+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.764092+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.765364+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.766923+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.768450+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.769985+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.801294+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.801478+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.801651+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.802930+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.804278+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.804440+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.805958+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.806130+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type _IO_FILE is not found in the meta data.
+2026-08-12T19:26:22.807639+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.809137+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.811040+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.812502+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.812671+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.814182+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.815669+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.816837+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.818310+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_image is not found in the meta data.
+2026-08-12T19:26:22.818476+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_color_struct is not found in the meta data.
+2026-08-12T19:26:22.820038+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.821515+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.823156+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.823337+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.824744+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_struct_def is not found in the meta data.
+2026-08-12T19:26:22.824909+0000 | MainThread WARNING | src.preprocessor.information:parse_cpp_type:218 | Type png_info_def is not found in the meta data.
+2026-08-12T19:26:22.838627+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/libpng/latest/out/preprocessor/info.pkl
+2026-08-12T19:26:22.838823+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-12T19:26:22.841819+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/libpng/latest/out/preprocessor/complexity.pkl
+2026-08-12T19:26:22.841997+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-12T19:26:23.078378+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/libpng/latest/out/preprocessor/*_relev.pkl

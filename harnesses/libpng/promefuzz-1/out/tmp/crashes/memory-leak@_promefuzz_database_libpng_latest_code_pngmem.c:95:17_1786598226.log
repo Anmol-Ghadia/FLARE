@@ -1,0 +1,56 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 78753301
+INFO: Loaded 1 modules   (5816 inline 8-bit counters): 5816 [0x62216fda6f80, 0x62216fda8638), 
+INFO: Loaded 1 PC tables (5816 PCs): 5816 [0x62216fda8638,0x62216fdbf1b8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 105 ft: 106 corp: 1/1b exec/s: 0 rss: 33Mb
+#4	NEW    cov: 105 ft: 108 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 2 CopyPart-CopyPart-
+#37	NEW    cov: 116 ft: 120 corp: 3/7b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 3 ShuffleBytes-ChangeByte-CopyPart-
+#54	NEW    cov: 116 ft: 122 corp: 4/10b lim: 4 exec/s: 0 rss: 34Mb L: 3/4 MS: 2 ShuffleBytes-EraseBytes-
+	NEW_FUNC[1/10]: 0x62216fc7ce58 in PngWarningFn(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225.cpp:69
+	NEW_FUNC[2/10]: 0x62216fc8d8c0 in png_check_fp_number /promefuzz/database/libpng/latest/build_asan/../code/png.c:2714
+
+=================================================================
+==2115705==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x62216fc3af13 in malloc (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x12bf13) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #1 0x62216fca679b in png_malloc_base /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:95:17
+    #2 0x62216fca6e32 in png_malloc_warn /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:217:23
+    #3 0x62216fd15b27 in png_set_sCAL_s /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:476:30
+    #4 0x62216fc7c58c in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225.cpp:120:3
+    #5 0x62216fb86de4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x77de4) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #6 0x62216fb864d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x774d9) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #7 0x62216fb87cc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x78cc5) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #8 0x62216fb88825 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x79825) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #9 0x62216fb75aff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x66aff) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #10 0x62216fba0186 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x91186) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #11 0x79fda7fe71c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x79fda7fe728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x62216fb6aae4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x5bae4) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x62216fc3af13 in malloc (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x12bf13) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #1 0x62216fca679b in png_malloc_base /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:95:17
+    #2 0x62216fca6e32 in png_malloc_warn /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:217:23
+    #3 0x62216fd15a1a in png_set_sCAL_s /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:460:29
+    #4 0x62216fc7c58c in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225.cpp:120:3
+    #5 0x62216fb86de4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x77de4) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #6 0x62216fb864d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x774d9) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #7 0x62216fb87cc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x78cc5) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #8 0x62216fb88825 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x79825) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #9 0x62216fb75aff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x66aff) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #10 0x62216fba0186 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x91186) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+    #11 0x79fda7fe71c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x79fda7fe728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x62216fb6aae4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786598225+0x5bae4) (BuildId: 06adf1045403828d8a34fb2390e3cee879d00d95)
+
+SUMMARY: AddressSanitizer: 8 byte(s) leaked in 2 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 2 ShuffleBytes-InsertByte-; base unit: ae4134a13a1d8cffb6e3f7fdd23690e5b86a48a6
+0x5,0xa,0xa2,0x5,
+\005\012\242\005
+artifact_prefix='./'; Test unit written to ./leak-ca5d2ce2728a4c75c4e58920fa13f5e2e49de634
+Base64: BQqiBQ==
