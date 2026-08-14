@@ -1,0 +1,1229 @@
+{
+    "function_infos": {
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1099:23": {
+            "signature": "/* ParseWithOpts allows you to require (and check) that the JSON is null terminated, and to retrieve the pointer to the final byte parsed. */\n/* If you supply a ptr in return_parse_end and parsing fails, then return_parse_end will contain a pointer to the error so will match cJSON_GetErrorPtr(). */\nCJSON_PUBLIC(cJSON *) cJSON_ParseWithOpts(const char *value, const char **return_parse_end, cJSON_bool require_null_terminated);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)",
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1099:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1112:1"
+            ],
+            "name": "cJSON_ParseWithOpts",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1099:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:109:22": {
+            "signature": "\nCJSON_PUBLIC(double) cJSON_GetNumberValue(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:109:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:117:1"
+            ],
+            "name": "cJSON_GetNumberValue",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:109:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1115:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_ParseWithLengthOpts(const char *value, size_t buffer_length, const char **return_parse_end, cJSON_bool require_null_terminated);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)",
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1115:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1192:1"
+            ],
+            "name": "cJSON_ParseWithLengthOpts",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1115:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1195:23": {
+            "signature": "/* Memory Management: the caller is always responsible to free the results from all variants of cJSON_Parse (with cJSON_Delete) and cJSON_Print (with stdlib free, cJSON_Hooks.free_fn, or cJSON_free as appropriate). The exception is cJSON_PrintPreallocated, where the caller has full responsibility of the buffer. */\n/* Supply a block of JSON, and this returns a cJSON object you can interrogate. */\nCJSON_PUBLIC(cJSON *) cJSON_Parse(const char *value);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1195:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1198:1"
+            ],
+            "name": "cJSON_Parse",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1195:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1200:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_ParseWithLength(const char *value, size_t buffer_length);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1200:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1203:1"
+            ],
+            "name": "cJSON_ParseWithLength",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1200:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:124:27": {
+            "signature": "/* returns the version of cJSON as a string */\nCJSON_PUBLIC(const char*) cJSON_Version(void);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:124:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:130:1"
+            ],
+            "name": "cJSON_Version",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:124:27"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1275:22": {
+            "signature": "/* Render a cJSON entity to text for transfer/storage. */\nCJSON_PUBLIC(char *) cJSON_Print(const cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1275:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1278:1"
+            ],
+            "name": "cJSON_Print",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1275:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1280:22": {
+            "signature": "/* Render a cJSON entity to text for transfer/storage without any formatting. */\nCJSON_PUBLIC(char *) cJSON_PrintUnformatted(const cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1280:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1283:1"
+            ],
+            "name": "cJSON_PrintUnformatted",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1280:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1285:22": {
+            "signature": "/* Render a cJSON entity to text using a buffered strategy. prebuffer is a guess at the final size. guessing well reduces reallocation. fmt=0 gives unformatted, =1 gives formatted */\nCJSON_PUBLIC(char *) cJSON_PrintBuffered(const cJSON *item, int prebuffer, cJSON_bool fmt);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1285:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1314:1"
+            ],
+            "name": "cJSON_PrintBuffered",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1285:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1316:26": {
+            "signature": "/* Render a cJSON entity to text using a buffer already allocated in memory with given length. Returns 1 on success and 0 on failure. */\n/* NOTE: cJSON is not always 100% accurate in estimating how much memory it will use, so to be safe allocate 5 bytes more than you actually need */\nCJSON_PUBLIC(cJSON_bool) cJSON_PrintPreallocated(cJSON *item, char *buffer, const int length, const cJSON_bool format);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1316:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1333:1"
+            ],
+            "name": "cJSON_PrintPreallocated",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1316:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1857:19": {
+            "signature": "/* Returns the number of items in an array (or object). */\nCJSON_PUBLIC(int) cJSON_GetArraySize(const cJSON *array);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1857:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1878:1"
+            ],
+            "name": "cJSON_GetArraySize",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1857:19"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1899:23": {
+            "signature": "/* Retrieve item number \"index\" from array \"array\". Returns NULL if unsuccessful. */\nCJSON_PUBLIC(cJSON *) cJSON_GetArrayItem(const cJSON *array, int index);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1899:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1907:1"
+            ],
+            "name": "cJSON_GetArrayItem",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1899:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1941:23": {
+            "signature": "/* Get item \"string\" from object. Case insensitive. */\nCJSON_PUBLIC(cJSON *) cJSON_GetObjectItem(const cJSON * const object, const char * const string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1941:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1944:1"
+            ],
+            "name": "cJSON_GetObjectItem",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1941:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1946:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_GetObjectItemCaseSensitive(const cJSON * const object, const char * const string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1946:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1949:1"
+            ],
+            "name": "cJSON_GetObjectItemCaseSensitive",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1946:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:1951:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_HasObjectItem(const cJSON *object, const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1951:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:1954:1"
+            ],
+            "name": "cJSON_HasObjectItem",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:1951:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2019:26": {
+            "signature": "/* Append item to the specified array/object. */\nCJSON_PUBLIC(cJSON_bool) cJSON_AddItemToArray(cJSON *array, cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2019:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2022:1"
+            ],
+            "name": "cJSON_AddItemToArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2019:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2077:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_AddItemToObject(cJSON *object, const char *string, cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2077:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2080:1"
+            ],
+            "name": "cJSON_AddItemToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2077:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2083:26": {
+            "signature": "/* Use this when string is definitely const (i.e. a literal, or as good as), and will definitely survive the cJSON object.\n * WARNING: When this function was used, make sure to always check that (item->type & cJSON_StringIsConst) is zero before\n * writing to `item->string` */\nCJSON_PUBLIC(cJSON_bool) cJSON_AddItemToObjectCS(cJSON *object, const char *string, cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2083:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2086:1"
+            ],
+            "name": "cJSON_AddItemToObjectCS",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2083:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2088:26": {
+            "signature": "/* Append reference to item to the specified array/object. Use this when you want to add an existing cJSON to a new cJSON, but don't want to corrupt your existing cJSON. */\nCJSON_PUBLIC(cJSON_bool) cJSON_AddItemReferenceToArray(cJSON *array, cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2088:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2096:1"
+            ],
+            "name": "cJSON_AddItemReferenceToArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2088:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2098:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_AddItemReferenceToObject(cJSON *object, const char *string, cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2098:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2106:1"
+            ],
+            "name": "cJSON_AddItemReferenceToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2098:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:209:20": {
+            "signature": "/* Supply malloc, realloc and free functions to cJSON */\nCJSON_PUBLIC(void) cJSON_InitHooks(cJSON_Hooks* hooks);",
+            "used_composites": [
+                "struct cJSON_Hooks (/promefuzz/database/cjson/latest/code/cJSON.h:125:16)"
+            ],
+            "used_typedefs": [
+                "cJSON_Hooks (/promefuzz/database/cjson/latest/code/cJSON.h:130:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:209:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:238:1"
+            ],
+            "name": "cJSON_InitHooks",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:209:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2108:22": {
+            "signature": "/* Helper functions for creating and adding items to an object at the same time.\n * They return the added item or NULL on failure. */\nCJSON_PUBLIC(cJSON*) cJSON_AddNullToObject(cJSON * const object, const char * const name);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2108:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2118:1"
+            ],
+            "name": "cJSON_AddNullToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2108:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2120:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddTrueToObject(cJSON * const object, const char * const name);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2120:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2130:1"
+            ],
+            "name": "cJSON_AddTrueToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2120:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2132:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddFalseToObject(cJSON * const object, const char * const name);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2132:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2142:1"
+            ],
+            "name": "cJSON_AddFalseToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2132:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2144:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddBoolToObject(cJSON * const object, const char * const name, const cJSON_bool boolean);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2144:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2154:1"
+            ],
+            "name": "cJSON_AddBoolToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2144:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2156:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddNumberToObject(cJSON * const object, const char * const name, const double number);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2156:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2166:1"
+            ],
+            "name": "cJSON_AddNumberToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2156:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2168:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddStringToObject(cJSON * const object, const char * const name, const char * const string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2168:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2178:1"
+            ],
+            "name": "cJSON_AddStringToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2168:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2180:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddRawToObject(cJSON * const object, const char * const name, const char * const raw);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2180:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2190:1"
+            ],
+            "name": "cJSON_AddRawToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2180:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2192:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddObjectToObject(cJSON * const object, const char * const name);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2192:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2202:1"
+            ],
+            "name": "cJSON_AddObjectToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2192:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2204:22": {
+            "signature": "\nCJSON_PUBLIC(cJSON*) cJSON_AddArrayToObject(cJSON * const object, const char * const name);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2204:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2214:1"
+            ],
+            "name": "cJSON_AddArrayToObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2204:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2216:23": {
+            "signature": "/* Remove/Detach items from Arrays/Objects. */\nCJSON_PUBLIC(cJSON *) cJSON_DetachItemViaPointer(cJSON *parent, cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2216:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2250:1"
+            ],
+            "name": "cJSON_DetachItemViaPointer",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2216:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2252:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_DetachItemFromArray(cJSON *array, int which);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2252:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2260:1"
+            ],
+            "name": "cJSON_DetachItemFromArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2252:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2262:20": {
+            "signature": "\nCJSON_PUBLIC(void) cJSON_DeleteItemFromArray(cJSON *array, int which);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2262:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2265:1"
+            ],
+            "name": "cJSON_DeleteItemFromArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2262:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2267:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_DetachItemFromObject(cJSON *object, const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2267:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2272:1"
+            ],
+            "name": "cJSON_DetachItemFromObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2267:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2274:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_DetachItemFromObjectCaseSensitive(cJSON *object, const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2274:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2279:1"
+            ],
+            "name": "cJSON_DetachItemFromObjectCaseSensitive",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2274:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2281:20": {
+            "signature": "\nCJSON_PUBLIC(void) cJSON_DeleteItemFromObject(cJSON *object, const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2281:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2284:1"
+            ],
+            "name": "cJSON_DeleteItemFromObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2281:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2286:20": {
+            "signature": "\nCJSON_PUBLIC(void) cJSON_DeleteItemFromObjectCaseSensitive(cJSON *object, const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2286:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2289:1"
+            ],
+            "name": "cJSON_DeleteItemFromObjectCaseSensitive",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2286:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2292:26": {
+            "signature": "/* Update array items. */\nCJSON_PUBLIC(cJSON_bool) cJSON_InsertItemInArray(cJSON *array, int which, cJSON *newitem);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2292:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2324:1"
+            ],
+            "name": "cJSON_InsertItemInArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2292:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2326:26": {
+            "signature": "/* Shifts pre-existing items to the right. */\nCJSON_PUBLIC(cJSON_bool) cJSON_ReplaceItemViaPointer(cJSON * const parent, cJSON * const item, cJSON * replacement);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2326:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2373:1"
+            ],
+            "name": "cJSON_ReplaceItemViaPointer",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2326:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2375:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_ReplaceItemInArray(cJSON *array, int which, cJSON *newitem);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2375:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2383:1"
+            ],
+            "name": "cJSON_ReplaceItemInArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2375:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2408:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_ReplaceItemInObject(cJSON *object,const char *string,cJSON *newitem);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2408:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2411:1"
+            ],
+            "name": "cJSON_ReplaceItemInObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2408:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2413:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_ReplaceItemInObjectCaseSensitive(cJSON *object,const char *string,cJSON *newitem);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2413:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2416:1"
+            ],
+            "name": "cJSON_ReplaceItemInObjectCaseSensitive",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2413:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2419:23": {
+            "signature": "/* These calls create a cJSON item of the appropriate type. */\nCJSON_PUBLIC(cJSON *) cJSON_CreateNull(void);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2419:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2428:1"
+            ],
+            "name": "cJSON_CreateNull",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2419:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2430:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateTrue(void);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2430:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2439:1"
+            ],
+            "name": "cJSON_CreateTrue",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2430:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2441:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateFalse(void);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2441:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2450:1"
+            ],
+            "name": "cJSON_CreateFalse",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2441:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2452:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateBool(cJSON_bool boolean);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)",
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2452:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2461:1"
+            ],
+            "name": "cJSON_CreateBool",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2452:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2463:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateNumber(double num);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2463:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2487:1"
+            ],
+            "name": "cJSON_CreateNumber",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2463:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2489:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateString(const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2489:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2504:1"
+            ],
+            "name": "cJSON_CreateString",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2489:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2506:23": {
+            "signature": "/* Create a string where valuestring references a string so\n * it will not be freed by cJSON_Delete */\nCJSON_PUBLIC(cJSON *) cJSON_CreateStringReference(const char *string);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2506:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2516:1"
+            ],
+            "name": "cJSON_CreateStringReference",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2506:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2518:23": {
+            "signature": "/* Create an object/array that only references it's elements so\n * they will not be freed by cJSON_Delete */\nCJSON_PUBLIC(cJSON *) cJSON_CreateObjectReference(const cJSON *child);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2518:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2527:1"
+            ],
+            "name": "cJSON_CreateObjectReference",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2518:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2529:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateArrayReference(const cJSON *child);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2529:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2537:1"
+            ],
+            "name": "cJSON_CreateArrayReference",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2529:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2539:23": {
+            "signature": "/* raw json */\nCJSON_PUBLIC(cJSON *) cJSON_CreateRaw(const char *raw);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2539:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2554:1"
+            ],
+            "name": "cJSON_CreateRaw",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2539:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:253:20": {
+            "signature": "/* Delete a cJSON entity and all subentities. */\nCJSON_PUBLIC(void) cJSON_Delete(cJSON *item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:253:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:276:1"
+            ],
+            "name": "cJSON_Delete",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:253:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2556:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateArray(void);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2556:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2565:1"
+            ],
+            "name": "cJSON_CreateArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2556:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2567:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateObject(void);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2567:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2576:1"
+            ],
+            "name": "cJSON_CreateObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2567:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2579:23": {
+            "signature": "/* These utilities create an Array of count items.\n * The parameter count cannot be greater than the number of elements in the number array, otherwise array access will be out of bounds.*/\nCJSON_PUBLIC(cJSON *) cJSON_CreateIntArray(const int *numbers, int count);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2579:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2617:1"
+            ],
+            "name": "cJSON_CreateIntArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2579:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2619:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateFloatArray(const float *numbers, int count);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2619:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2657:1"
+            ],
+            "name": "cJSON_CreateFloatArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2619:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2659:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateDoubleArray(const double *numbers, int count);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2659:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2697:1"
+            ],
+            "name": "cJSON_CreateDoubleArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2659:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2699:23": {
+            "signature": "\nCJSON_PUBLIC(cJSON *) cJSON_CreateStringArray(const char *const *strings, int count);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2699:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2737:1"
+            ],
+            "name": "cJSON_CreateStringArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2699:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2742:23": {
+            "signature": "/* Duplicate a cJSON item */\nCJSON_PUBLIC(cJSON *) cJSON_Duplicate(const cJSON *item, cJSON_bool recurse);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2742:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2745:1"
+            ],
+            "name": "cJSON_Duplicate",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2742:23"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2882:20": {
+            "signature": "/* Minify a strings, remove blank characters(such as ' ', '\\t', '\\r', '\\n') from strings.\n * The input pointer json cannot point to a read-only address area, such as a string constant, \n * but should point to a readable and writable address area. */\nCJSON_PUBLIC(void) cJSON_Minify(char *json);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2882:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2928:1"
+            ],
+            "name": "cJSON_Minify",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2882:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2930:26": {
+            "signature": "/* These functions check the type of an item */\nCJSON_PUBLIC(cJSON_bool) cJSON_IsInvalid(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2930:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2938:1"
+            ],
+            "name": "cJSON_IsInvalid",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2930:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2940:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsFalse(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2940:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2948:1"
+            ],
+            "name": "cJSON_IsFalse",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2940:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2950:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsTrue(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2950:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2958:1"
+            ],
+            "name": "cJSON_IsTrue",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2950:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2961:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsBool(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2961:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2969:1"
+            ],
+            "name": "cJSON_IsBool",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2961:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2970:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsNull(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2970:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2978:1"
+            ],
+            "name": "cJSON_IsNull",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2970:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2980:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsNumber(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2980:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2988:1"
+            ],
+            "name": "cJSON_IsNumber",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2980:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:2990:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsString(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2990:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:2998:1"
+            ],
+            "name": "cJSON_IsString",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:2990:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:3000:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsArray(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3000:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3008:1"
+            ],
+            "name": "cJSON_IsArray",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:3000:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:3010:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsObject(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3010:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3018:1"
+            ],
+            "name": "cJSON_IsObject",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:3010:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:3020:26": {
+            "signature": "\nCJSON_PUBLIC(cJSON_bool) cJSON_IsRaw(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3020:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3028:1"
+            ],
+            "name": "cJSON_IsRaw",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:3020:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:3030:26": {
+            "signature": "/* Duplicate will create a new, identical cJSON item to the one you pass, in new memory that will\n * need to be released. With recurse!=0, it will duplicate any children connected to the item.\n * The item->next and ->prev pointers are always zero on return from Duplicate. */\n/* Recursively compare two cJSON items for equality. If either a or b is NULL or invalid, they will be considered unequal.\n * case_sensitive determines if object keys are treated case sensitive (1) or case insensitive (0) */\nCJSON_PUBLIC(cJSON_bool) cJSON_Compare(const cJSON * const a, const cJSON * const b, const cJSON_bool case_sensitive);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)",
+                "cJSON_bool (/promefuzz/database/cjson/latest/code/cJSON.h:132:13)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3030:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3153:1"
+            ],
+            "name": "cJSON_Compare",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:3030:26"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:3155:22": {
+            "signature": "/* malloc/free objects using the malloc/free functions that have been set with cJSON_InitHooks */\nCJSON_PUBLIC(void *) cJSON_malloc(size_t size);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3155:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3158:1"
+            ],
+            "name": "cJSON_malloc",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:3155:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:3160:20": {
+            "signature": "\nCJSON_PUBLIC(void) cJSON_free(void *object);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3160:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:3164:1"
+            ],
+            "name": "cJSON_free",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:3160:20"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:384:22": {
+            "signature": "/* helper for the cJSON_SetNumberValue macro */\nCJSON_PUBLIC(double) cJSON_SetNumberHelper(cJSON *object, double number);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:384:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:400:1"
+            ],
+            "name": "cJSON_SetNumberHelper",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:384:22"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:403:21": {
+            "signature": "/* Change the valuestring of a cJSON_String object, only takes effect when type of object is cJSON_String */\nCJSON_PUBLIC(char*) cJSON_SetValuestring(cJSON *object, const char *valuestring);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:403:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:444:1"
+            ],
+            "name": "cJSON_SetValuestring",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:403:21"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:94:28": {
+            "signature": "/* For analysing failed parses. This returns a pointer to the parse error. You'll probably need to look a few chars back to make sense of it. Defined when cJSON_Parse() returns 0. 0 when cJSON_Parse() succeeds. */\nCJSON_PUBLIC(const char *) cJSON_GetErrorPtr(void);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:94:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:97:1"
+            ],
+            "name": "cJSON_GetErrorPtr",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:94:28"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.c:99:22": {
+            "signature": "/* Check item type and return its value */\nCJSON_PUBLIC(char *) cJSON_GetStringValue(const cJSON * const item);",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [
+                "cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:123:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/cjson/latest/code/cJSON.c:99:1",
+                "/promefuzz/database/cjson/latest/code/cJSON.c:107:1"
+            ],
+            "name": "cJSON_GetStringValue",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.c:99:22"
+        }
+    },
+    "composite_infos": {
+        "/promefuzz/database/cjson/latest/code/cJSON.h:103:16": {
+            "definition": "/* The cJSON structure: */\nstruct cJSON\n{\n    /* next/prev allow you to walk array/object chains. Alternatively, use GetArraySize/GetArrayItem/GetObjectItem */\n    struct cJSON *next;\n    struct cJSON *prev;\n    /* An array or object item will have a child pointer pointing to a chain of the items in the array/object. */\n    struct cJSON *child;\n\n    /* The type of the item, as above. */\n    int type;\n\n    /* The item's string, if type==cJSON_String  and type == cJSON_Raw */\n    char *valuestring;\n    /* writing to valueint is DEPRECATED, use cJSON_SetNumberValue instead */\n    int valueint;\n    /* The item's number, if type==cJSON_Number */\n    double valuedouble;\n\n    /* The item's name string, if this item is the child of, or is in the list of subitems of an object. */\n    char *string;\n} cJSON;",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [],
+            "name": "struct cJSON",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.h:103:16"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.h:125:16": {
+            "definition": "\nstruct cJSON_Hooks\n{\n      /* malloc/free are CDECL on Windows regardless of the default calling convention of the compiler, so ensure the hooks allow passing those functions directly. */\n      void *(CJSON_CDECL *malloc_fn)(size_t sz);\n      void (CJSON_CDECL *free_fn)(void *ptr);\n} cJSON_Hooks;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "struct cJSON_Hooks",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.h:125:16"
+        }
+    },
+    "class_infos": {},
+    "typedef_infos": {
+        "/promefuzz/database/cjson/latest/code/cJSON.h:132:13": {
+            "definition": "\ntypedef int cJSON_bool;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "cJSON_bool",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.h:132:13"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.h:123:3": {
+            "definition": "/* The cJSON structure: */\ntypedef struct cJSON cJSON;",
+            "used_composites": [
+                "struct cJSON (/promefuzz/database/cjson/latest/code/cJSON.h:103:16)"
+            ],
+            "used_typedefs": [],
+            "name": "cJSON",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.h:123:3"
+        },
+        "/promefuzz/database/cjson/latest/code/cJSON.h:130:3": {
+            "definition": "\ntypedef struct cJSON_Hooks cJSON_Hooks;",
+            "used_composites": [
+                "struct cJSON_Hooks (/promefuzz/database/cjson/latest/code/cJSON.h:125:16)"
+            ],
+            "used_typedefs": [],
+            "name": "cJSON_Hooks",
+            "location": "/promefuzz/database/cjson/latest/code/cJSON.h:130:3"
+        }
+    }
+}

@@ -1,10 +1,14 @@
 tinycbor:
   opencode:
-    tinycbor/opencode-1/fuzz/
-    tinycbor/opencode-2/fuzz/
-    tinycbor/opencode-3/fuzz/
+    - tinycbor/opencode-1/fuzz/
+    - tinycbor/opencode-2/fuzz/
+    - tinycbor/opencode-3/fuzz/
   promefuzz:
-    tinycbor/promefuzz-1/out/fuzz_driver/
-
-
-
+    - tinycbor/promefuzz-1/out/fuzz_driver/
+cjson:
+  opencode:
+    - cjson/opencode-1/fuzz/
+    - cjson/opencode-2/fuzz/
+    - cjson/opencode-3/fuzz/
+  promefuzz:
+    - cjson/promefuzz-1/out/fuzz_driver/
