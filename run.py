@@ -20,13 +20,14 @@ import shutil
 import yaml
 from pathlib import Path
 
-# ---------------- CONFIG (edit these) ----------------
+# ---------------- CONFIG (edit this) -------------------
 LIBRARIES = ["tinycbor"]               # libraries being fuzzed
+# -------------------------------------------------------
+
 CAPTAINRC = Path("./captainrc")        # path to source captainrc
 HARNESS_YAML = Path("./harness.yaml")  # path to harness manifest
 MAGMA_ROOT = Path("./modules/magma")           # path to magma checkout
 SRC_EXTS = {".c", ".cc", ".cpp"}       # harness file extensions to collect
-# -------------------------------------------------------
 
 PLACEHOLDER = re.compile(r"^aflplusplus_TARGETS=.*$", re.MULTILINE)
 
