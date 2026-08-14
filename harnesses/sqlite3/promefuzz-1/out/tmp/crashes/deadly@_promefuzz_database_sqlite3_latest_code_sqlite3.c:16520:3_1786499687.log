@@ -1,0 +1,38 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 813227913
+INFO: Loaded 1 modules   (32249 inline 8-bit counters): 32249 [0x5d5df5771d10, 0x5d5df5779b09), 
+INFO: Loaded 1 PC tables (32249 PCs): 32249 [0x5d5df5779b10,0x5d5df57f7aa0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+fuzz_driver_116_sanitizing_1786499687: sqlite3.c:16520: void sqlite3_str_vappendf(sqlite3_str *, const char *, struct __va_list_tag *): Assertion `pAccum->nChar>0 || (pAccum->printfFlags&SQLITE_PRINTF_MALLOCED)==0' failed.
+==2088320== ERROR: libFuzzer: deadly signal
+    #0 0x5d5df5201c05 in __sanitizer_print_stack_trace (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x245c05) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #1 0x5d5df515b71c in fuzzer::PrintStackTrace() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x19f71c) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #2 0x5d5df51417a7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x1857a7) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #3 0x765db7d8132f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x765db7ddab2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x765db7ddab2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x765db7ddab2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x765db7d8127d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x765db7d648fe in abort stdlib/abort.c:79:7
+    #9 0x765db7d6481a in __assert_fail_base assert/assert.c:96:3
+    #10 0x765db7d77516 in __assert_fail assert/assert.c:105:3
+    #11 0x5d5df523f88f in sqlite3_str_vappendf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:16520:3
+    #12 0x5d5df5249b5d in sqlite3_str_appendf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17583:3
+    #13 0x5d5df5235b9a in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687.c:114:5
+    #14 0x5d5df5142d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x186d74) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #15 0x5d5df5143fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x187fa1) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #16 0x5d5df5144597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x188597) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #17 0x5d5df5131a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x175a8f) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #18 0x5d5df515c116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x1a0116) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+    #19 0x765db7d661c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #20 0x765db7d6628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #21 0x5d5df5126a74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_116/fuzz_driver_116_sanitizing_1786499687+0x16aa74) (BuildId: 8eab91cf210f0c927ddd2e09c1822586727eea47)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

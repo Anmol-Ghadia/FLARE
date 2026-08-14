@@ -1,0 +1,98 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 780836670
+INFO: Loaded 1 modules   (32251 inline 8-bit counters): 32251 [0x633514c37cf0, 0x633514c3faeb), 
+INFO: Loaded 1 PC tables (32251 PCs): 32251 [0x633514c3faf0,0x633514cbdaa0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 70 ft: 71 corp: 1/1b exec/s: 0 rss: 34Mb
+#3	NEW    cov: 70 ft: 72 corp: 2/2b lim: 4 exec/s: 0 rss: 34Mb L: 1/1 MS: 1 ChangeByte-
+#4	NEW    cov: 71 ft: 76 corp: 3/3b lim: 4 exec/s: 0 rss: 34Mb L: 1/1 MS: 1 ChangeByte-
+#7	NEW    cov: 74 ft: 92 corp: 4/5b lim: 4 exec/s: 0 rss: 34Mb L: 2/2 MS: 3 ChangeBit-ShuffleBytes-CrossOver-
+#9	NEW    cov: 77 ft: 104 corp: 5/7b lim: 4 exec/s: 0 rss: 34Mb L: 2/2 MS: 2 ChangeByte-CMP- DE: "\000\000"-
+#10	NEW    cov: 77 ft: 105 corp: 6/8b lim: 4 exec/s: 0 rss: 34Mb L: 1/2 MS: 1 ChangeBinInt-
+#14	NEW    cov: 77 ft: 111 corp: 7/11b lim: 4 exec/s: 0 rss: 34Mb L: 3/3 MS: 4 CopyPart-ChangeBinInt-CrossOver-InsertByte-
+#22	NEW    cov: 77 ft: 113 corp: 8/14b lim: 4 exec/s: 0 rss: 34Mb L: 3/3 MS: 3 InsertByte-ChangeBinInt-ChangeByte-
+#25	NEW    cov: 78 ft: 121 corp: 9/18b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 3 ChangeByte-CMP-CopyPart- DE: "M\000"-
+#29	NEW    cov: 78 ft: 139 corp: 10/22b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 4 InsertByte-CopyPart-ChangeByte-PersAutoDict- DE: "M\000"-
+/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780.c:24:12: runtime error: left shift of 14004991 by 8 places cannot be represented in type 'int'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780.c:24:12 
+#45	NEW    cov: 80 ft: 141 corp: 11/26b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 1 ChangeBinInt-
+#54	NEW    cov: 80 ft: 142 corp: 12/27b lim: 4 exec/s: 0 rss: 34Mb L: 1/4 MS: 4 ChangeBit-ChangeBit-CopyPart-EraseBytes-
+#60	NEW    cov: 80 ft: 144 corp: 13/29b lim: 4 exec/s: 0 rss: 34Mb L: 2/4 MS: 1 ChangeBit-
+#79	NEW    cov: 80 ft: 148 corp: 14/31b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 4 ChangeByte-CrossOver-CopyPart-EraseBytes-
+#100	REDUCE cov: 80 ft: 148 corp: 14/30b lim: 4 exec/s: 0 rss: 35Mb L: 1/4 MS: 1 CrossOver-
+#107	NEW    cov: 80 ft: 160 corp: 15/34b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 2 InsertByte-CopyPart-
+#254	NEW    cov: 80 ft: 161 corp: 16/35b lim: 4 exec/s: 0 rss: 35Mb L: 1/4 MS: 2 ShuffleBytes-ChangeByte-
+#314	NEW    cov: 80 ft: 162 corp: 17/39b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 5 ShuffleBytes-ChangeBinInt-ChangeByte-ChangeBit-ChangeBinInt-
+#560	NEW    cov: 81 ft: 163 corp: 18/44b lim: 6 exec/s: 0 rss: 36Mb L: 5/5 MS: 1 InsertRepeatedBytes-
+#576	NEW    cov: 81 ft: 164 corp: 19/50b lim: 6 exec/s: 0 rss: 36Mb L: 6/6 MS: 1 CMP- DE: "\000\000\000?"-
+#808	REDUCE cov: 81 ft: 172 corp: 20/58b lim: 8 exec/s: 0 rss: 36Mb L: 8/8 MS: 2 InsertRepeatedBytes-CrossOver-
+#809	NEW    cov: 81 ft: 173 corp: 21/66b lim: 8 exec/s: 0 rss: 37Mb L: 8/8 MS: 1 InsertRepeatedBytes-
+#896	NEW    cov: 81 ft: 175 corp: 22/74b lim: 8 exec/s: 0 rss: 37Mb L: 8/8 MS: 2 CrossOver-CopyPart-
+#920	NEW    cov: 81 ft: 177 corp: 23/79b lim: 8 exec/s: 0 rss: 37Mb L: 5/8 MS: 4 ChangeByte-PersAutoDict-EraseBytes-ShuffleBytes- DE: "\000\000\000?"-
+#1118	NEW    cov: 81 ft: 179 corp: 24/84b lim: 8 exec/s: 0 rss: 37Mb L: 5/8 MS: 3 CMP-CopyPart-CrossOver- DE: "\001\000"-
+#1425	NEW    cov: 82 ft: 181 corp: 25/95b lim: 11 exec/s: 0 rss: 38Mb L: 11/11 MS: 2 CopyPart-CopyPart-
+#1434	NEW    cov: 83 ft: 183 corp: 26/104b lim: 11 exec/s: 0 rss: 38Mb L: 9/11 MS: 4 PersAutoDict-CopyPart-ChangeBit-CrossOver- DE: "M\000"-
+#1518	NEW    cov: 83 ft: 184 corp: 27/105b lim: 11 exec/s: 0 rss: 38Mb L: 1/11 MS: 4 ChangeBit-EraseBytes-InsertByte-EraseBytes-
+#1535	REDUCE cov: 83 ft: 184 corp: 27/104b lim: 11 exec/s: 0 rss: 38Mb L: 10/10 MS: 2 EraseBytes-CopyPart-
+#1721	REDUCE cov: 83 ft: 184 corp: 27/103b lim: 11 exec/s: 0 rss: 38Mb L: 7/10 MS: 1 EraseBytes-
+#1828	NEW    cov: 83 ft: 189 corp: 28/108b lim: 11 exec/s: 0 rss: 38Mb L: 5/10 MS: 2 ShuffleBytes-ChangeByte-
+#2134	NEW    cov: 83 ft: 190 corp: 29/120b lim: 14 exec/s: 0 rss: 38Mb L: 12/12 MS: 1 InsertRepeatedBytes-
+#2150	NEW    cov: 90 ft: 200 corp: 30/133b lim: 14 exec/s: 0 rss: 38Mb L: 13/13 MS: 1 InsertByte-
+	NEW_FUNC[1/1]: 0x633514932ea0 in sqlite3Utf8Read /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:18955
+#2159	NEW    cov: 95 ft: 209 corp: 31/147b lim: 14 exec/s: 0 rss: 39Mb L: 14/14 MS: 4 InsertRepeatedBytes-ChangeBit-ChangeBit-CopyPart-
+=================================================================
+==2087498==ERROR: AddressSanitizer: global-buffer-overflow on address 0x633514b718da at pc 0x633514712fea bp 0x7fff3adece80 sp 0x7fff3adece78
+READ of size 1 at 0x633514b718da thread T0
+    #0 0x633514712fe9 in sqlite3StrICmp /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19649:9
+    #1 0x633514712f6f in sqlite3_stricmp /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19641:10
+    #2 0x6335146fc48d in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780.c:129:15
+    #3 0x633514608d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x185d74) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+    #4 0x633514608469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x185469) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+    #5 0x633514609c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x186c55) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+    #6 0x63351460a7b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x1877b5) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+    #7 0x6335145f7a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x174a8f) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+    #8 0x633514622116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x19f116) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+    #9 0x7b73c19451c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7b73c194528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x6335145eca74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_79/fuzz_driver_79_sanitizing_1786497780+0x169a74) (BuildId: 9e19845214eba5ff4f15d343824999f9fde48f52)
+
+0x633514b718da is located 0 bytes after global variable 'zKWText' defined in '/promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:150682' (0x633514b71640) of size 666
+SUMMARY: AddressSanitizer: global-buffer-overflow /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19649:9 in sqlite3StrICmp
+Shadow bytes around the buggy address:
+  0x633514b71600: f9 f9 f9 f9 07 f9 f9 f9 00 00 00 00 00 00 00 00
+  0x633514b71680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x633514b71700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x633514b71780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x633514b71800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x633514b71880: 00 00 00 00 00 00 00 00 00 00 00[02]f9 f9 f9 f9
+  0x633514b71900: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x633514b71980: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x633514b71a00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x633514b71a80: 00 00 00 00 06 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x633514b71b00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2087498==ABORTING
+MS: 4 CopyPart-InsertRepeatedBytes-CopyPart-ChangeBit-; base unit: 352e614ff0b97ef6749625dd0d4e5cf4c9f26a43
+0x3c,0x3c,0x3c,0x0,0x0,0x0,0x0,0x0,0x3c,0x28,0x3c,0x3c,0x1,
+<<<\000\000\000\000\000<(<<\001
+artifact_prefix='./'; Test unit written to ./crash-2ef2bb25ceb04c8a8a296564778a5a9cab4b5ecd
+Base64: PDw8AAAAAAA8KDw8AQ==

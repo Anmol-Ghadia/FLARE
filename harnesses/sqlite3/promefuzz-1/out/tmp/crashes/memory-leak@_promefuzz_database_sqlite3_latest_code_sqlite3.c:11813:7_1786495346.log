@@ -1,0 +1,55 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1228258714
+INFO: Loaded 1 modules   (32318 inline 8-bit counters): 32318 [0x6100353c8090, 0x6100353cfece), 
+INFO: Loaded 1 PC tables (32318 PCs): 32318 [0x6100353cfed0,0x61003544e2b0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 1362 ft: 1363 corp: 1/1b exec/s: 0 rss: 38Mb
+	NEW_FUNC[1/17]: 0x610034ea1c20 in sqlite3_log /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17539
+	NEW_FUNC[2/17]: 0x610034ead250 in sqlite3ErrorWithMsg /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19505
+
+=================================================================
+==2086163==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x610034e4bea3 in malloc (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x23aea3) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #1 0x6100352b95e6 in sqlite3MemMalloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:11813:7
+    #2 0x610034f0c11c in mallocWithAlarm /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15694:7
+    #3 0x610034e940fa in sqlite3Malloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15724:5
+    #4 0x610034e942ca in sqlite3_malloc64 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15748:10
+    #5 0x610034e8b7d0 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345.c:68:11
+    #6 0x610034d97d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x186d74) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #7 0x610034d97469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x186469) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #8 0x610034d98c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x187c55) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #9 0x610034d997b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x1887b5) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #10 0x610034d86a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x175a8f) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #11 0x610034db1116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x1a0116) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #12 0x72e7567aa1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x72e7567aa28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #14 0x610034d7ba74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x16aa74) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+
+Direct leak of 16 byte(s) in 1 object(s) allocated from:
+    #0 0x610034e4bea3 in malloc (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x23aea3) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #1 0x6100352b95e6 in sqlite3MemMalloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:11813:7
+    #2 0x610034f0c11c in mallocWithAlarm /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15694:7
+    #3 0x610034e940fa in sqlite3Malloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15724:5
+    #4 0x610034e942ca in sqlite3_malloc64 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15748:10
+    #5 0x610034e8b7d0 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345.c:68:11
+    #6 0x610034d97d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x186d74) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #7 0x610034d97469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x186469) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #8 0x610034d990f6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x1880f6) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #9 0x610034d99597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x188597) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #10 0x610034d86a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x175a8f) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #11 0x610034db1116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x1a0116) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+    #12 0x72e7567aa1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x72e7567aa28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #14 0x610034d7ba74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_11/fuzz_driver_11_sanitizing_1786495345+0x16aa74) (BuildId: 33afd9fb402a67888e40e23580942f6704b2e911)
+
+SUMMARY: AddressSanitizer: 32 byte(s) leaked in 2 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 1 InsertByte-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xa,0xe7,
+\012\347
+artifact_prefix='./'; Test unit written to ./leak-d31ad64e06f8d389a59d7253e39a69305a95aed1
+Base64: Cuc=

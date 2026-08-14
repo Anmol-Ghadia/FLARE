@@ -1,0 +1,52 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2777445246
+INFO: Loaded 1 modules   (32269 inline 8-bit counters): 32269 [0x61a86d41cd70, 0x61a86d424b7d), 
+INFO: Loaded 1 PC tables (32269 PCs): 32269 [0x61a86d424b80,0x61a86d4a2c50), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 82 ft: 83 corp: 1/1b exec/s: 0 rss: 34Mb
+	NEW_FUNC[1/197]: 0x61a86cee2128 in read_int /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950.c:23
+	NEW_FUNC[2/197]: 0x61a86cee21a8 in read_u32 /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950.c:12
+#3	NEW    cov: 820 ft: 880 corp: 2/3b lim: 4 exec/s: 0 rss: 37Mb L: 2/2 MS: 1 InsertByte-
+	NEW_FUNC[1/4]: 0x61a86cee9d20 in sqlite3Realloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15888
+	NEW_FUNC[2/4]: 0x61a86cef4200 in sqlite3DbMallocSize /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15777
+#4	NEW    cov: 852 ft: 951 corp: 3/5b lim: 4 exec/s: 0 rss: 37Mb L: 2/2 MS: 1 CrossOver-
+#5	NEW    cov: 853 ft: 953 corp: 4/6b lim: 4 exec/s: 0 rss: 37Mb L: 1/2 MS: 1 ChangeByte-
+#11	NEW    cov: 853 ft: 958 corp: 5/9b lim: 4 exec/s: 0 rss: 38Mb L: 3/3 MS: 1 CrossOver-
+#12	NEW    cov: 858 ft: 967 corp: 6/12b lim: 4 exec/s: 0 rss: 38Mb L: 3/3 MS: 1 InsertByte-
+#13	NEW    cov: 858 ft: 972 corp: 7/16b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 1 InsertByte-
+#19	NEW    cov: 859 ft: 980 corp: 8/20b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 1 InsertByte-
+fuzz_driver_106_sanitizing_1786498950: sqlite3.c:16520: void sqlite3_str_vappendf(sqlite3_str *, const char *, struct __va_list_tag *): Assertion `pAccum->nChar>0 || (pAccum->printfFlags&SQLITE_PRINTF_MALLOCED)==0' failed.
+==2088059== ERROR: libFuzzer: deadly signal
+    #0 0x61a86ceacc05 in __sanitizer_print_stack_trace (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x245c05) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #1 0x61a86ce0671c in fuzzer::PrintStackTrace() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x19f71c) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #2 0x61a86cdec7a7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x1857a7) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #3 0x723078e5932f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x723078eb2b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x723078eb2b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x723078eb2b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x723078e5927d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x723078e3c8fe in abort stdlib/abort.c:79:7
+    #9 0x723078e3c81a in __assert_fail_base assert/assert.c:96:3
+    #10 0x723078e4f516 in __assert_fail assert/assert.c:105:3
+    #11 0x61a86ceea5ef in sqlite3_str_vappendf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:16520:3
+    #12 0x61a86cef48bd in sqlite3_str_appendf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17583:3
+    #13 0x61a86cee1df9 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950.c:117:11
+    #14 0x61a86cdedd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x186d74) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #15 0x61a86cded469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x186469) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #16 0x61a86cdeec55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x187c55) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #17 0x61a86cdef7b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x1887b5) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #18 0x61a86cddca8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x175a8f) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #19 0x61a86ce07116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x1a0116) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+    #20 0x723078e3e1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #21 0x723078e3e28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #22 0x61a86cdd1a74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_106/fuzz_driver_106_sanitizing_1786498950+0x16aa74) (BuildId: 42e5f34c8b6064cba95a41529268efcd8479aae7)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 1 InsertByte-; base unit: 71853c6197a6a7f222db0f1978c7cb232b87c5ee
+0xa,0xa,0xe3,
+\012\012\343
+artifact_prefix='./'; Test unit written to ./crash-0f16c9b05b0bb380a0d36685499d1745d715bef4
+Base64: Cgrj

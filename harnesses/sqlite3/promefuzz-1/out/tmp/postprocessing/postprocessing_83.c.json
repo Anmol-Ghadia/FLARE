@@ -1,0 +1,356 @@
+{
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:121:23": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2928:18",
+    "calleeName": "sqlite3_malloc",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:112:12",
+    "callerName": "dummyCreateOrConnect"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:124:7": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7149:16",
+    "calleeName": "sqlite3_declare_vtab",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:112:12",
+    "callerName": "dummyCreateOrConnect"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:125:5": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2932:17",
+    "calleeName": "sqlite3_free",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:112:12",
+    "callerName": "dummyCreateOrConnect"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:138:24": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9350:44",
+    "calleeName": "sqlite3_vtab_collation",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:132:12",
+    "callerName": "dummyBestIndex"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:147:7": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:165:16",
+    "calleeName": "sqlite3_libversion_number",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:132:12",
+    "callerName": "dummyBestIndex"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:150:7": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:165:16",
+    "calleeName": "sqlite3_libversion_number",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:132:12",
+    "callerName": "dummyBestIndex"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:157:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2932:17",
+    "calleeName": "sqlite3_free",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:156:12",
+    "callerName": "dummyDisconnectOrDestroy"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:164:22": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2928:18",
+    "calleeName": "sqlite3_malloc",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:161:12",
+    "callerName": "dummyOpen"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:172:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2932:17",
+    "calleeName": "sqlite3_free",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:171:12",
+    "callerName": "dummyClose"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:200:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5845:17",
+    "calleeName": "sqlite3_result_int",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:198:12",
+    "callerName": "dummyColumn"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:224:8": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5962:16",
+    "calleeName": "sqlite3_create_collation_v2",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:214:13",
+    "callerName": "coll_needed_cb"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:253:8": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3573:16",
+    "calleeName": "sqlite3_open",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:255:13": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:330:16",
+    "calleeName": "sqlite3_close",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:274:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "calleeName": "fi_string",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:275:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "calleeName": "fi_string",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:276:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "calleeName": "fi_string",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:277:13": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "calleeName": "fi_string",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:278:8": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "calleeName": "fi_string",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:279:8": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "calleeName": "fi_string",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:285:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8939:16",
+    "calleeName": "sqlite3_stricmp",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:286:19": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:286:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8939:16",
+    "calleeName": "sqlite3_stricmp",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:286:45": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:288:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6005:16",
+    "calleeName": "sqlite3_collation_needed",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:289:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6005:16",
+    "calleeName": "sqlite3_collation_needed",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:289:36": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:295:20": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:42:17",
+    "calleeName": "fi_u32",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:296:12": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5962:16",
+    "calleeName": "sqlite3_create_collation_v2",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:298:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:299:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:76:12",
+    "calleeName": "pick_encoding",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:301:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:313:20": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:42:17",
+    "calleeName": "fi_u32",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:314:12": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5955:16",
+    "calleeName": "sqlite3_create_collation",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:316:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:317:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:76:12",
+    "calleeName": "pick_encoding",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:319:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:320:31": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:330:20": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:42:17",
+    "calleeName": "fi_u32",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:331:12": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5962:16",
+    "calleeName": "sqlite3_create_collation_v2",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:333:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:334:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:76:12",
+    "calleeName": "pick_encoding",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:346:21": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:42:17",
+    "calleeName": "fi_u32",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:347:10": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7069:16",
+    "calleeName": "sqlite3_create_module_v2",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:349:9": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:361:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:402:16",
+    "calleeName": "sqlite3_exec",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:362:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:402:16",
+    "calleeName": "sqlite3_exec",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:363:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:402:16",
+    "calleeName": "sqlite3_exec",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:366:24": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "calleeName": "fi_bool",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:371:11": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4104:16",
+    "calleeName": "sqlite3_prepare_v2",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:372:9": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4766:16",
+    "calleeName": "sqlite3_step",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:374:7": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5067:16",
+    "calleeName": "sqlite3_finalize",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:380:13": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5067:16",
+    "calleeName": "sqlite3_finalize",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:388:3": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:330:16",
+    "calleeName": "sqlite3_close",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:231:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:46:20": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:37:16",
+    "calleeName": "fi_u8",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:42:17",
+    "callerName": "fi_u32"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:52:16": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:37:16",
+    "calleeName": "fi_u8",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:51:12",
+    "callerName": "fi_bool"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:57:19": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:37:16",
+    "calleeName": "fi_u8",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:55:15",
+    "callerName": "fi_len"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:61:14": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:55:15",
+    "calleeName": "fi_len",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "callerName": "fi_string"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:67:19": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:37:16",
+    "calleeName": "fi_u8",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:60:14",
+    "callerName": "fi_string"
+  },
+  "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:81:15": {
+    "calleeDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:37:16",
+    "calleeName": "fi_u8",
+    "callerDeclLoc": "/promefuzz/database/sqlite3/latest/out/tmp/postprocessing/postprocessing_83.c:76:12",
+    "callerName": "pick_encoding"
+  }
+}

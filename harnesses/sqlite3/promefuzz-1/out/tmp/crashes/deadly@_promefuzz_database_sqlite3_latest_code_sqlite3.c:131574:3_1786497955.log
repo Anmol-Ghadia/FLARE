@@ -1,0 +1,37 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3528099299
+INFO: Loaded 1 modules   (32462 inline 8-bit counters): 32462 [0x58cc8081b870, 0x58cc8082373e), 
+INFO: Loaded 1 PC tables (32462 PCs): 32462 [0x58cc80823740,0x58cc808a2420), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+fuzz_driver_84_sanitizing_1786497954: sqlite3.c:131574: int sqlite3_vtab_on_conflict(sqlite3 *): Assertion `db->vtabOnConflict>=1 && db->vtabOnConflict<=5' failed.
+==2087592== ERROR: libFuzzer: deadly signal
+    #0 0x58cc802a5c05 in __sanitizer_print_stack_trace (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x247c05) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #1 0x58cc801ff71c in fuzzer::PrintStackTrace() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x1a171c) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #2 0x58cc801e57a7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x1877a7) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #3 0x7a16df82c32f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7a16df885b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x7a16df885b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x7a16df885b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x7a16df82c27d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x7a16df80f8fe in abort stdlib/abort.c:79:7
+    #9 0x7a16df80f81a in __assert_fail_base assert/assert.c:96:3
+    #10 0x7a16df822516 in __assert_fail assert/assert.c:105:3
+    #11 0x58cc8033e4d5 in sqlite3_vtab_on_conflict /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:131574:3
+    #12 0x58cc802d9d04 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954.c:331:9
+    #13 0x58cc801e6d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x188d74) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #14 0x58cc801e7fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x189fa1) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #15 0x58cc801e8597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x18a597) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #16 0x58cc801d5a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x177a8f) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #17 0x58cc80200116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x1a2116) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+    #18 0x7a16df8111c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #19 0x7a16df81128a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #20 0x58cc801caa74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_84/fuzz_driver_84_sanitizing_1786497954+0x16ca74) (BuildId: 7a3628b5d41cd2d7fec83f0f69681310d9a2ba16)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

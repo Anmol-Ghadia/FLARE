@@ -1,0 +1,64 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2795677987
+INFO: Loaded 1 modules   (32372 inline 8-bit counters): 32372 [0x602d8cccd290, 0x602d8ccd5104), 
+INFO: Loaded 1 PC tables (32372 PCs): 32372 [0x602d8ccd5108,0x602d8cd53848), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 893 ft: 894 corp: 1/1b exec/s: 0 rss: 37Mb
+#5	NEW    cov: 894 ft: 895 corp: 2/3b lim: 4 exec/s: 0 rss: 37Mb L: 2/2 MS: 3 ChangeByte-CrossOver-CrossOver-
+#149	NEW    cov: 894 ft: 900 corp: 3/5b lim: 4 exec/s: 0 rss: 51Mb L: 2/2 MS: 4 CrossOver-ChangeBit-CopyPart-InsertByte-
+#180	NEW    cov: 895 ft: 903 corp: 4/8b lim: 4 exec/s: 0 rss: 54Mb L: 3/3 MS: 1 InsertByte-
+#409	NEW    cov: 895 ft: 908 corp: 5/14b lim: 6 exec/s: 0 rss: 74Mb L: 6/6 MS: 4 InsertByte-ChangeBit-EraseBytes-CMP- DE: "\000\000\000\000"-
+#413	NEW    cov: 895 ft: 910 corp: 6/19b lim: 6 exec/s: 0 rss: 75Mb L: 5/6 MS: 4 CopyPart-EraseBytes-ChangeBit-PersAutoDict- DE: "\000\000\000\000"-
+#425	NEW    cov: 896 ft: 912 corp: 7/25b lim: 6 exec/s: 0 rss: 76Mb L: 6/6 MS: 2 ChangeBit-InsertRepeatedBytes-
+#440	NEW    cov: 896 ft: 919 corp: 8/30b lim: 6 exec/s: 0 rss: 77Mb L: 5/6 MS: 5 CopyPart-CrossOver-InsertByte-CopyPart-CopyPart-
+#456	NEW    cov: 898 ft: 921 corp: 9/36b lim: 6 exec/s: 0 rss: 79Mb L: 6/6 MS: 1 InsertByte-
+#458	NEW    cov: 898 ft: 923 corp: 10/40b lim: 6 exec/s: 0 rss: 79Mb L: 4/6 MS: 2 ChangeBinInt-EraseBytes-
+#508	NEW    cov: 901 ft: 926 corp: 11/45b lim: 6 exec/s: 0 rss: 83Mb L: 5/6 MS: 5 ChangeBit-EraseBytes-ChangeByte-InsertByte-CrossOver-
+#615	REDUCE cov: 901 ft: 926 corp: 11/43b lim: 6 exec/s: 0 rss: 91Mb L: 3/6 MS: 2 PersAutoDict-EraseBytes- DE: "\000\000\000\000"-
+#772	REDUCE cov: 901 ft: 926 corp: 11/41b lim: 6 exec/s: 0 rss: 104Mb L: 4/6 MS: 2 EraseBytes-PersAutoDict- DE: "\000\000\000\000"-
+#808	NEW    cov: 901 ft: 927 corp: 12/46b lim: 6 exec/s: 0 rss: 107Mb L: 5/6 MS: 1 EraseBytes-
+#1044	NEW    cov: 902 ft: 928 corp: 13/53b lim: 8 exec/s: 0 rss: 125Mb L: 7/7 MS: 1 CrossOver-
+#1096	REDUCE cov: 905 ft: 931 corp: 14/60b lim: 8 exec/s: 0 rss: 129Mb L: 7/7 MS: 2 CrossOver-PersAutoDict- DE: "\000\000\000\000"-
+#1103	NEW    cov: 922 ft: 956 corp: 15/68b lim: 8 exec/s: 0 rss: 130Mb L: 8/8 MS: 2 ShuffleBytes-CopyPart-
+#1186	NEW    cov: 923 ft: 957 corp: 16/76b lim: 8 exec/s: 0 rss: 136Mb L: 8/8 MS: 3 CrossOver-CrossOver-CrossOver-
+	NEW_FUNC[1/1]: 0x602d8c7cbbf0 in sqlite3DbStrDup /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:16146
+#1208	NEW    cov: 979 ft: 1093 corp: 17/84b lim: 8 exec/s: 0 rss: 139Mb L: 8/8 MS: 2 CopyPart-CopyPart-
+#1309	NEW    cov: 985 ft: 1105 corp: 18/92b lim: 8 exec/s: 0 rss: 147Mb L: 8/8 MS: 1 CopyPart-
+#1651	NEW    cov: 986 ft: 1111 corp: 19/103b lim: 11 exec/s: 0 rss: 173Mb L: 11/11 MS: 2 ChangeBinInt-CrossOver-
+#1664	NEW    cov: 986 ft: 1114 corp: 20/114b lim: 11 exec/s: 0 rss: 174Mb L: 11/11 MS: 3 InsertByte-CrossOver-PersAutoDict- DE: "\000\000\000\000"-
+#1706	NEW    cov: 986 ft: 1119 corp: 21/125b lim: 11 exec/s: 0 rss: 178Mb L: 11/11 MS: 2 ShuffleBytes-ChangeBit-
+#1763	NEW    cov: 986 ft: 1124 corp: 22/134b lim: 11 exec/s: 0 rss: 182Mb L: 9/11 MS: 2 PersAutoDict-InsertRepeatedBytes- DE: "\000\000\000\000"-
+#2134	NEW    cov: 986 ft: 1125 corp: 23/147b lim: 14 exec/s: 0 rss: 211Mb L: 13/13 MS: 1 InsertRepeatedBytes-
+#2396	NEW    cov: 987 ft: 1127 corp: 24/159b lim: 14 exec/s: 0 rss: 231Mb L: 12/13 MS: 2 ChangeBinInt-InsertRepeatedBytes-
+#2703	NEW    cov: 988 ft: 1128 corp: 25/176b lim: 17 exec/s: 0 rss: 254Mb L: 17/17 MS: 2 InsertRepeatedBytes-InsertByte-
+	NEW_FUNC[1/1]: 0x602d8c8382c0 in sqlite3Get4byte /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:20616
+#2751	NEW    cov: 993 ft: 1183 corp: 26/193b lim: 17 exec/s: 0 rss: 258Mb L: 17/17 MS: 3 CMP-InsertByte-InsertRepeatedBytes- DE: "\000\000\000\000\000\000\000\200"-
+#2837	NEW    cov: 993 ft: 1189 corp: 27/209b lim: 17 exec/s: 0 rss: 264Mb L: 16/17 MS: 1 InsertRepeatedBytes-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2087760==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000048 (pc 0x602d8c9c7a63 bp 0x7fff944be1f0 sp 0x7fff944be1a0 T0)
+==2087760==The signal is caused by a READ memory access.
+==2087760==Hint: address points to the zero page.
+    #0 0x602d8c9c7a63 in sqlite3OsDlOpen /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:11333:16
+    #1 0x602d8c7e88ca in sqlite3LoadExtension /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:114634:12
+    #2 0x602d8c7e8486 in sqlite3_load_extension /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:114740:8
+    #3 0x602d8c78f827 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267.c:172:13
+    #4 0x602d8c69ad74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x187d74) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+    #5 0x602d8c69a469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x187469) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+    #6 0x602d8c69bc55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x188c55) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+    #7 0x602d8c69c7b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x1897b5) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+    #8 0x602d8c689a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x176a8f) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+    #9 0x602d8c6b4116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x1a1116) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+    #10 0x798d663821c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x798d6638228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x602d8c67ea74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_92/fuzz_driver_92_sanitizing_1786498267+0x16ba74) (BuildId: ed4bb85274fd7b4fd2868051f3f12b5c84fd59ef)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:11333:16 in sqlite3OsDlOpen
+==2087760==ABORTING
+MS: 5 InsertRepeatedBytes-InsertRepeatedBytes-CMP-CopyPart-PersAutoDict- DE: "\000A"-"\000\000\000\000\000\000\000\200"-; base unit: 958284fe0c4ef3342e0f23a0f77bae30741d36d7
+0xff,0xff,0xff,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x80,0xfc,0x0,0x41,0x4c,0xff,0xff,
+\377\377\377\000\000\000\000\000\000\000\200\374\000AL\377\377
+artifact_prefix='./'; Test unit written to ./crash-979cc8aaa3c1be94285cd5e7404278697efa9496
+Base64: ////AAAAAAAAAID8AEFM//8=

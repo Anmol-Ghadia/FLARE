@@ -8,7 +8,7 @@
 |rapidcsv|No|No|Yes|
 |libpng|Yes|No|No|
 |libtiff|Yes|No|No|
-|sqlite3|Yes|No|No|
+|sqlite3|Yes|No|Yes|
 
 ## How to run the experiments
 

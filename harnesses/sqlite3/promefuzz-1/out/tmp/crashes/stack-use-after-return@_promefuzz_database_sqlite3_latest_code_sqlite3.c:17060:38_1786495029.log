@@ -1,0 +1,101 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2340277019
+INFO: Loaded 1 modules   (32254 inline 8-bit counters): 32254 [0x643a73362d90, 0x643a7336ab8e), 
+INFO: Loaded 1 PC tables (32254 PCs): 32254 [0x643a7336ab90,0x643a733e8b70), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 909 ft: 910 corp: 1/1b exec/s: 0 rss: 37Mb
+	NEW_FUNC[1/26]: 0x643a72e39c00 in sqlite3DbMallocSize /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15777
+	NEW_FUNC[2/26]: 0x643a72e3cac0 in sqlite3_log /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17539
+#3	NEW    cov: 1020 ft: 1075 corp: 2/3b lim: 4 exec/s: 0 rss: 38Mb L: 2/2 MS: 1 InsertByte-
+#4	NEW    cov: 1030 ft: 1094 corp: 3/4b lim: 4 exec/s: 0 rss: 38Mb L: 1/2 MS: 1 ChangeBit-
+#5	NEW    cov: 1031 ft: 1096 corp: 4/6b lim: 4 exec/s: 0 rss: 38Mb L: 2/2 MS: 1 CrossOver-
+#10	NEW    cov: 1033 ft: 1098 corp: 5/7b lim: 4 exec/s: 0 rss: 39Mb L: 1/2 MS: 5 CopyPart-ShuffleBytes-EraseBytes-ChangeByte-ChangeByte-
+#16	NEW    cov: 1036 ft: 1101 corp: 6/10b lim: 4 exec/s: 0 rss: 39Mb L: 3/3 MS: 1 CrossOver-
+#19	NEW    cov: 1037 ft: 1102 corp: 7/12b lim: 4 exec/s: 0 rss: 40Mb L: 2/3 MS: 3 ChangeBinInt-CrossOver-InsertByte-
+	NEW_FUNC[1/1]: 0x643a72ea82d0 in sqlite3ErrorToParser /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19561
+#21	NEW    cov: 1046 ft: 1111 corp: 8/14b lim: 4 exec/s: 0 rss: 40Mb L: 2/3 MS: 2 EraseBytes-InsertByte-
+	NEW_FUNC[1/1]: 0x643a73052670 in keywordCode /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:150947
+#22	NEW    cov: 1049 ft: 1114 corp: 9/15b lim: 4 exec/s: 0 rss: 40Mb L: 1/3 MS: 1 ChangeBit-
+#25	NEW    cov: 1050 ft: 1115 corp: 10/17b lim: 4 exec/s: 0 rss: 41Mb L: 2/3 MS: 3 ChangeBinInt-ShuffleBytes-CopyPart-
+#27	NEW    cov: 1051 ft: 1117 corp: 11/21b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 2 InsertByte-CopyPart-
+#29	NEW    cov: 1052 ft: 1118 corp: 12/24b lim: 4 exec/s: 0 rss: 41Mb L: 3/4 MS: 2 ChangeByte-InsertByte-
+#43	NEW    cov: 1053 ft: 1119 corp: 13/26b lim: 4 exec/s: 0 rss: 42Mb L: 2/4 MS: 4 InsertByte-EraseBytes-ChangeBit-InsertByte-
+#44	NEW    cov: 1055 ft: 1121 corp: 14/27b lim: 4 exec/s: 0 rss: 43Mb L: 1/4 MS: 1 ChangeByte-
+#49	NEW    cov: 1060 ft: 1126 corp: 15/29b lim: 4 exec/s: 0 rss: 43Mb L: 2/4 MS: 5 InsertByte-InsertByte-EraseBytes-CopyPart-EraseBytes-
+#51	NEW    cov: 1061 ft: 1129 corp: 16/32b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 2 CrossOver-ChangeBit-
+#58	NEW    cov: 1062 ft: 1130 corp: 17/33b lim: 4 exec/s: 0 rss: 44Mb L: 1/4 MS: 2 ShuffleBytes-CrossOver-
+#60	REDUCE cov: 1062 ft: 1130 corp: 17/32b lim: 4 exec/s: 0 rss: 44Mb L: 2/4 MS: 2 ShuffleBytes-EraseBytes-
+#66	NEW    cov: 1063 ft: 1131 corp: 18/35b lim: 4 exec/s: 0 rss: 45Mb L: 3/4 MS: 1 InsertByte-
+#84	NEW    cov: 1064 ft: 1132 corp: 19/37b lim: 4 exec/s: 0 rss: 47Mb L: 2/4 MS: 3 ChangeBinInt-ChangeBit-ChangeByte-
+#101	NEW    cov: 1064 ft: 1188 corp: 20/39b lim: 4 exec/s: 0 rss: 49Mb L: 2/4 MS: 2 ChangeBit-ChangeByte-
+#106	NEW    cov: 1065 ft: 1190 corp: 21/43b lim: 4 exec/s: 0 rss: 49Mb L: 4/4 MS: 5 InsertByte-ChangeBinInt-EraseBytes-InsertByte-ShuffleBytes-
+#117	NEW    cov: 1065 ft: 1192 corp: 22/47b lim: 4 exec/s: 0 rss: 51Mb L: 4/4 MS: 1 CrossOver-
+=================================================================
+==2086005==ERROR: AddressSanitizer: stack-use-after-return on address 0x7d36737bac20 at pc 0x643a72d648df bp 0x7ffc91cfa9d0 sp 0x7ffc91cfa198
+READ of size 23 at 0x7d36737bac20 thread T0
+    #0 0x643a72d648de in strlen (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x1b68de) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #1 0x643a72e369c1 in sqlite3_str_vappendf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17060:38
+    #2 0x643a72ec7670 in sqlite3VMPrintf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17414:3
+    #3 0x643a72e4845d in sqlite3ErrorWithMsg /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19515:9
+    #4 0x643a73039e93 in sqlite3Prepare /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118945:7
+    #5 0x643a72e80a86 in sqlite3LockAndPrepare /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118995:10
+    #6 0x643a72e4463f in sqlite3_prepare_v2 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:119080:8
+    #7 0x643a72e7d905 in sqlite3_exec /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:113980:10
+    #8 0x643a72e27aa5 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028.c:84:3
+    #9 0x643a72d33d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x185d74) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #10 0x643a72d33469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x185469) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #11 0x643a72d34c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x186c55) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #12 0x643a72d357b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x1877b5) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #13 0x643a72d22a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x174a8f) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #14 0x643a72d4d116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x19f116) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+    #15 0x7d36754bd1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #16 0x7d36754bd28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #17 0x643a72d17a74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x169a74) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c)
+
+Address 0x7d36737bac20 is located in stack of thread T0 at offset 32 in frame
+    #0 0x643a72ec741f in sqlite3VMPrintf /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:17406
+
+  This frame has 2 object(s):
+    [32, 102) 'zBase' (line 17408) <== Memory access at offset 32 is inside this variable
+    [144, 176) 'acc' (line 17409)
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-use-after-return (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1786495028+0x1b68de) (BuildId: fbf544fe71de3855310c2bc563b1e1c5eafd551c) in strlen
+Shadow bytes around the buggy address:
+  0x7d36737ba980: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737baa00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737baa80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737bab00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737bab80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+=>0x7d36737bac00: f5 f5 f5 f5[f5]f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737bac80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737bad00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737bad80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x7d36737bae00: f1 f1 f1 f1 00 00 00 00 00 00 00 00 06 f2 f2 f2
+  0x7d36737bae80: f2 f2 00 00 00 00 f3 f3 f3 f3 f3 f3 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2086005==ABORTING
+MS: 4 CopyPart-ShuffleBytes-CMP-ChangeByte- DE: "C\000"-; base unit: 1e5c2f367f02e47a8c160cda1cd9d91decbac441
+0xb4,0x0,0x5b,
+\264\000[
+artifact_prefix='./'; Test unit written to ./crash-5568da169c0df108d30ef00d84af5f1fb3f766e0
+Base64: tABb

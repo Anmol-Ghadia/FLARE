@@ -1,0 +1,101 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3966938433
+INFO: Loaded 1 modules   (32373 inline 8-bit counters): 32373 [0x5d1cd1f882b0, 0x5d1cd1f90125), 
+INFO: Loaded 1 PC tables (32373 PCs): 32373 [0x5d1cd1f90128,0x5d1cd200e878), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+=================================================================
+==2087862==ERROR: AddressSanitizer: heap-use-after-free on address 0x502000000050 at pc 0x5d1cd1a6374a bp 0x7ffe9d1666a0 sp 0x7ffe9d166698
+READ of size 1 at 0x502000000050 thread T0
+    #0 0x5d1cd1a63749 in sqlite3StrICmp /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19649:9
+    #1 0x5d1cd1ac056b in sqlite3FindTable /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:100582:11
+    #2 0x5d1cd1ca2f52 in sqlite3StartTable /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:101387:14
+    #3 0x5d1cd1c8a7da in yy_reduce /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:148746:4
+    #4 0x5d1cd1c881ac in sqlite3Parser /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:150361:15
+    #5 0x5d1cd1aab999 in sqlite3RunParser /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:151657:5
+    #6 0x5d1cd1c5f389 in sqlite3Prepare /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118920:5
+    #7 0x5d1cd1c011f9 in sqlite3InitCallback /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118331:22
+    #8 0x5d1cd1bfebe8 in sqlite3InitOne /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118425:3
+    #9 0x5d1cd1abffb3 in sqlite3Init /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118634:10
+    #10 0x5d1cd1c7d478 in sqlite3ReadSchema /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118660:10
+    #11 0x5d1cd1ca2efc in sqlite3StartTable /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:101384:20
+    #12 0x5d1cd1c8a7da in yy_reduce /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:148746:4
+    #13 0x5d1cd1c881ac in sqlite3Parser /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:150361:15
+    #14 0x5d1cd1aab999 in sqlite3RunParser /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:151657:5
+    #15 0x5d1cd1c5f389 in sqlite3Prepare /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118920:5
+    #16 0x5d1cd1aa6356 in sqlite3LockAndPrepare /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:118995:10
+    #17 0x5d1cd1a69f0f in sqlite3_prepare_v2 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:119080:8
+    #18 0x5d1cd1aa31d5 in sqlite3_exec /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:113980:10
+    #19 0x5d1cd1a4aac9 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543.c:204:3
+    #20 0x5d1cd1956d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x187d74) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #21 0x5d1cd1957fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x188fa1) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #22 0x5d1cd1958597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x189597) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #23 0x5d1cd1945a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x176a8f) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #24 0x5d1cd1970116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x1a1116) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #25 0x7152ec5a91c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #26 0x7152ec5a928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #27 0x5d1cd193aa74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x16ba74) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+
+0x502000000050 is located 0 bytes inside of 1-byte region [0x502000000050,0x502000000051)
+freed by thread T0 here:
+    #0 0x5d1cd1a0ac0a in free (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x23bc0a) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #1 0x5d1cd1a4a33c in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543.c:173:9
+    #2 0x5d1cd1956d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x187d74) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #3 0x5d1cd1957fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x188fa1) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #4 0x5d1cd1958597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x189597) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #5 0x5d1cd1945a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x176a8f) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #6 0x5d1cd1970116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x1a1116) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #7 0x7152ec5a91c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7152ec5a928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x5d1cd193aa74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x16ba74) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+
+previously allocated by thread T0 here:
+    #0 0x5d1cd1a0aea3 in malloc (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x23bea3) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #1 0x5d1cd1a4bb39 in rdstr /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543.c:45:21
+    #2 0x5d1cd1a4a2dc in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543.c:170:22
+    #3 0x5d1cd1956d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x187d74) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #4 0x5d1cd1957fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x188fa1) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #5 0x5d1cd1958597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x189597) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #6 0x5d1cd1945a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x176a8f) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #7 0x5d1cd1970116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x1a1116) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+    #8 0x7152ec5a91c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7152ec5a928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5d1cd193aa74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_96/fuzz_driver_96_sanitizing_1786498543+0x16ba74) (BuildId: ea71eda34a285357ecf3d12a9c1fcc42ece14683)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19649:9 in sqlite3StrICmp
+Shadow bytes around the buggy address:
+  0x501ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x502000000000: fa fa 01 fa fa fa 00 00 fa fa[fd]fa fa fa 01 fa
+  0x502000000080: fa fa 01 fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x502000000100: fa fa fd fa fa fa fd fd fa fa 00 00 fa fa fa fa
+  0x502000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2087862==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

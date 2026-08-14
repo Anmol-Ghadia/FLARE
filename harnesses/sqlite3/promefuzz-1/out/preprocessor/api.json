@@ -1,0 +1,1678 @@
+{
+    "/promefuzz/database/sqlite3/latest/code/sqlite3.h": {
+        "sqlite3_set_authorizer": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:100017:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3073:16"
+            }
+        ],
+        "sqlite3_strglob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:107931:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8957:16"
+            }
+        ],
+        "sqlite3_strlike": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:107939:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8980:16"
+            }
+        ],
+        "sqlite3_exec": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:113957:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:402:16"
+            }
+        ],
+        "sqlite3_vfs_find": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:11431:25",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7451:25"
+            }
+        ],
+        "sqlite3_load_extension": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:114732:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6701:16"
+            }
+        ],
+        "sqlite3_enable_load_extension": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:114763:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6733:16"
+            }
+        ],
+        "sqlite3_vfs_register": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:11477:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7452:16"
+            }
+        ],
+        "sqlite3_auto_extension": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:114809:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6771:16"
+            }
+        ],
+        "sqlite3_cancel_auto_extension": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:114856:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6783:16"
+            }
+        ],
+        "sqlite3_reset_auto_extension": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:114881:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6791:17"
+            }
+        ],
+        "sqlite3_vfs_unregister": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:11505:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7453:16"
+            }
+        ],
+        "sqlite3_prepare": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:119055:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4097:16"
+            }
+        ],
+        "sqlite3_prepare_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:119067:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4104:16"
+            }
+        ],
+        "sqlite3_prepare_v3": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:119085:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4111:16"
+            }
+        ],
+        "sqlite3_prepare16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:119171:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4119:16"
+            }
+        ],
+        "sqlite3_prepare16_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:119183:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4126:16"
+            }
+        ],
+        "sqlite3_prepare16_v3": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:119195:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4133:16"
+            }
+        ],
+        "sqlite3_get_table": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:126741:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2798:16"
+            }
+        ],
+        "sqlite3_free_table": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:126810:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2806:17"
+            }
+        ],
+        "sqlite3_create_module": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:130412:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7063:16"
+            }
+        ],
+        "sqlite3_create_module_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:130427:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7069:16"
+            }
+        ],
+        "sqlite3_drop_modules": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:130444:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7089:16"
+            }
+        ],
+        "sqlite3_declare_vtab": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:131100:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7149:16"
+            }
+        ],
+        "sqlite3_vtab_on_conflict": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:131565:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9309:16"
+            }
+        ],
+        "sqlite3_vtab_config": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:131583:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9231:16"
+            }
+        ],
+        "sqlite3_vtab_collation": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:139787:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9350:44"
+            }
+        ],
+        "sqlite3_mutex_alloc": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14046:27",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7569:27"
+            }
+        ],
+        "sqlite3_mutex_free": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14067:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7570:17"
+            }
+        ],
+        "sqlite3_mutex_enter": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14078:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7571:17"
+            }
+        ],
+        "sqlite3_mutex_try": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14089:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7572:16"
+            }
+        ],
+        "sqlite3_mutex_leave": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14104:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7573:17"
+            }
+        ],
+        "sqlite3_mutex_held": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14116:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7683:16"
+            }
+        ],
+        "sqlite3_mutex_notheld": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:14120:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7684:16"
+            }
+        ],
+        "sqlite3_keyword_name": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:151127:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7884:16"
+            }
+        ],
+        "sqlite3_keyword_count": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:151133:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7883:16"
+            }
+        ],
+        "sqlite3_keyword_check": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:151134:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7885:16"
+            }
+        ],
+        "sqlite3_complete": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:151963:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2638:16"
+            }
+        ],
+        "sqlite3_complete16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152128:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2639:16"
+            }
+        ],
+        "sqlite3_libversion": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152357:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:163:24"
+            }
+        ],
+        "sqlite3_libversion_number": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152370:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:165:16"
+            }
+        ],
+        "sqlite3_threadsafe": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152376:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:233:16"
+            }
+        ],
+        "sqlite3_initialize": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152449:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:1566:16"
+            }
+        ],
+        "sqlite3_shutdown": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152624:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:1567:16"
+            }
+        ],
+        "sqlite3_config": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:152678:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:1602:16"
+            }
+        ],
+        "sqlite3_db_mutex": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153096:27",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7728:27"
+            }
+        ],
+        "sqlite3_db_release_memory": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153110:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6495:16"
+            }
+        ],
+        "sqlite3_db_cacheflush": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153134:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9504:16"
+            }
+        ],
+        "sqlite3_db_config": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153163:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:1621:16"
+            }
+        ],
+        "sqlite3_last_insert_rowid": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153307:25",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2452:26"
+            }
+        ],
+        "sqlite3_set_last_insert_rowid": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153320:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2462:17"
+            }
+        ],
+        "sqlite3_changes64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153335:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2524:26"
+            }
+        ],
+        "sqlite3_changes": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153344:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2523:16"
+            }
+        ],
+        "sqlite3_total_changes64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153351:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2566:26"
+            }
+        ],
+        "sqlite3_total_changes": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153360:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2565:16"
+            }
+        ],
+        "sqlite3_txn_state": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153500:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6270:16"
+            }
+        ],
+        "sqlite3_close": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153535:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:330:16"
+            }
+        ],
+        "sqlite3_close_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153536:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:331:16"
+            }
+        ],
+        "sqlite3_busy_handler": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153966:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2700:16"
+            }
+        ],
+        "sqlite3_progress_handler": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:153989:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3311:17"
+            }
+        ],
+        "sqlite3_busy_timeout": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154020:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2723:16"
+            }
+        ],
+        "sqlite3_interrupt": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154037:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2603:17"
+            }
+        ],
+        "sqlite3_create_function": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154229:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5219:16"
+            }
+        ],
+        "sqlite3_create_function_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154242:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5239:16"
+            }
+        ],
+        "sqlite3_create_window_function": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154256:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5250:16"
+            }
+        ],
+        "sqlite3_create_function16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154273:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5229:16"
+            }
+        ],
+        "sqlite3_overload_function": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154335:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7168:16"
+            }
+        ],
+        "sqlite3_trace": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154368:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3181:36"
+            }
+        ],
+        "sqlite3_trace_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154389:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3272:16"
+            }
+        ],
+        "sqlite3_profile": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154419:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3183:36"
+            }
+        ],
+        "sqlite3_commit_hook": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154449:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6368:18"
+            }
+        ],
+        "sqlite3_update_hook": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154474:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6420:18"
+            }
+        ],
+        "sqlite3_rollback_hook": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154499:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6369:18"
+            }
+        ],
+        "sqlite3_preupdate_hook": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154525:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9599:18"
+            }
+        ],
+        "sqlite3_wal_autocheckpoint": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154574:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9075:16"
+            }
+        ],
+        "sqlite3_wal_hook": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154595:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9040:18"
+            }
+        ],
+        "sqlite3_release_memory": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15459:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6481:16"
+            }
+        ],
+        "sqlite3_wal_checkpoint_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154622:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9191:16"
+            }
+        ],
+        "sqlite3_wal_checkpoint": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154686:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9097:16"
+            }
+        ],
+        "sqlite3_errmsg": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154780:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3817:24"
+            }
+        ],
+        "sqlite3_errmsg16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154808:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3818:24"
+            }
+        ],
+        "sqlite3_errcode": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154850:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3815:16"
+            }
+        ],
+        "sqlite3_extended_errcode": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154859:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3816:16"
+            }
+        ],
+        "sqlite3_system_errno": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154868:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9630:16"
+            }
+        ],
+        "sqlite3_errstr": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:154877:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3819:24"
+            }
+        ],
+        "sqlite3_limit": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155025:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3887:16"
+            }
+        ],
+        "sqlite3_memory_alarm": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15508:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5362:34"
+            }
+        ],
+        "sqlite3_soft_heap_limit64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15531:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6561:26"
+            }
+        ],
+        "sqlite3_soft_heap_limit": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15556:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6573:35"
+            }
+        ],
+        "sqlite3_open": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155676:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3573:16"
+            }
+        ],
+        "sqlite3_open_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155683:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3581:16"
+            }
+        ],
+        "sqlite3_open16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155696:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3577:16"
+            }
+        ],
+        "sqlite3_create_collation": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155735:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5955:16"
+            }
+        ],
+        "sqlite3_hard_heap_limit64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15573:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6562:26"
+            }
+        ],
+        "sqlite3_create_collation_v2": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155748:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5962:16"
+            }
+        ],
+        "sqlite3_create_collation16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155773:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5970:16"
+            }
+        ],
+        "sqlite3_collation_needed": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155803:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6005:16"
+            }
+        ],
+        "sqlite3_collation_needed16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155824:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6010:16"
+            }
+        ],
+        "sqlite3_global_recover": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155846:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5360:34"
+            }
+        ],
+        "sqlite3_get_autocommit": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155857:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6197:16"
+            }
+        ],
+        "sqlite3_thread_cleanup": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155922:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5361:35"
+            }
+        ],
+        "sqlite3_table_column_metadata": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:155930:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6645:16"
+            }
+        ],
+        "sqlite3_sleep": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156048:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6043:16"
+            }
+        ],
+        "sqlite3_extended_result_codes": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156064:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2390:16"
+            }
+        ],
+        "sqlite3_file_control": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156077:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7771:16"
+            }
+        ],
+        "sqlite3_test_control": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156127:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7790:16"
+            }
+        ],
+        "sqlite3_memory_used": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15633:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2958:26"
+            }
+        ],
+        "sqlite3_memory_highwater": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15644:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2959:26"
+            }
+        ],
+        "sqlite3_create_filename": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156607:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3754:18"
+            }
+        ],
+        "sqlite3_free_filename": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156643:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3761:17"
+            }
+        ],
+        "sqlite3_uri_parameter": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156661:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3654:24"
+            }
+        ],
+        "sqlite3_uri_key": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156670:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3657:24"
+            }
+        ],
+        "sqlite3_uri_boolean": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156684:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3655:16"
+            }
+        ],
+        "sqlite3_uri_int64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156693:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3656:26"
+            }
+        ],
+        "sqlite3_filename_database": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156716:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3686:24"
+            }
+        ],
+        "sqlite3_filename_journal": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156719:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3687:24"
+            }
+        ],
+        "sqlite3_filename_wal": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156728:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3688:24"
+            }
+        ],
+        "sqlite3_db_filename": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156750:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6242:24"
+            }
+        ],
+        "sqlite3_db_readonly": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156766:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6252:16"
+            }
+        ],
+        "sqlite3_snapshot_get": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156783:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9699:36"
+            }
+        ],
+        "sqlite3_snapshot_open": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156819:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9748:36"
+            }
+        ],
+        "sqlite3_snapshot_recover": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156875:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9820:36"
+            }
+        ],
+        "sqlite3_snapshot_free": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156906:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9765:37"
+            }
+        ],
+        "sqlite3_compileoption_used": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156919:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:190:16"
+            }
+        ],
+        "sqlite3_compileoption_get": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:156952:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:191:24"
+            }
+        ],
+        "sqlite3_unlock_notify": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:157112:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8924:16"
+            }
+        ],
+        "sqlite3_malloc": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15738:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2928:18"
+            }
+        ],
+        "sqlite3_malloc64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15744:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2929:18"
+            }
+        ],
+        "sqlite3_msize": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15806:27",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2933:27"
+            }
+        ],
+        "sqlite3_free": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15815:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2932:17"
+            }
+        ],
+        "sqlite3_realloc": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15947:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2930:18"
+            }
+        ],
+        "sqlite3_realloc64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:15954:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2931:18"
+            }
+        ],
+        "sqlite3_str_vappendf": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:16479:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7980:17"
+            }
+        ],
+        "sqlite3_str_appendchar": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17235:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7983:17"
+            }
+        ],
+        "sqlite3_str_append": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17263:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7981:17"
+            }
+        ],
+        "sqlite3_str_appendall": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17280:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7982:17"
+            }
+        ],
+        "sqlite3_str_finish": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17325:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7945:18"
+            }
+        ],
+        "sqlite3_str_errcode": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17337:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8015:16"
+            }
+        ],
+        "sqlite3_str_length": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17342:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8016:16"
+            }
+        ],
+        "sqlite3_str_value": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17347:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8017:18"
+            }
+        ],
+        "sqlite3_str_reset": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17356:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7984:17"
+            }
+        ],
+        "sqlite3_str_new": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17391:25",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7930:25"
+            }
+        ],
+        "sqlite3_vmprintf": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17439:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2849:18"
+            }
+        ],
+        "sqlite3_mprintf": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17463:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2848:18"
+            }
+        ],
+        "sqlite3_vsnprintf": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17488:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2851:18"
+            }
+        ],
+        "sqlite3_snprintf": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17503:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2850:18"
+            }
+        ],
+        "sqlite3_log": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17539:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9003:17"
+            }
+        ],
+        "sqlite3_str_appendf": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:17580:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7979:17"
+            }
+        ],
+        "sqlite3_randomness": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:18421:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:2982:17"
+            }
+        ],
+        "sqlite3_stricmp": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:19635:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8939:16"
+            }
+        ],
+        "sqlite3_strnicmp": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:19662:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8940:16"
+            }
+        ],
+        "sqlite3_sourceid": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:222713:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:164:24"
+            }
+        ],
+        "sqlite3_os_init": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:29704:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:1568:16"
+            }
+        ],
+        "sqlite3_os_end": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:29823:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:1569:16"
+            }
+        ],
+        "sqlite3_serialize": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:36892:27",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9858:27"
+            }
+        ],
+        "sqlite3_deserialize": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:36973:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9910:16"
+            }
+        ],
+        "sqlite3_database_file_object": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:45334:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:3707:26"
+            }
+        ],
+        "sqlite3_snapshot_cmp": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:52001:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9792:36"
+            }
+        ],
+        "sqlite3_enable_shared_cache": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:53207:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6465:16"
+            }
+        ],
+        "sqlite3_backup_init": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:64113:28",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8798:28"
+            }
+        ],
+        "sqlite3_backup_step": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:64293:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8804:16"
+            }
+        ],
+        "sqlite3_backup_finish": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:64547:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8805:16"
+            }
+        ],
+        "sqlite3_backup_remaining": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:64601:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8806:16"
+            }
+        ],
+        "sqlite3_backup_pagecount": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:64615:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8807:16"
+            }
+        ],
+        "sqlite3_expired": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:71934:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5358:34"
+            }
+        ],
+        "sqlite3_finalize": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72005:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5067:16"
+            }
+        ],
+        "sqlite3_reset": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72032:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5094:16"
+            }
+        ],
+        "sqlite3_clear_bindings": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72053:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4554:16"
+            }
+        ],
+        "sqlite3_value_blob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72078:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5494:24"
+            }
+        ],
+        "sqlite3_value_bytes": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72091:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5503:16"
+            }
+        ],
+        "sqlite3_value_bytes16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72094:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5504:16"
+            }
+        ],
+        "sqlite3_value_double": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72097:19",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5495:19"
+            }
+        ],
+        "sqlite3_value_int": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72100:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5496:16"
+            }
+        ],
+        "sqlite3_value_int64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72103:25",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5497:26"
+            }
+        ],
+        "sqlite3_value_subtype": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72106:25",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5520:25"
+            }
+        ],
+        "sqlite3_value_pointer": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72110:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5498:18"
+            }
+        ],
+        "sqlite3_value_text": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72123:33",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5499:33"
+            }
+        ],
+        "sqlite3_value_text16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72127:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5500:24"
+            }
+        ],
+        "sqlite3_value_text16be": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72130:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5502:24"
+            }
+        ],
+        "sqlite3_value_text16le": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72133:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5501:24"
+            }
+        ],
+        "sqlite3_value_type": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72141:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5505:16"
+            }
+        ],
+        "sqlite3_value_nochange": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72227:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5507:16"
+            }
+        ],
+        "sqlite3_value_frombind": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72232:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5508:16"
+            }
+        ],
+        "sqlite3_value_dup": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72238:27",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5536:27"
+            }
+        ],
+        "sqlite3_value_free": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72261:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5537:17"
+            }
+        ],
+        "sqlite3_result_blob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72304:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5836:17"
+            }
+        ],
+        "sqlite3_result_blob64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72314:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5837:17"
+            }
+        ],
+        "sqlite3_result_double": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72328:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5839:17"
+            }
+        ],
+        "sqlite3_result_error": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72332:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5840:17"
+            }
+        ],
+        "sqlite3_result_error16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72338:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5841:17"
+            }
+        ],
+        "sqlite3_result_int": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72344:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5845:17"
+            }
+        ],
+        "sqlite3_result_int64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72348:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5846:17"
+            }
+        ],
+        "sqlite3_result_null": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72352:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5847:17"
+            }
+        ],
+        "sqlite3_result_pointer": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72356:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5855:17"
+            }
+        ],
+        "sqlite3_result_subtype": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72368:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5872:17"
+            }
+        ],
+        "sqlite3_result_text": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72374:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5848:17"
+            }
+        ],
+        "sqlite3_result_text64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72383:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5849:17"
+            }
+        ],
+        "sqlite3_result_text16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72400:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5851:17"
+            }
+        ],
+        "sqlite3_result_text16be": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72409:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5853:17"
+            }
+        ],
+        "sqlite3_result_text16le": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72418:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5852:17"
+            }
+        ],
+        "sqlite3_result_value": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72428:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5854:17"
+            }
+        ],
+        "sqlite3_result_zeroblob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72432:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5856:17"
+            }
+        ],
+        "sqlite3_result_zeroblob64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72436:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5857:16"
+            }
+        ],
+        "sqlite3_result_error_code": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72445:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5844:17"
+            }
+        ],
+        "sqlite3_result_error_toobig": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72457:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5842:17"
+            }
+        ],
+        "sqlite3_result_error_nomem": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72465:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5843:17"
+            }
+        ],
+        "sqlite3_step": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72655:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4766:16"
+            }
+        ],
+        "sqlite3_user_data": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72704:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5597:18"
+            }
+        ],
+        "sqlite3_context_db_handle": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72719:21",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5609:21"
+            }
+        ],
+        "sqlite3_vtab_nochange": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72738:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9335:16"
+            }
+        ],
+        "sqlite3_aggregate_context": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72792:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5582:18"
+            }
+        ],
+        "sqlite3_get_auxdata": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72813:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5668:18"
+            }
+        ],
+        "sqlite3_set_auxdata": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72841:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5669:17"
+            }
+        ],
+        "sqlite3_aggregate_count": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72894:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5357:34"
+            }
+        ],
+        "sqlite3_column_count": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72903:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4570:16"
+            }
+        ],
+        "sqlite3_data_count": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:72912:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4787:16"
+            }
+        ],
+        "sqlite3_column_blob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73016:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5030:24"
+            }
+        ],
+        "sqlite3_column_bytes": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73026:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5037:16"
+            }
+        ],
+        "sqlite3_column_bytes16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73031:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5038:16"
+            }
+        ],
+        "sqlite3_column_double": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73036:19",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5031:19"
+            }
+        ],
+        "sqlite3_column_int": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73041:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5032:16"
+            }
+        ],
+        "sqlite3_column_int64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73046:25",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5033:26"
+            }
+        ],
+        "sqlite3_column_text": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73051:33",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5034:33"
+            }
+        ],
+        "sqlite3_column_value": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73056:27",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5036:27"
+            }
+        ],
+        "sqlite3_column_text16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73066:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5035:24"
+            }
+        ],
+        "sqlite3_column_type": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73072:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5039:16"
+            }
+        ],
+        "sqlite3_column_name": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73143:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4599:24"
+            }
+        ],
+        "sqlite3_column_name16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73147:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4600:24"
+            }
+        ],
+        "sqlite3_column_decltype": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73166:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4681:24"
+            }
+        ],
+        "sqlite3_column_decltype16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73170:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4682:24"
+            }
+        ],
+        "sqlite3_column_database_name": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73182:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4644:24"
+            }
+        ],
+        "sqlite3_column_database_name16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73186:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4645:24"
+            }
+        ],
+        "sqlite3_column_table_name": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73196:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4646:24"
+            }
+        ],
+        "sqlite3_column_table_name16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73200:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4647:24"
+            }
+        ],
+        "sqlite3_column_origin_name": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73210:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4648:24"
+            }
+        ],
+        "sqlite3_column_origin_name16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73214:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4649:24"
+            }
+        ],
+        "sqlite3_bind_blob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73315:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4463:16"
+            }
+        ],
+        "sqlite3_bind_blob64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73327:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4464:16"
+            }
+        ],
+        "sqlite3_bind_double": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73337:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4466:16"
+            }
+        ],
+        "sqlite3_bind_int": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73347:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4467:16"
+            }
+        ],
+        "sqlite3_bind_int64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73350:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4468:16"
+            }
+        ],
+        "sqlite3_bind_null": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73360:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4469:16"
+            }
+        ],
+        "sqlite3_bind_pointer": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73369:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4475:16"
+            }
+        ],
+        "sqlite3_bind_text": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73387:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4470:16"
+            }
+        ],
+        "sqlite3_bind_text64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73396:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4472:16"
+            }
+        ],
+        "sqlite3_bind_text16": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73409:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4471:16"
+            }
+        ],
+        "sqlite3_bind_value": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73419:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4474:16"
+            }
+        ],
+        "sqlite3_bind_zeroblob": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73450:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4476:16"
+            }
+        ],
+        "sqlite3_bind_zeroblob64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73460:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4477:16"
+            }
+        ],
+        "sqlite3_bind_parameter_count": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73479:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4498:16"
+            }
+        ],
+        "sqlite3_bind_parameter_name": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73490:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4526:24"
+            }
+        ],
+        "sqlite3_bind_parameter_index": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73505:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4544:16"
+            }
+        ],
+        "sqlite3_transfer_bindings": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73539:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5359:34"
+            }
+        ],
+        "sqlite3_db_handle": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73563:21",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6210:21"
+            }
+        ],
+        "sqlite3_stmt_readonly": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73571:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4232:16"
+            }
+        ],
+        "sqlite3_stmt_isexplain": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73579:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4244:16"
+            }
+        ],
+        "sqlite3_stmt_busy": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73586:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4265:16"
+            }
+        ],
+        "sqlite3_next_stmt": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73597:26",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:6319:26"
+            }
+        ],
+        "sqlite3_stmt_status": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73618:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8308:16"
+            }
+        ],
+        "sqlite3_sql": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73648:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4183:24"
+            }
+        ],
+        "sqlite3_expanded_sql": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73662:18",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4184:18"
+            }
+        ],
+        "sqlite3_normalized_sql": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73682:24",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:4186:24"
+            }
+        ],
+        "sqlite3_preupdate_old": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73719:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9612:16"
+            }
+        ],
+        "sqlite3_preupdate_count": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73782:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9613:16"
+            }
+        ],
+        "sqlite3_preupdate_depth": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73800:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9614:16"
+            }
+        ],
+        "sqlite3_preupdate_blobwrite": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73811:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9616:16"
+            }
+        ],
+        "sqlite3_preupdate_new": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73822:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9615:16"
+            }
+        ],
+        "sqlite3_stmt_scanstatus": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73897:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9455:16"
+            }
+        ],
+        "sqlite3_stmt_scanstatus_reset": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:73956:17",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:9471:17"
+            }
+        ],
+        "sqlite3_value_numeric_type": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:74581:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:5506:16"
+            }
+        ],
+        "sqlite3_blob_open": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:82675:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7277:16"
+            }
+        ],
+        "sqlite3_blob_close": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:82908:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7333:16"
+            }
+        ],
+        "sqlite3_blob_read": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:83002:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7378:16"
+            }
+        ],
+        "sqlite3_blob_write": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:83009:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7420:16"
+            }
+        ],
+        "sqlite3_blob_bytes": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:83019:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7349:16"
+            }
+        ],
+        "sqlite3_blob_reopen": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:83034:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:7310:16"
+            }
+        ],
+        "sqlite3_status64": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:9561:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8046:16"
+            }
+        ],
+        "sqlite3_status": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:9586:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8045:16"
+            }
+        ],
+        "sqlite3_db_status": [
+            {
+                "loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.c:9629:16",
+                "decl_loc": "/promefuzz/database/sqlite3/latest/code/sqlite3.h:8155:16"
+            }
+        ]
+    }
+}

@@ -1,0 +1,80 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1621597044
+INFO: Loaded 1 modules   (32225 inline 8-bit counters): 32225 [0x56cd879cab70, 0x56cd879d2951), 
+INFO: Loaded 1 PC tables (32225 PCs): 32225 [0x56cd879d2958,0x56cd87a50768), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+=================================================================
+==2086928==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5020000009e0 at pc 0x56cd874c55e0 bp 0x7ffd6090e220 sp 0x7ffd6090e218
+READ of size 1 at 0x5020000009e0 thread T0
+    #0 0x56cd874c55df in sqlite3VdbeMemSetStr /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:65849:38
+    #1 0x56cd874f9289 in sqlite3Utf16to8 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:19280:3
+    #2 0x56cd874e9b20 in sqlite3Prepare16 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:119143:11
+    #3 0x56cd874e9df5 in sqlite3_prepare16_v2 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:119191:8
+    #4 0x56cd874902ab in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625.c:108:7
+    #5 0x56cd8739cd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x185d74) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #6 0x56cd8739c469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x185469) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #7 0x56cd8739e0f6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x1870f6) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #8 0x56cd8739e597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x187597) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #9 0x56cd8738ba8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x174a8f) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #10 0x56cd873b6116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x19f116) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #11 0x73857eba61c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x73857eba628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x56cd87380a74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x169a74) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+
+0x5020000009e0 is located 0 bytes after 16-byte region [0x5020000009d0,0x5020000009e0)
+allocated by thread T0 here:
+    #0 0x56cd87450ea3 in malloc (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x239ea3) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #1 0x56cd878bca16 in sqlite3MemMalloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:11813:7
+    #2 0x56cd8750f54c in mallocWithAlarm /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15694:7
+    #3 0x56cd8749752a in sqlite3Malloc /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15724:5
+    #4 0x56cd874976fa in sqlite3_malloc64 /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:15748:10
+    #5 0x56cd8748fe47 in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625.c:97:19
+    #6 0x56cd8739cd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x185d74) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #7 0x56cd8739c469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x185469) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #8 0x56cd8739e0f6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x1870f6) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #9 0x56cd8739e597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x187597) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #10 0x56cd8738ba8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x174a8f) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #11 0x56cd873b6116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x19f116) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+    #12 0x73857eba61c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x73857eba628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #14 0x56cd87380a74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_53/fuzz_driver_53_sanitizing_1786496625+0x169a74) (BuildId: b9d9e8ea4e8e69940245e11aa606984c0a0256c3)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:65849:38 in sqlite3VdbeMemSetStr
+Shadow bytes around the buggy address:
+  0x502000000700: fa fa fd fd fa fa 00 00 fa fa fd fd fa fa 00 00
+  0x502000000780: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa fd fd
+  0x502000000800: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000000880: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000000900: fa fa fd fd fa fa 00 00 fa fa 00 00 fa fa 00 00
+=>0x502000000980: fa fa 00 00 fa fa fd fd fa fa 00 00[fa]fa fa fa
+  0x502000000a00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000a80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000b00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000b80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2086928==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./crash-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==

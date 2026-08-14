@@ -1,0 +1,29 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2839379151
+INFO: Loaded 1 modules   (32337 inline 8-bit counters): 32337 [0x6320f8ac60d0, 0x6320f8acdf21), 
+INFO: Loaded 1 PC tables (32337 PCs): 32337 [0x6320f8acdf28,0x6320f8b4c438), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2088119==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000060 (pc 0x6320f85aa1d4 bp 0x7ffff7eb7210 sp 0x7ffff7eb71a0 T0)
+==2088119==The signal is caused by a READ memory access.
+==2088119==Hint: address points to the zero page.
+    #0 0x6320f85aa1d4 in sqlite3_database_file_object /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:45340:18
+    #1 0x6320f8588e2b in LLVMFuzzerTestOneInput /promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075.c:147:29
+    #2 0x6320f8494d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075+0x186d74) (BuildId: 6457767b5b4430a402a02e7e75256f7fc733216d)
+    #3 0x6320f8495fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075+0x187fa1) (BuildId: 6457767b5b4430a402a02e7e75256f7fc733216d)
+    #4 0x6320f8496597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075+0x188597) (BuildId: 6457767b5b4430a402a02e7e75256f7fc733216d)
+    #5 0x6320f8483a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075+0x175a8f) (BuildId: 6457767b5b4430a402a02e7e75256f7fc733216d)
+    #6 0x6320f84ae116 in main (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075+0x1a0116) (BuildId: 6457767b5b4430a402a02e7e75256f7fc733216d)
+    #7 0x7e2c9fd091c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7e2c9fd0928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x6320f8478a74 in _start (/promefuzz/database/sqlite3/latest/out/tmp/fuzz_driver_108/fuzz_driver_108_sanitizing_1786499075+0x16aa74) (BuildId: 6457767b5b4430a402a02e7e75256f7fc733216d)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/sqlite3/latest/build_asan/sqlite3.c:45340:18 in sqlite3_database_file_object
+==2088119==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 
