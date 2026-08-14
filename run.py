@@ -50,7 +50,7 @@ def move_harnesses(yaml_path: Path, library: str, target_dir: Path) -> list[str]
         for dir_index in range(len(dirs)):
             d = dirs[dir_index]
             print(d)
-            src_dir = Path("harness") / Path(d)
+            src_dir = Path("harnesses") / Path(d)
             print(src_dir)
             if not src_dir.is_dir():
                 continue
