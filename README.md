@@ -1,3 +1,9 @@
+0) Dependencies
+```
+sudo apt  install docker.io
+sudo usermod -aG docker $USER
+newgrp docker
+```
 1) clone:
 ```
 git clone --recurse-submodules https://github.com/Anmol-Ghadia/FLARE.git
