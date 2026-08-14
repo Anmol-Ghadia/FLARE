@@ -1,0 +1,153 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2833882568
+INFO: Loaded 1 modules   (409 inline 8-bit counters): 409 [0x61eb99e786a0, 0x61eb99e78839), 
+INFO: Loaded 1 PC tables (409 PCs): 409 [0x61eb99e78840,0x61eb99e7a1d0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 26 ft: 27 corp: 1/1b exec/s: 0 rss: 31Mb
+#4	NEW    cov: 27 ft: 28 corp: 2/3b lim: 4 exec/s: 0 rss: 31Mb L: 2/2 MS: 2 InsertByte-ChangeByte-
+#5	NEW    cov: 32 ft: 33 corp: 3/6b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 1 InsertByte-
+	NEW_FUNC[1/1]: 0x61eb99e29250 in is_fixed_type /promefuzz/database/tinycbor/latest/code/src/cborparser.c:152
+#7	NEW    cov: 36 ft: 37 corp: 4/8b lim: 4 exec/s: 0 rss: 32Mb L: 2/3 MS: 2 CrossOver-CMP- DE: "\377\377"-
+	NEW_FUNC[1/4]: 0x61eb99e2ede0 in cbor_value_get_half_float_as_float /promefuzz/database/tinycbor/latest/code/src/cborparser_float.c:41
+	NEW_FUNC[2/4]: 0x61eb99e2f010 in cbor_value_get_half_float /promefuzz/database/tinycbor/latest/code/src/cbor.h:603
+#8	NEW    cov: 57 ft: 72 corp: 5/11b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 1 ChangeBit-
+#10	NEW    cov: 57 ft: 75 corp: 6/14b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 PersAutoDict-CrossOver- DE: "\377\377"-
+#12	NEW    cov: 58 ft: 78 corp: 7/16b lim: 4 exec/s: 0 rss: 32Mb L: 2/3 MS: 2 EraseBytes-ChangeByte-
+#17	NEW    cov: 59 ft: 81 corp: 8/20b lim: 4 exec/s: 0 rss: 32Mb L: 4/4 MS: 5 EraseBytes-PersAutoDict-PersAutoDict-ShuffleBytes-ChangeBit- DE: "\377\377"-"\377\377"-
+#27	NEW    cov: 60 ft: 82 corp: 9/22b lim: 4 exec/s: 0 rss: 32Mb L: 2/4 MS: 5 CrossOver-CrossOver-EraseBytes-CopyPart-ChangeBinInt-
+#37	NEW    cov: 61 ft: 83 corp: 10/26b lim: 4 exec/s: 0 rss: 32Mb L: 4/4 MS: 5 ChangeBinInt-CrossOver-ChangeByte-InsertByte-ChangeByte-
+	NEW_FUNC[1/11]: 0x61eb99e26268 in cbor_value_at_end /promefuzz/database/tinycbor/latest/code/src/cbor.h:361
+	NEW_FUNC[2/11]: 0x61eb99e287c0 in preparse_next_value_nodecrement /promefuzz/database/tinycbor/latest/code/src/cborparser.c:255
+#60	NEW    cov: 95 ft: 140 corp: 11/29b lim: 4 exec/s: 0 rss: 33Mb L: 3/4 MS: 3 ShuffleBytes-CrossOver-ChangeBit-
+#92	REDUCE cov: 95 ft: 140 corp: 11/28b lim: 4 exec/s: 0 rss: 33Mb L: 3/4 MS: 2 ChangeByte-EraseBytes-
+#98	NEW    cov: 95 ft: 174 corp: 12/32b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 1 InsertByte-
+#117	NEW    cov: 101 ft: 186 corp: 13/33b lim: 4 exec/s: 0 rss: 33Mb L: 1/4 MS: 4 PersAutoDict-ChangeBinInt-EraseBytes-ChangeBit- DE: "\377\377"-
+#145	REDUCE cov: 101 ft: 186 corp: 13/32b lim: 4 exec/s: 0 rss: 34Mb L: 3/4 MS: 3 CopyPart-CopyPart-EraseBytes-
+#176	NEW    cov: 103 ft: 188 corp: 14/35b lim: 4 exec/s: 0 rss: 34Mb L: 3/4 MS: 1 ChangeByte-
+#178	NEW    cov: 104 ft: 189 corp: 15/38b lim: 4 exec/s: 0 rss: 34Mb L: 3/4 MS: 2 PersAutoDict-ChangeBit- DE: "\377\377"-
+#182	NEW    cov: 104 ft: 190 corp: 16/42b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 4 InsertByte-CrossOver-CopyPart-ChangeBinInt-
+	NEW_FUNC[1/1]: 0x61eb99e2df50 in cbor_value_at_end /promefuzz/database/tinycbor/latest/code/src/cbor.h:361
+#203	NEW    cov: 106 ft: 212 corp: 17/46b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 1 CopyPart-
+#212	NEW    cov: 106 ft: 217 corp: 18/47b lim: 4 exec/s: 0 rss: 34Mb L: 1/4 MS: 4 ShuffleBytes-ChangeBinInt-ShuffleBytes-ChangeByte-
+#228	REDUCE cov: 106 ft: 217 corp: 18/46b lim: 4 exec/s: 0 rss: 35Mb L: 1/4 MS: 1 CrossOver-
+#235	NEW    cov: 108 ft: 239 corp: 19/50b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 2 ShuffleBytes-CrossOver-
+#251	NEW    cov: 108 ft: 243 corp: 20/53b lim: 4 exec/s: 0 rss: 35Mb L: 3/4 MS: 1 ChangeBit-
+#257	REDUCE cov: 108 ft: 243 corp: 20/52b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 1 EraseBytes-
+	NEW_FUNC[1/8]: 0x61eb99e2b5e0 in _cbor_value_copy_string /promefuzz/database/tinycbor/latest/code/src/cborparser.c:1288
+	NEW_FUNC[2/8]: 0x61eb99e2b820 in _cbor_value_begin_string_iteration /promefuzz/database/tinycbor/latest/code/src/cborparser.c:961
+#274	REDUCE cov: 131 ft: 279 corp: 21/55b lim: 4 exec/s: 0 rss: 35Mb L: 3/4 MS: 2 EraseBytes-InsertByte-
+#280	NEW    cov: 131 ft: 295 corp: 22/59b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 1 ChangeBit-
+#286	NEW    cov: 131 ft: 296 corp: 23/62b lim: 4 exec/s: 0 rss: 35Mb L: 3/4 MS: 1 ChangeByte-
+#287	REDUCE cov: 132 ft: 297 corp: 24/64b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 1 ChangeBit-
+#292	NEW    cov: 132 ft: 298 corp: 25/68b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 5 ShuffleBytes-CrossOver-ChangeBit-ChangeBit-CopyPart-
+	NEW_FUNC[1/1]: 0x61eb99e2d790 in cbor_value_is_text_string /promefuzz/database/tinycbor/latest/code/src/cbor.h:471
+#298	NEW    cov: 134 ft: 302 corp: 26/71b lim: 4 exec/s: 0 rss: 35Mb L: 3/4 MS: 1 ChangeBit-
+#308	REDUCE cov: 134 ft: 304 corp: 27/73b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 5 CrossOver-CrossOver-ChangeBinInt-ChangeByte-EraseBytes-
+#309	REDUCE cov: 134 ft: 304 corp: 27/72b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 1 EraseBytes-
+#312	REDUCE cov: 134 ft: 304 corp: 27/71b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 3 ChangeBit-ChangeBit-EraseBytes-
+	NEW_FUNC[1/2]: 0x61eb99e2a700 in copy_current_position /promefuzz/database/tinycbor/latest/code/src/cborinternal_p.h:196
+	NEW_FUNC[2/2]: 0x61eb99e2a890 in cbor_value_leave_container /promefuzz/database/tinycbor/latest/code/src/cborparser.c:619
+#318	NEW    cov: 143 ft: 316 corp: 28/74b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 1 PersAutoDict- DE: "\377\377"-
+#319	NEW    cov: 143 ft: 322 corp: 29/78b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 1 CrossOver-
+#320	NEW    cov: 144 ft: 323 corp: 30/80b lim: 4 exec/s: 0 rss: 36Mb L: 2/4 MS: 1 ChangeBit-
+#330	REDUCE cov: 147 ft: 327 corp: 31/83b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 5 CMP-CopyPart-ChangeBit-ChangeBit-ChangeBinInt- DE: "\377_"-
+#331	NEW    cov: 151 ft: 332 corp: 32/86b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 1 CrossOver-
+#335	REDUCE cov: 151 ft: 332 corp: 32/85b lim: 4 exec/s: 0 rss: 36Mb L: 1/4 MS: 4 ShuffleBytes-PersAutoDict-EraseBytes-CrossOver- DE: "\377\377"-
+#336	REDUCE cov: 151 ft: 332 corp: 32/84b lim: 4 exec/s: 0 rss: 36Mb L: 1/4 MS: 1 EraseBytes-
+#347	NEW    cov: 153 ft: 334 corp: 33/88b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 1 ChangeByte-
+#364	NEW    cov: 154 ft: 335 corp: 34/90b lim: 4 exec/s: 0 rss: 36Mb L: 2/4 MS: 2 ChangeBit-EraseBytes-
+#366	NEW    cov: 155 ft: 336 corp: 35/91b lim: 4 exec/s: 0 rss: 36Mb L: 1/4 MS: 2 EraseBytes-ChangeBinInt-
+#384	REDUCE cov: 155 ft: 336 corp: 35/90b lim: 4 exec/s: 0 rss: 36Mb L: 1/4 MS: 3 PersAutoDict-EraseBytes-EraseBytes- DE: "\377_"-
+#426	NEW    cov: 155 ft: 342 corp: 36/92b lim: 4 exec/s: 0 rss: 37Mb L: 2/4 MS: 2 CrossOver-EraseBytes-
+	NEW_FUNC[1/3]: 0x61eb99e2b990 in _cbor_value_finish_string_iteration /promefuzz/database/tinycbor/latest/code/src/cborparser.c:974
+	NEW_FUNC[2/3]: 0x61eb99e2d450 in iterate_noop /promefuzz/database/tinycbor/latest/code/src/cborparser.c:1154
+#442	NEW    cov: 167 ft: 358 corp: 37/96b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 1 InsertByte-
+#449	NEW    cov: 169 ft: 360 corp: 38/100b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 2 ChangeByte-CrossOver-
+#487	NEW    cov: 169 ft: 389 corp: 39/104b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 3 PersAutoDict-ChangeByte-CrossOver- DE: "\377\377"-
+#494	NEW    cov: 169 ft: 390 corp: 40/108b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 2 CopyPart-ShuffleBytes-
+#554	NEW    cov: 169 ft: 394 corp: 41/112b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 5 ChangeByte-ChangeBit-InsertByte-ChangeByte-ShuffleBytes-
+#572	NEW    cov: 170 ft: 395 corp: 42/116b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 3 ChangeBit-ChangeByte-CopyPart-
+#603	NEW    cov: 170 ft: 396 corp: 43/120b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 1 PersAutoDict- DE: "\377_"-
+#634	NEW    cov: 170 ft: 402 corp: 44/124b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 1 ChangeBinInt-
+#641	NEW    cov: 170 ft: 403 corp: 45/128b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 2 PersAutoDict-ChangeByte- DE: "\377_"-
+#667	NEW    cov: 170 ft: 404 corp: 46/132b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 1 CrossOver-
+#669	NEW    cov: 171 ft: 405 corp: 47/134b lim: 4 exec/s: 0 rss: 39Mb L: 2/4 MS: 2 ChangeByte-EraseBytes-
+#694	NEW    cov: 171 ft: 408 corp: 48/138b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 5 ShuffleBytes-ChangeBinInt-EraseBytes-ChangeBit-CrossOver-
+#745	NEW    cov: 171 ft: 432 corp: 49/142b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 1 CopyPart-
+#749	REDUCE cov: 172 ft: 443 corp: 50/146b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 4 CrossOver-InsertByte-InsertByte-InsertByte-
+	NEW_FUNC[1/1]: 0x61eb99e2e7b0 in read_uint8 /promefuzz/database/tinycbor/latest/code/src/cborinternal_p.h:286
+#754	NEW    cov: 176 ft: 447 corp: 51/150b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 5 ChangeBinInt-CrossOver-ChangeBinInt-ChangeBit-CrossOver-
+#755	NEW    cov: 176 ft: 448 corp: 52/154b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 1 CopyPart-
+#786	NEW    cov: 176 ft: 449 corp: 53/158b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 1 CopyPart-
+#819	REDUCE cov: 176 ft: 449 corp: 53/157b lim: 4 exec/s: 0 rss: 41Mb L: 3/4 MS: 3 CopyPart-ChangeBit-EraseBytes-
+#890	NEW    cov: 176 ft: 459 corp: 54/161b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 1 ChangeBinInt-
+#906	REDUCE cov: 176 ft: 459 corp: 54/160b lim: 4 exec/s: 0 rss: 42Mb L: 1/4 MS: 1 EraseBytes-
+#922	NEW    cov: 176 ft: 464 corp: 55/164b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 1 ChangeBinInt-
+#967	NEW    cov: 178 ft: 468 corp: 56/168b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 5 ShuffleBytes-CopyPart-EraseBytes-InsertByte-ShuffleBytes-
+#980	NEW    cov: 178 ft: 470 corp: 57/172b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 3 ShuffleBytes-ChangeBit-ChangeBit-
+#1006	NEW    cov: 178 ft: 471 corp: 58/176b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 1 ChangeByte-
+#1012	NEW    cov: 178 ft: 472 corp: 59/179b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 1 ChangeByte-
+#1021	NEW    cov: 179 ft: 473 corp: 60/183b lim: 4 exec/s: 0 rss: 43Mb L: 4/4 MS: 4 CrossOver-EraseBytes-CrossOver-CrossOver-
+#1035	NEW    cov: 179 ft: 474 corp: 61/187b lim: 4 exec/s: 0 rss: 43Mb L: 4/4 MS: 4 ChangeByte-CopyPart-PersAutoDict-ChangeBit- DE: "\377_"-
+#1048	REDUCE cov: 179 ft: 474 corp: 61/186b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 3 ChangeBinInt-CopyPart-EraseBytes-
+#1074	NEW    cov: 179 ft: 476 corp: 62/189b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 1 CrossOver-
+#1090	REDUCE cov: 179 ft: 476 corp: 62/188b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 1 EraseBytes-
+#1101	REDUCE cov: 179 ft: 476 corp: 62/187b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 1 CrossOver-
+#1117	NEW    cov: 179 ft: 477 corp: 63/191b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 1 ChangeBit-
+#1119	REDUCE cov: 179 ft: 477 corp: 63/190b lim: 4 exec/s: 0 rss: 44Mb L: 3/4 MS: 2 CopyPart-EraseBytes-
+#1166	NEW    cov: 179 ft: 489 corp: 64/194b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 2 ChangeBit-ChangeByte-
+#1202	NEW    cov: 179 ft: 491 corp: 65/198b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 1 CopyPart-
+#1209	REDUCE cov: 179 ft: 492 corp: 66/202b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 2 ChangeByte-CrossOver-
+#1216	REDUCE cov: 179 ft: 492 corp: 66/201b lim: 4 exec/s: 0 rss: 45Mb L: 3/4 MS: 2 CopyPart-EraseBytes-
+#1237	NEW    cov: 179 ft: 498 corp: 67/205b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 1 CopyPart-
+#1268	REDUCE cov: 179 ft: 498 corp: 67/204b lim: 4 exec/s: 0 rss: 45Mb L: 1/4 MS: 1 CrossOver-
+#1270	NEW    cov: 179 ft: 499 corp: 68/208b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 2 CrossOver-ChangeBinInt-
+#1326	REDUCE cov: 179 ft: 499 corp: 68/207b lim: 4 exec/s: 0 rss: 45Mb L: 3/4 MS: 1 EraseBytes-
+#1335	NEW    cov: 179 ft: 500 corp: 69/211b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 4 CopyPart-CopyPart-ChangeBit-ChangeBit-
+#1372	REDUCE cov: 179 ft: 502 corp: 70/215b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 2 ChangeByte-CrossOver-
+#1381	NEW    cov: 179 ft: 504 corp: 71/218b lim: 4 exec/s: 0 rss: 46Mb L: 3/4 MS: 4 ChangeByte-CrossOver-CrossOver-ChangeByte-
+#1437	NEW    cov: 179 ft: 506 corp: 72/222b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 1 ChangeByte-
+#1453	NEW    cov: 179 ft: 507 corp: 73/226b lim: 4 exec/s: 0 rss: 47Mb L: 4/4 MS: 1 ChangeBit-
+#1454	REDUCE cov: 179 ft: 507 corp: 73/225b lim: 4 exec/s: 0 rss: 47Mb L: 3/4 MS: 1 EraseBytes-
+#1483	NEW    cov: 179 ft: 509 corp: 74/229b lim: 4 exec/s: 0 rss: 47Mb L: 4/4 MS: 4 ShuffleBytes-ChangeBinInt-CrossOver-CrossOver-
+#1498	REDUCE cov: 179 ft: 510 corp: 75/233b lim: 4 exec/s: 0 rss: 47Mb L: 4/4 MS: 5 InsertByte-ChangeBit-CrossOver-ChangeBit-CrossOver-
+#1529	REDUCE cov: 179 ft: 510 corp: 75/232b lim: 4 exec/s: 0 rss: 47Mb L: 3/4 MS: 1 EraseBytes-
+#1587	NEW    cov: 179 ft: 512 corp: 76/236b lim: 4 exec/s: 0 rss: 48Mb L: 4/4 MS: 3 ChangeByte-ChangeBinInt-ShuffleBytes-
+#1588	NEW    cov: 179 ft: 513 corp: 77/240b lim: 4 exec/s: 0 rss: 48Mb L: 4/4 MS: 1 CopyPart-
+#1630	NEW    cov: 179 ft: 514 corp: 78/244b lim: 4 exec/s: 0 rss: 48Mb L: 4/4 MS: 2 ShuffleBytes-ChangeByte-
+#1660	NEW    cov: 180 ft: 515 corp: 79/247b lim: 4 exec/s: 0 rss: 48Mb L: 3/4 MS: 5 EraseBytes-ChangeBit-ChangeByte-CopyPart-ChangeBit-
+fuzz_driver_34_sanitizing_1786508292: /promefuzz/database/tinycbor/latest/code/src/cborparser.c:508: CborError cbor_value_advance(CborValue *): Assertion `it->type != CborInvalidType' failed.
+==2092137== ERROR: libFuzzer: deadly signal
+    #0 0x61eb99df0b45 in __sanitizer_print_stack_trace (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x10eb45) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #1 0x61eb99d4a65c in fuzzer::PrintStackTrace() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x6865c) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #2 0x61eb99d306e7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x4e6e7) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #3 0x7a94060d732f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7a9406130b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x7a9406130b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x7a9406130b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x7a94060d727d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x7a94060ba8fe in abort stdlib/abort.c:79:7
+    #9 0x7a94060ba81a in __assert_fail_base assert/assert.c:96:3
+    #10 0x7a94060cd516 in __assert_fail assert/assert.c:105:3
+    #11 0x61eb99e28f91 in cbor_value_advance /promefuzz/database/tinycbor/latest/code/src/cborparser.c:508:5
+    #12 0x61eb99e25bbe in traverse_value /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292.c:40:23
+    #13 0x61eb99e246c1 in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292.c:65:9
+    #14 0x61eb99d31cb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x4fcb4) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #15 0x61eb99d313a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x4f3a9) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #16 0x61eb99d32b95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x50b95) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #17 0x61eb99d336f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x516f5) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #18 0x61eb99d209cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x3e9cf) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #19 0x61eb99d4b056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x69056) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+    #20 0x7a94060bc1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #21 0x7a94060bc28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #22 0x61eb99d159b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_34/fuzz_driver_34_sanitizing_1786508292+0x339b4) (BuildId: 8f7e08505bedf779dd6a170416c9f15418b11588)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 1 ChangeBit-; base unit: 703ee5cd8591176bbe9d945118ba50dafec49e42
+0xbf,0xbf,0xff,
+\277\277\377
+artifact_prefix='./'; Test unit written to ./crash-75a2668879fc6b3ed08d7b1c85f31105ee5184ed
+Base64: v7//

@@ -1,0 +1,952 @@
+2026-08-12T03:42:31.317562+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260812034231_._PromeFuzz.py_-F_database_tinycbor_latest_lib.toml_generate_--pool-size_1.log
+2026-08-12T03:42:31.339031+0000 | MainThread INFO | src.utils:setup_llm:210 | Validating the LLM client...
+2026-08-12T03:42:42.153507+0000 | MainThread SUCCESS | src.utils:setup_llm:214 | The LLM client gpt-4-1 has been setup.
+2026-08-12T03:42:42.177153+0000 | MainThread INFO | src.utils:setup_llm:210 | Validating the LLM client...
+2026-08-12T03:42:52.750407+0000 | MainThread SUCCESS | src.utils:setup_llm:214 | The LLM client gpt-4-1 has been setup.
+2026-08-12T03:42:52.756258+0000 | MainThread INFO | src.generator.worker:restore:362 | Resuming generation state from Wed Aug 12 03:42:52 2026. Last generated fuzz driver 0, last scheduled function set 0
+2026-08-12T03:42:52.756824+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:42:52.766064+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 1, remaining rounds: 1
+2026-08-12T03:43:08.020520+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 1
+2026-08-12T03:43:08.030063+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 4
+2026-08-12T03:43:08.434285+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 1, fixing...
+2026-08-12T03:43:22.545540+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 3
+2026-08-12T03:43:22.932027+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 1, which may be a constraint violation, learning...
+2026-08-12T03:43:22.935250+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes_unchecked in the backtrace not found in the library meta data
+2026-08-12T03:43:22.935596+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function get_string_chunk in the backtrace not found in the library meta data
+2026-08-12T03:43:22.936149+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function iterate_string_chunks in the backtrace not found in the library meta data
+2026-08-12T03:43:22.936447+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function get_string_chunk_size in the backtrace not found in the library meta data
+2026-08-12T03:43:22.936945+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes in the backtrace not found in the library meta data
+2026-08-12T03:43:22.941218+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes_unchecked in the backtrace not found in the library meta data
+2026-08-12T03:43:22.941555+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function get_string_chunk in the backtrace not found in the library meta data
+2026-08-12T03:43:22.942059+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function iterate_string_chunks in the backtrace not found in the library meta data
+2026-08-12T03:43:22.942348+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function get_string_chunk_size in the backtrace not found in the library meta data
+2026-08-12T03:43:22.942811+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes in the backtrace not found in the library meta data
+2026-08-12T03:43:47.600369+0000 | MainThread WARNING | src.llm.prompter:prompt:683 | No constraint learned for crash, response: 
+null
+2026-08-12T03:43:47.600726+0000 | MainThread WARNING | src.generator.learner:learn_constraint:297 | No constraint learned from crash heap-buffer-overflow@_promefuzz_database_tinycbor_latest_code_src_cborparser.c:990:10
+2026-08-12T03:43:47.610618+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 2
+2026-08-12T03:43:48.002447+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 1, fixing...
+2026-08-12T03:44:02.922776+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 1
+2026-08-12T03:44:02.963790+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 1, fixing...
+2026-08-12T03:44:02.964254+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1786506242.c:39:38: error: call to undeclared library function 'malloc' with type 'void *(unsigned long)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n   39 |                     buf = (uint8_t *)malloc(len);\n      |                                      ^\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1786506242.c:39:38: note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1786506242.c:52:21: error: call to undeclared library function 'free' with type 'void (void *)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n   52 |                     free(buf);\n      |                     ^\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1786506242.c:52:21: note: include the header <stdlib.h> or explicitly provide a declaration for 'free'\n2 errors generated.\n"
+2026-08-12T03:44:17.232295+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 0
+2026-08-12T03:44:18.410390+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 1 succeeded
+2026-08-12T03:44:18.452849+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 1 tests the following functions: 
+cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_is_array at cbor.h:565:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_begin_string_iteration at cbor.h:533:27 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_copy_byte_string at cbor.h:499:27 in cbor.h, cbor_value_copy_byte_string at cbor.h:499:27 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_next_byte at cbor.h:362:32 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_begin_string_iteration at cbor.h:533:27 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_next_byte at cbor.h:362:32 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_next_byte at cbor.h:362:32 in cbor.h
+2026-08-12T03:44:18.463540+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 1 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:44:18.463947+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:44:18.473624+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 2, remaining rounds: 1
+2026-08-12T03:44:33.798815+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 2
+2026-08-12T03:44:33.808911+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 4
+2026-08-12T03:44:34.198093+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 2, fixing...
+2026-08-12T03:44:48.272368+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 3
+2026-08-12T03:44:48.663511+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 2, fixing...
+2026-08-12T03:45:02.950921+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 2
+2026-08-12T03:45:03.340791+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 2, which may be a constraint violation, learning...
+2026-08-12T03:45:03.343680+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function walk_value in the backtrace not found in the library meta data
+2026-08-12T03:45:03.347017+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function walk_value in the backtrace not found in the library meta data
+2026-08-12T03:45:45.579559+0000 | MainThread INFO | src.generator.learner:learn_constraint:306 | Successfully fixed crash deadly@_promefuzz_database_tinycbor_latest_code_src_cborparser.c:508:5 with learned constraint
+2026-08-12T03:45:45.580050+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_advance: Yes, this crash is caused by API misuse. Only call cbor_value_advance() on a valid iterator that still points to a current item. Do not call it after recursive traversal has already consumed or invalidated that iterator. In container walks, use one ownership model: either (1) recursively process a child and let that logic advance to the next item, or (2) process only the current item recursively and then advance exactly once in the caller, but never both. Always stop if the iterator reaches end-of-container, if enter/leave container fails, or if the iterator type becomes invalid due to malformed input. In practice, after walk_value(&recursed, ...), avoid an unconditional cbor_value_advance(&recursed); instead ensure the recursive function's contract is clear about whether it leaves recursed on the same item, the next item, or end-of-container.
+2026-08-12T03:45:45.619007+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_2.c:6:13
+2026-08-12T03:45:45.619453+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_2.c:6:13
+2026-08-12T03:45:45.619817+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_2.c:41:13
+2026-08-12T03:45:45.620122+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_2.c:41:13
+2026-08-12T03:45:45.620532+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 2 tests the following functions: 
+cbor_value_is_tag at cbor.h:457:22 in cbor.h, cbor_value_get_tag at cbor.h:459:27 in cbor.h, cbor_value_is_simple_type at cbor.h:401:22 in cbor.h, cbor_value_get_simple_type at cbor.h:403:27 in cbor.h, cbor_value_is_boolean at cbor.h:391:22 in cbor.h, cbor_value_get_boolean at cbor.h:393:27 in cbor.h, cbor_value_is_float at cbor.h:612:22 in cbor.h, cbor_value_get_float at cbor.h:614:27 in cbor.h, cbor_value_is_double at cbor.h:624:22 in cbor.h, cbor_value_get_double at cbor.h:626:27 in cbor.h, cbor_value_is_half_float at cbor.h:599:22 in cbor.h, cbor_value_get_half_float at cbor.h:602:27 in cbor.h, cbor_value_is_container at cbor.h:367:22 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_leave_container at cborparser.c:618:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T03:45:45.630965+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 2 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:45:45.631307+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:45:45.641266+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 3, remaining rounds: 1
+2026-08-12T03:46:00.433349+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 3
+2026-08-12T03:46:00.443677+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 3, remaining rounds: 4
+2026-08-12T03:46:00.826492+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 3, fixing...
+2026-08-12T03:46:13.208637+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 3, remaining rounds: 3
+2026-08-12T03:46:14.385026+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 3 succeeded
+2026-08-12T03:46:14.423599+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 3 tests the following functions: 
+cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_is_integer at cbor.h:411:22 in cbor.h, cbor_value_get_raw_integer at cbor.h:418:27 in cbor.h, cbor_value_is_negative_integer at cbor.h:415:22 in cbor.h, cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h, cbor_value_is_negative_integer at cbor.h:415:22 in cbor.h, cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h, cbor_value_get_int64 at cbor.h:432:27 in cbor.h
+2026-08-12T03:46:14.434308+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 3 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:46:14.434664+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:46:14.447479+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 4, remaining rounds: 1
+2026-08-12T03:46:29.540531+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 4
+2026-08-12T03:46:29.550942+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 4, remaining rounds: 4
+2026-08-12T03:46:29.937092+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 4, fixing...
+2026-08-12T03:46:44.758123+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 4, remaining rounds: 3
+2026-08-12T03:46:45.933930+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 4 succeeded
+2026-08-12T03:46:45.972817+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_4.c:7:13
+2026-08-12T03:46:45.973388+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 4 tests the following functions: 
+cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_array_length at cbor.h:570:27 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_array_length at cbor.h:570:27 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_map_length at cbor.h:583:27 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_map_length at cbor.h:583:27 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_next_byte at cbor.h:362:32 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T03:46:45.984109+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 4 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:46:45.984449+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:46:45.994630+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 5, remaining rounds: 1
+2026-08-12T03:47:02.087419+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 5
+2026-08-12T03:47:02.097908+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 5, remaining rounds: 4
+2026-08-12T03:47:02.506094+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 5, fixing...
+2026-08-12T03:47:16.009613+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 5, remaining rounds: 3
+2026-08-12T03:47:17.186135+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 5 succeeded
+2026-08-12T03:47:17.227621+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_5.c:9:13
+2026-08-12T03:47:17.228119+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 5 tests the following functions: 
+cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_is_container at cbor.h:367:22 in cbor.h, cbor_value_get_int64 at cbor.h:432:27 in cbor.h, cbor_value_dup_byte_string at cbor.h:512:27 in cbor.h, cbor_value_dup_text_string at cbor.h:506:27 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T03:47:17.238996+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 5 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:47:17.239337+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:47:17.249641+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 6, remaining rounds: 1
+2026-08-12T03:47:34.528574+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 6
+2026-08-12T03:47:34.539187+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 6, remaining rounds: 4
+2026-08-12T03:47:34.930826+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 6, fixing...
+2026-08-12T03:47:52.876321+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 6, remaining rounds: 3
+2026-08-12T03:47:53.264402+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 6, which may be a constraint violation, learning...
+2026-08-12T03:47:53.267498+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function exercise_value in the backtrace not found in the library meta data
+2026-08-12T03:47:53.267865+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes_unchecked in the backtrace not found in the library meta data
+2026-08-12T03:47:53.268277+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_uint32 in the backtrace not found in the library meta data
+2026-08-12T03:47:53.272229+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function exercise_value in the backtrace not found in the library meta data
+2026-08-12T03:47:53.272585+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes_unchecked in the backtrace not found in the library meta data
+2026-08-12T03:47:53.272962+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_uint32 in the backtrace not found in the library meta data
+2026-08-12T03:48:33.841080+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function _cbor_value_decode_int64_internal: Misuse: this is an internal helper that assumes CborValue was produced by tinycbor's parser and that all iterator invariants hold, including valid type/flags and sufficient backing bytes. Do not call or reach it with a manually fabricated CborValue. Create the iterator via cbor_parser_init() and parser traversal APIs, and only decode values that the parser identified as present and complete within the input buffer.
+2026-08-12T03:48:33.841716+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_get_float: Misuse: call this only on a CborValue obtained from normal parsing, after confirming cbor_value_is_float(value) is true, and after ensuring the input buffer is a complete CBOR item. Do not manually set value->type or value->flags. Initialize a CborParser with cbor_parser_init(), advance to the target item using the public iterator APIs, and then invoke cbor_value_get_float() on that parser-produced value.
+2026-08-12T03:48:33.854099+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 6, remaining rounds: 2
+2026-08-12T03:48:34.229654+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 6, which may be a constraint violation, learning...
+2026-08-12T03:49:14.262169+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_leave_container: Only call cbor_value_leave_container() after the iterator returned by cbor_value_enter_container() has reached the end of the container, i.e. recursed->type == CborInvalidType (typically after advancing until cbor_value_at_end(&recursed) is true without error). If cbor_value_advance(&recursed) returns an error while iterating, do not unconditionally call cbor_value_leave_container(); instead propagate/handle the error and abandon that container path.
+2026-08-12T03:49:14.262628+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_enter_container: Use cbor_value_enter_container() only when cbor_value_is_container() is true, then iterate the child CborValue until normal end-of-container before leaving. Treat the entered iterator as invalid for cbor_value_leave_container() if traversal terminated due to parse error rather than successful exhaustion.
+2026-08-12T03:49:14.274189+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 6, remaining rounds: 1
+2026-08-12T03:49:14.651542+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 6, fixing...
+2026-08-12T03:49:28.778159+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 6, remaining rounds: 0
+2026-08-12T03:49:29.164952+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 6, which may be a constraint violation, learning...
+2026-08-12T03:49:29.167738+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function exercise_value in the backtrace not found in the library meta data
+2026-08-12T03:49:29.171183+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function exercise_value in the backtrace not found in the library meta data
+2026-08-12T03:50:09.848301+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_get_float: Yes, this crash is caused by misuse. Only call cbor_value_get_float() on a CborValue produced by tinycbor parsing APIs (for example after cbor_parser_init and normal iterator traversal), not on a manually fabricated CborValue. Before calling, ensure cbor_value_is_float(value) is true and preserve the parser-populated internal fields and flags; do not zero or invent value->flags, extra, remaining, source, or parser state. If constructing tests, generate valid CBOR bytes for a float and let tinycbor parse them, then call cbor_value_get_float() on the resulting iterator.
+2026-08-12T03:50:09.860022+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 6 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T03:50:09.860509+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 6, remaining rounds: 0
+2026-08-12T03:50:24.574523+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 7
+2026-08-12T03:50:24.585420+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 7, remaining rounds: 4
+2026-08-12T03:50:25.763011+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 7 succeeded
+2026-08-12T03:50:25.810855+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.811302+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.811646+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.811950+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.812242+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.812522+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.812797+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: test_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_7.c:12:13
+2026-08-12T03:50:25.813122+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 7 tests the following functions: 
+cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_is_half_float at cbor.h:599:22 in cbor.h, cbor_value_is_float at cbor.h:612:22 in cbor.h, cbor_value_get_float at cbor.h:614:27 in cbor.h, cbor_value_is_double at cbor.h:624:22 in cbor.h, cbor_value_get_double at cbor.h:626:27 in cbor.h
+2026-08-12T03:50:25.824047+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 7 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:50:25.824388+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:50:25.834933+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 7, remaining rounds: 1
+2026-08-12T03:50:39.576045+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 8
+2026-08-12T03:50:39.587127+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 8, remaining rounds: 4
+2026-08-12T03:50:40.763961+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 8 succeeded
+2026-08-12T03:50:40.807212+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 8 tests the following functions: 
+cbor_value_is_array at cbor.h:565:22 in cbor.h, cbor_value_is_map at cbor.h:567:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_is_array at cbor.h:565:22 in cbor.h, cbor_value_is_map at cbor.h:567:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_is_array at cbor.h:565:22 in cbor.h, cbor_value_is_map at cbor.h:567:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h
+2026-08-12T03:50:40.818520+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 8 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:50:40.818889+0000 | MainThread INFO | src.generator.scheduler:schedule_order:428 | Scheduling new order set...
+2026-08-12T03:50:40.829455+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 8, remaining rounds: 1
+2026-08-12T03:50:56.932242+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 9
+2026-08-12T03:50:56.943415+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 9, remaining rounds: 4
+2026-08-12T03:50:57.349427+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 9, fixing...
+2026-08-12T03:51:12.831090+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 9, remaining rounds: 3
+2026-08-12T03:51:14.003986+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 9 succeeded
+2026-08-12T03:51:14.045549+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 9 tests the following functions: 
+cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h, cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h, cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h, cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h
+2026-08-12T03:51:14.056940+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 9 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:51:14.057290+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T03:51:14.061413+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 9: 
+cbor_value_validate_basic at cborparser.c:433:11 in cbor.h
+cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h
+cbor_value_skip_tag at cborparser.c:542:11 in cbor.h
+cbor_value_leave_container at cborparser.c:618:11 in cbor.h
+cbor_value_advance at cborparser.c:506:11 in cbor.h
+cbor_value_map_find_value at cborparser.c:1402:11 in cbor.h
+2026-08-12T03:51:14.072347+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 9, remaining rounds: 1
+2026-08-12T03:51:32.364322+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 10
+2026-08-12T03:51:32.375513+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 10, remaining rounds: 4
+2026-08-12T03:51:32.760384+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 10, fixing...
+2026-08-12T03:51:50.469643+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 10, remaining rounds: 3
+2026-08-12T03:51:50.876943+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 10, fixing...
+2026-08-12T03:52:08.936067+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 10, remaining rounds: 2
+2026-08-12T03:52:10.125161+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 10 succeeded
+2026-08-12T03:52:10.165584+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.166030+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.166401+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.166720+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.167018+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_definitely_fixed_type at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:6:12
+2026-08-12T03:52:10.167308+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.167594+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.167873+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.168146+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_definitely_fixed_type at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:6:12
+2026-08-12T03:52:10.168420+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_string_if_possible at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:27:13
+2026-08-12T03:52:10.168716+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_map_find at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:76:13
+2026-08-12T03:52:10.168996+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.169272+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_container at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:49:13
+2026-08-12T03:52:10.169542+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.169810+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:47:13
+2026-08-12T03:52:10.170071+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.170350+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.170619+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.170887+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.171146+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:47:13
+2026-08-12T03:52:10.171402+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.171662+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.171949+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_valid_iterator at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:23:12
+2026-08-12T03:52:10.172222+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: is_definitely_fixed_type at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_10.c:6:12
+2026-08-12T03:52:10.172660+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 10 tests the following functions: 
+cbor_value_validate_basic at cborparser.c:433:11 in cbor.h, cbor_value_skip_tag at cborparser.c:542:11 in cbor.h, cbor_value_validate_basic at cborparser.c:433:11 in cbor.h, cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h, cbor_value_is_tag at cbor.h:457:22 in cbor.h, cbor_value_skip_tag at cborparser.c:542:11 in cbor.h, cbor_value_validate_basic at cborparser.c:433:11 in cbor.h, cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h, cbor_value_is_map at cbor.h:567:22 in cbor.h, cbor_value_is_array at cbor.h:565:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_calculate_string_length at cborparser.c:954:11 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_copy_text_string at cbor.h:493:27 in cbor.h, cbor_value_copy_byte_string at cbor.h:499:27 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_leave_container at cborparser.c:618:11 in cbor.h, cbor_value_is_map at cbor.h:567:22 in cbor.h, cbor_value_map_find_value at cborparser.c:1402:11 in cbor.h, cbor_value_validate_basic at cborparser.c:433:11 in cbor.h, cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h
+2026-08-12T03:52:10.184101+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 10 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:52:10.184440+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T03:52:10.188698+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 10: 
+cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h
+cbor_encode_raw at cborencoder.c:489:11 in cbor.h
+cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h
+cbor_encode_uint at cborencoder.c:348:11 in cbor.h
+cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h
+cbor_encoder_init at cborencoder.c:195:6 in cbor.h
+2026-08-12T03:52:10.199800+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 10, remaining rounds: 1
+2026-08-12T03:52:29.889966+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 11
+2026-08-12T03:52:29.901111+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 11, remaining rounds: 4
+2026-08-12T03:52:30.335415+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 11, fixing...
+2026-08-12T03:52:48.295482+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 11, remaining rounds: 3
+2026-08-12T03:52:48.710777+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 11, which may be a constraint violation, learning...
+2026-08-12T03:53:33.112128+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_encode_raw: Yes, this crash is caused by API misuse. Do not call cbor_encode_raw with a CborEncoder initialized using arbitrary or fuzzed flags. Initialize the encoder only with valid tinycbor-defined flags (typically 0, or documented constants only), and ensure the encoder remains in a valid state before encoding. Check the return value of cbor_encoder_init/cbor_encoder_create_array-related operations indirectly by validating setup assumptions, and stop encoding if earlier operations report errors. Also ensure the output buffer and length are consistent, and avoid reusing an encoder whose internal state may be invalid due to unsupported flag combinations.
+2026-08-12T03:53:33.124300+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 11, remaining rounds: 2
+2026-08-12T03:53:33.571262+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 11, fixing...
+2026-08-12T03:53:51.857964+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 11, remaining rounds: 1
+2026-08-12T03:53:52.293006+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 11, fixing...
+2026-08-12T03:54:10.182550+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 11, remaining rounds: 0
+2026-08-12T03:54:11.357710+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 11 succeeded
+2026-08-12T03:54:11.402502+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.402937+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: bounded_len at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:35:15
+2026-08-12T03:54:11.403267+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_size_t at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:9:15
+2026-08-12T03:54:11.403553+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.403970+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.404306+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: bounded_len at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:35:15
+2026-08-12T03:54:11.404617+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_size_t at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:9:15
+2026-08-12T03:54:11.404946+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.405258+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:20:17
+2026-08-12T03:54:11.405597+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:20:17
+2026-08-12T03:54:11.405916+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:20:17
+2026-08-12T03:54:11.406228+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:20:17
+2026-08-12T03:54:11.406531+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_size_t at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:9:15
+2026-08-12T03:54:11.406836+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.407133+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: bounded_len at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:35:15
+2026-08-12T03:54:11.407428+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_size_t at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:9:15
+2026-08-12T03:54:11.407750+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.408059+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.408362+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: bounded_len at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:35:15
+2026-08-12T03:54:11.408650+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_size_t at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:9:15
+2026-08-12T03:54:11.408944+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: remaining_bytes at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:31:15
+2026-08-12T03:54:11.409239+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:20:17
+2026-08-12T03:54:11.409539+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_size_t at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:9:15
+2026-08-12T03:54:11.409850+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_11.c:20:17
+2026-08-12T03:54:11.410264+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 11 tests the following functions: 
+cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h
+2026-08-12T03:54:11.422050+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 11 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:54:11.422401+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T03:54:11.426534+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 11: 
+cbor_encode_half_float at cbor.h:262:27 in cbor.h
+cbor_encode_null at cbor.h:257:27 in cbor.h
+cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h
+cbor_encode_undefined at cbor.h:259:27 in cbor.h
+cbor_encode_boolean at cbor.h:255:27 in cbor.h
+cbor_encode_float at cbor.h:265:27 in cbor.h
+2026-08-12T03:54:11.437961+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 11, remaining rounds: 1
+2026-08-12T03:54:27.987234+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 12
+2026-08-12T03:54:27.998703+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 12, remaining rounds: 4
+2026-08-12T03:54:29.178137+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 12 succeeded
+2026-08-12T03:54:29.224047+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:20:17
+2026-08-12T03:54:29.224494+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:20:17
+2026-08-12T03:54:29.224868+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: u32_to_float at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:29:14
+2026-08-12T03:54:29.225160+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: u32_to_float at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:29:14
+2026-08-12T03:54:29.225446+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:13:17
+2026-08-12T03:54:29.225726+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:13:17
+2026-08-12T03:54:29.226015+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:20:17
+2026-08-12T03:54:29.226295+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: u32_to_float at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:29:14
+2026-08-12T03:54:29.226564+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_12.c:13:17
+2026-08-12T03:54:29.226937+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 12 tests the following functions: 
+cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_float at cbor.h:265:27 in cbor.h, cbor_encode_float at cbor.h:265:27 in cbor.h, cbor_encode_half_float at cbor.h:262:27 in cbor.h, cbor_encode_half_float at cbor.h:262:27 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encode_null at cbor.h:257:27 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_float at cbor.h:265:27 in cbor.h, cbor_encode_half_float at cbor.h:262:27 in cbor.h, cbor_encode_boolean at cbor.h:255:27 in cbor.h, cbor_encode_undefined at cbor.h:259:27 in cbor.h, cbor_encode_boolean at cbor.h:255:27 in cbor.h, cbor_encode_boolean at cbor.h:255:27 in cbor.h, cbor_encode_null at cbor.h:257:27 in cbor.h, cbor_encode_undefined at cbor.h:259:27 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h
+2026-08-12T03:54:29.238592+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 12 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:54:29.238935+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T03:54:29.242551+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 12: 
+cbor_parser_init_reader at cborparser.c:348:11 in cbor.h
+_cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h
+cbor_value_reparse at cborparser.c:397:11 in cbor.h
+cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h
+cbor_value_advance at cborparser.c:506:11 in cbor.h
+_cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h
+2026-08-12T03:54:29.253705+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 12, remaining rounds: 1
+2026-08-12T03:54:47.167438+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 13
+2026-08-12T03:54:47.179119+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 13, remaining rounds: 4
+2026-08-12T03:54:47.563492+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 13, fixing...
+2026-08-12T03:55:04.365018+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 13, remaining rounds: 3
+2026-08-12T03:55:04.748303+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 13, fixing...
+2026-08-12T03:55:22.349305+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 13, remaining rounds: 2
+2026-08-12T03:55:22.734134+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 13, which may be a constraint violation, learning...
+2026-08-12T03:56:08.648780+0000 | MainThread WARNING | src.generator.learner:learn_constraint:323 | Failed to fix crash deadly@_promefuzz_database_tinycbor_latest_code_src_cborparser.c:457:5 with learned constraint
+2026-08-12T03:56:08.660605+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 13, remaining rounds: 1
+2026-08-12T03:56:09.046318+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 13, fixing...
+2026-08-12T03:56:28.215935+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 13, remaining rounds: 0
+2026-08-12T03:56:28.600940+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 13, fixing...
+2026-08-12T03:56:46.571880+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 13 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T03:56:46.572326+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 12, remaining rounds: 0
+2026-08-12T03:57:04.880103+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 14
+2026-08-12T03:57:04.891964+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 14, remaining rounds: 4
+2026-08-12T03:57:05.271532+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 14, fixing...
+2026-08-12T03:57:21.961578+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 14, remaining rounds: 3
+2026-08-12T03:57:22.341552+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 14, fixing...
+2026-08-12T03:57:39.418746+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 14, remaining rounds: 2
+2026-08-12T03:57:40.600015+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 14 succeeded
+2026-08-12T03:57:40.641426+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_reparse at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:68:13
+2026-08-12T03:57:40.641857+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_begin_finish_string_iteration at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:74:13
+2026-08-12T03:57:40.642202+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_reparse at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:68:13
+2026-08-12T03:57:40.642498+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_advance_fixed_copy at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:83:13
+2026-08-12T03:57:40.642781+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_advance_copy at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:90:13
+2026-08-12T03:57:40.643049+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_reparse at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:68:13
+2026-08-12T03:57:40.643316+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:97:13
+2026-08-12T03:57:40.643571+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:97:13
+2026-08-12T03:57:40.643826+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.644074+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: try_reparse at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:68:13
+2026-08-12T03:57:40.644340+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.644598+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.644852+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.645103+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.645346+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.645599+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.645866+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.646120+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.646367+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: iterator_looks_valid at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_14.c:58:13
+2026-08-12T03:57:40.646698+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 14 tests the following functions: 
+cbor_parser_init_reader at cborparser.c:348:11 in cbor.h, _cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h, _cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h, cbor_value_reparse at cborparser.c:397:11 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_reparse at cborparser.c:397:11 in cbor.h, _cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h, cbor_value_reparse at cborparser.c:397:11 in cbor.h, _cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h, cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h
+2026-08-12T03:57:40.658912+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 14 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:57:40.659251+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T03:57:40.662651+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 13: 
+cbor_encode_int at cborencoder.c:372:11 in cbor.h
+cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h
+cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h
+cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h
+cbor_encode_raw at cborencoder.c:489:11 in cbor.h
+cbor_encoder_create_map at cborencoder.c:561:11 in cbor.h
+2026-08-12T03:57:40.674218+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 13, remaining rounds: 1
+2026-08-12T03:58:02.277510+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 15
+2026-08-12T03:58:02.289403+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 15, remaining rounds: 4
+2026-08-12T03:58:03.465757+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 15 succeeded
+2026-08-12T03:58:03.511222+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.511656+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.512004+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_i64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:33:16
+2026-08-12T03:58:03.512294+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.512565+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.512827+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.513085+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.513335+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_i64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:33:16
+2026-08-12T03:58:03.513578+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.513838+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.514101+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.514350+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.514597+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_i64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:33:16
+2026-08-12T03:58:03.514842+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.515083+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.515349+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:20:17
+2026-08-12T03:58:03.515616+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:20:17
+2026-08-12T03:58:03.515869+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.516109+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.516343+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.516577+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.516827+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.517072+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.517311+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_15.c:14:16
+2026-08-12T03:58:03.517661+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 15 tests the following functions: 
+cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_create_map at cborencoder.c:561:11 in cbor.h, cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encoder_create_map at cborencoder.c:561:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h
+2026-08-12T03:58:03.530006+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 15 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T03:58:03.530345+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T03:58:03.534488+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 14: 
+cbor_value_get_int64_checked at cborparser.c:803:11 in cbor.h
+cbor_value_get_int64 at cbor.h:432:27 in cbor.h
+cbor_value_get_raw_integer at cbor.h:418:27 in cbor.h
+cbor_value_is_integer at cbor.h:411:22 in cbor.h
+cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h
+cbor_value_is_negative_integer at cbor.h:415:22 in cbor.h
+2026-08-12T03:58:03.546179+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 14, remaining rounds: 1
+2026-08-12T03:58:21.042461+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 16
+2026-08-12T03:58:21.054350+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 16, remaining rounds: 4
+2026-08-12T03:58:21.445365+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 16, fixing...
+2026-08-12T03:58:36.859215+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 16, remaining rounds: 3
+2026-08-12T03:58:37.280087+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 16, fixing...
+2026-08-12T03:58:53.103789+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 16, remaining rounds: 2
+2026-08-12T03:58:53.496054+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 16, fixing...
+2026-08-12T03:59:09.927520+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 16, remaining rounds: 1
+2026-08-12T03:59:10.314666+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 16, fixing...
+2026-08-12T03:59:24.985943+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 16, remaining rounds: 0
+2026-08-12T03:59:25.368668+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 16, fixing...
+2026-08-12T03:59:41.091661+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 16 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T03:59:41.092175+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 14, remaining rounds: 0
+2026-08-12T03:59:58.382197+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 17
+2026-08-12T03:59:58.394335+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 17, remaining rounds: 4
+2026-08-12T03:59:58.777880+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 17, fixing...
+2026-08-12T04:00:14.748404+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 17, remaining rounds: 3
+2026-08-12T04:00:15.133003+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 17, fixing...
+2026-08-12T04:00:29.911955+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 17, remaining rounds: 2
+2026-08-12T04:00:31.094040+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 17 succeeded
+2026-08-12T04:00:31.134826+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_17.c:31:13
+2026-08-12T04:00:31.135236+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_17.c:7:13
+2026-08-12T04:00:31.135574+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_container at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_17.c:33:13
+2026-08-12T04:00:31.135864+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_17.c:31:13
+2026-08-12T04:00:31.136136+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_17.c:31:13
+2026-08-12T04:00:31.136488+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 17 tests the following functions: 
+cbor_value_is_integer at cbor.h:411:22 in cbor.h, cbor_value_is_negative_integer at cbor.h:415:22 in cbor.h, cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h, cbor_value_get_raw_integer at cbor.h:418:27 in cbor.h, cbor_value_get_int64 at cbor.h:432:27 in cbor.h, cbor_value_get_int64_checked at cborparser.c:803:11 in cbor.h, cbor_value_is_negative_integer at cbor.h:415:22 in cbor.h, cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_leave_container at cborparser.c:618:11 in cbor.h, cbor_value_is_container at cbor.h:367:22 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T04:00:31.149214+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 17 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:00:31.149563+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:00:31.153619+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 15: 
+cbor_value_is_null at cbor.h:385:22 in cbor.h
+cbor_value_is_undefined at cbor.h:387:22 in cbor.h
+cbor_value_is_simple_type at cbor.h:401:22 in cbor.h
+cbor_value_is_double at cbor.h:624:22 in cbor.h
+cbor_value_get_simple_type at cbor.h:403:27 in cbor.h
+cbor_value_get_boolean at cbor.h:393:27 in cbor.h
+2026-08-12T04:00:31.165532+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 15, remaining rounds: 1
+2026-08-12T04:00:48.287601+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 18
+2026-08-12T04:00:48.300070+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 18, remaining rounds: 4
+2026-08-12T04:00:49.477007+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 18 succeeded
+2026-08-12T04:00:49.522243+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_18.c:20:17
+2026-08-12T04:00:49.522735+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_18.c:13:17
+2026-08-12T04:00:49.523119+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 18 tests the following functions: 
+cbor_value_is_simple_type at cbor.h:401:22 in cbor.h, cbor_value_is_null at cbor.h:385:22 in cbor.h, cbor_value_is_undefined at cbor.h:387:22 in cbor.h, cbor_value_is_double at cbor.h:624:22 in cbor.h, cbor_value_is_simple_type at cbor.h:401:22 in cbor.h, cbor_value_get_simple_type at cbor.h:403:27 in cbor.h, cbor_value_is_boolean at cbor.h:391:22 in cbor.h, cbor_value_get_boolean at cbor.h:393:27 in cbor.h, cbor_value_is_simple_type at cbor.h:401:22 in cbor.h, cbor_value_is_null at cbor.h:385:22 in cbor.h, cbor_value_is_undefined at cbor.h:387:22 in cbor.h, cbor_value_is_double at cbor.h:624:22 in cbor.h, cbor_value_is_simple_type at cbor.h:401:22 in cbor.h, cbor_value_get_simple_type at cbor.h:403:27 in cbor.h, cbor_value_is_boolean at cbor.h:391:22 in cbor.h, cbor_value_get_boolean at cbor.h:393:27 in cbor.h
+2026-08-12T04:00:49.535671+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 18 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:00:49.536029+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:00:49.540118+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 16: 
+cbor_value_to_pretty at cbor.h:712:27 in cbor.h
+cbor_value_to_pretty_advance at cborpretty_stdio.c:63:11 in cbor.h
+cbor_value_to_json_advance at cbortojson.c:786:11 in cborjson.h
+cbor_value_to_pretty_advance_flags at cborpretty_stdio.c:83:11 in cbor.h
+cbor_value_to_json at cborjson.h:51:27 in cborjson.h
+cbor_value_to_pretty_stream at cborpretty.c:576:11 in cbor.h
+2026-08-12T04:00:49.552054+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 16, remaining rounds: 1
+2026-08-12T04:01:06.207804+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 19
+2026-08-12T04:01:06.220556+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 19, remaining rounds: 4
+2026-08-12T04:01:06.268673+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 19, fixing...
+2026-08-12T04:01:06.269183+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_19/fuzz_driver_19_sanitizing_1786507266.c:89:43: error: incompatible function pointer types passing 'CborError (void *, const char *, size_t)' (aka 'enum CborError (void *, const char *, unsigned long)') to parameter of type 'CborStreamFunction' (aka 'enum CborError (*)(void *, const char *, ...)') [-Wincompatible-function-pointer-types]\n   89 |         (void)cbor_value_to_pretty_stream(fuzz_stream_writer, out, &copy, flags1);\n      |                                           ^~~~~~~~~~~~~~~~~~\n/promefuzz/database/tinycbor/latest/code/src/cbor.h:706:67: note: passing argument to parameter 'streamFunction' here\n  706 | CBOR_API CborError cbor_value_to_pretty_stream(CborStreamFunction streamFunction, void *token, CborValue *value, int flags);\n      |                                                                   ^\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_19/fuzz_driver_19_sanitizing_1786507266.c:110:43: error: incompatible function pointer types passing 'CborError (void *, const char *, size_t)' (aka 'enum CborError (void *, const char *, unsigned long)') to parameter of type 'CborStreamFunction' (aka 'enum CborError (*)(void *, const char *, ...)') [-Wincompatible-function-pointer-types]\n  110 |         (void)cbor_value_to_pretty_stream(fuzz_stream_writer, out, &copy, flags2);\n      |                                           ^~~~~~~~~~~~~~~~~~\n/promefuzz/database/tinycbor/latest/code/src/cbor.h:706:67: note: passing argument to parameter 'streamFunction' here\n  706 | CBOR_API CborError cbor_value_to_pretty_stream(CborStreamFunction streamFunction, void *token, CborValue *value, int flags);\n      |                                                                   ^\n2 errors generated.\n"
+2026-08-12T04:01:22.305153+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 19, remaining rounds: 3
+2026-08-12T04:01:22.351543+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 19, fixing...
+2026-08-12T04:01:22.352027+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_19/fuzz_driver_19_sanitizing_1786507282.c:19:5: error: call to undeclared library function 'va_start' with type 'void (struct __va_list_tag *, ...)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n   19 |     va_start(ap, format);\n      |     ^\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_19/fuzz_driver_19_sanitizing_1786507282.c:19:5: note: include the header <stdarg.h> or explicitly provide a declaration for 'va_start'\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_19/fuzz_driver_19_sanitizing_1786507282.c:21:5: error: call to undeclared library function 'va_end' with type 'void (struct __va_list_tag *)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n   21 |     va_end(ap);\n      |     ^\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_19/fuzz_driver_19_sanitizing_1786507282.c:21:5: note: include the header <stdarg.h> or explicitly provide a declaration for 'va_end'\n2 errors generated.\n"
+2026-08-12T04:01:37.539610+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 19, remaining rounds: 2
+2026-08-12T04:01:37.996670+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 19, fixing...
+2026-08-12T04:01:54.954376+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 19, remaining rounds: 1
+2026-08-12T04:01:56.129194+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 19 succeeded
+2026-08-12T04:01:56.173152+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: __builtin_va_start at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_19.c:18:5
+2026-08-12T04:01:56.173592+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: __builtin_va_end at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_19.c:20:5
+2026-08-12T04:01:56.173925+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_json_flags at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_19.c:25:12
+2026-08-12T04:01:56.174201+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: get_json_flags at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_19.c:25:12
+2026-08-12T04:01:56.174566+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 19 tests the following functions: 
+cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_to_pretty_stream at cborpretty.c:576:11 in cbor.h, cbor_value_to_json_advance at cbortojson.c:786:11 in cborjson.h, cbor_value_to_pretty_advance_flags at cborpretty_stdio.c:83:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_to_pretty at cbor.h:712:27 in cbor.h, cbor_value_to_pretty_advance at cborpretty_stdio.c:63:11 in cbor.h, cbor_value_to_pretty_advance_flags at cborpretty_stdio.c:83:11 in cbor.h, cbor_value_to_pretty_stream at cborpretty.c:576:11 in cbor.h, cbor_value_to_json at cborjson.h:51:27 in cborjson.h, cbor_value_to_json_advance at cbortojson.c:786:11 in cborjson.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_to_pretty at cbor.h:712:27 in cbor.h, cbor_value_to_json at cborjson.h:51:27 in cborjson.h, cbor_value_to_pretty_advance at cborpretty_stdio.c:63:11 in cbor.h
+2026-08-12T04:01:56.187294+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 19 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:01:56.187638+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:01:56.191639+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 17: 
+cbor_value_finish_string_iteration at cbor.h:541:27 in cbor.h
+_cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h
+_cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h
+cbor_value_begin_string_iteration at cbor.h:533:27 in cbor.h
+cbor_value_get_string_length at cbor.h:473:27 in cbor.h
+cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h
+2026-08-12T04:01:56.203726+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 17, remaining rounds: 1
+2026-08-12T04:02:13.957305+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 20
+2026-08-12T04:02:13.969918+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 20, remaining rounds: 4
+2026-08-12T04:02:14.361590+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 20, fixing...
+2026-08-12T04:02:31.126146+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 20, remaining rounds: 3
+2026-08-12T04:02:31.563006+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 20, fixing...
+2026-08-12T04:02:49.595875+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 20, remaining rounds: 2
+2026-08-12T04:02:50.776227+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 20 succeeded
+2026-08-12T04:02:50.819022+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_string_apis at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_20.c:6:13
+2026-08-12T04:02:50.819443+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_container at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_20.c:81:13
+2026-08-12T04:02:50.819796+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_string_apis at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_20.c:6:13
+2026-08-12T04:02:50.820100+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_container at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_20.c:81:13
+2026-08-12T04:02:50.820564+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 20 tests the following functions: 
+cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_container at cbor.h:367:22 in cbor.h, cbor_value_begin_string_iteration at cbor.h:533:27 in cbor.h, cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, cbor_value_finish_string_iteration at cbor.h:541:27 in cbor.h, _cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h, cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, _cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_begin_string_iteration at cbor.h:533:27 in cbor.h, cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, cbor_value_finish_string_iteration at cbor.h:541:27 in cbor.h, _cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h, cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h, _cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_get_string_length at cbor.h:473:27 in cbor.h, cbor_value_is_container at cbor.h:367:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_leave_container at cborparser.c:618:11 in cbor.h
+2026-08-12T04:02:50.833390+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 20 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:02:50.833736+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:02:50.837911+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 18: 
+cbor_encoder_init_writer at cborencoder.c:203:6 in cbor.h
+_cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h
+cbor_encoder_init at cborencoder.c:195:6 in cbor.h
+cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h
+cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h
+cbor_encode_raw at cborencoder.c:489:11 in cbor.h
+2026-08-12T04:02:50.850142+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 18, remaining rounds: 1
+2026-08-12T04:03:09.372239+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 21
+2026-08-12T04:03:09.384982+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 21, remaining rounds: 4
+2026-08-12T04:03:10.561056+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 21 succeeded
+2026-08-12T04:03:10.608172+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 21 tests the following functions: 
+cbor_encoder_init_writer at cborencoder.c:203:6 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h
+2026-08-12T04:03:10.621839+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 21 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:03:10.622200+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:03:10.625968+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 19: 
+cbor_value_get_int at cbor.h:441:27 in cbor.h
+cbor_value_get_int_checked at cborparser.c:843:11 in cbor.h
+cbor_value_get_uint64 at cbor.h:425:27 in cbor.h
+cbor_value_get_raw_integer at cbor.h:418:27 in cbor.h
+cbor_value_get_int64 at cbor.h:432:27 in cbor.h
+cbor_value_is_integer at cbor.h:411:22 in cbor.h
+2026-08-12T04:03:10.638315+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 19, remaining rounds: 1
+2026-08-12T04:03:25.570256+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 22
+2026-08-12T04:03:25.582884+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 22, remaining rounds: 4
+2026-08-12T04:03:25.965587+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 22, fixing...
+2026-08-12T04:03:40.366646+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 22, remaining rounds: 3
+2026-08-12T04:03:40.780708+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 22, fixing...
+2026-08-12T04:03:55.678573+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 22, remaining rounds: 2
+2026-08-12T04:03:56.057444+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 22, fixing...
+2026-08-12T04:04:09.923150+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 22, remaining rounds: 1
+2026-08-12T04:04:10.309757+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 22, fixing...
+2026-08-12T04:04:24.284651+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 22, remaining rounds: 0
+2026-08-12T04:04:24.671058+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 22, fixing...
+2026-08-12T04:04:39.112511+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 22 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T04:04:39.112965+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 19, remaining rounds: 0
+2026-08-12T04:04:53.362002+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 23
+2026-08-12T04:04:53.374937+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 23, remaining rounds: 4
+2026-08-12T04:04:53.757550+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 23, fixing...
+2026-08-12T04:05:07.862814+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 23, remaining rounds: 3
+2026-08-12T04:05:08.252181+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 23, fixing...
+2026-08-12T04:05:22.811574+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 23, remaining rounds: 2
+2026-08-12T04:05:23.194257+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 23, fixing...
+2026-08-12T04:05:37.790827+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 23, remaining rounds: 1
+2026-08-12T04:05:38.965706+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 23 succeeded
+2026-08-12T04:05:39.008502+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_integer_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:7:13
+2026-08-12T04:05:39.008935+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:27:13
+2026-08-12T04:05:39.009268+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:27:13
+2026-08-12T04:05:39.009552+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_integer_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:7:13
+2026-08-12T04:05:39.009974+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 23 tests the following functions: 
+cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_is_integer at cbor.h:411:22 in cbor.h, cbor_value_get_int_checked at cborparser.c:843:11 in cbor.h, cbor_value_get_int at cbor.h:441:27 in cbor.h, cbor_value_get_int64 at cbor.h:432:27 in cbor.h, cbor_value_get_raw_integer at cbor.h:418:27 in cbor.h, cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h, cbor_value_get_uint64 at cbor.h:425:27 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_is_container at cbor.h:367:22 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_leave_container at cborparser.c:618:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_is_valid at cbor.h:379:22 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h
+2026-08-12T04:05:39.023550+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 23 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:05:39.023899+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:05:39.027002+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 20: 
+cbor_error_string at cborerrorstrings.c:80:13 in cbor.h
+cbor_encode_null at cbor.h:257:27 in cbor.h
+cbor_encode_undefined at cbor.h:259:27 in cbor.h
+cbor_encode_boolean at cbor.h:255:27 in cbor.h
+cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h
+cbor_encode_int at cborencoder.c:372:11 in cbor.h
+2026-08-12T04:05:39.039716+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 20, remaining rounds: 1
+2026-08-12T04:05:59.240978+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 24
+2026-08-12T04:05:59.254070+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 24, remaining rounds: 4
+2026-08-12T04:06:00.426130+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 24 succeeded
+2026-08-12T04:06:00.473722+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.474157+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.474569+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.474977+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_i64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:38:16
+2026-08-12T04:06:00.475303+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.475583+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.475851+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:22:17
+2026-08-12T04:06:00.476194+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:22:17
+2026-08-12T04:06:00.476529+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.476824+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u8 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:13:16
+2026-08-12T04:06:00.477104+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: consume_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:30:17
+2026-08-12T04:06:00.477373+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_error_strings at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_24.c:42:13
+2026-08-12T04:06:00.477810+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 24 tests the following functions: 
+cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encode_null at cbor.h:257:27 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_encode_boolean at cbor.h:255:27 in cbor.h, cbor_encode_undefined at cbor.h:259:27 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_null at cbor.h:257:27 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_boolean at cbor.h:255:27 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_boolean at cbor.h:255:27 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_undefined at cbor.h:259:27 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_encode_int at cborencoder.c:372:11 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h, cbor_error_string at cborerrorstrings.c:80:13 in cbor.h
+2026-08-12T04:06:00.492132+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 24 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:06:00.492455+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:06:00.495840+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 21: 
+cbor_encode_text_string at cborencoder.c:475:11 in cbor.h
+cbor_encode_text_stringz at cbor.h:249:27 in cbor.h
+cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h
+cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h
+cbor_encoder_init_writer at cborencoder.c:203:6 in cbor.h
+cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h
+2026-08-12T04:06:00.508731+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 21, remaining rounds: 1
+2026-08-12T04:06:18.813856+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 25
+2026-08-12T04:06:18.826970+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 25, remaining rounds: 4
+2026-08-12T04:06:18.872640+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 25, fixing...
+2026-08-12T04:06:18.873145+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786507578.c:59:40: error: incompatible function pointer types passing 'CborError (void *, const void *, size_t, int)' (aka 'enum CborError (void *, const void *, unsigned long, int)') to parameter of type 'CborEncoderWriteFunction' (aka 'enum CborError (*)(void *, const void *, unsigned long, enum CborEncoderAppendType)') [-Wincompatible-function-pointer-types]\n   59 |     cbor_encoder_init_writer(&encoder, fuzz_writer, fp);\n      |                                        ^~~~~~~~~~~\n/promefuzz/database/tinycbor/latest/code/src/cbor.h:242:87: note: passing argument to parameter 'writer' here\n  242 | CBOR_API void cbor_encoder_init_writer(CborEncoder *encoder, CborEncoderWriteFunction writer, void *);\n      |                                                                                       ^\n/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786507578.c:128:40: error: incompatible function pointer types passing 'CborError (void *, const void *, size_t, int)' (aka 'enum CborError (void *, const void *, unsigned long, int)') to parameter of type 'CborEncoderWriteFunction' (aka 'enum CborError (*)(void *, const void *, unsigned long, enum CborEncoderAppendType)') [-Wincompatible-function-pointer-types]\n  128 |     cbor_encoder_init_writer(&encoder, fuzz_writer, fp);\n      |                                        ^~~~~~~~~~~\n/promefuzz/database/tinycbor/latest/code/src/cbor.h:242:87: note: passing argument to parameter 'writer' here\n  242 | CBOR_API void cbor_encoder_init_writer(CborEncoder *encoder, CborEncoderWriteFunction writer, void *);\n      |                                                                                       ^\n2 errors generated.\n"
+2026-08-12T04:06:35.823015+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 25, remaining rounds: 3
+2026-08-12T04:06:37.003048+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 25 succeeded
+2026-08-12T04:06:37.049450+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 25 tests the following functions: 
+cbor_encode_text_stringz at cbor.h:249:27 in cbor.h, cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h, cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h, cbor_encode_text_string at cborencoder.c:475:11 in cbor.h, cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h, cbor_encoder_init_writer at cborencoder.c:203:6 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h, cbor_encode_text_string at cborencoder.c:475:11 in cbor.h, cbor_encode_text_stringz at cbor.h:249:27 in cbor.h, cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h, cbor_encoder_init_writer at cborencoder.c:203:6 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_text_string at cborencoder.c:475:11 in cbor.h, cbor_encode_text_stringz at cbor.h:249:27 in cbor.h
+2026-08-12T04:06:37.063291+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 25 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:06:37.063659+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:06:37.067520+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 22: 
+cbor_encode_float_as_half_float at cborencoder_float.c:32:11 in cbor.h
+cbor_encode_float at cbor.h:265:27 in cbor.h
+cbor_encode_half_float at cbor.h:262:27 in cbor.h
+cbor_encode_floating_point at cborencoder.c:409:11 in cbor.h
+cbor_encode_double at cbor.h:267:27 in cbor.h
+_cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h
+2026-08-12T04:06:37.080347+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 22, remaining rounds: 1
+2026-08-12T04:06:57.943284+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 26
+2026-08-12T04:06:57.956574+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 26, remaining rounds: 4
+2026-08-12T04:06:59.144189+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 26 succeeded
+2026-08-12T04:06:59.192524+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:17:17
+2026-08-12T04:06:59.192977+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:13:17
+2026-08-12T04:06:59.193394+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:13:17
+2026-08-12T04:06:59.193755+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:17:17
+2026-08-12T04:06:59.194101+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:24:17
+2026-08-12T04:06:59.194458+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:17:17
+2026-08-12T04:06:59.194772+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_26.c:24:17
+2026-08-12T04:06:59.195162+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 26 tests the following functions: 
+cbor_encode_double at cbor.h:267:27 in cbor.h, cbor_encode_float_as_half_float at cborencoder_float.c:32:11 in cbor.h, cbor_encode_half_float at cbor.h:262:27 in cbor.h, cbor_encode_floating_point at cborencoder.c:409:11 in cbor.h, cbor_encode_floating_point at cborencoder.c:409:11 in cbor.h, cbor_encode_floating_point at cborencoder.c:409:11 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, _cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h, cbor_encode_float at cbor.h:265:27 in cbor.h
+2026-08-12T04:06:59.208951+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 26 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:06:59.209313+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:06:59.213209+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 23: 
+_cbor_value_decode_int64_internal at cborparser.c:316:10 in cbor.h
+_cbor_value_extract_int64_helper at cbor.h:373:26 in cbor.h
+cbor_value_get_int64 at cbor.h:432:27 in cbor.h
+cbor_value_get_type at cbor.h:381:26 in cbor.h
+cbor_value_get_tag at cbor.h:459:27 in cbor.h
+cbor_value_get_double at cbor.h:626:27 in cbor.h
+2026-08-12T04:06:59.225989+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 23, remaining rounds: 1
+2026-08-12T04:07:15.427563+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 27
+2026-08-12T04:07:15.441042+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 27, remaining rounds: 4
+2026-08-12T04:07:15.825259+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 27, which may be a constraint violation, learning...
+2026-08-12T04:07:15.828502+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function consume_value in the backtrace not found in the library meta data
+2026-08-12T04:07:15.828877+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function consume_container in the backtrace not found in the library meta data
+2026-08-12T04:07:15.829265+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function handle_scalar in the backtrace not found in the library meta data
+2026-08-12T04:07:15.829625+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function consume_value in the backtrace not found in the library meta data
+2026-08-12T04:07:15.833541+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function consume_value in the backtrace not found in the library meta data
+2026-08-12T04:07:15.833901+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function consume_container in the backtrace not found in the library meta data
+2026-08-12T04:07:15.834272+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function handle_scalar in the backtrace not found in the library meta data
+2026-08-12T04:07:15.834614+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function consume_value in the backtrace not found in the library meta data
+2026-08-12T04:07:59.095737+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_advance_fixed: Yes, this crash is caused by misuse of the API. Only call cbor_value_advance_fixed() when the iterator is positioned on a valid fixed-width CBOR item and previous parsing operations succeeded. Before calling it, check that the current type is not CborInvalidType, that the item is a fixed type, and that the iterator is not at end. Most importantly, do not ignore CborError returns from cbor_value_get_int64, cbor_value_get_double, cbor_value_get_tag, cbor_value_enter_container, or any internal decode helper; if any of these fail, stop processing that iterator instead of advancing it. For non-fixed or uncertain items, prefer cbor_value_advance() or branch on cbor_value_get_type() first.
+2026-08-12T04:07:59.109859+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 27, remaining rounds: 3
+2026-08-12T04:07:59.501208+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 27, fixing...
+2026-08-12T04:08:14.592273+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 27, remaining rounds: 2
+2026-08-12T04:08:14.973418+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 27, fixing...
+2026-08-12T04:08:30.143903+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 27, remaining rounds: 1
+2026-08-12T04:08:30.545762+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 27, fixing...
+2026-08-12T04:08:46.431063+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 27, remaining rounds: 0
+2026-08-12T04:08:46.823384+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 27, fixing...
+2026-08-12T04:09:03.712845+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 27 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T04:09:03.713300+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 23, remaining rounds: 0
+2026-08-12T04:09:20.256749+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 28
+2026-08-12T04:09:20.270410+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 28, remaining rounds: 4
+2026-08-12T04:09:20.652293+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 28, fixing...
+2026-08-12T04:09:35.572652+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 28, remaining rounds: 3
+2026-08-12T04:09:35.967710+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 28, fixing...
+2026-08-12T04:09:50.948388+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 28, remaining rounds: 2
+2026-08-12T04:09:51.445898+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 28, fixing...
+2026-08-12T04:10:05.326613+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 28, remaining rounds: 1
+2026-08-12T04:10:05.713237+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 28, fixing...
+2026-08-12T04:10:19.545377+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 28, remaining rounds: 0
+2026-08-12T04:10:19.973432+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 28, fixing...
+2026-08-12T04:10:33.825441+0000 | MainThread WARNING | src.generator.worker:san_failure:227 | Function set 23 has reached the maximum generation rounds, discarded.
+2026-08-12T04:10:33.825814+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:10:33.829316+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 24: 
+cbor_encode_negative_int at cborencoder.c:361:11 in cbor.h
+cbor_encoder_create_map at cborencoder.c:561:11 in cbor.h
+cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h
+cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h
+cbor_encoder_init at cborencoder.c:195:6 in cbor.h
+cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h
+2026-08-12T04:10:33.842794+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 24, remaining rounds: 1
+2026-08-12T04:10:52.808923+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 29
+2026-08-12T04:10:52.822648+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 29, remaining rounds: 4
+2026-08-12T04:10:53.203179+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 29, fixing...
+2026-08-12T04:11:10.569864+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 29, remaining rounds: 3
+2026-08-12T04:11:10.945010+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 29, which may be a constraint violation, learning...
+2026-08-12T04:11:10.947569+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function encode_number_no_update in the backtrace not found in the library meta data
+2026-08-12T04:11:10.947939+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function create_container in the backtrace not found in the library meta data
+2026-08-12T04:11:10.950252+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function encode_number_no_update in the backtrace not found in the library meta data
+2026-08-12T04:11:10.950599+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function create_container in the backtrace not found in the library meta data
+2026-08-12T04:11:57.207535+0000 | MainThread INFO | src.generator.learner:learn_constraint:306 | Successfully fixed crash SEGV@_promefuzz_database_tinycbor_latest_code_src_cborencoder.c:327:12 with learned constraint
+2026-08-12T04:11:57.208045+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_encoder_create_map: This crash is due to API misuse upstream: call cbor_encoder_create_map only on a CborEncoder that was initialized with valid, library-defined flags via cbor_encoder_init. Do not pass arbitrary fuzzed bits as the flags argument. Use 0 or documented CborEncoder* flags only, and if using any mode that requires a writer callback/streaming encoder state, initialize the encoder through the corresponding supported setup so the internal union field matches the selected mode. Also check the returned CborError before continuing to use the child encoder.
+2026-08-12T04:11:57.208443+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_encoder_init: Initialize the encoder with a real output buffer and only valid documented flags; never feed unvalidated user data directly into flags. For buffer-based encoding, prefer flags = 0 (or another explicitly documented safe combination). Ensure the encoder mode selected by flags matches the initialized internal state, so later calls such as cbor_encoder_create_map do not interpret a buffer pointer as a function pointer.
+2026-08-12T04:11:57.256977+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_29.c:24:17
+2026-08-12T04:11:57.257434+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_29.c:15:17
+2026-08-12T04:11:57.257823+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_29.c:24:17
+2026-08-12T04:11:57.258145+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_29.c:15:17
+2026-08-12T04:11:57.258451+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_29.c:15:17
+2026-08-12T04:11:57.258769+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u16 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_29.c:8:17
+2026-08-12T04:11:57.259190+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 29 tests the following functions: 
+cbor_encode_negative_int at cborencoder.c:361:11 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encode_negative_int at cborencoder.c:361:11 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h, cbor_encoder_create_map at cborencoder.c:561:11 in cbor.h, cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h, cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h
+2026-08-12T04:11:57.273370+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 29 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:11:57.273732+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:11:57.276911+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 25: 
+cbor_encode_tag at cborencoder.c:432:11 in cbor.h
+cbor_encode_uint at cborencoder.c:348:11 in cbor.h
+cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h
+cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h
+cbor_encode_raw at cborencoder.c:489:11 in cbor.h
+cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h
+2026-08-12T04:11:57.294114+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 25, remaining rounds: 1
+2026-08-12T04:12:20.570103+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 30
+2026-08-12T04:12:20.584173+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 30, remaining rounds: 4
+2026-08-12T04:12:21.018821+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 30, which may be a constraint violation, learning...
+2026-08-12T04:12:21.022871+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function append_to_buffer in the backtrace not found in the library meta data
+2026-08-12T04:12:21.026145+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function append_to_buffer in the backtrace not found in the library meta data
+2026-08-12T04:13:11.231913+0000 | MainThread WARNING | src.generator.learner:learn_constraint:323 | Failed to fix crash heap-buffer-overflow@_promefuzz_database_tinycbor_latest_code_src_cborencoder.c:290:5 with learned constraint
+2026-08-12T04:13:11.246295+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 30, remaining rounds: 3
+2026-08-12T04:13:11.685220+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 30, fixing...
+2026-08-12T04:13:33.139461+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 30, remaining rounds: 2
+2026-08-12T04:13:33.591659+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 30, fixing...
+2026-08-12T04:13:56.030225+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 30, remaining rounds: 1
+2026-08-12T04:13:57.212050+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 30 succeeded
+2026-08-12T04:13:57.260965+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.261392+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: do_encode_raw at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:32:13
+2026-08-12T04:13:57.261752+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.262039+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.262305+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.262566+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.262821+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: do_encode_raw at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:32:13
+2026-08-12T04:13:57.263070+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.263330+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.263585+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.263835+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: do_encode_raw at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:32:13
+2026-08-12T04:13:57.264079+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.264316+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.264552+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.264809+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.265054+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.265293+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.265529+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: do_encode_raw at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:32:13
+2026-08-12T04:13:57.265769+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.266010+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.266255+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: write_dummy_file at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:23:13
+2026-08-12T04:13:57.266490+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_size_bounded at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:17:15
+2026-08-12T04:13:57.266730+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u64 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_30.c:8:17
+2026-08-12T04:13:57.267125+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 30 tests the following functions: 
+cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_tag at cborencoder.c:432:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_tag at cborencoder.c:432:11 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encode_tag at cborencoder.c:432:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encode_uint at cborencoder.c:348:11 in cbor.h, cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h, cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encode_raw at cborencoder.c:489:11 in cbor.h, cbor_encoder_init at cborencoder.c:195:6 in cbor.h, cbor_encode_tag at cborencoder.c:432:11 in cbor.h
+2026-08-12T04:13:57.281608+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 30 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:13:57.281952+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:13:57.286101+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 26: 
+_cbor_value_copy_string at cborparser.c:1286:11 in cbor.h
+_cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h
+cbor_value_get_string_chunk_size at cbor.h:520:27 in cbor.h
+_cbor_value_dup_string at cborparser_dup_string.c:96:11 in cbor.h
+_cbor_value_get_string_chunk_size at cborparser.c:1033:11 in cbor.h
+cbor_value_calculate_string_length at cborparser.c:954:11 in cbor.h
+2026-08-12T04:13:57.299935+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 26, remaining rounds: 1
+2026-08-12T04:14:14.152167+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 31
+2026-08-12T04:14:14.166371+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 31, remaining rounds: 4
+2026-08-12T04:14:14.547423+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 31, fixing...
+2026-08-12T04:14:31.994518+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 31, remaining rounds: 3
+2026-08-12T04:14:33.167040+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 31 succeeded
+2026-08-12T04:14:33.212404+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_31.c:64:13
+2026-08-12T04:14:33.212838+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_string_apis at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_31.c:9:13
+2026-08-12T04:14:33.213180+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_string_apis at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_31.c:9:13
+2026-08-12T04:14:33.213554+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_31.c:64:13
+2026-08-12T04:14:33.213934+0000 | MainThread WARNING | src.generator.worker:san_success:167 | Fuzz driver 31 does not cover the following functions in function set 26: 
+cbor_value_get_string_chunk_size at cbor.h:520:27 in cbor.h
+2026-08-12T04:14:33.214330+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 31 tests the following functions: 
+cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_calculate_string_length at cborparser.c:954:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_dup_string at cborparser_dup_string.c:96:11 in cbor.h, _cbor_value_get_string_chunk_size at cborparser.c:1033:11 in cbor.h, _cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h, cbor_value_is_text_string at cbor.h:470:22 in cbor.h, cbor_value_is_byte_string at cbor.h:468:22 in cbor.h, cbor_value_is_map at cbor.h:567:22 in cbor.h, cbor_value_is_array at cbor.h:565:22 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T04:14:33.228854+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 31 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:14:33.229181+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:14:33.231997+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 27: 
+_cbor_value_decode_int64_internal at cborparser.c:316:10 in cbor.h
+_cbor_value_extract_int64_helper at cbor.h:373:26 in cbor.h
+cbor_value_get_int64 at cbor.h:432:27 in cbor.h
+cbor_value_get_type at cbor.h:381:26 in cbor.h
+cbor_value_get_tag at cbor.h:459:27 in cbor.h
+cbor_value_get_double at cbor.h:626:27 in cbor.h
+2026-08-12T04:14:33.245803+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 27, remaining rounds: 1
+2026-08-12T04:14:48.677324+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 32
+2026-08-12T04:14:48.692018+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 32, remaining rounds: 4
+2026-08-12T04:14:49.079170+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 32, fixing...
+2026-08-12T04:15:03.093514+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 32, remaining rounds: 3
+2026-08-12T04:15:03.477903+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 32, fixing...
+2026-08-12T04:15:17.512052+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 32, remaining rounds: 2
+2026-08-12T04:15:17.911043+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 32, fixing...
+2026-08-12T04:15:32.177285+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 32, remaining rounds: 1
+2026-08-12T04:15:32.565439+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 32, fixing...
+2026-08-12T04:15:47.188597+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 32, remaining rounds: 0
+2026-08-12T04:15:47.620731+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 32, fixing...
+2026-08-12T04:16:02.635671+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 32 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T04:16:02.636174+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 27, remaining rounds: 0
+2026-08-12T04:16:18.238090+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 33
+2026-08-12T04:16:18.252593+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 33, remaining rounds: 4
+2026-08-12T04:16:18.639878+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 33, fixing...
+2026-08-12T04:16:36.426114+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 33, remaining rounds: 3
+2026-08-12T04:16:36.817179+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 33, fixing...
+2026-08-12T04:16:52.351431+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 33, remaining rounds: 2
+2026-08-12T04:16:52.745801+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 33, fixing...
+2026-08-12T04:17:08.463621+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 33, remaining rounds: 1
+2026-08-12T04:17:09.641100+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 33 succeeded
+2026-08-12T04:17:09.685860+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_33.c:27:13
+2026-08-12T04:17:09.686296+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_33.c:27:13
+2026-08-12T04:17:09.686640+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_33.c:27:13
+2026-08-12T04:17:09.686929+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: exercise_accessors at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_33.c:7:13
+2026-08-12T04:17:09.687196+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_container at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_33.c:29:13
+2026-08-12T04:17:09.687452+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: walk_tag_payload at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_33.c:54:13
+2026-08-12T04:17:09.687845+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 33 tests the following functions: 
+cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_is_integer at cbor.h:411:22 in cbor.h, cbor_value_get_int64 at cbor.h:432:27 in cbor.h, _cbor_value_extract_int64_helper at cbor.h:373:26 in cbor.h, _cbor_value_decode_int64_internal at cborparser.c:316:10 in cbor.h, cbor_value_is_tag at cbor.h:457:22 in cbor.h, cbor_value_get_tag at cbor.h:459:27 in cbor.h, cbor_value_is_double at cbor.h:624:22 in cbor.h, cbor_value_get_double at cbor.h:626:27 in cbor.h, _cbor_value_decode_int64_internal at cborparser.c:316:10 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T04:17:09.702740+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 33 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:17:09.703090+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:17:09.706985+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 28: 
+cbor_value_get_half_float_as_float at cborparser_float.c:40:11 in cbor.h
+cbor_value_get_float at cbor.h:614:27 in cbor.h
+cbor_value_get_double at cbor.h:626:27 in cbor.h
+cbor_value_is_float at cbor.h:612:22 in cbor.h
+cbor_value_is_double at cbor.h:624:22 in cbor.h
+cbor_value_get_type at cbor.h:381:26 in cbor.h
+2026-08-12T04:17:09.721098+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 28, remaining rounds: 1
+2026-08-12T04:17:25.373446+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 34
+2026-08-12T04:17:25.388129+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 34, remaining rounds: 4
+2026-08-12T04:17:25.772827+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 34, fixing...
+2026-08-12T04:17:40.826347+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 34, remaining rounds: 3
+2026-08-12T04:17:41.228837+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 34, fixing...
+2026-08-12T04:17:57.123529+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 34, remaining rounds: 2
+2026-08-12T04:17:57.508574+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 34, fixing...
+2026-08-12T04:18:12.418842+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 34, remaining rounds: 1
+2026-08-12T04:18:12.860359+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 34, fixing...
+2026-08-12T04:18:28.228610+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 34, remaining rounds: 0
+2026-08-12T04:18:28.620486+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 34, fixing...
+2026-08-12T04:18:43.886727+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 34 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T04:18:43.887229+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 28, remaining rounds: 0
+2026-08-12T04:19:00.712438+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 35
+2026-08-12T04:19:00.727443+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 35, remaining rounds: 4
+2026-08-12T04:19:01.111298+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 35, fixing...
+2026-08-12T04:19:15.534671+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 35, remaining rounds: 3
+2026-08-12T04:19:15.925646+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 35, fixing...
+2026-08-12T04:19:30.697648+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 35, remaining rounds: 2
+2026-08-12T04:19:31.109235+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 35, fixing...
+2026-08-12T04:19:45.865826+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 35, remaining rounds: 1
+2026-08-12T04:19:46.259178+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 35, fixing...
+2026-08-12T04:20:00.643675+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 35, remaining rounds: 0
+2026-08-12T04:20:01.066600+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 35, fixing...
+2026-08-12T04:20:15.515480+0000 | MainThread WARNING | src.generator.worker:san_failure:227 | Function set 28 has reached the maximum generation rounds, discarded.
+2026-08-12T04:20:15.515856+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:20:15.519234+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 29: 
+cbor_value_validate at cborvalidation.c:640:11 in cbor.h
+cbor_value_validate_basic at cborparser.c:433:11 in cbor.h
+cbor_value_to_pretty at cbor.h:712:27 in cbor.h
+cbor_value_get_type at cbor.h:381:26 in cbor.h
+cbor_value_is_length_known at cbor.h:453:22 in cbor.h
+cbor_value_get_array_length at cbor.h:570:27 in cbor.h
+2026-08-12T04:20:15.533805+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 29, remaining rounds: 1
+2026-08-12T04:20:29.815224+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 36
+2026-08-12T04:20:29.830341+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 36, remaining rounds: 4
+2026-08-12T04:20:31.007108+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 36 succeeded
+2026-08-12T04:20:31.052521+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: read_u32 at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_36.c:14:17
+2026-08-12T04:20:31.053024+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 36 tests the following functions: 
+cbor_parser_init at cborparser.c:336:11 in cbor.h, cbor_value_validate_basic at cborparser.c:433:11 in cbor.h, cbor_value_validate at cborvalidation.c:640:11 in cbor.h, cbor_value_validate at cborvalidation.c:640:11 in cbor.h, cbor_value_validate at cborvalidation.c:640:11 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, cbor_value_get_array_length at cbor.h:570:27 in cbor.h, cbor_value_to_pretty at cbor.h:712:27 in cbor.h
+2026-08-12T04:20:31.068375+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 36 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:20:31.068731+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:20:31.072616+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 30: 
+cbor_value_text_string_equals at cborparser.c:1314:11 in cbor.h
+cbor_value_map_find_value at cborparser.c:1402:11 in cbor.h
+cbor_value_copy_text_string at cbor.h:493:27 in cbor.h
+cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h
+_cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h
+cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h
+2026-08-12T04:20:31.087378+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 30, remaining rounds: 1
+2026-08-12T04:20:49.324240+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 37
+2026-08-12T04:20:49.339430+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 37, remaining rounds: 4
+2026-08-12T04:20:49.722972+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 37, fixing...
+2026-08-12T04:21:06.210849+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 37, remaining rounds: 3
+2026-08-12T04:21:06.595883+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 37, fixing...
+2026-08-12T04:21:23.285758+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 37, remaining rounds: 2
+2026-08-12T04:21:24.460712+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 37 succeeded
+2026-08-12T04:21:24.510408+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_37.c:21:13
+2026-08-12T04:21:24.510850+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_37.c:21:13
+2026-08-12T04:21:24.511207+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: make_nul_terminated at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_37.c:10:14
+2026-08-12T04:21:24.511506+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: make_nul_terminated at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_37.c:10:14
+2026-08-12T04:21:24.511914+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 37 tests the following functions: 
+cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_text_string_equals at cborparser.c:1314:11 in cbor.h, cbor_value_text_string_equals at cborparser.c:1314:11 in cbor.h, _cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h, _cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h, cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h, cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h, cbor_value_copy_text_string at cbor.h:493:27 in cbor.h, cbor_value_copy_text_string at cbor.h:493:27 in cbor.h, cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h, cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h, cbor_value_map_find_value at cborparser.c:1402:11 in cbor.h, cbor_value_map_find_value at cborparser.c:1402:11 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h
+2026-08-12T04:21:24.527500+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 37 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:21:24.527855+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:21:24.530628+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 31: 
+cbor_value_get_half_float_as_float at cborparser_float.c:40:11 in cbor.h
+cbor_value_get_float at cbor.h:614:27 in cbor.h
+cbor_value_get_double at cbor.h:626:27 in cbor.h
+cbor_value_is_float at cbor.h:612:22 in cbor.h
+cbor_value_is_double at cbor.h:624:22 in cbor.h
+cbor_value_get_simple_type at cbor.h:403:27 in cbor.h
+2026-08-12T04:21:24.545355+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 31, remaining rounds: 1
+2026-08-12T04:21:39.727814+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 38
+2026-08-12T04:21:39.743314+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 38, remaining rounds: 4
+2026-08-12T04:21:40.124243+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 38, fixing...
+2026-08-12T04:21:53.521379+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 38, remaining rounds: 3
+2026-08-12T04:21:53.928939+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 38, fixing...
+2026-08-12T04:22:07.543563+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 38, remaining rounds: 2
+2026-08-12T04:22:07.930856+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 38, fixing...
+2026-08-12T04:22:21.825376+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 38, remaining rounds: 1
+2026-08-12T04:22:22.204562+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 38, fixing...
+2026-08-12T04:22:36.178513+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 38, remaining rounds: 0
+2026-08-12T04:22:36.566892+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 38, fixing...
+2026-08-12T04:22:50.118897+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 38 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T04:22:50.119404+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 31, remaining rounds: 0
+2026-08-12T04:23:05.001322+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 39
+2026-08-12T04:23:05.017678+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 39, remaining rounds: 4
+2026-08-12T04:23:05.412706+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 39, fixing...
+2026-08-12T04:23:20.434705+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 39, remaining rounds: 3
+2026-08-12T04:23:20.825402+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 39, fixing...
+2026-08-12T04:23:35.682437+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 39, remaining rounds: 2
+2026-08-12T04:23:36.114648+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 39, fixing...
+2026-08-12T04:23:51.784347+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 39, remaining rounds: 1
+2026-08-12T04:23:52.171672+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 39, fixing...
+2026-08-12T04:24:08.997607+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 39, remaining rounds: 0
+2026-08-12T04:24:09.463193+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 39, which may be a constraint violation, learning...
+2026-08-12T04:24:09.467215+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function traverse_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.467596+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes_unchecked in the backtrace not found in the library meta data
+2026-08-12T04:24:09.467975+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function advance_internal in the backtrace not found in the library meta data
+2026-08-12T04:24:09.468326+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function preparse_next_value_nodecrement in the backtrace not found in the library meta data
+2026-08-12T04:24:09.468715+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function preparse_next_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.469025+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function advance_recursive in the backtrace not found in the library meta data
+2026-08-12T04:24:09.469345+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function preparse_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.469677+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes in the backtrace not found in the library meta data
+2026-08-12T04:24:09.470183+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function traverse_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.474599+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function traverse_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.474958+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes_unchecked in the backtrace not found in the library meta data
+2026-08-12T04:24:09.475316+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function advance_internal in the backtrace not found in the library meta data
+2026-08-12T04:24:09.475669+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function preparse_next_value_nodecrement in the backtrace not found in the library meta data
+2026-08-12T04:24:09.476006+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function preparse_next_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.476318+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function advance_recursive in the backtrace not found in the library meta data
+2026-08-12T04:24:09.476626+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function preparse_value in the backtrace not found in the library meta data
+2026-08-12T04:24:09.476945+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function read_bytes in the backtrace not found in the library meta data
+2026-08-12T04:24:09.477431+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function traverse_value in the backtrace not found in the library meta data
+2026-08-12T04:24:35.015328+0000 | MainThread WARNING | src.llm.prompter:prompt:683 | No constraint learned for crash, response: 
+null
+2026-08-12T04:24:35.015743+0000 | MainThread WARNING | src.generator.learner:learn_constraint:297 | No constraint learned from crash heap-buffer-overflow@_promefuzz_database_tinycbor_latest_code_src_cborparser.c:168:10
+2026-08-12T04:24:35.032254+0000 | MainThread WARNING | src.generator.worker:san_failure:227 | Function set 31 has reached the maximum generation rounds, discarded.
+2026-08-12T04:24:35.032600+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:24:35.035755+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 32: 
+cbor_value_get_string_chunk_size at cbor.h:520:27 in cbor.h
+_cbor_value_get_string_chunk_size at cborparser.c:1033:11 in cbor.h
+_cbor_value_dup_string at cborparser_dup_string.c:96:11 in cbor.h
+cbor_value_calculate_string_length at cborparser.c:954:11 in cbor.h
+_cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h
+_cbor_value_copy_string at cborparser.c:1286:11 in cbor.h
+2026-08-12T04:24:35.051179+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 32, remaining rounds: 1
+2026-08-12T04:24:55.810035+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 40
+2026-08-12T04:24:55.826645+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 40, remaining rounds: 4
+2026-08-12T04:24:56.209803+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 40, fixing...
+2026-08-12T04:25:14.532660+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 40, remaining rounds: 3
+2026-08-12T04:25:14.921850+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 40, fixing...
+2026-08-12T04:25:32.768295+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 40, remaining rounds: 2
+2026-08-12T04:25:33.185203+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 40, which may be a constraint violation, learning...
+2026-08-12T04:25:33.190389+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function fuzz_value in the backtrace not found in the library meta data
+2026-08-12T04:25:33.195982+0000 | MainThread WARNING | src.analyzer.report:_get_function_loc:235 | Function fuzz_value in the backtrace not found in the library meta data
+2026-08-12T04:26:19.185896+0000 | MainThread INFO | src.generator.learner:learn_constraint:306 | Successfully fixed crash deadly@_promefuzz_database_tinycbor_latest_code_src_cbor.h:522:5 with learned constraint
+2026-08-12T04:26:19.186445+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function cbor_value_get_string_chunk_size: Call this API only on a CborValue that is already positioned on a string chunk and has CborIteratorFlag_IteratingStringChunks set. Do not call it on the original iterator for an indefinite-length string. First use the proper chunk-iteration flow (for example, obtain/advance chunk iterators with the string-chunk APIs such as _cbor_value_get_string_chunk), check the returned error code, and only then query the current chunk size. For definite-length strings, use cbor_value_is_length_known() / cbor_value_calculate_string_length() or copy/dup helpers instead of chunk-size iteration APIs.
+2026-08-12T04:26:19.234986+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_40.c:96:13
+2026-08-12T04:26:19.235416+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_string_apis at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_40.c:8:13
+2026-08-12T04:26:19.235793+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_string_apis at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_40.c:8:13
+2026-08-12T04:26:19.236108+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_container at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_40.c:98:13
+2026-08-12T04:26:19.236444+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_value at /promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_40.c:96:13
+2026-08-12T04:26:19.236866+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 40 tests the following functions: 
+cbor_value_enter_container at cborparser.c:569:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, cbor_value_advance at cborparser.c:506:11 in cbor.h, cbor_value_get_type at cbor.h:381:26 in cbor.h, cbor_value_is_length_known at cbor.h:453:22 in cbor.h, _cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h, cbor_value_calculate_string_length at cborparser.c:954:11 in cbor.h, cbor_value_get_string_chunk_size at cbor.h:520:27 in cbor.h, cbor_parser_init at cborparser.c:336:11 in cbor.h, _cbor_value_get_string_chunk_size at cborparser.c:1033:11 in cbor.h, cbor_value_at_end at cbor.h:360:22 in cbor.h, _cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_copy_string at cborparser.c:1286:11 in cbor.h, _cbor_value_dup_string at cborparser_dup_string.c:96:11 in cbor.h, _cbor_value_dup_string at cborparser_dup_string.c:96:11 in cbor.h, _cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h, _cbor_value_get_string_chunk_size at cborparser.c:1033:11 in cbor.h
+2026-08-12T04:26:19.253117+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 40 has been successfully generated and sanitized, saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver
+2026-08-12T04:26:19.253457+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-12T04:26:19.256224+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 33: 
+cbor_value_get_half_float_as_float at cborparser_float.c:40:11 in cbor.h
+cbor_value_get_float at cbor.h:614:27 in cbor.h
+cbor_value_get_double at cbor.h:626:27 in cbor.h
+cbor_value_is_float at cbor.h:612:22 in cbor.h
+cbor_value_is_double at cbor.h:624:22 in cbor.h
+cbor_value_get_simple_type at cbor.h:403:27 in cbor.h
+2026-08-12T04:26:19.271597+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 33, remaining rounds: 1
+2026-08-12T04:26:36.629498+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 41
+2026-08-12T04:26:36.645802+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 41, remaining rounds: 4
+2026-08-12T04:26:37.036146+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 41, fixing...
+2026-08-12T04:26:52.669378+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 41, remaining rounds: 3
+2026-08-12T04:26:53.064761+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 41, fixing...
+2026-08-12T04:27:08.423185+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 41, remaining rounds: 2
+2026-08-12T04:27:08.811709+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 41, fixing...
+2026-08-12T04:27:24.179040+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 41, remaining rounds: 1
+2026-08-12T04:27:24.579809+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 41, fixing...
+2026-08-12T04:27:41.668382+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 41, remaining rounds: 0
+2026-08-12T04:27:42.053371+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 41, fixing...
+2026-08-12T04:27:57.823393+0000 | MainThread WARNING | src.generator.worker:san_failure:221 | Fuzz driver 41 has reached the maximum sanitization rounds, regenerating...
+2026-08-12T04:27:57.823911+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 33, remaining rounds: 0
+2026-08-12T04:28:12.272797+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 42
+2026-08-12T04:28:12.290135+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 42, remaining rounds: 4
+2026-08-12T04:28:12.673943+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 42, fixing...
+2026-08-12T04:28:26.350260+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 42, remaining rounds: 3
+2026-08-12T04:28:26.735520+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 42, fixing...
+2026-08-12T04:28:41.249037+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 42, remaining rounds: 2
+2026-08-12T04:28:41.630595+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 42, fixing...
+2026-08-12T04:28:55.098753+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 42, remaining rounds: 1
+2026-08-12T04:28:55.482979+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 42, fixing...
+2026-08-12T04:29:09.504070+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 42, remaining rounds: 0
+2026-08-12T04:29:09.884175+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 42, fixing...
+2026-08-12T04:29:23.995684+0000 | MainThread WARNING | src.generator.scheduler:record_functions_failed:333 | Function cbor_value_get_half_float_as_float has failed to generate more than 5 times, deprecated.
+2026-08-12T04:29:23.996258+0000 | MainThread WARNING | src.generator.worker:san_failure:227 | Function set 33 has reached the maximum generation rounds, discarded.
+2026-08-12T04:29:23.999397+0000 | MainThread SUCCESS | cli.generate:_synthesize:480 | Generation completed. Synthesized driver saved to /promefuzz/database/tinycbor/latest/out/fuzz_driver.

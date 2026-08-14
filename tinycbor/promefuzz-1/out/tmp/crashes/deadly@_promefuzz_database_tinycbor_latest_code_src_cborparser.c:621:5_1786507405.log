@@ -1,0 +1,54 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 759740287
+INFO: Loaded 1 modules   (364 inline 8-bit counters): 364 [0x584a873b34b0, 0x584a873b361c), 
+INFO: Loaded 1 PC tables (364 PCs): 364 [0x584a873b3620,0x584a873b4ce0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 78 ft: 79 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 81 ft: 86 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeBit-
+#11	NEW    cov: 92 ft: 105 corp: 3/3b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 3 CrossOver-EraseBytes-ChangeBit-
+	NEW_FUNC[1/9]: 0x584a87365c30 in cbor_value_is_container /promefuzz/database/tinycbor/latest/code/src/cbor.h:368
+	NEW_FUNC[2/9]: 0x584a87367060 in _cbor_value_copy_string /promefuzz/database/tinycbor/latest/code/src/cborparser.c:1288
+#12	NEW    cov: 117 ft: 141 corp: 4/4b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeByte-
+	NEW_FUNC[1/3]: 0x584a873612a8 in traverse_container /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405.c:42
+	NEW_FUNC[2/3]: 0x584a87364240 in preparse_next_value_nodecrement /promefuzz/database/tinycbor/latest/code/src/cborparser.c:255
+#33	NEW    cov: 133 ft: 169 corp: 5/5b lim: 4 exec/s: 0 rss: 33Mb L: 1/1 MS: 1 ChangeByte-
+#47	NEW    cov: 135 ft: 198 corp: 6/7b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 4 ChangeByte-CopyPart-CrossOver-ChangeByte-
+	NEW_FUNC[1/3]: 0x584a87367410 in _cbor_value_finish_string_iteration /promefuzz/database/tinycbor/latest/code/src/cborparser.c:974
+	NEW_FUNC[2/3]: 0x584a87368ed0 in iterate_noop /promefuzz/database/tinycbor/latest/code/src/cborparser.c:1154
+#49	NEW    cov: 148 ft: 219 corp: 7/11b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 2 ShuffleBytes-CopyPart-
+fuzz_driver_22_sanitizing_1786507405: /promefuzz/database/tinycbor/latest/code/src/cborparser.c:621: CborError cbor_value_leave_container(CborValue *, const CborValue *): Assertion `recursed->type == CborInvalidType' failed.
+==2091721== ERROR: libFuzzer: deadly signal
+    #0 0x584a8732cb45 in __sanitizer_print_stack_trace (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x10eb45) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #1 0x584a8728665c in fuzzer::PrintStackTrace() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x6865c) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #2 0x584a8726c6e7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x4e6e7) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #3 0x72b2a183932f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x72b2a1892b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x72b2a1892b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x72b2a1892b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x72b2a183927d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x72b2a181c8fe in abort stdlib/abort.c:79:7
+    #9 0x72b2a181c81a in __assert_fail_base assert/assert.c:96:3
+    #10 0x72b2a182f516 in __assert_fail assert/assert.c:105:3
+    #11 0x584a8736644a in cbor_value_leave_container /promefuzz/database/tinycbor/latest/code/src/cborparser.c:621:5
+    #12 0x584a87361485 in traverse_container /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405.c:55:11
+    #13 0x584a873608b7 in traverse_value /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405.c:62:9
+    #14 0x584a87360681 in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405.c:82:5
+    #15 0x584a8726dcb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x4fcb4) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #16 0x584a8726d3a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x4f3a9) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #17 0x584a8726eb95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x50b95) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #18 0x584a8726f6f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x516f5) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #19 0x584a8725c9cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x3e9cf) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #20 0x584a87287056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x69056) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+    #21 0x72b2a181e1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #22 0x72b2a181e28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #23 0x584a872519b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507405+0x339b4) (BuildId: b16f6d40d362d6dcc6796efe2f9881cf0e66448d)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 1 CopyPart-; base unit: 3c7923f135d358fd685065fde8a996d474367da2
+0x89,0x89,
+\211\211
+artifact_prefix='./'; Test unit written to ./crash-92c0cc10a9edf3481df60d95b039b75783c9dbe6
+Base64: iYk=

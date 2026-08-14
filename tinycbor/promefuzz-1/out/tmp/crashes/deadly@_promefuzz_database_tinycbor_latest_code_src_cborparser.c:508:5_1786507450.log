@@ -1,0 +1,55 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2150131716
+INFO: Loaded 1 modules   (359 inline 8-bit counters): 359 [0x6241059cc490, 0x6241059cc5f7), 
+INFO: Loaded 1 PC tables (359 PCs): 359 [0x6241059cc5f8,0x6241059cdc68), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 58 ft: 59 corp: 1/1b exec/s: 0 rss: 31Mb
+#3	NEW    cov: 60 ft: 61 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeByte-
+#11	NEW    cov: 62 ft: 66 corp: 3/4b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 3 CrossOver-ShuffleBytes-ChangeBit-
+#13	REDUCE cov: 62 ft: 66 corp: 3/3b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 2 ChangeBit-EraseBytes-
+#17	NEW    cov: 64 ft: 70 corp: 4/4b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 4 InsertByte-EraseBytes-ShuffleBytes-ChangeByte-
+	NEW_FUNC[1/1]: 0x62410597daf0 in is_fixed_type /promefuzz/database/tinycbor/latest/code/src/cborparser.c:152
+#18	NEW    cov: 67 ft: 73 corp: 5/5b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeBinInt-
+#25	NEW    cov: 78 ft: 92 corp: 6/6b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 2 ChangeBinInt-ChangeByte-
+	NEW_FUNC[1/12]: 0x62410597a038 in traverse_container /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449.c:35
+	NEW_FUNC[2/12]: 0x62410597d060 in preparse_next_value_nodecrement /promefuzz/database/tinycbor/latest/code/src/cborparser.c:255
+#42	REDUCE cov: 113 ft: 167 corp: 7/8b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 2 InsertByte-ChangeBit-
+#43	NEW    cov: 117 ft: 185 corp: 8/9b lim: 4 exec/s: 0 rss: 32Mb L: 1/2 MS: 1 ChangeBinInt-
+#48	NEW    cov: 117 ft: 188 corp: 9/11b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 5 CrossOver-ChangeByte-CrossOver-ChangeByte-ChangeByte-
+#50	NEW    cov: 118 ft: 238 corp: 10/14b lim: 4 exec/s: 0 rss: 33Mb L: 3/3 MS: 2 ChangeBit-CrossOver-
+fuzz_driver_22_sanitizing_1786507449: /promefuzz/database/tinycbor/latest/code/src/cborparser.c:508: CborError cbor_value_advance(CborValue *): Assertion `it->type != CborInvalidType' failed.
+==2091742== ERROR: libFuzzer: deadly signal
+    #0 0x624105945b45 in __sanitizer_print_stack_trace (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x10eb45) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #1 0x62410589f65c in fuzzer::PrintStackTrace() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x6865c) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #2 0x6241058856e7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x4e6e7) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #3 0x7c8d0c37832f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7c8d0c3d1b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x7c8d0c3d1b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x7c8d0c3d1b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x7c8d0c37827d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x7c8d0c35b8fe in abort stdlib/abort.c:79:7
+    #9 0x7c8d0c35b81a in __assert_fail_base assert/assert.c:96:3
+    #10 0x7c8d0c36e516 in __assert_fail assert/assert.c:105:3
+    #11 0x62410597d831 in cbor_value_advance /promefuzz/database/tinycbor/latest/code/src/cborparser.c:508:5
+    #12 0x62410597a26b in traverse_container /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449.c:49:15
+    #13 0x6241059799b2 in traverse_value /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449.c:64:9
+    #14 0x62410597969c in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449.c:84:9
+    #15 0x624105886cb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x4fcb4) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #16 0x6241058863a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x4f3a9) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #17 0x624105887b95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x50b95) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #18 0x6241058886f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x516f5) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #19 0x6241058759cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x3e9cf) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #20 0x6241058a0056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x69056) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+    #21 0x7c8d0c35d1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #22 0x7c8d0c35d28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #23 0x62410586a9b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786507449+0x339b4) (BuildId: 48b9ec80f597640da164d0d645bd51ff3b3ffffa)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 1 CopyPart-; base unit: 55e3a705dabd3e2690031136e93f4234c82cf141
+0x8a,0x8a,0x10,
+\212\212\020
+artifact_prefix='./'; Test unit written to ./crash-9f8df8a8fd62d5c1784d49a5e245086cfa8d36aa
+Base64: iooQ

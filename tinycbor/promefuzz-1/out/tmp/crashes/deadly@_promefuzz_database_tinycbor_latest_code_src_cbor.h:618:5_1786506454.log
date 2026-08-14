@@ -1,0 +1,38 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3206552574
+INFO: Loaded 1 modules   (463 inline 8-bit counters): 463 [0x5be92102aa00, 0x5be92102abcf), 
+INFO: Loaded 1 PC tables (463 PCs): 463 [0x5be92102abd0,0x5be92102c8c0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+fuzz_driver_6_sanitizing_1786506454: /promefuzz/database/tinycbor/latest/code/src/cbor.h:618: CborError cbor_value_get_float(const CborValue *, float *): Assertion `value->flags & CborIteratorFlag_IntegerValueTooLarge' failed.
+==2091258== ERROR: libFuzzer: deadly signal
+    #0 0x5be920fa2b45 in __sanitizer_print_stack_trace (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x10fb45) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #1 0x5be920efc65c in fuzzer::PrintStackTrace() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x6965c) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #2 0x5be920ee26e7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x4f6e7) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #3 0x74be71ab232f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x74be71b0bb2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x74be71b0bb2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x74be71b0bb2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x74be71ab227d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x74be71a958fe in abort stdlib/abort.c:79:7
+    #9 0x74be71a9581a in __assert_fail_base assert/assert.c:96:3
+    #10 0x74be71aa8516 in __assert_fail assert/assert.c:105:3
+    #11 0x5be920fd98b8 in cbor_value_get_float /promefuzz/database/tinycbor/latest/code/src/cbor.h:618:5
+    #12 0x5be920fd7fd2 in exercise_value /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454.c:52:15
+    #13 0x5be920fd6e5a in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454.c:102:5
+    #14 0x5be920ee3cb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x50cb4) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #15 0x5be920ee4ee1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x51ee1) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #16 0x5be920ee54d7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x524d7) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #17 0x5be920ed29cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x3f9cf) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #18 0x5be920efd056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x6a056) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+    #19 0x74be71a971c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #20 0x74be71a9728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #21 0x5be920ec79b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_6/fuzz_driver_6_sanitizing_1786506454+0x349b4) (BuildId: 99a55a1476573f60008a90909a28863d3f597c9d)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 
