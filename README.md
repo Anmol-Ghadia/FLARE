@@ -6,7 +6,7 @@
 |tinycbor|Yes|Yes|Yes|
 |cjson|Yes|Yes|Yes|
 |rapidcsv|No|No|Yes|
-|libpng|Yes|No|Yes|
+|libpng|Yes|Yes|Yes|
 |libtiff|Yes|No|Yes|
 |sqlite3|Yes|No|Yes|
 
