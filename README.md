@@ -4,7 +4,7 @@
 |Library|Magma support?|OpenCode Harness?|Promefuzz Harness?|
 |---|---|---|---|
 |tinycbor|Yes|Yes|Yes|
-|cjson|No|Yes|Yes|
+|cjson|Yes|Yes|Yes|
 |rapidcsv|No|No|Yes|
 |libpng|Yes|No|Yes|
 |libtiff|Yes|No|Yes|
