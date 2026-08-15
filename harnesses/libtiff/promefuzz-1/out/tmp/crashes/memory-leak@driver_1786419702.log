@@ -1,0 +1,75 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 981654044
+INFO: Loaded 1 modules   (9250 inline 8-bit counters): 9250 [0x640baf430a18, 0x640baf432e3a), 
+INFO: Loaded 1 PC tables (9250 PCs): 9250 [0x640baf432e40,0x640baf457060), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 41 ft: 42 corp: 1/1b exec/s: 0 rss: 33Mb
+
+=================================================================
+==2074714==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x640baf1e5203 in malloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x153203) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #1 0x640baf224bbf in make_cstring /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:31:23
+    #2 0x640baf22433d in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:85:11
+    #3 0x640baf1310d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9f0d4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #4 0x640baf1307c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9e7c9) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #5 0x640baf132456 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xa0456) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #6 0x640baf1328f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xa08f7) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #7 0x640baf11fdef in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x8ddef) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #8 0x640baf14a476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xb8476) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #9 0x7dfd36f911c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7dfd36f9128a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x640baf114dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x82dd4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x640baf1e5203 in malloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x153203) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #1 0x640baf224bbf in make_cstring /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:31:23
+    #2 0x640baf2241c5 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:84:14
+    #3 0x640baf1310d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9f0d4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #4 0x640baf1307c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9e7c9) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #5 0x640baf131fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9ffb5) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #6 0x640baf132b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xa0b15) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #7 0x640baf11fdef in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x8ddef) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #8 0x640baf14a476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xb8476) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #9 0x7dfd36f911c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7dfd36f9128a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x640baf114dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x82dd4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x640baf1e5203 in malloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x153203) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #1 0x640baf224bbf in make_cstring /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:31:23
+    #2 0x640baf22433d in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:85:11
+    #3 0x640baf1310d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9f0d4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #4 0x640baf1307c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9e7c9) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #5 0x640baf131fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9ffb5) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #6 0x640baf132b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xa0b15) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #7 0x640baf11fdef in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x8ddef) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #8 0x640baf14a476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xb8476) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #9 0x7dfd36f911c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7dfd36f9128a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x640baf114dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x82dd4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x640baf1e5203 in malloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x153203) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #1 0x640baf224bbf in make_cstring /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:31:23
+    #2 0x640baf2241c5 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702.c:84:14
+    #3 0x640baf1310d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9f0d4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #4 0x640baf1307c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x9e7c9) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #5 0x640baf132456 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xa0456) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #6 0x640baf1328f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xa08f7) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #7 0x640baf11fdef in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x8ddef) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #8 0x640baf14a476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0xb8476) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+    #9 0x7dfd36f911c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7dfd36f9128a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x640baf114dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_40/fuzz_driver_40_sanitizing_1786419702+0x82dd4) (BuildId: 551164c11c3d90e378af55ca435a746a0326f09e)
+
+SUMMARY: AddressSanitizer: 4 byte(s) leaked in 4 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 1 CopyPart-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xa,0xa,
+\012\012
+artifact_prefix='./'; Test unit written to ./leak-71853c6197a6a7f222db0f1978c7cb232b87c5ee
+Base64: Cgo=

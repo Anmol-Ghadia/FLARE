@@ -1,0 +1,120 @@
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include "tiffio.h"
+
+static uint32_t read_u32(const uint8_t *p) {
+    uint32_t v = 0;
+    v |= (uint32_t)p[0];
+    v |= (uint32_t)p[1] << 8;
+    v |= (uint32_t)p[2] << 16;
+    v |= (uint32_t)p[3] << 24;
+    return v;
+}
+
+static int32_t read_i32(const uint8_t *p) {
+    return (int32_t)read_u32(p);
+}
+
+static float make_float_from_u32(uint32_t u) {
+    float f;
+    memcpy(&f, &u, sizeof(f));
+    return f;
+}
+
+static float sanitize_float(float f, float fallback) {
+    if (!isfinite(f))
+        return fallback;
+    return f;
+}
+
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+    FILE *fp = fopen("./dummy_file", "wb");
+    if (fp != NULL) {
+        if (Size > 0)
+            (void)fwrite(Data, 1, Size, fp);
+        fclose(fp);
+    }
+
+    uint8_t buf[32];
+    memset(buf, 0, sizeof(buf));
+    if (Size > sizeof(buf))
+        Size = sizeof(buf);
+    if (Size > 0)
+        memcpy(buf, Data, Size);
+
+    uint32_t u0 = read_u32(buf + 0);
+    uint32_t u1 = read_u32(buf + 4);
+    uint32_t u2 = read_u32(buf + 8);
+    uint32_t u3 = read_u32(buf + 12);
+    uint32_t u4 = read_u32(buf + 16);
+    uint32_t u5 = read_u32(buf + 20);
+
+    int em1 = (int)(u3 & 0x7fffffffU);
+    int em2 = (int)((u3 >> 1) & 0x7fffffffU);
+
+    float xyz1[3];
+    xyz1[0] = sanitize_float(make_float_from_u32(u0), 0.0f);
+    xyz1[1] = sanitize_float(make_float_from_u32(u1), 0.0f);
+    xyz1[2] = sanitize_float(make_float_from_u32(u2), 0.0f);
+
+    float xyz2[3];
+    xyz2[0] = xyz1[0];
+    xyz2[1] = xyz1[1];
+    xyz2[2] = xyz1[2];
+
+    uint32_t ll24 = LogLuv24fromXYZ(xyz1, em1);
+    uint32_t ll32 = LogLuv32fromXYZ(xyz2, em2);
+
+    float out24[3] = {0.0f, 0.0f, 0.0f};
+    float out32[3] = {0.0f, 0.0f, 0.0f};
+    LogLuv24toXYZ(ll24, out24);
+    LogLuv32toXYZ(ll32, out32);
+
+    float mixed24[3] = {0.0f, 0.0f, 0.0f};
+    float mixed32[3] = {0.0f, 0.0f, 0.0f};
+    LogLuv24toXYZ(u4 & 0x00FFFFFFU, mixed24);
+    LogLuv32toXYZ(u5, mixed32);
+
+    TIFFSwabFloat(&xyz1[0]);
+    TIFFSwabFloat(&xyz1[1]);
+    TIFFSwabFloat(&xyz1[2]);
+    TIFFSwabFloat(&out24[0]);
+    TIFFSwabFloat(&out32[1]);
+
+    uint32_t ll24_swab = LogLuv24fromXYZ(xyz1, em1 ^ em2);
+    uint32_t ll32_swab = LogLuv32fromXYZ(out24, em2);
+    LogLuv24toXYZ(ll24_swab, mixed24);
+    LogLuv32toXYZ(ll32_swab, mixed32);
+
+    TIFFCIELabToRGB *cielab = NULL;
+    uint32_t L = u0;
+    int32_t a = read_i32(buf + 4);
+    int32_t b = read_i32(buf + 8);
+    float X = 0.0f, Y = 0.0f, Z = 0.0f;
+    TIFFCIELabToXYZ(cielab, L, a, b, &X, &Y, &Z);
+
+    float xyz3[3];
+    xyz3[0] = sanitize_float(X, 0.0f);
+    xyz3[1] = sanitize_float(Y, 0.0f);
+    xyz3[2] = sanitize_float(Z, 0.0f);
+
+    uint32_t ll24_lab = LogLuv24fromXYZ(xyz3, (int)(u1 & 0x7fffffffU));
+    uint32_t ll32_lab = LogLuv32fromXYZ(xyz3, (int)(u2 & 0x7fffffffU));
+    LogLuv24toXYZ(ll24_lab, out24);
+    LogLuv32toXYZ(ll32_lab, out32);
+
+    TIFFSwabFloat(&X);
+    TIFFSwabFloat(&Y);
+    TIFFSwabFloat(&Z);
+
+    return 0;
+}

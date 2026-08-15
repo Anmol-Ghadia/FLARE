@@ -1,0 +1,41 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3038373012
+INFO: Loaded 1 modules   (9454 inline 8-bit counters): 9454 [0x56bbd319f1c8, 0x56bbd31a16b6), 
+INFO: Loaded 1 PC tables (9454 PCs): 9454 [0x56bbd31a16b8,0x56bbd31c6598), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 163 ft: 164 corp: 1/1b exec/s: 0 rss: 33Mb
+#3	NEW    cov: 164 ft: 165 corp: 2/2b lim: 4 exec/s: 0 rss: 33Mb L: 1/1 MS: 1 ShuffleBytes-
+#4	NEW    cov: 168 ft: 170 corp: 3/4b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 1 InsertByte-
+#34	REDUCE cov: 168 ft: 170 corp: 3/3b lim: 4 exec/s: 0 rss: 35Mb L: 1/1 MS: 5 ChangeBit-InsertByte-CrossOver-ChangeByte-ChangeByte-
+#37	NEW    cov: 169 ft: 171 corp: 4/7b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 3 InsertByte-InsertByte-InsertByte-
+#71	REDUCE cov: 172 ft: 175 corp: 5/11b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 4 InsertByte-ChangeByte-CrossOver-CopyPart-
+#112	REDUCE cov: 173 ft: 187 corp: 6/12b lim: 4 exec/s: 0 rss: 35Mb L: 1/4 MS: 1 CrossOver-
+#246	NEW    cov: 174 ft: 188 corp: 7/16b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 4 CrossOver-CrossOver-ChangeByte-InsertByte-
+#426	NEW    cov: 174 ft: 191 corp: 8/20b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 5 InsertByte-CrossOver-CrossOver-InsertByte-ChangeBinInt-
+#635	NEW    cov: 176 ft: 193 corp: 9/25b lim: 6 exec/s: 0 rss: 41Mb L: 5/5 MS: 4 CMP-ChangeBit-ChangeBinInt-CopyPart- DE: "@\241"-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2074233==ERROR: AddressSanitizer: SEGV on unknown address 0x56b7d3127be0 (pc 0x56bbd2f932f9 bp 0x7ffcc981e060 sp 0x7ffcc981dfc0 T0)
+==2074233==The signal is caused by a READ memory access.
+    #0 0x56bbd2f932f9 in uv_encode /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_luv.c:916:21
+    #1 0x56bbd2f94eb6 in LogLuv24fromXYZ /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_luv.c:1004:7
+    #2 0x56bbd2f8b8f4 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854.c:88:26
+    #3 0x56bbd2e970d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0xa10d4) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+    #4 0x56bbd2e967c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0xa07c9) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+    #5 0x56bbd2e97fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0xa1fb5) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+    #6 0x56bbd2e98b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0xa2b15) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+    #7 0x56bbd2e85def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0x8fdef) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+    #8 0x56bbd2eb0476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0xba476) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+    #9 0x700501ba61c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x700501ba628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x56bbd2e7add4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1786418854+0x84dd4) (BuildId: 736ff07481fb360d84ff7ef788a28cfa141bf33b)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_luv.c:916:21 in uv_encode
+==2074233==ABORTING
+MS: 5 CrossOver-ShuffleBytes-CopyPart-ChangeByte-InsertRepeatedBytes-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xd0,0x2c,0xff,0xff,0xff,0xff,
+\320,\377\377\377\377
+artifact_prefix='./'; Test unit written to ./crash-a217ce26ca65c2dac9178f288079f9cb98a92b77
+Base64: 0Cz/////

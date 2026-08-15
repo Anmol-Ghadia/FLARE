@@ -7,7 +7,7 @@
 |cjson|No|Yes|Yes|
 |rapidcsv|No|No|Yes|
 |libpng|Yes|No|Yes|
-|libtiff|Yes|No|No|
+|libtiff|Yes|No|Yes|
 |sqlite3|Yes|No|Yes|
 
 ## How to run the experiments

@@ -1,0 +1,38 @@
+{
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:150:21": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:451:14",
+    "calleeName": "TIFFClientOpen",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:123:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:163:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:378:18",
+    "calleeName": "TIFFClientdata",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:123:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:165:39": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:387:26",
+    "calleeName": "TIFFGetReadProc",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:123:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:166:39": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:388:26",
+    "calleeName": "TIFFGetWriteProc",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:123:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:167:34": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:389:21",
+    "calleeName": "TIFFGetSeekProc",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:123:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:188:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:346:13",
+    "calleeName": "TIFFCleanup",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_44.c:123:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  }
+}

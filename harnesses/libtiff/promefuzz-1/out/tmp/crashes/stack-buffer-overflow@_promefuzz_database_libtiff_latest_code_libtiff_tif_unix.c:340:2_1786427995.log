@@ -1,0 +1,79 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3829878914
+INFO: Loaded 1 modules   (9561 inline 8-bit counters): 9561 [0x560c5f0b0468, 0x560c5f0b29c1), 
+INFO: Loaded 1 PC tables (9561 PCs): 9561 [0x560c5f0b29c8,0x560c5f0d7f58), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+=================================================================
+==2075209==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7eda2e8049c0 at pc 0x560c5ee58329 bp 0x7ffd27714240 sp 0x7ffd27713a10
+WRITE of size 256 at 0x7eda2e8049c0 thread T0
+    #0 0x560c5ee58328 in __asan_memset (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0x154328) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+    #1 0x560c5eed6443 in _TIFFmemset /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:340:2
+    #2 0x560c5eea2862 in TIFFYCbCrToRGBInit /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:245:5
+    #3 0x560c5ee9e114 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994.c:147:9
+    #4 0x560c5eda60d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0xa20d4) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+    #5 0x560c5eda7301 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0xa3301) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+    #6 0x560c5eda78f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0xa38f7) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+    #7 0x560c5ed94def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0x90def) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+    #8 0x560c5edbf476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0xbb476) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+    #9 0x7eda300551c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7eda3005528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x560c5ed89dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0x85dd4) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83)
+
+Address 0x7eda2e8049c0 is located in stack of thread T0 at offset 18880 in frame
+    #0 0x560c5ee98797 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994.c:29
+
+  This frame has 14 object(s):
+    [32, 44) 'xyz24' (line 32)
+    [64, 76) 'xyz32' (line 33)
+    [96, 100) 'X' (line 34)
+    [112, 116) 'Y' (line 34)
+    [128, 132) 'Z' (line 34)
+    [144, 148) 'R' (line 35)
+    [160, 164) 'G' (line 35)
+    [176, 180) 'B' (line 35)
+    [192, 204) 'refWhite' (line 38)
+    [224, 236) 'luma' (line 39)
+    [256, 280) 'refBlackWhite' (line 40)
+    [320, 404) 'display' (line 41)
+    [448, 18572) 'cielab' (line 42)
+    [18832, 18880) 'ycbcr' (line 43) <== Memory access at offset 18880 overflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_66/fuzz_driver_66_sanitizing_1786427994+0x154328) (BuildId: 615017662ed08369c1be674b20a5405d7856fd83) in __asan_memset
+Shadow bytes around the buggy address:
+  0x7eda2e804700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804880: 00 04 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2
+  0x7eda2e804900: f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2
+=>0x7eda2e804980: f2 f2 00 00 00 00 00 00[f3]f3 f3 f3 00 00 00 00
+  0x7eda2e804a00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804a80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804b00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7eda2e804c00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2075209==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

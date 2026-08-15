@@ -1,0 +1,30 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3613166620
+INFO: Loaded 1 modules   (9269 inline 8-bit counters): 9269 [0x5fba2fe68bf8, 0x5fba2fe6b02d), 
+INFO: Loaded 1 PC tables (9269 PCs): 9269 [0x5fba2fe6b030,0x5fba2fe8f380), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2073988==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x5fba2fc821ab bp 0x7ffe1351bbe0 sp 0x7ffe1351bae0 T0)
+==2073988==The signal is caused by a READ memory access.
+==2073988==Hint: address points to the zero page.
+    #0 0x5fba2fc821ab in _TIFFSetupFields /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dirinfo.c:433:41
+    #1 0x5fba2fc609bd in TIFFCreateCustomDirectory /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dir.c:1387:2
+    #2 0x5fba2fc5c179 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412.c:75:9
+    #3 0x5fba2fb680d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412+0xa00d4) (BuildId: b8922228cd8614ec049bf3cbcca0585a4ff26734)
+    #4 0x5fba2fb69301 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412+0xa1301) (BuildId: b8922228cd8614ec049bf3cbcca0585a4ff26734)
+    #5 0x5fba2fb698f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412+0xa18f7) (BuildId: b8922228cd8614ec049bf3cbcca0585a4ff26734)
+    #6 0x5fba2fb56def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412+0x8edef) (BuildId: b8922228cd8614ec049bf3cbcca0585a4ff26734)
+    #7 0x5fba2fb81476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412+0xb9476) (BuildId: b8922228cd8614ec049bf3cbcca0585a4ff26734)
+    #8 0x7d4b91c861c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7d4b91c8628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5fba2fb4bdd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1786418412+0x83dd4) (BuildId: b8922228cd8614ec049bf3cbcca0585a4ff26734)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dirinfo.c:433:41 in _TIFFSetupFields
+==2073988==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

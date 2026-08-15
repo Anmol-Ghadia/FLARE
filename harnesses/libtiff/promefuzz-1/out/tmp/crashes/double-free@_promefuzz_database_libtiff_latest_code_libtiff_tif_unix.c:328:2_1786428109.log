@@ -1,0 +1,57 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2410771997
+INFO: Loaded 1 modules   (9248 inline 8-bit counters): 9248 [0x5a54bbd64978, 0x5a54bbd66d98), 
+INFO: Loaded 1 PC tables (9248 PCs): 9248 [0x5a54bbd66d98,0x5a54bbd8af98), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+=================================================================
+==2075253==ERROR: AddressSanitizer: attempting double-free on 0x502000000090 in thread T0:
+    #0 0x5a54bbb18f6a in free (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x152f6a) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #1 0x5a54bbb59e64 in _TIFFfree /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:328:2
+    #2 0x5a54bbb586ce in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109.c:113:5
+    #3 0x5a54bba650d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x9f0d4) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #4 0x5a54bba647c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x9e7c9) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #5 0x5a54bba66456 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xa0456) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #6 0x5a54bba668f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xa08f7) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #7 0x5a54bba53def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x8ddef) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #8 0x5a54bba7e476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xb8476) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #9 0x719a46bb21c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x719a46bb228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5a54bba48dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x82dd4) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+
+0x502000000090 is located 0 bytes inside of 1-byte region [0x502000000090,0x502000000091)
+freed by thread T0 here:
+    #0 0x5a54bbb19620 in realloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x153620) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #1 0x5a54bbb59ed4 in _TIFFrealloc /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:334:10
+    #2 0x5a54bbb583b0 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109.c:85:11
+    #3 0x5a54bba650d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x9f0d4) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #4 0x5a54bba647c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x9e7c9) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #5 0x5a54bba66456 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xa0456) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #6 0x5a54bba668f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xa08f7) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #7 0x5a54bba53def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x8ddef) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #8 0x5a54bba7e476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xb8476) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #9 0x719a46bb21c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x719a46bb228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5a54bba48dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x82dd4) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+
+previously allocated by thread T0 here:
+    #0 0x5a54bbb19203 in malloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x153203) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #1 0x5a54bbb59d0c in _TIFFmalloc /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:314:10
+    #2 0x5a54bbb57a88 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109.c:55:10
+    #3 0x5a54bba650d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x9f0d4) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #4 0x5a54bba647c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x9e7c9) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #5 0x5a54bba66456 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xa0456) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #6 0x5a54bba668f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xa08f7) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #7 0x5a54bba53def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x8ddef) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #8 0x5a54bba7e476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0xb8476) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+    #9 0x719a46bb21c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x719a46bb228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5a54bba48dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x82dd4) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d)
+
+SUMMARY: AddressSanitizer: double-free (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_67/fuzz_driver_67_sanitizing_1786428109+0x152f6a) (BuildId: 3e810f42b3c1920a3c08ae36cdcb7550965a155d) in free
+==2075253==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./crash-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==

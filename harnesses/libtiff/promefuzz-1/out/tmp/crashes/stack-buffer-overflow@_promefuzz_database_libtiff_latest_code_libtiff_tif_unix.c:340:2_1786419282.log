@@ -1,0 +1,84 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1647764464
+INFO: Loaded 1 modules   (10605 inline 8-bit counters): 10605 [0x5c88647d19f8, 0x5c88647d4365), 
+INFO: Loaded 1 PC tables (10605 PCs): 10605 [0x5c88647d4368,0x5c88647fda38), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+./dummy_file: Cannot read TIFF header.
+=================================================================
+==2074448==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x78d669c04ea0 at pc 0x5c886453f329 bp 0x7ffe84ecdd00 sp 0x7ffe84ecd4d0
+WRITE of size 256 at 0x78d669c04ea0 thread T0
+    #0 0x5c886453f328 in __asan_memset (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0x15d328) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+    #1 0x5c8864660d53 in _TIFFmemset /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:340:2
+    #2 0x5c886458eba2 in TIFFYCbCrToRGBInit /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:245:5
+    #3 0x5c886458731d in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282.c:166:15
+    #4 0x5c886448d0d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0xab0d4) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+    #5 0x5c886448e301 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0xac301) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+    #6 0x5c886448e8f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0xac8f7) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+    #7 0x5c886447bdef in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0x99def) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+    #8 0x5c88644a6476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0xc4476) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+    #9 0x78d66b41e1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x78d66b41e28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5c8864470dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0x8edd4) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad)
+
+Address 0x78d669c04ea0 is located in stack of thread T0 at offset 20128 in frame
+    #0 0x5c886457f797 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282.c:31
+
+  This frame has 18 object(s):
+    [32, 176) 'img' (line 41)
+    [240, 1264) 'emsg' (line 42)
+    [1392, 1404) 'xyz' (line 51)
+    [1424, 1427) 'rgb' (line 52)
+    [1440, 1452) 'xyz2' (line 66)
+    [1472, 1475) 'rgb2' (line 67)
+    [1488, 1492) 'f' (line 74)
+    [1504, 1508) 'tmp' (line 78)
+    [1520, 1524) 'f2' (line 85)
+    [1536, 1620) 'display' (line 91)
+    [1664, 19788) 'cielab' (line 92)
+    [20048, 20060) 'refWhite' (line 93)
+    [20080, 20128) 'ycbcr' (line 150)
+    [20160, 20172) 'luma' (line 151) <== Memory access at offset 20128 partially underflows this variable
+    [20192, 20216) 'refBlackWhite' (line 152) <== Memory access at offset 20128 partially underflows this variable
+    [20256, 20268) 'luma2' (line 169) <== Memory access at offset 20128 partially underflows this variable
+    [20288, 20300) 'xyz677' (line 179) <== Memory access at offset 20128 partially underflows this variable
+    [20320, 20323) 'rgb678' (line 180) <== Memory access at offset 20128 partially underflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1786419282+0x15d328) (BuildId: afa9a99a648ba99ff987c8ba77e6f027b0dfabad) in __asan_memset
+Shadow bytes around the buggy address:
+  0x78d669c04c00: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
+  0x78d669c04c80: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f8
+  0x78d669c04d00: f8 f8 f8 f8 f8 f8 f8 f8 f8 f8 f2 f2 f2 f2 f2 f2
+  0x78d669c04d80: f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2
+  0x78d669c04e00: f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f8 f8 f2 f2 00 00
+=>0x78d669c04e80: 00 00 00 00[f2]f2 f2 f2 00 04 f2 f2 00 00 00 f2
+  0x78d669c04f00: f2 f2 f2 f2 f8 f8 f2 f2 f8 f8 f2 f2 f8 f3 f3 f3
+  0x78d669c04f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x78d669c05000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x78d669c05080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x78d669c05100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2074448==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

@@ -1,0 +1,52 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1507848994
+INFO: Loaded 1 modules   (9408 inline 8-bit counters): 9408 [0x5a16e3c4eec8, 0x5a16e3c51388), 
+INFO: Loaded 1 PC tables (9408 PCs): 9408 [0x5a16e3c51388,0x5a16e3c75f88), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 42 ft: 43 corp: 1/1b exec/s: 0 rss: 33Mb
+	NEW_FUNC[1/1]: 0x5a16e3a3d1d8 in rd32 /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518.c:13
+#37	NEW    cov: 58 ft: 59 corp: 2/5b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 5 CrossOver-CrossOver-InsertByte-ShuffleBytes-InsertByte-
+#44	NEW    cov: 59 ft: 60 corp: 3/9b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 2 ChangeBinInt-CopyPart-
+	NEW_FUNC[1/1]: 0x5a16e3a44bf0 in uv_decode /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_luv.c:930
+#459	NEW    cov: 66 ft: 79 corp: 4/17b lim: 8 exec/s: 0 rss: 38Mb L: 8/8 MS: 5 ChangeBinInt-InsertRepeatedBytes-ChangeBit-ShuffleBytes-CrossOver-
+#468	NEW    cov: 68 ft: 81 corp: 5/25b lim: 8 exec/s: 0 rss: 39Mb L: 8/8 MS: 4 CopyPart-ChangeBinInt-ChangeBit-ChangeBinInt-
+#495	NEW    cov: 69 ft: 82 corp: 6/33b lim: 8 exec/s: 0 rss: 39Mb L: 8/8 MS: 2 ChangeByte-ChangeBit-
+#507	NEW    cov: 69 ft: 84 corp: 7/41b lim: 8 exec/s: 0 rss: 39Mb L: 8/8 MS: 2 CrossOver-ChangeByte-
+#526	NEW    cov: 69 ft: 85 corp: 8/49b lim: 8 exec/s: 0 rss: 39Mb L: 8/8 MS: 4 CopyPart-ChangeBit-ChangeByte-ShuffleBytes-
+#537	NEW    cov: 69 ft: 86 corp: 9/57b lim: 8 exec/s: 0 rss: 39Mb L: 8/8 MS: 1 CrossOver-
+#630	NEW    cov: 69 ft: 87 corp: 10/65b lim: 8 exec/s: 0 rss: 40Mb L: 8/8 MS: 3 ShuffleBytes-ShuffleBytes-ChangeBinInt-
+#643	NEW    cov: 70 ft: 89 corp: 11/73b lim: 8 exec/s: 0 rss: 40Mb L: 8/8 MS: 3 CrossOver-CrossOver-CopyPart-
+#693	NEW    cov: 70 ft: 90 corp: 12/81b lim: 8 exec/s: 0 rss: 40Mb L: 8/8 MS: 5 ChangeByte-CopyPart-ChangeByte-CopyPart-CopyPart-
+	NEW_FUNC[1/1]: 0x5a16e3a3d0d8 in rd_float /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518.c:20
+#1309	NEW    cov: 84 ft: 116 corp: 13/93b lim: 14 exec/s: 0 rss: 45Mb L: 12/12 MS: 1 InsertRepeatedBytes-
+#1325	NEW    cov: 86 ft: 118 corp: 14/105b lim: 14 exec/s: 0 rss: 45Mb L: 12/12 MS: 1 CopyPart-
+#1645	NEW    cov: 86 ft: 130 corp: 15/122b lim: 17 exec/s: 0 rss: 48Mb L: 17/17 MS: 5 ShuffleBytes-EraseBytes-ChangeBinInt-EraseBytes-InsertRepeatedBytes-
+	NEW_FUNC[1/1]: 0x5a16e3a3d848 in rd16 /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518.c:9
+#2893	NEW    cov: 96 ft: 140 corp: 16/151b lim: 29 exec/s: 0 rss: 56Mb L: 29/29 MS: 3 ChangeBinInt-InsertRepeatedBytes-InsertRepeatedBytes-
+#2928	NEW    cov: 97 ft: 141 corp: 17/179b lim: 29 exec/s: 0 rss: 56Mb L: 28/29 MS: 5 EraseBytes-InsertRepeatedBytes-InsertRepeatedBytes-ShuffleBytes-InsertByte-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2074593==ERROR: AddressSanitizer: SEGV on unknown address 0x0000000003fc (pc 0x5a16e3a411ad bp 0x7fffd5abe820 sp 0x7fffd5abe6a0 T0)
+==2074593==The signal is caused by a READ memory access.
+==2074593==Hint: address points to the zero page.
+    #0 0x5a16e3a411ad in TIFFYCbCrtoRGB /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:191:6
+    #1 0x5a16e3a3cfe7 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518.c:121:9
+    #2 0x5a16e39480d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0xa10d4) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+    #3 0x5a16e39477c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0xa07c9) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+    #4 0x5a16e3948fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0xa1fb5) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+    #5 0x5a16e3949b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0xa2b15) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+    #6 0x5a16e3936def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0x8fdef) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+    #7 0x5a16e3961476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0xba476) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+    #8 0x7281383201c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x72813832028a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5a16e392bdd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_33/fuzz_driver_33_sanitizing_1786419518+0x84dd4) (BuildId: 05a28e735ee62e3434b4a129ccca07f2790ec556)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:191:6 in TIFFYCbCrtoRGB
+==2074593==ABORTING
+MS: 1 InsertRepeatedBytes-; base unit: d67d113e77077e2da6ce307cdc17eab7c34e804b
+0x0,0xff,0x2a,0xff,0x2a,0xff,0xf7,0xfd,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,0x3a,
+\000\377*\377*\377\367\375:::::::::::::::::::::::::::::
+artifact_prefix='./'; Test unit written to ./crash-900e8eaeee520a58eb755afc001e2cb4464d4d5c
+Base64: AP8q/yr/9/06Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Og==

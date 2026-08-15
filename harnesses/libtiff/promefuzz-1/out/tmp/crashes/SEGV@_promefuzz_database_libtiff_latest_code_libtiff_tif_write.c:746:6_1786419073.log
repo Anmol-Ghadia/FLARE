@@ -1,0 +1,78 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2438309738
+INFO: Loaded 1 modules   (9317 inline 8-bit counters): 9317 [0x5c6cf950de48, 0x5c6cf95102ad), 
+INFO: Loaded 1 PC tables (9317 PCs): 9317 [0x5c6cf95102b0,0x5c6cf9534900), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFReadDirectory: Warning, Bogus "StripByteCounts" field, ignoring and calculating from imagelength.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+INFO: A corpus is not provided, starting from an empty corpus
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFReadDirectory: Warning, Bogus "StripByteCounts" field, ignoring and calculating from imagelength.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+#2	INITED cov: 566 ft: 567 corp: 1/1b exec/s: 0 rss: 35Mb
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFReadDirectory: Warning, Bogus "StripByteCounts" field, ignoring and calculating from imagelength.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+#3	NEW    cov: 572 ft: 573 corp: 2/3b lim: 4 exec/s: 0 rss: 36Mb L: 2/2 MS: 1 CopyPart-
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFReadDirectory: Warning, Bogus "StripByteCounts" field, ignoring and calculating from imagelength.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFAppendToStrip: Write error at scanline 0.
+TIFFReadDirectory: Warning, Bogus "StripByteCounts" field, ignoring and calculating from imagelength.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+./dummy_file: Can not read tiles from a striped image.
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2074365==ERROR: AddressSanitizer: SEGV on unknown address 0x502000501100 (pc 0x5c6cf938b59f bp 0x7fffb8eec6a0 sp 0x7fffb8eec3d0 T0)
+==2074365==The signal is caused by a READ memory access.
+    #0 0x5c6cf938b59f in TIFFAppendToStrip /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:746:6
+    #1 0x5c6cf938cc94 in TIFFWriteRawStrip /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:355:10
+    #2 0x5c6cf92ff0e5 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072.c:133:17
+    #3 0x5c6cf920c0d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0xa00d4) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+    #4 0x5c6cf920b7c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0x9f7c9) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+    #5 0x5c6cf920cfb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0xa0fb5) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+    #6 0x5c6cf920db15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0xa1b15) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+    #7 0x5c6cf91fadef in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0x8edef) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+    #8 0x5c6cf9225476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0xb9476) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+    #9 0x7312a34271c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7312a342728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5c6cf91efdd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1786419072+0x83dd4) (BuildId: 3423be1ea116ca580f40d0695fb66806a19feb93)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:746:6 in TIFFAppendToStrip
+==2074365==ABORTING
+MS: 3 InsertByte-CopyPart-CopyPart-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xa,0x0,0xa,0x0,
+\012\000\012\000
+artifact_prefix='./'; Test unit written to ./crash-c2abd53443e87b1d4332b55de89f3f4c04d71253
+Base64: CgAKAA==

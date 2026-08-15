@@ -1,0 +1,102 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3174244231
+INFO: Loaded 1 modules   (9325 inline 8-bit counters): 9325 [0x5cc4b0368e38, 0x5cc4b036b2a5), 
+INFO: Loaded 1 PC tables (9325 PCs): 9325 [0x5cc4b036b2a8,0x5cc4b038f978), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 4 ft: 4 corp: 1/1b exec/s: 0 rss: 32Mb
+TIFFForceStrileArrayWriting: Directory has not yet been written.
+TIFFReadDirectory: Warning, Invalid data type for tag StripOffsets.
+TIFFReadDirectory: Warning, Invalid data type for tag StripByteCounts.
+TIFFFetchStripThing: Incompatible type for "StripOffsets".
+	NEW_FUNC[1/104]: 0x5cc4b015c058 in rd32 /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792.c:56
+	NEW_FUNC[2/104]: 0x5cc4b015c740 in TIFFCleanup /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_close.c:46
+#1352	NEW    cov: 509 ft: 510 corp: 2/17b lim: 17 exec/s: 0 rss: 45Mb L: 16/16 MS: 5 ChangeBit-InsertRepeatedBytes-ShuffleBytes-InsertRepeatedBytes-InsertByte-
+TIFFForceStrileArrayWriting: Directory has not yet been written.
+TIFFReadDirectory: Warning, Invalid data type for tag StripOffsets.
+TIFFReadDirectory: Warning, Invalid data type for tag StripByteCounts.
+TIFFFetchStripThing: Incompatible type for "StripOffsets".
+#1356	NEW    cov: 532 ft: 664 corp: 3/33b lim: 17 exec/s: 0 rss: 46Mb L: 16/16 MS: 4 CrossOver-ChangeBit-InsertByte-InsertRepeatedBytes-
+TIFFForceStrileArrayWriting: Directory has not yet been written.
+TIFFReadDirectory: Warning, Invalid data type for tag StripOffsets.
+TIFFReadDirectory: Warning, Invalid data type for tag StripByteCounts.
+TIFFFetchStripThing: Incompatible type for "StripOffsets".
+#1358	NEW    cov: 532 ft: 671 corp: 4/49b lim: 17 exec/s: 0 rss: 46Mb L: 16/16 MS: 2 ChangeByte-InsertRepeatedBytes-
+TIFFForceStrileArrayWriting: Directory has not yet been written.
+TIFFReadDirectory: Warning, Invalid data type for tag StripOffsets.
+TIFFReadDirectory: Warning, Invalid data type for tag StripByteCounts.
+TIFFFetchStripThing: Incompatible type for "StripOffsets".
+TIFFForceStrileArrayWriting: Directory has not yet been written.
+TIFFReadDirectory: Warning, Invalid data type for tag StripOffsets.
+TIFFReadDirectory: Warning, Invalid data type for tag StripByteCounts.
+TIFFFetchStripThing: Incompatible type for "StripOffsets".
+=================================================================
+==2075093==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50200000ba20 at pc 0x5cc4b01ff7d0 bp 0x7ffc72902200 sp 0x7ffc729021f8
+READ of size 8 at 0x50200000ba20 thread T0
+    #0 0x5cc4b01ff7cf in TIFFWriteScanline /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:131:7
+    #1 0x5cc4b015b156 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792.c:118:23
+    #2 0x5cc4b00670d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xa00d4) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #3 0x5cc4b00667c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x9f7c9) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #4 0x5cc4b0067fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xa0fb5) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #5 0x5cc4b0068b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xa1b15) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #6 0x5cc4b0055def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x8edef) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #7 0x5cc4b0080476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xb9476) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #8 0x79dbaf6e01c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x79dbaf6e028a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5cc4b004add4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x83dd4) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+
+0x50200000ba20 is located 0 bytes after 16-byte region [0x50200000ba10,0x50200000ba20)
+allocated by thread T0 here:
+    #0 0x5cc4b011b620 in realloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x154620) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #1 0x5cc4b02096b4 in _TIFFrealloc /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:334:10
+    #2 0x5cc4b02018e4 in TIFFGrowStrips /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:712:34
+    #3 0x5cc4b01fede1 in TIFFWriteScanline /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:99:34
+    #4 0x5cc4b015b156 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792.c:118:23
+    #5 0x5cc4b00670d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xa00d4) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #6 0x5cc4b00667c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x9f7c9) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #7 0x5cc4b0067fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xa0fb5) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #8 0x5cc4b0068b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xa1b15) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #9 0x5cc4b0055def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x8edef) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #10 0x5cc4b0080476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0xb9476) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+    #11 0x79dbaf6e01c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x79dbaf6e028a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x5cc4b004add4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1786427792+0x83dd4) (BuildId: 5e12af6b5212f8b7b3aafa5080af87cb4d58ebff)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:131:7 in TIFFWriteScanline
+Shadow bytes around the buggy address:
+  0x50200000b780: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x50200000b800: fa fa fd fa fa fa fd fd fa fa fd fa fa fa fd fd
+  0x50200000b880: fa fa fd fd fa fa fd fa fa fa fd fa fa fa fd fa
+  0x50200000b900: fa fa fd fa fa fa fd fa fa fa fd fd fa fa 00 00
+  0x50200000b980: fa fa fd fa fa fa fd fa fa fa fd fa fa fa 00 00
+=>0x50200000ba00: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x50200000ba80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50200000bb00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50200000bb80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50200000bc00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50200000bc80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2075093==ABORTING
+MS: 3 ShuffleBytes-CopyPart-ChangeBinInt-; base unit: bb8181ad1d195a16756656c99e99a883fe3729ab
+0x20,0x0,0x0,0x0,0x0,0xff,0xff,0xff,0xf7,0x0,0x0,0x0,0x0,0x0,0x0,0x0,
+ \000\000\000\000\377\377\377\367\000\000\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-7cd2601091698e733de42b65d44247f71a6eb8b7
+Base64: IAAAAAD////3AAAAAAAAAA==
