@@ -47,7 +47,7 @@ Notes:
 1) login with PAT from docker hub
 2) execute `./run.sh` of magma after configuration with `BUILD_BASE=1`
 ```
-cd modules/magma/tools/captain/ && BASE_BUILD=1 ./run.sh
+cd modules/magma/tools/captain/ && BUILD_BASE=1 ./run.sh
 ```
 3) tag and push the image with appropriate library name and version
 ```
