@@ -43,6 +43,20 @@ Notes:
 - Edit the CONFIG block in `run.py` (LIBRARIES list) to choose which libraries from `harness.yaml` should be prepared for Magma.
 - `captainrc` contains a placeholder line for `aflplusplus_TARGETS` which will be patched by the script; ensure other Magma settings (WORKDIR, FUZZERS, TIMEOUT, POLL, etc.) are correct for your environment.
 
+### Pushing base images
+1) login with PAT from docker hub
+2) execute `./run.sh` of magma after configuration with `BUILD_BASE=1`
+```
+cd modules/magma/tools/captain/ && BASE_BUILD=1 ./run.sh
+```
+3) tag and push the image with appropriate library name and version
+```
+docker image tag flare-tinycbor anmolg26/flare-tinycbor:0.1
+docker image tag flare-tinycbor anmolg26/flare-tinycbor:latest
+docker image push anmolg26/flare-tinycbor:0.1
+docker image push anmolg26/flare-tinycbor:latest
+```
+
 ## Repository layout
 
 ```
