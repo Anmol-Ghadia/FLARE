@@ -4,11 +4,19 @@
 |Library|Magma support?|OpenCode Harness?|Promefuzz Harness?|
 |---|---|---|---|
 |tinycbor|Yes|Yes|Yes|
+|sqlite3|Yes|No|Yes|
+|libtiff|Yes|No|Yes|
+|lhasa|Na|No|No|
+|libpng|Yes|Yes|Yes|
+|libsndfile|Yes|No|No|
+|libxml2|Yes|No|No|
+|lua|Yes|No|No|
+|poppler|Yes|No|No|
+|openssl|Yes|No|No|
+|php|Yes|No|No|
 |cjson|Yes|Yes|Yes|
 |rapidcsv|No|No|Yes|
-|libpng|Yes|Yes|Yes|
-|libtiff|Yes|No|Yes|
-|sqlite3|Yes|No|Yes|
+|pmp-library|No|No|No|
 
 ## How to run the experiments
 
