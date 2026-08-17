@@ -26,5 +26,9 @@ libpng:
   promefuzz:
     - libpng/promefuzz-1/out/fuzz_driver/
 libtiff:
+  opencode:
+    - libtiff/opencode-1/fuzz/
+    - libtiff/opencode-2/fuzz/
+    - libtiff/opencode-3/fuzz/
   promefuzz:
     - libtiff/promefuzz-1/out/fuzz_driver/

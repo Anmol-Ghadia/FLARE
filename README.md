@@ -5,7 +5,7 @@
 |---|---|---|---|
 |tinycbor|Yes|Yes|Yes|
 |sqlite3|Yes|No|Yes|
-|libtiff|Yes|No|Yes|
+|libtiff|Yes|Yes|Yes|
 |lhasa|Na|No|No|
 |libpng|Yes|Yes|Yes|
 |libsndfile|Yes|No|No|
