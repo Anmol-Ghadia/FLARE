@@ -58,7 +58,7 @@ def move_harnesses(yaml_path: Path, library: str, target_dir: Path) -> list[str]
             for f in src_dir.iterdir():
                 print(f)
                 if f.is_file() and f.suffix in SRC_EXTS:
-                    new_name = f"{source_tool}_{dir_index}_{f.name}"
+                    new_name = f"{source_tool}_{dir_index+1}_{f.name}"
                     shutil.copy(str(f), dest / new_name)
                     names.append(Path(new_name).stem)
     return names
