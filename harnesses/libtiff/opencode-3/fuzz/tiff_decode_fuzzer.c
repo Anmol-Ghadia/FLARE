@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-#include "tiff_fuzzing.h"
+#include "opencode_3_tiff_fuzzing.h"
 
 #define TIFF_FUZZ_MAX_ALLOCATION (128U * 1024U * 1024U)
 #define TIFF_FUZZ_MAX_DIRECTORIES 8U

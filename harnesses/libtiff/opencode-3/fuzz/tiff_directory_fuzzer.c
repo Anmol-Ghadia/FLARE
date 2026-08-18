@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "tiff_fuzzing.h"
+#include "opencode_3_tiff_fuzzing.h"
 
 #define TIFF_FUZZ_MAX_MAIN_DIRECTORIES 32U
 #define TIFF_FUZZ_MAX_SUBIFDS 8U
