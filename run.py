@@ -21,7 +21,7 @@ import yaml
 from pathlib import Path
 
 # ---------------- CONFIG (edit this) -------------------
-LIBRARIES = ["tinycbor"]               # libraries being fuzzed
+LIBRARIES = ["libtiff"]               # libraries being fuzzed
 # -------------------------------------------------------
 
 CAPTAINRC = Path("./captainrc")        # path to source captainrc
