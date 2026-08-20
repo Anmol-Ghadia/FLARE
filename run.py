@@ -3,15 +3,6 @@
 Set up Magma fuzzing targets: patch captainrc, place it, collect harnesses
 from a YAML manifest, and generate configrc.
 
-Assumptions (adjust if your Magma layout differs):
-- MAGMA_ROOT/targets/<library>/ is the target dir for captainrc & configrc.
-- MAGMA_ROOT/targets/<library>/harnesses/ is where harness sources land.
-- captainrc has a line "TARGET_LIBRARY=" to fill in (change PLACEHOLDER
-  below to match your actual captainrc template).
-- HARNESS_YAML maps library -> source_tool (opencode/promefuzz/...) ->
-  list of directories; direct-child .c/.cc/.cpp files in each directory
-  are renamed with a "<source_tool>_" prefix and moved into harnesses/.
-
 Edit the CONFIG block below, then just run:
     python setup_magma_target.py
 """
@@ -41,7 +32,7 @@ SRC_EXTS = {".c", ".cc", ".cpp", ".h"}       # harness file extensions to collec
 
 PLACEHOLDER = re.compile(r"^aflplusplus_TARGETS=.*$", re.MULTILINE)
 
-
+# --- Helpers for step 1 ---
 def patch_captainrc(captainrc: Path, libraries: list[str]) -> str:
     text = captainrc.read_text()
     replacement = f"aflplusplus_TARGETS=({" ".join(libraries)})"
@@ -50,8 +41,10 @@ def patch_captainrc(captainrc: Path, libraries: list[str]) -> str:
     else:
         text = replacement + "\n" + text
     return text
+# --- END of Helpers for step 1 ---
 
 
+# --- Helpers for step 3 ---
 def move_harnesses(yaml_path: Path, library: str, target_dir: Path) -> list[str]:
     data = yaml.safe_load(yaml_path.read_text())
     dest = target_dir / "custom"
@@ -73,7 +66,6 @@ def move_harnesses(yaml_path: Path, library: str, target_dir: Path) -> list[str]
                     names.append(Path(new_name).stem)
     return names
 
-
 def write_configrc(target_dir: Path, harness_names: list[str]) -> None:
     lines = [f'PROGRAMS=({" ".join(harness_names)})']
     (target_dir / "configrc").write_text("\n".join(lines) + "\n")
@@ -90,7 +82,27 @@ def setup_target(library: str) -> None:
 
     print(f"Target set up at {target_dir}")
     print(f"Harnesses: {harness_names}")
+# --- END of Helpers for step 3 ---
 
+# --- Helpers for step 5 ---
+def get_total_edges(library, output_dir):
+    instrumented_file = next((output_dir / f"ar/aflplusplus/{library}").rglob("*instrumented*"))
+    return int(instrumented_file.read_text().strip())
+# --- END of Helpers for step 5 ---
+
+# --- Helpers for step 6 ---
+def generate_union_edges_file(library, tool, output_dir):
+    tool_dir = output_dir / "ar/aflplusplus" / library / tool
+    tool_dir.mkdir(parents=True, exist_ok=True)
+
+    lines = set()
+    for map_file in glob.glob(str(output_dir / f"ar/aflplusplus/{library}/{tool}*/0/coverage/map.sorted")):
+        lines.update(Path(map_file).read_text().splitlines())
+
+    (tool_dir / "union.txt").write_text("\n".join(sorted(lines)))
+# --- END of Helpers for step 6 ---
+
+# --- Helpers for step 7 ---
 def print_table(library, total_edges):
 
     def load_edges(directory):
@@ -147,6 +159,7 @@ def print_table(library, total_edges):
     print_row(["-" * w for w in col_widths])
     for r in rows:
         print_row([r["name"], r["count"], r["union"], r["intersection"], r["only_eval"], r["only_base"]])
+# --- END of Helpers for step 7 ---
 
 def main():
     # 1) modify captainrc to specify the library being fuzzed
@@ -162,25 +175,17 @@ def main():
     # 4) run magma
     if DEV:
         env = os.environ | {"BUILD_BASE": "1"}
-    subprocess.run(["./run.sh"], cwd="modules/magma/tools/captain", env=env, check=True)
+    subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain/captainrc"), env=env, check=True)
 
-    # 5) get total number of edges
-    workdir = Path.cwd() / "modules/magma/tools/captain/workdir"
+    output_dir = (MAGMA_ROOT / "tools/captain/workdir")
 
     for library in LIBRARIES:
-        instrumented_file = next((workdir / f"ar/aflplusplus/{library}").rglob("*instrumented*"))
-        total_edges = int(instrumented_file.read_text().strip())
+        # 5) get total number of edges
+        total_edges = get_total_edges(library,output_dir)
 
-        #6 build union.txt per tool
+        # 6) build union.txt per tool
         for tool in ["promefuzz", "opencode"]: # TODO: instead read this from YAML
-            tool_dir = workdir / "ar/aflplusplus/libtiff" / tool
-            tool_dir.mkdir(parents=True, exist_ok=True)
-
-            lines = set()
-            for map_file in glob.glob(str(workdir / f"ar/aflplusplus/{library}/{tool}*/0/coverage/map.sorted")):
-                lines.update(Path(map_file).read_text().splitlines())
-
-            (tool_dir / "union.txt").write_text("\n".join(sorted(lines)))
+            generate_union_edges_file(library, tool, output_dir)
 
         # 7) print the table with coverage numbers
         print_table(library, total_edges)
