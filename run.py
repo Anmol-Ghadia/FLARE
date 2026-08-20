@@ -13,6 +13,7 @@ import subprocess
 import os
 import sys
 import glob
+import csv
 from pathlib import Path
 
 # ---------------- CONFIG (edit this) -------------------
@@ -25,6 +26,7 @@ LIBRARIES = ["libtiff"]
 DEV=True
 # -------------------------------------------------------
 
+CSV_DIR = Path("./csv")
 CAPTAINRC = Path("./captainrc")        # path to source captainrc
 HARNESS_YAML = Path("./harness.yaml")  # path to harness manifest
 MAGMA_ROOT = Path("./modules/magma")           # path to magma checkout
@@ -53,13 +55,10 @@ def move_harnesses(yaml_path: Path, library: str, target_dir: Path) -> list[str]
     for source_tool, dirs in data.get(library, {}).items():
         for dir_index in range(len(dirs)):
             d = dirs[dir_index]
-            print(d)
             src_dir = Path("harnesses") / Path(d)
-            print(src_dir)
             if not src_dir.is_dir():
                 continue
             for f in src_dir.iterdir():
-                print(f)
                 if f.is_file() and f.suffix in SRC_EXTS:
                     new_name = f"{source_tool}_{dir_index+1}_{f.name}"
                     shutil.copy(str(f), dest / new_name)
@@ -81,7 +80,7 @@ def setup_target(library: str) -> None:
     write_configrc(target_dir, harness_names)
 
     print(f"Target set up at {target_dir}")
-    print(f"Harnesses: {harness_names}")
+    print(f"Harness count: {len(harness_names)}")
 # --- END of Helpers for step 3 ---
 
 # --- Helpers for step 5 ---
@@ -103,8 +102,8 @@ def generate_union_edges_file(library, tool, output_dir):
 # --- END of Helpers for step 6 ---
 
 # --- Helpers for step 7 ---
-def print_table(library, total_edges):
-
+def generate_table_csv(library, total_edges, csv_dir):
+    csv_dir.mkdir(parents=True, exist_ok=True)
     def load_edges(directory):
         path = os.path.join(directory, "union.txt")
         if not os.path.isfile(path):
@@ -121,44 +120,55 @@ def print_table(library, total_edges):
     base_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{base_name}/")
     base_edges = load_edges(base_dir)
 
-    rows = []
-    for eval_name in evals:
-        eval_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{eval_name}/")
-        edges = load_edges(eval_dir)
-
-        union = edges | base_edges
-        intersection = edges & base_edges
-        only_eval = edges - base_edges
-        only_base = base_edges - edges
-
-        rows.append({
-            "name": eval_name,
-            "count": get_formatted_str(len(edges), total_edges),
-            "union": get_formatted_str(len(union), total_edges),
-            "intersection": get_formatted_str(len(intersection), total_edges),
-            "only_eval": get_formatted_str(len(only_eval), total_edges),
-            "only_base": get_formatted_str(len(only_base), total_edges),
-        })
-
-    # --- Print table ---
     headers = [
         "Evaluation", "Count", f"Union w/ {base_name}", f"Intersect w/ {base_name}",
         f"Eval - {base_name}", f"{base_name} - Eval",
     ]
+
+    csv_path = csv_dir / f"{library}.csv"
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Total Edge Count", total_edges])
+        writer.writerow(headers)
+
+        for eval_name in evals:
+            eval_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{eval_name}/")
+            edges = load_edges(eval_dir)
+
+            union = edges | base_edges
+            intersection = edges & base_edges
+            only_eval = edges - base_edges
+            only_base = base_edges - edges
+
+            writer.writerow([
+                eval_name,
+                get_formatted_str(len(edges), total_edges),
+                get_formatted_str(len(union), total_edges),
+                get_formatted_str(len(intersection), total_edges),
+                get_formatted_str(len(only_eval), total_edges),
+                get_formatted_str(len(only_base), total_edges),
+            ])
+    return csv_path
+
+def print_table_from_csv(csv_path):
+    with open(csv_path, newline="") as f:
+        reader = list(csv.reader(f))
+
+    total_edge_line, headers, *rows = reader
+
     col_widths = [max(len(h), 10) for h in headers]
     for r in rows:
-        vals = [r["name"], r["count"], r["union"], r["intersection"], r["only_eval"], r["only_base"]]
-        for i, v in enumerate(vals):
+        for i, v in enumerate(r):
             col_widths[i] = max(col_widths[i], len(str(v)))
 
     def print_row(vals):
         print(" | ".join(str(v).ljust(w) for v, w in zip(vals, col_widths)))
 
-    print(f"Total Edge Count: {total_edges}")
+    print(f"{total_edge_line[0]}: {total_edge_line[1]}")
     print_row(headers)
     print_row(["-" * w for w in col_widths])
     for r in rows:
-        print_row([r["name"], r["count"], r["union"], r["intersection"], r["only_eval"], r["only_base"]])
+        print_row(r)
 # --- END of Helpers for step 7 ---
 
 def main():
@@ -175,7 +185,7 @@ def main():
     # 4) run magma
     if DEV:
         env = os.environ | {"BUILD_BASE": "1"}
-    subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain/captainrc"), env=env, check=True)
+    #subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain/captainrc"), env=env, check=True)
 
     output_dir = (MAGMA_ROOT / "tools/captain/workdir")
 
@@ -188,7 +198,8 @@ def main():
             generate_union_edges_file(library, tool, output_dir)
 
         # 7) print the table with coverage numbers
-        print_table(library, total_edges)
+        csv_path = generate_table_csv(library, total_edges, CSV_DIR)
+        print_table_from_csv(csv_path)
 
 if __name__ == "__main__":
     main()
