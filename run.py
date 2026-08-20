@@ -18,10 +18,20 @@ Edit the CONFIG block below, then just run:
 import re
 import shutil
 import yaml
+import subprocess
+import os
+import sys
+import glob
 from pathlib import Path
 
 # ---------------- CONFIG (edit this) -------------------
-LIBRARIES = ["libtiff"]               # libraries being fuzzed
+# libraries being fuzzed as a python list of strings
+# note the capitalization
+LIBRARIES = ["libtiff"]
+
+# running in development environment?
+# set False if unsure
+DEV=True
 # -------------------------------------------------------
 
 CAPTAINRC = Path("./captainrc")        # path to source captainrc
@@ -81,6 +91,62 @@ def setup_target(library: str) -> None:
     print(f"Target set up at {target_dir}")
     print(f"Harnesses: {harness_names}")
 
+def print_table(library, total_edges):
+
+    def load_edges(directory):
+        path = os.path.join(directory, "union.txt")
+        if not os.path.isfile(path):
+            sys.exit(f"Error: {path} not found")
+        with open(path) as f:
+            return {line.strip() for line in f if line.strip()}
+
+    def get_formatted_str(value, max):
+        return f"{value} ({value*100/max:.2f}%)"
+
+    evals = ["promefuzz", "opencode"]
+
+    base_name = "promefuzz"
+    base_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{base_name}/")
+    base_edges = load_edges(base_dir)
+
+    rows = []
+    for eval_name in evals:
+        eval_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{eval_name}/")
+        edges = load_edges(eval_dir)
+
+        union = edges | base_edges
+        intersection = edges & base_edges
+        only_eval = edges - base_edges
+        only_base = base_edges - edges
+
+        rows.append({
+            "name": eval_name,
+            "count": get_formatted_str(len(edges), total_edges),
+            "union": get_formatted_str(len(union), total_edges),
+            "intersection": get_formatted_str(len(intersection), total_edges),
+            "only_eval": get_formatted_str(len(only_eval), total_edges),
+            "only_base": get_formatted_str(len(only_base), total_edges),
+        })
+
+    # --- Print table ---
+    headers = [
+        "Evaluation", "Count", f"Union w/ {base_name}", f"Intersect w/ {base_name}",
+        f"Eval - {base_name}", f"{base_name} - Eval",
+    ]
+    col_widths = [max(len(h), 10) for h in headers]
+    for r in rows:
+        vals = [r["name"], r["count"], r["union"], r["intersection"], r["only_eval"], r["only_base"]]
+        for i, v in enumerate(vals):
+            col_widths[i] = max(col_widths[i], len(str(v)))
+
+    def print_row(vals):
+        print(" | ".join(str(v).ljust(w) for v, w in zip(vals, col_widths)))
+
+    print(f"Total Edge Count: {total_edges}")
+    print_row(headers)
+    print_row(["-" * w for w in col_widths])
+    for r in rows:
+        print_row([r["name"], r["count"], r["union"], r["intersection"], r["only_eval"], r["only_base"]])
 
 def main():
     # 1) modify captainrc to specify the library being fuzzed
@@ -93,6 +159,31 @@ def main():
     for library in LIBRARIES:
         setup_target(library)
 
+    # 4) run magma
+    if DEV:
+        env = os.environ | {"BUILD_BASE": "1"}
+    subprocess.run(["./run.sh"], cwd="modules/magma/tools/captain", env=env, check=True)
+
+    # 5) get total number of edges
+    workdir = Path.cwd() / "modules/magma/tools/captain/workdir"
+
+    for library in LIBRARIES:
+        instrumented_file = next((workdir / f"ar/aflplusplus/{library}").rglob("*instrumented*"))
+        total_edges = int(instrumented_file.read_text().strip())
+
+        #6 build union.txt per tool
+        for tool in ["promefuzz", "opencode"]: # TODO: instead read this from YAML
+            tool_dir = workdir / "ar/aflplusplus/libtiff" / tool
+            tool_dir.mkdir(parents=True, exist_ok=True)
+
+            lines = set()
+            for map_file in glob.glob(str(workdir / f"ar/aflplusplus/{library}/{tool}*/0/coverage/map.sorted")):
+                lines.update(Path(map_file).read_text().splitlines())
+
+            (tool_dir / "union.txt").write_text("\n".join(sorted(lines)))
+
+        # 7) print the table with coverage numbers
+        print_table(library, total_edges)
 
 if __name__ == "__main__":
     main()
