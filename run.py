@@ -111,9 +111,6 @@ def generate_table_csv(library, total_edges, csv_dir):
         with open(path) as f:
             return {line.strip() for line in f if line.strip()}
 
-    def get_formatted_str(value, max):
-        return f"{value} ({value*100/max:.2f}%)"
-
     evals = ["promefuzz", "opencode"]
 
     base_name = "promefuzz"
@@ -128,8 +125,8 @@ def generate_table_csv(library, total_edges, csv_dir):
     csv_path = csv_dir / f"{library}.csv"
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["Total Edge Count", total_edges])
         writer.writerow(headers)
+        writer.writerow([library, total_edges,None,None,None,None])
 
         for eval_name in evals:
             eval_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{eval_name}/")
@@ -142,32 +139,41 @@ def generate_table_csv(library, total_edges, csv_dir):
 
             writer.writerow([
                 eval_name,
-                get_formatted_str(len(edges), total_edges),
-                get_formatted_str(len(union), total_edges),
-                get_formatted_str(len(intersection), total_edges),
-                get_formatted_str(len(only_eval), total_edges),
-                get_formatted_str(len(only_base), total_edges),
+                len(edges),
+                len(union),
+                len(intersection),
+                len(only_eval),
+                len(only_base),
             ])
     return csv_path
 
 def print_table_from_csv(csv_path):
+    def get_formatted_str(value, total_edges):
+        return f"{value} ({int(value)*100/int(total_edges):.2f}%)"
+
     with open(csv_path, newline="") as f:
         reader = list(csv.reader(f))
 
-    total_edge_line, headers, *rows = reader
+    headers, total_edge_line, *rows = reader
+    total_edges = total_edge_line[1]
+
+    formatted_rows = [
+        [r[0]] + [get_formatted_str(v, total_edges) for v in r[1:]]
+        for r in rows
+    ]
 
     col_widths = [max(len(h), 10) for h in headers]
-    for r in rows:
+    for r in formatted_rows:
         for i, v in enumerate(r):
             col_widths[i] = max(col_widths[i], len(str(v)))
 
     def print_row(vals):
         print(" | ".join(str(v).ljust(w) for v, w in zip(vals, col_widths)))
 
-    print(f"{total_edge_line[0]}: {total_edge_line[1]}")
+    print(f"Total Edges: {total_edges}")
     print_row(headers)
     print_row(["-" * w for w in col_widths])
-    for r in rows:
+    for r in formatted_rows:
         print_row(r)
 # --- END of Helpers for step 7 ---
 
