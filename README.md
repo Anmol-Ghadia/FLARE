@@ -36,7 +36,7 @@ git clone --recurse-submodules https://github.com/Anmol-Ghadia/FLARE.git
 3) modify `run.py` to specify the libraries being fuzzed  
 4) execute:
 ```
-python3 run.py && cd modules/magma/tools/captain/ && ./run.sh
+python3 run.py
 ```
 
 Notes:
