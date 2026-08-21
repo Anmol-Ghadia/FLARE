@@ -50,6 +50,8 @@ def patch_captainrc(captainrc: Path, libraries: list[str]) -> str:
 def move_harnesses(yaml_path: Path, library: str, target_dir: Path) -> list[str]:
     data = yaml.safe_load(yaml_path.read_text())
     dest = target_dir / "custom"
+    if dest.exists():
+       shutil.rmtree(dest)
     dest.mkdir(parents=True, exist_ok=True)
     names = []
     for source_tool, dirs in data.get(library, {}).items():
@@ -111,7 +113,11 @@ def generate_table_csv(library, total_edges, csv_dir):
         with open(path) as f:
             return {line.strip() for line in f if line.strip()}
 
-    evals = ["promefuzz", "opencode"]
+    data = yaml.safe_load(HARNESS_YAML.read_text())
+    evals = []
+    for tool, _ in data.get(library, {}).items():
+        print(tool)
+        evals.append(tool)
 
     base_name = "promefuzz"
     base_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{base_name}/")
@@ -177,6 +183,12 @@ def print_table_from_csv(csv_path):
         print_row(r)
 # --- END of Helpers for step 7 ---
 
+def combine_results_from_same_tool(yaml_path: Path, library: str, output_dir: Path):
+    data = yaml.safe_load(yaml_path.read_text())
+    names = []
+    for tool, _ in data.get(library, {}).items():
+        generate_union_edges_file(library, tool, output_dir)
+
 def main():
     # 1) modify captainrc to specify the library being fuzzed
     patched = patch_captainrc(CAPTAINRC, LIBRARIES)
@@ -201,8 +213,7 @@ def main():
         total_edges = get_total_edges(library,output_dir)
 
         # 6) build union.txt per tool
-        for tool in ["promefuzz", "opencode"]: # TODO: instead read this from YAML
-            generate_union_edges_file(library, tool, output_dir)
+        combine_results_from_same_tool(HARNESS_YAML, library, output_dir)
 
         # 7) print the table with coverage numbers
         csv_path = generate_table_csv(library, total_edges, CSV_DIR)
