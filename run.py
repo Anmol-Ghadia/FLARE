@@ -23,7 +23,7 @@ LIBRARIES = ["libtiff"]
 
 # running in development environment?
 # set False if unsure
-DEV=True
+DEV=False
 # -------------------------------------------------------
 
 CSV_DIR = Path("./csv")
@@ -189,9 +189,10 @@ def main():
         setup_target(library)
 
     # 4) run magma
+    env = os.environ
     if DEV:
-        env = os.environ | {"BUILD_BASE": "1"}
-    #subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain/captainrc"), env=env, check=True)
+        env |= {"BUILD_BASE": "1"}
+    subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain"), env=env, check=True)
 
     output_dir = (MAGMA_ROOT / "tools/captain/workdir")
 
