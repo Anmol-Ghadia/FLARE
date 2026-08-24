@@ -26,7 +26,9 @@ LIBRARIES = ["libtiff"]
 DEV=False
 # -------------------------------------------------------
 
-RAW_RESULTS_DIR = Path("/scratch-ssd/anmol/experiment-findings/workdir")
+#RAW_RESULTS_DIR = Path("/scratch-ssd/anmol/experiment-findings/workdir")
+EXECUTE_MAGMA = True            # True if you want to run mamga fuzzing containers
+SETUP_LIBRARY = True            # True if you want to move the harnesses to magma
 RUNS = 2        # 2 = _0, _1 folders
 CSV_DIR = Path("./csv")
 CAPTAINRC = Path("./captainrc")        # path to source captainrc
@@ -200,15 +202,22 @@ def main():
 
     # 3) for each library, move harnesses and setup configrc
     for library in LIBRARIES:
-        setup_target(library)
+        if SETUP_LIBRARY:
+            setup_target(library)
+        pass
 
     # 4) run magma
     env = os.environ
     if DEV:
         env |= {"BUILD_BASE": "1"}
-    subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain"), env=env, check=True)
+    if EXECUTE_MAGMA:
+        subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain"), env=env, check=True)
 
-    output_dir = RAW_RESULTS_DIR
+    try:
+        output_dir = RAW_RESULTS_DIR
+    except:
+        output_dir = (MAGMA_ROOT / "tools/captain/workdir")
+
 
     for run_number in range(RUNS):
         for library in LIBRARIES:
