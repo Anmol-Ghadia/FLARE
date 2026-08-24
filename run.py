@@ -26,6 +26,8 @@ LIBRARIES = ["libtiff"]
 DEV=False
 # -------------------------------------------------------
 
+RAW_RESULTS_DIR = Path("/scratch-ssd/anmol/experiment-findings/workdir")
+RUNS = 2        # 2 = _0, _1 folders
 CSV_DIR = Path("./csv")
 CAPTAINRC = Path("./captainrc")        # path to source captainrc
 HARNESS_YAML = Path("./harness.yaml")  # path to harness manifest
@@ -92,19 +94,19 @@ def get_total_edges(library, output_dir):
 # --- END of Helpers for step 5 ---
 
 # --- Helpers for step 6 ---
-def generate_union_edges_file(library, tool, output_dir):
-    tool_dir = output_dir / "ar/aflplusplus" / library / tool
+def generate_union_edges_file(library, tool, output_dir, run_number):
+    tool_dir = output_dir / "ar/aflplusplus" / library / f"{tool}_{run_number}"
     tool_dir.mkdir(parents=True, exist_ok=True)
 
     lines = set()
-    for map_file in glob.glob(str(output_dir / f"ar/aflplusplus/{library}/{tool}*/0/coverage/map.sorted")):
+    for map_file in glob.glob(str(output_dir / f"ar/aflplusplus/{library}/{tool}*/{run_number}/coverage/map.sorted")):
         lines.update(Path(map_file).read_text().splitlines())
 
     (tool_dir / "union.txt").write_text("\n".join(sorted(lines)))
 # --- END of Helpers for step 6 ---
 
 # --- Helpers for step 7 ---
-def generate_table_csv(library, total_edges, csv_dir):
+def generate_table_csv(library, total_edges, csv_dir, run_number, output_dir, base_name):
     csv_dir.mkdir(parents=True, exist_ok=True)
     def load_edges(directory):
         path = os.path.join(directory, "union.txt")
@@ -119,8 +121,7 @@ def generate_table_csv(library, total_edges, csv_dir):
         print(tool)
         evals.append(tool)
 
-    base_name = "promefuzz"
-    base_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{base_name}/")
+    base_dir = output_dir / f"ar/aflplusplus/{library}/{base_name}_{run_number}/"
     base_edges = load_edges(base_dir)
 
     headers = [
@@ -128,14 +129,14 @@ def generate_table_csv(library, total_edges, csv_dir):
         f"Eval - {base_name}", f"{base_name} - Eval",
     ]
 
-    csv_path = csv_dir / f"{library}.csv"
+    csv_path = csv_dir / f"{library}_{run_number}.csv"
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(headers)
         writer.writerow([library, total_edges,None,None,None,None])
 
         for eval_name in evals:
-            eval_dir = Path(f"modules/magma/tools/captain/workdir/ar/aflplusplus/{library}/{eval_name}/")
+            eval_dir = output_dir / f"ar/aflplusplus/{library}/{eval_name}_{run_number}/"
             edges = load_edges(eval_dir)
 
             union = edges | base_edges
@@ -187,7 +188,8 @@ def combine_results_from_same_tool(yaml_path: Path, library: str, output_dir: Pa
     data = yaml.safe_load(yaml_path.read_text())
     names = []
     for tool, _ in data.get(library, {}).items():
-        generate_union_edges_file(library, tool, output_dir)
+        for run_number in range(RUNS):
+            generate_union_edges_file(library, tool, output_dir, run_number)
 
 def main():
     # 1) modify captainrc to specify the library being fuzzed
@@ -206,18 +208,22 @@ def main():
         env |= {"BUILD_BASE": "1"}
     subprocess.run(["./run.sh"], cwd=(MAGMA_ROOT / "tools/captain"), env=env, check=True)
 
-    output_dir = (MAGMA_ROOT / "tools/captain/workdir")
+    output_dir = RAW_RESULTS_DIR
 
-    for library in LIBRARIES:
-        # 5) get total number of edges
-        total_edges = get_total_edges(library,output_dir)
+    for run_number in range(RUNS):
+        for library in LIBRARIES:
+            # 5) get total number of edges
+            total_edges = get_total_edges(library,output_dir)
 
-        # 6) build union.txt per tool
-        combine_results_from_same_tool(HARNESS_YAML, library, output_dir)
+            # 6) build union.txt per tool
+            combine_results_from_same_tool(HARNESS_YAML, library, output_dir)
 
-        # 7) print the table with coverage numbers
-        csv_path = generate_table_csv(library, total_edges, CSV_DIR)
-        print_table_from_csv(csv_path)
+            # 7) print the table with coverage numbers
+            for base_eval in ['promefuzz', 'opencode' ,'ossfuzz']:
+                print("-"*128)
+                print(f"==> RUN NUMBER: {run_number}, BASE EVAL: {base_eval}")
+                csv_path = generate_table_csv(library, total_edges, CSV_DIR, run_number, output_dir, base_eval)
+                print_table_from_csv(csv_path)
 
 if __name__ == "__main__":
     main()
