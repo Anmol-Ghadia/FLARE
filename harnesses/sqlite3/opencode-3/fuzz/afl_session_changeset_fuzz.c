@@ -10,7 +10,6 @@
 #include <stdint.h>
 #include <string.h>
 #include "sqlite3.h"
-#include "../repo/ext/session/sqlite3session.h"
 
 #define SESSION_FUZZ_PROGRESS_LIMIT 100000
 #define SESSION_FUZZ_HEAP_LIMIT (64*1024*1024)
