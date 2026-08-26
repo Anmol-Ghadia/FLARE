@@ -108,8 +108,15 @@ def generate_union_edges_file(library, tool, output_dir, run_number):
 # --- END of Helpers for step 6 ---
 
 # --- Helpers for step 7 ---
-def generate_table_csv(library, total_edges, csv_dir, run_number, output_dir, base_name):
+import os
+import sys
+import csv
+import itertools
+
+
+def generate_table_csv(library, total_edges, csv_dir, run_number, output_dir, tools):
     csv_dir.mkdir(parents=True, exist_ok=True)
+
     def load_edges(directory):
         path = os.path.join(directory, "union.txt")
         if not os.path.isfile(path):
@@ -117,43 +124,45 @@ def generate_table_csv(library, total_edges, csv_dir, run_number, output_dir, ba
         with open(path) as f:
             return {line.strip() for line in f if line.strip()}
 
-    data = yaml.safe_load(HARNESS_YAML.read_text())
-    evals = []
-    for tool, _ in data.get(library, {}).items():
-        print(tool)
-        evals.append(tool)
-
-    base_dir = output_dir / f"ar/aflplusplus/{library}/{base_name}_{run_number}/"
-    base_edges = load_edges(base_dir)
-
     headers = [
-        "Evaluation", "Count", f"Union w/ {base_name}", f"Intersect w/ {base_name}",
-        f"Eval - {base_name}", f"{base_name} - Eval",
+        "library","tools", "n_tools",
+        "union", "intersect", "exclusive"
     ]
 
     csv_path = csv_dir / f"{library}_{run_number}.csv"
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(headers)
-        writer.writerow([library, total_edges,None,None,None,None])
+        # row 0: the library's total instrumented edge count
+        writer.writerow([library, "library", 0, total_edges, None, None])
 
-        for eval_name in evals:
-            eval_dir = output_dir / f"ar/aflplusplus/{library}/{eval_name}_{run_number}/"
-            edges = load_edges(eval_dir)
+        # load each tool's raw edge set for this library/run once
+        tool_edges = {}
+        for tool_name in tools:
+            tool_dir = output_dir / f"ar/aflplusplus/{library}/{tool_name}_{run_number}/"
+            tool_edges[tool_name] = load_edges(tool_dir)
 
-            union = edges | base_edges
-            intersection = edges & base_edges
-            only_eval = edges - base_edges
-            only_base = base_edges - edges
+        # every non-empty combination of tools -> union/intersect/exclusive
+        for k in range(1, len(tools) + 1):
+            for combo in itertools.combinations(tools, k):
+                sets = [tool_edges[t] for t in combo]
+                union = set.union(*sets)
+                intersection = set.intersection(*sets)
 
-            writer.writerow([
-                eval_name,
-                len(edges),
-                len(union),
-                len(intersection),
-                len(only_eval),
-                len(only_base),
-            ])
+                # exclusive region: in all of `combo`, in none of the rest
+                others = set(tools) - set(combo)
+                exclusive = set(intersection)
+                for o in others:
+                    exclusive -= tool_edges[o]
+
+                writer.writerow([
+                    library,
+                    "+".join(combo),
+                    k,
+                    len(union),
+                    len(intersection),
+                    len(exclusive),
+                ])
     return csv_path
 
 def print_table_from_csv(csv_path):
@@ -186,12 +195,16 @@ def print_table_from_csv(csv_path):
         print_row(r)
 # --- END of Helpers for step 7 ---
 
-def combine_results_from_same_tool(yaml_path: Path, library: str, output_dir: Path):
-    data = yaml.safe_load(yaml_path.read_text())
+def get_tools(library):
+    data = yaml.safe_load(HARNESS_YAML.read_text())
     names = []
     for tool, _ in data.get(library, {}).items():
-        for run_number in range(RUNS):
-            generate_union_edges_file(library, tool, output_dir, run_number)
+        names.append(tool)
+    return names
+
+def combine_results_from_same_tool(tools, library: str, output_dir: Path, run_number: int):
+    for tool in tools:
+        generate_union_edges_file(library, tool, output_dir, run_number)
 
 def main():
     # 1) modify captainrc to specify the library being fuzzed
@@ -218,21 +231,20 @@ def main():
     except:
         output_dir = (MAGMA_ROOT / "tools/captain/workdir")
 
+    total_edges=0
+    for library in LIBRARIES:
+        tools = get_tools(library)
 
-    for run_number in range(RUNS):
-        for library in LIBRARIES:
-            # 5) get total number of edges
-            total_edges = get_total_edges(library,output_dir)
+        # 5) get total number of edges
+        total_edges = get_total_edges(library,output_dir)
+
+        for run_number in range(RUNS):
 
             # 6) build union.txt per tool
-            combine_results_from_same_tool(HARNESS_YAML, library, output_dir)
+            combine_results_from_same_tool(tools, library, output_dir, run_number)
 
             # 7) print the table with coverage numbers
-            for base_eval in ['promefuzz', 'opencode' ,'ossfuzz']:
-                print("-"*128)
-                print(f"==> RUN NUMBER: {run_number}, BASE EVAL: {base_eval}")
-                csv_path = generate_table_csv(library, total_edges, CSV_DIR, run_number, output_dir, base_eval)
-                print_table_from_csv(csv_path)
+            csv_path = generate_table_csv(library, total_edges, CSV_DIR, run_number, output_dir, tools)
 
 if __name__ == "__main__":
     main()
