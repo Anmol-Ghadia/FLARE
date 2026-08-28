@@ -1,0 +1,195 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3137929203
+INFO: Loaded 1 modules   (6509 inline 8-bit counters): 6509 [0x568717d5eeb0, 0x568717d6081d), 
+INFO: Loaded 1 PC tables (6509 PCs): 6509 [0x568717d60820,0x568717d79ef0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 621 ft: 622 corp: 1/1b exec/s: 0 rss: 33Mb
+	NEW_FUNC[1/6]: 0x568717c333c8 in void std::__fill_a<unsigned char**, unsigned char*>(unsigned char**, unsigned char**, unsigned char* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:977
+	NEW_FUNC[2/6]: 0x568717c334d8 in __gnu_cxx::__enable_if<__is_scalar<unsigned char*>::__value, void>::__type std::__fill_a1<unsigned char**, unsigned char*>(unsigned char**, unsigned char**, unsigned char* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:928
+#3	NEW    cov: 686 ft: 777 corp: 2/3b lim: 4 exec/s: 0 rss: 34Mb L: 2/2 MS: 1 InsertByte-
+#5	NEW    cov: 692 ft: 808 corp: 3/4b lim: 4 exec/s: 0 rss: 34Mb L: 1/2 MS: 2 ShuffleBytes-ChangeBinInt-
+#6	NEW    cov: 692 ft: 825 corp: 4/5b lim: 4 exec/s: 0 rss: 35Mb L: 1/2 MS: 1 ChangeByte-
+#7	NEW    cov: 694 ft: 950 corp: 5/7b lim: 4 exec/s: 0 rss: 35Mb L: 2/2 MS: 1 InsertByte-
+#10	NEW    cov: 695 ft: 1023 corp: 6/9b lim: 4 exec/s: 0 rss: 35Mb L: 2/2 MS: 3 ShuffleBytes-ChangeByte-CopyPart-
+#12	NEW    cov: 697 ft: 1049 corp: 7/11b lim: 4 exec/s: 0 rss: 35Mb L: 2/2 MS: 2 ShuffleBytes-InsertByte-
+#16	NEW    cov: 697 ft: 1055 corp: 8/13b lim: 4 exec/s: 0 rss: 36Mb L: 2/2 MS: 4 EraseBytes-ShuffleBytes-ShuffleBytes-CopyPart-
+#17	NEW    cov: 697 ft: 1097 corp: 9/15b lim: 4 exec/s: 0 rss: 36Mb L: 2/2 MS: 1 CrossOver-
+#18	NEW    cov: 701 ft: 1101 corp: 10/18b lim: 4 exec/s: 0 rss: 36Mb L: 3/3 MS: 1 InsertByte-
+#19	NEW    cov: 701 ft: 1112 corp: 11/20b lim: 4 exec/s: 0 rss: 37Mb L: 2/3 MS: 1 ChangeByte-
+#20	NEW    cov: 701 ft: 1113 corp: 12/23b lim: 4 exec/s: 0 rss: 37Mb L: 3/3 MS: 1 ChangeByte-
+#22	NEW    cov: 701 ft: 1185 corp: 13/25b lim: 4 exec/s: 0 rss: 37Mb L: 2/3 MS: 2 EraseBytes-InsertByte-
+#23	NEW    cov: 701 ft: 1193 corp: 14/27b lim: 4 exec/s: 0 rss: 37Mb L: 2/3 MS: 1 ChangeBinInt-
+#24	NEW    cov: 701 ft: 1196 corp: 15/29b lim: 4 exec/s: 0 rss: 37Mb L: 2/3 MS: 1 ChangeByte-
+#28	NEW    cov: 701 ft: 1197 corp: 16/31b lim: 4 exec/s: 0 rss: 38Mb L: 2/3 MS: 4 EraseBytes-ChangeByte-ChangeBit-CopyPart-
+#29	NEW    cov: 716 ft: 1218 corp: 17/35b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 1 CopyPart-
+#36	NEW    cov: 716 ft: 1230 corp: 18/39b lim: 4 exec/s: 0 rss: 39Mb L: 4/4 MS: 2 CopyPart-ChangeByte-
+#37	NEW    cov: 716 ft: 1234 corp: 19/41b lim: 4 exec/s: 0 rss: 39Mb L: 2/4 MS: 1 ChangeBit-
+#40	NEW    cov: 716 ft: 1241 corp: 20/43b lim: 4 exec/s: 0 rss: 40Mb L: 2/4 MS: 3 ShuffleBytes-ChangeByte-ChangeBit-
+#41	NEW    cov: 726 ft: 1264 corp: 21/47b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 1 ChangeBinInt-
+#42	NEW    cov: 726 ft: 1267 corp: 22/49b lim: 4 exec/s: 0 rss: 40Mb L: 2/4 MS: 1 InsertByte-
+#43	NEW    cov: 726 ft: 1275 corp: 23/51b lim: 4 exec/s: 0 rss: 40Mb L: 2/4 MS: 1 ChangeByte-
+#45	NEW    cov: 728 ft: 1282 corp: 24/55b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 2 ChangeBinInt-ChangeByte-
+#51	NEW    cov: 734 ft: 1294 corp: 25/58b lim: 4 exec/s: 0 rss: 41Mb L: 3/4 MS: 1 CrossOver-
+#53	NEW    cov: 734 ft: 1319 corp: 26/61b lim: 4 exec/s: 0 rss: 42Mb L: 3/4 MS: 2 ChangeByte-ChangeBinInt-
+#57	NEW    cov: 734 ft: 1325 corp: 27/63b lim: 4 exec/s: 0 rss: 42Mb L: 2/4 MS: 4 EraseBytes-ShuffleBytes-ChangeBit-CrossOver-
+#58	NEW    cov: 734 ft: 1328 corp: 28/66b lim: 4 exec/s: 0 rss: 42Mb L: 3/4 MS: 1 InsertByte-
+#60	NEW    cov: 739 ft: 1335 corp: 29/69b lim: 4 exec/s: 0 rss: 43Mb L: 3/4 MS: 2 ShuffleBytes-InsertByte-
+#61	NEW    cov: 740 ft: 1338 corp: 30/71b lim: 4 exec/s: 0 rss: 43Mb L: 2/4 MS: 1 ChangeBinInt-
+	NEW_FUNC[1/4]: 0x568717c2a628 in int const& std::min<int>(int const&, int const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:234
+	NEW_FUNC[2/4]: 0x568717ccb660 in png_set_PLTE /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:574
+#67	NEW    cov: 787 ft: 1409 corp: 31/75b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 1 CrossOver-
+#71	NEW    cov: 787 ft: 1410 corp: 32/78b lim: 4 exec/s: 0 rss: 44Mb L: 3/4 MS: 4 EraseBytes-ChangeByte-ChangeBit-CrossOver-
+#72	NEW    cov: 787 ft: 1412 corp: 33/82b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 1 CMP- DE: "\001\321"-
+#73	NEW    cov: 787 ft: 1416 corp: 34/86b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 1 ChangeBit-
+#77	NEW    cov: 788 ft: 1417 corp: 35/90b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 4 CopyPart-CrossOver-ShuffleBytes-ChangeBit-
+#79	NEW    cov: 788 ft: 1418 corp: 36/92b lim: 4 exec/s: 0 rss: 46Mb L: 2/4 MS: 2 EraseBytes-InsertByte-
+#82	NEW    cov: 788 ft: 1449 corp: 37/96b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 3 PersAutoDict-CrossOver-CopyPart- DE: "\001\321"-
+#83	NEW    cov: 788 ft: 1452 corp: 38/99b lim: 4 exec/s: 0 rss: 46Mb L: 3/4 MS: 1 CrossOver-
+#84	NEW    cov: 788 ft: 1453 corp: 39/101b lim: 4 exec/s: 0 rss: 46Mb L: 2/4 MS: 1 ChangeBinInt-
+#89	NEW    cov: 788 ft: 1454 corp: 40/103b lim: 4 exec/s: 0 rss: 47Mb L: 2/4 MS: 5 CopyPart-ShuffleBytes-ChangeByte-CopyPart-ChangeBit-
+#90	NEW    cov: 788 ft: 1455 corp: 41/106b lim: 4 exec/s: 0 rss: 47Mb L: 3/4 MS: 1 InsertByte-
+#92	NEW    cov: 788 ft: 1458 corp: 42/109b lim: 4 exec/s: 0 rss: 48Mb L: 3/4 MS: 2 ShuffleBytes-CrossOver-
+#94	NEW    cov: 788 ft: 1462 corp: 43/112b lim: 4 exec/s: 0 rss: 48Mb L: 3/4 MS: 2 ChangeByte-InsertByte-
+#101	NEW    cov: 789 ft: 1464 corp: 44/116b lim: 4 exec/s: 0 rss: 49Mb L: 4/4 MS: 2 CrossOver-InsertByte-
+#111	NEW    cov: 789 ft: 1467 corp: 45/119b lim: 4 exec/s: 0 rss: 50Mb L: 3/4 MS: 5 ChangeByte-CopyPart-ChangeBit-CopyPart-ShuffleBytes-
+#112	NEW    cov: 790 ft: 1468 corp: 46/123b lim: 4 exec/s: 0 rss: 50Mb L: 4/4 MS: 1 PersAutoDict- DE: "\001\321"-
+#119	NEW    cov: 790 ft: 1472 corp: 47/127b lim: 4 exec/s: 0 rss: 52Mb L: 4/4 MS: 2 ChangeBit-ChangeByte-
+#124	NEW    cov: 790 ft: 1478 corp: 48/131b lim: 4 exec/s: 0 rss: 52Mb L: 4/4 MS: 5 ChangeByte-ChangeBinInt-ChangeBinInt-ChangeByte-CrossOver-
+#125	NEW    cov: 793 ft: 1481 corp: 49/135b lim: 4 exec/s: 0 rss: 52Mb L: 4/4 MS: 1 CopyPart-
+#126	NEW    cov: 793 ft: 1482 corp: 50/139b lim: 4 exec/s: 0 rss: 53Mb L: 4/4 MS: 1 ChangeBit-
+#131	NEW    cov: 794 ft: 1484 corp: 51/143b lim: 4 exec/s: 0 rss: 53Mb L: 4/4 MS: 5 ChangeBinInt-ShuffleBytes-PersAutoDict-PersAutoDict-CrossOver- DE: "\001\321"-"\001\321"-
+#133	NEW    cov: 794 ft: 1491 corp: 52/145b lim: 4 exec/s: 0 rss: 54Mb L: 2/4 MS: 2 ShuffleBytes-InsertByte-
+#141	NEW    cov: 795 ft: 1493 corp: 53/148b lim: 4 exec/s: 0 rss: 55Mb L: 3/4 MS: 3 ChangeByte-PersAutoDict-ChangeBit- DE: "\001\321"-
+#142	NEW    cov: 795 ft: 1500 corp: 54/150b lim: 4 exec/s: 0 rss: 55Mb L: 2/4 MS: 1 PersAutoDict- DE: "\001\321"-
+#147	NEW    cov: 798 ft: 1510 corp: 55/154b lim: 4 exec/s: 0 rss: 56Mb L: 4/4 MS: 5 CrossOver-EraseBytes-CopyPart-EraseBytes-CrossOver-
+#152	NEW    cov: 798 ft: 1511 corp: 56/157b lim: 4 exec/s: 0 rss: 56Mb L: 3/4 MS: 5 PersAutoDict-CopyPart-PersAutoDict-EraseBytes-ShuffleBytes- DE: "\001\321"-"\001\321"-
+#165	NEW    cov: 798 ft: 1512 corp: 57/161b lim: 4 exec/s: 0 rss: 58Mb L: 4/4 MS: 3 ShuffleBytes-ShuffleBytes-ChangeByte-
+#168	NEW    cov: 799 ft: 1534 corp: 58/165b lim: 4 exec/s: 0 rss: 59Mb L: 4/4 MS: 3 ShuffleBytes-CopyPart-ChangeBit-
+#171	NEW    cov: 799 ft: 1535 corp: 59/169b lim: 4 exec/s: 0 rss: 59Mb L: 4/4 MS: 3 CrossOver-PersAutoDict-CrossOver- DE: "\001\321"-
+#174	NEW    cov: 799 ft: 1537 corp: 60/173b lim: 4 exec/s: 0 rss: 59Mb L: 4/4 MS: 3 ChangeByte-ChangeBinInt-PersAutoDict- DE: "\001\321"-
+#180	NEW    cov: 799 ft: 1539 corp: 61/177b lim: 4 exec/s: 0 rss: 60Mb L: 4/4 MS: 1 ChangeBit-
+#184	NEW    cov: 799 ft: 1551 corp: 62/181b lim: 4 exec/s: 0 rss: 61Mb L: 4/4 MS: 4 CMP-EraseBytes-InsertByte-ChangeBinInt- DE: "\021\000\000\000"-
+#189	NEW    cov: 799 ft: 1552 corp: 63/183b lim: 4 exec/s: 0 rss: 62Mb L: 2/4 MS: 5 ChangeBit-CrossOver-InsertByte-CopyPart-ChangeBit-
+#198	NEW    cov: 799 ft: 1553 corp: 64/187b lim: 4 exec/s: 0 rss: 63Mb L: 4/4 MS: 4 CrossOver-CopyPart-ShuffleBytes-CrossOver-
+#202	NEW    cov: 799 ft: 1554 corp: 65/189b lim: 4 exec/s: 0 rss: 63Mb L: 2/4 MS: 4 CrossOver-ShuffleBytes-ChangeBit-EraseBytes-
+#214	NEW    cov: 799 ft: 1555 corp: 66/191b lim: 4 exec/s: 0 rss: 65Mb L: 2/4 MS: 2 ShuffleBytes-ChangeByte-
+#215	NEW    cov: 800 ft: 1556 corp: 67/195b lim: 4 exec/s: 0 rss: 65Mb L: 4/4 MS: 1 ShuffleBytes-
+#219	NEW    cov: 800 ft: 1558 corp: 68/198b lim: 4 exec/s: 0 rss: 66Mb L: 3/4 MS: 4 CopyPart-CrossOver-ShuffleBytes-InsertByte-
+#227	NEW    cov: 800 ft: 1559 corp: 69/202b lim: 4 exec/s: 0 rss: 67Mb L: 4/4 MS: 3 ChangeASCIIInt-InsertByte-CopyPart-
+#228	NEW    cov: 800 ft: 1562 corp: 70/206b lim: 4 exec/s: 0 rss: 67Mb L: 4/4 MS: 1 ChangeBinInt-
+#229	NEW    cov: 800 ft: 1564 corp: 71/209b lim: 4 exec/s: 0 rss: 67Mb L: 3/4 MS: 1 InsertByte-
+#244	NEW    cov: 800 ft: 1565 corp: 72/211b lim: 4 exec/s: 0 rss: 69Mb L: 2/4 MS: 5 ChangeByte-CrossOver-ShuffleBytes-ChangeBit-ChangeByte-
+#252	NEW    cov: 800 ft: 1566 corp: 73/215b lim: 4 exec/s: 0 rss: 71Mb L: 4/4 MS: 3 PersAutoDict-PersAutoDict-ChangeBinInt- DE: "\001\321"-"\001\321"-
+#260	NEW    cov: 800 ft: 1567 corp: 74/217b lim: 4 exec/s: 0 rss: 72Mb L: 2/4 MS: 3 ShuffleBytes-ChangeBit-ChangeByte-
+#285	NEW    cov: 800 ft: 1568 corp: 75/221b lim: 4 exec/s: 0 rss: 75Mb L: 4/4 MS: 5 ShuffleBytes-ChangeByte-ShuffleBytes-EraseBytes-InsertByte-
+#301	NEW    cov: 800 ft: 1569 corp: 76/225b lim: 4 exec/s: 0 rss: 77Mb L: 4/4 MS: 1 CrossOver-
+#307	NEW    cov: 800 ft: 1570 corp: 77/227b lim: 4 exec/s: 0 rss: 78Mb L: 2/4 MS: 1 EraseBytes-
+#314	NEW    cov: 802 ft: 1573 corp: 78/230b lim: 4 exec/s: 0 rss: 79Mb L: 3/4 MS: 2 ChangeBit-CrossOver-
+#317	NEW    cov: 802 ft: 1576 corp: 79/234b lim: 4 exec/s: 0 rss: 79Mb L: 4/4 MS: 3 ShuffleBytes-CopyPart-ChangeBinInt-
+#330	NEW    cov: 802 ft: 1577 corp: 80/237b lim: 4 exec/s: 0 rss: 81Mb L: 3/4 MS: 3 CrossOver-InsertByte-ChangeBit-
+#340	NEW    cov: 802 ft: 1580 corp: 81/241b lim: 4 exec/s: 0 rss: 83Mb L: 4/4 MS: 5 ChangeByte-EraseBytes-PersAutoDict-PersAutoDict-ChangeBit- DE: "\001\321"-"\001\321"-
+#344	NEW    cov: 802 ft: 1581 corp: 82/245b lim: 4 exec/s: 0 rss: 83Mb L: 4/4 MS: 4 CopyPart-ChangeByte-ShuffleBytes-ShuffleBytes-
+#352	NEW    cov: 803 ft: 1582 corp: 83/249b lim: 4 exec/s: 0 rss: 84Mb L: 4/4 MS: 3 ChangeBit-InsertByte-InsertByte-
+#383	NEW    cov: 804 ft: 1583 corp: 84/253b lim: 4 exec/s: 0 rss: 88Mb L: 4/4 MS: 1 ChangeByte-
+#391	NEW    cov: 804 ft: 1584 corp: 85/256b lim: 4 exec/s: 0 rss: 89Mb L: 3/4 MS: 3 InsertByte-EraseBytes-InsertByte-
+#422	NEW    cov: 804 ft: 1586 corp: 86/260b lim: 4 exec/s: 0 rss: 94Mb L: 4/4 MS: 1 ChangeByte-
+#424	NEW    cov: 805 ft: 1611 corp: 87/264b lim: 4 exec/s: 0 rss: 94Mb L: 4/4 MS: 2 CrossOver-ChangeBit-
+#443	NEW    cov: 805 ft: 1612 corp: 88/268b lim: 4 exec/s: 0 rss: 97Mb L: 4/4 MS: 4 ChangeBit-InsertByte-CopyPart-CrossOver-
+#457	NEW    cov: 805 ft: 1613 corp: 89/272b lim: 4 exec/s: 0 rss: 98Mb L: 4/4 MS: 4 ChangeByte-ChangeByte-CrossOver-InsertByte-
+#474	NEW    cov: 805 ft: 1616 corp: 90/276b lim: 4 exec/s: 0 rss: 101Mb L: 4/4 MS: 2 ChangeBit-CrossOver-
+#529	NEW    cov: 805 ft: 1617 corp: 91/280b lim: 4 exec/s: 0 rss: 108Mb L: 4/4 MS: 5 ChangeBinInt-CopyPart-EraseBytes-InsertByte-ChangeByte-
+#553	NEW    cov: 806 ft: 1641 corp: 92/284b lim: 4 exec/s: 0 rss: 111Mb L: 4/4 MS: 4 ShuffleBytes-ChangeBit-PersAutoDict-CopyPart- DE: "\001\321"-
+#564	NEW    cov: 806 ft: 1642 corp: 93/288b lim: 4 exec/s: 0 rss: 113Mb L: 4/4 MS: 1 CrossOver-
+#600	REDUCE cov: 806 ft: 1642 corp: 93/287b lim: 4 exec/s: 0 rss: 118Mb L: 3/4 MS: 1 CrossOver-
+#653	NEW    cov: 806 ft: 1645 corp: 94/290b lim: 4 exec/s: 0 rss: 125Mb L: 3/4 MS: 3 ChangeByte-CopyPart-ChangeByte-
+#654	NEW    cov: 806 ft: 1647 corp: 95/294b lim: 4 exec/s: 0 rss: 125Mb L: 4/4 MS: 1 ChangeByte-
+#710	REDUCE cov: 806 ft: 1647 corp: 95/293b lim: 4 exec/s: 0 rss: 132Mb L: 3/4 MS: 1 EraseBytes-
+#736	NEW    cov: 806 ft: 1648 corp: 96/296b lim: 4 exec/s: 0 rss: 136Mb L: 3/4 MS: 1 EraseBytes-
+#741	NEW    cov: 806 ft: 1649 corp: 97/299b lim: 4 exec/s: 0 rss: 137Mb L: 3/4 MS: 5 CMP-ChangeByte-PersAutoDict-CrossOver-PersAutoDict- DE: "\000\200"-"\001\321"-"\001\321"-
+#742	NEW    cov: 806 ft: 1651 corp: 98/302b lim: 4 exec/s: 0 rss: 137Mb L: 3/4 MS: 1 CrossOver-
+#781	NEW    cov: 806 ft: 1654 corp: 99/306b lim: 4 exec/s: 0 rss: 142Mb L: 4/4 MS: 4 CopyPart-CopyPart-ChangeBinInt-ChangeByte-
+#964	NEW    cov: 806 ft: 1655 corp: 100/309b lim: 4 exec/s: 0 rss: 166Mb L: 3/4 MS: 3 InsertByte-EraseBytes-CrossOver-
+	NEW_FUNC[1/3]: 0x568717cd2fd0 in png_set_interlace_handling /promefuzz/database/libpng/latest/build_asan/../code/pngtrans.c:100
+	NEW_FUNC[2/3]: 0x568717cdf150 in png_write_image /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:597
+#1170	NEW    cov: 851 ft: 1824 corp: 101/315b lim: 6 exec/s: 0 rss: 194Mb L: 6/6 MS: 1 CopyPart-
+#1173	NEW    cov: 852 ft: 1825 corp: 102/320b lim: 6 exec/s: 0 rss: 194Mb L: 5/6 MS: 3 InsertByte-InsertByte-CrossOver-
+#1174	NEW    cov: 856 ft: 1835 corp: 103/325b lim: 6 exec/s: 0 rss: 194Mb L: 5/6 MS: 1 CopyPart-
+#1187	NEW    cov: 859 ft: 1844 corp: 104/331b lim: 6 exec/s: 0 rss: 196Mb L: 6/6 MS: 3 ChangeBit-ChangeBinInt-PersAutoDict- DE: "\001\321"-
+#1194	NEW    cov: 862 ft: 1848 corp: 105/336b lim: 6 exec/s: 0 rss: 197Mb L: 5/6 MS: 2 PersAutoDict-CrossOver- DE: "\000\200"-
+=================================================================
+==2180659==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000031292 at pc 0x568717be2d86 bp 0x7ffdb3b743f0 sp 0x7ffdb3b73bb0
+READ of size 3 at 0x502000031292 thread T0
+    #0 0x568717be2d85 in __asan_memcpy (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x130d85) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #1 0x568717cde80f in png_write_row /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:837:4
+    #2 0x568717cdf2b2 in png_write_image /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:621:10
+    #3 0x568717ce2543 in png_write_png /promefuzz/database/libpng/latest/build_asan/../code/pngwrite.c:1450:4
+    #4 0x568717c29d33 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535.cpp:165:13
+    #5 0x568717b30da4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x7eda4) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #6 0x568717b30499 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x7e499) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #7 0x568717b31c85 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x7fc85) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #8 0x568717b327e5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x807e5) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #9 0x568717b1fabf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x6dabf) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #10 0x568717b4a146 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x98146) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #11 0x78f57613b1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x78f57613b28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x568717b14aa4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x62aa4) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+
+0x502000031292 is located 0 bytes after 2-byte region [0x502000031290,0x502000031292)
+allocated by thread T0 here:
+    #0 0x568717c234d1 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x1714d1) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #1 0x568717c2f21c in std::__new_allocator<unsigned char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:151:27
+    #2 0x568717c2f02e in std::allocator_traits<std::allocator<unsigned char>>::allocate(std::allocator<unsigned char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:482:20
+    #3 0x568717c2f02e in std::_Vector_base<unsigned char, std::allocator<unsigned char>>::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:381:20
+    #4 0x568717c2e378 in std::_Vector_base<unsigned char, std::allocator<unsigned char>>::_M_create_storage(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:398:33
+    #5 0x568717c2ced1 in std::_Vector_base<unsigned char, std::allocator<unsigned char>>::_Vector_base(unsigned long, std::allocator<unsigned char> const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:335:9
+    #6 0x568717c2aa40 in std::vector<unsigned char, std::allocator<unsigned char>>::vector(unsigned long, std::allocator<unsigned char> const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:557:9
+    #7 0x568717c28181 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535.cpp:123:31
+    #8 0x568717b30da4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x7eda4) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #9 0x568717b30499 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x7e499) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #10 0x568717b31c85 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x7fc85) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #11 0x568717b327e5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x807e5) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #12 0x568717b1fabf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x6dabf) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #13 0x568717b4a146 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x98146) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+    #14 0x78f57613b1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #15 0x78f57613b28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #16 0x568717b14aa4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x62aa4) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_65/fuzz_driver_65_sanitizing_1787899535+0x130d85) (BuildId: 61284cf14141f8256f49942aac8f70c31fc35d8d) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x502000031000: fa fa fd fa fa fa fd fa fa fa fd fd fa fa fd fd
+  0x502000031080: fa fa fd fd fa fa fd fd fa fa fd fa fa fa fd fd
+  0x502000031100: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x502000031180: fa fa fd fa fa fa fd fa fa fa fd fd fa fa fd fa
+  0x502000031200: fa fa fd fa fa fa fd fa fa fa fd fa fa fa 06 fa
+=>0x502000031280: fa fa[02]fa fa fa 00 00 fa fa 04 fa fa fa fa fa
+  0x502000031300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000031380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000031400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000031480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000031500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2180659==ABORTING
+MS: 5 ChangeBinInt-EraseBytes-PersAutoDict-EraseBytes-InsertRepeatedBytes- DE: "\001\321"-; base unit: 18de51b77c78a2b3d9525196f1b8b2f47cfb843c
+0xa,0xd1,0xff,0xff,0xff,0xff,
+\012\321\377\377\377\377
+artifact_prefix='./'; Test unit written to ./crash-9a353eb0799fb4c5e321c3e271a78d43aa37fd77
+Base64: CtH/////

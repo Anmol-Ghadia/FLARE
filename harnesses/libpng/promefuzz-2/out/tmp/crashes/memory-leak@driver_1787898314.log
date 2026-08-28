@@ -1,0 +1,143 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1181363779
+INFO: Loaded 1 modules   (7264 inline 8-bit counters): 7264 [0x5b83e5845b10, 0x5b83e5847770), 
+INFO: Loaded 1 PC tables (7264 PCs): 7264 [0x5b83e5847770,0x5b83e5863d70), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 347 ft: 348 corp: 1/1b exec/s: 0 rss: 33Mb
+#10	NEW    cov: 360 ft: 361 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 3 CrossOver-ChangeBinInt-InsertByte-
+#20	NEW    cov: 364 ft: 366 corp: 3/7b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 5 CopyPart-ChangeByte-CrossOver-ChangeBit-CopyPart-
+#38	REDUCE cov: 364 ft: 366 corp: 3/6b lim: 4 exec/s: 0 rss: 34Mb L: 1/4 MS: 3 EraseBytes-ShuffleBytes-CrossOver-
+#251	NEW    cov: 367 ft: 369 corp: 4/11b lim: 6 exec/s: 0 rss: 37Mb L: 5/5 MS: 3 CrossOver-EraseBytes-CMP- DE: "\000\000\000\000"-
+#258	REDUCE cov: 370 ft: 372 corp: 5/17b lim: 6 exec/s: 0 rss: 37Mb L: 6/6 MS: 2 PersAutoDict-CopyPart- DE: "\000\000\000\000"-
+#468	REDUCE cov: 387 ft: 389 corp: 6/25b lim: 8 exec/s: 0 rss: 40Mb L: 8/8 MS: 5 CrossOver-ChangeBit-ChangeBit-ChangeBit-InsertRepeatedBytes-
+#472	NEW    cov: 388 ft: 390 corp: 7/32b lim: 8 exec/s: 0 rss: 40Mb L: 7/8 MS: 4 ChangeBit-ChangeBit-ChangeByte-InsertByte-
+#481	NEW    cov: 401 ft: 403 corp: 8/40b lim: 8 exec/s: 0 rss: 41Mb L: 8/8 MS: 4 ChangeBinInt-EraseBytes-InsertRepeatedBytes-InsertByte-
+#789	NEW    cov: 404 ft: 406 corp: 9/49b lim: 11 exec/s: 0 rss: 44Mb L: 9/9 MS: 3 ChangeBinInt-EraseBytes-InsertRepeatedBytes-
+	NEW_FUNC[1/28]: 0x5b83e5702470 in std::vector<char, std::allocator<char>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1014
+	NEW_FUNC[2/28]: 0x5b83e57028d0 in std::vector<char, std::allocator<char>>::operator[](unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1127
+#792	NEW    cov: 550 ft: 558 corp: 10/59b lim: 11 exec/s: 0 rss: 44Mb L: 10/10 MS: 3 CrossOver-CrossOver-CMP- DE: "\000\000"-
+#807	NEW    cov: 551 ft: 567 corp: 11/69b lim: 11 exec/s: 0 rss: 45Mb L: 10/10 MS: 5 EraseBytes-InsertByte-ShuffleBytes-InsertByte-CopyPart-
+#826	NEW    cov: 562 ft: 708 corp: 12/80b lim: 11 exec/s: 0 rss: 45Mb L: 11/11 MS: 4 ChangeBit-ChangeBinInt-InsertByte-CopyPart-
+#829	NEW    cov: 562 ft: 717 corp: 13/91b lim: 11 exec/s: 0 rss: 45Mb L: 11/11 MS: 3 CrossOver-CrossOver-PersAutoDict- DE: "\000\000"-
+#834	NEW    cov: 562 ft: 724 corp: 14/101b lim: 11 exec/s: 0 rss: 45Mb L: 10/11 MS: 5 InsertByte-PersAutoDict-ShuffleBytes-ChangeBinInt-InsertByte- DE: "\000\000\000\000"-
+#838	NEW    cov: 562 ft: 731 corp: 15/112b lim: 11 exec/s: 0 rss: 45Mb L: 11/11 MS: 4 ShuffleBytes-CrossOver-ShuffleBytes-CrossOver-
+#843	NEW    cov: 562 ft: 752 corp: 16/123b lim: 11 exec/s: 0 rss: 45Mb L: 11/11 MS: 5 PersAutoDict-ChangeByte-CMP-EraseBytes-CrossOver- DE: "\000\000\000\000"-"\001\001"-
+#865	NEW    cov: 562 ft: 759 corp: 17/134b lim: 11 exec/s: 0 rss: 46Mb L: 11/11 MS: 2 ChangeByte-CopyPart-
+	NEW_FUNC[1/2]: 0x5b83e5702108 in PngWarningFn(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:16
+	NEW_FUNC[2/2]: 0x5b83e5731910 in png_warning /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:217
+#868	NEW    cov: 567 ft: 764 corp: 18/144b lim: 11 exec/s: 0 rss: 46Mb L: 10/11 MS: 3 InsertByte-ChangeBit-InsertRepeatedBytes-
+#875	NEW    cov: 567 ft: 772 corp: 19/155b lim: 11 exec/s: 0 rss: 46Mb L: 11/11 MS: 2 ChangeBit-CrossOver-
+#887	NEW    cov: 567 ft: 779 corp: 20/166b lim: 11 exec/s: 0 rss: 46Mb L: 11/11 MS: 2 PersAutoDict-ChangeByte- DE: "\000\000\000\000"-
+#942	NEW    cov: 567 ft: 787 corp: 21/177b lim: 11 exec/s: 0 rss: 46Mb L: 11/11 MS: 5 InsertByte-ChangeBinInt-ShuffleBytes-CrossOver-PersAutoDict- DE: "\000\000"-
+#976	NEW    cov: 567 ft: 795 corp: 22/188b lim: 11 exec/s: 0 rss: 47Mb L: 11/11 MS: 4 ShuffleBytes-InsertByte-CMP-CopyPart- DE: "\000\000\000\000\177\377\377\377"-
+#1292	NEW    cov: 570 ft: 798 corp: 23/200b lim: 14 exec/s: 0 rss: 50Mb L: 12/12 MS: 1 CrossOver-
+#1293	NEW    cov: 574 ft: 802 corp: 24/214b lim: 14 exec/s: 0 rss: 50Mb L: 14/14 MS: 1 InsertRepeatedBytes-
+	NEW_FUNC[1/49]: 0x5b83e5703180 in std::vector<std::vector<char, std::allocator<char>>, std::allocator<std::vector<char, std::allocator<char>>>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1014
+	NEW_FUNC[2/49]: 0x5b83e57035e0 in std::vector<char*, std::allocator<char*>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1014
+#1295	NEW    cov: 864 ft: 1287 corp: 25/227b lim: 14 exec/s: 0 rss: 51Mb L: 13/14 MS: 2 CrossOver-CopyPart-
+#1305	NEW    cov: 864 ft: 1294 corp: 26/238b lim: 14 exec/s: 0 rss: 51Mb L: 11/14 MS: 5 InsertRepeatedBytes-ChangeBit-ChangeByte-CMP-CrossOver- DE: "\001\002"-
+	NEW_FUNC[1/4]: 0x5b83e5702058 in PngErrorFn(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:11
+	NEW_FUNC[2/4]: 0x5b83e5716c18 in void std::__fill_a<char**, char*>(char**, char**, char* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:977
+
+=================================================================
+==2179679==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 72 byte(s) in 1 object(s) allocated from:
+    #0 0x5b83e56fa4e1 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x1794e1) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #1 0x5b83e5711395 in std::__new_allocator<std::vector<char, std::allocator<char>>>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:151:27
+    #2 0x5b83e57107fe in std::allocator_traits<std::allocator<std::vector<char, std::allocator<char>>>>::allocate(std::allocator<std::vector<char, std::allocator<char>>>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:482:20
+    #3 0x5b83e57107fe in std::_Vector_base<std::vector<char, std::allocator<char>>, std::allocator<std::vector<char, std::allocator<char>>>>::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:381:20
+    #4 0x5b83e570e850 in std::vector<std::vector<char, std::allocator<char>>, std::allocator<std::vector<char, std::allocator<char>>>>::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:663:34
+    #5 0x5b83e57032ac in std::vector<std::vector<char, std::allocator<char>>, std::allocator<std::vector<char, std::allocator<char>>>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1016:4
+    #6 0x5b83e5700cab in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:137:21
+    #7 0x5b83e5607db4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x86db4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #8 0x5b83e56074a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x864a9) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #9 0x5b83e5608c95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x87c95) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #10 0x5b83e56097f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x887f5) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #11 0x5b83e55f6acf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x75acf) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #12 0x5b83e5621156 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0xa0156) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #13 0x7e722d1321c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #14 0x7e722d13228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #15 0x5b83e55ebab4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x6aab4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+
+Direct leak of 24 byte(s) in 1 object(s) allocated from:
+    #0 0x5b83e56fa4e1 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x1794e1) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #1 0x5b83e5717128 in std::__new_allocator<char*>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:151:27
+    #2 0x5b83e5715cbe in std::allocator_traits<std::allocator<char*>>::allocate(std::allocator<char*>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:482:20
+    #3 0x5b83e5715cbe in std::_Vector_base<char*, std::allocator<char*>>::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:381:20
+    #4 0x5b83e5713d2a in std::vector<char*, std::allocator<char*>>::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:663:34
+    #5 0x5b83e570370c in std::vector<char*, std::allocator<char*>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1016:4
+    #6 0x5b83e5700cd3 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:138:14
+    #7 0x5b83e5607db4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x86db4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #8 0x5b83e56074a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x864a9) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #9 0x5b83e5608c95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x87c95) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #10 0x5b83e56097f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x887f5) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #11 0x5b83e55f6acf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x75acf) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #12 0x5b83e5621156 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0xa0156) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #13 0x7e722d1321c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #14 0x7e722d13228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #15 0x5b83e55ebab4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x6aab4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x5b83e56fa4e1 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x1794e1) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #1 0x5b83e570b71c in std::__new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:151:27
+    #2 0x5b83e570a0fe in std::allocator_traits<std::allocator<char>>::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:482:20
+    #3 0x5b83e570a0fe in std::_Vector_base<char, std::allocator<char>>::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:381:20
+    #4 0x5b83e5708196 in std::vector<char, std::allocator<char>>::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:663:34
+    #5 0x5b83e570259c in std::vector<char, std::allocator<char>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1016:4
+    #6 0x5b83e56ffa14 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:109:21
+    #7 0x5b83e5607db4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x86db4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #8 0x5b83e56074a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x864a9) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #9 0x5b83e5608c95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x87c95) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #10 0x5b83e56097f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x887f5) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #11 0x5b83e55f6acf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x75acf) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #12 0x5b83e5621156 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0xa0156) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #13 0x7e722d1321c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #14 0x7e722d13228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #15 0x5b83e55ebab4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x6aab4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x5b83e56fa4e1 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x1794e1) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #1 0x5b83e570b71c in std::__new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:151:27
+    #2 0x5b83e570a0fe in std::allocator_traits<std::allocator<char>>::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:482:20
+    #3 0x5b83e570a0fe in std::_Vector_base<char, std::allocator<char>>::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:381:20
+    #4 0x5b83e5708196 in std::vector<char, std::allocator<char>>::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:663:34
+    #5 0x5b83e570259c in std::vector<char, std::allocator<char>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1016:4
+    #6 0x5b83e57001e8 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:119:19
+    #7 0x5b83e5607db4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x86db4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #8 0x5b83e56074a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x864a9) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #9 0x5b83e5608c95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x87c95) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #10 0x5b83e56097f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x887f5) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #11 0x5b83e55f6acf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x75acf) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #12 0x5b83e5621156 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0xa0156) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #13 0x7e722d1321c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #14 0x7e722d13228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #15 0x5b83e55ebab4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x6aab4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+
+Indirect leak of 23 byte(s) in 3 object(s) allocated from:
+    #0 0x5b83e56fa4e1 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x1794e1) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #1 0x5b83e570b71c in std::__new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:151:27
+    #2 0x5b83e570a0fe in std::allocator_traits<std::allocator<char>>::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:482:20
+    #3 0x5b83e570a0fe in std::_Vector_base<char, std::allocator<char>>::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:381:20
+    #4 0x5b83e5708196 in std::vector<char, std::allocator<char>>::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:663:34
+    #5 0x5b83e570259c in std::vector<char, std::allocator<char>>::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1016:4
+    #6 0x5b83e570118d in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313.cpp:142:47
+    #7 0x5b83e5607db4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x86db4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #8 0x5b83e56074a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x864a9) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #9 0x5b83e5608c95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x87c95) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #10 0x5b83e56097f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x887f5) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #11 0x5b83e55f6acf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x75acf) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #12 0x5b83e5621156 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0xa0156) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+    #13 0x7e722d1321c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #14 0x7e722d13228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #15 0x5b83e55ebab4 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_15/fuzz_driver_15_sanitizing_1787898313+0x6aab4) (BuildId: 921fec3dac946be5198eb03ac022c7d3990d20e4)
+
+SUMMARY: AddressSanitizer: 121 byte(s) leaked in 7 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 5 PersAutoDict-ChangeBit-CMP-InsertRepeatedBytes-ChangeBinInt- DE: "\000\000"-"\003\000\000\000"-; base unit: b87af01a4430fd78b7cf21c94876d6f913910921
+0x3,0xff,0xff,0xff,0xff,0xff,0x1,0x0,0x0,0x0,0x0,0xff,0xff,0xf7,
+\003\377\377\377\377\377\001\000\000\000\000\377\377\367
+artifact_prefix='./'; Test unit written to ./leak-cb63ba29207e54e43825ab20724df8ffa91b3c3d
+Base64: A///////AQAAAAD///c=

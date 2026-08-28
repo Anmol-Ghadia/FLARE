@@ -1,0 +1,214 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1387975636
+INFO: Loaded 1 modules   (5811 inline 8-bit counters): 5811 [0x5dd5293cffe0, 0x5dd5293d1693), 
+INFO: Loaded 1 PC tables (5811 PCs): 5811 [0x5dd5293d1698,0x5dd5293e81c8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 118 ft: 119 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 125 ft: 126 corp: 2/3b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 1 CrossOver-
+#11	NEW    cov: 127 ft: 128 corp: 3/6b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 3 CopyPart-ShuffleBytes-InsertByte-
+#19	NEW    cov: 129 ft: 130 corp: 4/9b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 3 ChangeByte-CopyPart-ChangeASCIIInt-
+#24	NEW    cov: 131 ft: 132 corp: 5/11b lim: 4 exec/s: 0 rss: 32Mb L: 2/3 MS: 5 ChangeBit-InsertByte-CrossOver-ChangeByte-CopyPart-
+#26	NEW    cov: 136 ft: 137 corp: 6/13b lim: 4 exec/s: 0 rss: 32Mb L: 2/3 MS: 2 ShuffleBytes-ChangeByte-
+#40	NEW    cov: 137 ft: 138 corp: 7/15b lim: 4 exec/s: 0 rss: 33Mb L: 2/3 MS: 4 ChangeBinInt-ShuffleBytes-InsertByte-EraseBytes-
+#41	NEW    cov: 138 ft: 139 corp: 8/17b lim: 4 exec/s: 0 rss: 33Mb L: 2/3 MS: 1 ChangeBit-
+#93	REDUCE cov: 138 ft: 139 corp: 8/16b lim: 4 exec/s: 0 rss: 33Mb L: 2/3 MS: 2 CopyPart-EraseBytes-
+#817	NEW    cov: 150 ft: 151 corp: 9/27b lim: 11 exec/s: 0 rss: 42Mb L: 11/11 MS: 4 ChangeBit-ShuffleBytes-CrossOver-CMP- DE: "h\001\000\000\000\000\000\000"-
+#841	NEW    cov: 152 ft: 153 corp: 10/37b lim: 11 exec/s: 0 rss: 43Mb L: 10/11 MS: 4 ChangeBit-CrossOver-ShuffleBytes-PersAutoDict- DE: "h\001\000\000\000\000\000\000"-
+libpng warning: [00][00][00][00]: gamma value out of range
+	NEW_FUNC[1/8]: 0x5dd5292aecf0 in png_colorspace_set_gamma /promefuzz/database/libpng/latest/build_asan/../code/png.c:1116
+	NEW_FUNC[2/8]: 0x5dd5292af5b0 in png_colorspace_sync_info /promefuzz/database/libpng/latest/build_asan/../code/png.c:1170
+#1149	NEW    cov: 184 ft: 198 corp: 11/51b lim: 14 exec/s: 0 rss: 47Mb L: 14/14 MS: 3 InsertRepeatedBytes-ShuffleBytes-InsertByte-
+libpng warning: [00][00][00][00]: gamma value out of range
+#1179	NEW    cov: 185 ft: 199 corp: 12/65b lim: 14 exec/s: 0 rss: 47Mb L: 14/14 MS: 5 CMP-ChangeByte-EraseBytes-InsertRepeatedBytes-CopyPart- DE: "1\000"-
+#1214	REDUCE cov: 185 ft: 199 corp: 12/64b lim: 14 exec/s: 0 rss: 48Mb L: 10/14 MS: 5 EraseBytes-EraseBytes-InsertRepeatedBytes-CopyPart-EraseBytes-
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+#1305	REDUCE cov: 185 ft: 199 corp: 12/63b lim: 14 exec/s: 0 rss: 48Mb L: 2/14 MS: 1 CrossOver-
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+	NEW_FUNC[1/1]: 0x5dd5292af150 in png_colorspace_check_gamma /promefuzz/database/libpng/latest/build_asan/../code/png.c:1081
+#1378	REDUCE cov: 194 ft: 208 corp: 13/77b lim: 14 exec/s: 0 rss: 49Mb L: 14/14 MS: 3 PersAutoDict-CopyPart-CopyPart- DE: "h\001\000\000\000\000\000\000"-
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+	NEW_FUNC[1/1]: 0x5dd529340de0 in png_set_sBIT /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:640
+#2104	NEW    cov: 208 ft: 222 corp: 14/98b lim: 21 exec/s: 0 rss: 56Mb L: 21/21 MS: 1 InsertRepeatedBytes-
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng error: Invalid sCAL unit
+	NEW_FUNC[1/4]: 0x5dd5292c2360 in png_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:41
+	NEW_FUNC[2/4]: 0x5dd5292c24b0 in png_default_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:713
+#2511	REDUCE cov: 228 ft: 242 corp: 15/122b lim: 25 exec/s: 0 rss: 60Mb L: 24/24 MS: 2 ChangeBinInt-InsertRepeatedBytes-
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng error: Invalid sCAL unit
+libpng error: Invalid sCAL unit
+libpng error: Invalid sCAL unit
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+libpng warning: [00][00][00][00]: gamma value out of range
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2180529==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5dd5292ce624 bp 0x7fff4fd74b50 sp 0x7fff4fd74a80 T0)
+==2180529==The signal is caused by a WRITE memory access.
+==2180529==Hint: address points to the zero page.
+    #0 0x5dd5292ce624 in png_get_sCAL /promefuzz/database/libpng/latest/build_asan/../code/pngget.c:950:13
+    #1 0x5dd5292a891c in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344.cpp:157:3
+    #2 0x5dd5291b0d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x77d74) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+    #3 0x5dd5291b0469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x77469) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+    #4 0x5dd5291b1c55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x78c55) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+    #5 0x5dd5291b27b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x797b5) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+    #6 0x5dd52919fa8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x66a8f) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+    #7 0x5dd5291ca116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x91116) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+    #8 0x7cdfe4bde1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7cdfe4bde28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5dd529194a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_59/fuzz_driver_59_sanitizing_1787899344+0x5ba74) (BuildId: ef3fa93462cd2463e94d5acbf99aef37467f654d)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libpng/latest/build_asan/../code/pngget.c:950:13 in png_get_sCAL
+==2180529==ABORTING
+MS: 5 ChangeBit-InsertRepeatedBytes-InsertByte-InsertByte-CrossOver-; base unit: 940f678c04fe7a9261eab34aa09b71d69cbb88e6
+0x31,0x44,0x3b,0x6d,0x6d,0x7a,0x3a,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,0x2f,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,0x6d,
+1D;mmz:mmmmmmmmm/mmmmmmmm
+artifact_prefix='./'; Test unit written to ./crash-84a55e889409adbf56c8291861913f065387fab9
+Base64: MUQ7bW16Om1tbW1tbW1tbS9tbW1tbW1tbQ==
