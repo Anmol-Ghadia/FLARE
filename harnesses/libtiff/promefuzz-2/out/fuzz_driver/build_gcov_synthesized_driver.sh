@@ -1,0 +1,3 @@
+#! /bin/bash
+cd /promefuzz
+clang /promefuzz/database/libtiff/latest/out/fuzz_driver/synthesized/*.c -o /promefuzz/database/libtiff/latest/out/fuzz_driver/gcov_synthesized_driver --coverage -fsanitize=fuzzer -g -I/promefuzz/database/libtiff/latest/code/libtiff -Idatabase/libtiff/latest/bin_gcov/include database/libtiff/latest/bin_gcov/lib/libtiff.a database/libtiff/latest/bin_gcov/lib/libtiffxx.a -lz -ljpeg -ljbig -llzma -lzstd

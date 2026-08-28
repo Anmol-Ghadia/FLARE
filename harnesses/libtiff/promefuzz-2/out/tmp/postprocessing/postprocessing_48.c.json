@@ -1,0 +1,302 @@
+{
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:100:5": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:9:13",
+    "calleeName": "write_dummy_file",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:102:17": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:446:14",
+    "calleeName": "TIFFOpen",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:108:9": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "calleeName": "exercise_getters",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:109:9": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:347:13",
+    "calleeName": "TIFFClose",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:115:9": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "calleeName": "exercise_getters",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:118:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:354:12",
+    "calleeName": "TIFFReadDirectory",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:120:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:410:12",
+    "calleeName": "TIFFSetDirectory",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:125:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:129:5": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:347:13",
+    "calleeName": "TIFFClose",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:99:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:19:30": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:322:25",
+    "calleeName": "TIFFFieldWithTag",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "callerName": "exercise_field_accessors"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:21:15": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:327:21",
+    "calleeName": "TIFFFieldDataType",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "callerName": "exercise_field_accessors"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:22:15": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:329:12",
+    "calleeName": "TIFFFieldReadCount",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "callerName": "exercise_field_accessors"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:23:15": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:330:12",
+    "calleeName": "TIFFFieldWriteCount",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "callerName": "exercise_field_accessors"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:24:15": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:328:12",
+    "calleeName": "TIFFFieldPassCount",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "callerName": "exercise_field_accessors"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:37:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:38:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:39:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:42:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:43:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:44:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:47:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:48:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:49:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:52:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:53:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:54:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:57:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:58:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:59:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:62:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:63:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:64:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:67:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:68:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:69:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:72:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:73:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:74:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:77:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:78:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:79:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:82:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:83:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:84:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:87:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:88:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:89:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:92:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:350:12",
+    "calleeName": "TIFFGetField",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:93:19": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:352:12",
+    "calleeName": "TIFFGetFieldDefaulted",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  },
+  "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:94:13": {
+    "calleeDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:18:13",
+    "calleeName": "exercise_field_accessors",
+    "callerDeclLoc": "/promefuzz/database/libtiff/latest/out/tmp/postprocessing/postprocessing_48.c:28:13",
+    "callerName": "exercise_getters"
+  }
+}

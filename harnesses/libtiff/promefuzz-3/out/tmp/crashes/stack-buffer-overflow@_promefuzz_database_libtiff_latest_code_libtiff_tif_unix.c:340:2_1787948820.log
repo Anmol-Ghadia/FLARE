@@ -1,0 +1,80 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2516415751
+INFO: Loaded 1 modules   (9484 inline 8-bit counters): 9484 [0x61f98291e248, 0x61f982920754), 
+INFO: Loaded 1 PC tables (9484 PCs): 9484 [0x61f982920758,0x61f982945818), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+=================================================================
+==141055==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7a41e7204840 at pc 0x61f9826c7329 bp 0x7ffff4625d00 sp 0x7ffff46254d0
+WRITE of size 256 at 0x7a41e7204840 thread T0
+    #0 0x61f9826c7328 in __asan_memset (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0x153328) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+    #1 0x61f982744013 in _TIFFmemset /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:340:2
+    #2 0x61f982710432 in TIFFYCbCrToRGBInit /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:245:5
+    #3 0x61f98270a9cf in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819.c:95:11
+    #4 0x61f9826150d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0xa10d4) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+    #5 0x61f982616301 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0xa2301) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+    #6 0x61f9826168f7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0xa28f7) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+    #7 0x61f982603def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0x8fdef) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+    #8 0x61f98262e476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0xba476) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+    #9 0x7a41e8a411c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x7a41e8a4128a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x61f9825f8dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0x84dd4) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4)
+
+Address 0x7a41e7204840 is located in stack of thread T0 at offset 18496 in frame
+    #0 0x61f982707797 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819.c:26
+
+  This frame has 15 object(s):
+    [32, 36) 'swabf' (line 39)
+    [48, 52) 'tmp' (line 43)
+    [64, 18188) 'cielab' (line 49)
+    [18448, 18496) 'ycbcr' (line 52)
+    [18528, 18612) 'display' (line 55) <== Memory access at offset 18496 partially underflows this variable
+    [18656, 18668) 'refWhite' (line 58) <== Memory access at offset 18496 partially underflows this variable
+    [18688, 18700) 'luma' (line 59) <== Memory access at offset 18496 partially underflows this variable
+    [18720, 18744) 'refBlackWhite' (line 60) <== Memory access at offset 18496 partially underflows this variable
+    [18784, 18788) 'X' (line 113)
+    [18800, 18804) 'Y' (line 113)
+    [18816, 18820) 'Z' (line 113)
+    [18832, 18836) 'R' (line 116)
+    [18848, 18852) 'G' (line 116)
+    [18864, 18868) 'B' (line 116)
+    [18880, 18892) 'xyz_out' (line 119)
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_60/fuzz_driver_60_sanitizing_1787948819+0x153328) (BuildId: 64cf07c20120d074b1bd5ae727ef670f201046e4) in __asan_memset
+Shadow bytes around the buggy address:
+  0x7a41e7204580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a41e7204600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a41e7204680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a41e7204700: 00 04 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2
+  0x7a41e7204780: f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2 f2
+=>0x7a41e7204800: f2 f2 00 00 00 00 00 00[f2]f2 f2 f2 00 00 00 00
+  0x7a41e7204880: 00 00 00 00 00 00 04 f2 f2 f2 f2 f2 00 04 f2 f2
+  0x7a41e7204900: 00 04 f2 f2 00 00 00 f2 f2 f2 f2 f2 f8 f2 f8 f2
+  0x7a41e7204980: f8 f2 f8 f2 f8 f2 f8 f2 f8 f8 f3 f3 00 00 00 00
+  0x7a41e7204a00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7a41e7204a80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==141055==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

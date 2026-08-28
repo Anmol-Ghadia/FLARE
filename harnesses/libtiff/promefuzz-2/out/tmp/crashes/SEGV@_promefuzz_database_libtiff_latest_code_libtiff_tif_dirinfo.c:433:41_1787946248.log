@@ -1,0 +1,41 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3660561099
+INFO: Loaded 1 modules   (7884 inline 8-bit counters): 7884 [0x63053bc1f328, 0x63053bc211f4), 
+INFO: Loaded 1 PC tables (7884 PCs): 7884 [0x63053bc211f8,0x63053bc3feb8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+TIFFWriteDirectorySec: Out of memory.
+TIFFFetchDirectory: Sanity check on directory count failed, this is probably not a valid IFD offset.
+TIFFReadCustomDirectory: Failed to read custom directory at offset 0.
+TIFFFetchDirectory: Sanity check on directory count failed, this is probably not a valid IFD offset.
+TIFFReadCustomDirectory: Failed to read custom directory at offset 0.
+TIFFFetchDirectory: ./dummy_file: Can not read TIFF directory count.
+TIFFReadCustomDirectory: Failed to read custom directory at offset 8.
+TIFFFetchDirectory: Sanity check on directory count failed, this is probably not a valid IFD offset.
+TIFFReadCustomDirectory: Failed to read custom directory at offset 0.
+TIFFFetchDirectory: Sanity check on directory count failed, this is probably not a valid IFD offset.
+TIFFReadCustomDirectory: Failed to read custom directory at offset 0.
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==77020==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x63053ba82e3b bp 0x7fff617d15d0 sp 0x7fff617d14d0 T0)
+==77020==The signal is caused by a READ memory access.
+==77020==Hint: address points to the zero page.
+    #0 0x63053ba82e3b in _TIFFSetupFields /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dirinfo.c:433:41
+    #1 0x63053baa813c in TIFFReadCustomDirectory /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dirread.c:4452:2
+    #2 0x63053ba5c4ff in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248.c:57:15
+    #3 0x63053b968dc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248+0x90dc4) (BuildId: 5be7eb147352f62186312c6cfde277a83fa2d9be)
+    #4 0x63053b969ff1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248+0x91ff1) (BuildId: 5be7eb147352f62186312c6cfde277a83fa2d9be)
+    #5 0x63053b96a5e7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248+0x925e7) (BuildId: 5be7eb147352f62186312c6cfde277a83fa2d9be)
+    #6 0x63053b957adf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248+0x7fadf) (BuildId: 5be7eb147352f62186312c6cfde277a83fa2d9be)
+    #7 0x63053b982166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248+0xaa166) (BuildId: 5be7eb147352f62186312c6cfde277a83fa2d9be)
+    #8 0x744d564fe1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #9 0x744d564fe28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x63053b94cac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_46/fuzz_driver_46_sanitizing_1787946248+0x74ac4) (BuildId: 5be7eb147352f62186312c6cfde277a83fa2d9be)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dirinfo.c:433:41 in _TIFFSetupFields
+==77020==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

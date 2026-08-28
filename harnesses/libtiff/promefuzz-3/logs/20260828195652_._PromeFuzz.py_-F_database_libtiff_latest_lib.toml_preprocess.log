@@ -1,0 +1,142 @@
+2026-08-28T19:56:52.671001+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260828195652_._PromeFuzz.py_-F_database_libtiff_latest_lib.toml_preprocess.log
+2026-08-28T19:56:52.676520+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 71 source files.
+2026-08-28T19:56:52.723114+0000 | ThreadPoolExecutor-2_8 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/contrib/dbs/tiff-bi.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.739607+0000 | ThreadPoolExecutor-2_9 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/ppm2tiff.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.756882+0000 | ThreadPoolExecutor-2_11 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiffcmp.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.771948+0000 | ThreadPoolExecutor-2_14 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiffcp.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.788939+0000 | ThreadPoolExecutor-2_4 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/contrib/dbs/tiff-palette.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.851074+0000 | ThreadPoolExecutor-2_9 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/contrib/dbs/tiff-grayscale.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.851971+0000 | ThreadPoolExecutor-2_11 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/contrib/dbs/tiff-rgb.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.916667+0000 | ThreadPoolExecutor-2_17 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiffset.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.935569+0000 | ThreadPoolExecutor-2_15 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/contrib/addtiffo/tif_overview.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.974711+0000 | ThreadPoolExecutor-2_1 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/libtiff/tif_lzw.c: 
+../../code/libtiff/tif_lzw.c:1052:7: warning: variable 'outcount' set but not used [-Wunused-but-set-variable]
+ 1052 |         long outcount = sp->enc_outcount;
+      |              ^
+
+2026-08-28T19:56:52.976215+0000 | ThreadPoolExecutor-2_16 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiffcrop.c: 
+../../code/tools/tiffcrop.c:1180:12: warning: variable 'total_bytes' set but not used [-Wunused-but-set-variable]
+ 1180 |   tsize_t  total_bytes = 0;
+      |            ^
+../../code/tools/tiffcrop.c:1625:14: warning: variable 'good_args' set but not used [-Wunused-but-set-variable]
+ 1625 |     int   c, good_args = 0;
+      |              ^
+../../code/tools/tiffcrop.c:2713:7: warning: variable 'j' set but not used [-Wunused-but-set-variable]
+ 2713 |   int j, k;
+      |       ^
+
+2026-08-28T19:56:52.980201+0000 | ThreadPoolExecutor-2_3 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiffmedian.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.985767+0000 | ThreadPoolExecutor-2_8 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/contrib/addtiffo/addtiffo.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.988606+0000 | ThreadPoolExecutor-2_15 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/pal2rgb.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:52.997276+0000 | ThreadPoolExecutor-2_13 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiffsplit.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:53.015011+0000 | ThreadPoolExecutor-2_0 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/libtiff/latest/code/tools/tiff2ps.c: 
+Warning: Record tiff has no definition
+Warning: Record _TIFFField has no definition
+Warning: Record _TIFFFieldArray has no definition
+
+2026-08-28T19:56:53.144829+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 71 source files.
+2026-08-28T19:56:53.203104+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-28T19:56:53.345624+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 0 functions
+2026-08-28T19:56:53.347146+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 182 API functions extracted, dumped to /promefuzz/database/libtiff/latest/out/preprocessor/api.pkl
+2026-08-28T19:56:53.347449+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/libtiff/latest/out/preprocessor/sources.json
+2026-08-28T19:56:53.347595+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-28T19:56:53.384960+0000 | ThreadPoolExecutor-3_4 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/libtiff/tif_webp.c.
+2026-08-28T19:56:53.406180+0000 | ThreadPoolExecutor-3_15 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/port/dummy.c.
+2026-08-28T19:56:53.437846+0000 | ThreadPoolExecutor-3_5 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c.
+2026-08-28T19:56:53.491412+0000 | ThreadPoolExecutor-3_15 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/libtiff/tif_version.c.
+2026-08-28T19:56:53.527164+0000 | ThreadPoolExecutor-3_15 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/libtiff/tif_jpeg_12.c.
+2026-08-28T19:56:53.545011+0000 | ThreadPoolExecutor-3_16 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/libtiff/tif_lerc.c.
+2026-08-28T19:56:53.552011+0000 | ThreadPoolExecutor-3_5 WARNING | src.preprocessor.incidental:_process_one_source:272 | CGprocessor warning/error for source /promefuzz/database/libtiff/latest/code/libtiff/tif_lzw.c:
+../../code/libtiff/tif_lzw.c:1052:7: warning: variable 'outcount' set but not used [-Wunused-but-set-variable]
+ 1052 |         long outcount = sp->enc_outcount;
+      |              ^
+
+2026-08-28T19:56:53.562358+0000 | ThreadPoolExecutor-3_7 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/libtiff/latest/code/libtiff/tif_fax3sm.c.
+2026-08-28T19:56:53.575939+0000 | ThreadPoolExecutor-3_10 WARNING | src.preprocessor.incidental:_process_one_source:272 | CGprocessor warning/error for source /promefuzz/database/libtiff/latest/code/tools/tiffcrop.c:
+../../code/tools/tiffcrop.c:1180:12: warning: variable 'total_bytes' set but not used [-Wunused-but-set-variable]
+ 1180 |   tsize_t  total_bytes = 0;
+      |            ^
+../../code/tools/tiffcrop.c:1625:14: warning: variable 'good_args' set but not used [-Wunused-but-set-variable]
+ 1625 |     int   c, good_args = 0;
+      |              ^
+../../code/tools/tiffcrop.c:2713:7: warning: variable 'j' set but not used [-Wunused-but-set-variable]
+ 2713 |   int j, k;
+      |       ^
+
+2026-08-28T19:56:53.791878+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/libtiff/latest/out/preprocessor/incidentals.pkl
+2026-08-28T19:56:53.792132+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-28T19:56:53.820073+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/libtiff/latest/code/test/testtypes.c.
+2026-08-28T19:56:53.834279+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/libtiff/latest/code/test/test_arrays.c.
+2026-08-28T19:56:54.096040+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/libtiff/latest/out/preprocessor/call_order.pkl
+2026-08-28T19:56:54.096266+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-28T19:56:54.105522+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFCIELabToRGB is not found in the meta data.
+2026-08-28T19:56:54.106367+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFDisplay is not found in the meta data.
+2026-08-28T19:56:54.107964+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFYCbCrToRGB is not found in the meta data.
+2026-08-28T19:56:54.124611+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFDirectory is not found in the meta data.
+2026-08-28T19:56:54.127936+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union tiff::(unnamed at ../../code/libtiff/tiffiop.h:125:2) is not found in the meta data.
+2026-08-28T19:56:54.129381+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFDataType is not found in the meta data.
+2026-08-28T19:56:54.140225+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFSetGetFieldType is not found in the meta data.
+2026-08-28T19:56:54.141427+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFFieldArrayType is not found in the meta data.
+2026-08-28T19:56:54.143264+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFTagMethods is not found in the meta data.
+2026-08-28T19:56:54.145480+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct _IO_FILE is not found in the meta data.
+2026-08-28T19:56:54.232871+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct __va_list_tag is not found in the meta data.
+2026-08-28T19:56:54.275787+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union _TIFFRGBAImage::(unnamed at ../../../code/libtiff/tiffio.h:217:2) is not found in the meta data.
+2026-08-28T19:56:54.298556+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFFieldInfo is not found in the meta data.
+2026-08-28T19:56:54.308829+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name TIFFCodec is not found in the meta data.
+2026-08-28T19:56:54.439625+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/libtiff/latest/out/preprocessor/info.pkl
+2026-08-28T19:56:54.439828+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-28T19:56:54.444382+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/libtiff/latest/out/preprocessor/complexity.pkl
+2026-08-28T19:56:54.444558+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-28T19:56:54.540593+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/libtiff/latest/out/preprocessor/*_relev.pkl

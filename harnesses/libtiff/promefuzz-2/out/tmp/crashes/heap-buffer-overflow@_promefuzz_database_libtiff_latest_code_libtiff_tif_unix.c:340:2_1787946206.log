@@ -1,0 +1,82 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 4027600967
+INFO: Loaded 1 modules   (7860 inline 8-bit counters): 7860 [0x604f0d9b9188, 0x604f0d9bb03c), 
+INFO: Loaded 1 PC tables (7860 PCs): 7860 [0x604f0d9bb040,0x604f0d9d9b80), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 33 ft: 34 corp: 1/1b exec/s: 0 rss: 33Mb
+	NEW_FUNC[1/2]: 0x604f0d7f80f8 in read_u64 /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205.c:12
+	NEW_FUNC[2/2]: 0x604f0d7f99e0 in _TIFFmemset /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:339
+#412	NEW    cov: 48 ft: 50 corp: 2/9b lim: 8 exec/s: 0 rss: 37Mb L: 8/8 MS: 5 InsertByte-InsertByte-CrossOver-EraseBytes-InsertRepeatedBytes-
+#732	NEW    cov: 50 ft: 52 corp: 3/18b lim: 11 exec/s: 0 rss: 41Mb L: 9/9 MS: 5 ChangeBinInt-ChangeByte-ChangeByte-CrossOver-InsertByte-
+	NEW_FUNC[1/1]: 0x604f0d7f9a20 in _TIFFmemcpy /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:345
+#1347	NEW    cov: 58 ft: 70 corp: 4/34b lim: 17 exec/s: 0 rss: 47Mb L: 16/16 MS: 5 InsertByte-InsertByte-InsertRepeatedBytes-ChangeBinInt-InsertByte-
+=================================================================
+==76977==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x514000000de4 at pc 0x604f0d7b6019 bp 0x7fff8e03ec00 sp 0x7fff8e03e3d0
+WRITE of size 443 at 0x514000000de4 thread T0
+    #0 0x604f0d7b6018 in __asan_memset (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x143018) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #1 0x604f0d7f9a13 in _TIFFmemset /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:340:2
+    #2 0x604f0d7f7475 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205.c:76:9
+    #3 0x604f0d703dc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x90dc4) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #4 0x604f0d7034b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x904b9) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #5 0x604f0d704ca5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x91ca5) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #6 0x604f0d705805 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x92805) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #7 0x604f0d6f2adf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x7fadf) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #8 0x604f0d71d166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0xaa166) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #9 0x7b08c81951c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x7b08c819528a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x604f0d6e7ac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x74ac4) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+
+0x514000000de4 is located 0 bytes after 420-byte region [0x514000000c40,0x514000000de4)
+allocated by thread T0 here:
+    #0 0x604f0d7b80dd in calloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x1450dd) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #1 0x604f0d7f98fe in _TIFFcalloc /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:322:12
+    #2 0x604f0d7f6f2e in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205.c:63:10
+    #3 0x604f0d703dc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x90dc4) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #4 0x604f0d7034b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x904b9) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #5 0x604f0d704ca5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x91ca5) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #6 0x604f0d705805 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x92805) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #7 0x604f0d6f2adf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x7fadf) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #8 0x604f0d71d166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0xaa166) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+    #9 0x7b08c81951c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x7b08c819528a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x604f0d6e7ac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x74ac4) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_45/fuzz_driver_45_sanitizing_1787946205+0x143018) (BuildId: d0dcd92c3a5e55f56054d909261553ee0514b4c9) in __asan_memset
+Shadow bytes around the buggy address:
+  0x514000000b00: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x514000000b80: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x514000000c00: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x514000000c80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x514000000d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x514000000d80: 00 00 00 00 00 00 00 00 00 00 00 00[04]fa fa fa
+  0x514000000e00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x514000000e80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x514000000f00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x514000000f80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x514000001000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==76977==ABORTING
+MS: 5 CrossOver-ChangeByte-CMP-InsertRepeatedBytes-InsertByte- DE: "\005\000\000\000\000\000\000\000"-; base unit: c46a274ad791d8ede6c3f7bee0cc50db647fc77b
+0x0,0x0,0x0,0x0,0x0,0x5,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x27,0x14,0x2c,
+\000\000\000\000\000\005\000\000\000\000\000\000\000'\024,
+artifact_prefix='./'; Test unit written to ./crash-ab7887d0e4dd749b3081b5e2a7c10e0e6d668b4c
+Base64: AAAAAAAFAAAAAAAAACcULA==

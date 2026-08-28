@@ -1,0 +1,99 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 212354461
+INFO: Loaded 1 modules   (9492 inline 8-bit counters): 9492 [0x5ee7d9f09498, 0x5ee7d9f0b9ac), 
+INFO: Loaded 1 PC tables (9492 PCs): 9492 [0x5ee7d9f0b9b0,0x5ee7d9f30af0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 384 ft: 385 corp: 1/1b exec/s: 0 rss: 34Mb
+#4	NEW    cov: 389 ft: 390 corp: 2/3b lim: 4 exec/s: 0 rss: 35Mb L: 2/2 MS: 2 ShuffleBytes-CopyPart-
+	NEW_FUNC[1/2]: 0x5ee7d9cfc4f8 in rd32 /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992.c:12
+	NEW_FUNC[2/2]: 0x5ee7d9d7b680 in TIFFWriteDirectoryTagCheckedLong /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dirwrite.c:2289
+#8	NEW    cov: 417 ft: 437 corp: 3/7b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 4 ChangeByte-CopyPart-CopyPart-CopyPart-
+#13	NEW    cov: 417 ft: 438 corp: 4/10b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 5 InsertByte-ChangeByte-ChangeBit-ChangeBit-CopyPart-
+#17	NEW    cov: 417 ft: 439 corp: 5/14b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 4 ShuffleBytes-CopyPart-ChangeBit-ChangeByte-
+#43	NEW    cov: 417 ft: 441 corp: 6/18b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 1 ChangeBinInt-
+#52	REDUCE cov: 417 ft: 441 corp: 6/16b lim: 4 exec/s: 0 rss: 39Mb L: 1/4 MS: 4 CrossOver-ChangeByte-CrossOver-ChangeBinInt-
+#97	REDUCE cov: 417 ft: 441 corp: 6/15b lim: 4 exec/s: 0 rss: 41Mb L: 3/4 MS: 5 EraseBytes-EraseBytes-InsertByte-CrossOver-ChangeBit-
+#211	NEW    cov: 417 ft: 442 corp: 7/19b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 4 ChangeByte-EraseBytes-CopyPart-ChangeBinInt-
+#365	NEW    cov: 418 ft: 443 corp: 8/23b lim: 4 exec/s: 0 rss: 51Mb L: 4/4 MS: 4 ChangeBinInt-CopyPart-ChangeByte-CopyPart-
+=================================================================
+==139978==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7645f827b2b0 at pc 0x5ee7d9cb60b6 bp 0x7ffce0dddc90 sp 0x7ffce0ddd450
+READ of size 55250 at 0x7645f827b2b0 thread T0
+    #0 0x5ee7d9cb60b5 in __asan_memcpy (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0x1540b5) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #1 0x5ee7d9daa012 in _TIFFmemcpy /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_unix.c:346:2
+    #2 0x5ee7d9dcbe0d in DumpModeEncode /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_dumpmode.c:60:4
+    #3 0x5ee7d9da08ee in TIFFWriteScanline /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_write.c:171:11
+    #4 0x5ee7d9cf9416 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992.c:109:15
+    #5 0x5ee7d9c040d4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0xa20d4) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #6 0x5ee7d9c037c9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0xa17c9) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #7 0x5ee7d9c04fb5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0xa2fb5) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #8 0x5ee7d9c05b15 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0xa3b15) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #9 0x5ee7d9bf2def in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0x90def) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #10 0x5ee7d9c1d476 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0xbb476) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+    #11 0x7645f9ad51c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #12 0x7645f9ad528a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #13 0x5ee7d9be7dd4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0x85dd4) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192)
+
+Address 0x7645f827b2b0 is located in stack of thread T0 at offset 4784 in frame
+    #0 0x5ee7d9cf6797 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992.c:26
+
+  This frame has 19 object(s):
+    [32, 288) 'local' (line 35)
+    [352, 354) 'extrasamples_val' (line 54)
+    [368, 400) 'software' (line 55)
+    [432, 464) 'artist' (line 56)
+    [496, 528) 'datetime' (line 57)
+    [560, 592) 'make' (line 58)
+    [624, 656) 'model' (line 59)
+    [688, 4784) 'buf' (line 102)
+    [4912, 4916) 'gps_version' (line 115) <== Memory access at offset 4784 partially underflows this variable
+    [4928, 4930) 'gps_lat_ref' (line 121) <== Memory access at offset 4784 partially underflows this variable
+    [4944, 4946) 'gps_lon_ref' (line 122) <== Memory access at offset 4784 partially underflows this variable
+    [4960, 4962) 'gps_status' (line 123) <== Memory access at offset 4784 partially underflows this variable
+    [4976, 4978) 'gps_measure_mode' (line 124) <== Memory access at offset 4784 partially underflows this variable
+    [4992, 5003) 'gps_date' (line 125) <== Memory access at offset 4784 partially underflows this variable
+    [5024, 5040) 'gps_satellites' (line 126) <== Memory access at offset 4784 partially underflows this variable
+    [5056, 5072) 'gps_mapdatum' (line 127) <== Memory access at offset 4784 partially underflows this variable
+    [5088, 5112) 'lat' (line 132) <== Memory access at offset 4784 partially underflows this variable
+    [5152, 5176) 'lon' (line 137) <== Memory access at offset 4784 partially underflows this variable
+    [5216, 5224) 'dir_offset' (line 166) <== Memory access at offset 4784 partially underflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_4/fuzz_driver_4_sanitizing_1787947992+0x1540b5) (BuildId: 7952f4e5b6a7bfdba081aefa26daec91cb252192) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x7645f827b000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7645f827b080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7645f827b100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7645f827b180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7645f827b200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x7645f827b280: 00 00 00 00 00 00[f2]f2 f2 f2 f2 f2 f2 f2 f2 f2
+  0x7645f827b300: f2 f2 f2 f2 f2 f2 f8 f2 f8 f2 f8 f2 f8 f2 f8 f2
+  0x7645f827b380: f8 f8 f2 f2 f8 f8 f2 f2 f8 f8 f2 f2 f8 f8 f8 f2
+  0x7645f827b400: f2 f2 f2 f2 f8 f8 f8 f2 f2 f2 f2 f2 f8 f3 f3 f3
+  0x7645f827b480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7645f827b500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==139978==ABORTING
+MS: 1 CrossOver-; base unit: dc8dd3b090a1c401e98db07dd5df2afedcdd104c
+0xd2,0xd7,0x0,0x0,
+\322\327\000\000
+artifact_prefix='./'; Test unit written to ./crash-1944a92d1d10018e466eaa53a0d14e6e77c1cdac
+Base64: 0tcAAA==

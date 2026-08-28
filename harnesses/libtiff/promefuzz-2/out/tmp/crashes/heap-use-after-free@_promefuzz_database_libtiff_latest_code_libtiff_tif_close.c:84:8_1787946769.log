@@ -1,0 +1,89 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 152711160
+INFO: Loaded 1 modules   (7947 inline 8-bit counters): 7947 [0x63f23cb885f8, 0x63f23cb8a503), 
+INFO: Loaded 1 PC tables (7947 PCs): 7947 [0x63f23cb8a508,0x63f23cba95b8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+./dummy_file: Cannot read TIFF header.
+INFO: A corpus is not provided, starting from an empty corpus
+./dummy_file: Cannot read TIFF header.
+=================================================================
+==77537==ERROR: AddressSanitizer: heap-use-after-free on address 0x5030000000a0 at pc 0x63f23c901eb0 bp 0x7ffee213cf40 sp 0x7ffee213c6e8
+READ of size 1 at 0x5030000000a0 thread T0
+    #0 0x63f23c901eaf in strncmp (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0xc3eaf) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #1 0x63f23c9c62fa in TIFFCleanup /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_close.c:84:8
+    #2 0x63f23c9c504e in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768.c:140:5
+    #3 0x63f23c8cfdc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x91dc4) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #4 0x63f23c8cf4b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x914b9) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #5 0x63f23c8d1146 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x93146) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #6 0x63f23c8d15e7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x935e7) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #7 0x63f23c8beadf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x80adf) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #8 0x63f23c8e9166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0xab166) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #9 0x7470d93e81c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x7470d93e828a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x63f23c8b3ac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x75ac4) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+
+0x5030000000a0 is located 0 bytes inside of 32-byte region [0x5030000000a0,0x5030000000c0)
+freed by thread T0 here:
+    #0 0x63f23c983c5a in free (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x145c5a) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #1 0x63f23c9c5012 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768.c:135:13
+    #2 0x63f23c8cfdc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x91dc4) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #3 0x63f23c8cf4b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x914b9) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #4 0x63f23c8d1146 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x93146) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #5 0x63f23c8d15e7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x935e7) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #6 0x63f23c8beadf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x80adf) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #7 0x63f23c8e9166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0xab166) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #8 0x7470d93e81c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #9 0x7470d93e828a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x63f23c8b3ac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x75ac4) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+
+previously allocated by thread T0 here:
+    #0 0x63f23c983ef3 in malloc (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x145ef3) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #1 0x63f23c9c3829 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768.c:106:36
+    #2 0x63f23c8cfdc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x91dc4) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #3 0x63f23c8cf4b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x914b9) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #4 0x63f23c8d1146 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x93146) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #5 0x63f23c8d15e7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x935e7) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #6 0x63f23c8beadf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x80adf) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #7 0x63f23c8e9166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0xab166) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+    #8 0x7470d93e81c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #9 0x7470d93e828a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x63f23c8b3ac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0x75ac4) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286)
+
+SUMMARY: AddressSanitizer: heap-use-after-free (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_71/fuzz_driver_71_sanitizing_1787946768+0xc3eaf) (BuildId: 9c9794d3f587c831cc8a345b8de9cf2da087c286) in strncmp
+Shadow bytes around the buggy address:
+  0x502ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x503000000000: fa fa 00 00 00 fa fa fa 00 00 00 00 fa fa 00 00
+=>0x503000000080: 00 fa fa fa[fd]fd fd fd fa fa fd fd fd fd fa fa
+  0x503000000100: 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==77537==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./crash-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==

@@ -1,0 +1,87 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2531255294
+INFO: Loaded 1 modules   (8383 inline 8-bit counters): 8383 [0x5f358d2f9c18, 0x5f358d2fbcd7), 
+INFO: Loaded 1 PC tables (8383 PCs): 8383 [0x5f358d2fbcd8,0x5f358d31c8c8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 279 ft: 280 corp: 1/1b exec/s: 0 rss: 33Mb
+#3	NEW    cov: 282 ft: 283 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 1 CrossOver-
+#14	NEW    cov: 288 ft: 289 corp: 3/6b lim: 4 exec/s: 0 rss: 34Mb L: 3/3 MS: 1 CrossOver-
+#20	NEW    cov: 291 ft: 292 corp: 4/10b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 1 CopyPart-
+#84	NEW    cov: 292 ft: 293 corp: 5/14b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 4 CopyPart-CopyPart-InsertByte-CMP- DE: "\000\000\000\367"-
+#296	NEW    cov: 294 ft: 296 corp: 6/19b lim: 6 exec/s: 0 rss: 46Mb L: 5/5 MS: 2 InsertByte-CrossOver-
+#300	NEW    cov: 294 ft: 311 corp: 7/24b lim: 6 exec/s: 0 rss: 46Mb L: 5/5 MS: 4 EraseBytes-ChangeBit-InsertRepeatedBytes-CopyPart-
+#305	NEW    cov: 298 ft: 316 corp: 8/30b lim: 6 exec/s: 0 rss: 46Mb L: 6/6 MS: 5 InsertByte-ChangeByte-ShuffleBytes-InsertByte-CrossOver-
+#315	NEW    cov: 298 ft: 331 corp: 9/36b lim: 6 exec/s: 0 rss: 47Mb L: 6/6 MS: 5 EraseBytes-EraseBytes-CopyPart-ChangeBinInt-PersAutoDict- DE: "\000\000\000\367"-
+=================================================================
+==77473==ERROR: AddressSanitizer: stack-use-after-return on address 0x784369701844 at pc 0x5f358d132eb7 bp 0x7ffc0503ec60 sp 0x7ffc0503ec58
+READ of size 4 at 0x784369701844 thread T0
+    #0 0x5f358d132eb6 in TIFFXYZToRGB /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:105:7
+    #1 0x5f358d126dd2 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668.c:151:13
+    #2 0x5f358d033dc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0x96dc4) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+    #3 0x5f358d0334b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0x964b9) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+    #4 0x5f358d034ca5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0x97ca5) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+    #5 0x5f358d035805 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0x98805) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+    #6 0x5f358d022adf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0x85adf) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+    #7 0x5f358d04d166 in main (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0xb0166) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+    #8 0x78436b5bf1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #9 0x78436b5bf28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x5f358d017ac4 in _start (/promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668+0x7aac4) (BuildId: 9dde3e309e0829c9a2439bc4066dec9fdc09dc41)
+
+Address 0x784369701844 is located in stack of thread T0 at offset 68 in frame
+    #0 0x5f358d126487 in LLVMFuzzerTestOneInput /promefuzz/database/libtiff/latest/out/tmp/fuzz_driver_69/fuzz_driver_69_sanitizing_1787946668.c:132
+
+  This frame has 13 object(s):
+    [32, 40) 'Off' (line 133)
+    [64, 76) 'xyz' (line 144) <== Memory access at offset 68 is inside this variable
+    [96, 232) 'cielab' (line 148)
+    [304, 308) 'r' (line 150)
+    [320, 324) 'g' (line 150)
+    [336, 340) 'b' (line 150)
+    [352, 360) 'du' (line 168)
+    [384, 392) 'dv' (line 168)
+    [416, 428) 'luma' (line 175)
+    [448, 472) 'refbw' (line 176)
+    [512, 516) 'r118' (line 194)
+    [528, 532) 'g119' (line 194)
+    [544, 548) 'b120' (line 194)
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-use-after-return /promefuzz/database/libtiff/latest/build_asan/libtiff/../../code/libtiff/tif_color.c:105:7 in TIFFXYZToRGB
+Shadow bytes around the buggy address:
+  0x784369701580: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701600: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701680: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701700: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701780: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+=>0x784369701800: f5 f5 f5 f5 f5 f5 f5 f5[f5]f5 f5 f5 f5 f5 f5 f5
+  0x784369701880: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701900: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701980: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701a00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x784369701a80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==77473==ABORTING
+MS: 3 CopyPart-InsertRepeatedBytes-ShuffleBytes-; base unit: 71853c6197a6a7f222db0f1978c7cb232b87c5ee
+0x1e,0xa,0x1e,0x1e,0x1e,0xa,
+\036\012\036\036\036\012
+artifact_prefix='./'; Test unit written to ./crash-43d96f9910d78f5d97edc4d34769e9111c8cd7a0
+Base64: HgoeHh4K

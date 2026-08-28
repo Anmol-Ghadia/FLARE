@@ -1,0 +1,2854 @@
+{
+    "function_infos": {
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_print.c:235:1": {
+            "signature": "\nextern void TIFFPrintDirectory(TIFF*, FILE*, long);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_print.c:234:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_print.c:658:1"
+            ],
+            "name": "TIFFPrintDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_print.c:235:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:128:1": {
+            "signature": "\nextern tmsize_t TIFFVStripSize(TIFF* tif, uint32_t nrows);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:127:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:134:1"
+            ],
+            "name": "TIFFVStripSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:128:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:140:1": {
+            "signature": "\nextern uint64_t TIFFRawStripSize64(TIFF* tif, uint32_t strip);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:139:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:155:1"
+            ],
+            "name": "TIFFRawStripSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:140:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:157:1": {
+            "signature": "\nextern tmsize_t TIFFRawStripSize(TIFF* tif, uint32_t strip);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:156:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:175:1"
+            ],
+            "name": "TIFFRawStripSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:157:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:186:1": {
+            "signature": "\nextern uint64_t TIFFStripSize64(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:185:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:193:1"
+            ],
+            "name": "TIFFStripSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:186:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:195:1": {
+            "signature": "\nextern tmsize_t TIFFStripSize(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:194:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:201:1"
+            ],
+            "name": "TIFFStripSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:195:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:210:1": {
+            "signature": "\nextern uint32_t TIFFDefaultStripSize(TIFF* tif, uint32_t request);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:209:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:213:1"
+            ],
+            "name": "TIFFDefaultStripSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:210:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:250:1": {
+            "signature": "\nextern uint64_t TIFFScanlineSize64(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:249:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:305:1"
+            ],
+            "name": "TIFFScanlineSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:250:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:307:1": {
+            "signature": "\nextern tmsize_t TIFFScanlineSize(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:306:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:313:1"
+            ],
+            "name": "TIFFScanlineSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:307:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:322:1": {
+            "signature": "\nextern uint64_t TIFFRasterScanlineSize64(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:321:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:335:1"
+            ],
+            "name": "TIFFRasterScanlineSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:322:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:337:1": {
+            "signature": "\nextern tmsize_t TIFFRasterScanlineSize(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:336:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:343:1"
+            ],
+            "name": "TIFFRasterScanlineSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:337:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:36:1": {
+            "signature": "\nextern uint32_t TIFFComputeStrip(TIFF*, uint32_t, uint16_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:35:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:53:1"
+            ],
+            "name": "TIFFComputeStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:36:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:59:1": {
+            "signature": "\nextern uint32_t TIFFNumberOfStrips(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:58:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:70:1"
+            ],
+            "name": "TIFFNumberOfStrips",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:59:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:76:1": {
+            "signature": "\nextern uint64_t TIFFVStripSize64(TIFF* tif, uint32_t nrows);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:75:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:126:1"
+            ],
+            "name": "TIFFVStripSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_strip.c:76:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:34:5": {
+            "signature": "/*\n** Stuff, related to tag handling and creating custom tags.\n*/\nextern int TIFFGetTagListCount( TIFF * );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:34:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:40:1"
+            ],
+            "name": "TIFFGetTagListCount",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:34:5"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:42:10": {
+            "signature": "\nextern uint32_t TIFFGetTagListEntry(TIFF *, int tag_index );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:42:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:51:1"
+            ],
+            "name": "TIFFGetTagListEntry",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:42:10"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:58:17": {
+            "signature": "\nextern  TIFFTagMethods *TIFFAccessTagMethods(TIFF *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFTagMethods (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:340:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:58:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:62:1"
+            ],
+            "name": "TIFFAccessTagMethods",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:58:17"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:64:7": {
+            "signature": "\nextern  void *TIFFGetClientInfo(TIFF *, const char *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:64:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:76:1"
+            ],
+            "name": "TIFFGetClientInfo",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:64:7"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:78:6": {
+            "signature": "\nextern  void TIFFSetClientInfo(TIFF *, void *, const char *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:78:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:109:1"
+            ],
+            "name": "TIFFSetClientInfo",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_extension.c:78:6"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:155:1": {
+            "signature": "\nextern int TIFFFlushData(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:154:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:165:1"
+            ],
+            "name": "TIFFFlushData",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:155:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:31:1": {
+            "signature": "\nextern int TIFFFlush(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:30:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:57:1"
+            ],
+            "name": "TIFFFlush",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:31:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:78:5": {
+            "signature": "\nextern int TIFFForceStrileArrayWriting(TIFF* );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:78:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:143:1"
+            ],
+            "name": "TIFFForceStrileArrayWriting",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_flush.c:78:5"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:113:1": {
+            "signature": "\nextern uint32_t TIFFNumberOfTiles(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:112:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:136:1"
+            ],
+            "name": "TIFFNumberOfTiles",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:113:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:142:1": {
+            "signature": "\nextern uint64_t TIFFTileRowSize64(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:141:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:178:1"
+            ],
+            "name": "TIFFTileRowSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:142:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:180:1": {
+            "signature": "\nextern tmsize_t TIFFTileRowSize(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:179:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:186:1"
+            ],
+            "name": "TIFFTileRowSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:180:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:192:1": {
+            "signature": "\nextern uint64_t TIFFVTileSize64(TIFF* tif, uint32_t nrows);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:191:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:238:1"
+            ],
+            "name": "TIFFVTileSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:192:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:240:1": {
+            "signature": "\nextern tmsize_t TIFFVTileSize(TIFF* tif, uint32_t nrows);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:239:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:246:1"
+            ],
+            "name": "TIFFVTileSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:240:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:252:1": {
+            "signature": "\nextern uint64_t TIFFTileSize64(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:251:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:255:1"
+            ],
+            "name": "TIFFTileSize64",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:252:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:257:1": {
+            "signature": "\nextern tmsize_t TIFFTileSize(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:256:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:263:1"
+            ],
+            "name": "TIFFTileSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:257:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:272:1": {
+            "signature": "\nextern void TIFFDefaultTileSize(TIFF*, uint32_t*, uint32_t*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:271:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:275:1"
+            ],
+            "name": "TIFFDefaultTileSize",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:272:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:36:1": {
+            "signature": "\nextern uint32_t TIFFComputeTile(TIFF* tif, uint32_t x, uint32_t y, uint32_t z, uint16_t s);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:35:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:66:1"
+            ],
+            "name": "TIFFComputeTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:36:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:73:1": {
+            "signature": "\nextern int TIFFCheckTile(TIFF* tif, uint32_t x, uint32_t y, uint32_t z, uint16_t s);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:72:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:107:1"
+            ],
+            "name": "TIFFCheckTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_tile.c:73:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:215:1": {
+            "signature": "\nextern void TIFFRGBAImageEnd(TIFFRGBAImage*);",
+            "used_composites": [
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:16)",
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:199:8)"
+            ],
+            "used_typedefs": [
+                "TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:31)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:214:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:252:1"
+            ],
+            "name": "TIFFRGBAImageEnd",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:215:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:266:1": {
+            "signature": "\nextern int TIFFRGBAImageBegin(TIFFRGBAImage*, TIFF*, int, char [1024]);",
+            "used_composites": [
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:16)",
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:199:8)",
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:31)",
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:265:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:498:1"
+            ],
+            "name": "TIFFRGBAImageBegin",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:266:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2914:1": {
+            "signature": "\nextern int TIFFReadRGBAStrip(TIFF*, uint32_t, uint32_t * );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2913:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2918:1"
+            ],
+            "name": "TIFFReadRGBAStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2914:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2921:1": {
+            "signature": "\nextern int TIFFReadRGBAStripExt(TIFF*, uint32_t, uint32_t *, int stop_on_error );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2920:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2963:1"
+            ],
+            "name": "TIFFReadRGBAStripExt",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2921:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2972:1": {
+            "signature": "\nextern int TIFFReadRGBATile(TIFF*, uint32_t, uint32_t, uint32_t * );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2971:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2976:1"
+            ],
+            "name": "TIFFReadRGBATile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2972:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2980:1": {
+            "signature": "\nextern int TIFFReadRGBATileExt(TIFF*, uint32_t, uint32_t, uint32_t *, int stop_on_error );",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2979:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:3074:1"
+            ],
+            "name": "TIFFReadRGBATileExt",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:2980:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:501:1": {
+            "signature": "\nextern int TIFFRGBAImageGet(TIFFRGBAImage*, uint32_t*, uint32_t, uint32_t);",
+            "used_composites": [
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:16)",
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:199:8)"
+            ],
+            "used_typedefs": [
+                "TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:31)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:500:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:513:1"
+            ],
+            "name": "TIFFRGBAImageGet",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:501:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:520:1": {
+            "signature": "\nextern int TIFFReadRGBAImageOriented(TIFF*, uint32_t, uint32_t, uint32_t*, int, int);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:519:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:539:1"
+            ],
+            "name": "TIFFReadRGBAImageOriented",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:520:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:546:1": {
+            "signature": "\nextern int TIFFReadRGBAImage(TIFF*, uint32_t, uint32_t, uint32_t*, int);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:545:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:551:1"
+            ],
+            "name": "TIFFReadRGBAImage",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:546:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:75:1": {
+            "signature": "\nextern int TIFFRGBAImageOK(TIFF*, char [1024]);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:74:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:212:1"
+            ],
+            "name": "TIFFRGBAImageOK",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_getimage.c:75:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1083:1": {
+            "signature": "\nextern tmsize_t TIFFReadRawTile(TIFF* tif, uint32_t tile, void* buf, tmsize_t size);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1082:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1113:1"
+            ],
+            "name": "TIFFReadRawTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1083:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1279:1": {
+            "signature": "\nextern int TIFFReadBufferSetup(TIFF* tif, void* bp, tmsize_t size);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1278:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1316:1"
+            ],
+            "name": "TIFFReadBufferSetup",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1279:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1433:10": {
+            "signature": "\nextern int      TIFFReadFromUserBuffer(TIFF* tif, uint32_t strile,\n                                       void* inbuf, tmsize_t insize,\n                                       void* outbuf, tmsize_t outsize);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1433:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1509:1"
+            ],
+            "name": "TIFFReadFromUserBuffer",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:1433:10"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:437:1": {
+            "signature": "\nextern int TIFFReadScanline(TIFF* tif, void* buf, uint32_t row, uint16_t sample);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:436:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:458:1"
+            ],
+            "name": "TIFFReadScanline",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:437:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:504:1": {
+            "signature": "\nextern tmsize_t TIFFReadEncodedStrip(TIFF* tif, uint32_t strip, void* buf, tmsize_t size);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:503:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:540:1"
+            ],
+            "name": "TIFFReadEncodedStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:504:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:682:1": {
+            "signature": "\nextern tmsize_t TIFFReadRawStrip(TIFF* tif, uint32_t strip, void* buf, tmsize_t size);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:681:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:713:1"
+            ],
+            "name": "TIFFReadRawStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:682:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:900:1": {
+            "signature": "\nextern tmsize_t TIFFReadTile(TIFF* tif, void* buf, uint32_t x, uint32_t y, uint32_t z, uint16_t s);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:899:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:906:1"
+            ],
+            "name": "TIFFReadTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:900:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:913:1": {
+            "signature": "\nextern tmsize_t TIFFReadEncodedTile(TIFF* tif, uint32_t tile, void* buf, tmsize_t size);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:912:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:955:1"
+            ],
+            "name": "TIFFReadEncodedTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_read.c:913:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:514:1": {
+            "signature": "\nextern const char* TIFFFileName(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:513:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:517:1"
+            ],
+            "name": "TIFFFileName",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:514:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:523:1": {
+            "signature": "\nextern const char* TIFFSetFileName(TIFF*, const char *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:522:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:528:1"
+            ],
+            "name": "TIFFSetFileName",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:523:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:534:1": {
+            "signature": "\nextern int TIFFFileno(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:533:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:537:1"
+            ],
+            "name": "TIFFFileno",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:534:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:543:1": {
+            "signature": "\nextern int TIFFSetFileno(TIFF*, int);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:542:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:548:1"
+            ],
+            "name": "TIFFSetFileno",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:543:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:554:1": {
+            "signature": "\nextern thandle_t TIFFClientdata(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "thandle_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:553:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:557:1"
+            ],
+            "name": "TIFFClientdata",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:554:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:563:1": {
+            "signature": "\nextern thandle_t TIFFSetClientdata(TIFF*, thandle_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "thandle_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:562:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:568:1"
+            ],
+            "name": "TIFFSetClientdata",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:563:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:574:1": {
+            "signature": "\nextern int TIFFGetMode(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:573:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:577:1"
+            ],
+            "name": "TIFFGetMode",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:574:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:583:1": {
+            "signature": "\nextern int TIFFSetMode(TIFF*, int);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:582:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:588:1"
+            ],
+            "name": "TIFFSetMode",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:583:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:595:1": {
+            "signature": "\nextern int TIFFIsTiled(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:594:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:598:1"
+            ],
+            "name": "TIFFIsTiled",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:595:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:604:1": {
+            "signature": "\nextern uint32_t TIFFCurrentRow(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:603:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:607:1"
+            ],
+            "name": "TIFFCurrentRow",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:604:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:613:1": {
+            "signature": "\nextern uint16_t TIFFCurrentDirectory(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:612:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:616:1"
+            ],
+            "name": "TIFFCurrentDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:613:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:622:1": {
+            "signature": "\nextern uint32_t TIFFCurrentStrip(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:621:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:625:1"
+            ],
+            "name": "TIFFCurrentStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:622:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:631:1": {
+            "signature": "\nextern uint32_t TIFFCurrentTile(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:630:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:634:1"
+            ],
+            "name": "TIFFCurrentTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:631:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:640:1": {
+            "signature": "\nextern int TIFFIsByteSwapped(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:639:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:643:1"
+            ],
+            "name": "TIFFIsByteSwapped",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:640:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:649:1": {
+            "signature": "\nextern int TIFFIsUpSampled(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:648:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:652:1"
+            ],
+            "name": "TIFFIsUpSampled",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:649:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:658:1": {
+            "signature": "\nextern int TIFFIsMSB2LSB(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:657:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:661:1"
+            ],
+            "name": "TIFFIsMSB2LSB",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:658:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:667:1": {
+            "signature": "\nextern int TIFFIsBigEndian(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:666:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:670:1"
+            ],
+            "name": "TIFFIsBigEndian",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:667:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:676:1": {
+            "signature": "\nextern TIFFReadWriteProc TIFFGetReadProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:675:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:679:1"
+            ],
+            "name": "TIFFGetReadProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:676:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:685:1": {
+            "signature": "\nextern TIFFReadWriteProc TIFFGetWriteProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:684:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:688:1"
+            ],
+            "name": "TIFFGetWriteProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:685:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:694:1": {
+            "signature": "\nextern TIFFSeekProc TIFFGetSeekProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:693:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:697:1"
+            ],
+            "name": "TIFFGetSeekProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:694:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:703:1": {
+            "signature": "\nextern TIFFCloseProc TIFFGetCloseProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:702:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:706:1"
+            ],
+            "name": "TIFFGetCloseProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:703:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:712:1": {
+            "signature": "\nextern TIFFSizeProc TIFFGetSizeProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:711:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:715:1"
+            ],
+            "name": "TIFFGetSizeProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:712:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:71:1": {
+            "signature": "\nextern TIFF* TIFFClientOpen(const char*, const char*,\n\t    thandle_t,\n\t    TIFFReadWriteProc, TIFFReadWriteProc,\n\t    TIFFSeekProc, TIFFCloseProc,\n\t    TIFFSizeProc,\n\t    TIFFMapFileProc, TIFFUnmapFileProc);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "thandle_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15)",
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:70:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:504:1"
+            ],
+            "name": "TIFFClientOpen",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:71:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:721:1": {
+            "signature": "\nextern TIFFMapFileProc TIFFGetMapFileProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:720:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:724:1"
+            ],
+            "name": "TIFFGetMapFileProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:721:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:730:1": {
+            "signature": "\nextern TIFFUnmapFileProc TIFFGetUnmapFileProc(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:729:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:733:1"
+            ],
+            "name": "TIFFGetUnmapFileProc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_open.c:730:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:208:1": {
+            "signature": "\nextern int TIFFVGetFieldDefaulted(TIFF* tif, uint32_t tag, va_list ap);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:207:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:337:1"
+            ],
+            "name": "TIFFVGetFieldDefaulted",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:208:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:344:1": {
+            "signature": "\nextern int TIFFGetFieldDefaulted(TIFF* tif, uint32_t tag, ...);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:343:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:353:1"
+            ],
+            "name": "TIFFGetFieldDefaulted",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_aux.c:344:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_codec.c:149:1": {
+            "signature": "\nextern int TIFFIsCODECConfigured(uint16_t);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_codec.c:148:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_codec.c:163:1"
+            ],
+            "name": "TIFFIsCODECConfigured",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_codec.c:149:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:121:1": {
+            "signature": "\nextern void TIFFClose(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:120:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:128:1"
+            ],
+            "name": "TIFFClose",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:121:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:45:1": {
+            "signature": "\nextern void TIFFCleanup(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:44:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:104:1"
+            ],
+            "name": "TIFFCleanup",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_close.c:45:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:1062:1": {
+            "signature": "\nextern int TIFFMergeFieldInfo(TIFF*, const TIFFFieldInfo[], uint32_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFFieldInfo (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:557:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:1061:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:1129:1"
+            ],
+            "name": "TIFFMergeFieldInfo",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:1062:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:536:1": {
+            "signature": "\nextern int TIFFDataWidth(TIFFDataType);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFDataType (/promefuzz/database/libtiff/latest/code/libtiff/tiff.h:159:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:535:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:564:1"
+            ],
+            "name": "TIFFDataWidth",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:536:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:680:1": {
+            "signature": "\nextern const TIFFField* TIFFFindField(TIFF *, uint32_t, TIFFDataType);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)",
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFDataType (/promefuzz/database/libtiff/latest/code/libtiff/tiff.h:159:3)",
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:679:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:702:1"
+            ],
+            "name": "TIFFFindField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:680:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:732:1": {
+            "signature": "\nextern const TIFFField* TIFFFieldWithTag(TIFF*, uint32_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)",
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:731:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:741:1"
+            ],
+            "name": "TIFFFieldWithTag",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:732:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:744:1": {
+            "signature": "\nextern const TIFFField* TIFFFieldWithName(TIFF*, const char *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)",
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:743:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:753:1"
+            ],
+            "name": "TIFFFieldWithName",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:744:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:756:1": {
+            "signature": "\nextern uint32_t TIFFFieldTag(const TIFFField*);",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:755:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:759:1"
+            ],
+            "name": "TIFFFieldTag",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:756:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:762:1": {
+            "signature": "\nextern const char* TIFFFieldName(const TIFFField*);",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:761:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:765:1"
+            ],
+            "name": "TIFFFieldName",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:762:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:768:1": {
+            "signature": "\nextern TIFFDataType TIFFFieldDataType(const TIFFField*);",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)",
+                "TIFFDataType (/promefuzz/database/libtiff/latest/code/libtiff/tiff.h:159:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:767:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:771:1"
+            ],
+            "name": "TIFFFieldDataType",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:768:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:774:1": {
+            "signature": "\nextern int TIFFFieldPassCount(const TIFFField*);",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:773:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:777:1"
+            ],
+            "name": "TIFFFieldPassCount",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:774:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:780:1": {
+            "signature": "\nextern int TIFFFieldReadCount(const TIFFField*);",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:779:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:783:1"
+            ],
+            "name": "TIFFFieldReadCount",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:780:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:786:1": {
+            "signature": "\nextern int TIFFFieldWriteCount(const TIFFField*);",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:785:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:789:1"
+            ],
+            "name": "TIFFFieldWriteCount",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirinfo.c:786:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:185:1": {
+            "signature": "\nextern const TIFFCodec* TIFFFindCODEC(uint16_t);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCodec (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:256:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:184:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:197:1"
+            ],
+            "name": "TIFFFindCODEC",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:185:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:200:1": {
+            "signature": "\nextern TIFFCodec* TIFFRegisterCODEC(uint16_t, const char*, TIFFInitMethod);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCodec (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:256:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:199:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:220:1"
+            ],
+            "name": "TIFFRegisterCODEC",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:200:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:223:1": {
+            "signature": "\nextern void TIFFUnRegisterCODEC(TIFFCodec*);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCodec (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:256:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:222:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:236:1"
+            ],
+            "name": "TIFFUnRegisterCODEC",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:223:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:251:1": {
+            "signature": "\nextern TIFFCodec* TIFFGetConfiguredCODECs(void);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCodec (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:256:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:250:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:293:1"
+            ],
+            "name": "TIFFGetConfiguredCODECs",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_compress.c:251:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1102:1": {
+            "signature": "\nextern void LogLuv32toXYZ(uint32_t, float*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1101:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1121:1"
+            ],
+            "name": "LogLuv32toXYZ",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1102:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1127:1": {
+            "signature": "\nextern uint32_t LogLuv32fromXYZ(float*, int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1126:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1150:1"
+            ],
+            "name": "LogLuv32fromXYZ",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1127:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:743:1": {
+            "signature": "\nextern double LogL16toY(int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:742:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:752:1"
+            ],
+            "name": "LogL16toY",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:743:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:758:1": {
+            "signature": "\nextern int LogL16fromY(double, int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:757:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:769:1"
+            ],
+            "name": "LogL16fromY",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:758:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:807:1": {
+            "signature": "\nextern void XYZtoRGB24(float*, uint8_t*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:806:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:819:1"
+            ],
+            "name": "XYZtoRGB24",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:807:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:825:1": {
+            "signature": "\nextern double LogL10toY(int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:824:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:830:1"
+            ],
+            "name": "LogL10toY",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:825:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:836:1": {
+            "signature": "\nextern int LogL10fromY(double, int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:835:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:844:1"
+            ],
+            "name": "LogL10fromY",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:836:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:907:1": {
+            "signature": "\nextern int uv_encode(double, double, int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:906:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:923:1"
+            ],
+            "name": "uv_encode",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:907:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:929:1": {
+            "signature": "\nextern int uv_decode(double*, double*, int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:928:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:955:1"
+            ],
+            "name": "uv_decode",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:929:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:961:1": {
+            "signature": "\nextern void LogLuv24toXYZ(uint32_t, float*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:960:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:983:1"
+            ],
+            "name": "LogLuv24toXYZ",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:961:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:989:1": {
+            "signature": "\nextern uint32_t LogLuv24fromXYZ(float*, int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:988:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:1009:1"
+            ],
+            "name": "LogLuv24fromXYZ",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_luv.c:989:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1270:1": {
+            "signature": "\nextern int TIFFGetField(TIFF* tif, uint32_t tag, ...);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1269:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1279:1"
+            ],
+            "name": "TIFFGetField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1270:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1288:1": {
+            "signature": "\nextern int TIFFVGetField(TIFF* tif, uint32_t tag, va_list ap);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1287:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1293:1"
+            ],
+            "name": "TIFFVGetField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1288:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1306:1": {
+            "signature": "\nextern void TIFFFreeDirectory(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1305:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1341:1"
+            ],
+            "name": "TIFFFreeDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1306:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1350:1": {
+            "signature": "\nextern TIFFExtendProc TIFFSetTagExtender(TIFFExtendProc);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1349:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1355:1"
+            ],
+            "name": "TIFFSetTagExtender",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1350:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1365:1": {
+            "signature": "\nextern int TIFFCreateDirectory(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1364:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1375:1"
+            ],
+            "name": "TIFFCreateDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1365:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1378:1": {
+            "signature": "\nextern int TIFFCreateCustomDirectory(TIFF*,const TIFFFieldArray*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)",
+                "struct _TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:319:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1377:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1396:1"
+            ],
+            "name": "TIFFCreateCustomDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1378:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1399:1": {
+            "signature": "\nextern int TIFFCreateEXIFDirectory(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1398:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1404:1"
+            ],
+            "name": "TIFFCreateEXIFDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1399:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1410:1": {
+            "signature": "\nextern int TIFFCreateGPSDirectory(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1409:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1415:1"
+            ],
+            "name": "TIFFCreateGPSDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1410:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1635:1": {
+            "signature": "\nextern uint16_t TIFFNumberOfDirectories(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1634:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1659:1"
+            ],
+            "name": "TIFFNumberOfDirectories",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1635:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1666:1": {
+            "signature": "\nextern int TIFFSetDirectory(TIFF*, uint16_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1665:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1691:1"
+            ],
+            "name": "TIFFSetDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1666:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1700:1": {
+            "signature": "\nextern int TIFFSetSubDirectory(TIFF*, uint64_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1699:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1709:1"
+            ],
+            "name": "TIFFSetSubDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1700:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1715:1": {
+            "signature": "\nextern uint64_t TIFFCurrentDirOffset(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1714:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1718:1"
+            ],
+            "name": "TIFFCurrentDirOffset",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1715:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1725:1": {
+            "signature": "\nextern int TIFFLastDirectory(TIFF*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1724:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1728:1"
+            ],
+            "name": "TIFFLastDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1725:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1734:1": {
+            "signature": "\nextern int TIFFUnlinkDirectory(TIFF*, uint16_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1733:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1826:1"
+            ],
+            "name": "TIFFUnlinkDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:1734:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:828:1": {
+            "signature": "\nextern int TIFFSetField(TIFF*, uint32_t, ...);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:827:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:837:1"
+            ],
+            "name": "TIFFSetField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:828:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:843:1": {
+            "signature": "\nextern int TIFFUnsetField(TIFF*, uint32_t);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:842:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:878:1"
+            ],
+            "name": "TIFFUnsetField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:843:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:887:1": {
+            "signature": "\nextern int TIFFVSetField(TIFF*, uint32_t, va_list);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:886:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:891:1"
+            ],
+            "name": "TIFFVSetField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.c:887:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:203:1": {
+            "signature": "/* __WIN32__ */\nextern TIFF* TIFFFdOpen(int, const char*, const char*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:202:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:217:1"
+            ],
+            "name": "TIFFFdOpen",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:203:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:223:1": {
+            "signature": "\nextern TIFF* TIFFOpen(const char*, const char*);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:222:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:252:1"
+            ],
+            "name": "TIFFOpen",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:223:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:309:1": {
+            "signature": "\nextern void* _TIFFmalloc(tmsize_t s);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:308:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:315:1"
+            ],
+            "name": "_TIFFmalloc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:309:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:317:7": {
+            "signature": "\nextern void* _TIFFcalloc(tmsize_t nmemb, tmsize_t siz);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:317:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:323:1"
+            ],
+            "name": "_TIFFcalloc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:317:7"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:326:1": {
+            "signature": "\nextern void _TIFFfree(void* p);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:325:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:329:1"
+            ],
+            "name": "_TIFFfree",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:326:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:332:1": {
+            "signature": "\nextern void* _TIFFrealloc(void* p, tmsize_t s);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:331:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:335:1"
+            ],
+            "name": "_TIFFrealloc",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:332:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:338:1": {
+            "signature": "\nextern void _TIFFmemset(void* p, int v, tmsize_t c);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:337:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:341:1"
+            ],
+            "name": "_TIFFmemset",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:338:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:344:1": {
+            "signature": "\nextern void _TIFFmemcpy(void* d, const void* s, tmsize_t c);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:343:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:347:1"
+            ],
+            "name": "_TIFFmemcpy",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:344:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:350:1": {
+            "signature": "\nextern int _TIFFmemcmp(const void* p1, const void* p2, tmsize_t c);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:349:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:353:1"
+            ],
+            "name": "_TIFFmemcmp",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_unix.c:350:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:33:1": {
+            "signature": "\nextern TIFFErrorHandler TIFFSetErrorHandler(TIFFErrorHandler);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:32:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:38:1"
+            ],
+            "name": "TIFFSetErrorHandler",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:33:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:41:1": {
+            "signature": "\nextern TIFFErrorHandlerExt TIFFSetErrorHandlerExt(TIFFErrorHandlerExt);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:40:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:46:1"
+            ],
+            "name": "TIFFSetErrorHandlerExt",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:41:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:49:1": {
+            "signature": "\nextern void TIFFError(const char*, const char*, ...) TIFF_ATTRIBUTE((__format__ (__printf__,2,3)));",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:48:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:62:1"
+            ],
+            "name": "TIFFError",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:49:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:65:1": {
+            "signature": "\nextern void TIFFErrorExt(thandle_t, const char*, const char*, ...) TIFF_ATTRIBUTE((__format__ (__printf__,3,4)));",
+            "used_composites": [],
+            "used_typedefs": [
+                "thandle_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:64:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:78:1"
+            ],
+            "name": "TIFFErrorExt",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_error.c:65:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:103:1": {
+            "signature": "\nextern void TIFFSwabArrayOfLong(uint32_t* lp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:102:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:115:1"
+            ],
+            "name": "TIFFSwabArrayOfLong",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:103:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:120:1": {
+            "signature": "\nextern void TIFFSwabArrayOfLong8(uint64_t* lp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:119:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:134:1"
+            ],
+            "name": "TIFFSwabArrayOfLong8",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:120:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:139:1": {
+            "signature": "\nextern void TIFFSwabFloat(float*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:138:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:146:1"
+            ],
+            "name": "TIFFSwabFloat",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:139:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:151:1": {
+            "signature": "\nextern void TIFFSwabArrayOfFloat(float* fp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:150:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:163:1"
+            ],
+            "name": "TIFFSwabArrayOfFloat",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:151:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:168:1": {
+            "signature": "\nextern void TIFFSwabDouble(double*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:167:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:177:1"
+            ],
+            "name": "TIFFSwabDouble",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:168:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:182:1": {
+            "signature": "\nextern void TIFFSwabArrayOfDouble(double* dp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:181:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:196:1"
+            ],
+            "name": "TIFFSwabArrayOfDouble",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:182:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:278:1": {
+            "signature": "\nextern const unsigned char* TIFFGetBitRevTable(int);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:277:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:281:1"
+            ],
+            "name": "TIFFGetBitRevTable",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:278:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:284:1": {
+            "signature": "\nextern void TIFFReverseBits(uint8_t* cp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:283:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:301:1"
+            ],
+            "name": "TIFFReverseBits",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:284:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:34:1": {
+            "signature": "\nextern void TIFFSwabShort(uint16_t*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:33:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:40:1"
+            ],
+            "name": "TIFFSwabShort",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:34:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:45:1": {
+            "signature": "\nextern void TIFFSwabLong(uint32_t*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:44:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:52:1"
+            ],
+            "name": "TIFFSwabLong",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:45:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:57:1": {
+            "signature": "\nextern void TIFFSwabLong8(uint64_t*);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:56:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:66:1"
+            ],
+            "name": "TIFFSwabLong8",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:57:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:71:1": {
+            "signature": "\nextern void TIFFSwabArrayOfShort(uint16_t* wp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:70:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:82:1"
+            ],
+            "name": "TIFFSwabArrayOfShort",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:71:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:87:1": {
+            "signature": "\nextern void TIFFSwabArrayOfTriples(uint8_t* tp, tmsize_t n);",
+            "used_composites": [],
+            "used_typedefs": [
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:86:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:98:1"
+            ],
+            "name": "TIFFSwabArrayOfTriples",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_swab.c:87:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:212:1": {
+            "signature": "\nextern tmsize_t TIFFWriteEncodedStrip(TIFF* tif, uint32_t strip, void* data, tmsize_t cc);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:211:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:308:1"
+            ],
+            "name": "TIFFWriteEncodedStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:212:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:316:1": {
+            "signature": "\nextern tmsize_t TIFFWriteRawStrip(TIFF* tif, uint32_t strip, void* data, tmsize_t cc);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:315:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:357:1"
+            ],
+            "name": "TIFFWriteRawStrip",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:316:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:364:1": {
+            "signature": "\nextern tmsize_t TIFFWriteTile(TIFF* tif, void* buf, uint32_t x, uint32_t y, uint32_t z, uint16_t s);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:363:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:376:1"
+            ],
+            "name": "TIFFWriteTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:364:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:391:1": {
+            "signature": "\nextern tmsize_t TIFFWriteEncodedTile(TIFF* tif, uint32_t tile, void* data, tmsize_t cc);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:390:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:491:1"
+            ],
+            "name": "TIFFWriteEncodedTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:391:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:47:1": {
+            "signature": "\nextern int TIFFWriteScanline(TIFF* tif, void* buf, uint32_t row, uint16_t sample);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:46:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:177:1"
+            ],
+            "name": "TIFFWriteScanline",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:47:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:503:1": {
+            "signature": "\nextern tmsize_t TIFFWriteRawTile(TIFF* tif, uint32_t tile, void* data, tmsize_t cc);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:502:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:517:1"
+            ],
+            "name": "TIFFWriteRawTile",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:503:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:523:1": {
+            "signature": "\nextern int TIFFSetupStrips(TIFF *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:522:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:562:1"
+            ],
+            "name": "TIFFSetupStrips",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:523:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:572:1": {
+            "signature": "\nextern int TIFFWriteCheck(TIFF*, int, const char *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:571:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:651:1"
+            ],
+            "name": "TIFFWriteCheck",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:572:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:657:1": {
+            "signature": "\nextern int TIFFWriteBufferSetup(TIFF* tif, void* bp, tmsize_t size);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:656:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:697:1"
+            ],
+            "name": "TIFFWriteBufferSetup",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:657:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:845:1": {
+            "signature": "/* table of tag datatype widths */\nextern void TIFFSetWriteOffset(TIFF* tif, toff_t off);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "toff_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:68:18)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:844:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:848:1"
+            ],
+            "name": "TIFFSetWriteOffset",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_write.c:845:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:3580:1": {
+            "signature": "\nextern int TIFFReadDirectory(TIFF* tif);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:3579:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4368:1"
+            ],
+            "name": "TIFFReadDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:3580:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4441:1": {
+            "signature": "\nextern int TIFFReadCustomDirectory(TIFF* tif, toff_t diroff, const TIFFFieldArray* infoarray);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)",
+                "struct _TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "toff_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:68:18)",
+                "TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:319:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4440:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4542:1"
+            ],
+            "name": "TIFFReadCustomDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4441:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4549:1": {
+            "signature": "\nextern int TIFFReadEXIFDirectory(TIFF* tif, toff_t diroff);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "toff_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:68:18)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4548:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4554:1"
+            ],
+            "name": "TIFFReadEXIFDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4549:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4560:1": {
+            "signature": "\nextern int TIFFReadGPSDirectory(TIFF* tif, toff_t diroff);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "toff_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:68:18)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4559:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4565:1"
+            ],
+            "name": "TIFFReadGPSDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:4560:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6390:10": {
+            "signature": "\nextern uint64_t TIFFGetStrileOffset(TIFF *tif, uint32_t strile);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6390:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6393:1"
+            ],
+            "name": "TIFFGetStrileOffset",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6390:10"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6396:10": {
+            "signature": "\nextern uint64_t TIFFGetStrileOffsetWithErr(TIFF *tif, uint32_t strile, int *pbErr);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6396:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6402:1"
+            ],
+            "name": "TIFFGetStrileOffsetWithErr",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6396:10"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6405:10": {
+            "signature": "\nextern uint64_t TIFFGetStrileByteCount(TIFF *tif, uint32_t strile);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6405:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6408:1"
+            ],
+            "name": "TIFFGetStrileByteCount",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6405:10"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6411:10": {
+            "signature": "\nextern uint64_t TIFFGetStrileByteCountWithErr(TIFF *tif, uint32_t strile, int *pbErr);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6411:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6417:1"
+            ],
+            "name": "TIFFGetStrileByteCountWithErr",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirread.c:6411:10"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:123:1": {
+            "signature": "\nextern int TIFFCIELabToRGBInit(TIFFCIELabToRGB*, const TIFFDisplay *, float*);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCIELabToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3)",
+                "TIFFDisplay (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:154:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:122:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:166:1"
+            ],
+            "name": "TIFFCIELabToRGBInit",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:123:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:181:1": {
+            "signature": "\nextern void TIFFYCbCrtoRGB(TIFFYCbCrToRGB *, uint32_t, int32_t, int32_t,\n                           uint32_t *, uint32_t *, uint32_t *);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFYCbCrToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:163:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:180:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:198:1"
+            ],
+            "name": "TIFFYCbCrtoRGB",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:181:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:234:1": {
+            "signature": "\nextern int TIFFYCbCrToRGBInit(TIFFYCbCrToRGB*, float*, float*);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFYCbCrToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:163:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:233:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:292:1"
+            ],
+            "name": "TIFFYCbCrToRGBInit",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:234:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:44:1": {
+            "signature": "\nextern void TIFFCIELabToXYZ(TIFFCIELabToRGB *, uint32_t, int32_t, int32_t,\n                            float *, float *, float *);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCIELabToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:43:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:69:1"
+            ],
+            "name": "TIFFCIELabToXYZ",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:44:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:76:1": {
+            "signature": "\nextern void TIFFXYZToRGB(TIFFCIELabToRGB *, float, float, float,\n                         uint32_t *, uint32_t *, uint32_t *);",
+            "used_composites": [],
+            "used_typedefs": [
+                "TIFFCIELabToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:75:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:115:1"
+            ],
+            "name": "TIFFXYZToRGB",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_color.c:76:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_version.c:29:1": {
+            "signature": "\nextern const char* TIFFGetVersion(void);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_version.c:28:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_version.c:32:1"
+            ],
+            "name": "TIFFGetVersion",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_version.c:29:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:33:1": {
+            "signature": "\nextern TIFFErrorHandler TIFFSetWarningHandler(TIFFErrorHandler);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:32:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:38:1"
+            ],
+            "name": "TIFFSetWarningHandler",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:33:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:41:1": {
+            "signature": "\nextern TIFFErrorHandlerExt TIFFSetWarningHandlerExt(TIFFErrorHandlerExt);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:40:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:46:1"
+            ],
+            "name": "TIFFSetWarningHandlerExt",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:41:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:49:1": {
+            "signature": "\nextern void TIFFWarning(const char*, const char*, ...) TIFF_ATTRIBUTE((__format__ (__printf__,2,3)));",
+            "used_composites": [],
+            "used_typedefs": [],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:48:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:62:1"
+            ],
+            "name": "TIFFWarning",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:49:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:65:1": {
+            "signature": "\nextern void TIFFWarningExt(thandle_t, const char*, const char*, ...) TIFF_ATTRIBUTE((__format__ (__printf__,3,4)));",
+            "used_composites": [],
+            "used_typedefs": [
+                "thandle_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:64:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:78:1"
+            ],
+            "name": "TIFFWarningExt",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_warning.c:65:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:194:1": {
+            "signature": "\nextern int TIFFWriteDirectory(TIFF *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:193:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:197:1"
+            ],
+            "name": "TIFFWriteDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:194:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:224:5": {
+            "signature": "\nextern int TIFFDeferStrileArrayWriting(TIFF *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:224:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:242:1"
+            ],
+            "name": "TIFFDeferStrileArrayWriting",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:224:5"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:251:1": {
+            "signature": "\nextern int TIFFCheckpointDirectory(TIFF *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:250:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:260:1"
+            ],
+            "name": "TIFFCheckpointDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:251:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:263:1": {
+            "signature": "\nextern int TIFFWriteCustomDirectory(TIFF *, uint64_t *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:262:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:266:1"
+            ],
+            "name": "TIFFWriteCustomDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:263:1"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:275:1": {
+            "signature": "\nextern int TIFFRewriteDirectory(TIFF *);",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:274:1",
+                "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:418:1"
+            ],
+            "name": "TIFFRewriteDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dirwrite.c:275:1"
+        }
+    },
+    "composite_infos": {
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8": {
+            "definition": "\nstruct tiff {\n\tchar*                tif_name;         /* name of open file */\n\tint                  tif_fd;           /* open file descriptor */\n\tint                  tif_mode;         /* open mode (O_*) */\n\tuint32_t               tif_flags;\n\t#define TIFF_FILLORDER   0x00003U /* natural bit fill order for machine */\n\t#define TIFF_DIRTYHEADER 0x00004U /* header must be written on close */\n\t#define TIFF_DIRTYDIRECT 0x00008U /* current directory must be written */\n\t#define TIFF_BUFFERSETUP 0x00010U /* data buffers setup */\n\t#define TIFF_CODERSETUP  0x00020U /* encoder/decoder setup done */\n\t#define TIFF_BEENWRITING 0x00040U /* written 1+ scanlines to file */\n\t#define TIFF_SWAB        0x00080U /* byte swap file information */\n\t#define TIFF_NOBITREV    0x00100U /* inhibit bit reversal logic */\n\t#define TIFF_MYBUFFER    0x00200U /* my raw data buffer; free on close */\n\t#define TIFF_ISTILED     0x00400U /* file is tile, not strip- based */\n\t#define TIFF_MAPPED      0x00800U /* file is mapped into memory */\n\t#define TIFF_POSTENCODE  0x01000U /* need call to postencode routine */\n\t#define TIFF_INSUBIFD    0x02000U /* currently writing a subifd */\n\t#define TIFF_UPSAMPLED   0x04000U /* library is doing data up-sampling */\n\t#define TIFF_STRIPCHOP   0x08000U /* enable strip chopping support */\n\t#define TIFF_HEADERONLY  0x10000U /* read header only, do not process the first directory */\n\t#define TIFF_NOREADRAW   0x20000U /* skip reading of raw uncompressed image data */\n\t#define TIFF_INCUSTOMIFD 0x40000U /* currently writing a custom IFD */\n\t#define TIFF_BIGTIFF     0x80000U /* read/write bigtiff */\n        #define TIFF_BUF4WRITE  0x100000U /* rawcc bytes are for writing */\n        #define TIFF_DIRTYSTRIP 0x200000U /* stripoffsets/stripbytecount dirty*/\n        #define TIFF_PERSAMPLE  0x400000U /* get/set per sample tags as arrays */\n        #define TIFF_BUFFERMMAP 0x800000U /* read buffer (tif_rawdata) points into mmap() memory */\n        #define TIFF_DEFERSTRILELOAD 0x1000000U /* defer strip/tile offset/bytecount array loading. */\n        #define TIFF_LAZYSTRILELOAD  0x2000000U /* lazy/ondemand loading of strip/tile offset/bytecount values. Only used if TIFF_DEFERSTRILELOAD is set and in read-only mode */\n        #define TIFF_CHOPPEDUPARRAYS 0x4000000U /* set when allocChoppedUpStripArrays() has modified strip array */\n\tuint64_t               tif_diroff;       /* file offset of current directory */\n\tuint64_t               tif_nextdiroff;   /* file offset of following directory */\n\tuint64_t*              tif_dirlist;      /* list of offsets to already seen directories to prevent IFD looping */\n\tuint16_t               tif_dirlistsize;  /* number of entries in offset list */\n\tuint16_t               tif_dirnumber;    /* number of already seen directories */\n\tTIFFDirectory        tif_dir;          /* internal rep of current directory */\n\tTIFFDirectory        tif_customdir;    /* custom IFDs are separated from the main ones */\n\tunion {\n\t\tTIFFHeaderCommon common;\n\t\tTIFFHeaderClassic classic;\n\t\tTIFFHeaderBig big;\n\t} tif_header;\n\tuint16_t               tif_header_size;  /* file's header block and its length */\n\tuint32_t               tif_row;          /* current scanline */\n\tuint16_t               tif_curdir;       /* current directory (index) */\n\tuint32_t               tif_curstrip;     /* current strip for read/write */\n\tuint64_t               tif_curoff;       /* current offset for read/write */\n\tuint64_t               tif_dataoff;      /* current offset for writing dir */\n\t/* SubIFD support */\n\tuint16_t               tif_nsubifd;      /* remaining subifds to write */\n\tuint64_t               tif_subifdoff;    /* offset for patching SubIFD link */\n\t/* tiling support */\n\tuint32_t               tif_col;          /* current column (offset by row too) */\n\tuint32_t               tif_curtile;      /* current tile for read/write */\n\ttmsize_t             tif_tilesize;     /* # of bytes in a tile */\n\t/* compression scheme hooks */\n\tint                  tif_decodestatus;\n\tTIFFBoolMethod       tif_fixuptags;    /* called in TIFFReadDirectory */\n\tTIFFBoolMethod       tif_setupdecode;  /* called once before predecode */\n\tTIFFPreMethod        tif_predecode;    /* pre- row/strip/tile decoding */\n\tTIFFBoolMethod       tif_setupencode;  /* called once before preencode */\n\tint                  tif_encodestatus;\n\tTIFFPreMethod        tif_preencode;    /* pre- row/strip/tile encoding */\n\tTIFFBoolMethod       tif_postencode;   /* post- row/strip/tile encoding */\n\tTIFFCodeMethod       tif_decoderow;    /* scanline decoding routine */\n\tTIFFCodeMethod       tif_encoderow;    /* scanline encoding routine */\n\tTIFFCodeMethod       tif_decodestrip;  /* strip decoding routine */\n\tTIFFCodeMethod       tif_encodestrip;  /* strip encoding routine */\n\tTIFFCodeMethod       tif_decodetile;   /* tile decoding routine */\n\tTIFFCodeMethod       tif_encodetile;   /* tile encoding routine */\n\tTIFFVoidMethod       tif_close;        /* cleanup-on-close routine */\n\tTIFFSeekMethod       tif_seek;         /* position within a strip routine */\n\tTIFFVoidMethod       tif_cleanup;      /* cleanup state routine */\n\tTIFFStripMethod      tif_defstripsize; /* calculate/constrain strip size */\n\tTIFFTileMethod       tif_deftilesize;  /* calculate/constrain tile size */\n\tuint8_t*               tif_data;         /* compression scheme private data */\n\t/* input/output buffering */\n\ttmsize_t             tif_scanlinesize; /* # of bytes in a scanline */\n\ttmsize_t             tif_scanlineskew; /* scanline skew for reading strips */\n\tuint8_t*               tif_rawdata;      /* raw data buffer */\n\ttmsize_t             tif_rawdatasize;  /* # of bytes in raw data buffer */\n        tmsize_t             tif_rawdataoff;   /* rawdata offset within strip */\n        tmsize_t             tif_rawdataloaded;/* amount of data in rawdata */\n\tuint8_t*               tif_rawcp;        /* current spot in raw buffer */\n\ttmsize_t             tif_rawcc;        /* bytes unread from raw buffer */\n\t/* memory-mapped file support */\n\tuint8_t*               tif_base;         /* base of mapped file */\n\ttmsize_t             tif_size;         /* size of mapped file region (bytes, thus tmsize_t) */\n\tTIFFMapFileProc      tif_mapproc;      /* map file method */\n\tTIFFUnmapFileProc    tif_unmapproc;    /* unmap file method */\n\t/* input/output callback methods */\n\tthandle_t            tif_clientdata;   /* callback parameter */\n\tTIFFReadWriteProc    tif_readproc;     /* read method */\n\tTIFFReadWriteProc    tif_writeproc;    /* write method */\n\tTIFFSeekProc         tif_seekproc;     /* lseek method */\n\tTIFFCloseProc        tif_closeproc;    /* close method */\n\tTIFFSizeProc         tif_sizeproc;     /* filesize method */\n\t/* post-decoding support */\n\tTIFFPostMethod       tif_postdecode;   /* post decoding routine */\n\t/* tag support */\n\tTIFFField**          tif_fields;       /* sorted table of registered tags */\n\tsize_t               tif_nfields;      /* # entries in registered tag table */\n\tconst TIFFField*     tif_foundfield;   /* cached pointer to already found tag */\n\tTIFFTagMethods       tif_tagmethods;   /* tag get/set/print routines */\n\tTIFFClientInfoLink*  tif_clientinfo;   /* extra client information. */\n\t/* Backward compatibility stuff. We need these two fields for\n\t * setting up an old tag extension scheme. */\n\tTIFFFieldArray*      tif_fieldscompat;\n\tsize_t               tif_nfieldscompat;\n};",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)",
+                "struct client_info (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:65:16)",
+                "struct _TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8)"
+            ],
+            "used_typedefs": [
+                "TIFFDirectory (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:125:3)",
+                "tmsize_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22)",
+                "thandle_t (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15)",
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)",
+                "TIFFTagMethods (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:340:3)",
+                "TIFFClientInfoLink (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:69:3)",
+                "TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:319:32)"
+            ],
+            "name": "struct tiff",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8": {
+            "definition": "\nstruct _TIFFField {\n\tuint32_t field_tag;                       /* field's tag */\n\tshort field_readcount;                  /* read count/TIFF_VARIABLE/TIFF_SPP */\n\tshort field_writecount;                 /* write count/TIFF_VARIABLE */\n\tTIFFDataType field_type;                /* type of associated data */\n\tuint32_t reserved;                        /* reserved for future extension */\n\tTIFFSetGetFieldType set_field_type;     /* type to be passed to TIFFSetField */\n\tTIFFSetGetFieldType get_field_type;     /* type to be passed to TIFFGetField */\n\tunsigned short field_bit;               /* bit in fieldsset bit vector */\n\tunsigned char field_oktochange;         /* if true, can change while writing */\n\tunsigned char field_passcount;          /* if true, pass dir count on set */\n\tchar* field_name;                       /* ASCII name */\n\tTIFFFieldArray* field_subfields;        /* if field points to child ifds, child ifd field definition array */\n};",
+            "used_composites": [
+                "struct _TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8)"
+            ],
+            "used_typedefs": [
+                "TIFFDataType (/promefuzz/database/libtiff/latest/code/libtiff/tiff.h:159:3)",
+                "TIFFSetGetFieldType (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:256:3)",
+                "TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:319:32)"
+            ],
+            "name": "struct _TIFFField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8": {
+            "definition": "\nstruct _TIFFFieldArray {\n\tTIFFFieldArrayType type;    /* array type, will be used to determine if IFD is image and such */\n\tuint32_t allocated_size;      /* 0 if array is constant, other if modified by future definition extension support */\n\tuint32_t count;               /* number of elements in fields array */\n\tTIFFField* fields;          /* actual field info */\n};",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [
+                "TIFFFieldArrayType (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:275:3)",
+                "TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27)"
+            ],
+            "name": "struct _TIFFFieldArray",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:65:16": {
+            "definition": "\nstruct client_info {\n    struct client_info *next;\n    void *data;\n    char *name;\n} TIFFClientInfoLink;",
+            "used_composites": [
+                "struct client_info (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:65:16)"
+            ],
+            "used_typedefs": [],
+            "name": "struct client_info",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:65:16"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:16": {
+            "definition": "/*\n * RGBA-style image support.\n */\nstruct _TIFFRGBAImage TIFFRGBAImage;",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFRGBValue (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:138:23)",
+                "TIFFYCbCrToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:163:3)",
+                "TIFFCIELabToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3)"
+            ],
+            "name": "struct _TIFFRGBAImage",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:16"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:199:8": {
+            "definition": "/*\n * RGBA-reader state.\n */\nstruct _TIFFRGBAImage {\n\tTIFF* tif;                              /* image handle */\n\tint stoponerr;                          /* stop on read error */\n\tint isContig;                           /* data is packed/separate */\n\tint alpha;                              /* type of alpha data present */\n\tuint32_t width;                           /* image width */\n\tuint32_t height;                          /* image height */\n\tuint16_t bitspersample;                   /* image bits/sample */\n\tuint16_t samplesperpixel;                 /* image samples/pixel */\n\tuint16_t orientation;                     /* image orientation */\n\tuint16_t req_orientation;                 /* requested orientation */\n\tuint16_t photometric;                     /* image photometric interp */\n\tuint16_t* redcmap;                        /* colormap palette */\n\tuint16_t* greencmap;\n\tuint16_t* bluecmap;\n\t/* get image data routine */\n\tint (*get)(TIFFRGBAImage*, uint32_t*, uint32_t, uint32_t);\n\t/* put decoded strip/tile */\n\tunion {\n\t    void (*any)(TIFFRGBAImage*);\n\t    tileContigRoutine contig;\n\t    tileSeparateRoutine separate;\n\t} put;\n\tTIFFRGBValue* Map;                      /* sample mapping array */\n\tuint32_t** BWmap;                         /* black&white map */\n\tuint32_t** PALmap;                        /* palette image map */\n\tTIFFYCbCrToRGB* ycbcr;                  /* YCbCr conversion state */\n\tTIFFCIELabToRGB* cielab;                /* CIE L*a*b conversion state */\n\n\tuint8_t* UaToAa;                          /* Unassociated alpha to associated alpha conversion LUT */\n\tuint8_t* Bitdepth16To8;                   /* LUT for conversion from 16bit to 8bit values */\n\n\tint row_offset;\n\tint col_offset;\n};",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [
+                "TIFF (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21)",
+                "TIFFRGBValue (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:138:23)",
+                "TIFFYCbCrToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:163:3)",
+                "TIFFCIELabToRGB (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3)"
+            ],
+            "name": "struct _TIFFRGBAImage",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:199:8"
+        }
+    },
+    "class_infos": {},
+    "typedef_infos": {
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:125:3": {
+            "definition": "/*\n * Internal format of a TIFF directory entry.\n */\ntypedef struct TIFFDirectory;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFDirectory",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:125:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22": {
+            "definition": "/*\n * The following typedefs define the intrinsic size of\n * data types used in the *exported* interfaces.  These\n * definitions depend on the proper definition of types\n * in tiff.h.  Note also that the varargs interface used\n * to pass tag types and values uses the types defined in\n * tiff.h directly.\n *\n * NB: ttag_t is unsigned int and not unsigned short because\n *     ANSI C requires that the type before the ellipsis be a\n *     promoted type (i.e. one of int, unsigned int, pointer,\n *     or double) and because we defined pseudo-tags that are\n *     outside the range of legal Aldus-assigned tags.\n * NB: tsize_t is signed and not unsigned because some functions\n *     return -1.\n * NB: toff_t is not off_t for many reasons; TIFFs max out at\n *     32-bit file offsets, and BigTIFF maxes out at 64-bit\n *     offsets being the most important, and to ensure use of\n *     a consistently unsigned type across architectures.\n *     Prior to libtiff 4.0, this was an unsigned 32 bit type.\n */\n/*\n * this is the machine addressing size type, only it's signed, so make it\n * int32_t on 32bit machines, int64_t on 64bit machines\n */\ntypedef TIFF_SSIZE_T tmsize_t;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "tmsize_t",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:65:22"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15": {
+            "definition": "\ntypedef void* thandle_t;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "thandle_t",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:106:15"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiff.h:159:3": {
+            "definition": "/*\n * Tag data type information.\n *\n * Note: RATIONALs are the ratio of two 32-bit integer values.\n *--:\n * Note2: TIFF_IFD8 data type is used in tiffFields[]-tag definition in order to distinguish the write-handling \n          of those tags between ClassicTIFF and BigTiff:\n\t\t  For ClassicTIFF libtiff writes a 32-bit value and the TIFF_IFD type-id into the file\n\t\t  For BigTIFF     libtiff writes a 64-bit value and the TIFF_IFD8 type-id into the file\n */\ntypedef enum TIFFDataType;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFDataType",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiff.h:159:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:256:3": {
+            "definition": "\ntypedef enum TIFFSetGetFieldType;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFSetGetFieldType",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:256:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:275:3": {
+            "definition": "\ntypedef enum TIFFFieldArrayType;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFFieldArrayType",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:275:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27": {
+            "definition": "\ntypedef struct _TIFFField TIFFField;",
+            "used_composites": [
+                "struct _TIFFField (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:284:8)"
+            ],
+            "used_typedefs": [],
+            "name": "TIFFField",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:318:27"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:319:32": {
+            "definition": "\ntypedef struct _TIFFFieldArray TIFFFieldArray;",
+            "used_composites": [
+                "struct _TIFFFieldArray (/promefuzz/database/libtiff/latest/code/libtiff/tif_dir.h:277:8)"
+            ],
+            "used_typedefs": [],
+            "name": "TIFFFieldArray",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:319:32"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:340:3": {
+            "definition": "\ntypedef struct TIFFTagMethods;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFTagMethods",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:340:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:69:3": {
+            "definition": "\ntypedef struct client_info TIFFClientInfoLink;",
+            "used_composites": [
+                "struct client_info (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:65:16)"
+            ],
+            "used_typedefs": [],
+            "name": "TIFFClientInfoLink",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:69:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21": {
+            "definition": "/*\n * TIFF is defined as an incomplete type to hide the\n * library's internal data structures from clients.\n */\ntypedef struct tiff TIFF;",
+            "used_composites": [
+                "struct tiff (/promefuzz/database/libtiff/latest/code/libtiff/tiffiop.h:87:8)"
+            ],
+            "used_typedefs": [],
+            "name": "TIFF",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:38:21"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:138:23": {
+            "definition": "\ntypedef unsigned char TIFFRGBValue;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFRGBValue",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:138:23"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:163:3": {
+            "definition": "\ntypedef struct TIFFYCbCrToRGB;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFYCbCrToRGB",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:163:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3": {
+            "definition": "\ntypedef struct TIFFCIELabToRGB;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFCIELabToRGB",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:174:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:31": {
+            "definition": "/*\n * RGBA-style image support.\n */\ntypedef struct _TIFFRGBAImage TIFFRGBAImage;",
+            "used_composites": [
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:16)",
+                "struct _TIFFRGBAImage (/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:199:8)"
+            ],
+            "used_typedefs": [],
+            "name": "TIFFRGBAImage",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:179:31"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:557:3": {
+            "definition": "/****************************************************************************\n *               O B S O L E T E D    I N T E R F A C E S\n *\n * Don't use this stuff in your applications, it may be removed in the future\n * libtiff versions.\n ****************************************************************************/\ntypedef\tstruct TIFFFieldInfo;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFFieldInfo",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:557:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:256:3": {
+            "definition": "\ntypedef struct TIFFCodec;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFCodec",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:256:3"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:68:18": {
+            "definition": "\ntypedef uint64_t toff_t;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "toff_t",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:68:18"
+        },
+        "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:154:3": {
+            "definition": "\ntypedef struct TIFFDisplay;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "TIFFDisplay",
+            "location": "/promefuzz/database/libtiff/latest/code/libtiff/tiffio.h:154:3"
+        }
+    }
+}
