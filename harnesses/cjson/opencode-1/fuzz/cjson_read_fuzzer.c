@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-#include "../cJSON.h"
+#include "cJSON.h"
 
 int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size); /* required by C89 */
 

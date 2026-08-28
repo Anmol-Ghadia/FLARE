@@ -1,0 +1,185 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 573970337
+INFO: Loaded 1 modules   (928 inline 8-bit counters): 928 [0x5b87fd6dd618, 0x5b87fd6dd9b8), 
+INFO: Loaded 1 PC tables (928 PCs): 928 [0x5b87fd6dd9b8,0x5b87fd6e13b8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 132 ft: 133 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 136 ft: 142 corp: 2/3b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 1 CrossOver-
+#5	NEW    cov: 139 ft: 150 corp: 3/6b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 CrossOver-CrossOver-
+#10	NEW    cov: 141 ft: 154 corp: 4/8b lim: 4 exec/s: 0 rss: 32Mb L: 2/3 MS: 5 ShuffleBytes-ChangeBinInt-ChangeBit-EraseBytes-ChangeBit-
+#12	NEW    cov: 144 ft: 157 corp: 5/12b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 2 CrossOver-InsertByte-
+#13	NEW    cov: 146 ft: 159 corp: 6/16b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 1 CopyPart-
+#18	NEW    cov: 146 ft: 161 corp: 7/20b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 5 CopyPart-CopyPart-InsertByte-ShuffleBytes-CopyPart-
+#30	NEW    cov: 148 ft: 165 corp: 8/22b lim: 4 exec/s: 0 rss: 33Mb L: 2/4 MS: 2 CMP-EraseBytes- DE: "\377\377"-
+	NEW_FUNC[1/2]: 0x5b87fd68c640 in parse_string /promefuzz/database/cjson/latest/code/cJSON.c:825
+	NEW_FUNC[2/2]: 0x5b87fd68f500 in parse_object /promefuzz/database/cjson/latest/code/cJSON.c:1663
+#76	NEW    cov: 159 ft: 184 corp: 9/26b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 1 ChangeBinInt-
+#122	NEW    cov: 160 ft: 185 corp: 10/29b lim: 4 exec/s: 0 rss: 34Mb L: 3/4 MS: 1 CrossOver-
+#128	NEW    cov: 160 ft: 187 corp: 11/33b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 1 CrossOver-
+#130	NEW    cov: 160 ft: 188 corp: 12/37b lim: 4 exec/s: 0 rss: 34Mb L: 4/4 MS: 2 ChangeBit-CopyPart-
+	NEW_FUNC[1/3]: 0x5b87fd68c320 in compare_double /promefuzz/database/cjson/latest/code/cJSON.c:590
+	NEW_FUNC[2/3]: 0x5b87fd68daa0 in parse_number /promefuzz/database/cjson/latest/code/cJSON.c:308
+#161	NEW    cov: 176 ft: 216 corp: 13/41b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 1 ChangeByte-
+#232	REDUCE cov: 176 ft: 216 corp: 13/40b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 1 EraseBytes-
+#269	NEW    cov: 180 ft: 221 corp: 14/42b lim: 4 exec/s: 0 rss: 36Mb L: 2/4 MS: 2 EraseBytes-CrossOver-
+#306	REDUCE cov: 180 ft: 221 corp: 14/41b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 2 CopyPart-EraseBytes-
+#311	NEW    cov: 183 ft: 225 corp: 15/45b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 5 ChangeByte-ChangeByte-InsertByte-CopyPart-CMP- DE: "null"-
+#386	NEW    cov: 185 ft: 227 corp: 16/49b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 5 CrossOver-ChangeByte-ChangeByte-ChangeByte-ChangeByte-
+#402	REDUCE cov: 185 ft: 227 corp: 16/48b lim: 4 exec/s: 0 rss: 38Mb L: 3/4 MS: 1 EraseBytes-
+#428	REDUCE cov: 185 ft: 227 corp: 16/47b lim: 4 exec/s: 0 rss: 38Mb L: 3/4 MS: 1 EraseBytes-
+	NEW_FUNC[1/1]: 0x5b87fd68e7c0 in parse_array /promefuzz/database/cjson/latest/code/cJSON.c:1498
+#472	NEW    cov: 192 ft: 238 corp: 17/51b lim: 4 exec/s: 0 rss: 38Mb L: 4/4 MS: 4 ChangeBit-EraseBytes-InsertByte-ChangeByte-
+#478	REDUCE cov: 193 ft: 239 corp: 18/54b lim: 4 exec/s: 0 rss: 38Mb L: 3/4 MS: 1 ChangeASCIIInt-
+#494	NEW    cov: 193 ft: 241 corp: 19/57b lim: 4 exec/s: 0 rss: 39Mb L: 3/4 MS: 1 EraseBytes-
+#548	REDUCE cov: 194 ft: 242 corp: 20/60b lim: 4 exec/s: 0 rss: 39Mb L: 3/4 MS: 4 ChangeByte-CopyPart-ShuffleBytes-ChangeASCIIInt-
+#570	REDUCE cov: 194 ft: 242 corp: 20/59b lim: 4 exec/s: 0 rss: 39Mb L: 2/4 MS: 2 ShuffleBytes-EraseBytes-
+#599	NEW    cov: 200 ft: 248 corp: 21/63b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 4 InsertByte-InsertByte-ShuffleBytes-ChangeBinInt-
+#620	NEW    cov: 200 ft: 260 corp: 22/67b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 1 CopyPart-
+#638	REDUCE cov: 200 ft: 260 corp: 22/66b lim: 4 exec/s: 0 rss: 40Mb L: 2/4 MS: 3 InsertByte-EraseBytes-CrossOver-
+#642	REDUCE cov: 200 ft: 260 corp: 22/65b lim: 4 exec/s: 0 rss: 40Mb L: 1/4 MS: 4 CopyPart-ShuffleBytes-ShuffleBytes-CrossOver-
+#643	REDUCE cov: 200 ft: 260 corp: 22/64b lim: 4 exec/s: 0 rss: 40Mb L: 2/4 MS: 1 EraseBytes-
+#659	REDUCE cov: 200 ft: 260 corp: 22/63b lim: 4 exec/s: 0 rss: 40Mb L: 2/4 MS: 1 EraseBytes-
+#663	NEW    cov: 201 ft: 261 corp: 23/67b lim: 4 exec/s: 0 rss: 40Mb L: 4/4 MS: 4 ChangeBinInt-ChangeBinInt-ShuffleBytes-ChangeByte-
+#679	REDUCE cov: 201 ft: 261 corp: 23/66b lim: 4 exec/s: 0 rss: 41Mb L: 1/4 MS: 1 EraseBytes-
+#706	REDUCE cov: 201 ft: 264 corp: 24/68b lim: 4 exec/s: 0 rss: 41Mb L: 2/4 MS: 2 ChangeASCIIInt-CopyPart-
+#727	NEW    cov: 203 ft: 274 corp: 25/72b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 1 CopyPart-
+#729	NEW    cov: 204 ft: 275 corp: 26/76b lim: 4 exec/s: 0 rss: 41Mb L: 4/4 MS: 2 CrossOver-ChangeBinInt-
+#737	REDUCE cov: 204 ft: 275 corp: 26/75b lim: 4 exec/s: 0 rss: 41Mb L: 3/4 MS: 3 CopyPart-CopyPart-CrossOver-
+#773	REDUCE cov: 204 ft: 275 corp: 26/74b lim: 4 exec/s: 0 rss: 41Mb L: 2/4 MS: 1 EraseBytes-
+#795	NEW    cov: 204 ft: 276 corp: 27/78b lim: 4 exec/s: 0 rss: 42Mb L: 4/4 MS: 2 CrossOver-ShuffleBytes-
+#800	REDUCE cov: 207 ft: 279 corp: 28/80b lim: 4 exec/s: 0 rss: 42Mb L: 2/4 MS: 5 CopyPart-CrossOver-ChangeByte-CrossOver-InsertByte-
+#831	REDUCE cov: 207 ft: 279 corp: 28/78b lim: 4 exec/s: 0 rss: 42Mb L: 2/4 MS: 1 CrossOver-
+#878	REDUCE cov: 207 ft: 279 corp: 28/76b lim: 4 exec/s: 0 rss: 43Mb L: 2/4 MS: 2 CopyPart-EraseBytes-
+#901	REDUCE cov: 207 ft: 279 corp: 28/74b lim: 4 exec/s: 0 rss: 43Mb L: 2/4 MS: 3 CrossOver-CopyPart-EraseBytes-
+#944	REDUCE cov: 207 ft: 280 corp: 29/78b lim: 4 exec/s: 0 rss: 43Mb L: 4/4 MS: 3 ShuffleBytes-InsertByte-CrossOver-
+#945	REDUCE cov: 207 ft: 280 corp: 29/77b lim: 4 exec/s: 0 rss: 43Mb L: 2/4 MS: 1 EraseBytes-
+#987	NEW    cov: 207 ft: 282 corp: 30/81b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 2 ChangeBit-CrossOver-
+#988	NEW    cov: 208 ft: 283 corp: 31/85b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 1 ShuffleBytes-
+#989	REDUCE cov: 208 ft: 283 corp: 31/84b lim: 4 exec/s: 0 rss: 44Mb L: 1/4 MS: 1 EraseBytes-
+#991	REDUCE cov: 208 ft: 283 corp: 31/83b lim: 4 exec/s: 0 rss: 44Mb L: 2/4 MS: 2 CopyPart-EraseBytes-
+#1010	NEW    cov: 211 ft: 287 corp: 32/87b lim: 4 exec/s: 0 rss: 44Mb L: 4/4 MS: 4 ShuffleBytes-ChangeByte-CMP-CrossOver- DE: "4B\012"-
+#1117	NEW    cov: 213 ft: 289 corp: 33/89b lim: 4 exec/s: 0 rss: 45Mb L: 2/4 MS: 2 ShuffleBytes-ChangeByte-
+#1163	NEW    cov: 213 ft: 292 corp: 34/93b lim: 4 exec/s: 0 rss: 45Mb L: 4/4 MS: 1 CopyPart-
+#1164	REDUCE cov: 213 ft: 292 corp: 34/92b lim: 4 exec/s: 0 rss: 45Mb L: 1/4 MS: 1 CrossOver-
+#1190	REDUCE cov: 213 ft: 293 corp: 35/96b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 1 CopyPart-
+#1194	NEW    cov: 214 ft: 296 corp: 36/100b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 4 InsertByte-ChangeBinInt-ChangeBinInt-CMP- DE: "true"-
+#1200	NEW    cov: 215 ft: 297 corp: 37/102b lim: 4 exec/s: 0 rss: 46Mb L: 2/4 MS: 1 ChangeBit-
+#1222	REDUCE cov: 215 ft: 297 corp: 37/101b lim: 4 exec/s: 0 rss: 46Mb L: 3/4 MS: 2 ChangeByte-EraseBytes-
+#1244	NEW    cov: 218 ft: 300 corp: 38/105b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 2 ShuffleBytes-CMP- DE: "-\000"-
+#1260	NEW    cov: 218 ft: 302 corp: 39/109b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 1 ChangeByte-
+#1261	NEW    cov: 218 ft: 304 corp: 40/113b lim: 4 exec/s: 0 rss: 46Mb L: 4/4 MS: 1 ShuffleBytes-
+#1280	NEW    cov: 219 ft: 305 corp: 41/116b lim: 4 exec/s: 0 rss: 47Mb L: 3/4 MS: 4 EraseBytes-CrossOver-ChangeBinInt-ChangeByte-
+#1396	NEW    cov: 220 ft: 306 corp: 42/119b lim: 4 exec/s: 0 rss: 48Mb L: 3/4 MS: 1 ChangeASCIIInt-
+#1397	REDUCE cov: 220 ft: 306 corp: 42/118b lim: 4 exec/s: 0 rss: 48Mb L: 2/4 MS: 1 EraseBytes-
+#1413	REDUCE cov: 220 ft: 306 corp: 42/117b lim: 4 exec/s: 0 rss: 48Mb L: 1/4 MS: 1 EraseBytes-
+#1496	NEW    cov: 220 ft: 307 corp: 43/121b lim: 4 exec/s: 0 rss: 49Mb L: 4/4 MS: 3 CrossOver-CMP-CopyPart- DE: "2\000\000\000"-
+#1502	REDUCE cov: 225 ft: 313 corp: 44/123b lim: 4 exec/s: 0 rss: 49Mb L: 2/4 MS: 1 ChangeByte-
+#1540	REDUCE cov: 225 ft: 313 corp: 44/122b lim: 4 exec/s: 0 rss: 49Mb L: 1/4 MS: 3 CopyPart-ChangeByte-EraseBytes-
+#1567	REDUCE cov: 226 ft: 314 corp: 45/123b lim: 4 exec/s: 0 rss: 49Mb L: 1/4 MS: 2 ShuffleBytes-ChangeASCIIInt-
+#1583	REDUCE cov: 226 ft: 314 corp: 45/122b lim: 4 exec/s: 0 rss: 49Mb L: 3/4 MS: 1 EraseBytes-
+#1621	REDUCE cov: 226 ft: 315 corp: 46/124b lim: 4 exec/s: 0 rss: 50Mb L: 2/4 MS: 3 ChangeASCIIInt-CopyPart-CopyPart-
+#1672	NEW    cov: 228 ft: 328 corp: 47/128b lim: 4 exec/s: 0 rss: 50Mb L: 4/4 MS: 1 ChangeBit-
+#1679	REDUCE cov: 228 ft: 329 corp: 48/131b lim: 4 exec/s: 0 rss: 50Mb L: 3/4 MS: 2 InsertByte-InsertByte-
+#1691	NEW    cov: 228 ft: 342 corp: 49/135b lim: 4 exec/s: 0 rss: 50Mb L: 4/4 MS: 2 ChangeBit-CopyPart-
+#1697	REDUCE cov: 228 ft: 342 corp: 49/134b lim: 4 exec/s: 0 rss: 50Mb L: 1/4 MS: 1 EraseBytes-
+#1724	NEW    cov: 228 ft: 343 corp: 50/137b lim: 4 exec/s: 0 rss: 51Mb L: 3/4 MS: 2 ChangeBit-CopyPart-
+#1740	REDUCE cov: 228 ft: 343 corp: 50/136b lim: 4 exec/s: 0 rss: 51Mb L: 1/4 MS: 1 EraseBytes-
+#1770	REDUCE cov: 228 ft: 343 corp: 50/135b lim: 4 exec/s: 0 rss: 51Mb L: 1/4 MS: 5 ChangeBinInt-ShuffleBytes-ChangeBit-InsertByte-CrossOver-
+#1787	NEW    cov: 228 ft: 344 corp: 51/138b lim: 4 exec/s: 0 rss: 51Mb L: 3/4 MS: 2 ShuffleBytes-CrossOver-
+#1798	REDUCE cov: 228 ft: 344 corp: 51/137b lim: 4 exec/s: 0 rss: 51Mb L: 1/4 MS: 1 EraseBytes-
+#1864	NEW    cov: 228 ft: 345 corp: 52/141b lim: 4 exec/s: 0 rss: 52Mb L: 4/4 MS: 1 ChangeASCIIInt-
+#2008	REDUCE cov: 228 ft: 345 corp: 52/140b lim: 4 exec/s: 0 rss: 53Mb L: 2/4 MS: 4 InsertByte-ChangeBit-ChangeByte-EraseBytes-
+#2051	NEW    cov: 229 ft: 346 corp: 53/142b lim: 4 exec/s: 0 rss: 54Mb L: 2/4 MS: 3 CopyPart-EraseBytes-EraseBytes-
+#2070	NEW    cov: 230 ft: 348 corp: 54/146b lim: 4 exec/s: 0 rss: 54Mb L: 4/4 MS: 4 ShuffleBytes-ChangeByte-CrossOver-CopyPart-
+#2084	REDUCE cov: 230 ft: 348 corp: 54/145b lim: 4 exec/s: 0 rss: 54Mb L: 2/4 MS: 4 CopyPart-ChangeBit-ChangeBinInt-EraseBytes-
+#2216	REDUCE cov: 231 ft: 349 corp: 55/148b lim: 4 exec/s: 0 rss: 55Mb L: 3/4 MS: 2 CrossOver-InsertByte-
+#2234	NEW    cov: 236 ft: 354 corp: 56/150b lim: 4 exec/s: 0 rss: 55Mb L: 2/4 MS: 3 EraseBytes-EraseBytes-ChangeByte-
+#2258	REDUCE cov: 236 ft: 355 corp: 57/152b lim: 4 exec/s: 0 rss: 55Mb L: 2/4 MS: 4 InsertByte-CrossOver-EraseBytes-CopyPart-
+#2275	REDUCE cov: 236 ft: 356 corp: 58/156b lim: 4 exec/s: 0 rss: 55Mb L: 4/4 MS: 2 ChangeBit-CopyPart-
+#2435	REDUCE cov: 236 ft: 357 corp: 59/160b lim: 4 exec/s: 0 rss: 57Mb L: 4/4 MS: 5 ChangeBit-CrossOver-EraseBytes-CopyPart-ShuffleBytes-
+#2441	REDUCE cov: 236 ft: 358 corp: 60/162b lim: 4 exec/s: 0 rss: 57Mb L: 2/4 MS: 1 CopyPart-
+#2443	REDUCE cov: 236 ft: 358 corp: 60/161b lim: 4 exec/s: 0 rss: 57Mb L: 2/4 MS: 2 CrossOver-CopyPart-
+#2509	REDUCE cov: 236 ft: 358 corp: 60/160b lim: 4 exec/s: 0 rss: 57Mb L: 3/4 MS: 1 EraseBytes-
+#2586	REDUCE cov: 237 ft: 360 corp: 61/163b lim: 4 exec/s: 0 rss: 58Mb L: 3/4 MS: 2 CMP-ShuffleBytes- DE: "\377a"-
+#2603	REDUCE cov: 237 ft: 360 corp: 61/161b lim: 4 exec/s: 0 rss: 58Mb L: 2/4 MS: 2 ChangeBinInt-EraseBytes-
+#2734	REDUCE cov: 237 ft: 360 corp: 61/159b lim: 4 exec/s: 0 rss: 59Mb L: 2/4 MS: 1 EraseBytes-
+#2866	NEW    cov: 237 ft: 365 corp: 62/163b lim: 4 exec/s: 0 rss: 60Mb L: 4/4 MS: 2 ChangeByte-CopyPart-
+#2956	REDUCE cov: 237 ft: 365 corp: 62/162b lim: 4 exec/s: 0 rss: 61Mb L: 2/4 MS: 5 ShuffleBytes-CopyPart-ChangeByte-InsertByte-EraseBytes-
+#2973	REDUCE cov: 237 ft: 366 corp: 63/165b lim: 4 exec/s: 0 rss: 61Mb L: 3/4 MS: 2 CopyPart-CopyPart-
+#3054	REDUCE cov: 237 ft: 366 corp: 63/164b lim: 4 exec/s: 0 rss: 62Mb L: 3/4 MS: 1 CrossOver-
+#3105	NEW    cov: 237 ft: 367 corp: 64/168b lim: 4 exec/s: 0 rss: 62Mb L: 4/4 MS: 1 CrossOver-
+#3172	NEW    cov: 237 ft: 368 corp: 65/172b lim: 4 exec/s: 0 rss: 63Mb L: 4/4 MS: 2 ChangeASCIIInt-CopyPart-
+#3179	NEW    cov: 237 ft: 369 corp: 66/174b lim: 4 exec/s: 0 rss: 63Mb L: 2/4 MS: 2 ShuffleBytes-CopyPart-
+#3385	NEW    cov: 241 ft: 373 corp: 67/179b lim: 6 exec/s: 0 rss: 65Mb L: 5/5 MS: 1 InsertRepeatedBytes-
+#3393	NEW    cov: 242 ft: 376 corp: 68/184b lim: 6 exec/s: 0 rss: 65Mb L: 5/5 MS: 3 CrossOver-ChangeBit-InsertByte-
+#3425	NEW    cov: 242 ft: 377 corp: 69/190b lim: 6 exec/s: 0 rss: 65Mb L: 6/6 MS: 2 CopyPart-CopyPart-
+#3432	NEW    cov: 242 ft: 378 corp: 70/194b lim: 6 exec/s: 0 rss: 65Mb L: 4/6 MS: 2 EraseBytes-CopyPart-
+=================================================================
+==2156346==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5020001bf696 at pc 0x5b87fd63ccc6 bp 0x7ffd19650cd0 sp 0x7ffd19650490
+READ of size 2 at 0x5020001bf696 thread T0
+    #0 0x5b87fd63ccc5 in __asan_memcpy (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x104cc5) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #1 0x5b87fd67f3bd in make_cstring_from_bytes /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154.c:20:9
+    #2 0x5b87fd67e635 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154.c:61:22
+    #3 0x5b87fd58ace4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x52ce4) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #4 0x5b87fd58a3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x523d9) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #5 0x5b87fd58bbc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x53bc5) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #6 0x5b87fd58c725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x54725) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #7 0x5b87fd5799ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x419ff) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #8 0x5b87fd5a4086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x6c086) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #9 0x7bcb7c8371c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7bcb7c83728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5b87fd56e9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x369e4) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+
+0x5020001bf696 is located 0 bytes after 6-byte region [0x5020001bf690,0x5020001bf696)
+allocated by thread T0 here:
+    #0 0x5b87fd63ee13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x106e13) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #1 0x7bcb7cc04903 in operator new(unsigned long) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xbb903) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #2 0x5b87fd58abf5 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x52bf5) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #3 0x5b87fd58a3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x523d9) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #4 0x5b87fd58bbc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x53bc5) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #5 0x5b87fd58c725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x54725) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #6 0x5b87fd5799ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x419ff) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #7 0x5b87fd5a4086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x6c086) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+    #8 0x7bcb7c8371c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7bcb7c83728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x5b87fd56e9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x369e4) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_3/fuzz_driver_3_sanitizing_1787880154+0x104cc5) (BuildId: 6a6745bdc048db95011585656bf8f568b2af8588) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x5020001bf400: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x5020001bf480: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x5020001bf500: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x5020001bf580: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+  0x5020001bf600: fa fa fd fa fa fa fd fa fa fa fd fa fa fa fd fa
+=>0x5020001bf680: fa fa[06]fa fa fa 07 fa fa fa 07 fa fa fa 02 fa
+  0x5020001bf700: fa fa 02 fa fa fa 06 fa fa fa 02 fa fa fa 02 fa
+  0x5020001bf780: fa fa 03 fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x5020001bf800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x5020001bf880: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x5020001bf900: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2156346==ABORTING
+MS: 4 ChangeByte-ChangeBit-ChangeBit-CopyPart-; base unit: 1c6637a8f2e1f75e06ff9984894d6bd16a3a36a9
+0x3a,0xc1,0x3a,0xc1,0x32,0x32,
+:\301:\30122
+artifact_prefix='./'; Test unit written to ./crash-49ceb0eb368a8234307bc442ad5e26b7578298e1
+Base64: OsE6wTIy
