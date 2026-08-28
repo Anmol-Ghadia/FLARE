@@ -1,0 +1,3 @@
+#! /bin/bash
+cd /promefuzz
+clang /promefuzz/database/tinycbor/latest/out/fuzz_driver/synthesized/*.c -o /promefuzz/database/tinycbor/latest/out/fuzz_driver/cov_synthesized_driver -fprofile-instr-generate -fcoverage-mapping -fsanitize=fuzzer -g -I/promefuzz/database/tinycbor/latest/code/src database/tinycbor/latest/bin_cov/lib/libtinycbor.a -Idatabase/tinycbor/latest/bin_cov/include/tinycbor -Idatabase/tinycbor/latest/code -Idatabase/tinycbor/latest/code/src

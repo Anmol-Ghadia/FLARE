@@ -1,0 +1,1870 @@
+{
+    "function_infos": {
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:249:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_text_stringz(CborEncoder *encoder, const char *string);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:249:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:250:68"
+            ],
+            "name": "cbor_encode_text_stringz",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:249:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:255:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_boolean(CborEncoder *encoder, bool value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:255:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:256:88"
+            ],
+            "name": "cbor_encode_boolean",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:255:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:257:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_null(CborEncoder *encoder);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:257:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:258:66"
+            ],
+            "name": "cbor_encode_null",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:257:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:259:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_undefined(CborEncoder *encoder);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:259:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:260:71"
+            ],
+            "name": "cbor_encode_undefined",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:259:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:262:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_half_float(CborEncoder *encoder, const void *value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:262:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:263:73"
+            ],
+            "name": "cbor_encode_half_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:262:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:265:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_float(CborEncoder *encoder, float value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:265:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:266:70"
+            ],
+            "name": "cbor_encode_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:265:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:267:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_encode_double(CborEncoder *encoder, double value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:267:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:268:71"
+            ],
+            "name": "cbor_encode_double",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:267:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:275:26": {
+            "signature": "\nCBOR_INLINE_API uint8_t *_cbor_encoder_get_buffer_pointer(const CborEncoder *encoder);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:275:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:278:1"
+            ],
+            "name": "_cbor_encoder_get_buffer_pointer",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:275:26"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:280:24": {
+            "signature": "\nCBOR_INLINE_API size_t cbor_encoder_get_buffer_size(const CborEncoder *encoder, const uint8_t *buffer);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:280:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:283:1"
+            ],
+            "name": "cbor_encoder_get_buffer_size",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:280:24"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:285:24": {
+            "signature": "\nCBOR_INLINE_API size_t cbor_encoder_get_extra_bytes_needed(const CborEncoder *encoder);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:285:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:288:1"
+            ],
+            "name": "cbor_encoder_get_extra_bytes_needed",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:285:24"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:360:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_at_end(const CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:360:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:361:30"
+            ],
+            "name": "cbor_value_at_end",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:360:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:362:32": {
+            "signature": "\nCBOR_INLINE_API const uint8_t *cbor_value_get_next_byte(const CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:362:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:363:26"
+            ],
+            "name": "cbor_value_get_next_byte",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:362:32"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:367:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_container(const CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:367:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:368:64"
+            ],
+            "name": "cbor_value_is_container",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:367:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:373:26": {
+            "signature": "\nCBOR_INLINE_API uint64_t _cbor_value_extract_int64_helper(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:373:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:377:1"
+            ],
+            "name": "_cbor_value_extract_int64_helper",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:373:26"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:379:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_valid(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:379:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:380:51"
+            ],
+            "name": "cbor_value_is_valid",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:379:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:381:26": {
+            "signature": "\nCBOR_INLINE_API CborType cbor_value_get_type(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborType (/promefuzz/database/tinycbor/latest/code/src/cbor.h:84:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborType (/promefuzz/database/tinycbor/latest/code/src/cbor.h:100:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:381:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:382:33"
+            ],
+            "name": "cbor_value_get_type",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:381:26"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:385:22": {
+            "signature": "/* Null & undefined type */\nCBOR_INLINE_API bool cbor_value_is_null(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:385:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:386:39"
+            ],
+            "name": "cbor_value_is_null",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:385:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:387:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_undefined(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:387:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:388:44"
+            ],
+            "name": "cbor_value_is_undefined",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:387:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:391:22": {
+            "signature": "/* Booleans */\nCBOR_INLINE_API bool cbor_value_is_boolean(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:391:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:392:42"
+            ],
+            "name": "cbor_value_is_boolean",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:391:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:393:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_boolean(const CborValue *value, bool *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:393:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:398:1"
+            ],
+            "name": "cbor_value_get_boolean",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:393:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:401:22": {
+            "signature": "/* Simple types */\nCBOR_INLINE_API bool cbor_value_is_simple_type(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:401:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:402:41"
+            ],
+            "name": "cbor_value_is_simple_type",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:401:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:403:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_simple_type(const CborValue *value, uint8_t *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:403:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:408:1"
+            ],
+            "name": "cbor_value_get_simple_type",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:403:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:411:22": {
+            "signature": "/* Integers */\nCBOR_INLINE_API bool cbor_value_is_integer(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:411:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:412:42"
+            ],
+            "name": "cbor_value_is_integer",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:411:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:413:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_unsigned_integer(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:413:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:414:98"
+            ],
+            "name": "cbor_value_is_unsigned_integer",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:413:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:415:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_negative_integer(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:415:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:416:93"
+            ],
+            "name": "cbor_value_is_negative_integer",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:415:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:418:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_raw_integer(const CborValue *value, uint64_t *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:418:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:423:1"
+            ],
+            "name": "cbor_value_get_raw_integer",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:418:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:425:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_uint64(const CborValue *value, uint64_t *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:425:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:430:1"
+            ],
+            "name": "cbor_value_get_uint64",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:425:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:432:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_int64(const CborValue *value, int64_t *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:432:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:439:1"
+            ],
+            "name": "cbor_value_get_int64",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:432:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:441:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_int(const CborValue *value, int *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:441:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:448:1"
+            ],
+            "name": "cbor_value_get_int",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:441:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:453:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_length_known(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:453:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:454:64"
+            ],
+            "name": "cbor_value_is_length_known",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:453:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:457:22": {
+            "signature": "/* Tags */\nCBOR_INLINE_API bool cbor_value_is_tag(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:457:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:458:38"
+            ],
+            "name": "cbor_value_is_tag",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:457:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:459:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_tag(const CborValue *value, CborTag *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborTag (/promefuzz/database/tinycbor/latest/code/src/cbor.h:102:18)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:459:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:464:1"
+            ],
+            "name": "cbor_value_get_tag",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:459:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:468:22": {
+            "signature": "/* Strings */\nCBOR_INLINE_API bool cbor_value_is_byte_string(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:468:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:469:45"
+            ],
+            "name": "cbor_value_is_byte_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:468:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:470:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_text_string(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:470:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:471:45"
+            ],
+            "name": "cbor_value_is_text_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:470:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:473:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_string_length(const CborValue *value, size_t *length);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:473:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:484:1"
+            ],
+            "name": "cbor_value_get_string_length",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:473:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:493:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_copy_text_string(const CborValue *value, char *buffer,\n                                                      size_t *buflen, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:493:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:498:1"
+            ],
+            "name": "cbor_value_copy_text_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:493:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:499:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_copy_byte_string(const CborValue *value, uint8_t *buffer,\n                                                      size_t *buflen, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:499:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:504:1"
+            ],
+            "name": "cbor_value_copy_byte_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:499:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:506:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_dup_text_string(const CborValue *value, char **buffer,\n                                                     size_t *buflen, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:506:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:511:1"
+            ],
+            "name": "cbor_value_dup_text_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:506:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:512:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_dup_byte_string(const CborValue *value, uint8_t **buffer,\n                                                     size_t *buflen, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:512:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:517:1"
+            ],
+            "name": "cbor_value_dup_byte_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:512:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:520:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_string_chunk_size(const CborValue *value, size_t *len);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:520:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:524:1"
+            ],
+            "name": "cbor_value_get_string_chunk_size",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:520:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:526:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_string_iteration_at_end(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:526:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:530:1"
+            ],
+            "name": "cbor_value_string_iteration_at_end",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:526:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:533:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_begin_string_iteration(CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:533:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:538:1"
+            ],
+            "name": "cbor_value_begin_string_iteration",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:533:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:541:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_finish_string_iteration(CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:541:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:545:1"
+            ],
+            "name": "cbor_value_finish_string_iteration",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:541:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:549:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_text_string_chunk(const CborValue *value, const char **bufferptr,\n                                                           size_t *len, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:549:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:554:1"
+            ],
+            "name": "cbor_value_get_text_string_chunk",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:549:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:555:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_byte_string_chunk(const CborValue *value, const uint8_t **bufferptr,\n                                                           size_t *len, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:555:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:560:1"
+            ],
+            "name": "cbor_value_get_byte_string_chunk",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:555:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:565:22": {
+            "signature": "/* Maps and arrays */\nCBOR_INLINE_API bool cbor_value_is_array(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:565:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:566:40"
+            ],
+            "name": "cbor_value_is_array",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:565:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:567:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_map(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:567:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:568:38"
+            ],
+            "name": "cbor_value_is_map",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:567:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:570:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_array_length(const CborValue *value, size_t *length);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:570:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:581:1"
+            ],
+            "name": "cbor_value_get_array_length",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:570:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:583:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_map_length(const CborValue *value, size_t *length);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:583:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:594:1"
+            ],
+            "name": "cbor_value_get_map_length",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:583:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:599:22": {
+            "signature": "/* Floating point */\nCBOR_INLINE_API bool cbor_value_is_half_float(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:599:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:600:44"
+            ],
+            "name": "cbor_value_is_half_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:599:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:602:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_half_float(const CborValue *value, void *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:602:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:610:1"
+            ],
+            "name": "cbor_value_get_half_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:602:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:612:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_float(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:612:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:613:40"
+            ],
+            "name": "cbor_value_is_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:612:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:614:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_float(const CborValue *value, float *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:614:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:622:1"
+            ],
+            "name": "cbor_value_get_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:614:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:624:22": {
+            "signature": "\nCBOR_INLINE_API bool cbor_value_is_double(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:624:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:625:41"
+            ],
+            "name": "cbor_value_is_double",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:624:22"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:626:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_get_double(const CborValue *value, double *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:626:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:634:1"
+            ],
+            "name": "cbor_value_get_double",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:626:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:712:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_to_pretty(FILE *out, const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:712:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbor.h:716:1"
+            ],
+            "name": "cbor_value_to_pretty",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:712:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:195:6": {
+            "signature": "\nvoid cbor_encoder_init(CborEncoder *encoder, uint8_t *buffer, size_t size, int flags);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:195:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:201:1"
+            ],
+            "name": "cbor_encoder_init",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:195:6"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:203:6": {
+            "signature": "\nvoid cbor_encoder_init_writer(CborEncoder *encoder, CborEncoderWriteFunction writer, void *);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:203:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:214:1"
+            ],
+            "name": "cbor_encoder_init_writer",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:203:6"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:348:11": {
+            "signature": "\nCborError cbor_encode_uint(CborEncoder *encoder, uint64_t value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:348:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:351:1"
+            ],
+            "name": "cbor_encode_uint",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:348:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:361:11": {
+            "signature": "\nCborError cbor_encode_negative_int(CborEncoder *encoder, uint64_t absolute_value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:361:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:364:1"
+            ],
+            "name": "cbor_encode_negative_int",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:361:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:372:11": {
+            "signature": "\nCborError cbor_encode_int(CborEncoder *encoder, int64_t value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:372:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:379:1"
+            ],
+            "name": "cbor_encode_int",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:372:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:388:11": {
+            "signature": "\nCborError cbor_encode_simple_value(CborEncoder *encoder, uint8_t value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:388:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:396:1"
+            ],
+            "name": "cbor_encode_simple_value",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:388:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:409:11": {
+            "signature": "\nCborError cbor_encode_floating_point(CborEncoder *encoder, CborType fpType, const void *value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborType (/promefuzz/database/tinycbor/latest/code/src/cbor.h:84:14)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborType (/promefuzz/database/tinycbor/latest/code/src/cbor.h:100:3)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:409:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:425:1"
+            ],
+            "name": "cbor_encode_floating_point",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:409:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:432:11": {
+            "signature": "\nCborError cbor_encode_tag(CborEncoder *encoder, CborTag tag);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborTag (/promefuzz/database/tinycbor/latest/code/src/cbor.h:102:18)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:432:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:436:1"
+            ],
+            "name": "cbor_encode_tag",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:432:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:463:11": {
+            "signature": "\nCborError cbor_encode_byte_string(CborEncoder *encoder, const uint8_t *string, size_t length);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:463:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:466:1"
+            ],
+            "name": "cbor_encode_byte_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:463:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:475:11": {
+            "signature": "\nCborError cbor_encode_text_string(CborEncoder *encoder, const char *string, size_t length);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:475:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:478:1"
+            ],
+            "name": "cbor_encode_text_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:475:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:489:11": {
+            "signature": "\nCborError cbor_encode_raw(CborEncoder *encoder, const uint8_t *raw, size_t length);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:489:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:492:1"
+            ],
+            "name": "cbor_encode_raw",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:489:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:537:11": {
+            "signature": "\nCborError cbor_encoder_create_array(CborEncoder *parentEncoder, CborEncoder *arrayEncoder, size_t length);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:537:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:540:1"
+            ],
+            "name": "cbor_encoder_create_array",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:537:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:561:11": {
+            "signature": "\nCborError cbor_encoder_create_map(CborEncoder *parentEncoder, CborEncoder *mapEncoder, size_t length);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:561:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:566:1"
+            ],
+            "name": "cbor_encoder_create_map",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:561:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:580:11": {
+            "signature": "\nCborError cbor_encoder_close_container(CborEncoder *parentEncoder, const CborEncoder *containerEncoder);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:580:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:596:1"
+            ],
+            "name": "cbor_encoder_close_container",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:580:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder_float.c:32:11": {
+            "signature": "\nCborError cbor_encode_float_as_half_float(CborEncoder *encoder, float value);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder_float.c:32:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder_float.c:37:1"
+            ],
+            "name": "cbor_encode_float_as_half_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder_float.c:32:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:63:11": {
+            "signature": "\nCborError cbor_value_to_pretty_advance(FILE *out, CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:63:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:66:1"
+            ],
+            "name": "cbor_value_to_pretty_advance",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:63:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:83:11": {
+            "signature": "\nCborError cbor_value_to_pretty_advance_flags(FILE *out, CborValue *value, int flags);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:83:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:86:1"
+            ],
+            "name": "cbor_value_to_pretty_advance_flags",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:83:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:51:27": {
+            "signature": "\nCBOR_INLINE_API CborError cbor_value_to_json(FILE *out, const CborValue *value, int flags);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:51:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:55:1"
+            ],
+            "name": "cbor_value_to_json",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:51:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborvalidation.c:640:11": {
+            "signature": "\nCborError cbor_value_validate(const CborValue *it, uint32_t flags);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborvalidation.c:640:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborvalidation.c:649:1"
+            ],
+            "name": "cbor_value_validate",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborvalidation.c:640:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbortojson.c:786:11": {
+            "signature": "\nCborError cbor_value_to_json_advance(FILE *out, CborValue *value, int flags);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cbortojson.c:786:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cbortojson.c:791:1"
+            ],
+            "name": "cbor_value_to_json_advance",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbortojson.c:786:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser_float.c:40:11": {
+            "signature": "\nCborError cbor_value_get_half_float_as_float(const CborValue *value, float *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser_float.c:40:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser_float.c:49:1"
+            ],
+            "name": "cbor_value_get_half_float_as_float",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser_float.c:40:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1033:11": {
+            "signature": "\nCborError _cbor_value_get_string_chunk_size(const CborValue *value, size_t *len);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1033:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1037:1"
+            ],
+            "name": "_cbor_value_get_string_chunk_size",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1033:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1137:11": {
+            "signature": "\nCborError _cbor_value_get_string_chunk(const CborValue *value, const void **bufferptr,\n                                                        size_t *len, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1137:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1145:1"
+            ],
+            "name": "_cbor_value_get_string_chunk",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1137:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1286:11": {
+            "signature": "\nCborError _cbor_value_copy_string(const CborValue *value, void *buffer,\n                                                   size_t *buflen, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1286:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1294:1"
+            ],
+            "name": "_cbor_value_copy_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1286:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1314:11": {
+            "signature": "\nCborError cbor_value_text_string_equals(const CborValue *value, const char *string, bool *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1314:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1328:1"
+            ],
+            "name": "cbor_value_text_string_equals",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1314:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1402:11": {
+            "signature": "\nCborError cbor_value_map_find_value(const CborValue *map, const char *string, CborValue *element);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1402:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1448:1"
+            ],
+            "name": "cbor_value_map_find_value",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1402:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:316:10": {
+            "signature": "\nuint64_t _cbor_value_decode_int64_internal(const CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:316:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:324:1"
+            ],
+            "name": "_cbor_value_decode_int64_internal",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:316:10"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:336:11": {
+            "signature": "\nCborError cbor_parser_init(const uint8_t *buffer, size_t size, uint32_t flags, CborParser *parser, CborValue *it);",
+            "used_composites": [
+                "struct CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:338:27)",
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:336:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:346:1"
+            ],
+            "name": "cbor_parser_init",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:336:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:348:11": {
+            "signature": "\nCborError cbor_parser_init_reader(const struct CborParserOperations *ops, CborParser *parser, CborValue *it, void *token);",
+            "used_composites": [
+                "struct CborParserOperations (/promefuzz/database/tinycbor/latest/code/src/cbor.h:322:8)",
+                "struct CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:338:27)",
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:348:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:357:1"
+            ],
+            "name": "cbor_parser_init_reader",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:348:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:397:11": {
+            "signature": "\nCborError cbor_value_reparse(CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:397:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:402:1"
+            ],
+            "name": "cbor_value_reparse",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:397:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:433:11": {
+            "signature": "\nCborError cbor_value_validate_basic(const CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:433:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:437:1"
+            ],
+            "name": "cbor_value_validate_basic",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:433:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:454:11": {
+            "signature": "\nCborError cbor_value_advance_fixed(CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:454:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:461:1"
+            ],
+            "name": "cbor_value_advance_fixed",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:454:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:506:11": {
+            "signature": "\nCborError cbor_value_advance(CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:506:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:512:1"
+            ],
+            "name": "cbor_value_advance",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:506:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:542:11": {
+            "signature": "\nCborError cbor_value_skip_tag(CborValue *it);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:542:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:550:1"
+            ],
+            "name": "cbor_value_skip_tag",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:542:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:569:11": {
+            "signature": "\nCborError cbor_value_enter_container(const CborValue *it, CborValue *recursed);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:569:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:604:1"
+            ],
+            "name": "cbor_value_enter_container",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:569:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:618:11": {
+            "signature": "\nCborError cbor_value_leave_container(CborValue *it, const CborValue *recursed);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:618:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:627:1"
+            ],
+            "name": "cbor_value_leave_container",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:618:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:803:11": {
+            "signature": "\nCborError cbor_value_get_int64_checked(const CborValue *value, int64_t *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:803:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:826:1"
+            ],
+            "name": "cbor_value_get_int64_checked",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:803:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:843:11": {
+            "signature": "\nCborError cbor_value_get_int_checked(const CborValue *value, int *result);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:843:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:873:1"
+            ],
+            "name": "cbor_value_get_int_checked",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:843:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:954:11": {
+            "signature": "\nCborError cbor_value_calculate_string_length(const CborValue *value, size_t *length);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:954:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:958:1"
+            ],
+            "name": "cbor_value_calculate_string_length",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:954:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:960:11": {
+            "signature": "\nCborError _cbor_value_begin_string_iteration(CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:960:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:971:1"
+            ],
+            "name": "_cbor_value_begin_string_iteration",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:960:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:973:11": {
+            "signature": "\nCborError _cbor_value_finish_string_iteration(CborValue *value);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:973:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:979:1"
+            ],
+            "name": "_cbor_value_finish_string_iteration",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:973:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborpretty.c:576:11": {
+            "signature": "\nCborError cbor_value_to_pretty_stream(CborStreamFunction streamFunction, void *token, CborValue *value, int flags);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborpretty.c:576:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborpretty.c:579:1"
+            ],
+            "name": "cbor_value_to_pretty_stream",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborpretty.c:576:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborparser_dup_string.c:96:11": {
+            "signature": "\nCborError _cbor_value_dup_string(const CborValue *value, void **buffer,\n                                                  size_t *buflen, CborValue *next);",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser_dup_string.c:96:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborparser_dup_string.c:122:1"
+            ],
+            "name": "_cbor_value_dup_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborparser_dup_string.c:96:11"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborerrorstrings.c:80:13": {
+            "signature": "\nconst char *cbor_error_string(CborError error);",
+            "used_composites": [
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborerrorstrings.c:80:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborerrorstrings.c:188:1"
+            ],
+            "name": "cbor_error_string",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborerrorstrings.c:80:13"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cborencoder_close_container_checked.c:48:11": {
+            "signature": "\nCborError cbor_encoder_close_container_checked(CborEncoder *parentEncoder, const CborEncoder *containerEncoder);",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)",
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [
+                "CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28)",
+                "CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder_close_container_checked.c:48:1",
+                "/promefuzz/database/tinycbor/latest/code/src/cborencoder_close_container_checked.c:51:1"
+            ],
+            "name": "cbor_encoder_close_container_checked",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cborencoder_close_container_checked.c:48:11"
+        }
+    },
+    "composite_infos": {
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8": {
+            "definition": "\nstruct CborEncoder\n{\n    union {\n        uint8_t *ptr;\n        ptrdiff_t bytes_needed;\n        CborEncoderWriteFunction writer;\n    } data;\n    uint8_t *end;\n    size_t remaining;\n    int flags;\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "struct CborEncoder",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14": {
+            "definition": "\nenum CborError {\n    CborNoError = 0,\n\n    /* errors in all modes */\n    CborUnknownError,\n    CborErrorUnknownLength,         /* request for length in array, map, or string with indeterminate length */\n    CborErrorAdvancePastEOF,\n    CborErrorIO,\n\n    /* parser errors streaming errors */\n    CborErrorGarbageAtEnd = 256,\n    CborErrorUnexpectedEOF,\n    CborErrorUnexpectedBreak,\n    CborErrorUnknownType,           /* can only happen in major type 7 */\n    CborErrorIllegalType,           /* type not allowed here */\n    CborErrorIllegalNumber,\n    CborErrorIllegalSimpleType,     /* types of value less than 32 encoded in two bytes */\n    CborErrorNoMoreStringChunks,\n\n    /* parser errors in strict mode parsing only */\n    CborErrorUnknownSimpleType = 512,\n    CborErrorUnknownTag,\n    CborErrorInappropriateTagForType,\n    CborErrorDuplicateObjectKeys,\n    CborErrorInvalidUtf8TextString,\n    CborErrorExcludedType,\n    CborErrorExcludedValue,\n    CborErrorImproperValue,\n    CborErrorOverlongEncoding,\n    CborErrorMapKeyNotString,\n    CborErrorMapNotSorted,\n    CborErrorMapKeysNotUnique,\n\n    /* encoder errors */\n    CborErrorTooManyItems = 768,\n    CborErrorTooFewItems,\n\n    /* internal implementation errors */\n    CborErrorDataTooLarge = 1024,\n    CborErrorNestingTooDeep,\n    CborErrorUnsupportedType,\n    CborErrorUnimplementedValidation,\n\n    /* errors in converting to JSON */\n    CborErrorJsonObjectKeyIsAggregate = 1280,\n    CborErrorJsonObjectKeyNotString,\n    CborErrorJsonNotImplemented,\n\n    CborErrorOutOfMemory = (int) (~0U / 2 + 1),\n    CborErrorInternalError = (int) (~0U / 2)    /* INT_MAX on two's complement machines */\n} CborError;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "enum CborError",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8": {
+            "definition": "\nstruct CborValue;",
+            "used_composites": [
+                "struct CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8)"
+            ],
+            "used_typedefs": [
+                "CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:338:27)"
+            ],
+            "name": "struct CborValue",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8": {
+            "definition": "\nstruct CborParser\n{\n    union {\n        const uint8_t *end;\n        const struct CborParserOperations *ops;\n    } source;\n    enum CborParserGlobalFlags flags;\n};",
+            "used_composites": [
+                "enum CborParserGlobalFlags (/promefuzz/database/tinycbor/latest/code/src/cbor.h:293:6)"
+            ],
+            "used_typedefs": [],
+            "name": "struct CborParser",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:293:6": {
+            "definition": "\nenum CborParserGlobalFlags\n{\n    CborParserFlag_ExternalSource           = 0x01\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "enum CborParserGlobalFlags",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:293:6"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8": {
+            "definition": "\nstruct CborValue\n{\n    const CborParser *parser;\n    union {\n        const uint8_t *ptr;\n        void *token;\n    } source;\n    uint32_t remaining;\n    uint16_t extra;\n    uint8_t type;\n    uint8_t flags;\n};",
+            "used_composites": [
+                "struct CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8)"
+            ],
+            "used_typedefs": [
+                "CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:338:27)"
+            ],
+            "name": "struct CborValue",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:84:14": {
+            "definition": "\nenum CborType {\n    CborIntegerType     = 0x00,\n    CborByteStringType  = 0x40,\n    CborTextStringType  = 0x60,\n    CborArrayType       = 0x80,\n    CborMapType         = 0xa0,\n    CborTagType         = 0xc0,\n    CborSimpleType      = 0xe0,\n    CborBooleanType     = 0xf5,\n    CborNullType        = 0xf6,\n    CborUndefinedType   = 0xf7,\n    CborHalfFloatType   = 0xf9,\n    CborFloatType       = 0xfa,\n    CborDoubleType      = 0xfb,\n\n    CborInvalidType     = 0xff              /* equivalent to the break byte, so it will never be used */\n} CborType;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "enum CborType",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:84:14"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:322:8": {
+            "definition": "\nstruct CborParserOperations\n{\n    bool (*can_read_bytes)(void *token, size_t len);\n    void *(*read_bytes)(void *token, void *dst, size_t offset, size_t len);\n    void (*advance_bytes)(void *token, size_t len);\n    CborError (*transfer_string)(void *token, const void **userptr, size_t offset, size_t len);\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "struct CborParserOperations",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:322:8"
+        }
+    },
+    "class_infos": {},
+    "typedef_infos": {
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28": {
+            "definition": "\ntypedef struct CborEncoder CborEncoder;",
+            "used_composites": [
+                "struct CborEncoder (/promefuzz/database/tinycbor/latest/code/src/cbor.h:225:8)"
+            ],
+            "used_typedefs": [],
+            "name": "CborEncoder",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:236:28"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3": {
+            "definition": "\ntypedef enum CborError CborError;",
+            "used_composites": [
+                "enum CborError (/promefuzz/database/tinycbor/latest/code/src/cbor.h:154:14)"
+            ],
+            "used_typedefs": [],
+            "name": "CborError",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:204:3"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:338:27": {
+            "definition": "\ntypedef struct CborParser CborParser;",
+            "used_composites": [
+                "struct CborParser (/promefuzz/database/tinycbor/latest/code/src/cbor.h:330:8)"
+            ],
+            "used_typedefs": [],
+            "name": "CborParser",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:338:27"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26": {
+            "definition": "\ntypedef struct CborValue CborValue;",
+            "used_composites": [
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:321:8)",
+                "struct CborValue (/promefuzz/database/tinycbor/latest/code/src/cbor.h:340:8)"
+            ],
+            "used_typedefs": [],
+            "name": "CborValue",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:352:26"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:100:3": {
+            "definition": "\ntypedef enum CborType CborType;",
+            "used_composites": [
+                "enum CborType (/promefuzz/database/tinycbor/latest/code/src/cbor.h:84:14)"
+            ],
+            "used_typedefs": [],
+            "name": "CborType",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:100:3"
+        },
+        "/promefuzz/database/tinycbor/latest/code/src/cbor.h:102:18": {
+            "definition": "\ntypedef uint64_t CborTag;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "CborTag",
+            "location": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:102:18"
+        }
+    }
+}

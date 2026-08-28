@@ -1,0 +1,73 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3697086492
+INFO: Loaded 1 modules   (424 inline 8-bit counters): 424 [0x596220adf770, 0x596220adf918), 
+INFO: Loaded 1 PC tables (424 PCs): 424 [0x596220adf918,0x596220ae1398), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+=================================================================
+==2213085==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000010 at pc 0x596220a96e8a bp 0x7fffe9d70e80 sp 0x7fffe9d70e78
+READ of size 8 at 0x502000000010 thread T0
+    #0 0x596220a96e89 in can_read_bytes /promefuzz/database/tinycbor/latest/code/src/cborinternal_p.h:212:44
+    #1 0x596220a96cd0 in read_bytes /promefuzz/database/tinycbor/latest/code/src/cborinternal_p.h:280:9
+    #2 0x596220a9021f in preparse_value /promefuzz/database/tinycbor/latest/code/src/cborparser.c:168:10
+    #3 0x596220a8ffec in cbor_parser_init /promefuzz/database/tinycbor/latest/code/src/cborparser.c:345:12
+    #4 0x596220a8c759 in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920.c:97:25
+    #5 0x596220999cb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x4fcb4) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #6 0x59622099aee1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x50ee1) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #7 0x59622099b4d7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x514d7) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #8 0x5962209889cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x3e9cf) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #9 0x5962209b3056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x69056) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #10 0x7b2f644541c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x7b2f6445428a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x59622097d9b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x339b4) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+
+0x502000000011 is located 0 bytes after 1-byte region [0x502000000010,0x502000000011)
+allocated by thread T0 here:
+    #0 0x596220a4dde3 in malloc (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x103de3) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #1 0x7b2f64821903 in operator new(unsigned long) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xbb903) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #2 0x596220999bc5 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x4fbc5) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #3 0x59622099aee1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x50ee1) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #4 0x59622099b4d7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x514d7) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #5 0x5962209889cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x3e9cf) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #6 0x5962209b3056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x69056) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+    #7 0x7b2f644541c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7b2f6445428a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x59622097d9b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_39/fuzz_driver_39_sanitizing_1787949920+0x339b4) (BuildId: 44abb9357932b113d2a3a45647a8128bbec9e128)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /promefuzz/database/tinycbor/latest/code/src/cborinternal_p.h:212:44 in can_read_bytes
+Shadow bytes around the buggy address:
+  0x501ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x502000000000: fa fa[01]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2213085==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

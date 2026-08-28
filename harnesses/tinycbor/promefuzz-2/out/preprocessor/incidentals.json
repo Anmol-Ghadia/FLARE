@@ -1,0 +1,150 @@
+{
+    "cbor_encode_text_stringz at cbor.h:249:27 in cbor.h": [],
+    "cbor_encode_boolean at cbor.h:255:27 in cbor.h": [],
+    "cbor_encode_null at cbor.h:257:27 in cbor.h": [],
+    "cbor_encode_undefined at cbor.h:259:27 in cbor.h": [],
+    "cbor_encode_half_float at cbor.h:262:27 in cbor.h": [],
+    "cbor_encode_float at cbor.h:265:27 in cbor.h": [],
+    "cbor_encode_double at cbor.h:267:27 in cbor.h": [],
+    "_cbor_encoder_get_buffer_pointer at cbor.h:275:26 in cbor.h": [],
+    "cbor_encoder_get_buffer_size at cbor.h:280:24 in cbor.h": [],
+    "cbor_encoder_get_extra_bytes_needed at cbor.h:285:24 in cbor.h": [],
+    "cbor_value_at_end at cbor.h:360:22 in cbor.h": [],
+    "cbor_value_get_next_byte at cbor.h:362:32 in cbor.h": [],
+    "cbor_value_is_container at cbor.h:367:22 in cbor.h": [],
+    "_cbor_value_extract_int64_helper at cbor.h:373:26 in cbor.h": [],
+    "cbor_value_is_valid at cbor.h:379:22 in cbor.h": [],
+    "cbor_value_get_type at cbor.h:381:26 in cbor.h": [],
+    "cbor_value_is_null at cbor.h:385:22 in cbor.h": [],
+    "cbor_value_is_undefined at cbor.h:387:22 in cbor.h": [],
+    "cbor_value_is_boolean at cbor.h:391:22 in cbor.h": [],
+    "cbor_value_get_boolean at cbor.h:393:27 in cbor.h": [],
+    "cbor_value_is_simple_type at cbor.h:401:22 in cbor.h": [],
+    "cbor_value_get_simple_type at cbor.h:403:27 in cbor.h": [],
+    "cbor_value_is_integer at cbor.h:411:22 in cbor.h": [],
+    "cbor_value_is_unsigned_integer at cbor.h:413:22 in cbor.h": [],
+    "cbor_value_is_negative_integer at cbor.h:415:22 in cbor.h": [],
+    "cbor_value_get_raw_integer at cbor.h:418:27 in cbor.h": [],
+    "cbor_value_get_uint64 at cbor.h:425:27 in cbor.h": [],
+    "cbor_value_get_int64 at cbor.h:432:27 in cbor.h": [],
+    "cbor_value_get_int at cbor.h:441:27 in cbor.h": [],
+    "cbor_value_is_length_known at cbor.h:453:22 in cbor.h": [],
+    "cbor_value_is_tag at cbor.h:457:22 in cbor.h": [],
+    "cbor_value_get_tag at cbor.h:459:27 in cbor.h": [],
+    "cbor_value_is_byte_string at cbor.h:468:22 in cbor.h": [],
+    "cbor_value_is_text_string at cbor.h:470:22 in cbor.h": [],
+    "cbor_value_get_string_length at cbor.h:473:27 in cbor.h": [],
+    "cbor_value_copy_text_string at cbor.h:493:27 in cbor.h": [],
+    "cbor_value_copy_byte_string at cbor.h:499:27 in cbor.h": [],
+    "cbor_value_dup_text_string at cbor.h:506:27 in cbor.h": [],
+    "cbor_value_dup_byte_string at cbor.h:512:27 in cbor.h": [],
+    "cbor_value_get_string_chunk_size at cbor.h:520:27 in cbor.h": [],
+    "cbor_value_string_iteration_at_end at cbor.h:526:22 in cbor.h": [],
+    "cbor_value_begin_string_iteration at cbor.h:533:27 in cbor.h": [],
+    "cbor_value_finish_string_iteration at cbor.h:541:27 in cbor.h": [],
+    "cbor_value_get_text_string_chunk at cbor.h:549:27 in cbor.h": [],
+    "cbor_value_get_byte_string_chunk at cbor.h:555:27 in cbor.h": [],
+    "cbor_value_is_array at cbor.h:565:22 in cbor.h": [],
+    "cbor_value_is_map at cbor.h:567:22 in cbor.h": [],
+    "cbor_value_get_array_length at cbor.h:570:27 in cbor.h": [],
+    "cbor_value_get_map_length at cbor.h:583:27 in cbor.h": [],
+    "cbor_value_is_half_float at cbor.h:599:22 in cbor.h": [],
+    "cbor_value_get_half_float at cbor.h:602:27 in cbor.h": [],
+    "cbor_value_is_float at cbor.h:612:22 in cbor.h": [],
+    "cbor_value_get_float at cbor.h:614:27 in cbor.h": [],
+    "cbor_value_is_double at cbor.h:624:22 in cbor.h": [],
+    "cbor_value_get_double at cbor.h:626:27 in cbor.h": [],
+    "cbor_value_to_pretty at cbor.h:712:27 in cbor.h": [],
+    "cbor_encoder_init at cborencoder.c:195:6 in cbor.h": [],
+    "cbor_encoder_init_writer at cborencoder.c:203:6 in cbor.h": [],
+    "cbor_encode_uint at cborencoder.c:348:11 in cbor.h": [],
+    "cbor_encode_negative_int at cborencoder.c:361:11 in cbor.h": [],
+    "cbor_encode_int at cborencoder.c:372:11 in cbor.h": [],
+    "cbor_encode_simple_value at cborencoder.c:388:11 in cbor.h": [],
+    "cbor_encode_floating_point at cborencoder.c:409:11 in cbor.h": [],
+    "cbor_encode_tag at cborencoder.c:432:11 in cbor.h": [],
+    "cbor_encode_byte_string at cborencoder.c:463:11 in cbor.h": [],
+    "cbor_encode_text_string at cborencoder.c:475:11 in cbor.h": [],
+    "cbor_encode_raw at cborencoder.c:489:11 in cbor.h": [],
+    "cbor_encoder_create_array at cborencoder.c:537:11 in cbor.h": [],
+    "cbor_encoder_create_map at cborencoder.c:561:11 in cbor.h": [],
+    "cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h": [],
+    "cbor_encode_float_as_half_float at cborencoder_float.c:32:11 in cbor.h": [
+        "cbor_encode_floating_point at cborencoder.c:409:11 in cbor.h"
+    ],
+    "cbor_value_to_pretty_advance at cborpretty_stdio.c:63:11 in cbor.h": [
+        "cbor_value_to_pretty_stream at cborpretty.c:576:11 in cbor.h"
+    ],
+    "cbor_value_to_pretty_advance_flags at cborpretty_stdio.c:83:11 in cbor.h": [
+        "cbor_value_to_pretty_stream at cborpretty.c:576:11 in cbor.h"
+    ],
+    "cbor_value_to_json at cborjson.h:51:27 in cborjson.h": [],
+    "cbor_value_validate at cborvalidation.c:640:11 in cbor.h": [],
+    "cbor_value_to_json_advance at cbortojson.c:786:11 in cborjson.h": [
+        "cbor_value_get_type at cbor.h:381:26 in cbor.h"
+    ],
+    "cbor_value_get_half_float_as_float at cborparser_float.c:40:11 in cbor.h": [
+        "cbor_value_get_half_float at cbor.h:602:27 in cbor.h"
+    ],
+    "_cbor_value_get_string_chunk_size at cborparser.c:1033:11 in cbor.h": [],
+    "_cbor_value_get_string_chunk at cborparser.c:1137:11 in cbor.h": [],
+    "_cbor_value_copy_string at cborparser.c:1286:11 in cbor.h": [],
+    "cbor_value_text_string_equals at cborparser.c:1314:11 in cbor.h": [
+        "cbor_value_is_text_string at cbor.h:470:22 in cbor.h",
+        "cbor_value_skip_tag at cborparser.c:542:11 in cbor.h"
+    ],
+    "cbor_value_map_find_value at cborparser.c:1402:11 in cbor.h": [
+        "cbor_value_at_end at cbor.h:360:22 in cbor.h",
+        "cbor_value_is_text_string at cbor.h:470:22 in cbor.h",
+        "cbor_value_is_map at cbor.h:567:22 in cbor.h",
+        "cbor_value_enter_container at cborparser.c:569:11 in cbor.h",
+        "cbor_value_advance at cborparser.c:506:11 in cbor.h",
+        "cbor_value_skip_tag at cborparser.c:542:11 in cbor.h"
+    ],
+    "_cbor_value_decode_int64_internal at cborparser.c:316:10 in cbor.h": [],
+    "cbor_parser_init at cborparser.c:336:11 in cbor.h": [],
+    "cbor_parser_init_reader at cborparser.c:348:11 in cbor.h": [],
+    "cbor_value_reparse at cborparser.c:397:11 in cbor.h": [],
+    "cbor_value_validate_basic at cborparser.c:433:11 in cbor.h": [
+        "cbor_value_advance at cborparser.c:506:11 in cbor.h"
+    ],
+    "cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h": [],
+    "cbor_value_advance at cborparser.c:506:11 in cbor.h": [],
+    "cbor_value_skip_tag at cborparser.c:542:11 in cbor.h": [
+        "cbor_value_is_tag at cbor.h:457:22 in cbor.h",
+        "cbor_value_advance_fixed at cborparser.c:454:11 in cbor.h"
+    ],
+    "cbor_value_enter_container at cborparser.c:569:11 in cbor.h": [
+        "cbor_value_is_container at cbor.h:367:22 in cbor.h"
+    ],
+    "cbor_value_leave_container at cborparser.c:618:11 in cbor.h": [
+        "cbor_value_is_container at cbor.h:367:22 in cbor.h"
+    ],
+    "cbor_value_get_int64_checked at cborparser.c:803:11 in cbor.h": [
+        "cbor_value_is_integer at cbor.h:411:22 in cbor.h",
+        "_cbor_value_extract_int64_helper at cbor.h:373:26 in cbor.h"
+    ],
+    "cbor_value_get_int_checked at cborparser.c:843:11 in cbor.h": [
+        "cbor_value_is_integer at cbor.h:411:22 in cbor.h",
+        "_cbor_value_extract_int64_helper at cbor.h:373:26 in cbor.h"
+    ],
+    "cbor_value_calculate_string_length at cborparser.c:954:11 in cbor.h": [
+        "_cbor_value_copy_string at cborparser.c:1286:11 in cbor.h"
+    ],
+    "_cbor_value_begin_string_iteration at cborparser.c:960:11 in cbor.h": [
+        "cbor_value_is_length_known at cbor.h:453:22 in cbor.h"
+    ],
+    "_cbor_value_finish_string_iteration at cborparser.c:973:11 in cbor.h": [
+        "cbor_value_is_length_known at cbor.h:453:22 in cbor.h"
+    ],
+    "cbor_value_to_pretty_stream at cborpretty.c:576:11 in cbor.h": [],
+    "_cbor_value_dup_string at cborparser_dup_string.c:96:11 in cbor.h": [
+        "_cbor_value_copy_string at cborparser.c:1286:11 in cbor.h"
+    ],
+    "cbor_error_string at cborerrorstrings.c:80:13 in cbor.h": [
+        "cbor_error_string at cborerrorstrings.c:80:13 in cbor.h"
+    ],
+    "cbor_encoder_close_container_checked at cborencoder_close_container_checked.c:48:11 in cbor.h": [
+        "cbor_encoder_close_container at cborencoder.c:580:11 in cbor.h"
+    ]
+}

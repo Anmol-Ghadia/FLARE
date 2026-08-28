@@ -1,0 +1,612 @@
+{
+    "/promefuzz/database/tinycbor/latest/code/src/cbor.h": {
+        "cbor_encode_text_stringz": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:249:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:249:27"
+            }
+        ],
+        "cbor_encode_boolean": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:255:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:255:27"
+            }
+        ],
+        "cbor_encode_null": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:257:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:257:27"
+            }
+        ],
+        "cbor_encode_undefined": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:259:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:259:27"
+            }
+        ],
+        "cbor_encode_half_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:262:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:262:27"
+            }
+        ],
+        "cbor_encode_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:265:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:265:27"
+            }
+        ],
+        "cbor_encode_double": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:267:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:267:27"
+            }
+        ],
+        "_cbor_encoder_get_buffer_pointer": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:275:26",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:275:26"
+            }
+        ],
+        "cbor_encoder_get_buffer_size": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:280:24",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:280:24"
+            }
+        ],
+        "cbor_encoder_get_extra_bytes_needed": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:285:24",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:285:24"
+            }
+        ],
+        "cbor_value_at_end": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:360:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:360:22"
+            }
+        ],
+        "cbor_value_get_next_byte": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:362:32",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:362:32"
+            }
+        ],
+        "cbor_value_is_container": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:367:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:367:22"
+            }
+        ],
+        "_cbor_value_extract_int64_helper": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:373:26",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:373:26"
+            }
+        ],
+        "cbor_value_is_valid": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:379:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:379:22"
+            }
+        ],
+        "cbor_value_get_type": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:381:26",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:381:26"
+            }
+        ],
+        "cbor_value_is_null": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:385:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:385:22"
+            }
+        ],
+        "cbor_value_is_undefined": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:387:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:387:22"
+            }
+        ],
+        "cbor_value_is_boolean": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:391:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:391:22"
+            }
+        ],
+        "cbor_value_get_boolean": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:393:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:393:27"
+            }
+        ],
+        "cbor_value_is_simple_type": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:401:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:401:22"
+            }
+        ],
+        "cbor_value_get_simple_type": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:403:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:403:27"
+            }
+        ],
+        "cbor_value_is_integer": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:411:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:411:22"
+            }
+        ],
+        "cbor_value_is_unsigned_integer": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:413:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:413:22"
+            }
+        ],
+        "cbor_value_is_negative_integer": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:415:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:415:22"
+            }
+        ],
+        "cbor_value_get_raw_integer": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:418:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:418:27"
+            }
+        ],
+        "cbor_value_get_uint64": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:425:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:425:27"
+            }
+        ],
+        "cbor_value_get_int64": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:432:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:432:27"
+            }
+        ],
+        "cbor_value_get_int": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:441:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:441:27"
+            }
+        ],
+        "cbor_value_is_length_known": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:453:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:453:22"
+            }
+        ],
+        "cbor_value_is_tag": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:457:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:457:22"
+            }
+        ],
+        "cbor_value_get_tag": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:459:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:459:27"
+            }
+        ],
+        "cbor_value_is_byte_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:468:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:468:22"
+            }
+        ],
+        "cbor_value_is_text_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:470:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:470:22"
+            }
+        ],
+        "cbor_value_get_string_length": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:473:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:473:27"
+            }
+        ],
+        "cbor_value_copy_text_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:493:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:493:27"
+            }
+        ],
+        "cbor_value_copy_byte_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:499:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:499:27"
+            }
+        ],
+        "cbor_value_dup_text_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:506:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:506:27"
+            }
+        ],
+        "cbor_value_dup_byte_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:512:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:512:27"
+            }
+        ],
+        "cbor_value_get_string_chunk_size": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:520:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:520:27"
+            }
+        ],
+        "cbor_value_string_iteration_at_end": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:526:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:526:22"
+            }
+        ],
+        "cbor_value_begin_string_iteration": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:533:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:533:27"
+            }
+        ],
+        "cbor_value_finish_string_iteration": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:541:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:541:27"
+            }
+        ],
+        "cbor_value_get_text_string_chunk": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:549:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:549:27"
+            }
+        ],
+        "cbor_value_get_byte_string_chunk": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:555:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:555:27"
+            }
+        ],
+        "cbor_value_is_array": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:565:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:565:22"
+            }
+        ],
+        "cbor_value_is_map": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:567:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:567:22"
+            }
+        ],
+        "cbor_value_get_array_length": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:570:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:570:27"
+            }
+        ],
+        "cbor_value_get_map_length": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:583:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:583:27"
+            }
+        ],
+        "cbor_value_is_half_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:599:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:599:22"
+            }
+        ],
+        "cbor_value_get_half_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:602:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:602:27"
+            }
+        ],
+        "cbor_value_is_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:612:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:612:22"
+            }
+        ],
+        "cbor_value_get_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:614:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:614:27"
+            }
+        ],
+        "cbor_value_is_double": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:624:22",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:624:22"
+            }
+        ],
+        "cbor_value_get_double": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:626:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:626:27"
+            }
+        ],
+        "cbor_value_to_pretty": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:712:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:712:27"
+            }
+        ],
+        "cbor_encoder_init": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:195:6",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:241:15"
+            }
+        ],
+        "cbor_encoder_init_writer": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:203:6",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:242:15"
+            }
+        ],
+        "cbor_encode_uint": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:348:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:243:20"
+            }
+        ],
+        "cbor_encode_negative_int": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:361:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:245:20"
+            }
+        ],
+        "cbor_encode_int": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:372:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:244:20"
+            }
+        ],
+        "cbor_encode_simple_value": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:388:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:246:20"
+            }
+        ],
+        "cbor_encode_floating_point": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:409:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:252:20"
+            }
+        ],
+        "cbor_encode_tag": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:432:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:247:20"
+            }
+        ],
+        "cbor_encode_byte_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:463:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:251:20"
+            }
+        ],
+        "cbor_encode_text_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:475:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:248:20"
+            }
+        ],
+        "cbor_encode_raw": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:489:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:253:20"
+            }
+        ],
+        "cbor_encoder_create_array": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:537:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:270:20"
+            }
+        ],
+        "cbor_encoder_create_map": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:561:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:271:20"
+            }
+        ],
+        "cbor_encoder_close_container": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder.c:580:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:272:20"
+            }
+        ],
+        "cbor_encode_float_as_half_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder_float.c:32:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:264:20"
+            }
+        ],
+        "cbor_value_to_pretty_advance": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:63:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:711:20"
+            }
+        ],
+        "cbor_value_to_pretty_advance_flags": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborpretty_stdio.c:83:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:710:20"
+            }
+        ],
+        "cbor_value_validate": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborvalidation.c:640:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:680:20"
+            }
+        ],
+        "cbor_value_get_half_float_as_float": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser_float.c:40:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:601:20"
+            }
+        ],
+        "_cbor_value_get_string_chunk_size": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1033:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:519:28"
+            }
+        ],
+        "_cbor_value_get_string_chunk": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1137:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:547:28"
+            }
+        ],
+        "_cbor_value_copy_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1286:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:486:28"
+            }
+        ],
+        "cbor_value_text_string_equals": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1314:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:562:20"
+            }
+        ],
+        "cbor_value_map_find_value": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:1402:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:596:20"
+            }
+        ],
+        "_cbor_value_decode_int64_internal": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:316:10",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:372:27"
+            }
+        ],
+        "cbor_parser_init": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:336:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:355:20"
+            }
+        ],
+        "cbor_parser_init_reader": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:348:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:356:20"
+            }
+        ],
+        "cbor_value_reparse": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:397:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:364:20"
+            }
+        ],
+        "cbor_value_validate_basic": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:433:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:358:20"
+            }
+        ],
+        "cbor_value_advance_fixed": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:454:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:365:20"
+            }
+        ],
+        "cbor_value_advance": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:506:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:366:20"
+            }
+        ],
+        "cbor_value_skip_tag": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:542:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:465:20"
+            }
+        ],
+        "cbor_value_enter_container": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:569:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:369:20"
+            }
+        ],
+        "cbor_value_leave_container": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:618:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:370:20"
+            }
+        ],
+        "cbor_value_get_int64_checked": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:803:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:450:20"
+            }
+        ],
+        "cbor_value_get_int_checked": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:843:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:451:20"
+            }
+        ],
+        "cbor_value_calculate_string_length": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:954:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:491:20"
+            }
+        ],
+        "_cbor_value_begin_string_iteration": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:960:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:532:28"
+            }
+        ],
+        "_cbor_value_finish_string_iteration": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser.c:973:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:540:28"
+            }
+        ],
+        "cbor_value_to_pretty_stream": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborpretty.c:576:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:706:20"
+            }
+        ],
+        "_cbor_value_dup_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborparser_dup_string.c:96:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:488:28"
+            }
+        ],
+        "cbor_error_string": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborerrorstrings.c:80:13",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:206:22"
+            }
+        ],
+        "cbor_encoder_close_container_checked": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborencoder_close_container_checked.c:48:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:273:20"
+            }
+        ]
+    },
+    "/promefuzz/database/tinycbor/latest/code/src/cborjson.h": {
+        "cbor_value_to_json": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:51:27",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:51:27"
+            }
+        ],
+        "cbor_value_to_json_advance": [
+            {
+                "loc": "/promefuzz/database/tinycbor/latest/code/src/cbortojson.c:786:11",
+                "decl_loc": "/promefuzz/database/tinycbor/latest/code/src/cborjson.h:50:20"
+            }
+        ]
+    }
+}

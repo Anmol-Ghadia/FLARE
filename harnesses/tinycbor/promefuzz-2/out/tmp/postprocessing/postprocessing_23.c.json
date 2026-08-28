@@ -1,0 +1,56 @@
+{
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:25:23": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:15:18",
+    "calleeName": "make_value",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "callerName": "fuzz_one"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:36:27": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:9:17",
+    "calleeName": "read_u16",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "callerName": "fuzz_one"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:37:19": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:601:20",
+    "calleeName": "cbor_value_get_half_float_as_float",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "callerName": "fuzz_one"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:46:19": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:393:27",
+    "calleeName": "cbor_value_get_boolean",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "callerName": "fuzz_one"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:56:19": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:612:22",
+    "calleeName": "cbor_value_is_float",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "callerName": "fuzz_one"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:65:19": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/code/src/cbor.h:624:22",
+    "calleeName": "cbor_value_is_double",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "callerName": "fuzz_one"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:84:9": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "calleeName": "fuzz_one",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:70:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:87:9": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "calleeName": "fuzz_one",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:70:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:90:9": {
+    "calleeDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:24:13",
+    "calleeName": "fuzz_one",
+    "callerDeclLoc": "/promefuzz/database/tinycbor/latest/out/tmp/postprocessing/postprocessing_23.c:70:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  }
+}

@@ -1,0 +1,31 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1567528879
+INFO: Loaded 1 modules   (71 inline 8-bit counters): 71 [0x5aa79a88e230, 0x5aa79a88e277), 
+INFO: Loaded 1 PC tables (71 PCs): 71 [0x5aa79a88e278,0x5aa79a88e6e8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+/promefuzz/database/tinycbor/latest/code/src/cbor.h:566:17: runtime error: member access within null pointer of type 'const CborValue' (aka 'const struct CborValue')
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /promefuzz/database/tinycbor/latest/code/src/cbor.h:566:17 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2208336==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000016 (pc 0x5aa79a847873 bp 0x7fffa6ba3f70 sp 0x7fffa6ba3f20 T0)
+==2208336==The signal is caused by a READ memory access.
+==2208336==Hint: address points to the zero page.
+    #0 0x5aa79a847873 in cbor_value_is_array /promefuzz/database/tinycbor/latest/code/src/cbor.h:566:10
+    #1 0x5aa79a84764c in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360.c:77:11
+    #2 0x5aa79a753ca4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360+0x4dca4) (BuildId: db3ff0d2dc043df7a25e08b6c2e6e7e927e93e21)
+    #3 0x5aa79a754ed1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360+0x4eed1) (BuildId: db3ff0d2dc043df7a25e08b6c2e6e7e927e93e21)
+    #4 0x5aa79a7554c7 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360+0x4f4c7) (BuildId: db3ff0d2dc043df7a25e08b6c2e6e7e927e93e21)
+    #5 0x5aa79a7429bf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360+0x3c9bf) (BuildId: db3ff0d2dc043df7a25e08b6c2e6e7e927e93e21)
+    #6 0x5aa79a76d046 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360+0x67046) (BuildId: db3ff0d2dc043df7a25e08b6c2e6e7e927e93e21)
+    #7 0x76b4201af1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x76b4201af28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x5aa79a7379a4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787944360+0x319a4) (BuildId: db3ff0d2dc043df7a25e08b6c2e6e7e927e93e21)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/tinycbor/latest/code/src/cbor.h:566:10 in cbor_value_is_array
+==2208336==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

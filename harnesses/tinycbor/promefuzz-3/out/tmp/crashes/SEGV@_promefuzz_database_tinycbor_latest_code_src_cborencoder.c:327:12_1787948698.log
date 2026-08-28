@@ -1,0 +1,41 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1364801016
+INFO: Loaded 1 modules   (171 inline 8-bit counters): 171 [0x61f046a15348, 0x61f046a153f3), 
+INFO: Loaded 1 PC tables (171 PCs): 171 [0x61f046a153f8,0x61f046a15ea8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 31 ft: 32 corp: 1/1b exec/s: 0 rss: 32Mb
+#4	NEW    cov: 41 ft: 43 corp: 2/3b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 2 ShuffleBytes-InsertByte-
+#6	NEW    cov: 42 ft: 50 corp: 3/6b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 ShuffleBytes-CrossOver-
+#8	NEW    cov: 43 ft: 57 corp: 4/10b lim: 4 exec/s: 0 rss: 32Mb L: 4/4 MS: 2 CrossOver-CrossOver-
+	NEW_FUNC[1/1]: 0x61f0469cc840 in cbor_encode_negative_int /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:362
+#14	NEW    cov: 46 ft: 60 corp: 5/11b lim: 4 exec/s: 0 rss: 32Mb L: 1/4 MS: 1 ChangeByte-
+#62	NEW    cov: 51 ft: 66 corp: 6/13b lim: 4 exec/s: 0 rss: 33Mb L: 2/4 MS: 3 CrossOver-ChangeBit-InsertByte-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2212240==ERROR: AddressSanitizer: SEGV on unknown address 0x5110000075c0 (pc 0x5110000075c0 bp 0x7fff49aeab90 sp 0x7fff49aeaa98 T0)
+==2212240==The signal is caused by a READ memory access.
+==2212240==Hint: PC is at a non-executable region. Maybe a wild jump?
+    #0 0x5110000075c0  (<unknown module>)
+    #1 0x61f0469cd841 in encode_number_no_update /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:327:12
+    #2 0x61f0469cc82c in encode_number /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:339:12
+    #3 0x61f0469cc7a6 in cbor_encode_uint /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:350:12
+    #4 0x61f0469cb700 in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698.c:58:19
+    #5 0x61f0468d7cc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x4dcc4) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+    #6 0x61f0468d73b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x4d3b9) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+    #7 0x61f0468d8ba5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x4eba5) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+    #8 0x61f0468d9705 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x4f705) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+    #9 0x61f0468c69df in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x3c9df) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+    #10 0x61f0468f1066 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x67066) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+    #11 0x76de015991c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x76de0159928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x61f0468bb9c4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948698+0x319c4) (BuildId: de4725c5c899affb9a6bdaa72f59a729eaddc62c)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (<unknown module>) 
+==2212240==ABORTING
+MS: 2 CopyPart-CrossOver-; base unit: c314f8c1fa13e1afa11c8716c7bce6dbf02d09aa
+0xd1,0xd1,0xa,0xcf,0xcf,0xcf,
+\321\321\012\317\317\317
+artifact_prefix='./'; Test unit written to ./crash-b8f9521092f84366ae8e6c1252dc41dbca044077
+Base64: 0dEKz8/P

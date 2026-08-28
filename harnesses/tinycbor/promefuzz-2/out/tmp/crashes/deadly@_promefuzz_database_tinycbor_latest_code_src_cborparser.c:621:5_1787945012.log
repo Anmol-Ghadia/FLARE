@@ -1,0 +1,48 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 4269952522
+INFO: Loaded 1 modules   (354 inline 8-bit counters): 354 [0x55ab2ddb93e0, 0x55ab2ddb9542), 
+INFO: Loaded 1 PC tables (354 PCs): 354 [0x55ab2ddb9548,0x55ab2ddbab68), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 74 ft: 75 corp: 1/1b exec/s: 0 rss: 32Mb
+	NEW_FUNC[1/3]: 0x55ab2dd6ae30 in preparse_next_value_nodecrement /promefuzz/database/tinycbor/latest/code/src/cborparser.c:255
+	NEW_FUNC[2/3]: 0x55ab2dd6c1e0 in cbor_value_enter_container /promefuzz/database/tinycbor/latest/code/src/cborparser.c:570
+#5	NEW    cov: 91 ft: 109 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 3 ShuffleBytes-ChangeByte-ChangeBit-
+#7	NEW    cov: 93 ft: 111 corp: 3/3b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 2 CopyPart-ChangeByte-
+	NEW_FUNC[1/9]: 0x55ab2dd6dc50 in _cbor_value_copy_string /promefuzz/database/tinycbor/latest/code/src/cborparser.c:1288
+	NEW_FUNC[2/9]: 0x55ab2dd6de90 in _cbor_value_begin_string_iteration /promefuzz/database/tinycbor/latest/code/src/cborparser.c:961
+#8	NEW    cov: 114 ft: 139 corp: 4/5b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 1 InsertByte-
+fuzz_driver_28_sanitizing_1787945011: /promefuzz/database/tinycbor/latest/code/src/cborparser.c:621: CborError cbor_value_leave_container(CborValue *, const CborValue *): Assertion `recursed->type == CborInvalidType' failed.
+==2208923== ERROR: libFuzzer: deadly signal
+    #0 0x55ab2dd33b45 in __sanitizer_print_stack_trace (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x10eb45) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #1 0x55ab2dc8d65c in fuzzer::PrintStackTrace() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x6865c) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #2 0x55ab2dc736e7 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x4e6e7) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #3 0x7411ec80a32f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7411ec863b2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x7411ec863b2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x7411ec863b2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x7411ec80a27d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x7411ec7ed8fe in abort stdlib/abort.c:79:7
+    #9 0x7411ec7ed81a in __assert_fail_base assert/assert.c:96:3
+    #10 0x7411ec800516 in __assert_fail assert/assert.c:105:3
+    #11 0x55ab2dd6d03a in cbor_value_leave_container /promefuzz/database/tinycbor/latest/code/src/cborparser.c:621:5
+    #12 0x55ab2dd67c3f in walk_value /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011.c:52:19
+    #13 0x55ab2dd6761c in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011.c:72:5
+    #14 0x55ab2dc74cb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x4fcb4) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #15 0x55ab2dc743a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x4f3a9) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #16 0x55ab2dc75b95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x50b95) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #17 0x55ab2dc766f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x516f5) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #18 0x55ab2dc639cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x3e9cf) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #19 0x55ab2dc8e056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x69056) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+    #20 0x7411ec7ef1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #21 0x7411ec7ef28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #22 0x55ab2dc589b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_28/fuzz_driver_28_sanitizing_1787945011+0x339b4) (BuildId: bcbd0412ddb6e71cb9043b85e97e677f07f8f6e1)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 1 CopyPart-; base unit: e27bd5104a595844730f44df571de7da07951ffb
+0xaf,0xaf,
+\257\257
+artifact_prefix='./'; Test unit written to ./crash-d334f3361cb1a9e20ab2dd5bcb9780a6b3664680
+Base64: r68=

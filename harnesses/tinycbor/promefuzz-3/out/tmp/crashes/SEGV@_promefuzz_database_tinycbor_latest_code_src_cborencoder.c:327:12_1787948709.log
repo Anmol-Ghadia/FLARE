@@ -1,0 +1,42 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3671460161
+INFO: Loaded 1 modules   (169 inline 8-bit counters): 169 [0x55c589483388, 0x55c589483431), 
+INFO: Loaded 1 PC tables (169 PCs): 169 [0x55c589483438,0x55c589483ec8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 39 ft: 40 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 46 ft: 48 corp: 2/3b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 1 CrossOver-
+	NEW_FUNC[1/1]: 0x55c58943aa30 in cbor_encode_negative_int /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:362
+#5	NEW    cov: 48 ft: 50 corp: 3/5b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 2 EraseBytes-InsertByte-
+	NEW_FUNC[1/1]: 0x55c58943c6e0 in would_overflow /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:250
+#8	NEW    cov: 57 ft: 74 corp: 4/9b lim: 4 exec/s: 0 rss: 32Mb L: 4/4 MS: 3 ChangeBit-ChangeByte-CrossOver-
+#9	NEW    cov: 59 ft: 82 corp: 5/12b lim: 4 exec/s: 0 rss: 32Mb L: 3/4 MS: 1 InsertByte-
+#14	NEW    cov: 60 ft: 84 corp: 6/16b lim: 4 exec/s: 0 rss: 32Mb L: 4/4 MS: 5 ShuffleBytes-CrossOver-CrossOver-ChangeByte-CrossOver-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2212247==ERROR: AddressSanitizer: SEGV on unknown address 0x502000000d50 (pc 0x502000000d50 bp 0x7ffccd20bbd0 sp 0x7ffccd20bad8 T0)
+==2212247==The signal is caused by a READ memory access.
+==2212247==Hint: PC is at a non-executable region. Maybe a wild jump?
+    #0 0x502000000d50  (<unknown module>)
+    #1 0x55c58943ba31 in encode_number_no_update /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:327:12
+    #2 0x55c58943aa1c in encode_number /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:339:12
+    #3 0x55c58943aa9d in cbor_encode_negative_int /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:363:12
+    #4 0x55c5894394da in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709.c:71:19
+    #5 0x55c589345cc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x4dcc4) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+    #6 0x55c5893453b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x4d3b9) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+    #7 0x55c589346ba5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x4eba5) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+    #8 0x55c589347705 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x4f705) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+    #9 0x55c5893349df in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x3c9df) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+    #10 0x55c58935f066 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x67066) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+    #11 0x704db31b81c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x704db31b828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x55c5893299c4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948709+0x319c4) (BuildId: 346d5c6941b16676318c70d3685e49b9a021c630)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (<unknown module>) 
+==2212247==ABORTING
+MS: 3 CrossOver-CrossOver-CMP- DE: "\001\000"-; base unit: 71853c6197a6a7f222db0f1978c7cb232b87c5ee
+0xa,0x1,0x0,0xa,
+\012\001\000\012
+artifact_prefix='./'; Test unit written to ./crash-6d7ff80145eb2bf33213f3b76b755f5e7701e2b0
+Base64: CgEACg==

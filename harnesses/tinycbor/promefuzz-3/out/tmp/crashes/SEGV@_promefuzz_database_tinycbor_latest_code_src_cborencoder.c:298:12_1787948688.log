@@ -1,0 +1,41 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 4249026536
+INFO: Loaded 1 modules   (169 inline 8-bit counters): 169 [0x57ff9b2fe348, 0x57ff9b2fe3f1), 
+INFO: Loaded 1 PC tables (169 PCs): 169 [0x57ff9b2fe3f8,0x57ff9b2fee88), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 33 ft: 34 corp: 1/1b exec/s: 0 rss: 32Mb
+	NEW_FUNC[1/1]: 0x57ff9b2b5860 in cbor_encode_negative_int /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:362
+#3	NEW    cov: 38 ft: 39 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeBit-
+	NEW_FUNC[1/2]: 0x57ff9b2b7390 in append_byte_to_buffer /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:297
+	NEW_FUNC[2/2]: 0x57ff9b2b7510 in would_overflow /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:250
+#5	NEW    cov: 53 ft: 56 corp: 3/4b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 2 ShuffleBytes-InsertByte-
+#7	NEW    cov: 53 ft: 62 corp: 4/7b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 CrossOver-InsertByte-
+#8	NEW    cov: 53 ft: 68 corp: 5/11b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 1 CopyPart-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2212233==ERROR: AddressSanitizer: SEGV on unknown address 0x5020000009d0 (pc 0x5020000009d0 bp 0x7fffd0e39c90 sp 0x7fffd0e39b98 T0)
+==2212233==The signal is caused by a READ memory access.
+==2212233==Hint: PC is at a non-executable region. Maybe a wild jump?
+    #0 0x5020000009d0  (<unknown module>)
+    #1 0x57ff9b2b74b1 in append_byte_to_buffer /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:298:12
+    #2 0x57ff9b2b725a in cbor_encoder_close_container /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:587:16
+    #3 0x57ff9b2b4746 in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688.c:66:11
+    #4 0x57ff9b1c0cc4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x4dcc4) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+    #5 0x57ff9b1c03b9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x4d3b9) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+    #6 0x57ff9b1c1ba5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x4eba5) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+    #7 0x57ff9b1c2705 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x4f705) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+    #8 0x57ff9b1af9df in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x3c9df) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+    #9 0x57ff9b1da066 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x67066) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+    #10 0x770a2b8121c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x770a2b81228a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x57ff9b1a49c4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_16/fuzz_driver_16_sanitizing_1787948688+0x319c4) (BuildId: 69a6d9f5f5f945b85084a67ad729ce1d09f53d49)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (<unknown module>) 
+==2212233==ABORTING
+MS: 1 InsertByte-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xa,0x3f,
+\012?
+artifact_prefix='./'; Test unit written to ./crash-73414afce012cf0162abb206fade6a8f7b27ce6b
+Base64: Cj8=

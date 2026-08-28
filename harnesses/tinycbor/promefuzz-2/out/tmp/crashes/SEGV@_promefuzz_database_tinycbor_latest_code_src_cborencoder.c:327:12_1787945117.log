@@ -1,0 +1,43 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2103164686
+INFO: Loaded 1 modules   (188 inline 8-bit counters): 188 [0x5737eb3ff440, 0x5737eb3ff4fc), 
+INFO: Loaded 1 PC tables (188 PCs): 188 [0x5737eb3ff500,0x5737eb4000c0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 63 ft: 64 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 65 ft: 75 corp: 2/3b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 1 InsertByte-
+#27	NEW    cov: 65 ft: 80 corp: 3/6b lim: 4 exec/s: 0 rss: 33Mb L: 3/3 MS: 4 ChangeBit-InsertByte-ShuffleBytes-CrossOver-
+#57	NEW    cov: 65 ft: 86 corp: 4/10b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 5 ShuffleBytes-ChangeBit-InsertByte-ChangeBit-InsertByte-
+#124	NEW    cov: 65 ft: 88 corp: 5/14b lim: 4 exec/s: 0 rss: 35Mb L: 4/4 MS: 2 InsertByte-ChangeBinInt-
+#141	NEW    cov: 65 ft: 91 corp: 6/16b lim: 4 exec/s: 0 rss: 35Mb L: 2/4 MS: 2 ChangeByte-EraseBytes-
+#207	REDUCE cov: 65 ft: 91 corp: 6/15b lim: 4 exec/s: 0 rss: 36Mb L: 1/4 MS: 1 EraseBytes-
+#379	REDUCE cov: 65 ft: 91 corp: 6/12b lim: 4 exec/s: 0 rss: 40Mb L: 1/4 MS: 2 CrossOver-ChangeBit-
+#818	NEW    cov: 66 ft: 97 corp: 7/20b lim: 8 exec/s: 0 rss: 47Mb L: 8/8 MS: 4 CrossOver-CopyPart-ChangeByte-InsertRepeatedBytes-
+#1132	NEW    cov: 72 ft: 104 corp: 8/29b lim: 11 exec/s: 0 rss: 51Mb L: 9/9 MS: 4 CrossOver-ChangeBit-ChangeBinInt-InsertByte-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2208998==ERROR: AddressSanitizer: SEGV on unknown address 0x743a8fa3d040 (pc 0x743a8fa3d040 bp 0x7ffe338a1310 sp 0x7ffe338a1218 T0)
+==2208998==The signal is caused by a READ memory access.
+==2208998==Hint: PC is at a non-executable region. Maybe a wild jump?
+    #0 0x743a8fa3d040  (<unknown module>)
+    #1 0x5737eb3b7eb1 in encode_number_no_update /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:327:12
+    #2 0x5737eb3b7af9 in cbor_encode_tag /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:435:12
+    #3 0x5737eb3b4a8a in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117.c:77:11
+    #4 0x5737eb2c1cb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x4dcb4) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+    #5 0x5737eb2c13a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x4d3a9) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+    #6 0x5737eb2c2b95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x4eb95) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+    #7 0x5737eb2c36f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x4f6f5) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+    #8 0x5737eb2b09cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x3c9cf) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+    #9 0x5737eb2db056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x67056) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+    #10 0x743a916611c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x743a9166128a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x5737eb2a59b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_30/fuzz_driver_30_sanitizing_1787945117+0x319b4) (BuildId: b3e68e008a648b73c98349c87d51ce512d42f21c)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (<unknown module>) 
+==2208998==ABORTING
+MS: 5 EraseBytes-CopyPart-ShuffleBytes-ChangeByte-InsertRepeatedBytes-; base unit: 88930568d0fd43c27200eb07dff3dd2fa18988e0
+0xa,0x3c,0x30,0x3c,0x3a,0xff,0xff,0xff,0xff,0xff,0xff,
+\012<0<:\377\377\377\377\377\377
+artifact_prefix='./'; Test unit written to ./crash-c33be13dbd7ba7de7a035440cae4eca72a667ce3
+Base64: CjwwPDr///////8=

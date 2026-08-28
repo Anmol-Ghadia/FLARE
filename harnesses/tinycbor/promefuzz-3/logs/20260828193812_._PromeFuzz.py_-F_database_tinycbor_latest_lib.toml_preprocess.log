@@ -1,0 +1,68 @@
+2026-08-28T19:38:12.833183+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260828193812_._PromeFuzz.py_-F_database_tinycbor_latest_lib.toml_preprocess.log
+2026-08-28T19:38:12.836048+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 12 source files.
+2026-08-28T19:38:12.943181+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 12 source files.
+2026-08-28T19:38:12.948833+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-28T19:38:12.966072+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 0 functions
+2026-08-28T19:38:12.967080+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 101 API functions extracted, dumped to /promefuzz/database/tinycbor/latest/out/preprocessor/api.pkl
+2026-08-28T19:38:12.967362+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/tinycbor/latest/out/preprocessor/sources.json
+2026-08-28T19:38:12.967510+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-28T19:38:13.045963+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/tinycbor/latest/out/preprocessor/incidentals.pkl
+2026-08-28T19:38:13.046212+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-28T19:38:13.068396+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/encoder/data.cpp:
+/promefuzz/database/tinycbor/latest/code/tests/encoder/data.cpp:25:10: fatal error: 'QtTest' file not found
+   25 | #include <QtTest>
+      |          ^~~~~~~~
+
+2026-08-28T19:38:13.069215+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/tinycbor/latest/code/tests/encoder/data.cpp.
+2026-08-28T19:38:13.074661+0000 | ThreadPoolExecutor-4_0 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/c90/tst_c90.c:
+In file included from /promefuzz/database/tinycbor/latest/code/tests/c90/tst_c90.c:25:
+/promefuzz/database/tinycbor/latest/code/src/cbor.h:41:10: fatal error: 'tinycbor-export.h' file not found
+   41 | #include "tinycbor-export.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+
+2026-08-28T19:38:13.075172+0000 | ThreadPoolExecutor-4_0 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/tinycbor/latest/code/tests/c90/tst_c90.c.
+2026-08-28T19:38:13.091723+0000 | ThreadPoolExecutor-4_7 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/examples/simplereader.c:
+In file included from /promefuzz/database/tinycbor/latest/code/examples/simplereader.c:1:
+/promefuzz/database/tinycbor/latest/code/examples/../src/cbor.h:41:10: fatal error: 'tinycbor-export.h' file not found
+   41 | #include "tinycbor-export.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+
+2026-08-28T19:38:13.092746+0000 | ThreadPoolExecutor-4_3 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/parser/data.cpp:
+/promefuzz/database/tinycbor/latest/code/tests/parser/data.cpp:25:10: fatal error: 'QtTest' file not found
+   25 | #include <QtTest>
+      |          ^~~~~~~~
+
+2026-08-28T19:38:13.106558+0000 | ThreadPoolExecutor-4_2 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/encoder/tst_encoder.cpp:
+/promefuzz/database/tinycbor/latest/code/tests/encoder/tst_encoder.cpp:25:10: fatal error: 'QtTest' file not found
+   25 | #include <QtTest>
+      |          ^~~~~~~~
+
+2026-08-28T19:38:13.118973+0000 | ThreadPoolExecutor-4_4 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/parser/tst_parser.cpp:
+/promefuzz/database/tinycbor/latest/code/tests/parser/tst_parser.cpp:27:10: fatal error: 'QtTest' file not found
+   27 | #include <QtTest>
+      |          ^~~~~~~~
+
+2026-08-28T19:38:13.196182+0000 | ThreadPoolExecutor-4_6 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/tojson/tst_tojson.cpp:
+/promefuzz/database/tinycbor/latest/code/tests/tojson/tst_tojson.cpp:26:10: fatal error: 'QtTest' file not found
+   26 | #include <QtTest>
+      |          ^~~~~~~~
+
+2026-08-28T19:38:13.218413+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/tinycbor/latest/code/tests/cpp/tst_cpp.cpp:
+In file included from /promefuzz/database/tinycbor/latest/code/tests/cpp/tst_cpp.cpp:25:
+In file included from /promefuzz/database/tinycbor/latest/code/tests/cpp/../../src/cborencoder.c:27:
+/promefuzz/database/tinycbor/latest/code/tests/cpp/../../src/cbor.h:41:10: fatal error: 'tinycbor-export.h' file not found
+   41 | #include "tinycbor-export.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+
+2026-08-28T19:38:13.218999+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/tinycbor/latest/code/tests/cpp/tst_cpp.cpp.
+2026-08-28T19:38:13.221551+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/tinycbor/latest/out/preprocessor/call_order.pkl
+2026-08-28T19:38:13.221747+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-28T19:38:13.229458+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union CborEncoder::(unnamed at /promefuzz/database/tinycbor/latest/code/src/cbor.h:227:5) is not found in the meta data.
+2026-08-28T19:38:13.276939+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union CborParser::(unnamed at /promefuzz/database/tinycbor/latest/code/src/cbor.h:332:5) is not found in the meta data.
+2026-08-28T19:38:13.278353+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union CborValue::(unnamed at /promefuzz/database/tinycbor/latest/code/src/cbor.h:343:5) is not found in the meta data.
+2026-08-28T19:38:13.314995+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct _IO_FILE is not found in the meta data.
+2026-08-28T19:38:13.391032+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/tinycbor/latest/out/preprocessor/info.pkl
+2026-08-28T19:38:13.391228+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-28T19:38:13.392367+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/tinycbor/latest/out/preprocessor/complexity.pkl
+2026-08-28T19:38:13.392534+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-28T19:38:13.424443+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/tinycbor/latest/out/preprocessor/*_relev.pkl

@@ -1,0 +1,42 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 600939873
+INFO: Loaded 1 modules   (171 inline 8-bit counters): 171 [0x5c34e50db298, 0x5c34e50db343), 
+INFO: Loaded 1 PC tables (171 PCs): 171 [0x5c34e50db348,0x5c34e50dbdf8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 45 ft: 46 corp: 1/1b exec/s: 0 rss: 32Mb
+#4	NEW    cov: 46 ft: 54 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 2 CopyPart-ChangeBit-
+#7	NEW    cov: 48 ft: 56 corp: 3/4b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 3 ShuffleBytes-CopyPart-CrossOver-
+	NEW_FUNC[1/3]: 0x5c34e5092420 in cbor_encoder_init /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:196
+	NEW_FUNC[2/3]: 0x5c34e5094410 in would_overflow /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:250
+#8	NEW    cov: 56 ft: 65 corp: 4/5b lim: 4 exec/s: 0 rss: 32Mb L: 1/2 MS: 1 ChangeByte-
+#9	NEW    cov: 62 ft: 71 corp: 5/8b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 1 InsertByte-
+#14	NEW    cov: 63 ft: 77 corp: 6/9b lim: 4 exec/s: 0 rss: 32Mb L: 1/3 MS: 5 ShuffleBytes-ChangeBinInt-ChangeBit-ShuffleBytes-ChangeByte-
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2209195==ERROR: AddressSanitizer: SEGV on unknown address 0x502000000c30 (pc 0x502000000c30 bp 0x7ffd61a497d0 sp 0x7ffd61a496d8 T0)
+==2209195==The signal is caused by a READ memory access.
+==2209195==Hint: PC is at a non-executable region. Maybe a wild jump?
+    #0 0x502000000c30  (<unknown module>)
+    #1 0x5c34e5093761 in encode_number_no_update /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:327:12
+    #2 0x5c34e5093ed7 in create_container /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:518:15
+    #3 0x5c34e5093ff9 in cbor_encoder_create_map /promefuzz/database/tinycbor/latest/code/src/cborencoder.c:565:12
+    #4 0x5c34e5091521 in LLVMFuzzerTestOneInput /promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390.c:118:13
+    #5 0x5c34e4f9dcb4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x4dcb4) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+    #6 0x5c34e4f9d3a9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x4d3a9) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+    #7 0x5c34e4f9eb95 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x4eb95) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+    #8 0x5c34e4f9f6f5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x4f6f5) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+    #9 0x5c34e4f8c9cf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x3c9cf) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+    #10 0x5c34e4fb7056 in main (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x67056) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+    #11 0x72eb464ea1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x72eb464ea28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x5c34e4f819b4 in _start (/promefuzz/database/tinycbor/latest/out/tmp/fuzz_driver_37/fuzz_driver_37_sanitizing_1787945390+0x319b4) (BuildId: 12324d5e00dcfc3bd7df66e0346116a35c9b1690)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (<unknown module>) 
+==2209195==ABORTING
+MS: 2 ShuffleBytes-CopyPart-; base unit: 6dcd4ce23d88e2ee9568ba546c007c63d9131c1b
+0x41,0x41,
+AA
+artifact_prefix='./'; Test unit written to ./crash-801c34269f74ed383fc97de33604b8a905adb635
+Base64: QUE=
