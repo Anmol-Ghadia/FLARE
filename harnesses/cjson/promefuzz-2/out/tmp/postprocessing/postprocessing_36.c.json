@@ -1,164 +1,230 @@
 {
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:115:31": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:169:26",
-    "calleeName": "cJSON_PrintPreallocated",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:103:23": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "calleeName": "make_item_from_bytes",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:116:31": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:169:26",
-    "calleeName": "cJSON_PrintPreallocated",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:105:13": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:228:26",
+    "calleeName": "cJSON_AddItemToArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:123:9": {
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:109:11": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:174:19",
+    "calleeName": "cJSON_GetArraySize",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:110:11": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:174:19",
+    "calleeName": "cJSON_GetArraySize",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:118:18": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
+    "calleeName": "consume_int",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:119:19": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
+    "calleeName": "consume_int",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:123:35": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:240:23",
+    "calleeName": "cJSON_DetachItemFromArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:125:45": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
+    "calleeName": "consume_int",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:126:26": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:248:26",
+    "calleeName": "cJSON_InsertItemInArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:127:25": {
     "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20",
     "calleeName": "cJSON_Delete",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:125:9": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:133:34": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "calleeName": "make_item_from_bytes",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:126:15": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:162:22",
-    "calleeName": "cJSON_Print",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:135:26": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:248:26",
+    "calleeName": "cJSON_InsertItemInArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:127:15": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:164:22",
-    "calleeName": "cJSON_PrintUnformatted",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:128:15": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:166:22",
-    "calleeName": "cJSON_PrintBuffered",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:134:23": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:169:26",
-    "calleeName": "cJSON_PrintPreallocated",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:31:21": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
-    "calleeName": "consume_int",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:32:17": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
-    "calleeName": "consume_int",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:33:36": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
-    "calleeName": "consume_int",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:34:36": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
-    "calleeName": "consume_int",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:53:19": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:154:23",
-    "calleeName": "cJSON_Parse",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:56:25": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:162:22",
-    "calleeName": "cJSON_Print",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:58:31": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:154:23",
-    "calleeName": "cJSON_Parse",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
-    "callerName": "LLVMFuzzerTestOneInput"
-  },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:60:17": {
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:136:25": {
     "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20",
     "calleeName": "cJSON_Delete",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:65:29": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:164:22",
-    "calleeName": "cJSON_PrintUnformatted",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:142:23": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:174:19",
+    "calleeName": "cJSON_GetArraySize",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:67:32": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:154:23",
-    "calleeName": "cJSON_Parse",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:146:26": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:174:19",
+    "calleeName": "cJSON_GetArraySize",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:69:17": {
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:154:30": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:176:23",
+    "calleeName": "cJSON_GetArrayItem",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:156:38": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "calleeName": "make_item_from_bytes",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:158:26": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:249:26",
+    "calleeName": "cJSON_ReplaceItemViaPointer",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:159:25": {
     "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20",
     "calleeName": "cJSON_Delete",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:74:27": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:166:22",
-    "calleeName": "cJSON_PrintBuffered",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:165:34": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "calleeName": "make_item_from_bytes",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:79:27": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:166:22",
-    "calleeName": "cJSON_PrintBuffered",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:167:26": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:250:26",
+    "calleeName": "cJSON_ReplaceItemInArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:85:13": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:168:25": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20",
+    "calleeName": "cJSON_Delete",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:86:13": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:175:17": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:241:20",
+    "calleeName": "cJSON_DeleteItemFromArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:87:13": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:180:5": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20",
+    "calleeName": "cJSON_Delete",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:88:13": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:29:16": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:201:23",
+    "calleeName": "cJSON_CreateNull",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:38:20": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:201:23",
+    "calleeName": "cJSON_CreateNull",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:40:20": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:204:23",
+    "calleeName": "cJSON_CreateBool",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:42:20": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:205:23",
+    "calleeName": "cJSON_CreateNumber",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:42:47": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:14:12",
+    "calleeName": "consume_int",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:47:24": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:201:23",
+    "calleeName": "cJSON_CreateNull",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:55:27": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:206:23",
+    "calleeName": "cJSON_CreateString",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:57:34": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:201:23",
+    "calleeName": "cJSON_CreateNull",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:60:20": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:209:23",
+    "calleeName": "cJSON_CreateArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:62:20": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:210:23",
+    "calleeName": "cJSON_CreateObject",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:15",
+    "callerName": "make_item_from_bytes"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:83:16": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:154:23",
+    "calleeName": "cJSON_Parse",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:94:17": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:87:26": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:196:26",
+    "calleeName": "cJSON_IsArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   },
-  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:97:13": {
-    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23",
-    "calleeName": "cJSON_GetObjectItemCaseSensitive",
-    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:26:5",
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:89:13": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20",
+    "calleeName": "cJSON_Delete",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:91:16": {
+    "calleeDeclLoc": "/promefuzz/database/cjson/latest/code/cJSON.h:209:23",
+    "calleeName": "cJSON_CreateArray",
+    "callerDeclLoc": "/promefuzz/database/cjson/latest/out/tmp/postprocessing/postprocessing_36.c:66:5",
     "callerName": "LLVMFuzzerTestOneInput"
   }
 }

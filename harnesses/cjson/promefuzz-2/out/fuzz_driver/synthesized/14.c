@@ -1,9 +1,13 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_ReplaceItemInObject at cJSON.c:2450:26 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_ReplaceItemInObject at cJSON.c:2408:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -12,64 +16,92 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <string.h>
 #include "cJSON.h"
 
-static double read_double_from_data(const uint8_t *Data, size_t Size, size_t Offset) {
+static double read_double_from_data(const uint8_t *Data, size_t Size, size_t offset) {
     double value = 0.0;
-    if (Offset + sizeof(double) <= Size) {
-        memcpy(&value, Data + Offset, sizeof(double));
-    } else {
-        uint8_t buf[sizeof(double)] = {0};
-        size_t remaining = (Offset < Size) ? (Size - Offset) : 0;
-        if (remaining > 0) {
-            memcpy(buf, Data + Offset, remaining);
-        }
-        memcpy(&value, buf, sizeof(double));
+    if (Data == NULL || offset >= Size) {
+        return value;
     }
+
+    size_t remaining = Size - offset;
+    size_t copy_size = remaining < sizeof(double) ? remaining : sizeof(double);
+    memcpy(&value, Data + offset, copy_size);
     return value;
+}
+
+static char *make_key_from_data(const uint8_t *Data, size_t Size, size_t offset, size_t max_len) {
+    size_t len = 0;
+    char *key = NULL;
+
+    if (offset < Size) {
+        len = Size - offset;
+    }
+    if (len > max_len) {
+        len = max_len;
+    }
+
+    key = (char *)malloc(len + 1);
+    if (key == NULL) {
+        return NULL;
+    }
+
+    if (len > 0) {
+        memcpy(key, Data + offset, len);
+    }
+    key[len] = '\0';
+
+    return key;
 }
 
 int LLVMFuzzerTestOneInput_14(const uint8_t *Data, size_t Size) {
     double num1 = read_double_from_data(Data, Size, 0);
     double num2 = read_double_from_data(Data, Size, sizeof(double));
 
-    const char *key_add = "key";
-    const char *key_replace = "key";
-
-    if (Size > 2 * sizeof(double)) {
-        size_t key_offset = 2 * sizeof(double);
-        size_t key_len = Size - key_offset;
-
-        if (key_len > 0) {
-            static char keybuf[256];
-            size_t copy_len = key_len;
-            if (copy_len >= sizeof(keybuf)) {
-                copy_len = sizeof(keybuf) - 1;
-            }
-            memcpy(keybuf, Data + key_offset, copy_len);
-            keybuf[copy_len] = '\0';
-            key_add = keybuf;
-            key_replace = keybuf;
-        }
-    }
+    char *key_add = make_key_from_data(Data, Size, 2 * sizeof(double), 32);
+    char *key_replace = make_key_from_data(Data, Size, 2 * sizeof(double) + 32, 32);
 
     cJSON *object = cJSON_CreateObject();
+    cJSON *item1 = NULL;
+    cJSON *item2 = NULL;
+
     if (object == NULL) {
+        free(key_add);
+        free(key_replace);
         return 0;
     }
 
-    cJSON *item1 = cJSON_CreateNumber(num1);
-    cJSON *item2 = cJSON_CreateNumber(num2);
+    item1 = cJSON_CreateNumber(num1);
+    item2 = cJSON_CreateNumber(num2);
 
     if (item1 != NULL) {
-        (void)cJSON_AddItemToObject(object, key_add, item1);
+        if (key_add == NULL) {
+            cJSON_Delete(item1);
+            item1 = NULL;
+        } else {
+            if (!cJSON_AddItemToObject(object, key_add, item1)) {
+                cJSON_Delete(item1);
+                item1 = NULL;
+            }
+        }
     }
 
     if (item2 != NULL) {
-        (void)cJSON_ReplaceItemInObject(object, key_replace, item2);
+        if (key_replace == NULL) {
+            cJSON_Delete(item2);
+            item2 = NULL;
+        } else {
+            if (!cJSON_ReplaceItemInObject(object, key_replace, item2)) {
+                cJSON_Delete(item2);
+                item2 = NULL;
+            }
+        }
     }
 
     cJSON_Delete(object);
+    free(key_add);
+    free(key_replace);
     return 0;
 }

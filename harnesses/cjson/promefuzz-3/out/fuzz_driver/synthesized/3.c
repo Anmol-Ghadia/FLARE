@@ -1,23 +1,28 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddNumberToObject at cJSON.c:2156:22 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddStringToObject at cJSON.c:2168:22 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_ParseWithLength at cJSON.c:1232:23 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
-// cJSON_AddBoolToObject at cJSON.c:2186:22 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_IsString at cJSON.c:3032:26 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_IsTrue at cJSON.c:2992:26 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_Compare at cJSON.c:3072:26 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_IsTrue at cJSON.c:2950:26 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddStringToObject at cJSON.c:2168:22 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -26,39 +31,73 @@
 
 #include "cJSON.h"
 
-static char *make_cstring_from_bytes(const uint8_t *data, size_t size) {
-    char *s = (char *)malloc(size + 1);
-    if (s == NULL) {
+static char *make_key_string(const uint8_t *data, size_t size, size_t *consumed)
+{
+    size_t i;
+    size_t take;
+    char *out;
+
+    if (consumed == NULL) {
         return NULL;
     }
-    if (size > 0 && data != NULL) {
-        memcpy(s, data, size);
+
+    take = (size > 32) ? 32 : size;
+    *consumed = take;
+
+    out = (char *)malloc(take + 1);
+    if (out == NULL) {
+        *consumed = 0;
+        return NULL;
     }
-    s[size] = '\0';
-    return s;
+
+    for (i = 0; i < take; i++) {
+        unsigned char c = data[i];
+        if (c == '\0') {
+            c = 'A';
+        }
+        out[i] = (char)c;
+    }
+    out[take] = '\0';
+    return out;
 }
 
-static char *make_slice_string(const uint8_t *data, size_t size, size_t offset, size_t requested_len) {
-    size_t available = 0;
-    size_t actual_len = 0;
+static char *make_nul_terminated_copy(const uint8_t *data, size_t size)
+{
+    char *out;
 
-    if (offset < size) {
-        available = size - offset;
-    } else {
-        available = 0;
+    out = (char *)malloc(size + 1);
+    if (out == NULL) {
+        return NULL;
     }
 
-    actual_len = (requested_len < available) ? requested_len : available;
-    return make_cstring_from_bytes((actual_len > 0) ? (data + offset) : NULL, actual_len);
+    if (size > 0) {
+        memcpy(out, data, size);
+    }
+    out[size] = '\0';
+    return out;
 }
 
-int LLVMFuzzerTestOneInput_3(const uint8_t *Data, size_t Size) {
-    char *json_buf = make_cstring_from_bytes(Data, Size);
-    if (json_buf == NULL) {
-        return 0;
-    }
+int LLVMFuzzerTestOneInput_3(const uint8_t *Data, size_t Size)
+{
+    cJSON *root = NULL;
+    cJSON *dup = NULL;
+    cJSON *item1 = NULL;
+    cJSON *item2 = NULL;
+    cJSON *item3 = NULL;
+    cJSON *item4 = NULL;
+    cJSON *dup_item1 = NULL;
+    cJSON *dup_item2 = NULL;
+    char *key1 = NULL;
+    char *key2 = NULL;
+    char *key3 = NULL;
+    char *key4 = NULL;
+    char *data_str = NULL;
+    size_t used1 = 0, used2 = 0, used3 = 0, used4 = 0;
+    cJSON_bool recurse = 0;
+    cJSON_bool case_sensitive = 0;
+    FILE *fp;
 
-    FILE *fp = fopen("./dummy_file", "wb");
+    fp = fopen("./dummy_file", "wb");
     if (fp != NULL) {
         if (Size > 0) {
             (void)fwrite(Data, 1, Size, fp);
@@ -66,66 +105,84 @@ int LLVMFuzzerTestOneInput_3(const uint8_t *Data, size_t Size) {
         fclose(fp);
     }
 
-    cJSON *root = cJSON_ParseWithLength(json_buf, Size);
+    root = cJSON_ParseWithLength((const char *)Data, Size);
     if (root == NULL) {
         root = cJSON_CreateObject();
-        if (root != NULL) {
-            cJSON_AddStringToObject(root, "a", json_buf);
-            cJSON_AddBoolToObject(root, "b", (Size > 0) ? ((Data[0] & 1) != 0) : 0);
+        if (root == NULL) {
+            return 0;
+        }
+
+        data_str = make_nul_terminated_copy(Data, Size);
+        if (data_str == NULL) {
+            cJSON_Delete(root);
+            return 0;
+        }
+
+        if (Size > 0) {
+            (void)cJSON_AddStringToObject(root, "a", data_str);
+        }
+        if (Size > 1) {
+            (void)cJSON_AddBoolToObject(root, "b", (Data[0] & 1) ? 1 : 0);
+        }
+        if (Size > 2) {
+            (void)cJSON_AddNumberToObject(root, "c", (double)Data[1]);
+        }
+        if (Size > 3) {
             cJSON *nested = cJSON_CreateObject();
             if (nested != NULL) {
-                cJSON_AddStringToObject(nested, "x", (Size > 1) ? (const char *)(json_buf + 1) : "");
-                cJSON_AddItemToObject(root, "c", nested);
+                (void)cJSON_AddBoolToObject(nested, "inner_true", (Data[2] & 1) ? 1 : 0);
+                (void)cJSON_AddStringToObject(nested, "inner_str", data_str);
+                cJSON_AddItemToObject(root, "d", nested);
             }
         }
     }
 
-    if (root != NULL) {
-        size_t q1_len = (Size > 0) ? ((size_t)Data[0] % (Size + 1)) : 0;
-        size_t q2_len = (Size > 1) ? ((size_t)Data[1] % (Size + 1)) : 0;
-        size_t q3_len = (Size > 2) ? ((size_t)Data[2] % (Size + 1)) : 0;
-        size_t q4_len = (Size > 3) ? ((size_t)Data[3] % (Size + 1)) : 0;
-        size_t q5_len = (Size > 4) ? ((size_t)Data[4] % (Size + 1)) : 0;
+    key1 = make_key_string(Data, Size, &used1);
+    key2 = make_key_string(Data + (used1 < Size ? used1 : Size), Size > used1 ? Size - used1 : 0, &used2);
+    key3 = make_key_string(Data + ((used1 + used2) < Size ? (used1 + used2) : Size),
+                           Size > (used1 + used2) ? Size - (used1 + used2) : 0, &used3);
+    key4 = make_key_string(Data + ((used1 + used2 + used3) < Size ? (used1 + used2 + used3) : Size),
+                           Size > (used1 + used2 + used3) ? Size - (used1 + used2 + used3) : 0, &used4);
 
-        char *key1 = make_slice_string(Data, Size, 5, q1_len);
-        char *key2 = make_slice_string(Data, Size, 6, q2_len);
-        char *key3 = make_slice_string(Data, Size, 7, q3_len);
-        char *key4 = make_slice_string(Data, Size, 8, q4_len);
-        char *key5 = make_slice_string(Data, Size, 9, q5_len);
-
-        if (key1 == NULL) key1 = make_cstring_from_bytes((const uint8_t *)"a", 1);
-        if (key2 == NULL) key2 = make_cstring_from_bytes((const uint8_t *)"b", 1);
-        if (key3 == NULL) key3 = make_cstring_from_bytes((const uint8_t *)"c", 1);
-        if (key4 == NULL) key4 = make_cstring_from_bytes((const uint8_t *)"x", 1);
-        if (key5 == NULL) key5 = make_cstring_from_bytes((const uint8_t *)"a", 1);
-
-        cJSON *item1 = cJSON_GetObjectItemCaseSensitive(root, key1);
-        (void)cJSON_IsString(item1);
-
-        cJSON *item2 = cJSON_GetObjectItemCaseSensitive(root, key2);
-        (void)cJSON_IsTrue(item2);
-
-        cJSON *item3 = cJSON_GetObjectItemCaseSensitive(root, key3);
-        cJSON *item4 = cJSON_GetObjectItemCaseSensitive(root, key4);
-        (void)item4;
-
-        cJSON *dup = cJSON_Duplicate((item3 != NULL) ? item3 : root, 1);
-
-        cJSON *item5 = cJSON_GetObjectItemCaseSensitive(dup, key4);
-        cJSON *item6 = cJSON_GetObjectItemCaseSensitive(root, key5);
-
-        (void)cJSON_Compare((item5 != NULL) ? item5 : dup, (item6 != NULL) ? item6 : root, (Size > 0) ? (Data[0] & 1) : 0);
-
-        cJSON_Delete(dup);
-
+    if (key1 == NULL || key2 == NULL || key3 == NULL || key4 == NULL) {
+        free(data_str);
         free(key1);
         free(key2);
         free(key3);
         free(key4);
-        free(key5);
+        cJSON_Delete(root);
+        return 0;
     }
 
+    item1 = cJSON_GetObjectItemCaseSensitive(root, key1);
+    (void)cJSON_IsString(item1);
+
+    item2 = cJSON_GetObjectItemCaseSensitive(root, key2);
+    (void)cJSON_IsTrue(item2);
+
+    item3 = cJSON_GetObjectItemCaseSensitive(root, key3);
+    item4 = cJSON_GetObjectItemCaseSensitive(root, key4);
+
+    recurse = (Size > 0) ? (Data[0] & 1) : 0;
+    dup = cJSON_Duplicate(root, recurse);
+
+    if (dup != NULL) {
+        dup_item1 = cJSON_GetObjectItemCaseSensitive(dup, key1);
+        dup_item2 = cJSON_GetObjectItemCaseSensitive(dup, key2);
+        case_sensitive = (Size > 1) ? (Data[1] & 1) : 0;
+        (void)cJSON_Compare(dup_item1, dup_item2, case_sensitive);
+    } else {
+        (void)cJSON_Compare(item3, item4, 0);
+    }
+
+    cJSON_Delete(dup);
     cJSON_Delete(root);
-    free(json_buf);
+
+    free(data_str);
+    free(key1);
+    free(key2);
+    free(key3);
+    free(key4);
+
     return 0;
 }

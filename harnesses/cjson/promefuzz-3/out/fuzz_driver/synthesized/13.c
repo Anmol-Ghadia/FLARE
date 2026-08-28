@@ -1,8 +1,9 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_CreateArrayReference at cJSON.c:2571:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateArrayReference at cJSON.c:2529:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
@@ -16,20 +17,23 @@
 #include <math.h>
 #include "cJSON.h"
 
-static double read_double_from_data(const uint8_t *Data, size_t Size) {
-    double value = 0.0;
-    size_t n = Size < sizeof(double) ? Size : sizeof(double);
-    if (n > 0) {
-        memcpy(&value, Data, n);
+static double data_to_double(const uint8_t *Data, size_t Size) {
+    double d = 0.0;
+    if (Size >= sizeof(double)) {
+        memcpy(&d, Data, sizeof(double));
+    } else if (Size > 0) {
+        uint8_t buf[sizeof(double)] = {0};
+        memcpy(buf, Data, Size);
+        memcpy(&d, buf, sizeof(double));
     }
-    return value;
+    return d;
 }
 
 int LLVMFuzzerTestOneInput_13(const uint8_t *Data, size_t Size) {
-    double num = read_double_from_data(Data, Size);
+    double num = data_to_double(Data, Size);
 
     if (Size > sizeof(double)) {
-        switch (Data[sizeof(double)] % 8) {
+        switch (Data[sizeof(double)] % 6) {
             case 0:
                 num = 0.0;
                 break;
@@ -37,37 +41,30 @@ int LLVMFuzzerTestOneInput_13(const uint8_t *Data, size_t Size) {
                 num = -0.0;
                 break;
             case 2:
-                num = 1.0;
+                num = 1.0 / 0.0;
                 break;
             case 3:
-                num = -1.0;
+                num = -1.0 / 0.0;
                 break;
             case 4:
-                num = 1e308;
-                break;
-            case 5:
-                num = -1e308;
-                break;
-            case 6:
-                num = INFINITY;
-                break;
-            case 7:
                 num = NAN;
+                break;
+            default:
                 break;
         }
     }
 
     cJSON *array = cJSON_CreateArray();
-    if (array == NULL) {
-        return 0;
-    }
-
     cJSON *number = cJSON_CreateNumber(num);
-    if (number != NULL) {
+
+    if (array != NULL && number != NULL) {
         (void)cJSON_AddItemToArray(array, number);
+    } else if (number != NULL) {
+        cJSON_Delete(number);
+        number = NULL;
     }
 
-    cJSON *array_ref = cJSON_CreateArrayReference(array->child);
+    cJSON *array_ref = cJSON_CreateArrayReference(array ? array->child : NULL);
 
     cJSON_Delete(array_ref);
     cJSON_Delete(array);

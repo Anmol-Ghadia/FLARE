@@ -1,0 +1,38 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1544726341
+INFO: Loaded 1 modules   (927 inline 8-bit counters): 927 [0x59976a689738, 0x59976a689ad7), 
+INFO: Loaded 1 PC tables (927 PCs): 927 [0x59976a689ad8,0x59976a68d4c8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 93 ft: 94 corp: 1/1b exec/s: 0 rss: 32Mb
+#3	NEW    cov: 94 ft: 95 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeByte-
+#5	NEW    cov: 94 ft: 108 corp: 3/4b lim: 4 exec/s: 0 rss: 32Mb L: 2/2 MS: 2 ShuffleBytes-InsertByte-
+#45	NEW    cov: 99 ft: 113 corp: 4/8b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 5 InsertByte-ShuffleBytes-CopyPart-CopyPart-InsertByte-
+#326	NEW    cov: 101 ft: 120 corp: 5/13b lim: 6 exec/s: 0 rss: 36Mb L: 5/5 MS: 1 InsertRepeatedBytes-
+
+=================================================================
+==12668==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 64 byte(s) in 1 object(s) allocated from:
+    #0 0x59976a5eae13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x106e13) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #1 0x59976a62d738 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x59976a631b2b in cJSON_CreateNull /promefuzz/database/cjson/latest/code/cJSON.c:2421:19
+    #3 0x59976a629d00 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026.c:137:80
+    #4 0x59976a536ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x52ce4) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #5 0x59976a5363d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x523d9) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #6 0x59976a537bc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x53bc5) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #7 0x59976a538725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x54725) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #8 0x59976a5259ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x419ff) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #9 0x59976a550086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x6c086) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+    #10 0x7fea1e70f1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x7fea1e70f28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #12 0x59976a51a9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916026+0x369e4) (BuildId: 5045ab6bf9524c3ed0e77ca9766a883764512718)
+
+SUMMARY: AddressSanitizer: 64 byte(s) leaked in 1 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 2 ChangeBinInt-InsertByte-; base unit: 01b12078e0acdaffd175392634cb9b936ba74e43
+0x77,0x60,0x6,0xfd,0xf9,0xa,
+w`\006\375\371\012
+artifact_prefix='./'; Test unit written to ./leak-5a150bd735efafa174f6908b04a39a4133b97de5
+Base64: d2AG/fkK

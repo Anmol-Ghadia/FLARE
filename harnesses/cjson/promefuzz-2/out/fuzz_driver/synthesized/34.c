@@ -1,35 +1,57 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateIntArray at cJSON.c:2621:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_CreateDoubleArray at cJSON.c:2701:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_CreateFloatArray at cJSON.c:2661:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateIntArray at cJSON.c:2621:23 in cJSON.h
-// cJSON_CreateDoubleArray at cJSON.c:2701:23 in cJSON.h
-// cJSON_CreateFloatArray at cJSON.c:2661:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNull at cJSON.c:2970:26 in cJSON.h
+// cJSON_IsRaw at cJSON.c:3020:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNull at cJSON.c:2970:26 in cJSON.h
+// cJSON_IsRaw at cJSON.c:3020:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNull at cJSON.c:2970:26 in cJSON.h
+// cJSON_IsRaw at cJSON.c:3020:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNull at cJSON.c:2970:26 in cJSON.h
+// cJSON_IsRaw at cJSON.c:3020:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNull at cJSON.c:2970:26 in cJSON.h
+// cJSON_IsRaw at cJSON.c:3020:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNull at cJSON.c:2970:26 in cJSON.h
+// cJSON_IsRaw at cJSON.c:3020:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
+// cJSON_Compare at cJSON.c:3030:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_CreateIntArray at cJSON.c:2621:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateDoubleArray at cJSON.c:2701:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateFloatArray at cJSON.c:2661:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -39,182 +61,232 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "cJSON.h"
 
-static int read_int32(const uint8_t *data, size_t size, size_t *offset)
-{
-    int value = 0;
-    size_t remaining = (size > *offset) ? (size - *offset) : 0;
-    size_t to_copy = remaining < sizeof(value) ? remaining : sizeof(value);
-
-    if (to_copy > 0) {
-        memcpy(&value, data + *offset, to_copy);
-        *offset += to_copy;
+static uint32_t read_u32(const uint8_t *data, size_t size, size_t *offset) {
+    uint32_t v = 0;
+    size_t i;
+    for (i = 0; i < 4 && *offset < size; i++, (*offset)++) {
+        v = (v << 8) | data[*offset];
     }
-
-    return value;
+    return v;
 }
 
-static size_t choose_count(const uint8_t *data, size_t size, size_t *offset, size_t max_count)
-{
-    if (max_count == 0) {
-        return 0;
+static double read_doubleish(const uint8_t *data, size_t size, size_t *offset) {
+    uint64_t v = 0;
+    size_t i;
+    for (i = 0; i < 8 && *offset < size; i++, (*offset)++) {
+        v = (v << 8) | data[*offset];
     }
-
-    if (*offset >= size) {
-        return 0;
-    }
-
-    return (size_t)(data[(*offset)++] % (max_count + 1));
+    return (double)(v % 1000000) / 13.0;
 }
 
-int LLVMFuzzerTestOneInput_34(const uint8_t *Data, size_t Size)
-{
+static char *make_string(const uint8_t *data, size_t size, size_t *offset, size_t max_len) {
+    size_t remaining = (*offset < size) ? (size - *offset) : 0;
+    size_t len = remaining;
+    char *out;
+    size_t i;
+
+    if (len > max_len) {
+        len = max_len;
+    }
+
+    out = (char *)malloc(len + 1);
+    if (out == NULL) {
+        return NULL;
+    }
+
+    for (i = 0; i < len; i++) {
+        unsigned char c = data[*offset + i];
+        if (c == '\0') {
+            c = 'A';
+        }
+        out[i] = (char)c;
+    }
+    out[len] = '\0';
+    *offset += len;
+    return out;
+}
+
+static cJSON *make_manual_item(const uint8_t *data, size_t size, size_t *offset) {
+    cJSON *item = cJSON_CreateNull();
+    uint32_t selector;
+    if (item == NULL) {
+        return NULL;
+    }
+
+    selector = read_u32(data, size, offset) % 8U;
+    switch (selector) {
+        case 0:
+            item->type = cJSON_Number;
+            item->valuedouble = read_doubleish(data, size, offset);
+            item->valueint = (int)item->valuedouble;
+            break;
+        case 1:
+            item->type = cJSON_NULL;
+            break;
+        case 2:
+            item->type = cJSON_Raw;
+            free(item->valuestring);
+            item->valuestring = make_string(data, size, offset, 64);
+            break;
+        case 3:
+            item->type = cJSON_String;
+            free(item->valuestring);
+            item->valuestring = make_string(data, size, offset, 64);
+            break;
+        case 4:
+            item->type = cJSON_True;
+            break;
+        case 5:
+            item->type = cJSON_False;
+            break;
+        case 6:
+            item->type = cJSON_Array;
+            break;
+        default:
+            item->type = cJSON_Object;
+            break;
+    }
+
+    if ((read_u32(data, size, offset) & 1U) != 0) {
+        free(item->string);
+        item->string = make_string(data, size, offset, 32);
+    }
+
+    return item;
+}
+
+int LLVMFuzzerTestOneInput_34(const uint8_t *Data, size_t Size) {
     size_t offset = 0;
-    size_t max_ints, max_doubles, max_floats;
-    size_t int_count, double_count, float_count;
-    int *ints = NULL;
-    double *doubles = NULL;
-    float *floats = NULL;
-    cJSON *int_array = NULL;
-    cJSON *double_array = NULL;
-    cJSON *float_array = NULL;
-    cJSON *empty_array = NULL;
-    cJSON *null_result = NULL;
-    cJSON *manual_array = NULL;
+    cJSON *parsed = NULL;
+    cJSON *manual1 = NULL;
+    cJSON *manual2 = NULL;
+    cJSON *dup0 = NULL;
+    cJSON *dup1 = NULL;
+    cJSON *parsed_dup0 = NULL;
+    cJSON *parsed_dup1 = NULL;
+    cJSON *file_parsed = NULL;
+    cJSON_bool recurse_flag;
+    cJSON_bool case_sensitive;
 
-    (void)cJSON_IsArray(NULL);
-    (void)cJSON_GetArraySize(NULL);
-    null_result = cJSON_CreateIntArray(NULL, 0);
-    if (null_result != NULL) {
-        cJSON_Delete(null_result);
-    }
-    null_result = cJSON_CreateDoubleArray(NULL, 0);
-    if (null_result != NULL) {
-        cJSON_Delete(null_result);
-    }
-    null_result = cJSON_CreateFloatArray(NULL, 0);
-    if (null_result != NULL) {
-        cJSON_Delete(null_result);
+    FILE *fp = fopen("./dummy_file", "wb");
+    if (fp != NULL) {
+        if (Size > 0) {
+            (void)fwrite(Data, 1, Size, fp);
+        }
+        fclose(fp);
     }
 
-    max_ints = (Size - offset) / sizeof(int);
-    int_count = choose_count(Data, Size, &offset, max_ints);
-    if (int_count > 0) {
-        ints = (int *)malloc(int_count * sizeof(int));
-        if (ints == NULL) {
-            return 0;
-        }
-        for (size_t i = 0; i < int_count; ++i) {
-            ints[i] = read_int32(Data, Size, &offset);
-        }
-    }
-
-    max_doubles = (Size - offset) / sizeof(double);
-    double_count = choose_count(Data, Size, &offset, max_doubles);
-    if (double_count > 0) {
-        doubles = (double *)malloc(double_count * sizeof(double));
-        if (doubles == NULL) {
-            free(ints);
-            return 0;
-        }
-        for (size_t i = 0; i < double_count; ++i) {
-            uint64_t bits = 0;
-            size_t remaining = (Size > offset) ? (Size - offset) : 0;
-            size_t to_copy = remaining < sizeof(bits) ? remaining : sizeof(bits);
-            if (to_copy > 0) {
-                memcpy(&bits, Data + offset, to_copy);
-                offset += to_copy;
+    {
+        char *input = (char *)malloc(Size + 1);
+        if (input != NULL) {
+            if (Size > 0) {
+                memcpy(input, Data, Size);
             }
-            memcpy(&doubles[i], &bits, sizeof(double));
+            input[Size] = '\0';
+            parsed = cJSON_Parse(input);
+            free(input);
         }
     }
 
-    max_floats = (Size - offset) / sizeof(float);
-    float_count = choose_count(Data, Size, &offset, max_floats);
-    if (float_count > 0) {
-        floats = (float *)malloc(float_count * sizeof(float));
-        if (floats == NULL) {
-            free(ints);
-            free(doubles);
-            return 0;
-        }
-        for (size_t i = 0; i < float_count; ++i) {
-            uint32_t bits = 0;
-            size_t remaining = (Size > offset) ? (Size - offset) : 0;
-            size_t to_copy = remaining < sizeof(bits) ? remaining : sizeof(bits);
-            if (to_copy > 0) {
-                memcpy(&bits, Data + offset, to_copy);
-                offset += to_copy;
+    {
+        FILE *rfp = fopen("./dummy_file", "rb");
+        if (rfp != NULL) {
+            long fsize;
+            if (fseek(rfp, 0, SEEK_END) == 0) {
+                fsize = ftell(rfp);
+                if (fsize >= 0 && fseek(rfp, 0, SEEK_SET) == 0) {
+                    char *buf = (char *)malloc((size_t)fsize + 1);
+                    if (buf != NULL) {
+                        size_t nread = fread(buf, 1, (size_t)fsize, rfp);
+                        buf[nread] = '\0';
+                        file_parsed = cJSON_Parse(buf);
+                        free(buf);
+                    }
+                }
             }
-            memcpy(&floats[i], &bits, sizeof(float));
+            fclose(rfp);
         }
     }
 
-    int_array = cJSON_CreateIntArray(ints, (int)int_count);
-    if (int_array != NULL) {
-        (void)cJSON_IsArray(int_array);
-        (void)cJSON_GetArraySize(int_array);
+    manual1 = make_manual_item(Data, Size, &offset);
+    manual2 = make_manual_item(Data, Size, &offset);
+
+    (void)cJSON_IsNumber(NULL);
+    (void)cJSON_IsNull(NULL);
+    (void)cJSON_IsRaw(NULL);
+    (void)cJSON_IsString(NULL);
+
+    if (manual1 != NULL) {
+        (void)cJSON_IsNumber(manual1);
+        (void)cJSON_IsNull(manual1);
+        (void)cJSON_IsRaw(manual1);
+        (void)cJSON_IsString(manual1);
+
+        recurse_flag = (cJSON_bool)(read_u32(Data, Size, &offset) & 1U);
+        dup0 = cJSON_Duplicate(manual1, recurse_flag);
+        dup1 = cJSON_Duplicate(manual1, (cJSON_bool)!recurse_flag);
+
+        case_sensitive = (cJSON_bool)(read_u32(Data, Size, &offset) & 1U);
+        (void)cJSON_Compare(manual1, dup0, case_sensitive);
+        (void)cJSON_Compare(manual1, dup1, (cJSON_bool)!case_sensitive);
+        (void)cJSON_Compare(manual1, manual2, case_sensitive);
+        (void)cJSON_Compare(manual1, manual1, case_sensitive);
+        (void)cJSON_Compare(manual1, NULL, case_sensitive);
     }
 
-    double_array = cJSON_CreateDoubleArray(doubles, (int)double_count);
-    if (double_array != NULL) {
-        (void)cJSON_IsArray(double_array);
-        (void)cJSON_GetArraySize(double_array);
+    if (manual2 != NULL) {
+        (void)cJSON_IsNumber(manual2);
+        (void)cJSON_IsNull(manual2);
+        (void)cJSON_IsRaw(manual2);
+        (void)cJSON_IsString(manual2);
+        (void)cJSON_Compare(manual2, manual1, 0);
+        (void)cJSON_Compare(manual2, manual2, 1);
     }
 
-    float_array = cJSON_CreateFloatArray(floats, (int)float_count);
-    if (float_array != NULL) {
-        (void)cJSON_IsArray(float_array);
-        (void)cJSON_GetArraySize(float_array);
-    }
+    if (parsed != NULL) {
+        (void)cJSON_IsNumber(parsed);
+        (void)cJSON_IsNull(parsed);
+        (void)cJSON_IsRaw(parsed);
+        (void)cJSON_IsString(parsed);
 
-    empty_array = cJSON_CreateArray();
-    if (empty_array != NULL) {
-        (void)cJSON_IsArray(empty_array);
-        (void)cJSON_GetArraySize(empty_array);
-    }
+        parsed_dup0 = cJSON_Duplicate(parsed, 0);
+        parsed_dup1 = cJSON_Duplicate(parsed, 1);
 
-    manual_array = cJSON_CreateArray();
-    if (manual_array != NULL) {
-        cJSON *child1 = cJSON_CreateIntArray(ints, (int)int_count);
-        cJSON *child2 = cJSON_CreateDoubleArray(doubles, (int)double_count);
-        cJSON *child3 = cJSON_CreateFloatArray(floats, (int)float_count);
+        (void)cJSON_Compare(parsed, parsed_dup0, 0);
+        (void)cJSON_Compare(parsed, parsed_dup1, 1);
+        (void)cJSON_Compare(parsed, manual1, 0);
+        (void)cJSON_Compare(parsed, parsed, 1);
 
-        if (child1 != NULL) {
-            child1->prev = NULL;
-            child1->next = child2;
+        if (parsed->child != NULL) {
+            (void)cJSON_IsNumber(parsed->child);
+            (void)cJSON_IsNull(parsed->child);
+            (void)cJSON_IsRaw(parsed->child);
+            (void)cJSON_IsString(parsed->child);
+            (void)cJSON_Compare(parsed->child, parsed->child, 0);
         }
-        if (child2 != NULL) {
-            child2->prev = child1;
-            child2->next = child3;
-        }
-        if (child3 != NULL) {
-            child3->prev = child2;
-            child3->next = NULL;
-        }
-
-        manual_array->child = child1 ? child1 : (child2 ? child2 : child3);
-
-        (void)cJSON_IsArray(manual_array);
-        (void)cJSON_GetArraySize(manual_array);
-
-        cJSON_Delete(manual_array);
-        manual_array = NULL;
-        child1 = NULL;
-        child2 = NULL;
-        child3 = NULL;
     }
 
-    cJSON_Delete(int_array);
-    cJSON_Delete(double_array);
-    cJSON_Delete(float_array);
-    cJSON_Delete(empty_array);
+    if (file_parsed != NULL) {
+        (void)cJSON_IsNumber(file_parsed);
+        (void)cJSON_IsNull(file_parsed);
+        (void)cJSON_IsRaw(file_parsed);
+        (void)cJSON_IsString(file_parsed);
+        (void)cJSON_Compare(file_parsed, parsed, 0);
+        (void)cJSON_Compare(file_parsed, file_parsed, 1);
+    }
 
-    free(ints);
-    free(doubles);
-    free(floats);
+    cJSON_Delete(parsed_dup1);
+    cJSON_Delete(parsed_dup0);
+    cJSON_Delete(dup1);
+    cJSON_Delete(dup0);
+    cJSON_Delete(file_parsed);
+    cJSON_Delete(parsed);
+    cJSON_Delete(manual2);
+    cJSON_Delete(manual1);
 
     return 0;
 }

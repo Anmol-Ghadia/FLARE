@@ -1,0 +1,120 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1900528909
+INFO: Loaded 1 modules   (930 inline 8-bit counters): 930 [0x58359304d738, 0x58359304dada), 
+INFO: Loaded 1 PC tables (930 PCs): 930 [0x58359304dae0,0x583593051500), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 93 ft: 94 corp: 1/1b exec/s: 0 rss: 32Mb
+#4	NEW    cov: 94 ft: 95 corp: 2/4b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 CopyPart-InsertByte-
+#9	NEW    cov: 94 ft: 108 corp: 3/6b lim: 4 exec/s: 0 rss: 32Mb L: 2/3 MS: 5 CrossOver-EraseBytes-ChangeByte-CopyPart-ChangeBinInt-
+#36	NEW    cov: 96 ft: 110 corp: 4/9b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 ChangeBit-InsertByte-
+#109	REDUCE cov: 96 ft: 110 corp: 4/8b lim: 4 exec/s: 0 rss: 33Mb L: 2/3 MS: 3 EraseBytes-ChangeBinInt-ChangeByte-
+#135	NEW    cov: 101 ft: 120 corp: 5/12b lim: 4 exec/s: 0 rss: 33Mb L: 4/4 MS: 1 CrossOver-
+#137	REDUCE cov: 101 ft: 120 corp: 5/11b lim: 4 exec/s: 0 rss: 33Mb L: 1/4 MS: 2 ChangeASCIIInt-EraseBytes-
+#351	NEW    cov: 103 ft: 131 corp: 6/17b lim: 6 exec/s: 0 rss: 36Mb L: 6/6 MS: 4 ShuffleBytes-ChangeByte-InsertRepeatedBytes-CrossOver-
+#433	NEW    cov: 103 ft: 134 corp: 7/23b lim: 6 exec/s: 0 rss: 37Mb L: 6/6 MS: 2 CMP-CopyPart- DE: "\000\000\000\000"-
+#653	NEW    cov: 103 ft: 137 corp: 8/30b lim: 8 exec/s: 0 rss: 39Mb L: 7/7 MS: 5 ChangeByte-CopyPart-PersAutoDict-CopyPart-InsertByte- DE: "\000\000\000\000"-
+#741	NEW    cov: 103 ft: 149 corp: 9/38b lim: 8 exec/s: 0 rss: 40Mb L: 8/8 MS: 3 ShuffleBytes-InsertByte-InsertByte-
+#870	NEW    cov: 103 ft: 150 corp: 10/46b lim: 8 exec/s: 0 rss: 41Mb L: 8/8 MS: 4 ChangeByte-InsertByte-InsertRepeatedBytes-InsertByte-
+#1062	NEW    cov: 107 ft: 154 corp: 11/53b lim: 8 exec/s: 0 rss: 43Mb L: 7/8 MS: 2 ChangeBit-InsertRepeatedBytes-
+#1159	NEW    cov: 107 ft: 155 corp: 12/61b lim: 8 exec/s: 0 rss: 43Mb L: 8/8 MS: 2 ChangeByte-CMP- DE: "\000\000\000\000\000\000\000\002"-
+#1273	NEW    cov: 108 ft: 156 corp: 13/69b lim: 8 exec/s: 0 rss: 44Mb L: 8/8 MS: 4 CopyPart-ShuffleBytes-ChangeBinInt-CrossOver-
+#1575	NEW    cov: 108 ft: 163 corp: 14/77b lim: 8 exec/s: 0 rss: 47Mb L: 8/8 MS: 2 ShuffleBytes-InsertRepeatedBytes-
+#1922	NEW    cov: 108 ft: 166 corp: 15/88b lim: 11 exec/s: 0 rss: 50Mb L: 11/11 MS: 2 InsertByte-InsertRepeatedBytes-
+#2018	NEW    cov: 109 ft: 167 corp: 16/96b lim: 11 exec/s: 0 rss: 51Mb L: 8/11 MS: 1 ChangeBit-
+#2038	REDUCE cov: 109 ft: 167 corp: 16/95b lim: 11 exec/s: 0 rss: 51Mb L: 5/11 MS: 5 PersAutoDict-InsertByte-ChangeBit-ShuffleBytes-CrossOver- DE: "\000\000\000\000"-
+#2373	NEW    cov: 109 ft: 173 corp: 17/108b lim: 14 exec/s: 0 rss: 53Mb L: 13/13 MS: 5 ShuffleBytes-ShuffleBytes-EraseBytes-PersAutoDict-InsertRepeatedBytes- DE: "\000\000\000\000"-
+#2380	REDUCE cov: 109 ft: 174 corp: 18/122b lim: 14 exec/s: 0 rss: 53Mb L: 14/14 MS: 2 InsertRepeatedBytes-PersAutoDict- DE: "\000\000\000\000"-
+#2382	NEW    cov: 109 ft: 175 corp: 19/134b lim: 14 exec/s: 0 rss: 53Mb L: 12/14 MS: 2 InsertByte-InsertRepeatedBytes-
+#2408	NEW    cov: 110 ft: 178 corp: 20/147b lim: 14 exec/s: 0 rss: 54Mb L: 13/14 MS: 1 InsertRepeatedBytes-
+#2463	REDUCE cov: 110 ft: 182 corp: 21/160b lim: 14 exec/s: 0 rss: 54Mb L: 13/14 MS: 5 InsertRepeatedBytes-CMP-ShuffleBytes-ChangeBit-ShuffleBytes- DE: "\000\000\000\000"-
+#2555	REDUCE cov: 110 ft: 183 corp: 22/173b lim: 14 exec/s: 0 rss: 55Mb L: 13/14 MS: 2 InsertByte-CrossOver-
+	NEW_FUNC[1/1]: 0x583592fef508 in make_item_from_byte /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040.c:55
+#2904	NEW    cov: 115 ft: 192 corp: 23/189b lim: 17 exec/s: 0 rss: 58Mb L: 16/16 MS: 4 ChangeBit-CrossOver-CMP-InsertRepeatedBytes- DE: "\000\000\000\000"-
+#2947	NEW    cov: 119 ft: 202 corp: 24/206b lim: 17 exec/s: 0 rss: 58Mb L: 17/17 MS: 3 PersAutoDict-CrossOver-CMP- DE: "\000\000\000\000"-"\000\000"-
+#2962	NEW    cov: 119 ft: 205 corp: 25/223b lim: 17 exec/s: 0 rss: 58Mb L: 17/17 MS: 5 CrossOver-CrossOver-EraseBytes-InsertRepeatedBytes-CrossOver-
+=================================================================
+==12683==ERROR: AddressSanitizer: heap-use-after-free on address 0x506000237338 at pc 0x583592ffb68e bp 0x7fffd990ffd0 sp 0x7fffd990ffc8
+READ of size 4 at 0x506000237338 thread T0
+    #0 0x583592ffb68d in cJSON_IsInvalid /promefuzz/database/cjson/latest/code/cJSON.c:2937:19
+    #1 0x583592fee6ce in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040.c:179:11
+    #2 0x583592eface4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x52ce4) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #3 0x583592efa3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x523d9) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #4 0x583592efbbc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x53bc5) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #5 0x583592efc725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x54725) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #6 0x583592ee99ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x419ff) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #7 0x583592f14086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x6c086) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #8 0x7cc87786e1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #9 0x7cc87786e28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x583592ede9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x369e4) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+
+0x506000237338 is located 24 bytes inside of 64-byte region [0x506000237320,0x506000237360)
+freed by thread T0 here:
+    #0 0x583592faeb7a in free (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x106b7a) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #1 0x583592ff06b0 in cJSON_Delete /promefuzz/database/cjson/latest/code/cJSON.c:273:9
+    #2 0x583592ff74c8 in cJSON_DeleteItemFromArray /promefuzz/database/cjson/latest/code/cJSON.c:2264:5
+    #3 0x583592fee551 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040.c:170:5
+    #4 0x583592eface4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x52ce4) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #5 0x583592efa3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x523d9) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #6 0x583592efbbc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x53bc5) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #7 0x583592efc725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x54725) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #8 0x583592ee99ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x419ff) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #9 0x583592f14086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x6c086) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #10 0x7cc87786e1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x7cc87786e28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #12 0x583592ede9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x369e4) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+
+previously allocated by thread T0 here:
+    #0 0x583592faee13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x106e13) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #1 0x583592ff17f8 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x583592ff6dbb in cJSON_CreateArray /promefuzz/database/cjson/latest/code/cJSON.c:2558:19
+    #3 0x583592ff6cdc in cJSON_AddArrayToObject /promefuzz/database/cjson/latest/code/cJSON.c:2206:20
+    #4 0x583592feda37 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040.c:117:13
+    #5 0x583592eface4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x52ce4) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #6 0x583592efa3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x523d9) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #7 0x583592efbbc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x53bc5) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #8 0x583592efc725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x54725) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #9 0x583592ee99ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x419ff) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #10 0x583592f14086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x6c086) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+    #11 0x7cc87786e1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #12 0x7cc87786e28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #13 0x583592ede9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_26/fuzz_driver_26_sanitizing_1787916040+0x369e4) (BuildId: 69e99342d00fb57928629422c802b36c530f685b)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /promefuzz/database/cjson/latest/code/cJSON.c:2937:19 in cJSON_IsInvalid
+Shadow bytes around the buggy address:
+  0x506000237080: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x506000237100: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+  0x506000237180: fa fa fa fa fd fd fd fd fd fd fd fd fa fa fa fa
+  0x506000237200: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+  0x506000237280: 00 00 00 00 fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x506000237300: fa fa fa fa fd fd fd[fd]fd fd fd fd fa fa fa fa
+  0x506000237380: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x506000237400: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+  0x506000237480: fa fa fa fa 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x506000237500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000237580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==12683==ABORTING
+MS: 3 CopyPart-PersAutoDict-CopyPart- DE: "\000\000"-; base unit: 07aae1b618f604c684ee3189fa1723bef8656fe4
+0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x2,
+\000\000\000\000\000\000\000\000\000\000\000\000\000\000\002
+artifact_prefix='./'; Test unit written to ./crash-57062755430f60ce87da0fb77988134b783586c0
+Base64: AAAAAAAAAAAAAAAAAAAC

@@ -1,0 +1,233 @@
+2026-08-28T09:13:25.820350+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260828091325_._PromeFuzz.py_-F_database_cjson_latest_lib.toml_preprocess.log
+2026-08-28T09:13:25.823765+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 23 source files.
+2026-08-28T09:13:25.987847+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 23 source files.
+2026-08-28T09:13:25.995582+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-28T09:13:26.030601+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 0 functions
+2026-08-28T09:13:26.031505+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 78 API functions extracted, dumped to /promefuzz/database/cjson/latest/out/preprocessor/api.pkl
+2026-08-28T09:13:26.031858+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/cjson/latest/out/preprocessor/sources.json
+2026-08-28T09:13:26.032013+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-28T09:13:26.158405+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/cjson/latest/out/preprocessor/incidentals.pkl
+2026-08-28T09:13:26.158653+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-28T09:13:26.188989+0000 | ThreadPoolExecutor-4_10 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity_setup.c.
+2026-08-28T09:13:26.369951+0000 | ThreadPoolExecutor-4_2 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c:
+/promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c:8:10: fatal error: 'unity_fixture.h' file not found
+    8 | #include "unity_fixture.h"
+      |          ^~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.373947+0000 | ThreadPoolExecutor-4_2 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c.
+2026-08-28T09:13:26.384119+0000 | ThreadPoolExecutor-4_19 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/template_fixture_tests.c:
+/promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/template_fixture_tests.c:8:10: fatal error: 'unity_fixture.h' file not found
+    8 | #include "unity_fixture.h"
+      |          ^~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.387205+0000 | ThreadPoolExecutor-4_15 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_output_Spy.c:
+/promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_output_Spy.c:10:10: fatal error: 'unity_fixture.h' file not found
+   10 | #include "unity_fixture.h"
+      |          ^~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.388293+0000 | ThreadPoolExecutor-4_17 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_fixture_Test.c:
+/promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/unity_fixture_Test.c:8:10: fatal error: 'unity_fixture.h' file not found
+    8 | #include "unity_fixture.h"
+      |          ^~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.390286+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/main/AllTests.c:
+/promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/test/main/AllTests.c:8:10: fatal error: 'unity_fixture.h' file not found
+    8 | #include "unity_fixture.h"
+      |          ^~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.390979+0000 | ThreadPoolExecutor-4_13 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/TestProductionCode2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/TestProductionCode2.c:1:10: fatal error: 'ProductionCode2.h' file not found
+    1 | #include "ProductionCode2.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.400694+0000 | ThreadPoolExecutor-4_16 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/src/unity_fixture.c:
+In file included from /promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/src/unity_fixture.c:8:
+/promefuzz/database/cjson/latest/code/tests/unity/extras/fixture/src/unity_fixture.h:11:10: fatal error: 'unity.h' file not found
+   11 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.419637+0000 | ThreadPoolExecutor-4_2 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/TestProductionCode.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/TestProductionCode.c:1:10: fatal error: 'ProductionCode.h' file not found
+    1 | #include "ProductionCode.h"
+      |          ^~~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.420511+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/src/ProductionCode2.c.
+2026-08-28T09:13:26.438843+0000 | ThreadPoolExecutor-4_12 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/src/ProductionCode.c.
+2026-08-28T09:13:26.443273+0000 | ThreadPoolExecutor-4_14 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c:1:10: fatal error: 'unity.h' file not found
+    1 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.445206+0000 | ThreadPoolExecutor-4_7 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/all_tests.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/all_tests.c:1:10: fatal error: 'unity_fixture.h' file not found
+    1 | #include "unity_fixture.h"
+      |          ^~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.445926+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/test/TestProductionCode2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/test/TestProductionCode2.c:2:10: fatal error: 'ProductionCode2.h' file not found
+    2 | #include "ProductionCode2.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.448321+0000 | ThreadPoolExecutor-4_14 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c.
+2026-08-28T09:13:26.452201+0000 | ThreadPoolExecutor-4_15 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/test/TestProductionCode.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/test/TestProductionCode.c:2:10: fatal error: 'ProductionCode.h' file not found
+    2 | #include "ProductionCode.h"
+      |          ^~~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.453119+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c:1:10: fatal error: 'unity.h' file not found
+    1 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.457845+0000 | ThreadPoolExecutor-4_8 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/src/ProductionCode2.c.
+2026-08-28T09:13:26.458930+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c.
+2026-08-28T09:13:26.460634+0000 | ThreadPoolExecutor-4_19 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/helper/UnityHelper.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/helper/UnityHelper.c:1:10: fatal error: 'unity.h' file not found
+    1 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.462284+0000 | ThreadPoolExecutor-4_3 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/TestProductionCode2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/TestProductionCode2.c:2:10: fatal error: 'ProductionCode2.h' file not found
+    2 | #include "ProductionCode2.h"
+      |          ^~~~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.465178+0000 | ThreadPoolExecutor-4_13 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_3/src/ProductionCode.c.
+2026-08-28T09:13:26.467145+0000 | ThreadPoolExecutor-4_12 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/TestProductionCode.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/TestProductionCode.c:2:10: fatal error: 'ProductionCode.h' file not found
+    2 | #include "ProductionCode.h"
+      |          ^~~~~~~~~~~~~~~~~~
+
+2026-08-28T09:13:26.468810+0000 | ThreadPoolExecutor-4_4 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/src/ProductionCode2.c.
+2026-08-28T09:13:26.474520+0000 | ThreadPoolExecutor-4_14 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/src/ProductionCode.c.
+2026-08-28T09:13:26.482616+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/testdata/testRunnerGeneratorSmall.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/testdata/testRunnerGeneratorSmall.c:4:10: fatal error: 'unity.h' file not found
+    4 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.484384+0000 | ThreadPoolExecutor-4_10 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/testdata/testRunnerGenerator.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/testdata/testRunnerGenerator.c:4:10: fatal error: 'unity.h' file not found
+    4 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.484761+0000 | ThreadPoolExecutor-4_9 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c:22:10: fatal error: 'unity.h' file not found
+   22 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.484888+0000 | ThreadPoolExecutor-4_0 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c:
+/promefuzz/database/cjson/latest/code/tests/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c:22:10: fatal error: 'unity.h' file not found
+   22 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.485540+0000 | ThreadPoolExecutor-4_8 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/tests/testparameterized.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/tests/testparameterized.c:9:10: fatal error: 'unity.h' file not found
+    9 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.493884+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/testdata/testRunnerGeneratorWithMocks.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/testdata/testRunnerGeneratorWithMocks.c:4:10: fatal error: 'unity.h' file not found
+    4 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.504471+0000 | ThreadPoolExecutor-4_14 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_new1.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_new1.c:25:10: fatal error: 'unity.h' file not found
+   25 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.504708+0000 | ThreadPoolExecutor-4_4 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_new2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_new2.c:26:10: fatal error: 'unity.h' file not found
+   26 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.504849+0000 | ThreadPoolExecutor-4_13 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_run2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_run2.c:22:10: fatal error: 'unity.h' file not found
+   22 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.505523+0000 | ThreadPoolExecutor-4_19 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_cmd.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_cmd.c:25:10: fatal error: 'unity.h' file not found
+   25 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.523729+0000 | ThreadPoolExecutor-4_3 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_new2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_new2.c:22:10: fatal error: 'unity.h' file not found
+   22 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.525315+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_run2.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_run2.c:26:10: fatal error: 'unity.h' file not found
+   26 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.541319+0000 | ThreadPoolExecutor-4_2 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_head1.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_head1.c:22:10: fatal error: 'unity.h' file not found
+   22 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.548559+0000 | ThreadPoolExecutor-4_7 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/tests/testunity.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/tests/testunity.c:7:10: fatal error: 'unity.h' file not found
+    7 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.553107+0000 | ThreadPoolExecutor-4_0 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_yaml.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_yaml.c:29:10: fatal error: 'unity.h' file not found
+   29 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.565864+0000 | ThreadPoolExecutor-4_19 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_run1.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_run1.c:25:10: fatal error: 'unity.h' file not found
+   25 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.566250+0000 | ThreadPoolExecutor-4_10 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_yaml.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_yaml.c:25:10: fatal error: 'unity.h' file not found
+   25 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.590539+0000 | ThreadPoolExecutor-4_14 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_new1.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_new1.c:29:10: fatal error: 'unity.h' file not found
+   29 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.591506+0000 | ThreadPoolExecutor-4_13 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_head1.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_head1.c:26:10: fatal error: 'unity.h' file not found
+   26 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.591612+0000 | ThreadPoolExecutor-4_9 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_def.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_def.c:26:10: fatal error: 'unity.h' file not found
+   26 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.613266+0000 | ThreadPoolExecutor-4_4 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_param.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_param.c:27:10: fatal error: 'unity.h' file not found
+   27 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.617359+0000 | ThreadPoolExecutor-4_15 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_param.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_param.c:23:10: fatal error: 'unity.h' file not found
+   23 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.618294+0000 | ThreadPoolExecutor-4_1 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_run1.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_run1.c:29:10: fatal error: 'unity.h' file not found
+   29 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.624671+0000 | ThreadPoolExecutor-4_8 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_cmd.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_mock_cmd.c:29:10: fatal error: 'unity.h' file not found
+   29 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.637076+0000 | ThreadPoolExecutor-4_12 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_def.c:
+/promefuzz/database/cjson/latest/code/tests/unity/test/expectdata/testsample_def.c:22:10: fatal error: 'unity.h' file not found
+   22 | #include "unity.h"
+      |          ^~~~~~~~~
+
+2026-08-28T09:13:26.809041+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/cjson/latest/out/preprocessor/call_order.pkl
+2026-08-28T09:13:26.809244+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-28T09:13:26.888003+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/cjson/latest/out/preprocessor/info.pkl
+2026-08-28T09:13:26.888202+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-28T09:13:26.889025+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/cjson/latest/out/preprocessor/complexity.pkl
+2026-08-28T09:13:26.889196+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-28T09:13:26.936333+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/cjson/latest/out/preprocessor/*_relev.pkl

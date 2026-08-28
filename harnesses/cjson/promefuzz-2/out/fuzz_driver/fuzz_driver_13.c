@@ -1,11 +1,10 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_CreateArrayReference at cJSON.c:2529:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArrayReference at cJSON.c:2571:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
@@ -20,41 +19,35 @@
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     double num = 0.0;
-    cJSON *array = NULL;
-    cJSON *number = NULL;
-    cJSON *array_ref = NULL;
 
-    if (Size >= sizeof(num)) {
-        memcpy(&num, Data, sizeof(num));
+    if (Size >= sizeof(double)) {
+        memcpy(&num, Data, sizeof(double));
     } else {
-        uint8_t buf[sizeof(num)] = {0};
+        uint8_t buf[sizeof(double)] = {0};
         if (Size > 0) {
             memcpy(buf, Data, Size);
         }
-        memcpy(&num, buf, sizeof(num));
+        memcpy(&num, buf, sizeof(double));
     }
 
-    array = cJSON_CreateArray();
-    if (array == NULL) {
-        return 0;
-    }
+    cJSON *array = cJSON_CreateArray();
+    cJSON *number = cJSON_CreateNumber(num);
 
-    number = cJSON_CreateNumber(num);
-    if (number == NULL) {
+    if (array != NULL && number != NULL) {
+        (void)cJSON_AddItemToArray(array, number);
+
+        cJSON *array_ref = cJSON_CreateArrayReference(array->child);
+
+        cJSON_Delete(array_ref);
         cJSON_Delete(array);
-        return 0;
+    } else {
+        if (number != NULL) {
+            cJSON_Delete(number);
+        }
+        if (array != NULL) {
+            cJSON_Delete(array);
+        }
     }
-
-    if (!cJSON_AddItemToArray(array, number)) {
-        cJSON_Delete(number);
-        cJSON_Delete(array);
-        return 0;
-    }
-
-    array_ref = cJSON_CreateArrayReference(array->child);
-
-    cJSON_Delete(array_ref);
-    cJSON_Delete(array);
 
     return 0;
 }

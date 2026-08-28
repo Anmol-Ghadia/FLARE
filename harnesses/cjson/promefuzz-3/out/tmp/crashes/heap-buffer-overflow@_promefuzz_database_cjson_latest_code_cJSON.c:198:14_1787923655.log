@@ -1,0 +1,75 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1597902600
+INFO: Loaded 1 modules   (896 inline 8-bit counters): 896 [0x603c76ead4d8, 0x603c76ead858), 
+INFO: Loaded 1 PC tables (896 PCs): 896 [0x603c76ead858,0x603c76eb1058), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+=================================================================
+==12705==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000051 at pc 0x603c76d8c84f bp 0x7ffdafc40410 sp 0x7ffdafc3fbd8
+READ of size 2 at 0x502000000051 thread T0
+    #0 0x603c76d8c84e in strlen (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x8384e) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #1 0x603c76e50f6d in cJSON_strdup /promefuzz/database/cjson/latest/code/cJSON.c:198:14
+    #2 0x603c76e56894 in cJSON_CreateString /promefuzz/database/cjson/latest/code/cJSON.c:2495:36
+    #3 0x603c76e4f4e2 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654.c:79:13
+    #4 0x603c76d5bce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x52ce4) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #5 0x603c76d5b3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x523d9) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #6 0x603c76d5d066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x54066) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #7 0x603c76d5d507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x54507) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #8 0x603c76d4a9ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x419ff) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #9 0x603c76d75086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x6c086) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #10 0x7186b54881c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #11 0x7186b548828a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #12 0x603c76d3f9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x369e4) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+
+0x502000000051 is located 0 bytes after 1-byte region [0x502000000050,0x502000000051)
+allocated by thread T0 here:
+    #0 0x603c76e0fe13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x106e13) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #1 0x7186b5855903 in operator new(unsigned long) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xbb903) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #2 0x603c76d5bbf5 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x52bf5) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #3 0x603c76d5b3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x523d9) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #4 0x603c76d5d066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x54066) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #5 0x603c76d5d507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x54507) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #6 0x603c76d4a9ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x419ff) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #7 0x603c76d75086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x6c086) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+    #8 0x7186b54881c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #9 0x7186b548828a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #10 0x603c76d3f9e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x369e4) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_35/fuzz_driver_35_sanitizing_1787923654+0x8384e) (BuildId: 38bc8ceb6ed77128943c28d6f5b9cdbe0fe52c80) in strlen
+Shadow bytes around the buggy address:
+  0x501ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x502000000000: fa fa fd fa fa fa 01 fa fa fa[01]fa fa fa 01 fa
+  0x502000000080: fa fa 02 fa fa fa 02 fa fa fa 02 fa fa fa 01 fa
+  0x502000000100: fa fa 02 fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==12705==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./crash-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==

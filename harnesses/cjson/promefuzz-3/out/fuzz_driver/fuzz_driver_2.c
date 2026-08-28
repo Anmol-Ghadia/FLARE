@@ -1,24 +1,35 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -31,172 +42,219 @@
 #include <string.h>
 #include "cJSON.h"
 
-static double read_double_from_bytes(const uint8_t *data, size_t size, size_t offset) {
-    union {
-        uint64_t u64;
-        double d;
-    } conv;
-    conv.u64 = 0;
-
-    for (size_t i = 0; i < 8 && (offset + i) < size; ++i) {
-        conv.u64 |= ((uint64_t)data[offset + i]) << (8 * i);
+static double read_double_from_data(const uint8_t *data, size_t size, size_t offset)
+{
+    double out = 0.0;
+    if (data == NULL || offset >= size) {
+        return 0.0;
     }
 
-    return conv.d;
+    size_t remaining = size - offset;
+    size_t copy_size = remaining < sizeof(double) ? remaining : sizeof(double);
+    memcpy(&out, data + offset, copy_size);
+    return out;
 }
 
-int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    size_t split1 = 0;
-    size_t split2 = 0;
-    const char *key1 = "str";
-    const char *key2 = "arr";
-    const char *key3 = "num1";
-    const char *key4 = "num2";
-    char *dyn_key1 = NULL;
-    char *dyn_key2 = NULL;
-    char *dyn_key3 = NULL;
-    char *dyn_key4 = NULL;
-    char *str_value = NULL;
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
+{
     cJSON *root = NULL;
     cJSON *str_item = NULL;
-    cJSON *array_item = NULL;
-    cJSON *nested_obj = NULL;
-    cJSON *num_item1 = NULL;
-    cJSON *num_item2 = NULL;
+    cJSON *array = NULL;
+    cJSON *inner_obj = NULL;
+    cJSON *num1 = NULL;
+    cJSON *num2 = NULL;
     char *printed = NULL;
 
-    if (Size > 0) {
-        split1 = Data[0] % (Size + 1);
-    }
-    if (Size > 1) {
-        split2 = Data[1] % (Size + 1);
-    }
-    if (split2 < split1) {
-        size_t tmp = split1;
-        split1 = split2;
-        split2 = tmp;
-    }
+    char *key1 = NULL;
+    char *key2 = NULL;
+    char *key3 = NULL;
+    char *str_value = NULL;
 
-    dyn_key1 = (char *)malloc(split1 + 1);
-    if (dyn_key1 != NULL) {
-        if (split1 > 0) {
-            memcpy(dyn_key1, Data, split1);
-        }
-        dyn_key1[split1] = '\0';
-        key1 = dyn_key1;
-    }
-
-    dyn_key2 = (char *)malloc((split2 - split1) + 1);
-    if (dyn_key2 != NULL) {
-        if (split2 > split1) {
-            memcpy(dyn_key2, Data + split1, split2 - split1);
-        }
-        dyn_key2[split2 - split1] = '\0';
-        key2 = dyn_key2;
-    }
-
-    dyn_key3 = (char *)malloc((Size - split2) + 1);
-    if (dyn_key3 != NULL) {
-        if (Size > split2) {
-            memcpy(dyn_key3, Data + split2, Size - split2);
-        }
-        dyn_key3[Size - split2] = '\0';
-        key3 = dyn_key3;
-    }
-
-    dyn_key4 = (char *)malloc(Size + 1);
-    if (dyn_key4 != NULL) {
-        if (Size > 0) {
-            memcpy(dyn_key4, Data, Size);
-        }
-        dyn_key4[Size] = '\0';
-        key4 = dyn_key4;
-    }
-
-    str_value = (char *)malloc(Size + 1);
-    if (str_value == NULL) {
-        free(dyn_key1);
-        free(dyn_key2);
-        free(dyn_key3);
-        free(dyn_key4);
-        return 0;
-    }
-    if (Size > 0) {
-        memcpy(str_value, Data, Size);
-    }
-    str_value[Size] = '\0';
+    size_t pos = 0;
+    size_t len1, len2, len3, len4;
+    double d1, d2;
 
     root = cJSON_CreateObject();
     if (root == NULL) {
-        free(str_value);
-        free(dyn_key1);
-        free(dyn_key2);
-        free(dyn_key3);
-        free(dyn_key4);
         return 0;
     }
 
+    len1 = (Size > pos) ? Data[pos++] : 0;
+    len2 = (Size > pos) ? Data[pos++] : 0;
+    len3 = (Size > pos) ? Data[pos++] : 0;
+    len4 = (Size > pos) ? Data[pos++] : 0;
+
+    if (len1 > Size - pos) len1 = Size - pos;
+    key1 = (char *)malloc(len1 + 1);
+    if (key1 == NULL) {
+        cJSON_Delete(root);
+        return 0;
+    }
+    memcpy(key1, Data + pos, len1);
+    key1[len1] = '\0';
+    pos += len1;
+
+    if (len2 > Size - pos) len2 = Size - pos;
+    str_value = (char *)malloc(len2 + 1);
+    if (str_value == NULL) {
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    memcpy(str_value, Data + pos, len2);
+    str_value[len2] = '\0';
+    pos += len2;
+
+    if (len3 > Size - pos) len3 = Size - pos;
+    key2 = (char *)malloc(len3 + 1);
+    if (key2 == NULL) {
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    memcpy(key2, Data + pos, len3);
+    key2[len3] = '\0';
+    pos += len3;
+
+    if (len4 > Size - pos) len4 = Size - pos;
+    key3 = (char *)malloc(len4 + 1);
+    if (key3 == NULL) {
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    memcpy(key3, Data + pos, len4);
+    key3[len4] = '\0';
+    pos += len4;
+
+    d1 = read_double_from_data(Data, Size, pos);
+    if (pos < Size) {
+        pos += (Size - pos >= sizeof(double)) ? sizeof(double) : (Size - pos);
+    }
+    d2 = read_double_from_data(Data, Size, pos);
+
     str_item = cJSON_CreateString(str_value);
-    if (str_item != NULL) {
-        if (!cJSON_AddItemToObject(root, key1, str_item)) {
-            cJSON_Delete(str_item);
-            str_item = NULL;
-        }
+    if (str_item == NULL) {
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
     }
 
-    array_item = cJSON_CreateArray();
-    if (array_item != NULL) {
-        if (!cJSON_AddItemToObject(root, key2, array_item)) {
-            cJSON_Delete(array_item);
-            array_item = NULL;
-        }
+    if (!cJSON_AddItemToObject(root, key1, str_item)) {
+        cJSON_Delete(str_item);
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    str_item = NULL;
+
+    array = cJSON_CreateArray();
+    if (array == NULL) {
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
     }
 
-    nested_obj = cJSON_CreateObject();
-    if (nested_obj != NULL && array_item != NULL) {
-        if (!cJSON_AddItemToArray(array_item, nested_obj)) {
-            cJSON_Delete(nested_obj);
-            nested_obj = NULL;
-        }
-    } else if (nested_obj != NULL) {
-        cJSON_Delete(nested_obj);
-        nested_obj = NULL;
+    if (!cJSON_AddItemToObject(root, key2, array)) {
+        cJSON_Delete(array);
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    array = NULL;
+
+    array = root->child;
+    while (array != NULL && array->string != NULL && strcmp(array->string, key2) != 0) {
+        array = array->next;
     }
 
-    num_item1 = cJSON_CreateNumber(read_double_from_bytes(Data, Size, 0));
-    if (num_item1 != NULL && nested_obj != NULL) {
-        if (!cJSON_AddItemToObject(nested_obj, key3, num_item1)) {
-            cJSON_Delete(num_item1);
-            num_item1 = NULL;
-        }
-    } else if (num_item1 != NULL) {
-        cJSON_Delete(num_item1);
-        num_item1 = NULL;
+    inner_obj = cJSON_CreateObject();
+    if (inner_obj == NULL) {
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
     }
 
-    num_item2 = cJSON_CreateNumber(read_double_from_bytes(Data, Size, 8));
-    if (num_item2 != NULL && nested_obj != NULL) {
-        if (!cJSON_AddItemToObject(nested_obj, key4, num_item2)) {
-            cJSON_Delete(num_item2);
-            num_item2 = NULL;
-        }
-    } else if (num_item2 != NULL) {
-        cJSON_Delete(num_item2);
-        num_item2 = NULL;
+    if (array == NULL || !cJSON_AddItemToArray(array, inner_obj)) {
+        cJSON_Delete(inner_obj);
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
     }
+    inner_obj = NULL;
+
+    inner_obj = array->child;
+
+    num1 = cJSON_CreateNumber(d1);
+    if (num1 == NULL) {
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+
+    if (inner_obj == NULL || !cJSON_AddItemToObject(inner_obj, key3, num1)) {
+        cJSON_Delete(num1);
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    num1 = NULL;
+
+    num2 = cJSON_CreateNumber(d2);
+    if (num2 == NULL) {
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+
+    if (inner_obj == NULL || !cJSON_AddItemToObject(inner_obj, "alt", num2)) {
+        cJSON_Delete(num2);
+        free(key3);
+        free(key2);
+        free(str_value);
+        free(key1);
+        cJSON_Delete(root);
+        return 0;
+    }
+    num2 = NULL;
 
     printed = cJSON_Print(root);
-    if (printed != NULL) {
-        free(printed);
-    }
+    free(printed);
 
-    cJSON_Delete(root);
-
+    free(key3);
+    free(key2);
     free(str_value);
-    free(dyn_key1);
-    free(dyn_key2);
-    free(dyn_key3);
-    free(dyn_key4);
-
+    free(key1);
+    cJSON_Delete(root);
     return 0;
 }

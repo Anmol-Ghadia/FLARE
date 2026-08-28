@@ -1,23 +1,23 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_InitHooks at cJSON.c:209:20 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
 // cJSON_InitHooks at cJSON.c:209:20 in cJSON.h
 // cJSON_InitHooks at cJSON.c:209:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
+// cJSON_GetArraySize at cJSON.c:1857:19 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -28,10 +28,9 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "cJSON.h"
 
-static char *copy_as_cstring(const uint8_t *data, size_t size) {
+static char *dup_data_as_cstring(const uint8_t *data, size_t size) {
     char *s = (char *)malloc(size + 1);
     if (s == NULL) {
         return NULL;
@@ -44,103 +43,96 @@ static char *copy_as_cstring(const uint8_t *data, size_t size) {
 }
 
 int LLVMFuzzerTestOneInput_7(const uint8_t *Data, size_t Size) {
-    size_t o1 = 0, l1 = 0;
-    size_t o2 = 0, l2 = 0;
-    size_t o3 = 0, l3 = 0;
-    size_t o4 = 0, l4 = 0;
+    char *buf1 = NULL;
+    char *buf2 = NULL;
+    char *buf3 = NULL;
+    char *key = NULL;
 
-    if (Size > 0) {
-        o1 = 0;
-        l1 = Data[0] % (Size + 1);
-    }
-    if (Size > 1) {
-        o2 = 1 % Size;
-        l2 = Data[1] % (Size - o2 + 1);
-    }
-    if (Size > 2) {
-        o3 = 2 % Size;
-        l3 = Data[2] % (Size - o3 + 1);
-    }
-    if (Size > 3) {
-        o4 = 3 % Size;
-        l4 = Data[3] % (Size - o4 + 1);
-    }
+    cJSON *str1 = NULL;
+    cJSON *array = NULL;
+    cJSON *str2 = NULL;
+    cJSON *str3 = NULL;
+    cJSON *str4 = NULL;
+    cJSON *object_item = NULL;
 
-    char *s1 = copy_as_cstring((o1 < Size) ? (Data + o1) : Data, l1);
-    char *s2 = copy_as_cstring((o2 < Size) ? (Data + o2) : Data, l2);
-    char *s3 = copy_as_cstring((o3 < Size) ? (Data + o3) : Data, l3);
-    char *s4 = copy_as_cstring((o4 < Size) ? (Data + o4) : Data, l4);
+    cJSON_Hooks hooks;
 
-    if (s1 == NULL || s2 == NULL || s3 == NULL || s4 == NULL) {
-        free(s1);
-        free(s2);
-        free(s3);
-        free(s4);
+    size_t q1, q2, q3;
+    size_t s1, s2, s3, s4;
+
+    q1 = Size / 4;
+    q2 = Size / 2;
+    q3 = (Size * 3) / 4;
+
+    s1 = q1;
+    s2 = (q2 > q1) ? (q2 - q1) : 0;
+    s3 = (q3 > q2) ? (q3 - q2) : 0;
+    s4 = (Size > q3) ? (Size - q3) : 0;
+
+    buf1 = dup_data_as_cstring(Data, s1);
+    buf2 = dup_data_as_cstring(Data + q1, s2);
+    buf3 = dup_data_as_cstring(Data + q2, s3);
+    key = dup_data_as_cstring(Data + q3, s4);
+
+    if ((s1 && !buf1) || (s2 && !buf2) || (s3 && !buf3) || (s4 && !key)) {
+        free(buf1);
+        free(buf2);
+        free(buf3);
+        free(key);
         return 0;
     }
 
-    cJSON *str1 = cJSON_CreateString(s1);
-    cJSON *array = cJSON_CreateArray();
-    cJSON *str2 = cJSON_CreateString(s2);
-    cJSON *str3 = cJSON_CreateString(s3);
-    cJSON *str4 = cJSON_CreateString(s4);
+    /* Required call order begins here */
+    str1 = cJSON_CreateString(buf1 ? buf1 : "");
+    array = cJSON_CreateArray();
+    str2 = cJSON_CreateString(buf2 ? buf2 : "");
+    str3 = cJSON_CreateString(buf3 ? buf3 : "");
+    str4 = cJSON_CreateString(key ? key : "");
 
-    cJSON_Hooks hooks;
-    if (Size > 0 && (Data[0] & 1)) {
-        hooks.malloc_fn = malloc;
-        hooks.free_fn = free;
+    if ((Size & 1) == 0) {
+        hooks.malloc_fn = NULL;
+        hooks.free_fn = NULL;
         cJSON_InitHooks(&hooks);
     } else {
         cJSON_InitHooks(NULL);
     }
 
     cJSON_Delete(str1);
+    str1 = NULL;
 
     (void)cJSON_GetArraySize(array);
 
-    if (array != NULL && str2 != NULL) {
-        if (!cJSON_AddItemToArray(array, str2)) {
-            cJSON_Delete(str2);
-            str2 = NULL;
-        } else {
-            str2 = NULL;
-        }
-    } else if (str2 != NULL) {
+    if (!cJSON_AddItemToArray(array, str2)) {
         cJSON_Delete(str2);
         str2 = NULL;
     }
 
-    if (array != NULL && str3 != NULL) {
-        if (!cJSON_AddItemToArray(array, str3)) {
-            cJSON_Delete(str3);
-            str3 = NULL;
-        } else {
-            str3 = NULL;
-        }
-    } else if (str3 != NULL) {
+    if (!cJSON_AddItemToArray(array, str3)) {
         cJSON_Delete(str3);
         str3 = NULL;
     }
 
-    if (array != NULL && str4 != NULL) {
-        if (!cJSON_AddItemToObject(array, s1, str4)) {
+    object_item = cJSON_CreateArray();
+    if (object_item != NULL) {
+        if (!cJSON_AddItemToObject(object_item, key ? key : "", str4)) {
             cJSON_Delete(str4);
             str4 = NULL;
-        } else {
-            str4 = NULL;
         }
-    } else if (str4 != NULL) {
+        cJSON_Delete(object_item);
+        object_item = NULL;
+    } else {
         cJSON_Delete(str4);
         str4 = NULL;
+        (void)cJSON_AddItemToObject(NULL, key ? key : "", NULL);
     }
+    /* Required call order ends here */
 
     cJSON_Delete(array);
 
-    free(s1);
-    free(s2);
-    free(s3);
-    free(s4);
+    free(buf1);
+    free(buf2);
+    free(buf3);
+    free(key);
 
-    cJSON_InitHooks(NULL);
     return 0;
 }

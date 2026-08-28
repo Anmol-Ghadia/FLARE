@@ -1,213 +1,195 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_InsertItemInArray at cJSON.c:2334:26 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddArrayToObject at cJSON.c:2204:22 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_DetachItemViaPointer at cJSON.c:2216:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_ReplaceItemInArray at cJSON.c:2417:26 in cJSON.h
+// cJSON_DetachItemViaPointer at cJSON.c:2216:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_DetachItemFromArray at cJSON.c:2294:23 in cJSON.h
+// cJSON_DetachItemFromObject at cJSON.c:2267:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_DetachItemFromObjectCaseSensitive at cJSON.c:2274:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_ReplaceItemViaPointer at cJSON.c:2368:26 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_DeleteItemFromArray at cJSON.c:2304:20 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_InsertItemInArray at cJSON.c:2334:26 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_ReplaceItemViaPointer at cJSON.c:2368:26 in cJSON.h
+// cJSON_DeleteItemFromObject at cJSON.c:2281:20 in cJSON.h
+// cJSON_DeleteItemFromObject at cJSON.c:2281:20 in cJSON.h
+// cJSON_DeleteItemFromObject at cJSON.c:2281:20 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddArrayToObject at cJSON.c:2204:22 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_DetachItemFromObject at cJSON.c:2267:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateNull at cJSON.c:2461:23 in cJSON.h
-// cJSON_CreateBool at cJSON.c:2494:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_ParseWithLength at cJSON.c:1232:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <stdint.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 #include "cJSON.h"
 
-static uint32_t read_u32(const uint8_t *Data, size_t Size, size_t *Offset) {
-    uint32_t v = 0;
-    size_t i;
-    for (i = 0; i < 4; ++i) {
-        v <<= 8;
-        if (*Offset < Size) {
-            v |= Data[*Offset];
-            (*Offset)++;
+static char *make_string_from_bytes(const uint8_t *data, size_t size, size_t *consumed)
+{
+    size_t len;
+    char *out;
+
+    if (size == 0) {
+        out = (char *)malloc(1);
+        if (out != NULL) {
+            out[0] = '\0';
         }
+        if (consumed != NULL) {
+            *consumed = 0;
+        }
+        return out;
     }
-    return v;
-}
 
-static int read_int(const uint8_t *Data, size_t Size, size_t *Offset) {
-    return (int)read_u32(Data, Size, Offset);
-}
-
-static char *make_string(const uint8_t *Data, size_t Size, size_t *Offset) {
-    size_t remaining = (*Offset < Size) ? (Size - *Offset) : 0;
-    size_t len = remaining > 32 ? 32 : remaining;
-    char *s = (char *)malloc(len + 1);
-    if (s == NULL) {
+    len = data[0] % (size + 1);
+    out = (char *)malloc(len + 1);
+    if (out == NULL) {
+        if (consumed != NULL) {
+            *consumed = 1 + len;
+        }
         return NULL;
     }
-    if (len > 0) {
-        memcpy(s, Data + *Offset, len);
-        *Offset += len;
-    }
-    s[len] = '\0';
-    return s;
-}
 
-static cJSON *make_item_from_byte(uint8_t tag, const uint8_t *Data, size_t Size, size_t *Offset) {
-    switch (tag % 6) {
-        case 0:
-            return cJSON_CreateNull();
-        case 1:
-            return cJSON_CreateBool((int)(tag & 1));
-        case 2:
-            return cJSON_CreateNumber((double)read_int(Data, Size, Offset));
-        case 3: {
-            char *s = make_string(Data, Size, Offset);
-            cJSON *item = cJSON_CreateString(s ? s : "");
-            free(s);
-            return item;
+    if (len > 0 && size > 1) {
+        size_t copy_len = len;
+        if (copy_len > size - 1) {
+            copy_len = size - 1;
         }
-        case 4:
-            return cJSON_CreateArray();
-        case 5:
-        default:
-            return cJSON_CreateObject();
+        memcpy(out, data + 1, copy_len);
+        if (copy_len < len) {
+            memset(out + copy_len, 'A', len - copy_len);
+        }
     }
+    out[len] = '\0';
+
+    if (consumed != NULL) {
+        *consumed = 1 + len;
+    }
+    return out;
 }
 
-int LLVMFuzzerTestOneInput_22(const uint8_t *Data, size_t Size) {
-    size_t offset = 0;
+int LLVMFuzzerTestOneInput_22(const uint8_t *Data, size_t Size)
+{
     cJSON *root = NULL;
-    cJSON *parsed = NULL;
-    cJSON *array = NULL;
+    cJSON *tmp = NULL;
     cJSON *detached = NULL;
-    cJSON *replacement = NULL;
-    cJSON *inserted = NULL;
-    int idx1, idx2, idx3, idx4;
-    FILE *fp;
+    cJSON *detached2 = NULL;
+    cJSON *arr = NULL;
+    cJSON *child = NULL;
+    char *name1 = NULL;
+    char *name2 = NULL;
+    char *name3 = NULL;
+    char *name4 = NULL;
+    char *name5 = NULL;
+    size_t off = 0, used = 0;
+    cJSON_bool b1 = 0, b2 = 0;
 
-    fp = fopen("./dummy_file", "wb");
-    if (fp != NULL) {
-        if (Size > 0) {
-            (void)fwrite(Data, 1, Size, fp);
-        }
-        fclose(fp);
+    root = cJSON_CreateObject();
+    if (root == NULL) {
+        return 0;
     }
 
-    parsed = cJSON_ParseWithLength((const char *)Data, Size);
-    if (parsed != NULL && cJSON_IsArray(parsed)) {
-        root = parsed;
-        parsed = NULL;
-    } else {
-        cJSON_Delete(parsed);
-        parsed = NULL;
-        root = cJSON_CreateArray();
-        if (root == NULL) {
-            return 0;
+    name1 = make_string_from_bytes(Data + off, (off < Size) ? (Size - off) : 0, &used);
+    off += used;
+    name2 = make_string_from_bytes(Data + off, (off < Size) ? (Size - off) : 0, &used);
+    off += used;
+    name3 = make_string_from_bytes(Data + off, (off < Size) ? (Size - off) : 0, &used);
+    off += used;
+    name4 = make_string_from_bytes(Data + off, (off < Size) ? (Size - off) : 0, &used);
+    off += used;
+    name5 = make_string_from_bytes(Data + off, (off < Size) ? (Size - off) : 0, &used);
+    off += used;
+
+    if (name1 == NULL || name2 == NULL || name3 == NULL || name4 == NULL || name5 == NULL) {
+        free(name1);
+        free(name2);
+        free(name3);
+        free(name4);
+        free(name5);
+        cJSON_Delete(root);
+        return 0;
+    }
+
+    if (off < Size) {
+        b1 = (Data[off] & 1) ? 1 : 0;
+        off++;
+    }
+    if (off < Size) {
+        b2 = (Data[off] & 1) ? 1 : 0;
+        off++;
+    }
+
+    tmp = cJSON_AddBoolToObject(root, name1, b1);
+    (void)tmp;
+
+    tmp = cJSON_AddBoolToObject(root, name2, b2);
+    (void)tmp;
+
+    arr = cJSON_AddArrayToObject(root, name3);
+    if (arr != NULL) {
+        cJSON_AddItemToArray(arr, cJSON_CreateBool(b1));
+        cJSON_AddItemToArray(arr, cJSON_CreateBool(b2));
+
+        child = arr->child;
+        if (child != NULL) {
+            detached = cJSON_DetachItemViaPointer(arr, child);
+            if (detached != NULL) {
+                cJSON_Delete(detached);
+            }
         }
 
-        {
-            size_t count = (Size > 64) ? 64 : Size;
-            size_t i;
-            for (i = 0; i < count; ++i) {
-                cJSON *item = make_item_from_byte(Data[i], Data, Size, &offset);
-                if (item != NULL) {
-                    cJSON_AddItemToArray(root, item);
-                }
+        child = arr->child;
+        if (child != NULL && child->next != NULL) {
+            detached2 = cJSON_DetachItemViaPointer(arr, child->next);
+            if (detached2 != NULL) {
+                cJSON_Delete(detached2);
             }
         }
     }
 
-    array = root;
-
-    (void)cJSON_GetArraySize(NULL);
-    (void)cJSON_GetArraySize(array);
-
-    idx1 = read_int(Data, Size, &offset);
-    idx2 = read_int(Data, Size, &offset);
-    idx3 = read_int(Data, Size, &offset);
-    idx4 = read_int(Data, Size, &offset);
-
-    inserted = make_item_from_byte((offset < Size) ? Data[offset++] : 0, Data, Size, &offset);
-    if (inserted != NULL) {
-        if (!cJSON_InsertItemInArray(array, idx1, inserted)) {
-            cJSON_Delete(inserted);
-            inserted = NULL;
-        }
-    }
-
-    replacement = make_item_from_byte((offset < Size) ? Data[offset++] : 1, Data, Size, &offset);
-    if (replacement != NULL) {
-        if (!cJSON_ReplaceItemInArray(array, idx2, replacement)) {
-            cJSON_Delete(replacement);
-            replacement = NULL;
-        }
-    }
-
-    detached = cJSON_DetachItemFromArray(array, idx3);
+    detached = cJSON_DetachItemFromObject(root, name1);
     if (detached != NULL) {
-        cJSON *extra = make_item_from_byte((offset < Size) ? Data[offset++] : 2, Data, Size, &offset);
-        if (extra != NULL) {
-            cJSON_Delete(extra);
-        }
         cJSON_Delete(detached);
-        detached = NULL;
     }
 
-    {
-        cJSON *first = cJSON_GetArrayItem(array, 0);
-        cJSON *rep2 = make_item_from_byte((offset < Size) ? Data[offset++] : 3, Data, Size, &offset);
-        if (rep2 != NULL) {
-            if (!cJSON_ReplaceItemViaPointer(array, first, rep2)) {
-                cJSON_Delete(rep2);
-            }
-        }
+    detached = cJSON_DetachItemFromObjectCaseSensitive(root, name2);
+    if (detached != NULL) {
+        cJSON_Delete(detached);
     }
 
-    cJSON_DeleteItemFromArray(array, idx4);
-    (void)cJSON_GetArraySize(array);
+    cJSON_DeleteItemFromObject(root, name3);
+    cJSON_DeleteItemFromObject(root, name4);
+    cJSON_DeleteItemFromObject(root, name5);
 
-    {
-        cJSON *tail_insert = make_item_from_byte((offset < Size) ? Data[offset++] : 4, Data, Size, &offset);
-        if (tail_insert != NULL) {
-            if (!cJSON_InsertItemInArray(array, cJSON_GetArraySize(array) + 10, tail_insert)) {
-                cJSON_Delete(tail_insert);
-            }
-        }
+    tmp = cJSON_AddBoolToObject(root, name4, b1);
+    (void)tmp;
+    arr = cJSON_AddArrayToObject(root, name5);
+    if (arr != NULL) {
+        cJSON_AddItemToArray(arr, cJSON_CreateBool(1));
     }
 
-    {
-        int sz = cJSON_GetArraySize(array);
-        if (sz > 0) {
-            cJSON *mid = cJSON_GetArrayItem(array, sz / 2);
-            cJSON *rep3 = make_item_from_byte((offset < Size) ? Data[offset++] : 5, Data, Size, &offset);
-            if (rep3 != NULL) {
-                if (!cJSON_ReplaceItemViaPointer(array, mid, rep3)) {
-                    cJSON_Delete(rep3);
-                }
-            }
-        }
+    detached = cJSON_DetachItemFromObject(root, name5);
+    if (detached != NULL) {
+        cJSON_Delete(detached);
     }
 
+    free(name1);
+    free(name2);
+    free(name3);
+    free(name4);
+    free(name5);
     cJSON_Delete(root);
     return 0;
 }

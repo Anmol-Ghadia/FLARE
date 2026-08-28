@@ -1,198 +1,229 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_ParseWithOpts at cJSON.c:1131:23 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
-// cJSON_ParseWithLengthOpts at cJSON.c:1147:23 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_ParseWithLength at cJSON.c:1232:23 in cJSON.h
+// cJSON_AddArrayToObject at cJSON.c:2204:22 in cJSON.h
+// cJSON_IsArray at cJSON.c:3000:26 in cJSON.h
+// cJSON_IsArray at cJSON.c:3000:26 in cJSON.h
+// cJSON_IsArray at cJSON.c:3000:26 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddArrayToObject at cJSON.c:2204:22 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_IsArray at cJSON.c:3000:26 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_InsertItemInArray at cJSON.c:2292:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_InsertItemInArray at cJSON.c:2292:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_InsertItemInArray at cJSON.c:2292:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_InsertItemInArray at cJSON.c:2292:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_IsInvalid at cJSON.c:2930:26 in cJSON.h
+// cJSON_IsInvalid at cJSON.c:2930:26 in cJSON.h
+// cJSON_IsInvalid at cJSON.c:2930:26 in cJSON.h
+// cJSON_IsInvalid at cJSON.c:2930:26 in cJSON.h
+// cJSON_DeleteItemFromArray at cJSON.c:2262:20 in cJSON.h
+// cJSON_DeleteItemFromArray at cJSON.c:2262:20 in cJSON.h
+// cJSON_DeleteItemFromArray at cJSON.c:2262:20 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_IsInvalid at cJSON.c:2930:26 in cJSON.h
+// cJSON_IsArray at cJSON.c:3000:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
-// cJSON_ParseWithLengthOpts at cJSON.c:1147:23 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
-// cJSON_ParseWithLength at cJSON.c:1232:23 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
-// cJSON_Parse at cJSON.c:1227:23 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_Parse at cJSON.c:1227:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
-// cJSON_ParseWithOpts at cJSON.c:1131:23 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 
 #include "cJSON.h"
 
-static char *make_nul_terminated_copy(const uint8_t *Data, size_t Size) {
-    char *buf = (char *)malloc(Size + 1);
-    if (buf == NULL) {
-        return NULL;
+static uint32_t read_u32(const uint8_t *data, size_t size, size_t *offset) {
+    uint32_t v = 0;
+    size_t i;
+    for (i = 0; i < 4; i++) {
+        v <<= 8;
+        if (*offset < size) {
+            v |= data[*offset];
+            (*offset)++;
+        }
     }
-    if (Size > 0) {
-        memcpy(buf, Data, Size);
-    }
-    buf[Size] = '\0';
-    return buf;
+    return v;
 }
 
-static void consume_error_ptr(const char *base, size_t len, const char *err) {
-    volatile unsigned char sink = 0;
-    if (base == NULL || err == NULL) {
-        return;
+static int read_int(const uint8_t *data, size_t size, size_t *offset) {
+    return (int)read_u32(data, size, offset);
+}
+
+static char *read_string(const uint8_t *data, size_t size, size_t *offset) {
+    size_t remaining, len;
+    char *out;
+
+    if (*offset >= size) {
+        out = (char *)malloc(1);
+        if (out != NULL) {
+            out[0] = '\0';
+        }
+        return out;
     }
 
-    if (err >= base && (size_t)(err - base) < len) {
-        size_t pos = (size_t)(err - base);
-        sink ^= (unsigned char)base[pos];
-        if (pos > 0) {
-            sink ^= (unsigned char)base[pos - 1];
-        }
-        if (pos + 1 < len) {
-            sink ^= (unsigned char)base[pos + 1];
-        }
+    remaining = size - *offset;
+    len = remaining ? (size_t)(data[(*offset)++] % (remaining + 1)) : 0;
+    if (len > size - *offset) {
+        len = size - *offset;
     }
 
-    (void)sink;
+    out = (char *)malloc(len + 1);
+    if (out == NULL) {
+        return NULL;
+    }
+
+    memcpy(out, data + *offset, len);
+    out[len] = '\0';
+    *offset += len;
+    return out;
+}
+
+static cJSON *make_item_from_byte(uint8_t b) {
+    switch (b % 6) {
+        case 0:
+            return cJSON_CreateNull();
+        case 1:
+            return cJSON_CreateBool((b & 1) ? 1 : 0);
+        case 2:
+            return cJSON_CreateNumber((double)((int8_t)b));
+        case 3:
+            return cJSON_CreateString("fuzz");
+        case 4:
+            return cJSON_CreateArray();
+        case 5:
+        default:
+            return cJSON_CreateObject();
+    }
 }
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    const char *parse_end = NULL;
-    const char *err = NULL;
+    size_t offset = 0;
     cJSON *root = NULL;
-    char *printed = NULL;
+    cJSON *array = NULL;
+    cJSON *extra_array = NULL;
+    cJSON *invalid = NULL;
+    cJSON *bool_item = NULL;
+    char *name1 = NULL;
+    char *name2 = NULL;
+    int idx1, idx2, idx3;
+    FILE *fp;
 
-    char *nul_buf = make_nul_terminated_copy(Data, Size);
-    if (nul_buf == NULL) {
+    fp = fopen("./dummy_file", "wb");
+    if (fp != NULL) {
+        if (Size > 0) {
+            (void)fwrite(Data, 1, Size, fp);
+        }
+        fclose(fp);
+    }
+
+    root = cJSON_CreateObject();
+    if (root == NULL) {
         return 0;
     }
 
+    name1 = read_string(Data, Size, &offset);
+    name2 = read_string(Data, Size, &offset);
+    if (name1 == NULL || name2 == NULL) {
+        free(name1);
+        free(name2);
+        cJSON_Delete(root);
+        return 0;
+    }
+
+    extra_array = cJSON_AddArrayToObject(root, name1);
+    if (extra_array != NULL) {
+        (void)cJSON_IsArray(extra_array);
+    }
+    (void)cJSON_IsArray(root);
+    (void)cJSON_IsArray(NULL);
+
+    bool_item = cJSON_AddBoolToObject(root, name2, (offset < Size) ? (Data[offset++] & 1) : 0);
+    (void)bool_item;
+
+    array = cJSON_AddArrayToObject(root, "array");
+    if (array == NULL) {
+        free(name1);
+        free(name2);
+        cJSON_Delete(root);
+        return 0;
+    }
+
+    (void)cJSON_IsArray(array);
+
+    idx1 = read_int(Data, Size, &offset);
+    idx2 = read_int(Data, Size, &offset);
+    idx3 = read_int(Data, Size, &offset);
+
     {
-        FILE *fp = fopen("./dummy_file", "wb");
-        if (fp != NULL) {
-            if (Size > 0) {
-                (void)fwrite(Data, 1, Size, fp);
+        cJSON *item1 = (offset < Size) ? make_item_from_byte(Data[offset++]) : cJSON_CreateNull();
+        if (item1 != NULL) {
+            if (!cJSON_InsertItemInArray(array, idx1, item1)) {
+                cJSON_Delete(item1);
             }
-            fclose(fp);
         }
     }
 
-    root = cJSON_Parse(nul_buf);
-    if (root != NULL) {
-        printed = cJSON_Print(root);
-        if (printed != NULL) {
-            cJSON *roundtrip = cJSON_Parse(printed);
-            if (roundtrip != NULL) {
-                cJSON_Delete(roundtrip);
+    {
+        cJSON *item2 = (offset < Size) ? make_item_from_byte(Data[offset++]) : cJSON_CreateBool(1);
+        if (item2 != NULL) {
+            if (!cJSON_InsertItemInArray(array, idx2, item2)) {
+                cJSON_Delete(item2);
             }
-            free(printed);
-            printed = NULL;
         }
-        cJSON_Delete(root);
-        root = NULL;
-    } else {
-        err = cJSON_GetErrorPtr();
-        consume_error_ptr(nul_buf, Size, err);
     }
 
-    parse_end = NULL;
-    root = cJSON_ParseWithOpts(nul_buf, &parse_end, 0);
-    if (root != NULL) {
-        printed = cJSON_Print(root);
-        if (printed != NULL) {
-            free(printed);
-            printed = NULL;
-        }
-        cJSON_Delete(root);
-        root = NULL;
-    } else {
-        err = cJSON_GetErrorPtr();
-        consume_error_ptr(nul_buf, Size, err);
-        consume_error_ptr(nul_buf, Size, parse_end);
-    }
-
-    parse_end = NULL;
-    root = cJSON_ParseWithOpts(nul_buf, &parse_end, 1);
-    if (root != NULL) {
-        printed = cJSON_Print(root);
-        if (printed != NULL) {
-            free(printed);
-            printed = NULL;
-        }
-        cJSON_Delete(root);
-        root = NULL;
-    } else {
-        err = cJSON_GetErrorPtr();
-        consume_error_ptr(nul_buf, Size, err);
-        consume_error_ptr(nul_buf, Size, parse_end);
-    }
-
-    parse_end = NULL;
-    root = cJSON_ParseWithLengthOpts((const char *)Data, Size, &parse_end, 0);
-    if (root != NULL) {
-        printed = cJSON_Print(root);
-        if (printed != NULL) {
-            cJSON *roundtrip_len = cJSON_ParseWithLength(printed, strlen(printed));
-            if (roundtrip_len != NULL) {
-                cJSON_Delete(roundtrip_len);
+    {
+        cJSON *item3 = (offset < Size) ? make_item_from_byte(Data[offset++]) : cJSON_CreateNumber(0);
+        if (item3 != NULL) {
+            if (!cJSON_InsertItemInArray(array, idx3, item3)) {
+                cJSON_Delete(item3);
             }
-            free(printed);
-            printed = NULL;
         }
-        cJSON_Delete(root);
-        root = NULL;
-    } else {
-        err = cJSON_GetErrorPtr();
-        consume_error_ptr((const char *)Data, Size, err);
-        consume_error_ptr((const char *)Data, Size, parse_end);
     }
 
-    parse_end = NULL;
-    root = cJSON_ParseWithLengthOpts((const char *)Data, Size, &parse_end, 1);
-    if (root != NULL) {
-        printed = cJSON_Print(root);
-        if (printed != NULL) {
-            free(printed);
-            printed = NULL;
+    if (offset < Size) {
+        cJSON *bad_item = make_item_from_byte(Data[offset++]);
+        if (bad_item != NULL) {
+            if (!cJSON_InsertItemInArray(root, idx1, bad_item)) {
+                cJSON_Delete(bad_item);
+            }
         }
-        cJSON_Delete(root);
-        root = NULL;
-    } else {
-        err = cJSON_GetErrorPtr();
-        consume_error_ptr((const char *)Data, Size, err);
-        consume_error_ptr((const char *)Data, Size, parse_end);
     }
 
-    root = cJSON_ParseWithLength((const char *)Data, Size);
-    if (root != NULL) {
-        printed = cJSON_Print(root);
-        if (printed != NULL) {
-            free(printed);
-            printed = NULL;
-        }
-        cJSON_Delete(root);
-        root = NULL;
-    } else {
-        err = cJSON_GetErrorPtr();
-        consume_error_ptr((const char *)Data, Size, err);
+    (void)cJSON_IsInvalid(root);
+    (void)cJSON_IsInvalid(array);
+    (void)cJSON_IsInvalid(extra_array);
+    (void)cJSON_IsInvalid(NULL);
+
+    cJSON_DeleteItemFromArray(array, idx1);
+    cJSON_DeleteItemFromArray(array, idx2);
+    cJSON_DeleteItemFromArray(array, -1);
+
+    invalid = cJSON_CreateNull();
+    if (invalid != NULL) {
+        invalid->type = cJSON_Invalid;
     }
 
-    free(nul_buf);
+    (void)cJSON_IsInvalid(invalid);
+    (void)cJSON_IsArray(invalid);
+
+    free(name1);
+    free(name2);
+    cJSON_Delete(invalid);
+    cJSON_Delete(root);
     return 0;
 }

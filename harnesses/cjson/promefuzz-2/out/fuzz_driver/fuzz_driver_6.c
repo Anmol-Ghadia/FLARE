@@ -1,11 +1,11 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_ParseWithOpts at cJSON.c:1131:23 in cJSON.h
-// cJSON_PrintBuffered at cJSON.c:1317:22 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_PrintUnformatted at cJSON.c:1312:22 in cJSON.h
-// cJSON_Minify at cJSON.c:2924:20 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Minify at cJSON.c:2924:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -20,16 +20,13 @@
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
 {
-    char *input;
+    char *input = NULL;
     const char *parse_end = NULL;
-    cJSON *root;
+    cJSON *root = NULL;
     char *printed_buffered = NULL;
     char *printed = NULL;
     char *printed_unformatted = NULL;
     char *minify_buf = NULL;
-    int prebuffer;
-    cJSON_bool require_null_terminated;
-    cJSON_bool fmt;
 
     input = (char *)malloc(Size + 1);
     if (input == NULL) {
@@ -41,21 +38,14 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
     }
     input[Size] = '\0';
 
-    require_null_terminated = (Size > 0) ? (cJSON_bool)(Data[0] & 1) : 0;
-    fmt = (Size > 1) ? (cJSON_bool)(Data[1] & 1) : 0;
+    root = cJSON_ParseWithOpts(input, &parse_end, 0);
+    if (root == NULL) {
+        root = cJSON_ParseWithOpts(input, &parse_end, 1);
+    }
 
-    root = cJSON_ParseWithOpts(input, &parse_end, require_null_terminated);
     if (root != NULL) {
-        if (Size > 5) {
-            prebuffer = (int)(((unsigned int)Data[2] << 16) |
-                              ((unsigned int)Data[3] << 8) |
-                              (unsigned int)Data[4]);
-            if (Data[5] & 1) {
-                prebuffer = -prebuffer;
-            }
-        } else {
-            prebuffer = (int)Size;
-        }
+        int prebuffer = (int)(Size > (size_t)0x7fffffff ? 256 : (Size + 8));
+        cJSON_bool fmt = (Size > 0) ? (cJSON_bool)(Data[0] & 1) : 0;
 
         printed_buffered = cJSON_PrintBuffered(root, prebuffer, fmt);
         if (printed_buffered != NULL) {
@@ -71,19 +61,10 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
 
         printed_unformatted = cJSON_PrintUnformatted(root);
         if (printed_unformatted != NULL) {
-            minify_buf = (char *)malloc(strlen(printed_unformatted) + 1);
-            if (minify_buf != NULL) {
-                memcpy(minify_buf, printed_unformatted, strlen(printed_unformatted) + 1);
-                cJSON_Minify(minify_buf);
-                free(minify_buf);
-                minify_buf = NULL;
-            }
             free(printed_unformatted);
             printed_unformatted = NULL;
         }
 
-        cJSON_Delete(root);
-    } else {
         minify_buf = (char *)malloc(Size + 1);
         if (minify_buf != NULL) {
             if (Size > 0) {
@@ -92,7 +73,11 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
             minify_buf[Size] = '\0';
             cJSON_Minify(minify_buf);
             free(minify_buf);
+            minify_buf = NULL;
         }
+
+        cJSON_Delete(root);
+        root = NULL;
     }
 
     free(input);

@@ -1,30 +1,35 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddNumberToObject at cJSON.c:2198:22 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_AddArrayToObject at cJSON.c:2246:22 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_ParseWithLengthOpts at cJSON.c:1115:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_ParseWithLengthOpts at cJSON.c:1115:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_ParseWithLengthOpts at cJSON.c:1115:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_ParseWithLengthOpts at cJSON.c:1115:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -34,177 +39,204 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
-#include <stdio.h>
-
 #include "cJSON.h"
 
-static uint16_t read_u16(const uint8_t *data, size_t size, size_t *offset) {
-    uint16_t v = 0;
-    if (*offset < size) {
-        v = (uint16_t)data[*offset];
-        (*offset)++;
-    }
-    if (*offset < size) {
-        v |= (uint16_t)data[*offset] << 8;
-        (*offset)++;
-    }
-    return v;
-}
-
-static uint64_t read_u64(const uint8_t *data, size_t size, size_t *offset) {
-    uint64_t v = 0;
-    size_t i;
-    for (i = 0; i < 8 && *offset < size; i++, (*offset)++) {
-        v |= ((uint64_t)data[*offset]) << (8 * i);
-    }
-    return v;
-}
-
-static double read_double(const uint8_t *data, size_t size, size_t *offset) {
-    union {
-        uint64_t u;
-        double d;
-    } conv;
-    conv.u = read_u64(data, size, offset);
-    return conv.d;
-}
-
-static char *make_cstring(const uint8_t *data, size_t size, size_t *offset) {
-    uint16_t len = read_u16(data, size, offset);
-    size_t remaining = (*offset < size) ? (size - *offset) : 0;
-    size_t actual = len;
-    char *out;
-
-    if (actual > remaining) {
-        actual = remaining;
-    }
-
-    out = (char *)malloc(actual + 1);
-    if (out == NULL) {
-        return NULL;
-    }
-
-    if (actual > 0) {
-        memcpy(out, data + *offset, actual);
-        *offset += actual;
-    }
-    out[actual] = '\0';
-    return out;
-}
-
-int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    size_t offset = 0;
-    cJSON *root = NULL;
-    cJSON *num = NULL;
-    cJSON *arr = NULL;
-    cJSON *added = NULL;
-    char *key1 = NULL;
-    char *key2 = NULL;
-    char *key3 = NULL;
-    char *str1 = NULL;
-    char *str2 = NULL;
-    double d1, d2, d3;
-    double r;
-
-    FILE *fp = fopen("./dummy_file", "wb");
-    if (fp != NULL) {
-        if (Size > 0) {
-            (void)fwrite(Data, 1, Size, fp);
-        }
-        fclose(fp);
-    }
-
-    key1 = make_cstring(Data, Size, &offset);
-    key2 = make_cstring(Data, Size, &offset);
-    key3 = make_cstring(Data, Size, &offset);
-    str1 = make_cstring(Data, Size, &offset);
-    str2 = make_cstring(Data, Size, &offset);
-
-    d1 = read_double(Data, Size, &offset);
-    d2 = read_double(Data, Size, &offset);
-    d3 = read_double(Data, Size, &offset);
-
-    root = cJSON_CreateObject();
+static void consume_tree(cJSON *root)
+{
     if (root == NULL) {
-        free(key1);
-        free(key2);
-        free(key3);
-        free(str1);
-        free(str2);
+        return;
+    }
+
+    (void)cJSON_IsString(root);
+
+    if (root->child != NULL) {
+        cJSON *child = root->child;
+        size_t limit = 0;
+        while ((child != NULL) && (limit++ < 1024)) {
+            (void)cJSON_IsString(child);
+            if (child->child != NULL) {
+                cJSON *grand = child->child;
+                size_t glimit = 0;
+                while ((grand != NULL) && (glimit++ < 1024)) {
+                    (void)cJSON_IsString(grand);
+                    grand = grand->next;
+                }
+            }
+            child = child->next;
+        }
+    }
+}
+
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
+{
+    const char *parse_end = NULL;
+    const char *err = NULL;
+    cJSON *root = NULL;
+    char *buf = NULL;
+    char *buf2 = NULL;
+
+    (void)cJSON_IsString(NULL);
+
+    if (Data == NULL) {
         return 0;
     }
 
-    num = cJSON_CreateNumber(d1);
-    if (num != NULL) {
-        r = cJSON_GetNumberValue(num);
-        (void)r;
-
-        r = cJSON_SetNumberHelper(num, d2);
-        (void)r;
-
-        r = cJSON_GetNumberValue(num);
-        (void)r;
-
-        cJSON_Delete(num);
-        num = NULL;
+    buf = (char *)malloc(Size + 1);
+    if (buf == NULL) {
+        return 0;
     }
+    memcpy(buf, Data, Size);
+    buf[Size] = '\0';
 
-    added = cJSON_AddNumberToObject(root, key1 ? key1 : "", d1);
-    if (added != NULL) {
-        r = cJSON_GetNumberValue(added);
-        (void)r;
-
-        r = cJSON_SetNumberHelper(added, d3);
-        (void)r;
-
-        r = cJSON_GetNumberValue(added);
-        (void)r;
-    }
-
-    added = cJSON_AddStringToObject(root, key2 ? key2 : "", str1 ? str1 : "");
-    if (added != NULL) {
-        r = cJSON_GetNumberValue(added);
-        (void)r;
-
-        r = cJSON_SetNumberHelper(added, d2);
-        (void)r;
-    }
-
-    arr = cJSON_AddArrayToObject(root, key3 ? key3 : "");
-    if (arr != NULL) {
-        cJSON *elem1 = cJSON_CreateNumber(d2);
-        cJSON *elem2 = cJSON_CreateNumber(d3);
-
-        if (elem1 != NULL) {
-            cJSON_AddItemToArray(arr, elem1);
-            r = cJSON_GetNumberValue(elem1);
-            (void)r;
-            r = cJSON_SetNumberHelper(elem1, d1);
-            (void)r;
-        }
-
-        if (elem2 != NULL) {
-            cJSON_AddItemToArray(arr, elem2);
-            r = cJSON_GetNumberValue(elem2);
-            (void)r;
-        }
-
-        if (str2 != NULL) {
-            cJSON_AddItemToArray(arr, cJSON_CreateString(str2));
+    root = cJSON_Parse(buf);
+    if (root != NULL) {
+        consume_tree(root);
+        cJSON_Delete(root);
+    } else {
+        err = cJSON_GetErrorPtr();
+        if (err != NULL) {
+            volatile char sink = *err;
+            (void)sink;
         }
     }
 
-    r = cJSON_GetNumberValue(NULL);
-    (void)r;
-    r = cJSON_SetNumberHelper(NULL, d1);
-    (void)r;
+    parse_end = NULL;
+    root = cJSON_ParseWithOpts(buf, &parse_end, 0);
+    if (root != NULL) {
+        consume_tree(root);
+        cJSON_Delete(root);
+    } else {
+        err = cJSON_GetErrorPtr();
+        if (err != NULL) {
+            volatile char sink = *err;
+            (void)sink;
+        }
+        if (parse_end != NULL) {
+            volatile char sink2 = *parse_end;
+            (void)sink2;
+        }
+    }
 
-    cJSON_Delete(root);
-    free(key1);
-    free(key2);
-    free(key3);
-    free(str1);
-    free(str2);
+    parse_end = NULL;
+    root = cJSON_ParseWithOpts(buf, &parse_end, 1);
+    if (root != NULL) {
+        consume_tree(root);
+        cJSON_Delete(root);
+    } else {
+        err = cJSON_GetErrorPtr();
+        if (err != NULL) {
+            volatile char sink = *err;
+            (void)sink;
+        }
+        if (parse_end != NULL) {
+            volatile char sink2 = *parse_end;
+            (void)sink2;
+        }
+    }
+
+    root = cJSON_ParseWithLength(buf, Size);
+    if (root != NULL) {
+        consume_tree(root);
+        cJSON_Delete(root);
+    } else {
+        err = cJSON_GetErrorPtr();
+        if (err != NULL) {
+            volatile char sink = *err;
+            (void)sink;
+        }
+    }
+
+    parse_end = NULL;
+    root = cJSON_ParseWithLengthOpts(buf, Size, &parse_end, 0);
+    if (root != NULL) {
+        consume_tree(root);
+        cJSON_Delete(root);
+    } else {
+        err = cJSON_GetErrorPtr();
+        if (err != NULL) {
+            volatile char sink = *err;
+            (void)sink;
+        }
+        if (parse_end != NULL) {
+            volatile char sink2 = *parse_end;
+            (void)sink2;
+        }
+    }
+
+    parse_end = NULL;
+    root = cJSON_ParseWithLengthOpts(buf, Size, &parse_end, 1);
+    if (root != NULL) {
+        consume_tree(root);
+        cJSON_Delete(root);
+    } else {
+        err = cJSON_GetErrorPtr();
+        if (err != NULL) {
+            volatile char sink = *err;
+            (void)sink;
+        }
+        if (parse_end != NULL) {
+            volatile char sink2 = *parse_end;
+            (void)sink2;
+        }
+    }
+
+    if (Size > 0) {
+        size_t half = Size / 2;
+
+        parse_end = NULL;
+        root = cJSON_ParseWithLengthOpts(buf, half, &parse_end, 0);
+        if (root != NULL) {
+            consume_tree(root);
+            cJSON_Delete(root);
+        } else {
+            err = cJSON_GetErrorPtr();
+            if (err != NULL) {
+                volatile char sink = *err;
+                (void)sink;
+            }
+        }
+
+        parse_end = NULL;
+        root = cJSON_ParseWithLengthOpts(buf, half, &parse_end, 1);
+        if (root != NULL) {
+            consume_tree(root);
+            cJSON_Delete(root);
+        } else {
+            err = cJSON_GetErrorPtr();
+            if (err != NULL) {
+                volatile char sink = *err;
+                (void)sink;
+            }
+        }
+    }
+
+    buf2 = (char *)malloc(Size + 2);
+    if (buf2 != NULL) {
+        if (Size > 0) {
+            memcpy(buf2, Data, Size);
+        }
+        buf2[0] = ' ';
+        if (Size > 0) {
+            memmove(buf2 + 1, buf2, Size);
+        }
+        buf2[Size + 1] = '\0';
+
+        parse_end = NULL;
+        root = cJSON_ParseWithOpts(buf2, &parse_end, 0);
+        if (root != NULL) {
+            consume_tree(root);
+            cJSON_Delete(root);
+        } else {
+            err = cJSON_GetErrorPtr();
+            if (err != NULL) {
+                volatile char sink = *err;
+                (void)sink;
+            }
+        }
+
+        free(buf2);
+    }
+
+    free(buf);
     return 0;
 }

@@ -1,13 +1,9 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddRawToObject at cJSON.c:2222:22 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddRawToObject at cJSON.c:2222:22 in cJSON.h
-// cJSON_AddRawToObject at cJSON.c:2222:22 in cJSON.h
-// cJSON_AddRawToObject at cJSON.c:2222:22 in cJSON.h
-// cJSON_AddRawToObject at cJSON.c:2222:22 in cJSON.h
-// cJSON_AddRawToObject at cJSON.c:2222:22 in cJSON.h
+// cJSON_AddRawToObject at cJSON.c:2180:22 in cJSON.h
+// cJSON_AddRawToObject at cJSON.c:2180:22 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -18,15 +14,13 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "cJSON.h"
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     cJSON *root;
-    cJSON *added;
-    char *name = NULL;
-    char *raw = NULL;
-    size_t name_len, raw_len;
+    cJSON *item;
+    char *name;
+    char *raw;
     size_t split;
 
     root = cJSON_CreateObject();
@@ -34,57 +28,57 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
         return 0;
     }
 
-    if (Size == 0) {
-        added = cJSON_AddRawToObject(root, "", "null");
-        (void)added;
+    split = (Size > 0) ? (size_t)(Data[0] % (Size + 1)) : 0;
+
+    name = (char *)malloc(split + 1);
+    if (name == NULL) {
         cJSON_Delete(root);
         return 0;
     }
+    if (split > 0) {
+        memcpy(name, Data, split);
+    }
+    name[split] = '\0';
 
-    split = Size / 2;
-    name_len = split;
-    raw_len = Size - split;
-
-    name = (char *)malloc(name_len + 1);
-    raw = (char *)malloc(raw_len + 1);
-    if ((name == NULL) || (raw == NULL)) {
+    raw = (char *)malloc((Size - split) + 1);
+    if (raw == NULL) {
         free(name);
-        free(raw);
         cJSON_Delete(root);
         return 0;
     }
-
-    if (name_len > 0) {
-        memcpy(name, Data, name_len);
+    if (Size > split) {
+        memcpy(raw, Data + split, Size - split);
     }
-    name[name_len] = '\0';
+    raw[Size - split] = '\0';
 
-    if (raw_len > 0) {
-        memcpy(raw, Data + split, raw_len);
+    item = cJSON_AddRawToObject(root, name, raw);
+    (void)item;
+
+    if (Size > 1) {
+        size_t alt_name_len = (size_t)(Data[Size - 1] % (Size + 1));
+        if (alt_name_len > Size) {
+            alt_name_len = Size;
+        }
+
+        char *name2 = (char *)malloc(alt_name_len + 1);
+        char *raw2 = (char *)malloc(Size + 1);
+        if (name2 != NULL && raw2 != NULL) {
+            if (alt_name_len > 0) {
+                memcpy(name2, Data, alt_name_len);
+            }
+            name2[alt_name_len] = '\0';
+
+            if (Size > 0) {
+                memcpy(raw2, Data, Size);
+            }
+            raw2[Size] = '\0';
+
+            item = cJSON_AddRawToObject(root, name2, raw2);
+            (void)item;
+        }
+        free(name2);
+        free(raw2);
     }
-    raw[raw_len] = '\0';
-
-    added = cJSON_AddRawToObject(root, name, raw);
-    (void)added;
-
-    if (raw_len > 0) {
-        raw[0] = '{';
-        added = cJSON_AddRawToObject(root, name, raw);
-        (void)added;
-    }
-
-    if (raw_len > 1) {
-        raw[0] = '[';
-        raw[raw_len - 1] = ']';
-        added = cJSON_AddRawToObject(root, name, raw);
-        (void)added;
-    }
-
-    added = cJSON_AddRawToObject(root, "", "null");
-    (void)added;
-
-    added = cJSON_AddRawToObject(root, "x", "true");
-    (void)added;
 
     free(name);
     free(raw);

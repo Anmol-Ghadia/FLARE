@@ -1,9 +1,9 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddBoolToObject at cJSON.c:2186:22 in cJSON.h
-// cJSON_AddBoolToObject at cJSON.c:2186:22 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
+// cJSON_AddBoolToObject at cJSON.c:2144:22 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -24,8 +24,6 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     char *name1;
     char *name2;
     size_t split;
-    cJSON_bool bool1;
-    cJSON_bool bool2;
 
     root = cJSON_CreateObject();
     if (root == NULL) {
@@ -55,13 +53,10 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     }
     name2[Size - split] = '\0';
 
-    bool1 = (Size > 0) ? (cJSON_bool)(Data[0] & 1) : 0;
-    bool2 = (Size > 1) ? (cJSON_bool)(Data[Size - 1] & 1) : bool1;
-
-    item1 = cJSON_AddBoolToObject(root, name1, bool1);
+    item1 = cJSON_AddBoolToObject(root, name1, (Size > 0) ? (Data[0] & 1) : 0);
     (void)item1;
 
-    item2 = cJSON_AddBoolToObject(root, name2, bool2);
+    item2 = cJSON_AddBoolToObject(root, name2, (Size > 1) ? (Data[Size - 1] & 1) : 1);
     (void)item2;
 
     free(name1);

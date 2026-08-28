@@ -1,23 +1,25 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Parse at cJSON.c:1227:23 in cJSON.h
-// cJSON_Parse at cJSON.c:1227:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateStringReference at cJSON.c:2548:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateStringReference at cJSON.c:2506:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateStringReference at cJSON.c:2506:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_SetValuestring at cJSON.c:403:21 in cJSON.h
+// cJSON_GetObjectItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_GetObjectItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_SetValuestring at cJSON.c:403:21 in cJSON.h
+// cJSON_GetObjectItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_GetObjectItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_SetValuestring at cJSON.c:403:21 in cJSON.h
+// cJSON_GetObjectItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_GetObjectItem at cJSON.c:1941:23 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -27,108 +29,106 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+
 #include "cJSON.h"
 
+static char *make_cstring(const uint8_t *data, size_t size) {
+    char *out = (char *)malloc(size + 1);
+    if (out == NULL) {
+        return NULL;
+    }
+    if (size > 0) {
+        memcpy(out, data, size);
+    }
+    out[size] = '\0';
+    return out;
+}
+
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    char *input = (char *)malloc(Size + 1);
+    char *input = make_cstring(Data, Size);
     if (input == NULL) {
         return 0;
     }
-    if (Size > 0) {
-        memcpy(input, Data, Size);
+
+    FILE *fp = fopen("./dummy_file", "wb");
+    if (fp != NULL) {
+        if (Size > 0) {
+            fwrite(Data, 1, Size, fp);
+        }
+        fclose(fp);
     }
-    input[Size] = '\0';
-
-    size_t quarter = Size / 4;
-    size_t half = Size / 2;
-    size_t three_quarter = (Size * 3) / 4;
-
-    char *s1 = (char *)malloc(quarter + 1);
-    char *s2 = (char *)malloc((half - quarter) + 1);
-    char *k1 = (char *)malloc((three_quarter - half) + 1);
-    char *k2 = (char *)malloc((Size - three_quarter) + 1);
-
-    if (s1 == NULL || s2 == NULL || k1 == NULL || k2 == NULL) {
-        free(input);
-        free(s1);
-        free(s2);
-        free(k1);
-        free(k2);
-        return 0;
-    }
-
-    memcpy(s1, Data, quarter);
-    s1[quarter] = '\0';
-
-    memcpy(s2, Data + quarter, half - quarter);
-    s2[half - quarter] = '\0';
-
-    memcpy(k1, Data + half, three_quarter - half);
-    k1[three_quarter - half] = '\0';
-
-    memcpy(k2, Data + three_quarter, Size - three_quarter);
-    k2[Size - three_quarter] = '\0';
 
     cJSON *root = cJSON_Parse(input);
 
     if (root == NULL) {
         root = cJSON_Parse("{}");
+        if (root == NULL) {
+            free(input);
+            return 0;
+        }
     }
 
-    if (root != NULL) {
-        cJSON *item1 = cJSON_CreateString(s1);
-        cJSON *item2 = cJSON_CreateStringReference(s2);
-
-        if (item1 != NULL) {
-            if (!cJSON_AddItemToObject(root, k1, item1)) {
-                cJSON_Delete(item1);
-                item1 = NULL;
-            }
-        }
-
-        if (item2 != NULL) {
-            if (!cJSON_AddItemToObject(root, k2, item2)) {
-                cJSON_Delete(item2);
-                item2 = NULL;
-            }
-        }
-
-        if (item1 != NULL) {
-            (void)cJSON_SetValuestring(item1, s2);
-        }
-
-        cJSON *g1 = cJSON_GetObjectItem(root, k1);
-        cJSON *g2 = cJSON_GetObjectItem(root, k2);
-
-        if (g1 != NULL) {
-            (void)cJSON_SetValuestring(g1, s1);
-        }
-
-        cJSON *g3 = cJSON_GetObjectItem(root, "");
-        cJSON *g4 = cJSON_GetObjectItem(root, input);
-
-        if (g2 != NULL) {
-            (void)cJSON_SetValuestring(g2, s1);
-        }
-
-        cJSON *g5 = cJSON_GetObjectItem(root, "a");
-        cJSON *g6 = cJSON_GetObjectItem(root, "A");
-
-        if (g3 != NULL) {
-            (void)cJSON_SetValuestring(g3, s2);
-        }
-
-        (void)g4;
-        (void)g5;
-        (void)g6;
-
+    if ((root->type & 0xFF) != cJSON_Object) {
         cJSON_Delete(root);
+        root = cJSON_Parse("{}");
+        if (root == NULL) {
+            free(input);
+            return 0;
+        }
     }
 
-    free(input);
+    size_t split1 = Size / 3;
+    size_t split2 = (Size * 2) / 3;
+
+    char *s1 = make_cstring(Data, split1);
+    char *s2 = make_cstring(Data + split1, split2 - split1);
+    char *s3 = make_cstring(Data + split2, Size - split2);
+
+    if (s1 == NULL || s2 == NULL || s3 == NULL) {
+        free(s1);
+        free(s2);
+        free(s3);
+        cJSON_Delete(root);
+        free(input);
+        return 0;
+    }
+
+    cJSON *item1 = cJSON_CreateString(s1);
+    cJSON *item2 = cJSON_CreateStringReference(s2);
+
+    if (item1 == NULL) {
+        item1 = cJSON_CreateString("");
+    }
+    if (item2 == NULL) {
+        item2 = cJSON_CreateStringReference("");
+    }
+
+    cJSON_AddItemToObject(root, "key1", item1);
+    cJSON_AddItemToObject(root, "key2", item2);
+
+    cJSON_SetValuestring(item1, s3);
+
+    cJSON *g1 = cJSON_GetObjectItem(root, "key1");
+    cJSON *g2 = cJSON_GetObjectItem(root, "key2");
+    cJSON_SetValuestring(g1, s1);
+
+    cJSON *g3 = cJSON_GetObjectItem(root, "KEY1");
+    cJSON *g4 = cJSON_GetObjectItem(root, "KEY2");
+    cJSON_SetValuestring(g3, s2);
+
+    cJSON *g5 = cJSON_GetObjectItem(root, "");
+    cJSON *g6 = cJSON_GetObjectItem(root, s3);
+    (void)g2;
+    (void)g4;
+    (void)g5;
+    (void)g6;
+
+    cJSON_Delete(root);
+
     free(s1);
     free(s2);
-    free(k1);
-    free(k2);
+    free(s3);
+    free(input);
     return 0;
 }

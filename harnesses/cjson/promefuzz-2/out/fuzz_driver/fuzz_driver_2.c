@@ -1,21 +1,21 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -26,111 +26,110 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <math.h>
 #include "cJSON.h"
 
-static char *make_cstring(const uint8_t *data, size_t size, size_t *consumed)
-{
-    size_t len = 0;
+static uint32_t read_u32(const uint8_t *data, size_t size, size_t *offset) {
+    uint32_t v = 0;
+    size_t i;
+    for (i = 0; i < 4; ++i) {
+        v <<= 8;
+        if (*offset < size) {
+            v |= data[*offset];
+            (*offset)++;
+        }
+    }
+    return v;
+}
+
+static double read_double_like(const uint8_t *data, size_t size, size_t *offset) {
+    union {
+        uint64_t u;
+        double d;
+    } conv;
+    size_t i;
+    conv.u = 0;
+    for (i = 0; i < 8; ++i) {
+        conv.u <<= 8;
+        if (*offset < size) {
+            conv.u |= data[*offset];
+            (*offset)++;
+        }
+    }
+    if (isnan(conv.d) || isinf(conv.d)) {
+        return (double)(int64_t)conv.u;
+    }
+    return conv.d;
+}
+
+static char *make_string(const uint8_t *data, size_t size, size_t *offset) {
+    uint32_t len32;
+    size_t len;
     char *out;
 
-    if (size == 0) {
-        out = (char *)malloc(1);
-        if (out != NULL) {
-            out[0] = '\0';
-        }
-        if (consumed != NULL) {
-            *consumed = 0;
-        }
-        return out;
+    len32 = read_u32(data, size, offset);
+    if (*offset > size) {
+        return NULL;
     }
 
-    len = data[0];
-    if (len > size - 1) {
-        len = size - 1;
+    len = (size_t)len32;
+    if (len > size - *offset) {
+        len = size - *offset;
     }
 
     out = (char *)malloc(len + 1);
     if (out == NULL) {
-        if (consumed != NULL) {
-            *consumed = 0;
-        }
         return NULL;
     }
 
     if (len > 0) {
-        memcpy(out, data + 1, len);
+        memcpy(out, data + *offset, len);
     }
     out[len] = '\0';
-
-    if (consumed != NULL) {
-        *consumed = len + 1;
-    }
+    *offset += len;
     return out;
 }
 
-static double make_double(const uint8_t *data, size_t size)
-{
-    union {
-        uint64_t u64;
-        double d;
-    } u;
-    size_t i;
-    uint64_t v = 0;
-
-    for (i = 0; i < 8; ++i) {
-        v <<= 8;
-        if (i < size) {
-            v |= data[i];
-        }
-    }
-    u.u64 = v;
-    return u.d;
-}
-
-int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
-{
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+    size_t offset = 0;
+    char *key1 = NULL;
+    char *val1 = NULL;
+    char *key2 = NULL;
+    char *key3 = NULL;
+    double num1, num2;
     cJSON *root = NULL;
     cJSON *str_item = NULL;
     cJSON *arr = NULL;
     cJSON *obj_in_arr = NULL;
-    cJSON *num1 = NULL;
-    cJSON *num2 = NULL;
-    char *print_buf = NULL;
+    cJSON *num_item1 = NULL;
+    cJSON *num_item2 = NULL;
+    char *printed = NULL;
 
-    char *key1 = NULL;
-    char *key2 = NULL;
-    char *key3 = NULL;
-    char *strval = NULL;
+    key1 = make_string(Data, Size, &offset);
+    val1 = make_string(Data, Size, &offset);
+    key2 = make_string(Data, Size, &offset);
+    key3 = make_string(Data, Size, &offset);
+    num1 = read_double_like(Data, Size, &offset);
+    num2 = read_double_like(Data, Size, &offset);
 
-    size_t off = 0, used = 0;
-    double d1, d2;
-
-    key1 = make_cstring(Data + off, Size > off ? Size - off : 0, &used);
-    off += used;
-    key2 = make_cstring(Data + off, Size > off ? Size - off : 0, &used);
-    off += used;
-    key3 = make_cstring(Data + off, Size > off ? Size - off : 0, &used);
-    off += used;
-    strval = make_cstring(Data + off, Size > off ? Size - off : 0, &used);
-    off += used;
-
-    d1 = make_double(Data + off, Size > off ? Size - off : 0);
-    if (Size > off) {
-        off += (Size - off >= 8) ? 8 : (Size - off);
+    if (key1 == NULL || val1 == NULL || key2 == NULL || key3 == NULL) {
+        free(key1);
+        free(val1);
+        free(key2);
+        free(key3);
+        return 0;
     }
-    d2 = make_double(Data + off, Size > off ? Size - off : 0);
 
     root = cJSON_CreateObject();
     if (root == NULL) {
         goto cleanup;
     }
 
-    str_item = cJSON_CreateString(strval != NULL ? strval : "");
+    str_item = cJSON_CreateString(val1);
     if (str_item == NULL) {
         goto cleanup;
     }
-    if (!cJSON_AddItemToObject(root, key1 != NULL ? key1 : "", str_item)) {
+    if (!cJSON_AddItemToObject(root, key1, str_item)) {
         cJSON_Delete(str_item);
         str_item = NULL;
         goto cleanup;
@@ -141,7 +140,7 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
     if (arr == NULL) {
         goto cleanup;
     }
-    if (!cJSON_AddItemToObject(root, key2 != NULL ? key2 : "", arr)) {
+    if (!cJSON_AddItemToObject(root, key2, arr)) {
         cJSON_Delete(arr);
         arr = NULL;
         goto cleanup;
@@ -157,36 +156,39 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
         goto cleanup;
     }
 
-    num1 = cJSON_CreateNumber(d1);
-    if (num1 == NULL) {
+    num_item1 = cJSON_CreateNumber(num1);
+    if (num_item1 == NULL) {
         goto cleanup;
     }
-    if (!cJSON_AddItemToObject(obj_in_arr, key3 != NULL ? key3 : "", num1)) {
-        cJSON_Delete(num1);
-        num1 = NULL;
+    if (!cJSON_AddItemToObject(root, key3, num_item1)) {
+        cJSON_Delete(num_item1);
+        num_item1 = NULL;
         goto cleanup;
     }
-    num1 = NULL;
+    num_item1 = NULL;
 
-    num2 = cJSON_CreateNumber(d2);
-    if (num2 == NULL) {
+    num_item2 = cJSON_CreateNumber(num2);
+    if (num_item2 == NULL) {
         goto cleanup;
     }
-    if (!cJSON_AddItemToObject(root, "number2", num2)) {
-        cJSON_Delete(num2);
-        num2 = NULL;
+    if (!cJSON_AddItemToObject(obj_in_arr, "nested_number", num_item2)) {
+        cJSON_Delete(num_item2);
+        num_item2 = NULL;
         goto cleanup;
     }
-    num2 = NULL;
+    num_item2 = NULL;
 
-    print_buf = cJSON_Print(root);
-    free(print_buf);
+    printed = cJSON_Print(root);
+    if (printed != NULL) {
+        free(printed);
+        printed = NULL;
+    }
 
 cleanup:
     cJSON_Delete(root);
     free(key1);
+    free(val1);
     free(key2);
     free(key3);
-    free(strval);
     return 0;
 }

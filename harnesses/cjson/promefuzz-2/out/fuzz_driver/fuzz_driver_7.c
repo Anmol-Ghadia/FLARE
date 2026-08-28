@@ -1,146 +1,170 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
 // cJSON_InitHooks at cJSON.c:209:20 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
 // cJSON_InitHooks at cJSON.c:209:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetArraySize at cJSON.c:1899:19 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
+// cJSON_GetArraySize at cJSON.c:1857:19 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 #include "cJSON.h"
 
-static char *dup_bytes_as_cstring(const uint8_t *data, size_t len) {
-    char *out = (char *)malloc(len + 1);
-    if (out == NULL) {
+static char *make_cstring(const uint8_t *data, size_t len) {
+    char *s = (char *)malloc(len + 1);
+    if (s == NULL) {
         return NULL;
     }
     if (len > 0) {
-        memcpy(out, data, len);
+        memcpy(s, data, len);
     }
-    out[len] = '\0';
-    return out;
+    s[len] = '\0';
+    return s;
 }
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    size_t p0 = 0, p1 = 0, p2 = 0, p3 = 0;
-    size_t off = 0;
-    char *s0 = NULL, *s1 = NULL, *s2 = NULL, *s3 = NULL;
-    cJSON *str0 = NULL;
-    cJSON *array = NULL;
-    cJSON *str1 = NULL;
-    cJSON *str2 = NULL;
-    cJSON *str3 = NULL;
+    size_t o1 = 0, l1 = 0, o2 = 0, l2 = 0, o3 = 0, l3 = 0, o4 = 0, l4 = 0, o5 = 0, l5 = 0;
+    cJSON *s1 = NULL;
+    cJSON *arr = NULL;
+    cJSON *s2 = NULL;
+    cJSON *s3 = NULL;
+    cJSON *s4 = NULL;
+    cJSON *obj = NULL;
     cJSON_Hooks hooks;
+    char *buf1 = NULL, *buf2 = NULL, *buf3 = NULL, *buf4 = NULL, *buf5 = NULL;
 
-    if (Size == 0) {
-        s0 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-        s1 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-        s2 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-        s3 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-    } else if (Size < 4) {
-        p0 = Size;
-        off = 0;
-        s0 = dup_bytes_as_cstring(Data + off, p0);
-        s1 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-        s2 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-        s3 = dup_bytes_as_cstring((const uint8_t *)"", 0);
-    } else {
-        size_t rem;
-
-        p0 = Data[0] % (Size - 2);
-        rem = Size - 3 - p0;
-
-        p1 = (rem > 0) ? (Data[1] % (rem + 1)) : 0;
-        rem -= p1;
-
-        p2 = (rem > 0) ? (Data[2] % (rem + 1)) : 0;
-        rem -= p2;
-
-        p3 = rem;
-        off = 3;
-
-        s0 = dup_bytes_as_cstring(Data + off, p0);
-        s1 = dup_bytes_as_cstring(Data + off + p0, p1);
-        s2 = dup_bytes_as_cstring(Data + off + p0 + p1, p2);
-        s3 = dup_bytes_as_cstring(Data + off + p0 + p1 + p2, p3);
+    if (Size > 0) {
+        o1 = Data[0] % (Size + 1);
+    }
+    if (Size > 1) {
+        l1 = Data[1] % (Size - o1 + 1);
     }
 
-    if (s0 == NULL || s1 == NULL || s2 == NULL || s3 == NULL) {
-        free(s0);
-        free(s1);
-        free(s2);
-        free(s3);
+    if (Size > 2) {
+        o2 = Data[2] % (Size + 1);
+    }
+    if (o2 <= Size && Size > o2 && Size > 3) {
+        l2 = Data[3] % (Size - o2 + 1);
+    }
+
+    if (Size > 4) {
+        o3 = Data[4] % (Size + 1);
+    }
+    if (o3 <= Size && Size > o3 && Size > 5) {
+        l3 = Data[5] % (Size - o3 + 1);
+    }
+
+    if (Size > 6) {
+        o4 = Data[6] % (Size + 1);
+    }
+    if (o4 <= Size && Size > o4 && Size > 7) {
+        l4 = Data[7] % (Size - o4 + 1);
+    }
+
+    if (Size > 8) {
+        o5 = Data[8] % (Size + 1);
+    }
+    if (o5 <= Size && Size > o5 && Size > 9) {
+        l5 = Data[9] % (Size - o5 + 1);
+    }
+
+    if (o1 > Size) o1 = Size;
+    if (o2 > Size) o2 = Size;
+    if (o3 > Size) o3 = Size;
+    if (o4 > Size) o4 = Size;
+    if (o5 > Size) o5 = Size;
+
+    if (l1 > Size - o1) l1 = Size - o1;
+    if (l2 > Size - o2) l2 = Size - o2;
+    if (l3 > Size - o3) l3 = Size - o3;
+    if (l4 > Size - o4) l4 = Size - o4;
+    if (l5 > Size - o5) l5 = Size - o5;
+
+    buf1 = make_cstring(Data + o1, l1);
+    buf2 = make_cstring(Data + o2, l2);
+    buf3 = make_cstring(Data + o3, l3);
+    buf4 = make_cstring(Data + o4, l4);
+    buf5 = make_cstring(Data + o5, l5);
+
+    if (buf1 == NULL || buf2 == NULL || buf3 == NULL || buf4 == NULL || buf5 == NULL) {
+        free(buf1);
+        free(buf2);
+        free(buf3);
+        free(buf4);
+        free(buf5);
         return 0;
     }
 
-    str0 = cJSON_CreateString(s0);
-    array = cJSON_CreateArray();
-    str1 = cJSON_CreateString(s1);
-    str2 = cJSON_CreateString(s2);
-    str3 = cJSON_CreateString(s3);
+    /* Required call order begins here */
+    s1 = cJSON_CreateString(buf1);
+    arr = cJSON_CreateArray();
+    s2 = cJSON_CreateString(buf2);
+    s3 = cJSON_CreateString(buf3);
+    s4 = cJSON_CreateString(buf4);
 
-    hooks.malloc_fn = NULL;
-    hooks.free_fn = NULL;
-    cJSON_InitHooks(&hooks);
-
-    cJSON_Delete(str0);
-
-    (void)cJSON_GetArraySize(array);
-
-    if (array != NULL && str1 != NULL) {
-        if (!cJSON_AddItemToArray(array, str1)) {
-            cJSON_Delete(str1);
-            str1 = NULL;
-        }
-    } else if (str1 != NULL) {
-        cJSON_Delete(str1);
-        str1 = NULL;
+    if (Size > 10 && (Data[10] & 1)) {
+        hooks.malloc_fn = malloc;
+        hooks.free_fn = free;
+        cJSON_InitHooks(&hooks);
+    } else {
+        cJSON_InitHooks(NULL);
     }
 
-    if (array != NULL && str2 != NULL) {
-        if (!cJSON_AddItemToArray(array, str2)) {
-            cJSON_Delete(str2);
-            str2 = NULL;
-        }
-    } else if (str2 != NULL) {
-        cJSON_Delete(str2);
-        str2 = NULL;
+    cJSON_Delete(s1);
+
+    (void)cJSON_GetArraySize(arr);
+
+    if (arr != NULL && s2 != NULL) {
+        (void)cJSON_AddItemToArray(arr, s2);
+        s2 = NULL;
+    } else if (s2 != NULL) {
+        cJSON_Delete(s2);
+        s2 = NULL;
     }
 
-    if (array != NULL && str3 != NULL) {
-        if (!cJSON_AddItemToObject(array, s0, str3)) {
-            cJSON_Delete(str3);
-            str3 = NULL;
-        }
-    } else if (str3 != NULL) {
-        cJSON_Delete(str3);
-        str3 = NULL;
+    if (arr != NULL && s3 != NULL) {
+        (void)cJSON_AddItemToArray(arr, s3);
+        s3 = NULL;
+    } else if (s3 != NULL) {
+        cJSON_Delete(s3);
+        s3 = NULL;
     }
 
-    (void)cJSON_GetArraySize(array);
+    obj = cJSON_CreateArray();
+    if (obj != NULL && s4 != NULL) {
+        (void)cJSON_AddItemToObject(obj, buf5, s4);
+        s4 = NULL;
+    } else if (s4 != NULL) {
+        cJSON_Delete(s4);
+        s4 = NULL;
+    }
 
-    cJSON_Delete(array);
-    cJSON_InitHooks(NULL);
+    cJSON_Delete(arr);
+    cJSON_Delete(obj);
 
-    free(s0);
-    free(s1);
-    free(s2);
-    free(s3);
+    free(buf1);
+    free(buf2);
+    free(buf3);
+    free(buf4);
+    free(buf5);
+
     return 0;
 }

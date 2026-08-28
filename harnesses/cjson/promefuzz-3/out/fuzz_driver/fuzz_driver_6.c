@@ -1,9 +1,9 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_ParseWithOpts at cJSON.c:1131:23 in cJSON.h
-// cJSON_PrintBuffered at cJSON.c:1317:22 in cJSON.h
-// cJSON_Print at cJSON.c:1307:22 in cJSON.h
-// cJSON_PrintUnformatted at cJSON.c:1312:22 in cJSON.h
-// cJSON_Minify at cJSON.c:2924:20 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -20,20 +20,21 @@
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
 {
     char *input = NULL;
-    char *mutable_buf = NULL;
-    const char *parse_end = NULL;
+    char *minify_buf = NULL;
     cJSON *root = NULL;
     char *printed_buffered = NULL;
     char *printed = NULL;
     char *printed_unformatted = NULL;
-    int prebuffer;
-    cJSON_bool require_null_terminated;
-    cJSON_bool fmt;
+    const char *parse_end = NULL;
+    int prebuffer = 0;
+    cJSON_bool require_null_terminated = 0;
+    cJSON_bool fmt = 0;
 
     input = (char *)malloc(Size + 1);
     if (input == NULL) {
         return 0;
     }
+
     if (Size > 0) {
         memcpy(input, Data, Size);
     }
@@ -47,11 +48,7 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
         if (Size > 3) {
             prebuffer |= ((int)Data[3] << 8);
         }
-        if (Data[0] & 2) {
-            prebuffer = -prebuffer;
-        }
-    } else {
-        prebuffer = 0;
+        prebuffer &= 0x7fff;
     }
 
     root = cJSON_ParseWithOpts(input, &parse_end, require_null_terminated);
@@ -73,19 +70,22 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
             free(printed_unformatted);
             printed_unformatted = NULL;
         }
-    }
 
-    mutable_buf = (char *)malloc(Size + 1);
-    if (mutable_buf != NULL) {
-        if (Size > 0) {
-            memcpy(mutable_buf, Data, Size);
+        minify_buf = (char *)malloc(Size + 1);
+        if (minify_buf != NULL) {
+            if (Size > 0) {
+                memcpy(minify_buf, Data, Size);
+            }
+            minify_buf[Size] = '\0';
+            cJSON_Minify(minify_buf);
+            free(minify_buf);
+            minify_buf = NULL;
         }
-        mutable_buf[Size] = '\0';
-        cJSON_Minify(mutable_buf);
-        free(mutable_buf);
+
+        cJSON_Delete(root);
+        root = NULL;
     }
 
-    cJSON_Delete(root);
     free(input);
     return 0;
 }

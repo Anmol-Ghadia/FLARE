@@ -2,39 +2,38 @@
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_AddItemToObjectCS at cJSON.c:2125:26 in cJSON.h
-// cJSON_AddItemToObjectCS at cJSON.c:2125:26 in cJSON.h
-// cJSON_AddItemToObjectCS at cJSON.c:2125:26 in cJSON.h
-// cJSON_AddItemReferenceToArray at cJSON.c:2130:26 in cJSON.h
-// cJSON_AddItemReferenceToArray at cJSON.c:2130:26 in cJSON.h
-// cJSON_AddItemReferenceToObject at cJSON.c:2140:26 in cJSON.h
-// cJSON_AddItemReferenceToObject at cJSON.c:2140:26 in cJSON.h
-// cJSON_AddItemReferenceToObject at cJSON.c:2140:26 in cJSON.h
-// cJSON_DeleteItemFromArray at cJSON.c:2304:20 in cJSON.h
-// cJSON_DeleteItemFromObject at cJSON.c:2323:20 in cJSON.h
-// cJSON_DeleteItemFromObject at cJSON.c:2323:20 in cJSON.h
-// cJSON_DeleteItemFromObject at cJSON.c:2323:20 in cJSON.h
-// cJSON_DeleteItemFromObjectCaseSensitive at cJSON.c:2328:20 in cJSON.h
-// cJSON_DeleteItemFromObjectCaseSensitive at cJSON.c:2328:20 in cJSON.h
-// cJSON_Minify at cJSON.c:2924:20 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_CreateBool at cJSON.c:2494:23 in cJSON.h
-// cJSON_CreateNull at cJSON.c:2461:23 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_AddItemToObjectCS at cJSON.c:2083:26 in cJSON.h
+// cJSON_AddItemToObjectCS at cJSON.c:2083:26 in cJSON.h
+// cJSON_AddItemToObjectCS at cJSON.c:2083:26 in cJSON.h
+// cJSON_AddItemReferenceToArray at cJSON.c:2088:26 in cJSON.h
+// cJSON_AddItemReferenceToArray at cJSON.c:2088:26 in cJSON.h
+// cJSON_AddItemReferenceToObject at cJSON.c:2098:26 in cJSON.h
+// cJSON_AddItemReferenceToObject at cJSON.c:2098:26 in cJSON.h
+// cJSON_AddItemReferenceToObject at cJSON.c:2098:26 in cJSON.h
+// cJSON_DeleteItemFromArray at cJSON.c:2262:20 in cJSON.h
+// cJSON_DeleteItemFromObject at cJSON.c:2281:20 in cJSON.h
+// cJSON_DeleteItemFromObject at cJSON.c:2281:20 in cJSON.h
+// cJSON_DeleteItemFromObjectCaseSensitive at cJSON.c:2286:20 in cJSON.h
+// cJSON_DeleteItemFromObjectCaseSensitive at cJSON.c:2286:20 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
@@ -61,128 +60,85 @@ static char *make_mutable_string(const uint8_t *Data, size_t Size) {
     return buf;
 }
 
-static char *make_key_from_data(const uint8_t *Data, size_t Size, size_t offset, size_t max_len) {
-    size_t i, len;
-    char *key;
-
-    if (offset >= Size) {
-        len = 0;
-    } else {
-        len = Size - offset;
-        if (len > max_len) {
-            len = max_len;
-        }
-    }
-
-    key = (char *)malloc(len + 1);
-    if (key == NULL) {
-        return NULL;
-    }
-
-    for (i = 0; i < len; i++) {
-        unsigned char c = Data[offset + i];
-        if (c == '\0') {
-            c = '_';
-        }
-        key[i] = (char)c;
-    }
-    key[len] = '\0';
-    return key;
-}
-
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    cJSON *root = cJSON_CreateObject();
-    cJSON *array = cJSON_CreateArray();
-    cJSON *obj2 = cJSON_CreateObject();
+    char key1[32], key2[32], key3[32], key4[32], key5[32];
+    char del1[32], del2[32], del3[32], del4[32], del5[32];
+    cJSON *object1 = NULL;
+    cJSON *object2 = NULL;
+    cJSON *array1 = NULL;
     cJSON *item1 = NULL;
     cJSON *item2 = NULL;
     cJSON *item3 = NULL;
     cJSON *item4 = NULL;
     cJSON *item5 = NULL;
-    char *dynkey1 = NULL;
-    char *dynkey2 = NULL;
-    char *delkey1 = NULL;
-    char *delkey2 = NULL;
-    char *delkey3 = NULL;
+    cJSON *refsrc1 = NULL;
+    cJSON *refsrc2 = NULL;
+    cJSON *refsrc3 = NULL;
     char *minify_buf = NULL;
-    int idx = 0;
 
-    if (root == NULL || array == NULL || obj2 == NULL) {
-        cJSON_Delete(root);
-        cJSON_Delete(array);
-        cJSON_Delete(obj2);
+    snprintf(key1, sizeof(key1), "k1_%02x", (unsigned)(Size > 0 ? Data[0] : 0));
+    snprintf(key2, sizeof(key2), "k2_%02x", (unsigned)(Size > 1 ? Data[1] : 0));
+    snprintf(key3, sizeof(key3), "k3_%02x", (unsigned)(Size > 2 ? Data[2] : 0));
+    snprintf(key4, sizeof(key4), "k4_%02x", (unsigned)(Size > 3 ? Data[3] : 0));
+    snprintf(key5, sizeof(key5), "k5_%02x", (unsigned)(Size > 4 ? Data[4] : 0));
+
+    snprintf(del1, sizeof(del1), "%s", (Size > 5 && (Data[5] & 1)) ? key1 : "missing1");
+    snprintf(del2, sizeof(del2), "%s", (Size > 6 && (Data[6] & 1)) ? key2 : "missing2");
+    snprintf(del3, sizeof(del3), "%s", (Size > 7 && (Data[7] & 1)) ? key3 : "missing3");
+    snprintf(del4, sizeof(del4), "%s", (Size > 8 && (Data[8] & 1)) ? key4 : "missing4");
+    snprintf(del5, sizeof(del5), "%s", (Size > 9 && (Data[9] & 1)) ? key5 : "missing5");
+
+    object1 = cJSON_CreateObject();
+    object2 = cJSON_CreateObject();
+    array1 = cJSON_CreateArray();
+    if (object1 == NULL || object2 == NULL || array1 == NULL) {
+        cJSON_Delete(object1);
+        cJSON_Delete(object2);
+        cJSON_Delete(array1);
         return 0;
     }
 
-    dynkey1 = make_key_from_data(Data, Size, 0, 32);
-    dynkey2 = make_key_from_data(Data, Size, 32, 32);
-    delkey1 = make_key_from_data(Data, Size, 64, 32);
-    delkey2 = make_key_from_data(Data, Size, 96, 32);
-    delkey3 = make_key_from_data(Data, Size, 128, 32);
-    minify_buf = make_mutable_string(Data, Size);
-
-    item1 = cJSON_CreateString((const char *)(dynkey1 ? dynkey1 : ""));
-    item2 = cJSON_CreateNumber((Size > 0) ? (double)Data[0] : 0.0);
-    item3 = cJSON_CreateBool((Size > 1) ? (Data[1] & 1) : 0);
+    item1 = cJSON_CreateString((const char *)"value1");
+    item2 = cJSON_CreateNumber((double)(Size > 10 ? Data[10] : 0));
+    item3 = cJSON_CreateBool((Size > 11 ? (Data[11] & 1) : 0));
     item4 = cJSON_CreateNull();
-    item5 = cJSON_CreateString((const char *)(dynkey2 ? dynkey2 : ""));
+    item5 = cJSON_CreateString((const char *)"value5");
 
-    if (item1 == NULL || item2 == NULL || item3 == NULL || item4 == NULL || item5 == NULL) {
-        cJSON_Delete(item1);
-        cJSON_Delete(item2);
-        cJSON_Delete(item3);
-        cJSON_Delete(item4);
-        cJSON_Delete(item5);
-        free(dynkey1);
-        free(dynkey2);
-        free(delkey1);
-        free(delkey2);
-        free(delkey3);
-        free(minify_buf);
-        cJSON_Delete(root);
-        cJSON_Delete(array);
-        cJSON_Delete(obj2);
-        return 0;
+    refsrc1 = cJSON_CreateString((const char *)"ref1");
+    refsrc2 = cJSON_CreateNumber((double)(Size > 12 ? Data[12] : 1));
+    refsrc3 = cJSON_CreateArray();
+    if (refsrc3 != NULL) {
+        cJSON_AddItemToArray(refsrc3, cJSON_CreateString((const char *)"nested"));
     }
 
-    cJSON_AddItemToObject(root, dynkey1 ? dynkey1 : "", item1);
-    cJSON_AddItemToObject(root, dynkey2 ? dynkey2 : "", item2);
-    cJSON_AddItemToObjectCS(root, "const_key_1", item3);
-    cJSON_AddItemToObjectCS(root, "const_key_2", item4);
-    cJSON_AddItemToObjectCS(root, "const_key_3", item5);
+    /* Required call order */
+    cJSON_AddItemToObject(object1, key1, item1);
+    cJSON_AddItemToObject(object1, key2, item2);
+    cJSON_AddItemToObjectCS(object1, "const_key_1", item3);
+    cJSON_AddItemToObjectCS(object1, "const_key_2", item4);
+    cJSON_AddItemToObjectCS(object1, "const_key_3", item5);
+    cJSON_AddItemReferenceToArray(array1, refsrc1);
+    cJSON_AddItemReferenceToArray(array1, refsrc2);
+    cJSON_AddItemReferenceToObject(object2, key3, refsrc1);
+    cJSON_AddItemReferenceToObject(object2, key4, refsrc2);
+    cJSON_AddItemReferenceToObject(object2, key5, refsrc3);
+    cJSON_DeleteItemFromArray(array1, (int)(Size > 13 ? (Data[13] % 4) : 0));
+    cJSON_DeleteItemFromObject(object1, del1);
+    cJSON_DeleteItemFromObject(object1, del2);
+    cJSON_DeleteItemFromObjectCaseSensitive(object1, del3);
+    cJSON_DeleteItemFromObjectCaseSensitive(object2, del4);
 
-    cJSON_AddItemReferenceToArray(array, item1);
-    cJSON_AddItemReferenceToArray(array, item3);
-
-    cJSON_AddItemReferenceToObject(obj2, "ref_key_1", item2);
-    cJSON_AddItemReferenceToObject(obj2, "ref_key_2", item4);
-    cJSON_AddItemReferenceToObject(obj2, dynkey1 ? dynkey1 : "", item5);
-
-    if (Size > 2) {
-        idx = (int)(Data[2] % 8);
-    } else {
-        idx = 0;
-    }
-    cJSON_DeleteItemFromArray(array, idx);
-
-    cJSON_DeleteItemFromObject(root, delkey1 ? delkey1 : "");
-    cJSON_DeleteItemFromObject(root, "const_key_2");
-    cJSON_DeleteItemFromObject(obj2, delkey2 ? delkey2 : "");
-    cJSON_DeleteItemFromObjectCaseSensitive(root, "const_key_3");
-    cJSON_DeleteItemFromObjectCaseSensitive(obj2, delkey3 ? delkey3 : "");
-
+    minify_buf = make_mutable_string(Data, Size);
     cJSON_Minify(minify_buf);
 
-    free(dynkey1);
-    free(dynkey2);
-    free(delkey1);
-    free(delkey2);
-    free(delkey3);
-    free(minify_buf);
+    cJSON_Delete(object1);
+    cJSON_Delete(object2);
+    cJSON_Delete(array1);
 
-    cJSON_Delete(obj2);
-    cJSON_Delete(array);
-    cJSON_Delete(root);
+    free(minify_buf);
+    cJSON_Delete(refsrc1);
+    cJSON_Delete(refsrc2);
+    cJSON_Delete(refsrc3);
 
     return 0;
 }

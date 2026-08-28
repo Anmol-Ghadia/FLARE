@@ -1,68 +1,35 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_CreateRaw at cJSON.c:2539:23 in cJSON.h
+// cJSON_CreateStringArray at cJSON.c:2699:23 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_GetObjectItem at cJSON.c:1983:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_CreateNumber at cJSON.c:2505:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_GetNumberValue at cJSON.c:109:22 in cJSON.h
-// cJSON_SetNumberHelper at cJSON.c:411:22 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
-// cJSON_AddItemToObject at cJSON.c:2119:26 in cJSON.h
+// cJSON_CreateRaw at cJSON.c:2539:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -70,180 +37,221 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <string.h>
-#include <math.h>
+#include <stdio.h>
+
 #include "cJSON.h"
 
-static double read_double(const uint8_t *data, size_t size, size_t offset) {
-    double d = 0.0;
-    if (offset + sizeof(double) <= size) {
-        memcpy(&d, data + offset, sizeof(double));
-    } else if (size > offset) {
-        memcpy(&d, data + offset, size - offset);
+static int consume_u8(const uint8_t **data, size_t *size)
+{
+    if (*size == 0) {
+        return 0;
     }
-    return d;
+    int v = **data;
+    (*data)++;
+    (*size)--;
+    return v;
 }
 
-int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    double num1 = read_double(Data, Size, 0);
-    double num2 = read_double(Data, Size, sizeof(double));
-    double num3 = read_double(Data, Size, sizeof(double) * 2);
+static int consume_u16(const uint8_t **data, size_t *size)
+{
+    int a = consume_u8(data, size);
+    int b = consume_u8(data, size);
+    return a | (b << 8);
+}
 
-    cJSON *n1 = cJSON_CreateNumber(num1);
-    cJSON *n2 = cJSON_CreateNumber(num2);
-    cJSON *n3 = cJSON_CreateNumber(num3);
+static char *dup_bytes_as_cstring(const uint8_t *data, size_t len)
+{
+    char *out = (char *)malloc(len + 1);
+    if (out == NULL) {
+        return NULL;
+    }
+    if (len > 0) {
+        memcpy(out, data, len);
+    }
+    out[len] = '\0';
+    return out;
+}
 
-    if (n1 != NULL) {
-        (void)cJSON_IsNumber(n1);
-        (void)cJSON_GetNumberValue(n1);
-        (void)cJSON_SetNumberHelper(n1, num2);
-        (void)cJSON_GetNumberValue(n1);
+static cJSON *build_tree_from_data(const uint8_t *data, size_t size)
+{
+    cJSON *root = cJSON_CreateObject();
+    if (root == NULL) {
+        return NULL;
+    }
 
-        cJSON *dup_shallow = cJSON_Duplicate(n1, 0);
-        cJSON *dup_deep = cJSON_Duplicate(n1, 1);
+    char *input = dup_bytes_as_cstring(data, size);
+    if (input == NULL) {
+        cJSON_Delete(root);
+        return NULL;
+    }
 
-        if (dup_shallow != NULL) {
-            (void)cJSON_IsNumber(dup_shallow);
-            (void)cJSON_GetNumberValue(dup_shallow);
-            (void)cJSON_SetNumberHelper(dup_shallow, num3);
-            cJSON_Delete(dup_shallow);
-        }
+    cJSON *raw = cJSON_CreateRaw(input);
+    if (raw != NULL) {
+        cJSON_AddItemToObject(root, "raw", raw);
+    }
 
-        if (dup_deep != NULL) {
-            (void)cJSON_IsNumber(dup_deep);
-            (void)cJSON_GetNumberValue(dup_deep);
-            cJSON_Delete(dup_deep);
+    cJSON *parsed = cJSON_ParseWithLength(input, size);
+    if (parsed != NULL) {
+        cJSON_AddItemToObject(root, "parsed", parsed);
+    }
+
+    cJSON *arr = cJSON_CreateArray();
+    if (arr != NULL) {
+        cJSON_AddItemToObject(root, "strings", arr);
+
+        const uint8_t *p = data;
+        size_t rem = size;
+        int parts = (size > 0) ? ((consume_u8(&p, &rem) % 8) + 1) : 1;
+        size_t offset = 0;
+
+        for (int i = 0; i < parts && offset <= size; i++) {
+            size_t chunk = 0;
+            if (i == parts - 1) {
+                chunk = size - offset;
+            } else if (rem > 0) {
+                chunk = (size - offset) ? (consume_u8(&p, &rem) % (size - offset + 1)) : 0;
+            }
+
+            char *s = dup_bytes_as_cstring(data + offset, chunk);
+            if (s == NULL) {
+                break;
+            }
+
+            cJSON *item = cJSON_CreateString(s);
+            free(s);
+            if (item == NULL) {
+                break;
+            }
+            cJSON_AddItemToArray(arr, item);
+            offset += chunk;
         }
     }
 
-    if (n2 != NULL) {
-        (void)cJSON_IsNumber(n2);
-        (void)cJSON_GetNumberValue(n2);
-        (void)cJSON_SetNumberHelper(n2, num1);
+    free(input);
+    return root;
+}
+
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
+{
+    const uint8_t *p = Data;
+    size_t rem = Size;
+
+    int prebuffer = consume_u16(&p, &rem);
+    int fmt = consume_u8(&p, &rem) & 1;
+    int mode = consume_u8(&p, &rem) % 4;
+
+    char *mutable_json = dup_bytes_as_cstring(p, rem);
+    if (mutable_json != NULL) {
+        FILE *fp = fopen("./dummy_file", "wb");
+        if (fp != NULL) {
+            if (rem > 0) {
+                fwrite(p, 1, rem, fp);
+            }
+            fclose(fp);
+        }
+
+        cJSON_Minify(mutable_json);
+
+        cJSON *minified_parsed = cJSON_Parse(mutable_json);
+        if (minified_parsed != NULL) {
+            char *s1 = cJSON_Print(minified_parsed);
+            if (s1 != NULL) {
+                cJSON_free(s1);
+            }
+
+            char *s2 = cJSON_PrintUnformatted(minified_parsed);
+            if (s2 != NULL) {
+                cJSON_free(s2);
+            }
+
+            char *s3 = cJSON_PrintBuffered(minified_parsed, prebuffer, fmt);
+            if (s3 != NULL) {
+                cJSON_free(s3);
+            }
+
+            cJSON_Delete(minified_parsed);
+        }
+        free(mutable_json);
     }
 
-    if (n3 != NULL) {
-        (void)cJSON_IsNumber(n3);
-        (void)cJSON_GetNumberValue(n3);
-        (void)cJSON_SetNumberHelper(n3, num1 + num2);
-    }
+    cJSON *tree = NULL;
 
-    cJSON *obj = cJSON_CreateObject();
-    if (obj != NULL) {
-        size_t remaining = (Size > (sizeof(double) * 3)) ? (Size - (sizeof(double) * 3)) : 0;
-        const uint8_t *key_data = Data + ((Size > (sizeof(double) * 3)) ? (sizeof(double) * 3) : Size);
-        size_t key_len = remaining > 64 ? 64 : remaining;
-
-        char key1[65];
-        char key2[65];
-        size_t i;
-
-        for (i = 0; i < key_len; ++i) {
-            char c = (char)key_data[i];
-            if (c == '\0') {
-                c = 'A';
-            }
-            key1[i] = c;
-            if (c >= 'a' && c <= 'z') {
-                key2[i] = (char)(c - 'a' + 'A');
-            } else if (c >= 'A' && c <= 'Z') {
-                key2[i] = (char)(c - 'A' + 'a');
-            } else {
-                key2[i] = c;
-            }
+    if (mode == 0) {
+        char *input = dup_bytes_as_cstring(p, rem);
+        if (input != NULL) {
+            tree = cJSON_ParseWithLength(input, rem);
+            free(input);
         }
-        key1[key_len] = '\0';
-        key2[key_len] = '\0';
+    } else if (mode == 1) {
+        char *input = dup_bytes_as_cstring(p, rem);
+        if (input != NULL) {
+            tree = cJSON_CreateRaw(input);
+            free(input);
+        }
+    } else if (mode == 2) {
+        int count = (rem > 0) ? (consume_u8(&p, &rem) % 8) : 0;
+        const char **strings = NULL;
+        char **allocated = NULL;
 
-        if (n1 != NULL) {
-            cJSON_AddItemToObject(obj, key1, n1);
-            n1 = NULL;
-        }
-        if (n2 != NULL) {
-            cJSON_AddItemToObject(obj, "fixed", n2);
-            n2 = NULL;
-        }
-        if (n3 != NULL) {
-            cJSON_AddItemToObject(obj, "another", n3);
-            n3 = NULL;
+        if (count > 0) {
+            strings = (const char **)malloc((size_t)count * sizeof(char *));
+            allocated = (char **)malloc((size_t)count * sizeof(char *));
         }
 
-        cJSON *found1 = cJSON_GetObjectItem(obj, key1);
-        cJSON *found2 = cJSON_GetObjectItem(obj, key2);
-        cJSON *found3 = cJSON_GetObjectItem(obj, "fixed");
-        cJSON *found4 = cJSON_GetObjectItem(obj, "another");
-
-        if (found1 != NULL) {
-            (void)cJSON_IsNumber(found1);
-            (void)cJSON_GetNumberValue(found1);
-            if (cJSON_IsNumber(found1)) {
-                (void)cJSON_SetNumberHelper(found1, num3);
-            }
-        }
-
-        if (found2 != NULL) {
-            (void)cJSON_IsNumber(found2);
-            (void)cJSON_GetNumberValue(found2);
-        }
-
-        if (found3 != NULL) {
-            (void)cJSON_IsNumber(found3);
-            (void)cJSON_GetNumberValue(found3);
-            if (cJSON_IsNumber(found3)) {
-                cJSON *dup = cJSON_Duplicate(found3, (Size & 1) ? 1 : 0);
-                if (dup != NULL) {
-                    (void)cJSON_IsNumber(dup);
-                    (void)cJSON_GetNumberValue(dup);
-                    cJSON_Delete(dup);
+        if (count == 0 || (strings != NULL && allocated != NULL)) {
+            int ok = 1;
+            for (int i = 0; i < count; i++) {
+                size_t len = (rem > 0) ? (consume_u8(&p, &rem) % (rem + 1)) : 0;
+                allocated[i] = dup_bytes_as_cstring(p, len);
+                if (allocated[i] == NULL) {
+                    ok = 0;
+                    count = i;
+                    break;
                 }
+                strings[i] = allocated[i];
+                p += len;
+                rem -= len;
+            }
+
+            if (ok) {
+                tree = cJSON_CreateStringArray(strings, count);
+            }
+
+            for (int i = 0; i < count; i++) {
+                free(allocated[i]);
             }
         }
 
-        if (found4 != NULL) {
-            (void)cJSON_IsNumber(found4);
-            (void)cJSON_GetNumberValue(found4);
-        }
-
-        cJSON *obj_dup_shallow = cJSON_Duplicate(obj, 0);
-        cJSON *obj_dup_deep = cJSON_Duplicate(obj, 1);
-
-        if (obj_dup_shallow != NULL) {
-            cJSON *tmp = cJSON_GetObjectItem(obj_dup_shallow, key1);
-            if (tmp != NULL) {
-                (void)cJSON_IsNumber(tmp);
-                (void)cJSON_GetNumberValue(tmp);
-            }
-            cJSON_Delete(obj_dup_shallow);
-        }
-
-        if (obj_dup_deep != NULL) {
-            cJSON *tmp1 = cJSON_GetObjectItem(obj_dup_deep, key2);
-            cJSON *tmp2 = cJSON_GetObjectItem(obj_dup_deep, "fixed");
-            if (tmp1 != NULL) {
-                (void)cJSON_IsNumber(tmp1);
-                (void)cJSON_GetNumberValue(tmp1);
-            }
-            if (tmp2 != NULL) {
-                (void)cJSON_IsNumber(tmp2);
-                (void)cJSON_GetNumberValue(tmp2);
-                if (cJSON_IsNumber(tmp2)) {
-                    (void)cJSON_SetNumberHelper(tmp2, num1 - num2);
-                }
-            }
-            cJSON_Delete(obj_dup_deep);
-        }
-
-        cJSON_Delete(obj);
+        free(strings);
+        free(allocated);
+    } else {
+        tree = build_tree_from_data(p, rem);
     }
 
-    if (n1 != NULL) {
-        cJSON_Delete(n1);
-    }
-    if (n2 != NULL) {
-        cJSON_Delete(n2);
-    }
-    if (n3 != NULL) {
-        cJSON_Delete(n3);
+    if (tree != NULL) {
+        char *printed1 = cJSON_Print(tree);
+        if (printed1 != NULL) {
+            cJSON_free(printed1);
+        }
+
+        char *printed2 = cJSON_PrintUnformatted(tree);
+        if (printed2 != NULL) {
+            cJSON_free(printed2);
+        }
+
+        char *printed3 = cJSON_PrintBuffered(tree, prebuffer, 0);
+        if (printed3 != NULL) {
+            cJSON_free(printed3);
+        }
+
+        char *printed4 = cJSON_PrintBuffered(tree, prebuffer, 1);
+        if (printed4 != NULL) {
+            cJSON_free(printed4);
+        }
+
+        cJSON_Delete(tree);
     }
 
     return 0;

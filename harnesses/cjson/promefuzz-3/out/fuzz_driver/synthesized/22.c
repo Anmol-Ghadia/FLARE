@@ -1,232 +1,405 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateIntArray at cJSON.c:2621:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_CreateDoubleArray at cJSON.c:2701:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_CreateArrayReference at cJSON.c:2571:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArrayReference at cJSON.c:2571:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArrayReference at cJSON.c:2571:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArrayReference at cJSON.c:2571:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_IsArray at cJSON.c:3042:26 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
-// cJSON_GetArrayItem at cJSON.c:1941:23 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_InsertItemInArray at cJSON.c:2292:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_ReplaceItemInArray at cJSON.c:2375:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_ReplaceItemViaPointer at cJSON.c:2326:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_DetachItemViaPointer at cJSON.c:2216:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_ReplaceItemViaPointer at cJSON.c:2326:26 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_AddItemToObject at cJSON.c:2077:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_IsObject at cJSON.c:3010:26 in cJSON.h
+// cJSON_DetachItemViaPointer at cJSON.c:2216:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_CreateNull at cJSON.c:2419:23 in cJSON.h
+// cJSON_CreateBool at cJSON.c:2452:23 in cJSON.h
+// cJSON_CreateNumber at cJSON.c:2463:23 in cJSON.h
+// cJSON_CreateString at cJSON.c:2489:23 in cJSON.h
+// cJSON_CreateRaw at cJSON.c:2539:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 
 #include "cJSON.h"
 
-static int consume_int(const uint8_t **data, size_t *size)
-{
-    int value = 0;
-    size_t n = (*size < sizeof(value)) ? *size : sizeof(value);
-    if (n > 0) {
-        memcpy(&value, *data, n);
-        *data += n;
-        *size -= n;
+static uint32_t read_u32(const uint8_t *Data, size_t Size, size_t *Offset) {
+    uint32_t v = 0;
+    size_t i;
+    for (i = 0; i < 4; ++i) {
+        v <<= 8;
+        if (*Offset < Size) {
+            v |= Data[*Offset];
+            (*Offset)++;
+        }
     }
-    return value;
+    return v;
 }
 
-static double consume_double(const uint8_t **data, size_t *size)
-{
-    double value = 0.0;
-    size_t n = (*size < sizeof(value)) ? *size : sizeof(value);
-    if (n > 0) {
-        memcpy(&value, *data, n);
-        *data += n;
-        *size -= n;
-    }
-    return value;
+static int read_int(const uint8_t *Data, size_t Size, size_t *Offset) {
+    return (int)read_u32(Data, Size, Offset);
 }
 
-int LLVMFuzzerTestOneInput_22(const uint8_t *Data, size_t Size)
-{
-    const uint8_t *ptr = Data;
-    size_t remaining = Size;
+static size_t read_len(const uint8_t *Data, size_t Size, size_t *Offset, size_t max_len) {
+    if (max_len == 0) {
+        return 0;
+    }
+    return (size_t)(read_u32(Data, Size, Offset) % (max_len + 1));
+}
 
-    FILE *fp = fopen("./dummy_file", "wb");
+static char *make_string(const uint8_t *Data, size_t Size, size_t *Offset) {
+    size_t remaining;
+    size_t len;
+    char *s;
+
+    if (*Offset > Size) {
+        *Offset = Size;
+    }
+
+    remaining = Size - *Offset;
+    len = read_len(Data, Size, Offset, remaining > 64 ? 64 : remaining);
+
+    if (*Offset > Size) {
+        *Offset = Size;
+    }
+    remaining = Size - *Offset;
+    if (len > remaining) {
+        len = remaining;
+    }
+
+    s = (char *)malloc(len + 1);
+    if (s == NULL) {
+        return NULL;
+    }
+
+    if (len > 0) {
+        memcpy(s, Data + *Offset, len);
+        *Offset += len;
+    }
+    s[len] = '\0';
+    return s;
+}
+
+static cJSON *make_item_from_bytes(const uint8_t *Data, size_t Size, size_t *Offset, int depth) {
+    cJSON *item;
+    int selector;
+
+    if (depth <= 0) {
+        selector = 0;
+    } else {
+        selector = read_int(Data, Size, Offset) & 7;
+    }
+
+    switch (selector) {
+        case 0:
+            return cJSON_CreateNull();
+        case 1:
+            return cJSON_CreateBool(read_int(Data, Size, Offset) & 1);
+        case 2:
+            return cJSON_CreateNumber((double)(int32_t)read_u32(Data, Size, Offset));
+        case 3: {
+            char *s = make_string(Data, Size, Offset);
+            item = cJSON_CreateString(s ? s : "");
+            free(s);
+            return item;
+        }
+        case 4: {
+            char *s = make_string(Data, Size, Offset);
+            item = cJSON_CreateRaw(s ? s : "");
+            free(s);
+            return item;
+        }
+        case 5: {
+            cJSON *arr = cJSON_CreateArray();
+            int count = read_int(Data, Size, Offset) & 7;
+            int i;
+            if (arr == NULL) {
+                return NULL;
+            }
+            for (i = 0; i < count; ++i) {
+                cJSON *child = make_item_from_bytes(Data, Size, Offset, depth - 1);
+                if (child == NULL) {
+                    child = cJSON_CreateNull();
+                }
+                if (child != NULL) {
+                    cJSON_AddItemToArray(arr, child);
+                }
+            }
+            return arr;
+        }
+        case 6: {
+            cJSON *obj = cJSON_CreateObject();
+            int count = read_int(Data, Size, Offset) & 7;
+            int i;
+            if (obj == NULL) {
+                return NULL;
+            }
+            for (i = 0; i < count; ++i) {
+                char *key = make_string(Data, Size, Offset);
+                cJSON *val = make_item_from_bytes(Data, Size, Offset, depth - 1);
+                if (key == NULL) {
+                    key = (char *)malloc(2);
+                    if (key != NULL) {
+                        key[0] = 'k';
+                        key[1] = '\0';
+                    }
+                }
+                if (val == NULL) {
+                    val = cJSON_CreateNull();
+                }
+                if (key != NULL && val != NULL) {
+                    cJSON_AddItemToObject(obj, key, val);
+                } else if (val != NULL) {
+                    cJSON_Delete(val);
+                }
+                free(key);
+            }
+            return obj;
+        }
+        default:
+            return cJSON_CreateArray();
+    }
+}
+
+static cJSON *get_nth_child(cJSON *parent, int index) {
+    cJSON *child;
+    int i = 0;
+
+    if (parent == NULL || index < 0) {
+        return NULL;
+    }
+
+    child = parent->child;
+    while (child != NULL && i < index) {
+        child = child->next;
+        i++;
+    }
+    return child;
+}
+
+static int count_children(cJSON *parent, int max_count) {
+    int count = 0;
+    cJSON *child;
+
+    if (parent == NULL) {
+        return 0;
+    }
+
+    child = parent->child;
+    while (child != NULL && count < max_count) {
+        count++;
+        child = child->next;
+    }
+    return count;
+}
+
+int LLVMFuzzerTestOneInput_22(const uint8_t *Data, size_t Size) {
+    size_t offset = 0;
+    cJSON *array = NULL;
+    cJSON *object = NULL;
+    cJSON *parsed = NULL;
+    cJSON *detached = NULL;
+    cJSON *tmp = NULL;
+    char *json_text = NULL;
+    FILE *fp = NULL;
+    int i, ops;
+
+    fp = fopen("./dummy_file", "wb");
     if (fp != NULL) {
         if (Size > 0) {
-            (void)fwrite(Data, 1, Size, fp);
+            fwrite(Data, 1, Size, fp);
         }
         fclose(fp);
     }
 
-    int int_count_raw = consume_int(&ptr, &remaining);
-    int double_count_raw = consume_int(&ptr, &remaining);
-    int index1 = consume_int(&ptr, &remaining);
-    int index2 = consume_int(&ptr, &remaining);
-
-    int int_count = int_count_raw;
-    int double_count = double_count_raw;
-
-    if (int_count < 0) {
-        int_count = -int_count;
-    }
-    if (double_count < 0) {
-        double_count = -double_count;
+    json_text = make_string(Data, Size, &offset);
+    if (json_text != NULL) {
+        parsed = cJSON_Parse(json_text);
+        free(json_text);
+        json_text = NULL;
     }
 
-    int_count %= 64;
-    double_count %= 64;
-
-    int *ints = NULL;
-    double *doubles = NULL;
-
-    if (int_count > 0) {
-        ints = (int *)malloc((size_t)int_count * sizeof(int));
-        if (ints == NULL) {
-            return 0;
-        }
-        for (int i = 0; i < int_count; ++i) {
-            ints[i] = consume_int(&ptr, &remaining);
-        }
+    array = cJSON_CreateArray();
+    object = cJSON_CreateObject();
+    if (array == NULL || object == NULL) {
+        cJSON_Delete(parsed);
+        cJSON_Delete(array);
+        cJSON_Delete(object);
+        return 0;
     }
 
-    if (double_count > 0) {
-        doubles = (double *)malloc((size_t)double_count * sizeof(double));
-        if (doubles == NULL) {
-            free(ints);
-            return 0;
+    if (parsed != NULL) {
+        cJSON_IsObject(parsed);
+        tmp = cJSON_Duplicate(parsed, 1);
+        if (tmp != NULL) {
+            cJSON_AddItemToArray(array, tmp);
         }
-        for (int i = 0; i < double_count; ++i) {
-            doubles[i] = consume_double(&ptr, &remaining);
+        if (cJSON_IsObject(parsed)) {
+            tmp = cJSON_Duplicate(parsed, 1);
+            if (tmp != NULL) {
+                cJSON_AddItemToArray(array, tmp);
+            }
         }
     }
 
-    cJSON *empty_array = cJSON_CreateArray();
-    if (empty_array != NULL) {
-        (void)cJSON_IsArray(empty_array);
-        (void)cJSON_GetArrayItem(empty_array, index1);
-        (void)cJSON_GetArrayItem(empty_array, -1);
-    }
+    ops = (int)(Size > 128 ? 128 : Size);
+    for (i = 0; i < ops; ++i) {
+        int action = (offset < Size) ? (Data[offset++] % 10) : (i % 10);
+        int child_count = count_children(array, 1024);
+        int idx = child_count > 0 ? (read_int(Data, Size, &offset) % (child_count + 2)) : 0;
+        cJSON *item;
+        cJSON *replacement;
 
-    cJSON *int_array = cJSON_CreateIntArray(ints, int_count);
-    if (int_array != NULL) {
-        if (cJSON_IsArray(int_array)) {
-            (void)cJSON_GetArrayItem(int_array, index1);
-            (void)cJSON_GetArrayItem(int_array, index2);
-            (void)cJSON_GetArrayItem(int_array, 0);
-            (void)cJSON_GetArrayItem(int_array, int_count);
-            (void)cJSON_GetArrayItem(int_array, -1);
+        switch (action) {
+            case 0:
+                item = make_item_from_bytes(Data, Size, &offset, 3);
+                if (item != NULL) {
+                    cJSON_AddItemToArray(array, item);
+                }
+                break;
+
+            case 1:
+                item = make_item_from_bytes(Data, Size, &offset, 3);
+                if (item == NULL) {
+                    item = cJSON_CreateNull();
+                }
+                if (item != NULL) {
+                    if (!cJSON_InsertItemInArray(array, idx, item)) {
+                        cJSON_Delete(item);
+                    }
+                }
+                break;
+
+            case 2:
+                replacement = make_item_from_bytes(Data, Size, &offset, 3);
+                if (replacement == NULL) {
+                    replacement = cJSON_CreateNull();
+                }
+                if (replacement != NULL) {
+                    if (!cJSON_ReplaceItemInArray(array, idx, replacement)) {
+                        cJSON_Delete(replacement);
+                    }
+                }
+                break;
+
+            case 3:
+                item = get_nth_child(array, idx);
+                replacement = make_item_from_bytes(Data, Size, &offset, 3);
+                if (replacement == NULL) {
+                    replacement = cJSON_CreateNull();
+                }
+                if (item != NULL && replacement != NULL) {
+                    if (!cJSON_ReplaceItemViaPointer(array, item, replacement)) {
+                        cJSON_Delete(replacement);
+                    }
+                } else if (replacement != NULL) {
+                    cJSON_Delete(replacement);
+                }
+                break;
+
+            case 4:
+                item = get_nth_child(array, idx);
+                if (item != NULL) {
+                    detached = cJSON_DetachItemViaPointer(array, item);
+                    if (detached != NULL) {
+                        if (!cJSON_AddItemToArray(array, detached)) {
+                            cJSON_Delete(detached);
+                        }
+                        detached = NULL;
+                    }
+                }
+                break;
+
+            case 5:
+                item = get_nth_child(array, idx);
+                if (item != NULL) {
+                    cJSON_ReplaceItemViaPointer(array, item, item);
+                }
+                break;
+
+            case 6:
+                cJSON_IsObject(object);
+                cJSON_IsObject(array);
+                cJSON_IsObject(parsed);
+                item = get_nth_child(array, idx);
+                cJSON_IsObject(item);
+                break;
+
+            case 7:
+                tmp = make_item_from_bytes(Data, Size, &offset, 2);
+                if (tmp != NULL) {
+                    char keybuf[32];
+                    snprintf(keybuf, sizeof(keybuf), "k%d", idx);
+                    if (!cJSON_AddItemToObject(object, keybuf, tmp)) {
+                        cJSON_Delete(tmp);
+                    }
+                }
+                cJSON_IsObject(object);
+                break;
+
+            case 8:
+                item = get_nth_child(array, idx);
+                if (item != NULL) {
+                    detached = cJSON_DetachItemViaPointer(array, item);
+                    if (detached != NULL) {
+                        cJSON_Delete(detached);
+                        detached = NULL;
+                    }
+                }
+                break;
+
+            case 9:
+            default:
+                item = make_item_from_bytes(Data, Size, &offset, 2);
+                if (item != NULL) {
+                    if (!cJSON_AddItemToArray(array, item)) {
+                        cJSON_Delete(item);
+                    }
+                }
+                break;
         }
-    } else {
-        (void)cJSON_IsArray(int_array);
-        (void)cJSON_GetArrayItem(int_array, index1);
     }
 
-    cJSON *double_array = cJSON_CreateDoubleArray(doubles, double_count);
-    if (double_array != NULL) {
-        if (cJSON_IsArray(double_array)) {
-            (void)cJSON_GetArrayItem(double_array, index1);
-            (void)cJSON_GetArrayItem(double_array, index2);
-            (void)cJSON_GetArrayItem(double_array, 0);
-            (void)cJSON_GetArrayItem(double_array, double_count);
-            (void)cJSON_GetArrayItem(double_array, -1);
-        }
-    } else {
-        (void)cJSON_IsArray(double_array);
-        (void)cJSON_GetArrayItem(double_array, index2);
-    }
-
-    cJSON *ref_from_empty = NULL;
-    if (empty_array != NULL) {
-        ref_from_empty = cJSON_CreateArrayReference(empty_array->child);
-        if (ref_from_empty != NULL) {
-            (void)cJSON_IsArray(ref_from_empty);
-            (void)cJSON_GetArrayItem(ref_from_empty, 0);
-            (void)cJSON_GetArrayItem(ref_from_empty, index1);
-            cJSON_Delete(ref_from_empty);
-        }
-    }
-
-    cJSON *ref_from_int = NULL;
-    if (int_array != NULL) {
-        ref_from_int = cJSON_CreateArrayReference(int_array->child);
-        if (ref_from_int != NULL) {
-            (void)cJSON_IsArray(ref_from_int);
-            (void)cJSON_GetArrayItem(ref_from_int, 0);
-            (void)cJSON_GetArrayItem(ref_from_int, index1);
-            (void)cJSON_GetArrayItem(ref_from_int, index2);
-            cJSON_Delete(ref_from_int);
-        }
-    }
-
-    cJSON *ref_from_double = NULL;
-    if (double_array != NULL) {
-        ref_from_double = cJSON_CreateArrayReference(double_array->child);
-        if (ref_from_double != NULL) {
-            (void)cJSON_IsArray(ref_from_double);
-            (void)cJSON_GetArrayItem(ref_from_double, 0);
-            (void)cJSON_GetArrayItem(ref_from_double, index1);
-            (void)cJSON_GetArrayItem(ref_from_double, index2);
-            cJSON_Delete(ref_from_double);
-        }
-    }
-
-    cJSON *null_ref = cJSON_CreateArrayReference(NULL);
-    if (null_ref != NULL) {
-        (void)cJSON_IsArray(null_ref);
-        (void)cJSON_GetArrayItem(null_ref, 0);
-        cJSON_Delete(null_ref);
-    }
-
-    (void)cJSON_IsArray(NULL);
-    (void)cJSON_GetArrayItem(NULL, 0);
-    (void)cJSON_GetArrayItem(NULL, -1);
-
-    cJSON_Delete(double_array);
-    cJSON_Delete(int_array);
-    cJSON_Delete(empty_array);
-
-    free(doubles);
-    free(ints);
-
+    cJSON_Delete(parsed);
+    cJSON_Delete(object);
+    cJSON_Delete(array);
     return 0;
 }

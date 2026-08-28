@@ -1,105 +1,74 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_malloc at cJSON.c:3155:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateFloatArray at cJSON.c:2661:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_ParseWithLength at cJSON.c:1200:23 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateDoubleArray at cJSON.c:2701:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateStringArray at cJSON.c:2741:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_CreateIntArray at cJSON.c:2621:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 #include "cJSON.h"
 
-static uint32_t read_u32(const uint8_t **data, size_t *size)
+static int consume_u8(const uint8_t **data, size_t *size)
 {
-    uint32_t v = 0;
-    size_t n = (*size < 4) ? *size : 4;
-    for (size_t i = 0; i < n; ++i) {
-        v |= ((uint32_t)(*data)[i]) << (8 * i);
+    if (*size == 0) {
+        return 0;
     }
-    *data += n;
-    *size -= n;
+    int v = **data;
+    (*data)++;
+    (*size)--;
     return v;
 }
 
-static int read_int(const uint8_t **data, size_t *size)
+static size_t consume_size(const uint8_t **data, size_t *size)
 {
-    return (int)read_u32(data, size);
-}
-
-static size_t choose_count(const uint8_t **data, size_t *size, size_t max_count)
-{
-    if (max_count == 0) {
-        return 0;
+    size_t v = 0;
+    size_t n = (*size < sizeof(size_t)) ? *size : sizeof(size_t);
+    for (size_t i = 0; i < n; i++) {
+        v = (v << 8) | **data;
+        (*data)++;
+        (*size)--;
     }
-    return (size_t)(read_u32(data, size) % (max_count + 1));
-}
-
-static void write_dummy_file(const uint8_t *data, size_t size)
-{
-    FILE *fp = fopen("./dummy_file", "wb");
-    if (fp != NULL) {
-        if (size > 0) {
-            (void)fwrite(data, 1, size, fp);
-        }
-        fclose(fp);
-    }
-}
-
-static char *make_string_from_bytes(const uint8_t *src, size_t available, size_t len)
-{
-    if (len > available) {
-        len = available;
-    }
-
-    char *s = (char *)malloc(len + 1);
-    if (s == NULL) {
-        return NULL;
-    }
-
-    if (len > 0) {
-        memcpy(s, src, len);
-    }
-    s[len] = '\0';
-    return s;
+    return v;
 }
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
@@ -107,160 +76,95 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
     const uint8_t *ptr = Data;
     size_t remaining = Size;
 
-    write_dummy_file(Data, Size);
+    int fmt = consume_u8(&ptr, &remaining) & 1;
+    size_t prebuffer_raw = consume_size(&ptr, &remaining);
+    int prebuffer = (int)(prebuffer_raw % 4096);
 
-    cJSON *arr_empty = cJSON_CreateArray();
-    cJSON *dup_empty_shallow = cJSON_Duplicate(arr_empty, 0);
-    cJSON *dup_empty_deep = cJSON_Duplicate(arr_empty, 1);
-    cJSON_Delete(dup_empty_shallow);
-    cJSON_Delete(dup_empty_deep);
-    cJSON_Delete(arr_empty);
-
-    cJSON *dup_null_0 = cJSON_Duplicate(NULL, 0);
-    cJSON *dup_null_1 = cJSON_Duplicate(NULL, 1);
-    cJSON_Delete(dup_null_0);
-    cJSON_Delete(dup_null_1);
-
-    size_t max_ints = remaining / sizeof(int);
-    if (max_ints > 64) {
-        max_ints = 64;
+    void *tmp = cJSON_malloc(remaining + 1);
+    if (tmp != NULL) {
+        memset(tmp, 0, remaining + 1);
+        cJSON_free(tmp);
     }
-    size_t int_count = choose_count(&ptr, &remaining, max_ints);
-    int *ints = NULL;
-    if (int_count > 0) {
-        ints = (int *)malloc(int_count * sizeof(int));
-        if (ints == NULL) {
-            return 0;
-        }
-        for (size_t i = 0; i < int_count; ++i) {
-            ints[i] = read_int(&ptr, &remaining);
-        }
-    }
-    cJSON *int_array = cJSON_CreateIntArray(ints, (int)int_count);
-    cJSON *int_array_dup0 = cJSON_Duplicate(int_array, 0);
-    cJSON *int_array_dup1 = cJSON_Duplicate(int_array, 1);
-    cJSON_Delete(int_array_dup0);
-    cJSON_Delete(int_array_dup1);
-    cJSON_Delete(int_array);
-    free(ints);
 
-    size_t max_floats = remaining / sizeof(float);
-    if (max_floats > 64) {
-        max_floats = 64;
-    }
-    size_t float_count = choose_count(&ptr, &remaining, max_floats);
-    float *floats = NULL;
-    if (float_count > 0) {
-        floats = (float *)malloc(float_count * sizeof(float));
-        if (floats == NULL) {
-            return 0;
-        }
-        for (size_t i = 0; i < float_count; ++i) {
-            union {
-                uint32_t u;
-                float f;
-            } conv;
-            conv.u = read_u32(&ptr, &remaining);
-            floats[i] = conv.f;
-        }
-    }
-    cJSON *float_array = cJSON_CreateFloatArray(floats, (int)float_count);
-    cJSON *float_array_dup0 = cJSON_Duplicate(float_array, 0);
-    cJSON *float_array_dup1 = cJSON_Duplicate(float_array, 1);
-    cJSON_Delete(float_array_dup0);
-    cJSON_Delete(float_array_dup1);
-    cJSON_Delete(float_array);
-    free(floats);
-
-    size_t max_doubles = remaining / sizeof(double);
-    if (max_doubles > 32) {
-        max_doubles = 32;
-    }
-    size_t double_count = choose_count(&ptr, &remaining, max_doubles);
-    double *doubles = NULL;
-    if (double_count > 0) {
-        doubles = (double *)malloc(double_count * sizeof(double));
-        if (doubles == NULL) {
-            return 0;
-        }
-        for (size_t i = 0; i < double_count; ++i) {
-            union {
-                uint64_t u;
-                double d;
-            } conv;
-            uint64_t lo = read_u32(&ptr, &remaining);
-            uint64_t hi = read_u32(&ptr, &remaining);
-            conv.u = lo | (hi << 32);
-            doubles[i] = conv.d;
-        }
-    }
-    cJSON *double_array = cJSON_CreateDoubleArray(doubles, (int)double_count);
-    cJSON *double_array_dup0 = cJSON_Duplicate(double_array, 0);
-    cJSON *double_array_dup1 = cJSON_Duplicate(double_array, 1);
-    cJSON_Delete(double_array_dup0);
-    cJSON_Delete(double_array_dup1);
-    cJSON_Delete(double_array);
-    free(doubles);
-
-    size_t max_strings = 16;
-    size_t string_count = choose_count(&ptr, &remaining, max_strings);
-    char **owned_strings = NULL;
-    const char **string_ptrs = NULL;
-
-    if (string_count > 0) {
-        owned_strings = (char **)calloc(string_count, sizeof(char *));
-        string_ptrs = (const char **)calloc(string_count, sizeof(char *));
-        if (owned_strings == NULL || string_ptrs == NULL) {
-            free(owned_strings);
-            free(string_ptrs);
-            return 0;
-        }
-
-        for (size_t i = 0; i < string_count; ++i) {
-            size_t max_len = remaining > 32 ? 32 : remaining;
-            size_t slen = choose_count(&ptr, &remaining, max_len);
-            owned_strings[i] = make_string_from_bytes(ptr, remaining, slen);
-            if (owned_strings[i] == NULL) {
-                for (size_t j = 0; j < i; ++j) {
-                    free(owned_strings[j]);
+    cJSON *root = cJSON_ParseWithLength((const char *)ptr, remaining);
+    if (root != NULL) {
+        char *printed1 = cJSON_Print(root);
+        if (printed1 != NULL) {
+            cJSON *reparsed1 = cJSON_ParseWithLength(printed1, strlen(printed1));
+            if (reparsed1 != NULL) {
+                char *bufprint = cJSON_PrintBuffered(reparsed1, prebuffer, fmt);
+                if (bufprint != NULL) {
+                    cJSON_Minify(bufprint);
+                    cJSON *reparsed2 = cJSON_ParseWithLength(bufprint, strlen(bufprint));
+                    if (reparsed2 != NULL) {
+                        char *printed2 = cJSON_PrintUnformatted(reparsed2);
+                        if (printed2 != NULL) {
+                            cJSON_free(printed2);
+                        }
+                        cJSON_Delete(reparsed2);
+                    }
+                    cJSON_free(bufprint);
                 }
-                free(owned_strings);
-                free(string_ptrs);
-                return 0;
+                cJSON_Delete(reparsed1);
             }
-            string_ptrs[i] = owned_strings[i];
+            cJSON_free(printed1);
+        }
 
-            if (slen > remaining) {
-                slen = remaining;
+        char *printed3 = cJSON_PrintUnformatted(root);
+        if (printed3 != NULL) {
+            cJSON_Minify(printed3);
+            cJSON *reparsed3 = cJSON_ParseWithLength(printed3, strlen(printed3));
+            if (reparsed3 != NULL) {
+                char *printed4 = cJSON_PrintBuffered(reparsed3, prebuffer, fmt ^ 1);
+                if (printed4 != NULL) {
+                    cJSON_free(printed4);
+                }
+                cJSON_Delete(reparsed3);
             }
-            ptr += slen;
-            remaining -= slen;
+            cJSON_free(printed3);
+        }
+
+        char *printed5 = cJSON_PrintBuffered(root, prebuffer, fmt);
+        if (printed5 != NULL) {
+            cJSON_Minify(printed5);
+            cJSON_free(printed5);
+        }
+
+        cJSON_Delete(root);
+    } else {
+        char *mutable_buf = (char *)malloc(remaining + 1);
+        if (mutable_buf != NULL) {
+            if (remaining > 0) {
+                memcpy(mutable_buf, ptr, remaining);
+            }
+            mutable_buf[remaining] = '\0';
+            cJSON_Minify(mutable_buf);
+
+            cJSON *minified_root = cJSON_ParseWithLength(mutable_buf, strlen(mutable_buf));
+            if (minified_root != NULL) {
+                char *printed = cJSON_Print(minified_root);
+                if (printed != NULL) {
+                    cJSON_free(printed);
+                }
+                char *printed_buf = cJSON_PrintBuffered(minified_root, prebuffer, fmt);
+                if (printed_buf != NULL) {
+                    cJSON_free(printed_buf);
+                }
+                char *printed_unfmt = cJSON_PrintUnformatted(minified_root);
+                if (printed_unfmt != NULL) {
+                    cJSON_free(printed_unfmt);
+                }
+                cJSON_Delete(minified_root);
+            }
+
+            free(mutable_buf);
         }
     }
 
-    cJSON *string_array = cJSON_CreateStringArray(string_ptrs, (int)string_count);
-    cJSON *string_array_dup0 = cJSON_Duplicate(string_array, 0);
-    cJSON *string_array_dup1 = cJSON_Duplicate(string_array, 1);
-    cJSON_Delete(string_array_dup0);
-    cJSON_Delete(string_array_dup1);
-    cJSON_Delete(string_array);
-
-    if (owned_strings != NULL) {
-        for (size_t i = 0; i < string_count; ++i) {
-            free(owned_strings[i]);
-        }
-    }
-    free(owned_strings);
-    free(string_ptrs);
-
-    cJSON *arr1 = cJSON_CreateArray();
-    cJSON *arr2 = cJSON_CreateArray();
-    cJSON *dup1 = cJSON_Duplicate(arr1, remaining ? (remaining & 1) : 0);
-    cJSON *dup2 = cJSON_Duplicate(arr2, remaining > 1 ? ((remaining >> 1) & 1) : 1);
-    cJSON_Delete(dup1);
-    cJSON_Delete(dup2);
-    cJSON_Delete(arr1);
-    cJSON_Delete(arr2);
+    cJSON_Minify(NULL);
+    (void)cJSON_PrintBuffered(NULL, prebuffer, fmt);
+    (void)cJSON_Print(NULL);
+    (void)cJSON_PrintUnformatted(NULL);
 
     return 0;
 }

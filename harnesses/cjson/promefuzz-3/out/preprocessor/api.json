@@ -1,32 +1,32 @@
 {
     "/promefuzz/database/cjson/latest/code/cJSON.h": {
+        "cJSON_ParseWithOpts": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1099:23",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:158:23"
+            }
+        ],
         "cJSON_GetNumberValue": [
             {
                 "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:109:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:186:22"
             }
         ],
-        "cJSON_ParseWithOpts": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1131:23",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:158:23"
-            }
-        ],
         "cJSON_ParseWithLengthOpts": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1147:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1115:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:159:23"
             }
         ],
         "cJSON_Parse": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1227:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1195:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:154:23"
             }
         ],
         "cJSON_ParseWithLength": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1232:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1200:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:155:23"
             }
         ],
@@ -38,62 +38,86 @@
         ],
         "cJSON_Print": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1307:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1275:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:162:22"
             }
         ],
         "cJSON_PrintUnformatted": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1312:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1280:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:164:22"
             }
         ],
         "cJSON_PrintBuffered": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1317:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1285:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:166:22"
             }
         ],
         "cJSON_PrintPreallocated": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1348:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1316:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:169:26"
             }
         ],
         "cJSON_GetArraySize": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1899:19",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1857:19",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:174:19"
             }
         ],
         "cJSON_GetArrayItem": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1941:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1899:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:176:23"
             }
         ],
         "cJSON_GetObjectItem": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1983:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1941:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:178:23"
             }
         ],
         "cJSON_GetObjectItemCaseSensitive": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1988:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1946:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:179:23"
             }
         ],
         "cJSON_HasObjectItem": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1993:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:1951:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:180:26"
             }
         ],
         "cJSON_AddItemToArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2061:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2019:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:228:26"
+            }
+        ],
+        "cJSON_AddItemToObject": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2077:26",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:229:26"
+            }
+        ],
+        "cJSON_AddItemToObjectCS": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2083:26",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:233:26"
+            }
+        ],
+        "cJSON_AddItemReferenceToArray": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2088:26",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:235:26"
+            }
+        ],
+        "cJSON_AddItemReferenceToObject": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2098:26",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:236:26"
             }
         ],
         "cJSON_InitHooks": [
@@ -102,190 +126,190 @@
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:150:20"
             }
         ],
-        "cJSON_AddItemToObject": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2119:26",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:229:26"
-            }
-        ],
-        "cJSON_AddItemToObjectCS": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2125:26",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:233:26"
-            }
-        ],
-        "cJSON_AddItemReferenceToArray": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2130:26",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:235:26"
-            }
-        ],
-        "cJSON_AddItemReferenceToObject": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2140:26",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:236:26"
-            }
-        ],
         "cJSON_AddNullToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2150:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2108:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:270:22"
             }
         ],
         "cJSON_AddTrueToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2162:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2120:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:271:22"
             }
         ],
         "cJSON_AddFalseToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2174:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2132:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:272:22"
             }
         ],
         "cJSON_AddBoolToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2186:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2144:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:273:22"
             }
         ],
         "cJSON_AddNumberToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2198:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2156:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:274:22"
             }
         ],
         "cJSON_AddStringToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2210:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2168:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:275:22"
             }
         ],
         "cJSON_AddRawToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2222:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2180:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:276:22"
             }
         ],
         "cJSON_AddObjectToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2234:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2192:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:277:22"
             }
         ],
         "cJSON_AddArrayToObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2246:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2204:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:278:22"
             }
         ],
         "cJSON_DetachItemViaPointer": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2258:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2216:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:239:23"
             }
         ],
         "cJSON_DetachItemFromArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2294:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2252:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:240:23"
             }
         ],
         "cJSON_DeleteItemFromArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2304:20",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2262:20",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:241:20"
             }
         ],
         "cJSON_DetachItemFromObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2309:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2267:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:242:23"
             }
         ],
         "cJSON_DetachItemFromObjectCaseSensitive": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2316:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2274:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:243:23"
             }
         ],
         "cJSON_DeleteItemFromObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2323:20",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2281:20",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:244:20"
             }
         ],
         "cJSON_DeleteItemFromObjectCaseSensitive": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2328:20",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2286:20",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:245:20"
             }
         ],
         "cJSON_InsertItemInArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2334:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2292:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:248:26"
             }
         ],
         "cJSON_ReplaceItemViaPointer": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2368:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2326:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:249:26"
             }
         ],
         "cJSON_ReplaceItemInArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2417:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2375:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:250:26"
             }
         ],
         "cJSON_ReplaceItemInObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2450:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2408:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:251:26"
             }
         ],
         "cJSON_ReplaceItemInObjectCaseSensitive": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2455:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2413:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:252:26"
             }
         ],
         "cJSON_CreateNull": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2461:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2419:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:201:23"
             }
         ],
         "cJSON_CreateTrue": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2472:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2430:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:202:23"
             }
         ],
         "cJSON_CreateFalse": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2483:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2441:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:203:23"
             }
         ],
         "cJSON_CreateBool": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2494:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2452:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:204:23"
             }
         ],
         "cJSON_CreateNumber": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2505:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2463:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:205:23"
             }
         ],
         "cJSON_CreateString": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2531:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2489:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:206:23"
+            }
+        ],
+        "cJSON_CreateStringReference": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2506:23",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:214:23"
+            }
+        ],
+        "cJSON_CreateObjectReference": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2518:23",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:217:23"
+            }
+        ],
+        "cJSON_CreateArrayReference": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2529:23",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:218:23"
+            }
+        ],
+        "cJSON_CreateRaw": [
+            {
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2539:23",
+                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:208:23"
             }
         ],
         "cJSON_Delete": [
@@ -294,165 +318,141 @@
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:171:20"
             }
         ],
-        "cJSON_CreateStringReference": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2548:23",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:214:23"
-            }
-        ],
-        "cJSON_CreateObjectReference": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2560:23",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:217:23"
-            }
-        ],
-        "cJSON_CreateArrayReference": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2571:23",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:218:23"
-            }
-        ],
-        "cJSON_CreateRaw": [
-            {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2581:23",
-                "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:208:23"
-            }
-        ],
         "cJSON_CreateArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2598:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2556:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:209:23"
             }
         ],
         "cJSON_CreateObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2609:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2567:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:210:23"
             }
         ],
         "cJSON_CreateIntArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2621:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2579:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:222:23"
             }
         ],
         "cJSON_CreateFloatArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2661:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2619:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:223:23"
             }
         ],
         "cJSON_CreateDoubleArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2701:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2659:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:224:23"
             }
         ],
         "cJSON_CreateStringArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2741:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2699:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:225:23"
             }
         ],
         "cJSON_Duplicate": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2784:23",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2742:23",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:255:23"
             }
         ],
         "cJSON_Minify": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2924:20",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2882:20",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:266:20"
             }
         ],
         "cJSON_IsInvalid": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2972:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2930:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:189:26"
             }
         ],
         "cJSON_IsFalse": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2982:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2940:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:190:26"
             }
         ],
         "cJSON_IsTrue": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2992:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2950:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:191:26"
             }
         ],
         "cJSON_IsBool": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3003:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2961:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:192:26"
             }
         ],
         "cJSON_IsNull": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3012:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2970:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:193:26"
             }
         ],
         "cJSON_IsNumber": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3022:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2980:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:194:26"
             }
         ],
         "cJSON_IsString": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3032:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:2990:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:195:26"
             }
         ],
         "cJSON_IsArray": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3042:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3000:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:196:26"
             }
         ],
         "cJSON_IsObject": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3052:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3010:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:197:26"
             }
         ],
         "cJSON_IsRaw": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3062:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3020:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:198:26"
             }
         ],
         "cJSON_Compare": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3072:26",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3030:26",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:261:26"
             }
         ],
         "cJSON_malloc": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3197:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3155:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:299:22"
             }
         ],
         "cJSON_free": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3202:20",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:3160:20",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:300:20"
             }
         ],
         "cJSON_SetNumberHelper": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:411:22",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:384:22",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:283:22"
             }
         ],
         "cJSON_SetValuestring": [
             {
-                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:435:21",
+                "loc": "/promefuzz/database/cjson/latest/code/cJSON.c:403:21",
                 "decl_loc": "/promefuzz/database/cjson/latest/code/cJSON.h:286:21"
             }
         ],

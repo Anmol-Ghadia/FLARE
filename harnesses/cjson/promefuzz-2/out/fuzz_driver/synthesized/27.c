@@ -1,30 +1,25 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_CreateStringReference at cJSON.c:2548:23 in cJSON.h
-// cJSON_IsString at cJSON.c:3032:26 in cJSON.h
-// cJSON_GetStringValue at cJSON.c:99:22 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
-// cJSON_IsString at cJSON.c:3032:26 in cJSON.h
-// cJSON_GetStringValue at cJSON.c:99:22 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
-// cJSON_AddStringToObject at cJSON.c:2210:22 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_PrintPreallocated at cJSON.c:1316:26 in cJSON.h
+// cJSON_PrintPreallocated at cJSON.c:1316:26 in cJSON.h
+// cJSON_PrintPreallocated at cJSON.c:1316:26 in cJSON.h
+// cJSON_PrintPreallocated at cJSON.c:1316:26 in cJSON.h
+// cJSON_PrintPreallocated at cJSON.c:1316:26 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
+// cJSON_free at cJSON.c:3160:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_Minify at cJSON.c:2882:20 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_Print at cJSON.c:1275:22 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_IsString at cJSON.c:3032:26 in cJSON.h
-// cJSON_GetStringValue at cJSON.c:99:22 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_CreateString at cJSON.c:2531:23 in cJSON.h
-// cJSON_IsString at cJSON.c:3032:26 in cJSON.h
-// cJSON_GetStringValue at cJSON.c:99:22 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_SetValuestring at cJSON.c:435:21 in cJSON.h
-// cJSON_GetStringValue at cJSON.c:99:22 in cJSON.h
+// cJSON_PrintUnformatted at cJSON.c:1280:22 in cJSON.h
+// cJSON_ParseWithOpts at cJSON.c:1099:23 in cJSON.h
+// cJSON_Delete at cJSON.c:253:20 in cJSON.h
+// cJSON_PrintBuffered at cJSON.c:1285:22 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
 #include <string.h>
@@ -38,63 +33,44 @@
 
 #include "cJSON.h"
 
-static char *make_cstring(const uint8_t *data, size_t size) {
-    char *s = (char *)malloc(size + 1);
-    if (s == NULL) {
-        return NULL;
+static int clamp_int(size_t v) {
+    if (v > 0x7fffffffU) {
+        return 0x7fffffff;
     }
-    if (size > 0) {
-        memcpy(s, data, size);
-    }
-    s[size] = '\0';
-    return s;
+    return (int)v;
 }
 
 int LLVMFuzzerTestOneInput_27(const uint8_t *Data, size_t Size) {
+    const char *parse_end = NULL;
+    cJSON *root = NULL;
+    char *printed = NULL;
+    char *printed_unformatted = NULL;
+    char *printed_buffered = NULL;
     char *input = NULL;
-    char *alt = NULL;
-    char *key = NULL;
-    cJSON *str_item = NULL;
-    cJSON *ref_item = NULL;
-    cJSON *obj = NULL;
-    cJSON *added = NULL;
-    char *ret = NULL;
+    char *minified = NULL;
+    char *prebuf = NULL;
     FILE *fp = NULL;
+    size_t input_len;
+    cJSON_bool require_null_terminated;
+    cJSON_bool format_flag;
+    int prebuffer;
 
     if (Data == NULL) {
         return 0;
     }
 
-    input = make_cstring(Data, Size);
+    require_null_terminated = (Size > 0) ? (Data[0] & 1) : 0;
+    format_flag = (Size > 1) ? (Data[1] & 1) : 0;
+
+    input_len = Size;
+    input = (char *)malloc(input_len + 1);
     if (input == NULL) {
         return 0;
     }
-
-    {
-        size_t alt_size = (Size > 0) ? Size : 1;
-        alt = (char *)malloc(alt_size + 1);
-        if (alt != NULL) {
-            size_t i;
-            for (i = 0; i < alt_size; i++) {
-                uint8_t b = (i < Size) ? Data[i] : 0;
-                alt[i] = (char)((b % 95) + 32);
-            }
-            alt[alt_size] = '\0';
-        }
+    if (Size > 0) {
+        memcpy(input, Data, Size);
     }
-
-    {
-        size_t key_len = (Size % 32) + 1;
-        key = (char *)malloc(key_len + 1);
-        if (key != NULL) {
-            size_t i;
-            for (i = 0; i < key_len; i++) {
-                uint8_t b = (i < Size) ? Data[i] : (uint8_t)i;
-                key[i] = (char)('a' + (b % 26));
-            }
-            key[key_len] = '\0';
-        }
-    }
+    input[input_len] = '\0';
 
     fp = fopen("./dummy_file", "wb");
     if (fp != NULL) {
@@ -105,70 +81,94 @@ int LLVMFuzzerTestOneInput_27(const uint8_t *Data, size_t Size) {
         fp = NULL;
     }
 
-    (void)cJSON_IsString(NULL);
-    (void)cJSON_GetStringValue(NULL);
-    (void)cJSON_SetValuestring(NULL, input);
-
-    str_item = cJSON_CreateString(input);
-    if (str_item != NULL) {
-        (void)cJSON_IsString(str_item);
-        (void)cJSON_GetStringValue(str_item);
-
-        ret = cJSON_SetValuestring(str_item, input);
-        (void)ret;
-
-        if (alt != NULL) {
-            ret = cJSON_SetValuestring(str_item, alt);
-            (void)ret;
-            (void)cJSON_GetStringValue(str_item);
-        }
-
-        if (str_item->valuestring != NULL) {
-            ret = cJSON_SetValuestring(str_item, str_item->valuestring);
-            (void)ret;
-        }
+    minified = (char *)malloc(input_len + 1);
+    if (minified != NULL) {
+        memcpy(minified, input, input_len + 1);
+        cJSON_Minify(minified);
     }
 
-    ref_item = cJSON_CreateStringReference(input);
-    if (ref_item != NULL) {
-        (void)cJSON_IsString(ref_item);
-        (void)cJSON_GetStringValue(ref_item);
-        if (alt != NULL) {
-            ret = cJSON_SetValuestring(ref_item, alt);
-            (void)ret;
-        }
+    root = cJSON_ParseWithOpts(input, &parse_end, require_null_terminated);
+
+    if (root == NULL && minified != NULL) {
+        const char *parse_end2 = NULL;
+        root = cJSON_ParseWithOpts(minified, &parse_end2, 0);
+        (void)parse_end2;
     }
 
-    obj = cJSON_CreateObject();
-    if (obj != NULL) {
-        const char *obj_key = (key != NULL) ? key : "k";
-        const char *obj_val = (alt != NULL) ? alt : input;
-
-        added = cJSON_AddStringToObject(obj, obj_key, obj_val);
-        if (added != NULL) {
-            (void)cJSON_IsString(added);
-            (void)cJSON_GetStringValue(added);
-
-            ret = cJSON_SetValuestring(added, input);
-            (void)ret;
-
-            if (alt != NULL) {
-                ret = cJSON_SetValuestring(added, alt);
-                (void)ret;
+    if (root != NULL) {
+        printed = cJSON_Print(root);
+        if (printed != NULL) {
+            cJSON *roundtrip = cJSON_ParseWithOpts(printed, &parse_end, 0);
+            if (roundtrip != NULL) {
+                cJSON_Delete(roundtrip);
             }
         }
 
-        (void)cJSON_AddStringToObject(obj, "", input);
-        (void)cJSON_AddStringToObject(obj, obj_key, "");
-        (void)cJSON_AddStringToObject(obj, obj_key, obj_val);
+        printed_unformatted = cJSON_PrintUnformatted(root);
+        if (printed_unformatted != NULL) {
+            cJSON *roundtrip2 = cJSON_ParseWithOpts(printed_unformatted, &parse_end, 1);
+            if (roundtrip2 != NULL) {
+                cJSON_Delete(roundtrip2);
+            }
+        }
+
+        prebuffer = (Size > 2) ? (int)Data[2] : 0;
+        if (Size > 3) {
+            prebuffer |= ((int)Data[3] << 8);
+        }
+        prebuffer &= 0x7fff;
+
+        printed_buffered = cJSON_PrintBuffered(root, prebuffer, format_flag);
+        if (printed_buffered != NULL) {
+            cJSON *roundtrip3 = cJSON_ParseWithOpts(printed_buffered, &parse_end, 0);
+            if (roundtrip3 != NULL) {
+                cJSON_Delete(roundtrip3);
+            }
+        }
+
+        {
+            size_t bufsize = 5;
+            if (printed_unformatted != NULL) {
+                bufsize = strlen(printed_unformatted) + 5;
+            } else if (printed != NULL) {
+                bufsize = strlen(printed) + 5;
+            } else if (Size < 4096) {
+                bufsize = Size + 5;
+            } else {
+                bufsize = 4096 + 5;
+            }
+
+            prebuf = (char *)malloc(bufsize);
+            if (prebuf != NULL) {
+                memset(prebuf, 0, bufsize);
+                (void)cJSON_PrintPreallocated(root, prebuf, clamp_int(bufsize), 0);
+                (void)cJSON_PrintPreallocated(root, prebuf, clamp_int(bufsize), 1);
+
+                if (bufsize > 0) {
+                    (void)cJSON_PrintPreallocated(root, prebuf, 0, 0);
+                    (void)cJSON_PrintPreallocated(root, prebuf, 1, 1);
+                    if (bufsize > 1) {
+                        (void)cJSON_PrintPreallocated(root, prebuf, clamp_int(bufsize / 2), format_flag);
+                    }
+                }
+            }
+        }
     }
 
-    cJSON_Delete(obj);
-    cJSON_Delete(ref_item);
-    cJSON_Delete(str_item);
-
-    free(key);
-    free(alt);
+    free(prebuf);
+    if (printed_buffered != NULL) {
+        cJSON_free(printed_buffered);
+    }
+    if (printed_unformatted != NULL) {
+        cJSON_free(printed_unformatted);
+    }
+    if (printed != NULL) {
+        cJSON_free(printed);
+    }
+    if (root != NULL) {
+        cJSON_Delete(root);
+    }
+    free(minified);
     free(input);
 
     return 0;

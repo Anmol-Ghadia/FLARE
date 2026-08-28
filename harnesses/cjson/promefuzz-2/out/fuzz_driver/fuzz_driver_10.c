@@ -1,13 +1,13 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_Parse at cJSON.c:1227:23 in cJSON.h
+// cJSON_Parse at cJSON.c:1195:23 in cJSON.h
 // cJSON_GetErrorPtr at cJSON.c:94:28 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_IsString at cJSON.c:3032:26 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_GetObjectItemCaseSensitive at cJSON.c:1988:23 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
-// cJSON_IsNumber at cJSON.c:3022:26 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_IsString at cJSON.c:2990:26 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_GetObjectItemCaseSensitive at cJSON.c:1946:23 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
+// cJSON_IsNumber at cJSON.c:2980:26 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -20,42 +20,48 @@
 #include <string.h>
 #include "cJSON.h"
 
-static char *make_nul_terminated(const uint8_t *Data, size_t Size) {
-    char *buf = (char *)malloc(Size + 1);
-    if (buf == NULL) {
-        return NULL;
-    }
-    if (Size > 0) {
-        memcpy(buf, Data, Size);
-    }
-    buf[Size] = '\0';
-    return buf;
-}
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
+{
+    char *input;
+    cJSON *root;
+    const char *errptr;
+    cJSON *item1;
+    cJSON *item2;
+    cJSON *item3;
+    cJSON *item4;
+    cJSON *num1;
+    cJSON *num2;
 
-int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    char *input = make_nul_terminated(Data, Size);
+    input = (char *)malloc(Size + 1);
     if (input == NULL) {
         return 0;
     }
 
-    cJSON *root = cJSON_Parse(input);
+    if (Size > 0) {
+        memcpy(input, Data, Size);
+    }
+    input[Size] = '\0';
 
-    const char *err = cJSON_GetErrorPtr();
-    (void)err;
+    root = cJSON_Parse(input);
+    errptr = cJSON_GetErrorPtr();
 
-    cJSON *item1 = cJSON_GetObjectItemCaseSensitive(root, "name");
-    cJSON_bool is_str = cJSON_IsString(item1);
-    (void)is_str;
+    item1 = cJSON_GetObjectItemCaseSensitive(root, "a");
+    (void)cJSON_IsString(item1);
 
-    cJSON *item2 = cJSON_GetObjectItemCaseSensitive(root, "id");
-    cJSON *item3 = cJSON_GetObjectItemCaseSensitive(root, "value");
-    cJSON *item4 = cJSON_GetObjectItemCaseSensitive(root, "count");
+    item2 = cJSON_GetObjectItemCaseSensitive(root, "b");
+    item3 = cJSON_GetObjectItemCaseSensitive(root, "c");
+    item4 = cJSON_GetObjectItemCaseSensitive(root, input);
 
-    cJSON_bool is_num1 = cJSON_IsNumber(item3);
-    cJSON_bool is_num2 = cJSON_IsNumber(item4);
-    (void)item2;
-    (void)is_num1;
-    (void)is_num2;
+    num1 = item2 ? item2 : root;
+    num2 = item3 ? item3 : item4;
+
+    (void)cJSON_IsNumber(num1);
+    (void)cJSON_IsNumber(num2);
+
+    if (errptr != NULL) {
+        volatile char c = *errptr;
+        (void)c;
+    }
 
     cJSON_Delete(root);
     free(input);

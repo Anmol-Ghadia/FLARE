@@ -1,9 +1,9 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateObject at cJSON.c:2609:23 in cJSON.h
+// cJSON_CreateObject at cJSON.c:2567:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddTrueToObject at cJSON.c:2162:22 in cJSON.h
-// cJSON_AddTrueToObject at cJSON.c:2162:22 in cJSON.h
-// cJSON_AddTrueToObject at cJSON.c:2162:22 in cJSON.h
+// cJSON_AddTrueToObject at cJSON.c:2120:22 in cJSON.h
+// cJSON_AddTrueToObject at cJSON.c:2120:22 in cJSON.h
+// cJSON_AddTrueToObject at cJSON.c:2120:22 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 #include <stdint.h>
 #include <stddef.h>
@@ -14,62 +14,42 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "cJSON.h"
 
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    cJSON *obj;
-    cJSON *item;
-    char *key;
-    size_t key_len;
-
-    obj = cJSON_CreateObject();
-    if (obj == NULL) {
+    cJSON *object = cJSON_CreateObject();
+    if (object == NULL) {
         return 0;
     }
 
-    key_len = Size;
-    key = (char *)malloc(key_len + 1);
+    char *key = (char *)malloc(Size + 1);
     if (key == NULL) {
-        cJSON_Delete(obj);
+        cJSON_Delete(object);
         return 0;
     }
 
     if (Size > 0) {
         memcpy(key, Data, Size);
     }
-    key[key_len] = '\0';
+    key[Size] = '\0';
 
-    item = cJSON_AddTrueToObject(obj, key);
-    (void)item;
+    (void)cJSON_AddTrueToObject(object, key);
 
     if (Size > 0) {
         size_t half = Size / 2;
-        char *key2 = (char *)malloc(half + 1);
-        if (key2 != NULL) {
-            if (half > 0) {
-                memcpy(key2, Data, half);
-            }
-            key2[half] = '\0';
-            item = cJSON_AddTrueToObject(obj, key2);
-            (void)item;
-            free(key2);
-        }
+        key[half] = '\0';
+        (void)cJSON_AddTrueToObject(object, key);
     }
 
     if (Size > 1) {
-        char *key3 = (char *)malloc(Size + 1);
-        if (key3 != NULL) {
-            for (size_t i = 0; i < Size; ++i) {
-                key3[i] = (char)(Data[Size - 1 - i]);
-            }
-            key3[Size] = '\0';
-            item = cJSON_AddTrueToObject(obj, key3);
-            (void)item;
-            free(key3);
-        }
+        char saved = key[0];
+        key[0] = '\0';
+        (void)cJSON_AddTrueToObject(object, key);
+        key[0] = saved;
     }
 
+    cJSON_Delete(object);
     free(key);
-    cJSON_Delete(obj);
     return 0;
 }

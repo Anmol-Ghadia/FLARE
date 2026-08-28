@@ -1,17 +1,17 @@
 // This fuzz driver is generated for library cjson, aiming to fuzz the following functions:
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_CreateArray at cJSON.c:2598:23 in cJSON.h
-// cJSON_AddItemToArray at cJSON.c:2061:26 in cJSON.h
-// cJSON_Duplicate at cJSON.c:2784:23 in cJSON.h
-// cJSON_DetachItemFromArray at cJSON.c:2294:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_CreateArray at cJSON.c:2556:23 in cJSON.h
+// cJSON_AddItemToArray at cJSON.c:2019:26 in cJSON.h
+// cJSON_Duplicate at cJSON.c:2742:23 in cJSON.h
+// cJSON_DetachItemFromArray at cJSON.c:2252:23 in cJSON.h
+// cJSON_DetachItemFromArray at cJSON.c:2252:23 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
 // cJSON_Delete at cJSON.c:253:20 in cJSON.h
@@ -24,7 +24,10 @@
 #include <stddef.h>
 #include "cJSON.h"
 
-int LLVMFuzzerTestOneInput_12(const uint8_t *Data, size_t Size) {
+int LLVMFuzzerTestOneInput_12(const uint8_t *Data, size_t Size)
+{
+    (void)Data;
+
     cJSON *array1 = cJSON_CreateArray();
     cJSON *array2 = cJSON_CreateArray();
     cJSON *array3 = cJSON_CreateArray();
@@ -41,24 +44,21 @@ int LLVMFuzzerTestOneInput_12(const uint8_t *Data, size_t Size) {
     (void)cJSON_AddItemToArray(array1, array2);
     (void)cJSON_AddItemToArray(array1, array3);
 
-    /* Explore an additional state: optionally add a NULL item. */
-    if (Size > 0 && (Data[0] & 1)) {
-        (void)cJSON_AddItemToArray(array1, NULL);
-    } else {
-        cJSON *array4 = cJSON_CreateArray();
-        if (array4 != NULL) {
-            (void)cJSON_AddItemToArray(array1, array4);
-        }
+    cJSON *extra = cJSON_CreateArray();
+    if (extra != NULL) {
+        (void)cJSON_AddItemToArray(array1, extra);
     }
 
-    dup = cJSON_Duplicate(array1, (Size > 1) ? (cJSON_bool)(Data[1] & 1) : 0);
+    dup = cJSON_Duplicate(array1, (Size > 0) ? (Data[0] & 1) : 1);
 
-    {
+    if (dup != NULL) {
         int which = 0;
-        if (Size > 2) {
-            which = (int)((int8_t)Data[2]);
+        if (Size > 1) {
+            which = (int)Data[1];
         }
-        detached = cJSON_DetachItemFromArray(array1, which);
+        detached = cJSON_DetachItemFromArray(dup, which);
+    } else {
+        detached = cJSON_DetachItemFromArray(array1, (Size > 1) ? (int)Data[1] : 0);
     }
 
     cJSON_Delete(detached);
