@@ -1,0 +1,83 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2224937812
+INFO: Loaded 1 modules   (942 inline 8-bit counters): 942 [0x601a5cec7638, 0x601a5cec79e6), 
+INFO: Loaded 1 PC tables (942 PCs): 942 [0x601a5cec79e8,0x601a5cecb4c8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 84 ft: 85 corp: 1/1b exec/s: 0 rss: 32Mb
+
+=================================================================
+==2143724==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 64 byte(s) in 1 object(s) allocated from:
+    #0 0x601a5ce28e13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x106e13) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #1 0x601a5ce6b7b8 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x601a5ce70d7b in cJSON_CreateArray /promefuzz/database/cjson/latest/code/cJSON.c:2600:19
+    #3 0x601a5ce72a75 in cJSON_CreateIntArray /promefuzz/database/cjson/latest/code/cJSON.c:2633:9
+    #4 0x601a5ce67b40 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431.c:77:13
+    #5 0x601a5cd74ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x52ce4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #6 0x601a5cd743d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x523d9) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #7 0x601a5cd76066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x54066) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #8 0x601a5cd76507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x54507) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #9 0x601a5cd639ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x419ff) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #10 0x601a5cd8e086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x6c086) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #11 0x70627ab951c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x70627ab9528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x601a5cd589e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x369e4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+
+Direct leak of 64 byte(s) in 1 object(s) allocated from:
+    #0 0x601a5ce28e13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x106e13) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #1 0x601a5ce6b7b8 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x601a5ce70d7b in cJSON_CreateArray /promefuzz/database/cjson/latest/code/cJSON.c:2600:19
+    #3 0x601a5ce72a75 in cJSON_CreateIntArray /promefuzz/database/cjson/latest/code/cJSON.c:2633:9
+    #4 0x601a5ce67b40 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431.c:77:13
+    #5 0x601a5cd74ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x52ce4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #6 0x601a5cd743d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x523d9) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #7 0x601a5cd75bc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x53bc5) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #8 0x601a5cd76725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x54725) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #9 0x601a5cd639ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x419ff) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #10 0x601a5cd8e086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x6c086) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #11 0x70627ab951c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x70627ab9528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x601a5cd589e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x369e4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+
+Indirect leak of 576 byte(s) in 9 object(s) allocated from:
+    #0 0x601a5ce28e13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x106e13) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #1 0x601a5ce6b7b8 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x601a5ce7033d in cJSON_CreateNumber /promefuzz/database/cjson/latest/code/cJSON.c:2507:19
+    #3 0x601a5ce72b3d in cJSON_CreateIntArray /promefuzz/database/cjson/latest/code/cJSON.c:2637:13
+    #4 0x601a5ce67b40 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431.c:77:13
+    #5 0x601a5cd74ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x52ce4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #6 0x601a5cd743d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x523d9) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #7 0x601a5cd75bc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x53bc5) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #8 0x601a5cd76725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x54725) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #9 0x601a5cd639ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x419ff) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #10 0x601a5cd8e086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x6c086) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #11 0x70627ab951c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x70627ab9528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x601a5cd589e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x369e4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+
+Indirect leak of 576 byte(s) in 9 object(s) allocated from:
+    #0 0x601a5ce28e13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x106e13) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #1 0x601a5ce6b7b8 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x601a5ce7033d in cJSON_CreateNumber /promefuzz/database/cjson/latest/code/cJSON.c:2507:19
+    #3 0x601a5ce72b3d in cJSON_CreateIntArray /promefuzz/database/cjson/latest/code/cJSON.c:2637:13
+    #4 0x601a5ce67b40 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431.c:77:13
+    #5 0x601a5cd74ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x52ce4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #6 0x601a5cd743d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x523d9) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #7 0x601a5cd76066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x54066) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #8 0x601a5cd76507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x54507) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #9 0x601a5cd639ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x419ff) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #10 0x601a5cd8e086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x6c086) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+    #11 0x70627ab951c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x70627ab9528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x601a5cd589e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_8/fuzz_driver_8_sanitizing_1787875431+0x369e4) (BuildId: 096cf13c031d6f46c3b5b8e30b4df4af16e279e8)
+
+SUMMARY: AddressSanitizer: 1280 byte(s) leaked in 20 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 1 ShuffleBytes-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./leak-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==

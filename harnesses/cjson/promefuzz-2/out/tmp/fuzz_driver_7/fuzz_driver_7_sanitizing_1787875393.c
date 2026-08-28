@@ -1,0 +1,118 @@
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cJSON.h"
+
+static char *dup_bytes_as_cstring(const uint8_t *data, size_t len) {
+    char *out = (char *)malloc(len + 1);
+    if (out == NULL) {
+        return NULL;
+    }
+    if (len > 0) {
+        memcpy(out, data, len);
+    }
+    out[len] = '\0';
+    return out;
+}
+
+int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+    size_t p0 = 0, p1 = 0, p2 = 0, p3 = 0;
+    size_t off = 0;
+    char *s0 = NULL, *s1 = NULL, *s2 = NULL, *s3 = NULL;
+    cJSON *str0 = NULL;
+    cJSON *array = NULL;
+    cJSON *str1 = NULL;
+    cJSON *str2 = NULL;
+    cJSON *str3 = NULL;
+    cJSON_Hooks hooks;
+
+    if (Size >= 3) {
+        p0 = Data[0] % (Size - 2);
+        p1 = Data[1] % (Size - 1 - p0);
+        p2 = Data[2] % (Size - 2 - p0 - p1);
+        p3 = Size - 3 - p0 - p1 - p2;
+        off = 3;
+    } else {
+        p0 = Size;
+        p1 = 0;
+        p2 = 0;
+        p3 = 0;
+        off = 0;
+    }
+
+    s0 = dup_bytes_as_cstring(Data + off, p0);
+    s1 = dup_bytes_as_cstring(Data + off + p0, p1);
+    s2 = dup_bytes_as_cstring(Data + off + p0 + p1, p2);
+    s3 = dup_bytes_as_cstring(Data + off + p0 + p1 + p2, p3);
+
+    if (s0 == NULL || s1 == NULL || s2 == NULL || s3 == NULL) {
+        free(s0);
+        free(s1);
+        free(s2);
+        free(s3);
+        return 0;
+    }
+
+    /* Required call order */
+    str0 = cJSON_CreateString(s0);
+    array = cJSON_CreateArray();
+    str1 = cJSON_CreateString(s1);
+    str2 = cJSON_CreateString(s2);
+    str3 = cJSON_CreateString(s3);
+
+    hooks.malloc_fn = NULL;
+    hooks.free_fn = NULL;
+    cJSON_InitHooks(&hooks);
+
+    cJSON_Delete(str0);
+
+    (void)cJSON_GetArraySize(array);
+
+    if (array != NULL && str1 != NULL) {
+        if (!cJSON_AddItemToArray(array, str1)) {
+            cJSON_Delete(str1);
+            str1 = NULL;
+        }
+    } else if (str1 != NULL) {
+        cJSON_Delete(str1);
+        str1 = NULL;
+    }
+
+    if (array != NULL && str2 != NULL) {
+        if (!cJSON_AddItemToArray(array, str2)) {
+            cJSON_Delete(str2);
+            str2 = NULL;
+        }
+    } else if (str2 != NULL) {
+        cJSON_Delete(str2);
+        str2 = NULL;
+    }
+
+    if (array != NULL && str3 != NULL) {
+        if (!cJSON_AddItemToObject(array, s0, str3)) {
+            cJSON_Delete(str3);
+            str3 = NULL;
+        }
+    } else if (str3 != NULL) {
+        cJSON_Delete(str3);
+        str3 = NULL;
+    }
+
+    (void)cJSON_GetArraySize(array);
+
+    cJSON_Delete(array);
+
+    cJSON_InitHooks(NULL);
+
+    free(s0);
+    free(s1);
+    free(s2);
+    free(s3);
+    return 0;
+}

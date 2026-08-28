@@ -1,0 +1,69 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3918812545
+INFO: Loaded 1 modules   (923 inline 8-bit counters): 923 [0x620cd6398738, 0x620cd6398ad3), 
+INFO: Loaded 1 PC tables (923 PCs): 923 [0x620cd6398ad8,0x620cd639c488), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+=================================================================
+==2143654==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000031 at pc 0x620cd6339713 bp 0x7ffd29900c10 sp 0x7ffd29900c08
+WRITE of size 1 at 0x502000000031 thread T0
+    #0 0x620cd6339712 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360.c:63:17
+    #1 0x620cd6245ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x52ce4) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #2 0x620cd6246f11 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x53f11) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #3 0x620cd6247507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x54507) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #4 0x620cd62349ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x419ff) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #5 0x620cd625f086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x6c086) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #6 0x7056d15c71c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #7 0x7056d15c728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #8 0x620cd62299e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x369e4) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+
+0x502000000031 is located 0 bytes after 1-byte region [0x502000000030,0x502000000031)
+allocated by thread T0 here:
+    #0 0x620cd62f9e13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x106e13) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #1 0x620cd6338a4f in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360.c:34:26
+    #2 0x620cd6245ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x52ce4) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #3 0x620cd6246f11 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x53f11) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #4 0x620cd6247507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x54507) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #5 0x620cd62349ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x419ff) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #6 0x620cd625f086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x6c086) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+    #7 0x7056d15c71c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7056d15c728a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x620cd62299e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360+0x369e4) (BuildId: e5eeac6d5d1607e0a3cd8be2b4ba1f141b15297c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787875360.c:63:17 in LLVMFuzzerTestOneInput
+Shadow bytes around the buggy address:
+  0x501ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x502000000000: fa fa 01 fa fa fa[01]fa fa fa 01 fa fa fa 01 fa
+  0x502000000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2143654==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

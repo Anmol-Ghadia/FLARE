@@ -1,0 +1,32 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2900378388
+INFO: Loaded 1 modules   (896 inline 8-bit counters): 896 [0x652d891a5518, 0x652d891a5898), 
+INFO: Loaded 1 PC tables (896 PCs): 896 [0x652d891a5898,0x652d891a9098), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 55 ft: 56 corp: 1/1b exec/s: 0 rss: 32Mb
+#4	NEW    cov: 64 ft: 66 corp: 2/4b lim: 4 exec/s: 0 rss: 32Mb L: 3/3 MS: 2 ShuffleBytes-CMP- DE: "\000\000"-
+/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393.c:38:22: runtime error: division by zero
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393.c:38:22 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2143694==ERROR: AddressSanitizer: FPE on unknown address 0x652d89146b77 (pc 0x652d89146b77 bp 0x7fff95413220 sp 0x7fff95412ea0 T0)
+    #0 0x652d89146b77 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393.c:38:22
+    #1 0x652d89053ce4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x52ce4) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+    #2 0x652d890533d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x523d9) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+    #3 0x652d89054bc5 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x53bc5) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+    #4 0x652d89055725 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x54725) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+    #5 0x652d890429ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x419ff) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+    #6 0x652d8906d086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x6c086) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+    #7 0x78e7a37f51c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x78e7a37f528a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x652d890379e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393+0x369e4) (BuildId: fe530fe25894e1ce87d6eaa48106f64c514cee64)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: FPE /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787875393.c:38:22 in LLVMFuzzerTestOneInput
+==2143694==ABORTING
+MS: 4 InsertByte-CopyPart-CopyPart-ChangeBinInt-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0x0,0x3,0xa,
+\000\003\012
+artifact_prefix='./'; Test unit written to ./crash-b89959c8a3fe95ec7c59d018b2e95d120226adcd
+Base64: AAMK

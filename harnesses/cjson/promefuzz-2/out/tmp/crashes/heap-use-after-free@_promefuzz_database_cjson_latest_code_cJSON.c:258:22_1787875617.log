@@ -1,0 +1,91 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3411844200
+INFO: Loaded 1 modules   (946 inline 8-bit counters): 946 [0x6537649716d8, 0x653764971a8a), 
+INFO: Loaded 1 PC tables (946 PCs): 946 [0x653764971a90,0x6537649755b0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+=================================================================
+==2143933==ERROR: AddressSanitizer: heap-use-after-free on address 0x5060000004a0 at pc 0x653764914364 bp 0x7ffd31d50980 sp 0x7ffd31d50978
+READ of size 8 at 0x5060000004a0 thread T0
+    #0 0x653764914363 in cJSON_Delete /promefuzz/database/cjson/latest/code/cJSON.c:258:22
+    #1 0x65376491235f in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617.c:140:9
+    #2 0x65376481ece4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x52ce4) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #3 0x65376481e3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x523d9) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #4 0x653764820066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x54066) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #5 0x653764820507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x54507) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #6 0x65376480d9ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x419ff) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #7 0x653764838086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x6c086) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #8 0x721b9ff081c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x721b9ff0828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #10 0x6537648029e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x369e4) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+
+0x5060000004a0 is located 0 bytes inside of 64-byte region [0x5060000004a0,0x5060000004e0)
+freed by thread T0 here:
+    #0 0x6537648d2b7a in free (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x106b7a) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #1 0x653764914780 in cJSON_Delete /promefuzz/database/cjson/latest/code/cJSON.c:273:9
+    #2 0x65376491c277 in cJSON_ReplaceItemViaPointer /promefuzz/database/cjson/latest/code/cJSON.c:2412:5
+    #3 0x653764912303 in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617.c:136:18
+    #4 0x65376481ece4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x52ce4) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #5 0x65376481e3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x523d9) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #6 0x653764820066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x54066) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #7 0x653764820507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x54507) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #8 0x65376480d9ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x419ff) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #9 0x653764838086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x6c086) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #10 0x721b9ff081c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x721b9ff0828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x6537648029e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x369e4) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+
+previously allocated by thread T0 here:
+    #0 0x6537648d2e13 in malloc (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x106e13) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #1 0x653764915908 in cJSON_New_Item /promefuzz/database/cjson/latest/code/cJSON.c:243:27
+    #2 0x65376491a284 in cJSON_CreateBool /promefuzz/database/cjson/latest/code/cJSON.c:2496:19
+    #3 0x653764912e7d in make_item_from_byte /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617.c:46:20
+    #4 0x653764911fcd in LLVMFuzzerTestOneInput /promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617.c:124:19
+    #5 0x65376481ece4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x52ce4) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #6 0x65376481e3d9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x523d9) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #7 0x653764820066 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x54066) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #8 0x653764820507 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x54507) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #9 0x65376480d9ff in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x419ff) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #10 0x653764838086 in main (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x6c086) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+    #11 0x721b9ff081c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x721b9ff0828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x6537648029e4 in _start (/promefuzz/database/cjson/latest/out/tmp/fuzz_driver_22/fuzz_driver_22_sanitizing_1787875617+0x369e4) (BuildId: 686094ae60b23b3359f1a9492fb664b834626ccb)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /promefuzz/database/cjson/latest/code/cJSON.c:258:22 in cJSON_Delete
+Shadow bytes around the buggy address:
+  0x506000000200: fd fd fd fd fd fd fd fd fa fa fa fa fd fd fd fd
+  0x506000000280: fd fd fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+  0x506000000300: fa fa fa fa fd fd fd fd fd fd fd fd fa fa fa fa
+  0x506000000380: 00 00 00 00 00 00 00 00 fa fa fa fa fd fd fd fd
+  0x506000000400: fd fd fd fd fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x506000000480: fa fa fa fa[fd]fd fd fd fd fd fd fd fa fa fa fa
+  0x506000000500: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x506000000580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000000600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000000680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x506000000700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2143933==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./crash-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==
