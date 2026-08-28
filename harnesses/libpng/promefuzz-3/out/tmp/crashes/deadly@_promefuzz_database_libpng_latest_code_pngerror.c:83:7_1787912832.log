@@ -1,0 +1,54 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2186266365
+INFO: Loaded 1 modules   (8433 inline 8-bit counters): 8433 [0x59f753410490, 0x59f753412581), 
+INFO: Loaded 1 PC tables (8433 PCs): 8433 [0x59f753412588,0x59f753433498), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 727 ft: 728 corp: 1/1b exec/s: 0 rss: 32Mb
+#4	NEW    cov: 731 ft: 735 corp: 2/3b lim: 4 exec/s: 0 rss: 33Mb L: 2/2 MS: 2 ChangeBit-CrossOver-
+#7	NEW    cov: 746 ft: 783 corp: 3/4b lim: 4 exec/s: 0 rss: 33Mb L: 1/2 MS: 3 CrossOver-CopyPart-ChangeByte-
+#9	NEW    cov: 746 ft: 904 corp: 4/5b lim: 4 exec/s: 0 rss: 33Mb L: 1/2 MS: 2 ChangeBit-ChangeByte-
+#14	NEW    cov: 747 ft: 907 corp: 5/8b lim: 4 exec/s: 0 rss: 33Mb L: 3/3 MS: 5 ShuffleBytes-ChangeBit-ShuffleBytes-CrossOver-InsertByte-
+#22	NEW    cov: 748 ft: 1036 corp: 6/9b lim: 4 exec/s: 0 rss: 34Mb L: 1/3 MS: 3 ChangeBit-ShuffleBytes-ChangeByte-
+	NEW_FUNC[1/65]: 0x59f7532b60a0 in std::vector<std::vector<unsigned char, std::allocator<unsigned char>>, std::allocator<std::vector<unsigned char, std::allocator<unsigned char>>>>::push_back(std::vector<unsigned char, std::allocator<unsigned char>>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1299
+	NEW_FUNC[2/65]: 0x59f7532b61f0 in std::vector<unsigned char, std::allocator<unsigned char>>::vector() /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:531
+#25	NEW    cov: 1170 ft: 1474 corp: 7/11b lim: 4 exec/s: 0 rss: 35Mb L: 2/3 MS: 3 InsertByte-ChangeByte-CrossOver-
+#26	NEW    cov: 1171 ft: 1477 corp: 8/14b lim: 4 exec/s: 0 rss: 35Mb L: 3/3 MS: 1 CrossOver-
+#33	NEW    cov: 1171 ft: 1480 corp: 9/16b lim: 4 exec/s: 0 rss: 35Mb L: 2/3 MS: 2 CopyPart-ChangeByte-
+#59	NEW    cov: 1171 ft: 1699 corp: 10/20b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 1 InsertByte-
+#61	NEW    cov: 1171 ft: 1953 corp: 11/23b lim: 4 exec/s: 0 rss: 36Mb L: 3/4 MS: 2 InsertByte-InsertByte-
+#80	NEW    cov: 1173 ft: 1956 corp: 12/27b lim: 4 exec/s: 0 rss: 36Mb L: 4/4 MS: 4 ChangeByte-InsertByte-InsertByte-CopyPart-
+#103	NEW    cov: 1173 ft: 1958 corp: 13/31b lim: 4 exec/s: 0 rss: 37Mb L: 4/4 MS: 3 ChangeBinInt-CrossOver-InsertByte-
+#128	NEW    cov: 1173 ft: 1959 corp: 14/34b lim: 4 exec/s: 0 rss: 37Mb L: 3/4 MS: 5 ChangeBinInt-ShuffleBytes-ChangeByte-CopyPart-EraseBytes-
+==2204690== ERROR: libFuzzer: deadly signal
+    #0 0x59f753274cc5 in __sanitizer_print_stack_trace (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x153cc5) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #1 0x59f7531ce7dc in fuzzer::PrintStackTrace() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0xad7dc) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #2 0x59f7531b4867 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x93867) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #3 0x78bdb5bf332f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x78bdb5c4cb2b in __pthread_kill_implementation nptl/pthread_kill.c:43:17
+    #5 0x78bdb5c4cb2b in __pthread_kill_internal nptl/pthread_kill.c:78:10
+    #6 0x78bdb5c4cb2b in pthread_kill nptl/pthread_kill.c:89:10
+    #7 0x78bdb5bf327d in raise signal/../sysdeps/posix/raise.c:26:13
+    #8 0x78bdb5bd68fe in abort stdlib/abort.c:79:7
+    #9 0x59f7532ae7e9 in PngErrorFn(png_struct_def*, char const*) /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831.cpp:40:56
+    #10 0x59f7532f3282 in png_error /promefuzz/database/libpng/latest/build_asan/../code/pngerror.c:83:7
+    #11 0x59f7532ddd5b in png_data_freer /promefuzz/database/libpng/latest/build_asan/../code/png.c:467:7
+    #12 0x59f7532adbf1 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831.cpp:210:3
+    #13 0x59f7531b5e34 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x94e34) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #14 0x59f7531b5529 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x94529) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #15 0x59f7531b6d15 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x95d15) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #16 0x59f7531b7875 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x96875) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #17 0x59f7531a4b4f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x83b4f) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #18 0x59f7531cf1d6 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0xae1d6) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+    #19 0x78bdb5bd81c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #20 0x78bdb5bd828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #21 0x59f753199b34 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912831+0x78b34) (BuildId: b25ab13f6e84c28bba3e805314e228c7790b05cd)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 1 CrossOver-; base unit: 0989a48cf9c7e3ff6c3fda2498ef6501f55097bc
+0xe0,0x70,0xe0,0x0,
+\340p\340\000
+artifact_prefix='./'; Test unit written to ./crash-e18db643e1f4f42f61425a7f88e767e310b88e8f
+Base64: 4HDgAA==

@@ -1,0 +1,34 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 830990888
+INFO: Loaded 1 modules   (5775 inline 8-bit counters): 5775 [0x6070134eae48, 0x6070134ec4d7), 
+INFO: Loaded 1 PC tables (5775 PCs): 5775 [0x6070134ec4d8,0x607013502dc8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 95 ft: 96 corp: 1/1b exec/s: 0 rss: 33Mb
+
+=================================================================
+==2204425==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 10612 byte(s) in 1 object(s) allocated from:
+    #0 0x607013381ea3 in malloc (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x12aea3) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #1 0x6070133c9d2b in png_malloc_base /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:95:17
+    #2 0x6070133ca3c2 in png_malloc_warn /promefuzz/database/libpng/latest/build_asan/../code/pngmem.c:217:23
+    #3 0x6070133c2f75 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495.cpp:100:22
+    #4 0x6070132cdd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x76d74) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #5 0x6070132cd469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x76469) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #6 0x6070132cec55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x77c55) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #7 0x6070132cf7b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x787b5) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #8 0x6070132bca8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x65a8f) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #9 0x6070132e7116 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x90116) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+    #10 0x7d6312ab41c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x7d6312ab428a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x6070132b1a74 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_25/fuzz_driver_25_sanitizing_1787912495+0x5aa74) (BuildId: acfd52046976012ee3f6533eb87b06a947c6c58e)
+
+SUMMARY: AddressSanitizer: 10612 byte(s) leaked in 1 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 4 CrossOver-InsertByte-InsertByte-InsertByte-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0x46,0xa,0x29,0x74,
+F\012)t
+artifact_prefix='./'; Test unit written to ./leak-e0fb161d4101fdc52abb24d2a4f2997b743e6d01
+Base64: RgopdA==

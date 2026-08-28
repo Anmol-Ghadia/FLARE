@@ -1,0 +1,128 @@
+{
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:10:11": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:950:1",
+    "calleeName": "png_set_longjmp_fn",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:9:13",
+    "callerName": "PngErrorFn"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:31:7": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:922:1",
+    "calleeName": "png_create_read_struct",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:37:24": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1004:1",
+    "calleeName": "png_create_info_struct",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:39:5": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1416:1",
+    "calleeName": "png_destroy_read_struct",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:44:7": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:950:1",
+    "calleeName": "png_set_longjmp_fn",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:46:5": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1416:1",
+    "calleeName": "png_destroy_read_struct",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:51:3": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1560:1",
+    "calleeName": "png_init_io",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:53:3": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1022:1",
+    "calleeName": "png_read_info",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:63:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:2015:1",
+    "calleeName": "png_get_IHDR",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:65:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:2015:1",
+    "calleeName": "png_get_IHDR",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:67:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:2015:1",
+    "calleeName": "png_get_IHDR",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:70:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1873:1",
+    "calleeName": "png_get_bit_depth",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:71:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1865:1",
+    "calleeName": "png_get_image_width",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:73:29": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1920:1",
+    "calleeName": "png_get_signature",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:79:3": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:2321:1",
+    "calleeName": "png_read_png",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:81:21": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1849:1",
+    "calleeName": "png_get_rows",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:87:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1849:1",
+    "calleeName": "png_get_rows",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:88:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1873:1",
+    "calleeName": "png_get_bit_depth",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:89:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1865:1",
+    "calleeName": "png_get_image_width",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:90:9": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1920:1",
+    "calleeName": "png_get_signature",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:93:3": {
+    "calleeDeclLoc": "/promefuzz/database/libpng/latest/code/png.h:1416:1",
+    "calleeName": "png_destroy_read_struct",
+    "callerDeclLoc": "/promefuzz/database/libpng/latest/out/tmp/postprocessing/postprocessing_56.cpp:16:16",
+    "callerName": "LLVMFuzzerTestOneInput"
+  }
+}

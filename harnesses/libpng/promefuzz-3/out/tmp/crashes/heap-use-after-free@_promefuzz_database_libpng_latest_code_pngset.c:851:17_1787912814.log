@@ -1,0 +1,94 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1409413985
+INFO: Loaded 1 modules   (8001 inline 8-bit counters): 8001 [0x605f4ad40730, 0x605f4ad42671), 
+INFO: Loaded 1 PC tables (8001 PCs): 8001 [0x605f4ad42678,0x605f4ad61a88), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+=================================================================
+==2204683==ERROR: AddressSanitizer: heap-use-after-free on address 0x5030000000b0 at pc 0x605f4ab1f98f bp 0x7ffdb05bc5d0 sp 0x7ffdb05bbd98
+READ of size 1 at 0x5030000000b0 thread T0
+    #0 0x605f4ab1f98e in strlen (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0xc098e) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #1 0x605f4aca53bb in png_set_text_2 /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:851:17
+    #2 0x605f4aca4b00 in png_set_text /promefuzz/database/libpng/latest/build_asan/../code/pngset.c:766:10
+    #3 0x605f4abe502a in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813.cpp:124:5
+    #4 0x605f4aaeee24 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x8fe24) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #5 0x605f4aaee519 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x8f519) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #6 0x605f4aaf01a6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x911a6) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #7 0x605f4aaf0647 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x91647) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #8 0x605f4aaddb3f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x7eb3f) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #9 0x605f4ab081c6 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0xa91c6) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #10 0x77dde4f281c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x77dde4f2828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x605f4aad2b24 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x73b24) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+
+0x5030000000b0 is located 16 bytes inside of 32-byte region [0x5030000000a0,0x5030000000c0)
+freed by thread T0 here:
+    #0 0x605f4abe1dd1 in operator delete(void*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x182dd1) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #1 0x605f4aae1737 in void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>&&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x82737) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #2 0x605f4abf1bea in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>& std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::emplace_back<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:123:4
+    #3 0x605f4abe7c26 in std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1299:9
+    #4 0x605f4abe4020 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813.cpp:74:15
+    #5 0x605f4aaeee24 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x8fe24) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #6 0x605f4aaee519 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x8f519) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #7 0x605f4aaf01a6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x911a6) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #8 0x605f4aaf0647 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x91647) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #9 0x605f4aaddb3f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x7eb3f) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #10 0x605f4ab081c6 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0xa91c6) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #11 0x77dde4f281c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x77dde4f2828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x605f4aad2b24 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x73b24) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+
+previously allocated by thread T0 here:
+    #0 0x605f4abe1551 in operator new(unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x182551) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #1 0x605f4aae15b9 in void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>&&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x825b9) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #2 0x605f4abf1bea in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>& std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::emplace_back<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:123:4
+    #3 0x605f4abe7c26 in std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1299:9
+    #4 0x605f4abe4020 in LLVMFuzzerTestOneInput /promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813.cpp:74:15
+    #5 0x605f4aaeee24 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x8fe24) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #6 0x605f4aaee519 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x8f519) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #7 0x605f4aaf01a6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x911a6) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #8 0x605f4aaf0647 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x91647) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #9 0x605f4aaddb3f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x7eb3f) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #10 0x605f4ab081c6 in main (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0xa91c6) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+    #11 0x77dde4f281c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #12 0x77dde4f2828a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #13 0x605f4aad2b24 in _start (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0x73b24) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f)
+
+SUMMARY: AddressSanitizer: heap-use-after-free (/promefuzz/database/libpng/latest/out/tmp/fuzz_driver_38/fuzz_driver_38_sanitizing_1787912813+0xc098e) (BuildId: 6d117f3e6585dcc54e704b4155bf438e2cbcc23f) in strlen
+Shadow bytes around the buggy address:
+  0x502ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x502fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x503000000000: fa fa 00 00 00 fa fa fa 00 00 00 00 fa fa 00 00
+=>0x503000000080: 00 fa fa fa fd fd[fd]fd fa fa fd fd fd fd fa fa
+  0x503000000100: fd fd fd fd fa fa fd fd fd fd fa fa fa fa fa fa
+  0x503000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x503000000300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2204683==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+0xa,
+\012
+artifact_prefix='./'; Test unit written to ./crash-adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+Base64: Cg==

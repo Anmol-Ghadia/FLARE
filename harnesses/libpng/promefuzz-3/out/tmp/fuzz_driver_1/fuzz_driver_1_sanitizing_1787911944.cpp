@@ -1,0 +1,94 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <cstdint>
+#include <cstddef>
+#include <png.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <stdio.h>
+#include <vector>
+
+static void PngReadCallback(png_structp png_ptr, png_bytep outBytes, png_size_t byteCountToRead) {
+  png_voidp io_ptr = png_get_io_ptr(png_ptr);
+  if (io_ptr == NULL) {
+    png_error(png_ptr, "No IO ptr");
+    return;
+  }
+
+  FILE* fp = static_cast<FILE*>(io_ptr);
+  if (byteCountToRead == 0) return;
+
+  size_t n = fread(outBytes, 1, byteCountToRead, fp);
+  if (n != byteCountToRead) {
+    png_error(png_ptr, "Read error");
+  }
+}
+
+extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+  FILE* fp = fopen("./dummy_file", "wb");
+  if (fp == NULL) {
+    return 0;
+  }
+  if (Size > 0) {
+    fwrite(Data, 1, Size, fp);
+  }
+  fclose(fp);
+
+  fp = fopen("./dummy_file", "rb");
+  if (fp == NULL) {
+    return 0;
+  }
+
+  png_structp png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+  if (png_ptr == NULL) {
+    fclose(fp);
+    return 0;
+  }
+
+  png_infop info_ptr = png_create_info_struct(png_ptr);
+  png_infop end_info_ptr = png_create_info_struct(png_ptr);
+  if (info_ptr == NULL || end_info_ptr == NULL) {
+    png_destroy_read_struct(&png_ptr, info_ptr ? &info_ptr : NULL,
+                            end_info_ptr ? &end_info_ptr : NULL);
+    fclose(fp);
+    return 0;
+  }
+
+  if (setjmp(png_jmpbuf(png_ptr))) {
+    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info_ptr);
+    fclose(fp);
+    return 0;
+  }
+
+  png_set_read_fn(png_ptr, fp, PngReadCallback);
+  png_read_info(png_ptr, info_ptr);
+
+  png_read_update_info(png_ptr, info_ptr);
+
+  size_t rowbytes = png_get_rowbytes(png_ptr, info_ptr);
+  if (rowbytes == 0) {
+    rowbytes = 1;
+  }
+
+  png_bytep row = static_cast<png_bytep>(png_malloc(png_ptr, rowbytes));
+
+  png_uint_32 height = png_get_image_height(png_ptr, info_ptr);
+  if (height > 4096) {
+    height = 4096;
+  }
+
+  for (png_uint_32 y = 0; y < height; ++y) {
+    png_read_row(png_ptr, row, NULL);
+  }
+
+  png_read_end(png_ptr, end_info_ptr);
+  png_destroy_read_struct(&png_ptr, &info_ptr, &end_info_ptr);
+  fclose(fp);
+  return 0;
+}
