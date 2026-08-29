@@ -1,0 +1,18 @@
+2026-08-28T21:43:35.363390+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260828214335_._PromeFuzz.py_-F_database_rapidcsv_latest_lib.toml_preprocess.log
+2026-08-28T21:43:35.365783+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 1 source files.
+2026-08-28T21:43:36.263966+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 1 source files.
+2026-08-28T21:43:36.268451+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-28T21:43:36.276128+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 35 functions
+2026-08-28T21:43:36.276801+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 50 API functions extracted, dumped to /promefuzz/database/rapidcsv/latest/out/preprocessor/api.pkl
+2026-08-28T21:43:36.277076+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/rapidcsv/latest/out/preprocessor/sources.json
+2026-08-28T21:43:36.277225+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-28T21:43:37.059260+0000 | ThreadPoolExecutor-3_0 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/rapidcsv/latest/code/src/rapidcsv.cpp.
+2026-08-28T21:43:37.061034+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/rapidcsv/latest/out/preprocessor/incidentals.pkl
+2026-08-28T21:43:37.061260+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-28T21:43:44.225044+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/rapidcsv/latest/out/preprocessor/call_order.pkl
+2026-08-28T21:43:44.225289+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-28T21:43:44.312771+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/rapidcsv/latest/out/preprocessor/info.pkl
+2026-08-28T21:43:44.312983+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-28T21:43:44.313407+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/rapidcsv/latest/out/preprocessor/complexity.pkl
+2026-08-28T21:43:44.313569+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-28T21:43:44.348264+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/rapidcsv/latest/out/preprocessor/*_relev.pkl

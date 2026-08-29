@@ -1,0 +1,38 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2725373370
+INFO: Loaded 1 modules   (3671 inline 8-bit counters): 3671 [0x569b6200a508, 0x569b6200b35f), 
+INFO: Loaded 1 PC tables (3671 PCs): 3671 [0x569b6200b360,0x569b620198d0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  invalid column name index -4 < -1
+==78147== ERROR: libFuzzer: deadly signal
+    #0 0x569b61f342e5 in __sanitizer_print_stack_trace (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x1342e5) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #1 0x569b61e8ddfc in fuzzer::PrintStackTrace() (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x8ddfc) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #2 0x569b61e73e87 in fuzzer::Fuzzer::CrashCallback() (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x73e87) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #3 0x7ba238bd232f  (/lib/x86_64-linux-gnu/libc.so.6+0x4532f) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7ba238c2bb2b in pthread_kill (/lib/x86_64-linux-gnu/libc.so.6+0x9eb2b) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x7ba238bd227d in raise (/lib/x86_64-linux-gnu/libc.so.6+0x4527d) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #6 0x7ba238bb58fe in abort (/lib/x86_64-linux-gnu/libc.so.6+0x288fe) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #7 0x7ba238f6eff4  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xa5ff4) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #8 0x7ba238f840d9  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xbb0d9) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #9 0x7ba238f6ea54 in std::terminate() (/lib/x86_64-linux-gnu/libstdc++.so.6+0xa5a54) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #10 0x7ba238f84390 in __cxa_throw (/lib/x86_64-linux-gnu/libstdc++.so.6+0xbb390) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #11 0x569b61f6ebdc in rapidcsv::LabelParams::LabelParams(int, int) /promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:360:9
+    #12 0x569b61f6c66f in LLVMFuzzerTestOneInput /promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599.cpp:65:25
+    #13 0x569b61e75454 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x75454) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #14 0x569b61e76681 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x76681) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #15 0x569b61e76c77 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x76c77) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #16 0x569b61e6416f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x6416f) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #17 0x569b61e8e7f6 in main (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x8e7f6) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+    #18 0x7ba238bb71c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #19 0x7ba238bb728a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #20 0x569b61e59154 in _start (/promefuzz/database/rapidcsv/latest/out/tmp/fuzz_driver_5/fuzz_driver_5_sanitizing_1787953599+0x59154) (BuildId: 970dd4c82e17c2b8934c5bfed6fc7ed524b10c2b)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

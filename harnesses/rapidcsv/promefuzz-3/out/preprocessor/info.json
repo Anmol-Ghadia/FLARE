@@ -1,0 +1,1080 @@
+{
+    "function_infos": {
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1008:20": {
+            "signature": "/**\n     * @brief   Get row by name.\n     * @param   pRowName              row label name.\n     * @param   pToVal                conversion function.\n     * @returns vector of row data.\n     */\ntemplate<typename T>\n    std::vector<T> GetRow(const std::string& pRowName, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1008:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1016:5"
+            ],
+            "name": "rapidcsv::Document::GetRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1008:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:498:14": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pPath                 specifies the path of an existing CSV-file to populate the Document\n     *                                data with.\n     * @param   pLabelParams          specifies which row and column should be treated as labels.\n     * @param   pSeparatorParams      specifies which field and row separators should be used.\n     * @param   pConverterParams      specifies how invalid numbers (including empty strings) should be\n     *                                handled.\n     * @param   pLineReaderParams     specifies how special line formats should be treated.\n     */\nexplicit Document(const std::string& pPath = std::string(),\n                      const LabelParams& pLabelParams = LabelParams(),\n                      const SeparatorParams& pSeparatorParams = SeparatorParams(),\n                      const ConverterParams& pConverterParams = ConverterParams(),\n                      const LineReaderParams& pLineReaderParams = LineReaderParams())\n      : mPath(pPath)\n      , mLabelParams(pLabelParams)\n      , mSeparatorParams(pSeparatorParams)\n      , mConverterParams(pConverterParams)\n      , mLineReaderParams(pLineReaderParams)\n      , mData()\n      , mColumnNames()\n      , mRowNames();",
+            "used_composites": [
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)",
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:498:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:516:5"
+            ],
+            "name": "rapidcsv::Document::Document",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:498:14"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:352:14": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pColumnNameIdx        specifies the zero-based row index of the column labels, setting\n     *                                it to -1 prevents column lookup by label name, and gives access\n     *                                to all rows as document data. Default: 0\n     * @param   pRowNameIdx           specifies the zero-based column index of the row labels, setting\n     *                                it to -1 prevents row lookup by label name, and gives access\n     *                                to all columns as document data. Default: -1\n     */\nexplicit LabelParams(const int pColumnNameIdx = 0, const int pRowNameIdx = -1)\n      : mColumnNameIdx(pColumnNameIdx)\n      , mRowNameIdx(pRowNameIdx);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::LabelParams",
+            "related_class": [
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:352:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:369:5"
+            ],
+            "name": "rapidcsv::LabelParams::LabelParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:352:14"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:400:14": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pSeparator            specifies the column separator (default ',').\n     * @param   pTrim                 specifies whether to trim leading and trailing spaces from\n     *                                cells read (default false).\n     * @param   pHasCR                specifies whether a new document (i.e. not an existing document read)\n     *                                should use CR/LF instead of only LF (default is to use standard\n     *                                behavior of underlying platforms - CR/LF for Win, and LF for others).\n     * @param   pQuotedLinebreaks     specifies whether to allow line breaks in quoted text (default false)\n     * @param   pAutoQuote            specifies whether to automatically dequote data during read, and add\n     *                                quotes during write (default true).\n     * @param   pQuoteChar            specifies the quote character (default '\\\"').\n     */\nexplicit SeparatorParams(const char pSeparator = ',', const bool pTrim = false,\n                             const bool pHasCR = sPlatformHasCR, const bool pQuotedLinebreaks = false,\n                             const bool pAutoQuote = true, const char pQuoteChar = '\"')\n      : mSeparator(pSeparator)\n      , mTrim(pTrim)\n      , mHasCR(pHasCR)\n      , mQuotedLinebreaks(pQuotedLinebreaks)\n      , mAutoQuote(pAutoQuote)\n      , mQuoteChar(pQuoteChar);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::SeparatorParams",
+            "related_class": [
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:400:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:410:5"
+            ],
+            "name": "rapidcsv::SeparatorParams::SeparatorParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:400:14"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:58:14": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pHasDefaultConverter  specifies if conversion of non-numerical strings shall be\n     *                                converted to a default numerical value, instead of causing\n     *                                an exception to be thrown (default).\n     * @param   pDefaultFloat         floating-point default value to represent invalid numbers.\n     * @param   pDefaultInteger       integer default value to represent invalid numbers.\n     * @param   pNumericLocale        specifies whether to honor LC_NUMERIC locale (default\n     *                                true).\n     */\nexplicit ConverterParams(const bool pHasDefaultConverter = false,\n                             const long double pDefaultFloat = std::numeric_limits<long double>::signaling_NaN(),\n                             const long long pDefaultInteger = 0,\n                             const bool pNumericLocale = true)\n      : mHasDefaultConverter(pHasDefaultConverter)\n      , mDefaultFloat(pDefaultFloat)\n      , mDefaultInteger(pDefaultInteger)\n      , mNumericLocale(pNumericLocale);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::ConverterParams",
+            "related_class": [
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:58:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:67:5"
+            ],
+            "name": "rapidcsv::ConverterParams::ConverterParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:58:14"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:457:14": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pSkipCommentLines     specifies whether to skip lines prefixed with\n     *                                mCommentPrefix. Default: false\n     * @param   pCommentPrefix        specifies which prefix character to indicate a comment\n     *                                line. Default: #\n     * @param   pSkipEmptyLines       specifies whether to skip empty lines. Default: false\n     */\nexplicit LineReaderParams(const bool pSkipCommentLines = false,\n                              const char pCommentPrefix = '#',\n                              const bool pSkipEmptyLines = false)\n      : mSkipCommentLines(pSkipCommentLines)\n      , mCommentPrefix(pCommentPrefix)\n      , mSkipEmptyLines(pSkipEmptyLines);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::LineReaderParams",
+            "related_class": [
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:457:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:464:5"
+            ],
+            "name": "rapidcsv::LineReaderParams::LineReaderParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:457:14"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:527:14": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pStream               specifies a binary input stream to read CSV data from.\n     * @param   pLabelParams          specifies which row and column should be treated as labels.\n     * @param   pSeparatorParams      specifies which field and row separators should be used.\n     * @param   pConverterParams      specifies how invalid numbers (including empty strings) should be\n     *                                handled.\n     * @param   pLineReaderParams     specifies how special line formats should be treated.\n     */\nexplicit Document(std::istream& pStream,\n                      const LabelParams& pLabelParams = LabelParams(),\n                      const SeparatorParams& pSeparatorParams = SeparatorParams(),\n                      const ConverterParams& pConverterParams = ConverterParams(),\n                      const LineReaderParams& pLineReaderParams = LineReaderParams())\n      : mPath()\n      , mLabelParams(pLabelParams)\n      , mSeparatorParams(pSeparatorParams)\n      , mConverterParams(pConverterParams)\n      , mLineReaderParams(pLineReaderParams)\n      , mData()\n      , mColumnNames()\n      , mRowNames();",
+            "used_composites": [
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)",
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:527:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:542:5"
+            ],
+            "name": "rapidcsv::Document::Document",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:527:14"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1024:10": {
+            "signature": "/**\n     * @brief   Set row by index.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pRow                  vector of row data.\n     */\ntemplate<typename T>\n    void SetRow(const size_t pRowIdx, const std::vector<T>& pRow);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1024:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1054:5"
+            ],
+            "name": "rapidcsv::Document::SetRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1024:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:102:17": {
+            "signature": "/**\n     * @brief   Provides details about the exception\n     * @returns an explanatory string\n     */\nconst char* what() const throw() override;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::no_converter",
+            "related_class": [
+                "rapidcsv::no_converter (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:95:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:102:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:105:5"
+            ],
+            "name": "rapidcsv::no_converter::what",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:102:17"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1062:10": {
+            "signature": "/**\n     * @brief   Set row by name.\n     * @param   pRowName              row label name.\n     * @param   pRow                  vector of row data.\n     */\ntemplate<typename T>\n    void SetRow(const std::string& pRowName, const std::vector<T>& pRow);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1062:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1070:5"
+            ],
+            "name": "rapidcsv::Document::SetRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1062:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1076:10": {
+            "signature": "/**\n     * @brief   Remove row by index.\n     * @param   pRowIdx               zero-based row index.\n     */\nvoid RemoveRow(const size_t pRowIdx);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1076:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1091:5"
+            ],
+            "name": "rapidcsv::Document::RemoveRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1076:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1097:10": {
+            "signature": "/**\n     * @brief   Remove row by name.\n     * @param   pRowName              row label name.\n     */\nvoid RemoveRow(const std::string& pRowName);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1097:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1106:5"
+            ],
+            "name": "rapidcsv::Document::RemoveRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1097:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1115:10": {
+            "signature": "/**\n     * @brief   Insert row at specified index.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pRow                  vector of row data (optional argument).\n     * @param   pRowName              row label name (optional argument).\n     */\ntemplate<typename T>\n    void InsertRow(const size_t pRowIdx, const std::vector<T>& pRow = std::vector<T>(),\n                   const std::string& pRowName = std::string());",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1115:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1152:5"
+            ],
+            "name": "rapidcsv::Document::InsertRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1115:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1158:12": {
+            "signature": "/**\n     * @brief   Get number of data rows (excluding label rows).\n     * @returns row count.\n     */\nsize_t GetRowCount() const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1158:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1163:5"
+            ],
+            "name": "rapidcsv::Document::GetRowCount",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1158:12"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1172:7": {
+            "signature": "/**\n     * @brief   Get cell by index.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pRowIdx               zero-based row index.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const size_t pColumnIdx, const size_t pRowIdx) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1172:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1181:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1172:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1191:7": {
+            "signature": "/**\n     * @brief   Get cell by index.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pToVal                conversion function.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const size_t pColumnIdx, const size_t pRowIdx, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1191:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1199:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1191:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1208:7": {
+            "signature": "/**\n     * @brief   Get cell by name.\n     * @param   pColumnName           column label name.\n     * @param   pRowName              row label name.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const std::string& pColumnName, const std::string& pRowName) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1208:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1223:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1208:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1233:7": {
+            "signature": "/**\n     * @brief   Get cell by name.\n     * @param   pColumnName           column label name.\n     * @param   pRowName              row label name.\n     * @param   pToVal                conversion function.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const std::string& pColumnName, const std::string& pRowName, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1233:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1248:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1233:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1257:7": {
+            "signature": "/**\n     * @brief   Get cell by column name and row index.\n     * @param   pColumnName           column label name.\n     * @param   pRowIdx               zero-based row index.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const std::string& pColumnName, const size_t pRowIdx) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1257:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1266:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1257:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1276:7": {
+            "signature": "/**\n     * @brief   Get cell by column name and row index.\n     * @param   pColumnName           column label name.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pToVal                conversion function.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const std::string& pColumnName, const size_t pRowIdx, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1276:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1285:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1276:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1294:7": {
+            "signature": "/**\n     * @brief   Get cell by column index and row name.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pRowName              row label name.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const size_t pColumnIdx, const std::string& pRowName) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1294:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1303:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1294:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1313:7": {
+            "signature": "/**\n     * @brief   Get cell by column index and row name.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pRowName              row label name.\n     * @param   pToVal                conversion function.\n     * @returns cell data.\n     */\ntemplate<typename T>\n    T GetCell(const size_t pColumnIdx, const std::string& pRowName, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1313:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1322:5"
+            ],
+            "name": "rapidcsv::Document::GetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1313:7"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:132:10": {
+            "signature": "/**\n     * @brief   Converts numerical value to string representation.\n     * @param   pVal                  numerical value\n     * @param   pStr                  output string\n     */\nvoid ToStr(const T& pVal, std::string& pStr) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Converter",
+            "related_class": [
+                "rapidcsv::Converter (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:132:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:177:5"
+            ],
+            "name": "rapidcsv::Converter::ToStr",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:132:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:122:5": {
+            "signature": "/**\n     * @brief   Constructor\n     * @param   pConverterParams      specifies how conversion of non-numerical values to\n     *                                numerical datatype shall be handled.\n     */\nConverter(const ConverterParams& pConverterParams)\n      : mConverterParams(pConverterParams);",
+            "used_composites": [
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)"
+            ],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Converter",
+            "related_class": [
+                "rapidcsv::Converter (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:122:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:125:5"
+            ],
+            "name": "rapidcsv::Converter::Converter<T>",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:122:5"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1331:10": {
+            "signature": "/**\n     * @brief   Set cell by index.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pCell                 cell data.\n     */\ntemplate<typename T>\n    void SetCell(const size_t pColumnIdx, const size_t pRowIdx, const T& pCell);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1331:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1358:5"
+            ],
+            "name": "rapidcsv::Document::SetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1331:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1367:10": {
+            "signature": "/**\n     * @brief   Set cell by name.\n     * @param   pColumnName           column label name.\n     * @param   pRowName              row label name.\n     * @param   pCell                 cell data.\n     */\ntemplate<typename T>\n    void SetCell(const std::string& pColumnName, const std::string& pRowName, const T& pCell);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1367:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1382:5"
+            ],
+            "name": "rapidcsv::Document::SetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1367:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1391:10": {
+            "signature": "/**\n     * @brief   Set cell by column index and row name.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pRowName              row label name.\n     * @param   pCell                 cell data.\n     */\ntemplate<typename T>\n    void SetCell(const size_t pColumnIdx, const std::string& pRowName, const T& pCell);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1391:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1400:5"
+            ],
+            "name": "rapidcsv::Document::SetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1391:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1409:10": {
+            "signature": "/**\n     * @brief   Set cell by column name and row index.\n     * @param   pColumnName           column label name.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pCell                 cell data.\n     */\ntemplate<typename T>\n    void SetCell(const std::string& pColumnName, const size_t pRowIdx, const T& pCell);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1409:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1418:5"
+            ],
+            "name": "rapidcsv::Document::SetCell",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1409:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1425:17": {
+            "signature": "/**\n     * @brief   Get column name\n     * @param   pColumnIdx            zero-based column index.\n     * @returns column name.\n     */\nstd::string GetColumnName(const size_t pColumnIdx) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1425:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1434:5"
+            ],
+            "name": "rapidcsv::Document::GetColumnName",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1425:17"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1441:10": {
+            "signature": "/**\n     * @brief   Set column name\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pColumnName           column name.\n     */\nvoid SetColumnName(size_t pColumnIdx, const std::string& pColumnName);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1441:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1473:5"
+            ],
+            "name": "rapidcsv::Document::SetColumnName",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1441:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1479:30": {
+            "signature": "/**\n     * @brief   Get column names\n     * @returns vector of column names.\n     */\nstd::vector<std::string> GetColumnNames() const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1479:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1492:5"
+            ],
+            "name": "rapidcsv::Document::GetColumnNames",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1479:30"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1499:17": {
+            "signature": "/**\n     * @brief   Get row name\n     * @param   pRowIdx               zero-based column index.\n     * @returns row name.\n     */\nstd::string GetRowName(const size_t pRowIdx) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1499:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1508:5"
+            ],
+            "name": "rapidcsv::Document::GetRowName",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1499:17"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1515:10": {
+            "signature": "/**\n     * @brief   Set row name\n     * @param   pRowIdx               zero-based row index.\n     * @param   pRowName              row name.\n     */\nvoid SetRowName(size_t pRowIdx, const std::string& pRowName);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1515:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1545:5"
+            ],
+            "name": "rapidcsv::Document::SetRowName",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1515:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1551:30": {
+            "signature": "/**\n     * @brief   Get row names\n     * @returns vector of row names.\n     */\nstd::vector<std::string> GetRowNames() const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1551:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1565:5"
+            ],
+            "name": "rapidcsv::Document::GetRowNames",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:1551:30"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:184:10": {
+            "signature": "/**\n     * @brief   Converts string holding a numerical value to numerical datatype representation.\n     * @param   pVal                  numerical value\n     * @param   pStr                  output string\n     */\nvoid ToVal(const std::string& pStr, T& pVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Converter",
+            "related_class": [
+                "rapidcsv::Converter (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:184:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:306:5"
+            ],
+            "name": "rapidcsv::Converter::ToVal",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:184:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:318:39": {
+            "signature": "/**\n     * @brief   Converts numerical value to string representation.\n     * @param   pVal                  numerical value\n     * @param   pStr                  output string\n     */\nvoid ToStr(const T& pVal, std::string& pStr) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Converter",
+            "related_class": [
+                "rapidcsv::Converter (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:132:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:177:5"
+            ],
+            "name": "rapidcsv::Converter<std::basic_string<char>>::ToStr",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:318:39"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:329:39": {
+            "signature": "/**\n     * @brief   Converts string holding a numerical value to numerical datatype representation.\n     * @param   pVal                  numerical value\n     * @param   pStr                  output string\n     */\nvoid ToVal(const std::string& pStr, T& pVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Converter",
+            "related_class": [
+                "rapidcsv::Converter (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:184:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:306:5"
+            ],
+            "name": "rapidcsv::Converter<std::basic_string<char>>::ToVal",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:329:39"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:554:10": {
+            "signature": "/**\n     * @brief   Read Document data from file.\n     * @param   pPath                 specifies the path of an existing CSV-file to populate the Document\n     *                                data with.\n     * @param   pLabelParams          specifies which row and column should be treated as labels.\n     * @param   pSeparatorParams      specifies which field and row separators should be used.\n     * @param   pConverterParams      specifies how invalid numbers (including empty strings) should be\n     *                                handled.\n     * @param   pLineReaderParams     specifies how special line formats should be treated.\n     */\nvoid Load(const std::string& pPath,\n              const LabelParams& pLabelParams = LabelParams(),\n              const SeparatorParams& pSeparatorParams = SeparatorParams(),\n              const ConverterParams& pConverterParams = ConverterParams(),\n              const LineReaderParams& pLineReaderParams = LineReaderParams());",
+            "used_composites": [
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)",
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:554:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:566:5"
+            ],
+            "name": "rapidcsv::Document::Load",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:554:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:577:10": {
+            "signature": "/**\n     * @brief   Read Document data from stream.\n     * @param   pStream               specifies a binary input stream to read CSV data from.\n     * @param   pLabelParams          specifies which row and column should be treated as labels.\n     * @param   pSeparatorParams      specifies which field and row separators should be used.\n     * @param   pConverterParams      specifies how invalid numbers (including empty strings) should be\n     *                                handled.\n     * @param   pLineReaderParams     specifies how special line formats should be treated.\n     */\nvoid Load(std::istream& pStream,\n              const LabelParams& pLabelParams = LabelParams(),\n              const SeparatorParams& pSeparatorParams = SeparatorParams(),\n              const ConverterParams& pConverterParams = ConverterParams(),\n              const LineReaderParams& pLineReaderParams = LineReaderParams());",
+            "used_composites": [
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)",
+                "rapidcsv::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10)",
+                "rapidcsv::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10)",
+                "rapidcsv::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10)",
+                "rapidcsv::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:577:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:589:5"
+            ],
+            "name": "rapidcsv::Document::Load",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:577:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:597:10": {
+            "signature": "/**\n     * @brief   Write Document data to file.\n     * @param   pPath                 optionally specifies the path where the CSV-file will be created\n     *                                (if not specified, the original path provided when creating or\n     *                                loading the Document data will be used).\n     */\nvoid Save(const std::string& pPath = std::string());",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:597:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:604:5"
+            ],
+            "name": "rapidcsv::Document::Save",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:597:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:610:10": {
+            "signature": "/**\n     * @brief   Write Document data to stream.\n     * @param   pStream               specifies a binary output stream to write the data to.\n     */\nvoid Save(std::ostream& pStream) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:610:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:613:5"
+            ],
+            "name": "rapidcsv::Document::Save",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:610:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:619:10": {
+            "signature": "/**\n     * @brief   Clears loaded Document data.\n     *\n     */\nvoid Clear();",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:619:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:627:5"
+            ],
+            "name": "rapidcsv::Document::Clear",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:619:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:636:9": {
+            "signature": "/**\n     * @brief   Get column index by name. The result is undefined if the document contains\n     *          multiple columns sharing the same label name. Column indices exceeding\n     *          INT_MAX are not supported.\n     * @param   pColumnName           column label name.\n     * @returns zero-based column index.\n     */\nint GetColumnIdx(const std::string& pColumnName) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:636:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:646:5"
+            ],
+            "name": "rapidcsv::Document::GetColumnIdx",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:636:9"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:654:20": {
+            "signature": "/**\n     * @brief   Get column by index.\n     * @param   pColumnIdx            zero-based column index.\n     * @returns vector of column data.\n     */\ntemplate<typename T>\n    std::vector<T> GetColumn(const size_t pColumnIdx) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:654:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:682:5"
+            ],
+            "name": "rapidcsv::Document::GetColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:654:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:691:20": {
+            "signature": "/**\n     * @brief   Get column by index.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pToVal                conversion function.\n     * @returns vector of column data.\n     */\ntemplate<typename T>\n    std::vector<T> GetColumn(const size_t pColumnIdx, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:691:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:705:5"
+            ],
+            "name": "rapidcsv::Document::GetColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:691:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:713:20": {
+            "signature": "/**\n     * @brief   Get column by name.\n     * @param   pColumnName           column label name.\n     * @returns vector of column data.\n     */\ntemplate<typename T>\n    std::vector<T> GetColumn(const std::string& pColumnName) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:713:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:721:5"
+            ],
+            "name": "rapidcsv::Document::GetColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:713:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:730:20": {
+            "signature": "/**\n     * @brief   Get column by name.\n     * @param   pColumnName           column label name.\n     * @param   pToVal                conversion function.\n     * @returns vector of column data.\n     */\ntemplate<typename T>\n    std::vector<T> GetColumn(const std::string& pColumnName, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:730:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:738:5"
+            ],
+            "name": "rapidcsv::Document::GetColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:730:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:746:10": {
+            "signature": "/**\n     * @brief   Set column by index.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pColumn               vector of column data.\n     */\ntemplate<typename T>\n    void SetColumn(const size_t pColumnIdx, const std::vector<T>& pColumn);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:746:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:776:5"
+            ],
+            "name": "rapidcsv::Document::SetColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:746:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:784:10": {
+            "signature": "/**\n     * @brief   Set column by name.\n     * @param   pColumnName           column label name.\n     * @param   pColumn               vector of column data.\n     */\ntemplate<typename T>\n    void SetColumn(const std::string& pColumnName, const std::vector<T>& pColumn);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:784:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:792:5"
+            ],
+            "name": "rapidcsv::Document::SetColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:784:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:798:10": {
+            "signature": "/**\n     * @brief   Remove column by index.\n     * @param   pColumnIdx            zero-based column index.\n     */\nvoid RemoveColumn(const size_t pColumnIdx);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:798:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:821:5"
+            ],
+            "name": "rapidcsv::Document::RemoveColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:798:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:827:10": {
+            "signature": "/**\n     * @brief   Remove column by name.\n     * @param   pColumnName           column label name.\n     */\nvoid RemoveColumn(const std::string& pColumnName);",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:827:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:836:5"
+            ],
+            "name": "rapidcsv::Document::RemoveColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:827:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:845:10": {
+            "signature": "/**\n     * @brief   Insert column at specified index.\n     * @param   pColumnIdx            zero-based column index.\n     * @param   pColumn               vector of column data (optional argument).\n     * @param   pColumnName           column label name (optional argument).\n     */\ntemplate<typename T>\n    void InsertColumn(const size_t pColumnIdx, const std::vector<T>& pColumn = std::vector<T>(),\n                      const std::string& pColumnName = std::string());",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:845:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:904:5"
+            ],
+            "name": "rapidcsv::Document::InsertColumn",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:845:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:910:12": {
+            "signature": "/**\n     * @brief   Get number of data columns (excluding label columns).\n     * @returns column count.\n     */\nsize_t GetColumnCount() const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:910:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:917:5"
+            ],
+            "name": "rapidcsv::Document::GetColumnCount",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:910:12"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:926:9": {
+            "signature": "/**\n     * @brief   Get row index by name. The result is undefined if the document contains\n     *          multiple rows sharing the same label name. Row indices exceeding INT_MAX\n     *          are not supported.\n     * @param   pRowName              row label name.\n     * @returns zero-based row index.\n     */\nint GetRowIdx(const std::string& pRowName) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:926:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:936:5"
+            ],
+            "name": "rapidcsv::Document::GetRowIdx",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:926:9"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:944:20": {
+            "signature": "/**\n     * @brief   Get row by index.\n     * @param   pRowIdx               zero-based row index.\n     * @returns vector of row data.\n     */\ntemplate<typename T>\n    std::vector<T> GetRow(const size_t pRowIdx) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:944:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:959:5"
+            ],
+            "name": "rapidcsv::Document::GetRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:944:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:968:20": {
+            "signature": "/**\n     * @brief   Get row by index.\n     * @param   pRowIdx               zero-based row index.\n     * @param   pToVal                conversion function.\n     * @returns vector of row data.\n     */\ntemplate<typename T>\n    std::vector<T> GetRow(const size_t pRowIdx, ConvFunc<T> pToVal) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:968:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:983:5"
+            ],
+            "name": "rapidcsv::Document::GetRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:968:20"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:991:20": {
+            "signature": "/**\n     * @brief   Get row by name.\n     * @param   pRowName              row label name.\n     * @returns vector of row data.\n     */\ntemplate<typename T>\n    std::vector<T> GetRow(const std::string& pRowName) const;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "rapidcsv::Document",
+            "related_class": [
+                "rapidcsv::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:991:5",
+                "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:999:5"
+            ],
+            "name": "rapidcsv::Document::GetRow",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:991:20"
+        }
+    },
+    "composite_infos": {
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10": {
+            "definition": "/**\n   * @brief     Datastructure holding parameters controlling which row and column should be\n   *            treated as labels.\n   */\nstruct LabelParams{\n/**\n     * @brief   specifies the zero-based row index of the column labels.\n     */\nint mColumnNameIdx;\n// ... methods are omitted\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "related_class": [],
+            "kind": "struct",
+            "name": "rapidcsv::LabelParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10": {
+            "definition": "/**\n   * @brief     Datastructure holding parameters controlling how the CSV data fields are separated.\n   */\nstruct SeparatorParams{\n/**\n     * @brief   specifies the column separator.\n     */\nchar mSeparator;\n/**\n     * @brief   specifies whether to trim leading and trailing spaces from cells read.\n     */\nbool mTrim;\n// ... methods are omitted\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "related_class": [],
+            "kind": "struct",
+            "name": "rapidcsv::SeparatorParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10": {
+            "definition": "/**\n   * @brief     Datastructure holding parameters controlling how invalid numbers (including\n   *            empty strings) should be handled.\n   */\nstruct ConverterParams{\n/**\n     * @brief   specifies if conversion of non-numerical strings shall be converted to a default\n     *          numerical value, instead of causing an exception to be thrown (default).\n     */\nbool mHasDefaultConverter;\n/**\n     * @brief   floating-point default value to represent invalid numbers.\n     */\nlong double mDefaultFloat;\n/**\n     * @brief   integer default value to represent invalid numbers.\n     */\nlong long mDefaultInteger;\n// ... methods are omitted\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "related_class": [],
+            "kind": "struct",
+            "name": "rapidcsv::ConverterParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10": {
+            "definition": "/**\n   * @brief     Datastructure holding parameters controlling how special line formats should be\n   *            treated.\n   */\nstruct LineReaderParams{\n/**\n     * @brief   specifies whether to skip lines prefixed with mCommentPrefix.\n     */\nbool mSkipCommentLines;\n/**\n     * @brief   specifies which prefix character to indicate a comment line.\n     */\nchar mCommentPrefix;\n// ... methods are omitted\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "related_class": [],
+            "kind": "struct",
+            "name": "rapidcsv::LineReaderParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10"
+        }
+    },
+    "class_infos": {
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9": {
+            "constructor": [
+                "rapidcsv::Document::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:498:14)",
+                "rapidcsv::Document::Document (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:527:14)"
+            ],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::Document",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:485:9"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10": {
+            "constructor": [
+                "rapidcsv::LabelParams::LabelParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:352:14)"
+            ],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::LabelParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:341:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10": {
+            "constructor": [
+                "rapidcsv::SeparatorParams::SeparatorParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:400:14)"
+            ],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::SeparatorParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:385:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10": {
+            "constructor": [
+                "rapidcsv::ConverterParams::ConverterParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:58:14)"
+            ],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::ConverterParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:46:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10": {
+            "constructor": [
+                "rapidcsv::LineReaderParams::LineReaderParams (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:457:14)"
+            ],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::LineReaderParams",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:447:10"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:95:9": {
+            "constructor": [],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::no_converter",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:95:9"
+        },
+        "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9": {
+            "constructor": [
+                "rapidcsv::Converter::Converter<T> (/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:122:5)"
+            ],
+            "heldby_namespace": "rapidcsv",
+            "heldby_class": "",
+            "is_abstract": false,
+            "abc_derived": [],
+            "name": "rapidcsv::Converter",
+            "location": "/promefuzz/database/rapidcsv/latest/code/src/rapidcsv.h:114:9"
+        }
+    },
+    "typedef_infos": {}
+}
