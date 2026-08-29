@@ -1,0 +1,17 @@
+[liblhasa]
+language = "c"
+compile_commands_path = "database/liblhasa/latest/build_asan/compile_commands.json"
+document_paths = ["database/liblhasa/latest/code/README.md"]
+document_has_api_usage = false
+output_path = "database/liblhasa/latest/out"
+header_paths = [
+	"database/liblhasa/latest/code/lib/public/lha_file_header.h",
+	"database/liblhasa/latest/code/lib/public/lha_reader.h",
+	"database/liblhasa/latest/code/lib/public/Makefile",
+	"database/liblhasa/latest/code/lib/public/lhasa.h",
+	"database/liblhasa/latest/code/lib/public/lha_input_stream.h",
+	"database/liblhasa/latest/code/lib/public/lha_decoder.h"
+]
+driver_build_args = ["database/liblhasa/latest/bin_asan/lib/liblhasa.a"]
+consumer_case_paths = ["database/liblhasa/latest/code/tests"]
+

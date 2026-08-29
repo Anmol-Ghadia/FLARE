@@ -1,0 +1,55 @@
+[preprocessor]
+
+[comprehender]
+embedding_llm = "text-embed-3-lrg"
+comprehension_llm = "gpt-4o-mini"
+
+[generator]
+generation_llm = "gpt-4-1"
+
+[generator.schedule_weights]
+type_relevance = 2
+call_scope_relevance = 3
+semantic_relevance = 5
+coverage = 3
+relevance = 1
+
+[analyzer]
+analysis_llm = "gpt-4-1"
+
+[llm]
+default_llm = "gpt-4-1"
+validate_llm = true
+enable_log = true
+
+[llm.gpt-4-1]
+llm_type = "openai"
+model = "gpt-5.4-2026-03-05"
+base_url = "https://api.openai.com/v1/"
+api_key = "API_KEY"
+temperature = 0.5
+max_tokens = -1
+timeout = 80
+retry_times = 3
+
+[llm.gpt-4o-mini]
+llm_type = "openai"
+model = "gpt-5.4-mini-2026-03-17"
+base_url = "https://api.openai.com/v1/"
+api_key = "API_KEY"
+temperature = 0.5
+max_tokens = -1
+timeout = 80
+retry_times = 3
+
+[llm.text-embed-3-lrg]
+llm_type = "openai"
+model = "text-embedding-3-large"
+base_url = "https://api.openai.com/v1/"
+api_key = "API_KEY"
+temperature = 0.5
+max_tokens = -1
+timeout = 80
+retry_times = 3
+
+[bin]

@@ -1,0 +1,64 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3691719129
+INFO: Loaded 1 modules   (1572 inline 8-bit counters): 1572 [0x5dcc5c0f1a40, 0x5dcc5c0f2064), 
+INFO: Loaded 1 PC tables (1572 PCs): 1572 [0x5dcc5c0f2068,0x5dcc5c0f82a8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+=================================================================
+==2292427==ERROR: AddressSanitizer: global-buffer-overflow on address 0x5dcc5c0be330 at pc 0x5dcc5c0805c8 bp 0x7ffcc7b90400 sp 0x7ffcc7b903f8
+READ of size 4 at 0x5dcc5c0be330 thread T0
+    #0 0x5dcc5c0805c7 in lha_input_stream_read /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:201:14
+    #1 0x5dcc5c07855e in lha_file_header_read /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_file_header.c:954:7
+    #2 0x5dcc5c08271a in lha_basic_reader_next_file /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_basic_reader.c:90:22
+    #3 0x5dcc5c070791 in lha_reader_next_file /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_reader.c:310:3
+    #4 0x5dcc5c06f7e5 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429.c:45:30
+    #5 0x5dcc5bf7cd74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429+0x57d74) (BuildId: 68658dcc7f633629e235b523ef1aa06db21ca9ad)
+    #6 0x5dcc5bf7dfa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429+0x58fa1) (BuildId: 68658dcc7f633629e235b523ef1aa06db21ca9ad)
+    #7 0x5dcc5bf7e597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429+0x59597) (BuildId: 68658dcc7f633629e235b523ef1aa06db21ca9ad)
+    #8 0x5dcc5bf6ba8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429+0x46a8f) (BuildId: 68658dcc7f633629e235b523ef1aa06db21ca9ad)
+    #9 0x5dcc5bf96116 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429+0x71116) (BuildId: 68658dcc7f633629e235b523ef1aa06db21ca9ad)
+    #10 0x7c9059dac1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x7c9059dac28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x5dcc5bf60a74 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429+0x3ba74) (BuildId: 68658dcc7f633629e235b523ef1aa06db21ca9ad)
+
+0x5dcc5c0be330 is located 16 bytes before global variable '.str.1' defined in '/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429.c:31' (0x5dcc5c0be340) of size 3
+  '.str.1' is ascii string 'wb'
+0x5dcc5c0be330 is located 3 bytes after global variable '.str' defined in '/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_23/fuzz_driver_23_sanitizing_1787995429.c:31' (0x5dcc5c0be320) of size 13
+  '.str' is ascii string './dummy_file'
+SUMMARY: AddressSanitizer: global-buffer-overflow /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:201:14 in lha_input_stream_read
+Shadow bytes around the buggy address:
+  0x5dcc5c0be080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x5dcc5c0be100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x5dcc5c0be180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x5dcc5c0be200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x5dcc5c0be280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x5dcc5c0be300: 00 00 00 00 00 05[f9]f9 03 f9 f9 f9 00 00 00 00
+  0x5dcc5c0be380: 00 00 00 00 00 00 00 00 00 00 04 f9 f9 f9 f9 f9
+  0x5dcc5c0be400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x5dcc5c0be480: 06 f9 f9 f9 00 00 00 00 00 00 00 00 03 f9 f9 f9
+  0x5dcc5c0be500: 00 00 00 00 06 f9 f9 f9 06 f9 f9 f9 06 f9 f9 f9
+  0x5dcc5c0be580: 06 f9 f9 f9 06 f9 f9 f9 06 f9 f9 f9 06 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2292427==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

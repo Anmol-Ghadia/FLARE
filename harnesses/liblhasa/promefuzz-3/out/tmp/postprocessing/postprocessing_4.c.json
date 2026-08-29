@@ -1,0 +1,80 @@
+{
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:22:30": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:108:17",
+    "calleeName": "lha_input_stream_from",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:21:13",
+    "callerName": "exercise_from_filename"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:24:29": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:119:12",
+    "calleeName": "lha_reader_new",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:21:13",
+    "callerName": "exercise_from_filename"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:26:13": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:127:6",
+    "calleeName": "lha_reader_free",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:21:13",
+    "callerName": "exercise_from_filename"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:28:9": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:127:6",
+    "calleeName": "lha_input_stream_free",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:21:13",
+    "callerName": "exercise_from_filename"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:38:30": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:119:17",
+    "calleeName": "lha_input_stream_from_FILE",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:32:13",
+    "callerName": "exercise_from_FILE_owned_by_caller"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:40:29": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:119:12",
+    "calleeName": "lha_reader_new",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:32:13",
+    "callerName": "exercise_from_FILE_owned_by_caller"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:42:13": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:127:6",
+    "calleeName": "lha_reader_free",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:32:13",
+    "callerName": "exercise_from_FILE_owned_by_caller"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:44:9": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:127:6",
+    "calleeName": "lha_input_stream_free",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:32:13",
+    "callerName": "exercise_from_FILE_owned_by_caller"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:61:5": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:10:13",
+    "calleeName": "write_dummy_file",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:60:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:63:5": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:21:13",
+    "calleeName": "exercise_from_filename",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:60:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:66:9": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:32:13",
+    "calleeName": "exercise_from_FILE_owned_by_caller",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:60:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:70:9": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:50:13",
+    "calleeName": "exercise_manual_stream_new",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:60:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  },
+  "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:74:9": {
+    "calleeDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:21:13",
+    "calleeName": "exercise_from_filename",
+    "callerDeclLoc": "/promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_4.c:60:5",
+    "callerName": "LLVMFuzzerTestOneInput"
+  }
+}

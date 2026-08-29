@@ -1,0 +1,451 @@
+{
+    "function_infos": {
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:125:23": {
+            "signature": "\nconst LHADecoderType *lha_decoder_for_name(const char *name);",
+            "used_composites": [
+                "struct _LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:26:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:55:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:125:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:138:1"
+            ],
+            "name": "lha_decoder_for_name",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:125:23"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:140:6": {
+            "signature": "\nvoid lha_decoder_free(LHADecoder *decoder);",
+            "used_composites": [
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:140:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:147:1"
+            ],
+            "name": "lha_decoder_free",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:140:6"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:171:6": {
+            "signature": "\nvoid lha_decoder_monitor(LHADecoder *decoder,\n                         LHADecoderProgressCallback callback,\n                         void *callback_data);",
+            "used_composites": [
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:171:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:197:1"
+            ],
+            "name": "lha_decoder_monitor",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:171:6"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:199:8": {
+            "signature": "\nsize_t lha_decoder_read(LHADecoder *decoder, uint8_t *buf, size_t buf_len);",
+            "used_composites": [
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:199:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:275:1"
+            ],
+            "name": "lha_decoder_read",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:199:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:277:10": {
+            "signature": "\nuint16_t lha_decoder_get_crc(LHADecoder *decoder);",
+            "used_composites": [
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:277:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:280:1"
+            ],
+            "name": "lha_decoder_get_crc",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:277:10"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:295:10": {
+            "signature": "\nuint64_t lha_decoder_get_length(LHADecoder *decoder);",
+            "used_composites": [
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:295:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:298:1"
+            ],
+            "name": "lha_decoder_get_length64",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:295:10"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:71:13": {
+            "signature": "\nLHADecoder *lha_decoder_new(const LHADecoderType *dtype,\n                            LHADecoderCallback callback,\n                            void *callback_data,\n                            uint64_t stream_length);",
+            "used_composites": [
+                "struct _LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:26:8)",
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:55:32)",
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:71:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:112:1"
+            ],
+            "name": "lha_decoder_new64",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:71:13"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:177:12": {
+            "signature": "\nLHAReader *lha_reader_new(LHAInputStream *stream);",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)",
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32)",
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:177:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:205:1"
+            ],
+            "name": "lha_reader_new",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:177:12"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:207:6": {
+            "signature": "\nvoid lha_reader_free(LHAReader *reader);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:207:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:225:1"
+            ],
+            "name": "lha_reader_free",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:207:6"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:227:6": {
+            "signature": "\nvoid lha_reader_set_dir_policy(LHAReader *reader,\n                               LHAReaderDirPolicy policy);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)",
+                "LHAReaderDirPolicy (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:109:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:227:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:231:1"
+            ],
+            "name": "lha_reader_set_dir_policy",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:227:6"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:292:16": {
+            "signature": "\nLHAFileHeader *lha_reader_next_file(LHAReader *reader);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)",
+                "struct _LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)",
+                "LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:268:3)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:292:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:349:1"
+            ],
+            "name": "lha_reader_next_file",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:292:16"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:351:8": {
+            "signature": "\nsize_t lha_reader_read(LHAReader *reader, void *buf, size_t buf_len);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:351:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:365:1"
+            ],
+            "name": "lha_reader_read",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:351:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:406:5": {
+            "signature": "\nint lha_reader_check(LHAReader *reader,\n                     LHADecoderProgressCallback callback,\n                     void *callback_data);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:406:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:425:1"
+            ],
+            "name": "lha_reader_check",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:406:5"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:852:5": {
+            "signature": "\nint lha_reader_extract(LHAReader *reader,\n                       char *filename,\n                       LHADecoderProgressCallback callback,\n                       void *callback_data);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:852:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:879:1"
+            ],
+            "name": "lha_reader_extract",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:852:5"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:881:5": {
+            "signature": "\nint lha_reader_current_is_fake(LHAReader *reader);",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [
+                "LHAReader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:881:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:885:1"
+            ],
+            "name": "lha_reader_current_is_fake",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:881:5"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:381:17": {
+            "signature": "\nLHAInputStream *lha_input_stream_from(char *filename);",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)"
+            ],
+            "used_typedefs": [
+                "LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:381:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:399:1"
+            ],
+            "name": "lha_input_stream_from",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:381:17"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:401:17": {
+            "signature": "\nLHAInputStream *lha_input_stream_from_FILE(FILE *stream);",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)"
+            ],
+            "used_typedefs": [
+                "LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:401:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:405:1"
+            ],
+            "name": "lha_input_stream_from_FILE",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:401:17"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:62:17": {
+            "signature": "\nLHAInputStream *lha_input_stream_new(const LHAInputStreamType *type,\n                                     void *handle);",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)"
+            ],
+            "used_typedefs": [
+                "LHAInputStreamType (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:85:3)",
+                "LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:62:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:79:1"
+            ],
+            "name": "lha_input_stream_new",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:62:17"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:81:6": {
+            "signature": "\nvoid lha_input_stream_free(LHAInputStream *stream);",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)"
+            ],
+            "used_typedefs": [
+                "LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32)"
+            ],
+            "impl_range": [
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:81:1",
+                "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:90:1"
+            ],
+            "name": "lha_input_stream_free",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:81:6"
+        }
+    },
+    "composite_infos": {
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:26:8": {
+            "definition": "\nstruct _LHADecoderType {\n\n\t/**\n\t * Callback function to initialize the decoder.\n\t *\n\t * @param extra_data     Pointer to the extra data area allocated for\n\t *                       the decoder.\n\t * @param callback       Callback function to invoke to read more\n\t *                       compressed data.\n\t * @param callback_data  Extra pointer to pass to the callback.\n\t * @return               Non-zero for success.\n\t */\n\n\tint (*init)(void *extra_data,\n\t            LHADecoderCallback callback,\n\t            void *callback_data);\n\n\t/**\n\t * Callback function to free the decoder.\n\t *\n\t * @param extra_data     Pointer to the extra data area allocated for\n\t *                       the decoder.\n\t */\n\n\tvoid (*free)(void *extra_data);\n\n\t/**\n\t * Callback function to read (ie. decompress) data from the\n\t * decoder.\n\t *\n\t * @param extra_data     Pointer to the decoder's custom data.\n\t * @param buf            Pointer to the buffer in which to store\n\t *                       the decompressed data.  The buffer is\n\t *                       at least 'max_read' bytes in size.\n\t * @return               Number of bytes decompressed.\n\t */\n\n\tsize_t (*read)(void *extra_data, uint8_t *buf);\n\n\t/** Number of bytes of extra data to allocate for the decoder. */\n\n\tsize_t extra_size;\n\n\t/** Maximum number of bytes that might be put into the buffer by\n\t    a single call to read() */\n\n\tsize_t max_read;\n\n\t/** Block size. Used for calculating number of blocks for\n\t    progress bar. */\n\n\tsize_t block_size;\n};",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "struct _LHADecoderType",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:26:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8": {
+            "definition": "\nstruct _LHADecoder {\n\n\t/** Type of decoder (algorithm) */\n\n\tconst LHADecoderType *dtype;\n\n\t/** Callback function to monitor decoder progress. */\n\n\tLHADecoderProgressCallback progress_callback;\n\tvoid *progress_callback_data;\n\n\t/** Size of blocks for progress callback. This is usually but not\n\t    always equal to dtype->block_size. */\n\tunsigned int block_size;\n\n\t/** Last announced block position, for progress callback. */\n\n\tunsigned int last_block, total_blocks;\n\n\t/** Current position in the decode stream, and total length. */\n\n\tuint64_t stream_pos, stream_length;\n\n\t/** Output buffer, containing decoded data not yet returned. */\n\n\tunsigned int outbuf_pos, outbuf_len;\n\tuint8_t *outbuf;\n\n\t/** If true, the decoder read() function returned zero. */\n\n\tunsigned int decoder_failed;\n\n\t/** Current CRC of the output stream. */\n\n\tuint16_t crc;\n};",
+            "used_composites": [
+                "struct _LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:26:8)"
+            ],
+            "used_typedefs": [
+                "LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:55:32)"
+            ],
+            "name": "struct _LHADecoder",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8": {
+            "definition": "\nstruct _LHAInputStream {\n\tconst LHAInputStreamType *type;\n\tvoid *handle;\n\tLHAInputStreamState state;\n\tuint8_t leadin[LEADIN_BUFFER_LEN];\n\tsize_t leadin_len;\n};",
+            "used_composites": [],
+            "used_typedefs": [
+                "LHAInputStreamType (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:85:3)",
+                "LHAInputStreamState (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:52:3)"
+            ],
+            "name": "struct _LHAInputStream",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8": {
+            "definition": "\nstruct _LHAReader {\n\tLHABasicReader *reader;\n\n\t// The current file that we are processing (last file returned\n\t// by lha_reader_next_file).\n\n\tLHAFileHeader *curr_file;\n\tCurrFileType curr_file_type;\n\n\t// Pointer to decoder being used to decompress the current file,\n\t// or NULL if we have not yet started decompression.\n\n\tLHADecoder *decoder;\n\n\t// Pointer to \"inner\" decoder. Most of the time,\n\t// decoder == inner_decoder, but when decoding an archive\n\t// generated by MacLHA, inner_decoder points to the actual\n\t// decompressor.\n\n\tLHADecoder *inner_decoder;\n\n\t// Policy used to extract directories.\n\n\tLHAReaderDirPolicy dir_policy;\n\n\t// Directories that have been created by lha_reader_extract but\n\t// have not yet had their metadata set. This is a linked list\n\t// using the _next field in LHAFileHeader.\n\t// In the case of LHA_READER_DIR_END_OF_DIR this is a stack;\n\t// in the case of LHA_READER_DIR_END_OF_FILE it is a list.\n\n\tLHAFileHeader *dir_stack;\n\n\t// Symbolic links containing absolute paths or '..' are not\n\t// created immediately - instead, \"placeholder\" files are created\n\t// in their place, and the symbolic links created at the end\n\t// of extraction.\n\n\tLHAFileHeader *deferred_symlinks;\n};",
+            "used_composites": [
+                "struct _LHABasicReader (/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.c:30:8)",
+                "struct _LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16)",
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [
+                "LHABasicReader (/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.h:36:32)",
+                "LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:268:3)",
+                "CurrFileType (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:55:3)",
+                "LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28)",
+                "LHAReaderDirPolicy (/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:109:3)"
+            ],
+            "name": "struct _LHAReader",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.c:30:8": {
+            "definition": "\nstruct _LHABasicReader {\n\tLHAInputStream *stream;\n\tLHAFileHeader *curr_file;\n\tsize_t curr_file_remaining;\n\tint eof;\n};",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)",
+                "struct _LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16)"
+            ],
+            "used_typedefs": [
+                "LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32)",
+                "LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:268:3)"
+            ],
+            "name": "struct _LHABasicReader",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.c:30:8"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16": {
+            "definition": "/**\n * Structure containing a decoded LZH file header.\n *\n * A file header precedes the compressed data of each file stored\n * within an LZH archive. It contains the name of the file, and\n * various additional metadata, some of which is optional, and\n * can depend on the header format, the tool used to create the\n * archive, and the operating system on which it was created.\n */\nstruct _LHAFileHeader {\n\n\t// Internal fields, do not touch!\n\n\tunsigned int _refcount;\n\tstruct _LHAFileHeader *_next;\n\n\t/**\n\t * Stored path, with Unix-style ('/') path separators.\n\t *\n\t * This may be NULL, although if this is a directory\n\t * (@ref LHA_COMPRESS_TYPE_DIR), it is never NULL.\n\t */\n\tchar *path;\n\n\t/**\n\t * File name.\n\t *\n\t * This is never NULL, except if this is a directory\n\t * (@ref LHA_COMPRESS_TYPE_DIR), where it is always NULL.\n\t */\n\tchar *filename;\n\n\t/**\n\t * Target for symbolic link.\n\t *\n\t * This is NULL unless this header represents a symbolic link\n\t * (@ref LHA_COMPRESS_TYPE_DIR).\n\t */\n\tchar *symlink_target;\n\n\t/**\n\t * Compression method.\n\t *\n\t * If the header represents a directory or a symbolic link, the\n\t * compression method is equal to @ref LHA_COMPRESS_TYPE_DIR.\n\t */\n\tchar compress_method[6];\n\n\t/* Deprecated old version of the compressed_length field, retained\n\t * for ABI compatibility. */\n\tsize_t _old_compressed_length;\n\n\t/* Deprecated old version of the length field, retained for ABI\n\t * compatibility. */\n\tsize_t _old_length;\n\n\t/** LZH header format used to store this header. */\n\tuint8_t header_level;\n\n\t/**\n\t * OS type indicator, identifying the OS on which\n\t * the archive was created.\n\t */\n\tuint8_t os_type;\n\n\t/** CRC-16 checksum of the compressed data. */\n\tuint16_t crc;\n\n\t/** Unix timestamp of the modification time of the file. */\n\tunsigned int timestamp;\n\n\t/** Pointer to a buffer containing the raw header data. */\n\tuint8_t *raw_data;\n\n\t/** Length of the raw header data. */\n\tsize_t raw_data_len;\n\n\t/**\n\t * Flags bitfield identifying extra data decoded from extended\n\t * headers.\n\t */\n\tunsigned int extra_flags;\n\n\t/** Unix permissions, set if @ref LHA_FILE_UNIX_PERMS is set. */\n\tunsigned int unix_perms;\n\n\t/** Unix user ID, set if @ref LHA_FILE_UNIX_UID_GID is set. */\n\tunsigned int unix_uid;\n\n\t/** Unix group ID, set if @ref LHA_FILE_UNIX_UID_GID is set. */\n\tunsigned int unix_gid;\n\n\t/** OS-9 permissions, set if @ref LHA_FILE_OS9_PERMS is set. */\n\tunsigned int os9_perms;\n\n\t/** Unix username. */\n\tchar *unix_username;\n\n\t/** Unix group name. */\n\tchar *unix_group;\n\n\t/** 16-bit CRC of header contents. */\n\tuint16_t common_crc;\n\n\t/**\n\t * Windows FILETIME file creation time, set if\n\t * @ref LHA_FILE_WINDOWS_TIMESTAMPS is set.\n\t */\n\tuint64_t win_creation_time;\n\n\t/**\n\t * Windows FILETIME file modification time, set if\n\t * @ref LHA_FILE_WINDOWS_TIMESTAMPS is set.\n\t */\n\tuint64_t win_modification_time;\n\n\t/**\n\t * Windows FILETIME file access time, set if\n\t * @ref LHA_FILE_WINDOWS_TIMESTAMPS is set.\n\t */\n\tuint64_t win_access_time;\n\n\t/** Length of the compressed data. */\n\tuint64_t compressed_length;\n\n\t/** Length of the uncompressed data. */\n\tuint64_t length;\n\n} LHAFileHeader;",
+            "used_composites": [
+                "struct _LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16)"
+            ],
+            "used_typedefs": [],
+            "name": "struct _LHAFileHeader",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16"
+        }
+    },
+    "class_infos": {},
+    "typedef_infos": {
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:55:32": {
+            "definition": "\ntypedef struct _LHADecoderType LHADecoderType;",
+            "used_composites": [
+                "struct _LHADecoderType (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:26:8)"
+            ],
+            "used_typedefs": [],
+            "name": "LHADecoderType",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:55:32"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28": {
+            "definition": "\ntypedef struct _LHADecoder LHADecoder;",
+            "used_composites": [
+                "struct _LHADecoder (/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.h:80:8)"
+            ],
+            "used_typedefs": [],
+            "name": "LHADecoder",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:28"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:85:3": {
+            "definition": "\ntypedef struct LHAInputStreamType;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "LHAInputStreamType",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:85:3"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:52:3": {
+            "definition": "\ntypedef enum LHAInputStreamState;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "LHAInputStreamState",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:52:3"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32": {
+            "definition": "\ntypedef struct _LHAInputStream LHAInputStream;",
+            "used_composites": [
+                "struct _LHAInputStream (/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:54:8)"
+            ],
+            "used_typedefs": [],
+            "name": "LHAInputStream",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:45:32"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:268:3": {
+            "definition": "/**\n * Structure containing a decoded LZH file header.\n *\n * A file header precedes the compressed data of each file stored\n * within an LZH archive. It contains the name of the file, and\n * various additional metadata, some of which is optional, and\n * can depend on the header format, the tool used to create the\n * archive, and the operating system on which it was created.\n */\ntypedef struct _LHAFileHeader LHAFileHeader;",
+            "used_composites": [
+                "struct _LHAFileHeader (/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:149:16)"
+            ],
+            "used_typedefs": [],
+            "name": "LHAFileHeader",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_file_header.h:268:3"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.h:36:32": {
+            "definition": "\ntypedef struct _LHABasicReader LHABasicReader;",
+            "used_composites": [
+                "struct _LHABasicReader (/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.c:30:8)"
+            ],
+            "used_typedefs": [],
+            "name": "LHABasicReader",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.h:36:32"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:55:3": {
+            "definition": "\ntypedef enum CurrFileType;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "CurrFileType",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:55:3"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:109:3": {
+            "definition": "\ntypedef enum LHAReaderDirPolicy;",
+            "used_composites": [],
+            "used_typedefs": [],
+            "name": "LHAReaderDirPolicy",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:109:3"
+        },
+        "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27": {
+            "definition": "\ntypedef struct _LHAReader LHAReader;",
+            "used_composites": [
+                "struct _LHAReader (/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:57:8)"
+            ],
+            "used_typedefs": [],
+            "name": "LHAReader",
+            "location": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:27"
+        }
+    }
+}
