@@ -1,0 +1,425 @@
+2026-08-28T22:57:42.340963+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260828225742_._PromeFuzz.py_-F_database_sqlite3_latest_lib.toml_preprocess.log
+2026-08-28T22:57:42.343381+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 1 source files.
+2026-08-28T22:57:44.071107+0000 | ThreadPoolExecutor-2_0 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/sqlite3/latest/code/sqlite3.c: 
+Warning: Record sqlite3_stmt has no definition
+Warning: Record sqlite3_blob has no definition
+Warning: Record sqlite3_pcache has no definition
+Warning: Record Fts5Context has no definition
+Warning: Record Fts5Tokenizer has no definition
+Warning: Record KeyClass has no definition
+Warning: Record CCurHint has no definition
+
+2026-08-28T22:57:44.099502+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 1 source files.
+2026-08-28T22:57:44.209656+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-28T22:57:44.456878+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 0 functions
+2026-08-28T22:57:44.459185+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 279 API functions extracted, dumped to /promefuzz/database/sqlite3/latest/out/preprocessor/api.pkl
+2026-08-28T22:57:44.459473+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/sqlite3/latest/out/preprocessor/sources.json
+2026-08-28T22:57:44.459626+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-28T22:57:45.926506+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/sqlite3/latest/out/preprocessor/incidentals.pkl
+2026-08-28T22:57:45.926752+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-28T22:57:45.960050+0000 | ThreadPoolExecutor-4_2 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:55:3: error: unknown type name 'sqlite3'
+   55 |   sqlite3 *db, 
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:64:5: error: call to undeclared function 'sqlite3_wal_checkpoint_v2'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   64 |     sqlite3_wal_checkpoint_v2(db, zDb, p->eMode, 0, 0);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:66:10: error: use of undeclared identifier 'SQLITE_OK'
+   66 |   return SQLITE_OK;
+      |          ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:70:3: error: use of undeclared identifier 'Error'
+   70 |   Error err = {0};
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:71:3: error: use of undeclared identifier 'Sqlite'
+   71 |   Sqlite db = {0};
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:73:3: error: call to undeclared function 'opendb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   73 |   opendb(&err, &db, "test.db", 0);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:73:11: error: use of undeclared identifier 'err'
+   73 |   opendb(&err, &db, "test.db", 0);
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:73:17: error: use of undeclared identifier 'db'
+   73 |   opendb(&err, &db, "test.db", 0);
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:74:11: error: call to undeclared function 'timetostop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   74 |   while( !timetostop(&err) ){
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:74:23: error: use of undeclared identifier 'err'
+   74 |   while( !timetostop(&err) ){
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:75:5: error: use of undeclared identifier 'i64'
+   75 |     i64 iCount1, iCount2;
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:76:5: error: call to undeclared function 'sql_script'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   76 |     sql_script(&err, &db, "BEGIN");
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:76:17: error: use of undeclared identifier 'err'
+   76 |     sql_script(&err, &db, "BEGIN");
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:76:23: error: use of undeclared identifier 'db'
+   76 |     sql_script(&err, &db, "BEGIN");
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:77:5: error: use of undeclared identifier 'iCount1'
+   77 |     iCount1 = execsql_i64(&err, &db, "SELECT count(x) FROM t1");
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:77:15: error: call to undeclared function 'execsql_i64'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   77 |     iCount1 = execsql_i64(&err, &db, "SELECT count(x) FROM t1");
+      |               ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:77:28: error: use of undeclared identifier 'err'
+   77 |     iCount1 = execsql_i64(&err, &db, "SELECT count(x) FROM t1");
+      |                            ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:77:34: error: use of undeclared identifier 'db'
+   77 |     iCount1 = execsql_i64(&err, &db, "SELECT count(x) FROM t1");
+      |                                  ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_checkpoint.c:78:5: error: call to undeclared function 'usleep'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   78 |     usleep(CHECKPOINT_STARVATION_READMS*1000);
+      |     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+2026-08-28T22:57:45.961377+0000 | ThreadPoolExecutor-4_8 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:22:3: error: use of undeclared identifier 'Error'
+   22 |   Error err = {0};                /* Error code and message */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:23:3: error: use of undeclared identifier 'Sqlite'
+   23 |   Sqlite db = {0};                /* SQLite database connection */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:25:3: error: call to undeclared function 'opendb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   25 |   opendb(&err, &db, "test.db", 0);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:25:11: error: use of undeclared identifier 'err'
+   25 |   opendb(&err, &db, "test.db", 0);
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:25:17: error: use of undeclared identifier 'db'
+   25 |   opendb(&err, &db, "test.db", 0);
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:27:11: error: call to undeclared function 'timetostop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   27 |   while( !timetostop(&err) ){
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:27:23: error: use of undeclared identifier 'err'
+   27 |   while( !timetostop(&err) ){
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:28:5: error: use of undeclared identifier 'sqlite3_stmt'
+   28 |     sqlite3_stmt *pStmt = 0;
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:28:19: error: use of undeclared identifier 'pStmt'
+   28 |     sqlite3_stmt *pStmt = 0;
+      |                   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:31:5: error: call to undeclared function 'sqlite3_prepare_v2'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   31 |     sqlite3_prepare_v2(db.db, "SELECT 1 FROM t1", -1, &pStmt, 0);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:31:24: error: use of undeclared identifier 'db'
+   31 |     sqlite3_prepare_v2(db.db, "SELECT 1 FROM t1", -1, &pStmt, 0);
+      |                        ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:31:56: error: use of undeclared identifier 'pStmt'
+   31 |     sqlite3_prepare_v2(db.db, "SELECT 1 FROM t1", -1, &pStmt, 0);
+      |                                                        ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:32:12: error: call to undeclared function 'sqlite3_step'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   32 |     while( sqlite3_step(pStmt)==SQLITE_ROW ){
+      |            ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:32:25: error: use of undeclared identifier 'pStmt'
+   32 |     while( sqlite3_step(pStmt)==SQLITE_ROW ){
+      |                         ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:32:33: error: use of undeclared identifier 'SQLITE_ROW'
+   32 |     while( sqlite3_step(pStmt)==SQLITE_ROW ){
+      |                                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:33:7: error: call to undeclared function 'execsql'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   33 |       execsql(&err, &db, "SELECT length(x||y||z) FROM t2");
+      |       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:33:16: error: use of undeclared identifier 'err'
+   33 |       execsql(&err, &db, "SELECT length(x||y||z) FROM t2");
+      |                ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:33:22: error: use of undeclared identifier 'db'
+   33 |       execsql(&err, &db, "SELECT length(x||y||z) FROM t2");
+      |                      ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_lookaside1.c:35:10: error: call to undeclared function 'sqlite3_finalize'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   35 |     rc = sqlite3_finalize(pStmt);
+      |          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+2026-08-28T22:57:45.961789+0000 | ThreadPoolExecutor-4_14 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:21:3: error: use of undeclared identifier 'Error'
+   21 |   Error err = {0};                /* Error code and message */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:22:3: error: use of undeclared identifier 'Sqlite'
+   22 |   Sqlite db = {0};                /* SQLite database connection */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:24:3: error: call to undeclared function 'opendb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   24 |   opendb(&err, &db, "test.db", 0);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:24:11: error: use of undeclared identifier 'err'
+   24 |   opendb(&err, &db, "test.db", 0);
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:24:17: error: use of undeclared identifier 'db'
+   24 |   opendb(&err, &db, "test.db", 0);
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:25:11: error: call to undeclared function 'timetostop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   25 |   while( !timetostop(&err) ){
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:25:23: error: use of undeclared identifier 'err'
+   25 |   while( !timetostop(&err) ){
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:26:5: error: call to undeclared function 'sql_script'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   26 |     sql_script(&err, &db, "CREATE TABLE IF NOT EXISTS t1(a PRIMARY KEY, b)");
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:26:17: error: use of undeclared identifier 'err'
+   26 |     sql_script(&err, &db, "CREATE TABLE IF NOT EXISTS t1(a PRIMARY KEY, b)");
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:26:23: error: use of undeclared identifier 'db'
+   26 |     sql_script(&err, &db, "CREATE TABLE IF NOT EXISTS t1(a PRIMARY KEY, b)");
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:27:5: error: call to undeclared function 'clear_error'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   27 |     clear_error(&err, SQLITE_LOCKED);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:27:18: error: use of undeclared identifier 'err'
+   27 |     clear_error(&err, SQLITE_LOCKED);
+      |                  ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:27:23: error: use of undeclared identifier 'SQLITE_LOCKED'
+   27 |     clear_error(&err, SQLITE_LOCKED);
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:28:17: error: use of undeclared identifier 'err'
+   28 |     sql_script(&err, &db, "DROP TABLE IF EXISTS t1");
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:28:23: error: use of undeclared identifier 'db'
+   28 |     sql_script(&err, &db, "DROP TABLE IF EXISTS t1");
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:29:18: error: use of undeclared identifier 'err'
+   29 |     clear_error(&err, SQLITE_LOCKED);
+      |                  ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:29:23: error: use of undeclared identifier 'SQLITE_LOCKED'
+   29 |     clear_error(&err, SQLITE_LOCKED);
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:31:3: error: call to undeclared function 'closedb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   31 |   closedb(&err, &db);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_stress.c:31:12: error: use of undeclared identifier 'err'
+   31 |   closedb(&err, &db);
+      |            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+2026-08-28T22:57:45.967849+0000 | ThreadPoolExecutor-4_17 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:24:3: error: use of undeclared identifier 'Error'
+   24 |   Error err = {0};                /* Error code and message */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:25:3: error: use of undeclared identifier 'Sqlite'
+   25 |   Sqlite db = {0};                /* SQLite database connection */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:26:3: error: call to undeclared function 'opendb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   26 |   opendb(&err, &db, "test.db", 0);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:26:11: error: use of undeclared identifier 'err'
+   26 |   opendb(&err, &db, "test.db", 0);
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:26:17: error: use of undeclared identifier 'db'
+   26 |   opendb(&err, &db, "test.db", 0);
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:27:3: error: use of undeclared identifier 'i64'
+   27 |   i64 i = 0;
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:29:11: error: call to undeclared function 'timetostop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   29 |   while( !timetostop(&err) ){
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:29:23: error: use of undeclared identifier 'err'
+   29 |   while( !timetostop(&err) ){
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:30:5: error: use of undeclared identifier 'i'
+   30 |     i++;
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:33:5: error: call to undeclared function 'execsql'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   33 |     execsql(&err, &db, 
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:33:14: error: use of undeclared identifier 'err'
+   33 |     execsql(&err, &db, 
+      |              ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:33:20: error: use of undeclared identifier 'db'
+   33 |     execsql(&err, &db, 
+      |                    ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:39:14: error: use of undeclared identifier 'err'
+   39 |     execsql(&err, &db, "DELETE FROM t1 WHERE rowid = :i", &i);
+      |              ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:39:20: error: use of undeclared identifier 'db'
+   39 |     execsql(&err, &db, "DELETE FROM t1 WHERE rowid = :i", &i);
+      |                    ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:39:60: error: use of undeclared identifier 'i'
+   39 |     execsql(&err, &db, "DELETE FROM t1 WHERE rowid = :i", &i);
+      |                                                            ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:40:5: error: call to undeclared function 'clear_error'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   40 |     clear_error(&err, SQLITE_LOCKED);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:40:18: error: use of undeclared identifier 'err'
+   40 |     clear_error(&err, SQLITE_LOCKED);
+      |                  ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:40:23: error: use of undeclared identifier 'SQLITE_LOCKED'
+   40 |     clear_error(&err, SQLITE_LOCKED);
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_vacuum.c:43:14: error: use of undeclared identifier 'err'
+   43 |     execsql(&err, &db, "SELECT * FROM t1 ORDER BY x");
+      |              ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+2026-08-28T22:57:45.969883+0000 | ThreadPoolExecutor-4_16 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/tt3_index.c:
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:18:3: error: use of undeclared identifier 'Error'
+   18 |   Error err = {0};                /* Error code and message */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:19:3: error: use of undeclared identifier 'Sqlite'
+   19 |   Sqlite db = {0};                /* SQLite database connection */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:21:11: error: call to undeclared function 'timetostop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   21 |   while( !timetostop(&err) ){
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:21:23: error: use of undeclared identifier 'err'
+   21 |   while( !timetostop(&err) ){
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:22:5: error: call to undeclared function 'opendb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   22 |     opendb(&err, &db, "test.db", 0);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:22:13: error: use of undeclared identifier 'err'
+   22 |     opendb(&err, &db, "test.db", 0);
+      |             ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:22:19: error: use of undeclared identifier 'db'
+   22 |     opendb(&err, &db, "test.db", 0);
+      |                   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:24:5: error: call to undeclared function 'sql_script'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   24 |     sql_script(&err, &db, 
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:24:17: error: use of undeclared identifier 'err'
+   24 |     sql_script(&err, &db, 
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:24:23: error: use of undeclared identifier 'db'
+   24 |     sql_script(&err, &db, 
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:40:5: error: call to undeclared function 'clear_error'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   40 |     clear_error(&err, SQLITE_LOCKED);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:40:18: error: use of undeclared identifier 'err'
+   40 |     clear_error(&err, SQLITE_LOCKED);
+      |                  ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:40:23: error: use of undeclared identifier 'SQLITE_LOCKED'
+   40 |     clear_error(&err, SQLITE_LOCKED);
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:42:5: error: call to undeclared function 'closedb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   42 |     closedb(&err, &db);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:42:14: error: use of undeclared identifier 'err'
+   42 |     closedb(&err, &db);
+      |              ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:42:20: error: use of undeclared identifier 'db'
+   42 |     closedb(&err, &db);
+      |                    ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:45:3: error: call to undeclared function 'print_and_free_err'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   45 |   print_and_free_err(&err);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:45:23: error: use of undeclared identifier 'err'
+   45 |   print_and_free_err(&err);
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_index.c:46:10: error: call to undeclared function 'sqlite3_mprintf'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   46 |   return sqlite3_mprintf("ok");
+      |          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+2026-08-28T22:57:45.993033+0000 | ThreadPoolExecutor-4_4 WARNING | src.preprocessor.consumer:_process_one_consumer:820 | No caller-callee pairs found for consumer /promefuzz/database/sqlite3/latest/code/test/optfuzz-db01.c.
+2026-08-28T22:57:45.997382+0000 | ThreadPoolExecutor-4_18 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/threadtest1.c:
+/promefuzz/database/sqlite3/latest/code/test/threadtest1.c:24:10: fatal error: 'sqlite.h' file not found
+   24 | #include "sqlite.h"
+      |          ^~~~~~~~~~
+
+2026-08-28T22:57:45.999989+0000 | ThreadPoolExecutor-4_8 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:20:3: error: use of undeclared identifier 'Error'
+   20 |   Error err = {0};                /* Error code and message */
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:22:11: error: call to undeclared function 'timetostop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   22 |   while( !timetostop(&err) ){
+      |           ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:22:23: error: use of undeclared identifier 'err'
+   22 |   while( !timetostop(&err) ){
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:23:5: error: use of undeclared identifier 'Sqlite'
+   23 |     Sqlite db = {0};              /* SQLite database connection */
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:24:5: error: call to undeclared function 'opendb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   24 |     opendb(&err, &db, "test.db", 0);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:24:13: error: use of undeclared identifier 'err'
+   24 |     opendb(&err, &db, "test.db", 0);
+      |             ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:24:19: error: use of undeclared identifier 'db'
+   24 |     opendb(&err, &db, "test.db", 0);
+      |                   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:25:5: error: call to undeclared function 'sql_script'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   25 |     sql_script(&err, &db, "SELECT * FROM t1");
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:25:17: error: use of undeclared identifier 'err'
+   25 |     sql_script(&err, &db, "SELECT * FROM t1");
+      |                 ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:25:23: error: use of undeclared identifier 'db'
+   25 |     sql_script(&err, &db, "SELECT * FROM t1");
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:26:5: error: call to undeclared function 'closedb'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   26 |     closedb(&err, &db);
+      |     ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:26:14: error: use of undeclared identifier 'err'
+   26 |     closedb(&err, &db);
+      |              ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:26:20: error: use of undeclared identifier 'db'
+   26 |     closedb(&err, &db);
+      |                    ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:28:3: error: call to undeclared function 'print_and_free_err'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   28 |   print_and_free_err(&err);
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:28:23: error: use of undeclared identifier 'err'
+   28 |   print_and_free_err(&err);
+      |                       ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:29:10: error: call to undeclared function 'sqlite3_mprintf'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   29 |   return sqlite3_mprintf("done!");
+      |          ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:29:10: error: incompatible integer to pointer conversion returning 'int' from a function with result type 'char *' [-Wint-conversion]
+   29 |   return sqlite3_mprintf("done!");
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:34:3: error: use of undeclared identifier 'Error'
+   34 |   Error err = {0};
+      |   ^
+/promefuzz/database/sqlite3/latest/code/test/tt3_shared.c:35:3: error: use of undeclared identifier 'Sqlite'
+   35 |   Sqlite db = {0};              /* SQLite database connection */
+      |   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+2026-08-28T22:57:46.039928+0000 | ThreadPoolExecutor-4_4 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/threadtest2.c:
+/promefuzz/database/sqlite3/latest/code/test/threadtest2.c:23:10: fatal error: 'sqlite.h' file not found
+   23 | #include "sqlite.h"
+      |          ^~~~~~~~~~
+
+2026-08-28T22:57:46.040182+0000 | ThreadPoolExecutor-4_16 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/crashtest1.c:
+/promefuzz/database/sqlite3/latest/code/test/crashtest1.c:25:10: fatal error: 'sqlite.h' file not found
+   25 | #include "sqlite.h"
+      |          ^~~~~~~~~~
+
+2026-08-28T22:57:46.049937+0000 | ThreadPoolExecutor-4_5 WARNING | src.preprocessor.consumer:_process_one_consumer:773 | CGprocessor warning/error for consumer /promefuzz/database/sqlite3/latest/code/test/threadtest3.c:
+/promefuzz/database/sqlite3/latest/code/test/threadtest3.c:91:10: fatal error: 'test_multiplex.h' file not found
+   91 | #include "test_multiplex.h"
+      |          ^~~~~~~~~~~~~~~~~~
+
+2026-08-28T22:57:47.188535+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/sqlite3/latest/out/preprocessor/call_order.pkl
+2026-08-28T22:57:47.188790+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-28T22:57:48.967907+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union Expr::(unnamed at sqlite3.c:5154:3) is not found in the meta data.
+2026-08-28T22:57:48.972526+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union Expr::(unnamed at sqlite3.c:5166:3) is not found in the meta data.
+2026-08-28T22:57:49.009480+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct SrcItem::(unnamed at sqlite3.c:5395:3) is not found in the meta data.
+2026-08-28T22:57:49.014987+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union SrcItem::(unnamed at sqlite3.c:5411:3) is not found in the meta data.
+2026-08-28T22:57:49.015218+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union SrcItem::(unnamed at sqlite3.c:5415:3) is not found in the meta data.
+2026-08-28T22:57:49.036806+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union FuncDef::(unnamed at sqlite3.c:4234:3) is not found in the meta data.
+2026-08-28T22:57:49.074287+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union Expr::(unnamed at sqlite3.c:5192:3) is not found in the meta data.
+2026-08-28T22:57:49.074521+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union ExprList_item::(unnamed at sqlite3.c:5341:5) is not found in the meta data.
+2026-08-28T22:57:49.110255+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union Parse::(unnamed at sqlite3.c:5912:3) is not found in the meta data.
+2026-08-28T22:57:49.174634+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union Bitvec::(unnamed at sqlite3.c:37168:3) is not found in the meta data.
+2026-08-28T22:57:49.288412+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct sqlite3_pcache is not found in the meta data.
+2026-08-28T22:57:49.449445+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name pthread_mutex_t is not found in the meta data.
+2026-08-28T22:57:49.481950+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union VdbeCursor::(unnamed at sqlite3.c:8925:3) is not found in the meta data.
+2026-08-28T22:57:49.520580+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union sqlite3::(unnamed at sqlite3.c:3998:3) is not found in the meta data.
+2026-08-28T22:57:49.527863+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name union sqlite3::(unnamed at sqlite3.c:4029:3) is not found in the meta data.
+2026-08-28T22:57:49.613816+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct sqlite3_stmt is not found in the meta data.
+2026-08-28T22:57:50.036268+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct __va_list_tag is not found in the meta data.
+2026-08-28T22:57:50.414635+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct sqlite3_blob is not found in the meta data.
+2026-08-28T22:57:50.480361+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/sqlite3/latest/out/preprocessor/info.pkl
+2026-08-28T22:57:50.480629+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-28T22:57:50.534977+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/sqlite3/latest/out/preprocessor/complexity.pkl
+2026-08-28T22:57:50.535184+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-28T22:57:50.823317+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/sqlite3/latest/out/preprocessor/*_relev.pkl
