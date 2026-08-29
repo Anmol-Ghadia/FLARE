@@ -1,0 +1,63 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 49490667
+INFO: Loaded 1 modules   (1577 inline 8-bit counters): 1577 [0x5f03912b3a20, 0x5f03912b4049), 
+INFO: Loaded 1 PC tables (1577 PCs): 1577 [0x5f03912b4050,0x5f03912ba2e0), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 55 ft: 56 corp: 1/1b exec/s: 0 rss: 32Mb
+
+=================================================================
+==2249189==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 56 byte(s) in 1 object(s) allocated from:
+    #0 0x5f03911f308d in calloc (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x10c08d) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #1 0x5f0391231fc9 in lha_input_stream_new /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:67:11
+    #2 0x5f0391233234 in lha_input_stream_from_FILE /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:404:9
+    #3 0x5f0391231755 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918.c:44:14
+    #4 0x5f039113ed74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x57d74) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #5 0x5f039113e469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x57469) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #6 0x5f03911400f6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x590f6) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #7 0x5f0391140597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x59597) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #8 0x5f039112da8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x46a8f) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #9 0x5f0391158116 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x71116) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #10 0x72b9cc4961c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x72b9cc49628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x5f0391122a74 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x3ba74) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+
+Direct leak of 56 byte(s) in 1 object(s) allocated from:
+    #0 0x5f03911f308d in calloc (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x10c08d) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #1 0x5f0391231fc9 in lha_input_stream_new /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:67:11
+    #2 0x5f0391233234 in lha_input_stream_from_FILE /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:404:9
+    #3 0x5f0391231755 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918.c:44:14
+    #4 0x5f039113ed74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x57d74) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #5 0x5f039113e469 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x57469) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #6 0x5f039113fc55 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x58c55) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #7 0x5f03911407b5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x597b5) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #8 0x5f039112da8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x46a8f) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #9 0x5f0391158116 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x71116) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #10 0x72b9cc4961c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #11 0x72b9cc49628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #12 0x5f0391122a74 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x3ba74) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+
+Direct leak of 56 byte(s) in 1 object(s) allocated from:
+    #0 0x5f03911f308d in calloc (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x10c08d) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #1 0x5f0391231fc9 in lha_input_stream_new /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:67:11
+    #2 0x5f0391233234 in lha_input_stream_from_FILE /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:404:9
+    #3 0x5f0391231755 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918.c:44:14
+    #4 0x5f039113ed74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x57d74) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #5 0x5f039113ffa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x58fa1) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #6 0x5f0391140597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x59597) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #7 0x5f039112da8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x46a8f) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #8 0x5f0391158116 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x71116) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+    #9 0x72b9cc4961c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x72b9cc49628a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x5f0391122a74 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787992918+0x3ba74) (BuildId: 8561f1dd3bb5e562f3da6c63eccae6d83b855965)
+
+SUMMARY: AddressSanitizer: 168 byte(s) leaked in 3 allocation(s).
+INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.
+
+MS: 1 InsertByte-; base unit: adc83b19e793491b1c6ea0fd8b46cd9f32e592fc
+0xa,0xff,
+\012\377
+artifact_prefix='./'; Test unit written to ./leak-89096f0b81069aba25c5349783bb4861c03c20c2
+Base64: Cv8=

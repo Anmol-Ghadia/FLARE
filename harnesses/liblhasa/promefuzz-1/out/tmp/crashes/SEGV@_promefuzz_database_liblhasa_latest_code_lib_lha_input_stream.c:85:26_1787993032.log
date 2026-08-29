@@ -1,0 +1,29 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2806725531
+INFO: Loaded 1 modules   (1580 inline 8-bit counters): 1580 [0x64b4b1938a60, 0x64b4b193908c), 
+INFO: Loaded 1 PC tables (1580 PCs): 1580 [0x64b4b1939090,0x64b4b193f350), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2249292==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x64b4b18b70ab bp 0x7ffc3851b190 sp 0x7ffc3851b140 T0)
+==2249292==The signal is caused by a READ memory access.
+==2249292==Hint: address points to the zero page.
+    #0 0x64b4b18b70ab in lha_input_stream_free /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:85:26
+    #1 0x64b4b18b6801 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032.c:69:9
+    #2 0x64b4b17c3d74 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032+0x57d74) (BuildId: ca1eef8d06a0fdc2daf4df551f3fea37654d547c)
+    #3 0x64b4b17c4fa1 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032+0x58fa1) (BuildId: ca1eef8d06a0fdc2daf4df551f3fea37654d547c)
+    #4 0x64b4b17c5597 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032+0x59597) (BuildId: ca1eef8d06a0fdc2daf4df551f3fea37654d547c)
+    #5 0x64b4b17b2a8f in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032+0x46a8f) (BuildId: ca1eef8d06a0fdc2daf4df551f3fea37654d547c)
+    #6 0x64b4b17dd116 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032+0x71116) (BuildId: ca1eef8d06a0fdc2daf4df551f3fea37654d547c)
+    #7 0x7dbd07c291c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #8 0x7dbd07c2928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #9 0x64b4b17a7a74 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993032+0x3ba74) (BuildId: ca1eef8d06a0fdc2daf4df551f3fea37654d547c)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_input_stream.c:85:26 in lha_input_stream_free
+==2249292==ABORTING
+MS: 0 ; base unit: 0000000000000000000000000000000000000000
+
+
+artifact_prefix='./'; Test unit written to ./crash-da39a3ee5e6b4b0d3255bfef95601890afd80709
+Base64: 

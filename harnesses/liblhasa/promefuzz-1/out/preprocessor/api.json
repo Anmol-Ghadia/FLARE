@@ -1,0 +1,122 @@
+{
+    "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h": {
+        "lha_reader_new": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:177:12",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:119:12"
+            }
+        ],
+        "lha_reader_free": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:207:6",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:127:6"
+            }
+        ],
+        "lha_reader_set_dir_policy": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:227:6",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:136:6"
+            }
+        ],
+        "lha_reader_next_file": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:292:16",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:148:16"
+            }
+        ],
+        "lha_reader_read": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:351:8",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:161:8"
+            }
+        ],
+        "lha_reader_check": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:406:5",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:174:5"
+            }
+        ],
+        "lha_reader_extract": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:852:5",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:191:5"
+            }
+        ],
+        "lha_reader_current_is_fake": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_reader.c:881:5",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:210:5"
+            }
+        ]
+    },
+    "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h": {
+        "lha_input_stream_from": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:381:17",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:108:17"
+            }
+        ],
+        "lha_input_stream_from_FILE": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:401:17",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:119:17"
+            }
+        ],
+        "lha_input_stream_new": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:62:17",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:97:17"
+            }
+        ],
+        "lha_input_stream_free": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_input_stream.c:81:6",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:127:6"
+            }
+        ]
+    },
+    "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h": {
+        "lha_decoder_for_name": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:125:23",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:104:23"
+            }
+        ],
+        "lha_decoder_free": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:140:6",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:132:6"
+            }
+        ],
+        "lha_decoder_monitor": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:171:6",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:142:6"
+            }
+        ],
+        "lha_decoder_read": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:199:8",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:155:8"
+            }
+        ],
+        "lha_decoder_get_crc": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:277:10",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:168:10"
+            }
+        ],
+        "lha_decoder_get_length64": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:295:10",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:183:10"
+            }
+        ],
+        "lha_decoder_new64": [
+            {
+                "loc": "/promefuzz/database/liblhasa/latest/code/lib/lha_decoder.c:71:13",
+                "decl_loc": "/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:121:13"
+            }
+        ]
+    }
+}
