@@ -1,0 +1,705 @@
+{
+    "sqlite3_set_authorizer at sqlite3.c:100017:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_strglob at sqlite3.c:107931:16 in sqlite3.h": [],
+    "sqlite3_strlike at sqlite3.c:107939:16 in sqlite3.h": [],
+    "sqlite3_exec at sqlite3.c:113957:16 in sqlite3.h": [
+        "sqlite3_column_type at sqlite3.c:73072:16 in sqlite3.h",
+        "sqlite3_prepare_v2 at sqlite3.c:119067:16 in sqlite3.h",
+        "sqlite3_step at sqlite3.c:72655:16 in sqlite3.h",
+        "sqlite3_column_count at sqlite3.c:72903:16 in sqlite3.h",
+        "sqlite3_errmsg at sqlite3.c:154780:24 in sqlite3.h",
+        "sqlite3_column_name at sqlite3.c:73143:24 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_column_text at sqlite3.c:73051:33 in sqlite3.h"
+    ],
+    "sqlite3_vfs_find at sqlite3.c:11431:25 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_load_extension at sqlite3.c:114732:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_enable_load_extension at sqlite3.c:114763:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_vfs_register at sqlite3.c:11477:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_auto_extension at sqlite3.c:114809:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_realloc64 at sqlite3.c:15954:18 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_cancel_auto_extension at sqlite3.c:114856:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_reset_auto_extension at sqlite3.c:114881:17 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_vfs_unregister at sqlite3.c:11505:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_prepare at sqlite3.c:119055:16 in sqlite3.h": [],
+    "sqlite3_prepare_v2 at sqlite3.c:119067:16 in sqlite3.h": [],
+    "sqlite3_prepare_v3 at sqlite3.c:119085:16 in sqlite3.h": [],
+    "sqlite3_prepare16 at sqlite3.c:119171:16 in sqlite3.h": [],
+    "sqlite3_prepare16_v2 at sqlite3.c:119183:16 in sqlite3.h": [],
+    "sqlite3_prepare16_v3 at sqlite3.c:119195:16 in sqlite3.h": [],
+    "sqlite3_get_table at sqlite3.c:126741:16 in sqlite3.h": [
+        "sqlite3_exec at sqlite3.c:113957:16 in sqlite3.h",
+        "sqlite3_free_table at sqlite3.c:126810:17 in sqlite3.h",
+        "sqlite3_mprintf at sqlite3.c:17463:18 in sqlite3.h",
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h",
+        "sqlite3_malloc64 at sqlite3.c:15744:18 in sqlite3.h"
+    ],
+    "sqlite3_free_table at sqlite3.c:126810:17 in sqlite3.h": [
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h"
+    ],
+    "sqlite3_create_module at sqlite3.c:130412:16 in sqlite3.h": [],
+    "sqlite3_create_module_v2 at sqlite3.c:130427:16 in sqlite3.h": [],
+    "sqlite3_drop_modules at sqlite3.c:130444:16 in sqlite3.h": [],
+    "sqlite3_declare_vtab at sqlite3.c:131100:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_vtab_on_conflict at sqlite3.c:131565:16 in sqlite3.h": [],
+    "sqlite3_vtab_config at sqlite3.c:131583:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_vtab_collation at sqlite3.c:139787:24 in sqlite3.h": [],
+    "sqlite3_mutex_alloc at sqlite3.c:14046:27 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_mutex_free at sqlite3.c:14067:17 in sqlite3.h": [],
+    "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h": [],
+    "sqlite3_mutex_try at sqlite3.c:14089:16 in sqlite3.h": [],
+    "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h": [],
+    "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h": [],
+    "sqlite3_mutex_notheld at sqlite3.c:14120:16 in sqlite3.h": [],
+    "sqlite3_keyword_name at sqlite3.c:151127:16 in sqlite3.h": [],
+    "sqlite3_keyword_count at sqlite3.c:151133:16 in sqlite3.h": [],
+    "sqlite3_keyword_check at sqlite3.c:151134:16 in sqlite3.h": [],
+    "sqlite3_complete at sqlite3.c:151963:16 in sqlite3.h": [
+        "sqlite3_strnicmp at sqlite3.c:19662:16 in sqlite3.h"
+    ],
+    "sqlite3_complete16 at sqlite3.c:152128:16 in sqlite3.h": [
+        "sqlite3_complete at sqlite3.c:151963:16 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_libversion at sqlite3.c:152357:24 in sqlite3.h": [],
+    "sqlite3_libversion_number at sqlite3.c:152370:16 in sqlite3.h": [],
+    "sqlite3_threadsafe at sqlite3.c:152376:16 in sqlite3.h": [],
+    "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_free at sqlite3.c:14067:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_shutdown at sqlite3.c:152624:16 in sqlite3.h": [
+        "sqlite3_reset_auto_extension at sqlite3.c:114881:17 in sqlite3.h",
+        "sqlite3_os_end at sqlite3.c:29823:16 in sqlite3.h"
+    ],
+    "sqlite3_config at sqlite3.c:152678:16 in sqlite3.h": [],
+    "sqlite3_db_mutex at sqlite3.c:153096:27 in sqlite3.h": [],
+    "sqlite3_db_release_memory at sqlite3.c:153110:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_db_cacheflush at sqlite3.c:153134:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_db_config at sqlite3.c:153163:16 in sqlite3.h": [],
+    "sqlite3_last_insert_rowid at sqlite3.c:153307:25 in sqlite3.h": [],
+    "sqlite3_set_last_insert_rowid at sqlite3.c:153320:17 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_changes64 at sqlite3.c:153335:26 in sqlite3.h": [],
+    "sqlite3_changes at sqlite3.c:153344:16 in sqlite3.h": [
+        "sqlite3_changes64 at sqlite3.c:153335:26 in sqlite3.h"
+    ],
+    "sqlite3_total_changes64 at sqlite3.c:153351:26 in sqlite3.h": [],
+    "sqlite3_total_changes at sqlite3.c:153360:16 in sqlite3.h": [
+        "sqlite3_total_changes64 at sqlite3.c:153351:26 in sqlite3.h"
+    ],
+    "sqlite3_txn_state at sqlite3.c:153500:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_close at sqlite3.c:153535:16 in sqlite3.h": [],
+    "sqlite3_close_v2 at sqlite3.c:153536:16 in sqlite3.h": [],
+    "sqlite3_busy_handler at sqlite3.c:153966:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_progress_handler at sqlite3.c:153989:17 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_busy_timeout at sqlite3.c:154020:16 in sqlite3.h": [
+        "sqlite3_busy_handler at sqlite3.c:153966:16 in sqlite3.h"
+    ],
+    "sqlite3_interrupt at sqlite3.c:154037:17 in sqlite3.h": [],
+    "sqlite3_create_function at sqlite3.c:154229:16 in sqlite3.h": [],
+    "sqlite3_create_function_v2 at sqlite3.c:154242:16 in sqlite3.h": [],
+    "sqlite3_create_window_function at sqlite3.c:154256:16 in sqlite3.h": [],
+    "sqlite3_create_function16 at sqlite3.c:154273:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_overload_function at sqlite3.c:154335:16 in sqlite3.h": [
+        "sqlite3_create_function_v2 at sqlite3.c:154242:16 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mprintf at sqlite3.c:17463:18 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_trace at sqlite3.c:154368:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_trace_v2 at sqlite3.c:154389:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_profile at sqlite3.c:154419:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_commit_hook at sqlite3.c:154449:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_update_hook at sqlite3.c:154474:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_rollback_hook at sqlite3.c:154499:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_preupdate_hook at sqlite3.c:154525:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_wal_autocheckpoint at sqlite3.c:154574:16 in sqlite3.h": [
+        "sqlite3_wal_hook at sqlite3.c:154595:18 in sqlite3.h"
+    ],
+    "sqlite3_wal_hook at sqlite3.c:154595:18 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_release_memory at sqlite3.c:15459:16 in sqlite3.h": [],
+    "sqlite3_wal_checkpoint_v2 at sqlite3.c:154622:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_wal_checkpoint at sqlite3.c:154686:16 in sqlite3.h": [
+        "sqlite3_wal_checkpoint_v2 at sqlite3.c:154622:16 in sqlite3.h"
+    ],
+    "sqlite3_errmsg at sqlite3.c:154780:24 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h",
+        "sqlite3_value_text at sqlite3.c:72123:33 in sqlite3.h"
+    ],
+    "sqlite3_errmsg16 at sqlite3.c:154808:24 in sqlite3.h": [
+        "sqlite3_value_text16 at sqlite3.c:72127:24 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_errcode at sqlite3.c:154850:16 in sqlite3.h": [],
+    "sqlite3_extended_errcode at sqlite3.c:154859:16 in sqlite3.h": [],
+    "sqlite3_system_errno at sqlite3.c:154868:16 in sqlite3.h": [],
+    "sqlite3_errstr at sqlite3.c:154877:24 in sqlite3.h": [],
+    "sqlite3_limit at sqlite3.c:155025:16 in sqlite3.h": [],
+    "sqlite3_memory_alarm at sqlite3.c:15508:16 in sqlite3.h": [],
+    "sqlite3_soft_heap_limit64 at sqlite3.c:15531:26 in sqlite3.h": [
+        "sqlite3_memory_used at sqlite3.c:15633:26 in sqlite3.h",
+        "sqlite3_release_memory at sqlite3.c:15459:16 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h"
+    ],
+    "sqlite3_soft_heap_limit at sqlite3.c:15556:17 in sqlite3.h": [
+        "sqlite3_soft_heap_limit64 at sqlite3.c:15531:26 in sqlite3.h"
+    ],
+    "sqlite3_open at sqlite3.c:155676:16 in sqlite3.h": [],
+    "sqlite3_open_v2 at sqlite3.c:155683:16 in sqlite3.h": [],
+    "sqlite3_open16 at sqlite3.c:155696:16 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_create_collation at sqlite3.c:155735:16 in sqlite3.h": [
+        "sqlite3_create_collation_v2 at sqlite3.c:155748:16 in sqlite3.h"
+    ],
+    "sqlite3_hard_heap_limit64 at sqlite3.c:15573:26 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_create_collation_v2 at sqlite3.c:155748:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_create_collation16 at sqlite3.c:155773:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_collation_needed at sqlite3.c:155803:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_collation_needed16 at sqlite3.c:155824:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_global_recover at sqlite3.c:155846:16 in sqlite3.h": [],
+    "sqlite3_get_autocommit at sqlite3.c:155857:16 in sqlite3.h": [],
+    "sqlite3_thread_cleanup at sqlite3.c:155922:17 in sqlite3.h": [],
+    "sqlite3_table_column_metadata at sqlite3.c:155930:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_sleep at sqlite3.c:156048:16 in sqlite3.h": [
+        "sqlite3_vfs_find at sqlite3.c:11431:25 in sqlite3.h"
+    ],
+    "sqlite3_extended_result_codes at sqlite3.c:156064:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_file_control at sqlite3.c:156077:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_test_control at sqlite3.c:156127:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_randomness at sqlite3.c:18421:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_memory_used at sqlite3.c:15633:26 in sqlite3.h": [
+        "sqlite3_status64 at sqlite3.c:9561:16 in sqlite3.h"
+    ],
+    "sqlite3_memory_highwater at sqlite3.c:15644:26 in sqlite3.h": [
+        "sqlite3_status64 at sqlite3.c:9561:16 in sqlite3.h"
+    ],
+    "sqlite3_create_filename at sqlite3.c:156607:18 in sqlite3.h": [
+        "sqlite3_malloc64 at sqlite3.c:15744:18 in sqlite3.h"
+    ],
+    "sqlite3_free_filename at sqlite3.c:156643:17 in sqlite3.h": [
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h"
+    ],
+    "sqlite3_uri_parameter at sqlite3.c:156661:24 in sqlite3.h": [],
+    "sqlite3_uri_key at sqlite3.c:156670:24 in sqlite3.h": [],
+    "sqlite3_uri_boolean at sqlite3.c:156684:16 in sqlite3.h": [
+        "sqlite3_uri_parameter at sqlite3.c:156661:24 in sqlite3.h"
+    ],
+    "sqlite3_uri_int64 at sqlite3.c:156693:26 in sqlite3.h": [
+        "sqlite3_uri_parameter at sqlite3.c:156661:24 in sqlite3.h"
+    ],
+    "sqlite3_filename_database at sqlite3.c:156716:24 in sqlite3.h": [],
+    "sqlite3_filename_journal at sqlite3.c:156719:24 in sqlite3.h": [],
+    "sqlite3_filename_wal at sqlite3.c:156728:24 in sqlite3.h": [
+        "sqlite3_filename_journal at sqlite3.c:156719:24 in sqlite3.h"
+    ],
+    "sqlite3_db_filename at sqlite3.c:156750:24 in sqlite3.h": [],
+    "sqlite3_db_readonly at sqlite3.c:156766:16 in sqlite3.h": [],
+    "sqlite3_snapshot_get at sqlite3.c:156783:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_snapshot_open at sqlite3.c:156819:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_snapshot_recover at sqlite3.c:156875:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_snapshot_free at sqlite3.c:156906:17 in sqlite3.h": [
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h"
+    ],
+    "sqlite3_compileoption_used at sqlite3.c:156919:16 in sqlite3.h": [
+        "sqlite3_strnicmp at sqlite3.c:19662:16 in sqlite3.h"
+    ],
+    "sqlite3_compileoption_get at sqlite3.c:156952:24 in sqlite3.h": [],
+    "sqlite3_unlock_notify at sqlite3.c:157112:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_malloc at sqlite3.c:15738:18 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_malloc64 at sqlite3.c:15744:18 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_msize at sqlite3.c:15806:27 in sqlite3.h": [],
+    "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_realloc at sqlite3.c:15947:18 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_realloc64 at sqlite3.c:15954:18 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_str_vappendf at sqlite3.c:16479:17 in sqlite3.h": [
+        "sqlite3_str_appendf at sqlite3.c:17580:17 in sqlite3.h",
+        "sqlite3_str_appendall at sqlite3.c:17280:17 in sqlite3.h",
+        "sqlite3_str_append at sqlite3.c:17263:17 in sqlite3.h",
+        "sqlite3_str_appendchar at sqlite3.c:17235:17 in sqlite3.h"
+    ],
+    "sqlite3_str_appendchar at sqlite3.c:17235:17 in sqlite3.h": [],
+    "sqlite3_str_append at sqlite3.c:17263:17 in sqlite3.h": [],
+    "sqlite3_str_appendall at sqlite3.c:17280:17 in sqlite3.h": [
+        "sqlite3_str_append at sqlite3.c:17263:17 in sqlite3.h"
+    ],
+    "sqlite3_str_finish at sqlite3.c:17325:18 in sqlite3.h": [
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h"
+    ],
+    "sqlite3_str_errcode at sqlite3.c:17337:16 in sqlite3.h": [],
+    "sqlite3_str_length at sqlite3.c:17342:16 in sqlite3.h": [],
+    "sqlite3_str_value at sqlite3.c:17347:18 in sqlite3.h": [],
+    "sqlite3_str_reset at sqlite3.c:17356:17 in sqlite3.h": [],
+    "sqlite3_str_new at sqlite3.c:17391:25 in sqlite3.h": [
+        "sqlite3_malloc64 at sqlite3.c:15744:18 in sqlite3.h"
+    ],
+    "sqlite3_vmprintf at sqlite3.c:17439:18 in sqlite3.h": [
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_str_vappendf at sqlite3.c:16479:17 in sqlite3.h"
+    ],
+    "sqlite3_mprintf at sqlite3.c:17463:18 in sqlite3.h": [
+        "sqlite3_vmprintf at sqlite3.c:17439:18 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h"
+    ],
+    "sqlite3_vsnprintf at sqlite3.c:17488:18 in sqlite3.h": [
+        "sqlite3_str_vappendf at sqlite3.c:16479:17 in sqlite3.h"
+    ],
+    "sqlite3_snprintf at sqlite3.c:17503:18 in sqlite3.h": [
+        "sqlite3_vsnprintf at sqlite3.c:17488:18 in sqlite3.h"
+    ],
+    "sqlite3_log at sqlite3.c:17539:17 in sqlite3.h": [],
+    "sqlite3_str_appendf at sqlite3.c:17580:17 in sqlite3.h": [
+        "sqlite3_str_vappendf at sqlite3.c:16479:17 in sqlite3.h"
+    ],
+    "sqlite3_randomness at sqlite3.c:18421:17 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_vfs_find at sqlite3.c:11431:25 in sqlite3.h",
+        "sqlite3_initialize at sqlite3.c:152449:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_stricmp at sqlite3.c:19635:16 in sqlite3.h": [],
+    "sqlite3_strnicmp at sqlite3.c:19662:16 in sqlite3.h": [],
+    "sqlite3_sourceid at sqlite3.c:222713:24 in sqlite3.h": [],
+    "sqlite3_os_init at sqlite3.c:29704:16 in sqlite3.h": [
+        "sqlite3_vfs_register at sqlite3.c:11477:16 in sqlite3.h"
+    ],
+    "sqlite3_os_end at sqlite3.c:29823:16 in sqlite3.h": [],
+    "sqlite3_serialize at sqlite3.c:36892:27 in sqlite3.h": [
+        "sqlite3_column_int64 at sqlite3.c:73046:25 in sqlite3.h",
+        "sqlite3_prepare_v2 at sqlite3.c:119067:16 in sqlite3.h",
+        "sqlite3_step at sqlite3.c:72655:16 in sqlite3.h",
+        "sqlite3_mprintf at sqlite3.c:17463:18 in sqlite3.h",
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h",
+        "sqlite3_column_int at sqlite3.c:73041:16 in sqlite3.h",
+        "sqlite3_finalize at sqlite3.c:72005:16 in sqlite3.h",
+        "sqlite3_malloc64 at sqlite3.c:15744:18 in sqlite3.h"
+    ],
+    "sqlite3_deserialize at sqlite3.c:36973:16 in sqlite3.h": [
+        "sqlite3_prepare_v2 at sqlite3.c:119067:16 in sqlite3.h",
+        "sqlite3_step at sqlite3.c:72655:16 in sqlite3.h",
+        "sqlite3_mprintf at sqlite3.c:17463:18 in sqlite3.h",
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h",
+        "sqlite3_finalize at sqlite3.c:72005:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h"
+    ],
+    "sqlite3_database_file_object at sqlite3.c:45334:26 in sqlite3.h": [],
+    "sqlite3_snapshot_cmp at sqlite3.c:52001:16 in sqlite3.h": [],
+    "sqlite3_enable_shared_cache at sqlite3.c:53207:16 in sqlite3.h": [],
+    "sqlite3_backup_init at sqlite3.c:64113:28 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_backup_step at sqlite3.c:64293:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_backup_finish at sqlite3.c:64547:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_free at sqlite3.c:15815:17 in sqlite3.h"
+    ],
+    "sqlite3_backup_remaining at sqlite3.c:64601:16 in sqlite3.h": [],
+    "sqlite3_backup_pagecount at sqlite3.c:64615:16 in sqlite3.h": [],
+    "sqlite3_expired at sqlite3.c:71934:16 in sqlite3.h": [],
+    "sqlite3_finalize at sqlite3.c:72005:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h"
+    ],
+    "sqlite3_reset at sqlite3.c:72032:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_clear_bindings at sqlite3.c:72053:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_value_blob at sqlite3.c:72078:24 in sqlite3.h": [
+        "sqlite3_value_text at sqlite3.c:72123:33 in sqlite3.h"
+    ],
+    "sqlite3_value_bytes at sqlite3.c:72091:16 in sqlite3.h": [],
+    "sqlite3_value_bytes16 at sqlite3.c:72094:16 in sqlite3.h": [],
+    "sqlite3_value_double at sqlite3.c:72097:19 in sqlite3.h": [],
+    "sqlite3_value_int at sqlite3.c:72100:16 in sqlite3.h": [],
+    "sqlite3_value_int64 at sqlite3.c:72103:25 in sqlite3.h": [],
+    "sqlite3_value_subtype at sqlite3.c:72106:25 in sqlite3.h": [],
+    "sqlite3_value_pointer at sqlite3.c:72110:18 in sqlite3.h": [],
+    "sqlite3_value_text at sqlite3.c:72123:33 in sqlite3.h": [],
+    "sqlite3_value_text16 at sqlite3.c:72127:24 in sqlite3.h": [],
+    "sqlite3_value_text16be at sqlite3.c:72130:24 in sqlite3.h": [],
+    "sqlite3_value_text16le at sqlite3.c:72133:24 in sqlite3.h": [],
+    "sqlite3_value_type at sqlite3.c:72141:16 in sqlite3.h": [],
+    "sqlite3_value_nochange at sqlite3.c:72227:16 in sqlite3.h": [],
+    "sqlite3_value_frombind at sqlite3.c:72232:16 in sqlite3.h": [],
+    "sqlite3_value_dup at sqlite3.c:72238:27 in sqlite3.h": [
+        "sqlite3_malloc at sqlite3.c:15738:18 in sqlite3.h"
+    ],
+    "sqlite3_value_free at sqlite3.c:72261:17 in sqlite3.h": [],
+    "sqlite3_result_blob at sqlite3.c:72304:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_blob64 at sqlite3.c:72314:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_double at sqlite3.c:72328:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_error at sqlite3.c:72332:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_error16 at sqlite3.c:72338:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_int at sqlite3.c:72344:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_int64 at sqlite3.c:72348:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_null at sqlite3.c:72352:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_pointer at sqlite3.c:72356:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_subtype at sqlite3.c:72368:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_text at sqlite3.c:72374:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_text64 at sqlite3.c:72383:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_text16 at sqlite3.c:72400:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_text16be at sqlite3.c:72409:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_text16le at sqlite3.c:72418:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_value at sqlite3.c:72428:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_zeroblob at sqlite3.c:72432:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_zeroblob64 at sqlite3.c:72436:16 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_error_code at sqlite3.c:72445:17 in sqlite3.h": [],
+    "sqlite3_result_error_toobig at sqlite3.c:72457:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_result_error_nomem at sqlite3.c:72465:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_step at sqlite3.c:72655:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h",
+        "sqlite3_reset at sqlite3.c:72032:16 in sqlite3.h",
+        "sqlite3_value_text at sqlite3.c:72123:33 in sqlite3.h"
+    ],
+    "sqlite3_user_data at sqlite3.c:72704:18 in sqlite3.h": [],
+    "sqlite3_context_db_handle at sqlite3.c:72719:21 in sqlite3.h": [],
+    "sqlite3_vtab_nochange at sqlite3.c:72738:16 in sqlite3.h": [
+        "sqlite3_value_nochange at sqlite3.c:72227:16 in sqlite3.h"
+    ],
+    "sqlite3_aggregate_context at sqlite3.c:72792:18 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_get_auxdata at sqlite3.c:72813:18 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_set_auxdata at sqlite3.c:72841:17 in sqlite3.h": [
+        "sqlite3_mutex_held at sqlite3.c:14116:16 in sqlite3.h"
+    ],
+    "sqlite3_aggregate_count at sqlite3.c:72894:16 in sqlite3.h": [],
+    "sqlite3_column_count at sqlite3.c:72903:16 in sqlite3.h": [],
+    "sqlite3_data_count at sqlite3.c:72912:16 in sqlite3.h": [],
+    "sqlite3_column_blob at sqlite3.c:73016:24 in sqlite3.h": [
+        "sqlite3_value_blob at sqlite3.c:72078:24 in sqlite3.h"
+    ],
+    "sqlite3_column_bytes at sqlite3.c:73026:16 in sqlite3.h": [
+        "sqlite3_value_bytes at sqlite3.c:72091:16 in sqlite3.h"
+    ],
+    "sqlite3_column_bytes16 at sqlite3.c:73031:16 in sqlite3.h": [
+        "sqlite3_value_bytes16 at sqlite3.c:72094:16 in sqlite3.h"
+    ],
+    "sqlite3_column_double at sqlite3.c:73036:19 in sqlite3.h": [
+        "sqlite3_value_double at sqlite3.c:72097:19 in sqlite3.h"
+    ],
+    "sqlite3_column_int at sqlite3.c:73041:16 in sqlite3.h": [
+        "sqlite3_value_int at sqlite3.c:72100:16 in sqlite3.h"
+    ],
+    "sqlite3_column_int64 at sqlite3.c:73046:25 in sqlite3.h": [
+        "sqlite3_value_int64 at sqlite3.c:72103:25 in sqlite3.h"
+    ],
+    "sqlite3_column_text at sqlite3.c:73051:33 in sqlite3.h": [
+        "sqlite3_value_text at sqlite3.c:72123:33 in sqlite3.h"
+    ],
+    "sqlite3_column_value at sqlite3.c:73056:27 in sqlite3.h": [],
+    "sqlite3_column_text16 at sqlite3.c:73066:24 in sqlite3.h": [
+        "sqlite3_value_text16 at sqlite3.c:72127:24 in sqlite3.h"
+    ],
+    "sqlite3_column_type at sqlite3.c:73072:16 in sqlite3.h": [
+        "sqlite3_value_type at sqlite3.c:72141:16 in sqlite3.h"
+    ],
+    "sqlite3_column_name at sqlite3.c:73143:24 in sqlite3.h": [],
+    "sqlite3_column_name16 at sqlite3.c:73147:24 in sqlite3.h": [],
+    "sqlite3_column_decltype at sqlite3.c:73166:24 in sqlite3.h": [],
+    "sqlite3_column_decltype16 at sqlite3.c:73170:24 in sqlite3.h": [],
+    "sqlite3_column_database_name at sqlite3.c:73182:24 in sqlite3.h": [],
+    "sqlite3_column_database_name16 at sqlite3.c:73186:24 in sqlite3.h": [],
+    "sqlite3_column_table_name at sqlite3.c:73196:24 in sqlite3.h": [],
+    "sqlite3_column_table_name16 at sqlite3.c:73200:24 in sqlite3.h": [],
+    "sqlite3_column_origin_name at sqlite3.c:73210:24 in sqlite3.h": [],
+    "sqlite3_column_origin_name16 at sqlite3.c:73214:24 in sqlite3.h": [],
+    "sqlite3_bind_blob at sqlite3.c:73315:16 in sqlite3.h": [],
+    "sqlite3_bind_blob64 at sqlite3.c:73327:16 in sqlite3.h": [],
+    "sqlite3_bind_double at sqlite3.c:73337:16 in sqlite3.h": [
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_bind_int at sqlite3.c:73347:16 in sqlite3.h": [
+        "sqlite3_bind_int64 at sqlite3.c:73350:16 in sqlite3.h"
+    ],
+    "sqlite3_bind_int64 at sqlite3.c:73350:16 in sqlite3.h": [
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_bind_null at sqlite3.c:73360:16 in sqlite3.h": [
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_bind_pointer at sqlite3.c:73369:16 in sqlite3.h": [
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_bind_text at sqlite3.c:73387:16 in sqlite3.h": [],
+    "sqlite3_bind_text64 at sqlite3.c:73396:16 in sqlite3.h": [],
+    "sqlite3_bind_text16 at sqlite3.c:73409:16 in sqlite3.h": [],
+    "sqlite3_bind_value at sqlite3.c:73419:16 in sqlite3.h": [
+        "sqlite3_value_type at sqlite3.c:72141:16 in sqlite3.h",
+        "sqlite3_bind_blob at sqlite3.c:73315:16 in sqlite3.h",
+        "sqlite3_bind_int64 at sqlite3.c:73350:16 in sqlite3.h",
+        "sqlite3_bind_zeroblob at sqlite3.c:73450:16 in sqlite3.h",
+        "sqlite3_bind_null at sqlite3.c:73360:16 in sqlite3.h",
+        "sqlite3_bind_double at sqlite3.c:73337:16 in sqlite3.h"
+    ],
+    "sqlite3_bind_zeroblob at sqlite3.c:73450:16 in sqlite3.h": [
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_bind_zeroblob64 at sqlite3.c:73460:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_bind_zeroblob at sqlite3.c:73450:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_bind_parameter_count at sqlite3.c:73479:16 in sqlite3.h": [],
+    "sqlite3_bind_parameter_name at sqlite3.c:73490:24 in sqlite3.h": [],
+    "sqlite3_bind_parameter_index at sqlite3.c:73505:16 in sqlite3.h": [],
+    "sqlite3_transfer_bindings at sqlite3.c:73539:16 in sqlite3.h": [],
+    "sqlite3_db_handle at sqlite3.c:73563:21 in sqlite3.h": [],
+    "sqlite3_stmt_readonly at sqlite3.c:73571:16 in sqlite3.h": [],
+    "sqlite3_stmt_isexplain at sqlite3.c:73579:16 in sqlite3.h": [],
+    "sqlite3_stmt_busy at sqlite3.c:73586:16 in sqlite3.h": [],
+    "sqlite3_next_stmt at sqlite3.c:73597:26 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_stmt_status at sqlite3.c:73618:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_sql at sqlite3.c:73648:24 in sqlite3.h": [],
+    "sqlite3_expanded_sql at sqlite3.c:73662:18 in sqlite3.h": [
+        "sqlite3_sql at sqlite3.c:73648:24 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_normalized_sql at sqlite3.c:73682:24 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_preupdate_old at sqlite3.c:73719:16 in sqlite3.h": [],
+    "sqlite3_preupdate_count at sqlite3.c:73782:16 in sqlite3.h": [],
+    "sqlite3_preupdate_depth at sqlite3.c:73800:16 in sqlite3.h": [],
+    "sqlite3_preupdate_blobwrite at sqlite3.c:73811:16 in sqlite3.h": [],
+    "sqlite3_preupdate_new at sqlite3.c:73822:16 in sqlite3.h": [],
+    "sqlite3_stmt_scanstatus at sqlite3.c:73897:16 in sqlite3.h": [],
+    "sqlite3_stmt_scanstatus_reset at sqlite3.c:73956:17 in sqlite3.h": [],
+    "sqlite3_value_numeric_type at sqlite3.c:74581:16 in sqlite3.h": [
+        "sqlite3_value_type at sqlite3.c:72141:16 in sqlite3.h"
+    ],
+    "sqlite3_blob_open at sqlite3.c:82675:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_blob_close at sqlite3.c:82908:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_finalize at sqlite3.c:72005:16 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_blob_read at sqlite3.c:83002:16 in sqlite3.h": [],
+    "sqlite3_blob_write at sqlite3.c:83009:16 in sqlite3.h": [],
+    "sqlite3_blob_bytes at sqlite3.c:83019:16 in sqlite3.h": [],
+    "sqlite3_blob_reopen at sqlite3.c:83034:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_status64 at sqlite3.c:9561:16 in sqlite3.h": [
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ],
+    "sqlite3_status at sqlite3.c:9586:16 in sqlite3.h": [
+        "sqlite3_status64 at sqlite3.c:9561:16 in sqlite3.h"
+    ],
+    "sqlite3_db_status at sqlite3.c:9629:16 in sqlite3.h": [
+        "sqlite3_msize at sqlite3.c:15806:27 in sqlite3.h",
+        "sqlite3_mutex_enter at sqlite3.c:14078:17 in sqlite3.h",
+        "sqlite3_mutex_leave at sqlite3.c:14104:17 in sqlite3.h"
+    ]
+}
