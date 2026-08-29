@@ -1,0 +1,77 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2402112646
+INFO: Loaded 1 modules   (1430 inline 8-bit counters): 1430 [0x58055e143ec0, 0x58055e144456), 
+INFO: Loaded 1 PC tables (1430 PCs): 1430 [0x58055e144458,0x58055e149db8), 
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 133 ft: 134 corp: 1/1b exec/s: 0 rss: 31Mb
+#3	NEW    cov: 133 ft: 141 corp: 2/2b lim: 4 exec/s: 0 rss: 32Mb L: 1/1 MS: 1 ChangeByte-
+=================================================================
+==2270623==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50c0000005f2 at pc 0x58055e0d38f6 bp 0x7ffccf871e00 sp 0x7ffccf871df8
+WRITE of size 1 at 0x50c0000005f2 thread T0
+    #0 0x58055e0d38f5 in dummy_read /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852.c:139:24
+    #1 0x58055e0d5eec in lha_decoder_read /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_decoder.c:247:10
+    #2 0x58055e0ce123 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852.c:226:16
+    #3 0x58055dfd9ca4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x57ca4) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #4 0x58055dfd9399 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x57399) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #5 0x58055dfdab85 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x58b85) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #6 0x58055dfdb6e5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x596e5) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #7 0x58055dfc89bf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x469bf) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #8 0x58055dff3046 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x71046) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #9 0x71bebc1cc1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x71bebc1cc28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x58055dfbd9a4 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x3b9a4) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+
+0x50c0000005f2 is located 0 bytes after 114-byte region [0x50c000000580,0x50c0000005f2)
+allocated by thread T0 here:
+    #0 0x58055e08dfbd in calloc (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x10bfbd) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #1 0x58055e0d48b2 in lha_decoder_new64 /promefuzz/database/liblhasa/latest/build_asan/lib/../../code/lib/lha_decoder.c:83:12
+    #2 0x58055e0cdae5 in LLVMFuzzerTestOneInput /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852.c:194:15
+    #3 0x58055dfd9ca4 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x57ca4) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #4 0x58055dfd9399 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x57399) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #5 0x58055dfdab85 in fuzzer::Fuzzer::MutateAndTestOne() (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x58b85) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #6 0x58055dfdb6e5 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile>>&) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x596e5) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #7 0x58055dfc89bf in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x469bf) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #8 0x58055dff3046 in main (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x71046) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+    #9 0x71bebc1cc1c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x71bebc1cc28a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #11 0x58055dfbd9a4 in _start (/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852+0x3b9a4) (BuildId: 768fe680cfd3ea71df642421e125b5984b1bd8a4)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993852.c:139:24 in dummy_read
+Shadow bytes around the buggy address:
+  0x50c000000300: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x50c000000380: fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa
+  0x50c000000400: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fa
+  0x50c000000480: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x50c000000500: fd fd fd fd fd fd fd fd fa fa fa fa fa fa fa fa
+=>0x50c000000580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00[02]fa
+  0x50c000000600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50c000000680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50c000000700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50c000000780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50c000000800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2270623==ABORTING
+MS: 1 ChangeByte-; base unit: 12db8f85bfe3e0b837059fa01e53748a0727b52c
+0xb3,
+\263
+artifact_prefix='./'; Test unit written to ./crash-d50591ff745cc83091f4ee12b2ee702cb24b0b45
+Base64: sw==

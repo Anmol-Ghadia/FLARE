@@ -1,0 +1,170 @@
+2026-08-29T08:55:59.889970+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260829085559_._PromeFuzz.py_-F_database_liblhasa_latest_lib.toml_generate_--pool-size_1.log
+2026-08-29T08:55:59.911577+0000 | MainThread INFO | src.utils:setup_llm:210 | Validating the LLM client...
+2026-08-29T08:56:05.610510+0000 | MainThread SUCCESS | src.utils:setup_llm:214 | The LLM client gpt-4-1 has been setup.
+2026-08-29T08:56:05.630225+0000 | MainThread INFO | src.utils:setup_llm:210 | Validating the LLM client...
+2026-08-29T08:56:11.121652+0000 | MainThread SUCCESS | src.utils:setup_llm:214 | The LLM client gpt-4-1 has been setup.
+2026-08-29T08:56:11.124419+0000 | MainThread INFO | src.generator.worker:restore:362 | Resuming generation state from Sat Aug 29 08:56:11 2026. Last generated fuzz driver 0, last scheduled function set 0
+2026-08-29T08:56:11.125104+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:56:11.126127+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 1: 
+lha_reader_new at lha_reader.c:177:12 in lha_reader.h
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h
+lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h
+lha_reader_check at lha_reader.c:406:5 in lha_reader.h
+lha_reader_extract at lha_reader.c:852:5 in lha_reader.h
+lha_reader_next_file at lha_reader.c:292:16 in lha_reader.h
+2026-08-29T08:56:11.128686+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 1, remaining rounds: 1
+2026-08-29T08:56:20.199862+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 1
+2026-08-29T08:56:20.202693+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 4
+2026-08-29T08:56:20.247610+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 1, fixing...
+2026-08-29T08:56:20.248100+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg='/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1787993780.c:47:14: error: call to undeclared function \'lha_input_stream_from_file\'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n   47 |     stream = lha_input_stream_from_file("./dummy_file");\n      |              ^\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1787993780.c:47:14: note: did you mean \'lha_input_stream_from_FILE\'?\n/promefuzz/database/liblhasa/latest/code/lib/public/lha_input_stream.h:119:17: note: \'lha_input_stream_from_FILE\' declared here\n  119 | LHAInputStream *lha_input_stream_from_FILE(FILE *stream);\n      |                 ^\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_1/fuzz_driver_1_sanitizing_1787993780.c:47:12: error: incompatible integer to pointer conversion assigning to \'LHAInputStream *\' (aka \'struct _LHAInputStream *\') from \'int\' [-Wint-conversion]\n   47 |     stream = lha_input_stream_from_file("./dummy_file");\n      |            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n2 errors generated.\n'
+2026-08-29T08:56:28.932478+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 3
+2026-08-29T08:56:29.323683+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 1, fixing...
+2026-08-29T08:56:38.089232+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 1, remaining rounds: 2
+2026-08-29T08:56:38.478172+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 1, which may be a constraint violation, learning...
+2026-08-29T08:57:03.714787+0000 | MainThread INFO | src.generator.learner:learn_constraint:306 | Successfully fixed crash memory-leak@_promefuzz_database_liblhasa_latest_code_lib_lha_input_stream.c:67:11 with learned constraint
+2026-08-29T08:57:03.715286+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function lha_input_stream_from_FILE: This API returns a heap-allocated LHAInputStream wrapper for the provided FILE*. Treat the returned pointer as an owned object that must be released with lha_input_stream_free() when no longer needed. Do not assume fclose(FILE*) frees the wrapper. If the stream is passed to another object such as LHAReader, verify ownership semantics from the API contract; if ownership is not explicitly transferred, keep responsibility for calling lha_input_stream_free(stream) on the success path.
+2026-08-29T08:57:03.715858+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function lha_input_stream_new: This constructor allocates a new LHAInputStream with calloc(), so every successful call must have a matching lha_input_stream_free(). Ensure cleanup is performed on all paths, including normal completion and error handling. Avoid double-management by defining clear ownership: either the caller frees the returned stream, or ownership is explicitly transferred to another API that documents it will free the stream.
+2026-08-29T08:57:03.746804+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 1 tests the following functions: 
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h, lha_reader_check at lha_reader.c:406:5 in lha_reader.h, lha_reader_extract at lha_reader.c:852:5 in lha_reader.h, lha_reader_next_file at lha_reader.c:292:16 in lha_reader.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h, lha_reader_check at lha_reader.c:406:5 in lha_reader.h, lha_reader_extract at lha_reader.c:852:5 in lha_reader.h, lha_reader_extract at lha_reader.c:852:5 in lha_reader.h, lha_reader_check at lha_reader.c:406:5 in lha_reader.h, lha_reader_check at lha_reader.c:406:5 in lha_reader.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h, lha_reader_extract at lha_reader.c:852:5 in lha_reader.h, lha_reader_extract at lha_reader.c:852:5 in lha_reader.h, lha_reader_check at lha_reader.c:406:5 in lha_reader.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h
+2026-08-29T08:57:03.750333+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 1 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:57:03.750695+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:57:03.751753+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 2: 
+lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h
+lha_decoder_free at lha_decoder.c:140:6 in lha_decoder.h
+lha_decoder_new64 at lha_decoder.c:71:13 in lha_decoder.h
+lha_decoder_get_length64 at lha_decoder.c:295:10 in lha_decoder.h
+lha_decoder_read at lha_decoder.c:199:8 in lha_decoder.h
+lha_decoder_get_crc at lha_decoder.c:277:10 in lha_decoder.h
+2026-08-29T08:57:03.754517+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 2, remaining rounds: 1
+2026-08-29T08:57:19.244755+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 2
+2026-08-29T08:57:19.248140+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 4
+2026-08-29T08:57:19.292995+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 2, fixing...
+2026-08-29T08:57:19.293551+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993839.c:83:33: error: incompatible pointer to integer conversion passing 'uint8_t[16]' (aka 'unsigned char[16]') to parameter of type 'size_t' (aka 'unsigned long') [-Wint-conversion]\n   83 |         n = callback(ex->input, tmp, sizeof(tmp));\n      |                                 ^~~\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993839.c:83:38: error: incompatible integer to pointer conversion passing 'unsigned long' to parameter of type 'void *' [-Wint-conversion]\n   83 |         n = callback(ex->input, tmp, sizeof(tmp));\n      |                                      ^~~~~~~~~~~\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993839.c:150:20: error: variable has incomplete type 'LHADecoderType' (aka 'struct _LHADecoderType')\n  150 |     LHADecoderType dtype;\n      |                    ^\n/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:55:16: note: forward declaration of 'struct _LHADecoderType'\n   55 | typedef struct _LHADecoderType LHADecoderType;\n      |                ^\n3 errors generated.\n"
+2026-08-29T08:57:32.433598+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 3
+2026-08-29T08:57:32.847181+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 2, fixing...
+2026-08-29T08:57:46.367979+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 2
+2026-08-29T08:57:46.409937+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 2, fixing...
+2026-08-29T08:57:46.410481+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_2/fuzz_driver_2_sanitizing_1787993866.c:212:29: error: arithmetic on a pointer to an incomplete type 'LHADecoder' (aka 'struct _LHADecoder')\n  212 |     ((DummyExtra *)(decoder + 1))->max_read = dtype.max_read;\n      |                     ~~~~~~~ ^\n/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:65:16: note: forward declaration of 'struct _LHADecoder'\n   65 | typedef struct _LHADecoder LHADecoder;\n      |                ^\n1 error generated.\n"
+2026-08-29T08:57:59.988106+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 2, remaining rounds: 1
+2026-08-29T08:58:01.183415+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 2 succeeded
+2026-08-29T08:58:01.215650+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 2 tests the following functions: 
+lha_decoder_new64 at lha_decoder.c:71:13 in lha_decoder.h, lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h, lha_decoder_get_crc at lha_decoder.c:277:10 in lha_decoder.h, lha_decoder_get_length64 at lha_decoder.c:295:10 in lha_decoder.h, lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h, lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h, lha_decoder_get_crc at lha_decoder.c:277:10 in lha_decoder.h, lha_decoder_get_length64 at lha_decoder.c:295:10 in lha_decoder.h, lha_decoder_read at lha_decoder.c:199:8 in lha_decoder.h, lha_decoder_get_crc at lha_decoder.c:277:10 in lha_decoder.h, lha_decoder_get_length64 at lha_decoder.c:295:10 in lha_decoder.h, lha_decoder_read at lha_decoder.c:199:8 in lha_decoder.h, lha_decoder_get_crc at lha_decoder.c:277:10 in lha_decoder.h, lha_decoder_get_length64 at lha_decoder.c:295:10 in lha_decoder.h, lha_decoder_free at lha_decoder.c:140:6 in lha_decoder.h
+2026-08-29T08:58:01.219192+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 2 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:58:01.219542+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:58:01.220557+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 3: 
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h
+lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+lha_reader_new at lha_reader.c:177:12 in lha_reader.h
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h
+2026-08-29T08:58:01.223458+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 3, remaining rounds: 1
+2026-08-29T08:58:09.731160+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 3
+2026-08-29T08:58:09.734712+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 3, remaining rounds: 4
+2026-08-29T08:58:10.123223+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 3, fixing...
+2026-08-29T08:58:17.713821+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 3, remaining rounds: 3
+2026-08-29T08:58:18.895030+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 3 succeeded
+2026-08-29T08:58:18.924932+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: write_dummy_file at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_3.c:9:13
+2026-08-29T08:58:18.925422+0000 | MainThread WARNING | src.generator.worker:san_success:167 | Fuzz driver 3 does not cover the following functions in function set 3: 
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+2026-08-29T08:58:18.925882+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 3 tests the following functions: 
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+2026-08-29T08:58:18.929320+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 3 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:58:18.929665+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:58:18.930724+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 4: 
+lha_reader_read at lha_reader.c:351:8 in lha_reader.h
+lha_reader_set_dir_policy at lha_reader.c:227:6 in lha_reader.h
+lha_reader_next_file at lha_reader.c:292:16 in lha_reader.h
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h
+lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h
+lha_reader_extract at lha_reader.c:852:5 in lha_reader.h
+2026-08-29T08:58:18.933792+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 4, remaining rounds: 1
+2026-08-29T08:58:28.535930+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 4
+2026-08-29T08:58:28.539602+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 4, remaining rounds: 4
+2026-08-29T08:58:28.929737+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 4, fixing...
+2026-08-29T08:58:37.585160+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 4, remaining rounds: 3
+2026-08-29T08:58:37.975714+0000 | MainThread WARNING | src.generator.learner:leak_times:186 | Memory leak crashes happened 4 times, LeakSanitizer will be disabled then
+2026-08-29T08:58:37.976225+0000 | MainThread INFO | src.generator.sanitizer:sanitize:178 | ASan error detected in fuzz driver 4, fixing...
+2026-08-29T08:58:46.327787+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 4, remaining rounds: 2
+2026-08-29T08:58:47.503504+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 4 succeeded
+2026-08-29T08:58:47.536261+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 4 tests the following functions: 
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_reader_set_dir_policy at lha_reader.c:227:6 in lha_reader.h, lha_reader_set_dir_policy at lha_reader.c:227:6 in lha_reader.h, lha_reader_next_file at lha_reader.c:292:16 in lha_reader.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h, lha_reader_read at lha_reader.c:351:8 in lha_reader.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h, lha_reader_extract at lha_reader.c:852:5 in lha_reader.h, lha_reader_current_is_fake at lha_reader.c:881:5 in lha_reader.h, lha_reader_set_dir_policy at lha_reader.c:227:6 in lha_reader.h
+2026-08-29T08:58:47.540326+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 4 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:58:47.540736+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:58:47.541573+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 5: 
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h
+lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+lha_reader_new at lha_reader.c:177:12 in lha_reader.h
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h
+2026-08-29T08:58:47.544943+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 5, remaining rounds: 1
+2026-08-29T08:58:56.101490+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 5
+2026-08-29T08:58:56.105137+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 5, remaining rounds: 4
+2026-08-29T08:58:56.482329+0000 | MainThread INFO | src.generator.sanitizer:sanitize:184 | ASan error detected in fuzz driver 5, which may be a constraint violation, learning...
+2026-08-29T08:59:20.067996+0000 | MainThread INFO | src.generator.learner:learn_constraint:306 | Successfully fixed crash SEGV@_promefuzz_database_liblhasa_latest_code_lib_lha_input_stream.c:85:26 with learned constraint
+2026-08-29T08:59:20.068564+0000 | MainThread INFO | src.generator.learner:_add_constraint_to_comprehension:351 | Learned constraint for function lha_input_stream_free: Only pass a valid, fully initialized LHAInputStream created by supported constructors such as lha_input_stream_from() or lha_input_stream_from_FILE(). Do not call lha_input_stream_free() on an object returned from lha_input_stream_new(NULL, NULL) or any stream whose type field may be NULL. Before freeing, ensure the stream pointer is non-NULL and was successfully constructed with a non-NULL LHAInputStreamType.
+2026-08-29T08:59:20.101098+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: write_dummy_file at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_5.c:10:13
+2026-08-29T08:59:20.101592+0000 | MainThread WARNING | src.generator.worker:san_success:167 | Fuzz driver 5 does not cover the following functions in function set 5: 
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+2026-08-29T08:59:20.102062+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 5 tests the following functions: 
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+2026-08-29T08:59:20.105628+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 5 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:59:20.105985+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:59:20.106855+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 6: 
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h
+lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+lha_reader_new at lha_reader.c:177:12 in lha_reader.h
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h
+2026-08-29T08:59:20.110111+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 6, remaining rounds: 1
+2026-08-29T08:59:28.418614+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 6
+2026-08-29T08:59:28.422448+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 6, remaining rounds: 4
+2026-08-29T08:59:29.598933+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 6 succeeded
+2026-08-29T08:59:29.639352+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: write_dummy_file at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_6.c:14:13
+2026-08-29T08:59:29.639896+0000 | MainThread WARNING | src.generator.worker:san_success:167 | Fuzz driver 6 does not cover the following functions in function set 6: 
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+2026-08-29T08:59:29.640337+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 6 tests the following functions: 
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+2026-08-29T08:59:29.643893+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 6 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:59:29.644237+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:59:29.645220+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 7: 
+lha_decoder_for_name at lha_decoder.c:125:23 in lha_decoder.h
+lha_decoder_new64 at lha_decoder.c:71:13 in lha_decoder.h
+lha_decoder_free at lha_decoder.c:140:6 in lha_decoder.h
+lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h
+lha_reader_check at lha_reader.c:406:5 in lha_reader.h
+lha_decoder_read at lha_decoder.c:199:8 in lha_decoder.h
+2026-08-29T08:59:29.648503+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 7, remaining rounds: 1
+2026-08-29T08:59:42.871901+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 7
+2026-08-29T08:59:42.875665+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 7, remaining rounds: 4
+2026-08-29T08:59:42.922520+0000 | MainThread INFO | src.generator.sanitizer:sanitize:161 | Build error detected in fuzz driver 7, fixing...
+2026-08-29T08:59:42.923061+0000 | MainThread INFO | src.generator.sanitizer:sanitize:164 | msg="/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993982.c:76:38: error: incompatible function pointer types passing 'size_t (void *, void *, size_t)' (aka 'unsigned long (void *, void *, unsigned long)') to parameter of type 'LHADecoderCallback' (aka 'unsigned long (*)(void *, unsigned long, void *)') [-Wincompatible-function-pointer-types]\n   76 |     decoder = lha_decoder_new(dtype, fuzz_read_callback, &st, stream_length);\n      |                                      ^~~~~~~~~~~~~~~~~~\n/promefuzz/database/liblhasa/latest/code/lib/public/lha_decoder.h:122:48: note: passing argument to parameter 'callback' here\n  122 |                             LHADecoderCallback callback,\n      |                                                ^\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993982.c:112:15: error: variable has incomplete type 'LHAReader' (aka 'struct _LHAReader')\n  112 |     LHAReader reader;\n      |               ^\n/promefuzz/database/liblhasa/latest/code/lib/public/lha_reader.h:46:16: note: forward declaration of 'struct _LHAReader'\n   46 | typedef struct _LHAReader LHAReader;\n      |                ^\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993982.c:113:5: error: use of undeclared identifier 'LHABasicReader'\n  113 |     LHABasicReader basic_reader;\n      |     ^\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993982.c:118:37: error: use of undeclared identifier 'basic_reader'\n  118 |     memset(&basic_reader, 0, sizeof(basic_reader));\n      |                                     ^\n/promefuzz/database/liblhasa/latest/out/tmp/fuzz_driver_7/fuzz_driver_7_sanitizing_1787993982.c:118:13: error: use of undeclared identifier 'basic_reader'\n  118 |     memset(&basic_reader, 0, sizeof(basic_reader));\n      |             ^\nfatal error: too many errors emitted, stopping now [-ferror-limit=]\n6 errors generated.\n"
+2026-08-29T08:59:53.052449+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 7, remaining rounds: 3
+2026-08-29T08:59:54.233051+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 7 succeeded
+2026-08-29T08:59:54.266276+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_decoder_with_name at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_7.c:47:13
+2026-08-29T08:59:54.266769+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_decoder_with_name at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_7.c:47:13
+2026-08-29T08:59:54.267196+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_decoder_with_name at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_7.c:47:13
+2026-08-29T08:59:54.267584+0000 | MainThread WARNING | src.generator.driver:check_actual_targets_ast:436 | Function in fuzz driver does not exist in API collection: fuzz_decoder_with_name at /promefuzz/database/liblhasa/latest/out/tmp/postprocessing/postprocessing_7.c:47:13
+2026-08-29T08:59:54.267999+0000 | MainThread WARNING | src.generator.worker:san_success:167 | Fuzz driver 7 does not cover the following functions in function set 7: 
+lha_reader_check at lha_reader.c:406:5 in lha_reader.h
+2026-08-29T08:59:54.268379+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 7 tests the following functions: 
+lha_decoder_free at lha_decoder.c:140:6 in lha_decoder.h, lha_decoder_for_name at lha_decoder.c:125:23 in lha_decoder.h, lha_decoder_for_name at lha_decoder.c:125:23 in lha_decoder.h, lha_decoder_new64 at lha_decoder.c:71:13 in lha_decoder.h, lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h, lha_decoder_read at lha_decoder.c:199:8 in lha_decoder.h, lha_decoder_monitor at lha_decoder.c:171:6 in lha_decoder.h
+2026-08-29T08:59:54.272890+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 7 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T08:59:54.273276+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:454 | Scheduling new function set...
+2026-08-29T08:59:54.274286+0000 | MainThread INFO | src.generator.scheduler:schedule_normal:542 | New function set scheduled, id 8: 
+lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h
+lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h
+lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+lha_reader_new at lha_reader.c:177:12 in lha_reader.h
+lha_reader_free at lha_reader.c:207:6 in lha_reader.h
+2026-08-29T08:59:54.278299+0000 | MainThread INFO | src.generator.generator:generate:102 | Generating fuzz driver for function set 8, remaining rounds: 1
+2026-08-29T09:00:03.597982+0000 | MainThread INFO | src.generator.generator:generate:136 | New fuzz driver generated, ID 8
+2026-08-29T09:00:03.601976+0000 | MainThread INFO | src.generator.sanitizer:sanitize:149 | Sanitizing fuzz driver 8, remaining rounds: 4
+2026-08-29T09:00:04.779123+0000 | MainThread INFO | src.generator.sanitizer:sanitize:156 | Sanitization of fuzz driver 8 succeeded
+2026-08-29T09:00:04.810115+0000 | MainThread INFO | src.generator.worker:san_success:187 | Fuzz driver 8 tests the following functions: 
+lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_from_FILE at lha_input_stream.c:401:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h, lha_input_stream_new at lha_input_stream.c:62:17 in lha_input_stream.h, lha_input_stream_from at lha_input_stream.c:381:17 in lha_input_stream.h, lha_reader_new at lha_reader.c:177:12 in lha_reader.h, lha_reader_free at lha_reader.c:207:6 in lha_reader.h, lha_input_stream_free at lha_input_stream.c:81:6 in lha_input_stream.h
+2026-08-29T09:00:04.814329+0000 | MainThread SUCCESS | src.generator.worker:san_success:205 | Fuzz driver 8 has been successfully generated and sanitized, saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver
+2026-08-29T09:00:04.816256+0000 | MainThread SUCCESS | cli.generate:_synthesize:480 | Generation completed. Synthesized driver saved to /promefuzz/database/liblhasa/latest/out/fuzz_driver.

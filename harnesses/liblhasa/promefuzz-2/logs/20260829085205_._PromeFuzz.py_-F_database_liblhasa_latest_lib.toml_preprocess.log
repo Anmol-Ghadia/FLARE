@@ -1,0 +1,80 @@
+2026-08-29T08:52:05.915193+0000 | MainThread INFO | __main__:setup_logger:65 | Logger set up with level INFO, log will be saved to logs/20260829085205_._PromeFuzz.py_-F_database_liblhasa_latest_lib.toml_preprocess.log
+2026-08-29T08:52:05.919681+0000 | MainThread INFO | src.preprocessor.ast:run:104 | Running AST Preprocessor for all 27 source files.
+2026-08-29T08:52:05.965734+0000 | ThreadPoolExecutor-2_0 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/src/extract.c: 
+Warning: Record _LHADecoderType has no definition
+Warning: Record _LHADecoder has no definition
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAReader has no definition
+
+2026-08-29T08:52:05.977877+0000 | ThreadPoolExecutor-2_8 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/lib/lha_basic_reader.c: 
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAInputStream has no definition
+
+2026-08-29T08:52:05.982336+0000 | ThreadPoolExecutor-2_3 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/src/list.c: 
+Warning: Record _LHADecoderType has no definition
+Warning: Record _LHADecoder has no definition
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAReader has no definition
+
+2026-08-29T08:52:05.985592+0000 | ThreadPoolExecutor-2_6 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/lib/lha_reader.c: 
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHABasicReader has no definition
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHABasicReader has no definition
+
+2026-08-29T08:52:05.990291+0000 | ThreadPoolExecutor-2_16 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/src/main.c: 
+Warning: Record _LHADecoderType has no definition
+Warning: Record _LHADecoder has no definition
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAReader has no definition
+
+2026-08-29T08:52:05.991278+0000 | ThreadPoolExecutor-2_2 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/lib/macbinary.c: 
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAInputStream has no definition
+
+2026-08-29T08:52:05.996957+0000 | ThreadPoolExecutor-2_12 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/lib/ext_header.c: 
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAInputStream has no definition
+
+2026-08-29T08:52:06.004482+0000 | ThreadPoolExecutor-2_17 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/src/filter.c: 
+Warning: Record _LHADecoderType has no definition
+Warning: Record _LHADecoder has no definition
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAReader has no definition
+
+2026-08-29T08:52:06.007633+0000 | ThreadPoolExecutor-2_11 WARNING | src.preprocessor.ast:run_once:250 | AST preprocessor warning/error for /promefuzz/database/liblhasa/latest/code/lib/lha_file_header.c: 
+Warning: Record _LHAInputStream has no definition
+Warning: Record _LHAInputStream has no definition
+
+2026-08-29T08:52:06.038550+0000 | MainThread SUCCESS | src.preprocessor.ast:run:137 | Preprocessed 27 source files.
+2026-08-29T08:52:06.046583+0000 | MainThread INFO | cli.preprocess:preprocess:108 | Extracting the API functions.
+2026-08-29T08:52:06.047065+0000 | MainThread WARNING | src.preprocessor.api:_get_header_files:360 | Invalid header path database/liblhasa/latest/code/lib/public/Makefile
+2026-08-29T08:52:06.070429+0000 | MainThread INFO | src.preprocessor.api:_filter_functions:488 | Filtered out 0 functions
+2026-08-29T08:52:06.070953+0000 | MainThread SUCCESS | cli.preprocess:preprocess:113 | 19 API functions extracted, dumped to /promefuzz/database/liblhasa/latest/out/preprocessor/api.pkl
+2026-08-29T08:52:06.071251+0000 | MainThread SUCCESS | cli.preprocess:preprocess:123 | Source files dumped to /promefuzz/database/liblhasa/latest/out/preprocessor/sources.json
+2026-08-29T08:52:06.071407+0000 | MainThread INFO | cli.preprocess:preprocess:126 | Extracting the library call graph.
+2026-08-29T08:52:06.105880+0000 | ThreadPoolExecutor-3_10 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lha_arch_win32.c.
+2026-08-29T08:52:06.125825+0000 | ThreadPoolExecutor-3_15 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lha_arch_unix.c.
+2026-08-29T08:52:06.128704+0000 | ThreadPoolExecutor-3_19 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lh5_decoder.c.
+2026-08-29T08:52:06.129021+0000 | ThreadPoolExecutor-3_4 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lh7_decoder.c.
+2026-08-29T08:52:06.133536+0000 | ThreadPoolExecutor-3_9 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lha_endian.c.
+2026-08-29T08:52:06.134849+0000 | ThreadPoolExecutor-3_18 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/null_decoder.c.
+2026-08-29T08:52:06.146517+0000 | ThreadPoolExecutor-3_7 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lk7_decoder.c.
+2026-08-29T08:52:06.161001+0000 | ThreadPoolExecutor-3_3 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/crc16.c.
+2026-08-29T08:52:06.169898+0000 | ThreadPoolExecutor-3_8 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lhx_decoder.c.
+2026-08-29T08:52:06.173322+0000 | ThreadPoolExecutor-3_15 WARNING | src.preprocessor.incidental:_process_one_source:300 | No caller-callee pairs found for source /promefuzz/database/liblhasa/latest/code/lib/lh6_decoder.c.
+2026-08-29T08:52:06.175688+0000 | MainThread SUCCESS | cli.preprocess:preprocess:141 | API incidental relationships extracted, dump to /promefuzz/database/liblhasa/latest/out/preprocessor/incidentals.pkl
+2026-08-29T08:52:06.175883+0000 | MainThread INFO | cli.preprocess:preprocess:147 | Extracting the consumer call graph.
+2026-08-29T08:52:06.176135+0000 | MainThread WARNING | src.preprocessor.consumer:from_library_config:624 | Invalid consumer path database/liblhasa/latest/code/tests
+2026-08-29T08:52:06.176596+0000 | MainThread SUCCESS | cli.preprocess:preprocess:161 | Consumer call order extracted, dumped to /promefuzz/database/liblhasa/latest/out/preprocessor/call_order.pkl
+2026-08-29T08:52:06.176776+0000 | MainThread INFO | cli.preprocess:preprocess:168 | Initializing the information repository.
+2026-08-29T08:52:06.197433+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name LHAInputStreamType is not found in the meta data.
+2026-08-29T08:52:06.199013+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name LHAInputStreamState is not found in the meta data.
+2026-08-29T08:52:06.206063+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name CurrFileType is not found in the meta data.
+2026-08-29T08:52:06.206800+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name LHAReaderDirPolicy is not found in the meta data.
+2026-08-29T08:52:06.213984+0000 | MainThread WARNING | src.preprocessor.information:from_name:555 | Composite name struct _IO_FILE is not found in the meta data.
+2026-08-29T08:52:06.217583+0000 | MainThread SUCCESS | cli.preprocess:preprocess:172 | Information repository generated, dumped to /promefuzz/database/liblhasa/latest/out/preprocessor/info.pkl
+2026-08-29T08:52:06.217771+0000 | MainThread INFO | cli.preprocess:preprocess:177 | Calculating the complexity of the API functions.
+2026-08-29T08:52:06.218218+0000 | MainThread SUCCESS | cli.preprocess:preprocess:183 | API complexity calculated, dumped to /promefuzz/database/liblhasa/latest/out/preprocessor/complexity.pkl
+2026-08-29T08:52:06.218375+0000 | MainThread INFO | cli.preprocess:preprocess:188 | Calculating the relevance of the API functions.
+2026-08-29T08:52:06.219634+0000 | MainThread SUCCESS | cli.preprocess:preprocess:203 | API relevance calculated, dumped to /promefuzz/database/liblhasa/latest/out/preprocessor/*_relev.pkl
