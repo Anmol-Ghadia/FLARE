@@ -5,6 +5,8 @@ tinycbor:
     - tinycbor/opencode-3/fuzz/
   promefuzz:
     - tinycbor/promefuzz-1/out/fuzz_driver/
+    - tinycbor/promefuzz-2/out/fuzz_driver/
+    - tinycbor/promefuzz-3/out/fuzz_driver/
 cjson:
   opencode:
     - cjson/opencode-1/fuzz/
@@ -17,8 +19,14 @@ cjson:
   ossfuzz:
     - cjson/ossfuzz/
 rapidcsv:
+  opencode:
+    - cjson/opencode-1/fuzz/
+    - cjson/opencode-2/fuzz/
+    - cjson/opencode-3/fuzz/
   promefuzz:
     - rapidcsv/promefuzz-1/out/fuzz_driver/
+    - rapidcsv/promefuzz-2/out/fuzz_driver/
+    - rapidcsv/promefuzz-3/out/fuzz_driver/
 sqlite3:
   opencode:
     - sqlite3/opencode-1/fuzz/
@@ -26,6 +34,8 @@ sqlite3:
     - sqlite3/opencode-3/fuzz/
   promefuzz:
     - sqlite3/promefuzz-1/out/fuzz_driver/
+    - sqlite3/promefuzz-2/out/fuzz_driver/
+    - sqlite3/promefuzz-3/out/fuzz_driver/
   ossfuzz:
     - sqlite3/ossfuzz/
 libpng:
@@ -36,6 +46,7 @@ libpng:
   promefuzz:
     - libpng/promefuzz-1/out/fuzz_driver/
     - libpng/promefuzz-2/out/fuzz_driver/
+    - libpng/promefuzz-3/out/fuzz_driver/
   ossfuzz:
     - libpng/ossfuzz/
 libtiff:
@@ -45,5 +56,17 @@ libtiff:
     - libtiff/opencode-3/fuzz/
   promefuzz:
     - libtiff/promefuzz-1/out/fuzz_driver/
+    - libtiff/promefuzz-2/out/fuzz_driver/
+    - libtiff/promefuzz-3/out/fuzz_driver/
   ossfuzz:
-    - libtiff/ossfuzz/
+    - libtiff/ossfuzz
+liblhasa:
+  opencode:
+    - liblhasa/opencode-1/fuzz/
+    - liblhasa/opencode-2/fuzz/
+    - liblhasa/opencode-3/fuzz/
+  promefuzz:
+    - liblhasa/promefuzz-1/out/fuzz_driver/
+    - liblhasa/promefuzz-2/out/fuzz_driver/
+    - liblhasa/promefuzz-3/out/fuzz_driver/
+
